@@ -1,8 +1,17 @@
 package fr.iglee42.evolvedmekanism;
 
 import com.mojang.logging.LogUtils;
+import fr.iglee42.evolvedmekanism.mixins.AlloyTierMixin;
+import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.registries.EMCreativeTabs;
+import fr.iglee42.evolvedmekanism.registries.EMItems;
+import mekanism.api.tier.AlloyTier;
+import mekanism.api.tier.BaseTier;
+import mekanism.common.registries.MekanismCreativeTabs;
+import mekanism.common.tier.FactoryTier;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -29,6 +38,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
+import java.util.Objects;
+
 @Mod(EvolvedMekanism.MODID)
 public class EvolvedMekanism {
 
@@ -39,21 +50,29 @@ public class EvolvedMekanism {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
+        BaseTier ignored = BaseTier.BASIC;
+        AlloyTier ignored2 = AlloyTier.ATOMIC;
+        FactoryTier ignored3 = FactoryTier.BASIC;
+
+        EMBlocks.BLOCKS.register(modEventBus);
+        EMItems.ITEMS.register(modEventBus);
+        EMCreativeTabs.CREATIVE_TABS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        modEventBus.addListener(this::addCreative);
 
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-    }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+    }
+
+    public static ResourceLocation rl(String path){
+        return new ResourceLocation(MODID,path);
     }
 
 }

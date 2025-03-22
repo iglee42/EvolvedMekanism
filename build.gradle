@@ -139,6 +139,10 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+
+    maven { url 'https://modmaven.dev/' }
+
+    maven { url 'https://iglee.fr:8081/releases/'}
 }
 
 dependencies {
@@ -163,6 +167,15 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    implementation fg.deobf("fr.iglee42:IgleeLib:${minecraft_version}-${lib_version}")
+
+
+    // If you want to test/use Mekanism & its modules during `runClient` invocation, use the following
+    implementation fg.deobf("mekanism:Mekanism:${mekanism_version}")// core
+    implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:additions")// Mekanism: Additions
+    implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:generators")// Mekanism: Generators
+    implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")// Mekanism: Tools
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 

@@ -1,10 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "fr.iglee42.evolvedmekanism.mixin",
+  "package": "fr.iglee42.evolvedmekanism.mixins",
   "compatibilityLevel": "JAVA_8",
   "refmap": "evolvedmekanism.refmap.json",
   "mixins": [
+    "AlloyTierMixin",
+    "BaseTierMixin",
+    "FactoryTierMixin",
+    "MekanismBlocksMixin"
   ],
   "client": [
   ],
