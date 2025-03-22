@@ -1,0 +1,34 @@
+{
+    "variants": {
+        "facing=north,active=false": {
+            "model": "evolvedmekanism:block/factory/combining/overclocked"
+        },
+        "facing=south,active=false": {
+            "model": "evolvedmekanism:block/factory/combining/overclocked",
+            "y": 180
+        },
+        "facing=east,active=false": {
+            "model": "evolvedmekanism:block/factory/combining/overclocked",
+            "y": 90
+        },
+        "facing=west,active=false": {
+            "model": "evolvedmekanism:block/factory/combining/overclocked",
+            "y": -90
+        },
+        "facing=north,active=true": {
+            "model": "evolvedmekanism:block/factory/combining/active/overclocked"
+        },
+        "facing=south,active=true": {
+            "model": "evolvedmekanism:block/factory/combining/active/overclocked",
+            "y": 180
+        },
+        "facing=east,active=true": {
+            "model": "evolvedmekanism:block/factory/combining/active/overclocked",
+            "y": 90
+        },
+        "facing=west,active=true": {
+            "model": "evolvedmekanism:block/factory/combining/active/overclocked",
+            "y": -90
+        }
+    }
+}

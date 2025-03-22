@@ -1,0 +1,27 @@
+{
+    "variants": {
+        "facing=up": {
+            "model": "evolvedmekanism:block/energy_cube/overclocked",
+            "x": -90
+        },
+        "facing=down": {
+            "model": "evolvedmekanism:block/energy_cube/overclocked",
+            "x": 90
+        },
+        "facing=north": {
+            "model": "evolvedmekanism:block/energy_cube/overclocked"
+        },
+        "facing=south": {
+            "model": "evolvedmekanism:block/energy_cube/overclocked",
+            "y": 180
+        },
+        "facing=east": {
+            "model": "evolvedmekanism:block/energy_cube/overclocked",
+            "y": 90
+        },
+        "facing=west": {
+            "model": "evolvedmekanism:block/energy_cube/overclocked",
+            "y": -90
+        }
+    }
+}
