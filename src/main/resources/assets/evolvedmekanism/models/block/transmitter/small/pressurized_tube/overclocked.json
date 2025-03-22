@@ -1,0 +1,9 @@
+{
+    "parent": "mekanism:block/transmitter/small/small",
+    "textures": {
+        "side": "evolvedmekanism:block/models/multipart/overclocked_pressurized_tube_vertical",
+        "center_down": "evolvedmekanism:block/models/multipart/overclocked_pressurized_tube",
+        "side_opaque": "evolvedmekanism:block/models/multipart/opaque/overclocked_pressurized_tube_vertical",
+        "center_opaque": "evolvedmekanism:block/models/multipart/overclocked_pressurized_tube"
+    }
+}

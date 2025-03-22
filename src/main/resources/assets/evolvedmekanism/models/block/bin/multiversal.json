@@ -1,0 +1,8 @@
+{
+    "parent": "mekanism:block/bin/basic",
+    "textures": {
+        "led": "evolvedmekanism:block/bin/multiversal_led",
+        "side": "evolvedmekanism:block/bin/multiversal_side",
+        "back": "evolvedmekanism:block/bin/multiversal_back"
+    }
+}

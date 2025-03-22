@@ -1,0 +1,6 @@
+{
+    "parent": "mekanism:block/chemical_tank/base",
+    "textures": {
+        "valve": "evolvedmekanism:block/models/chemical_tank_multiversal_valve"
+    }
+}

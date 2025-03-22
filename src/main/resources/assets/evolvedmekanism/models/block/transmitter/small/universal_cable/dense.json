@@ -1,0 +1,9 @@
+{
+    "parent": "mekanism:block/transmitter/small/small",
+    "textures": {
+        "side": "evolvedmekanism:block/models/multipart/dense_universal_cable_vertical",
+        "center_down": "evolvedmekanism:block/models/multipart/dense_universal_cable",
+        "side_opaque": "evolvedmekanism:block/models/multipart/opaque/dense_universal_cable_vertical",
+        "center_opaque": "evolvedmekanism:block/models/multipart/dense_universal_cable"
+    }
+}
