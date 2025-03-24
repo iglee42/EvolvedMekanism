@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:metallurgic_infusing",
+  "chemicalInput": {
+    "amount": 20,
+    "tag": "evolvedmekanism:uranium"
+  },
+  "itemInput": {
+    "ingredient": {
+      "tag": "mekanism:alloys/atomic"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:alloy_hypercharged"
+  }
+}

@@ -1,6 +1,8 @@
 package fr.iglee42.evolvedmekanism.registries;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
+import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.text.TextComponentUtil;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
@@ -8,10 +10,13 @@ import mekanism.common.item.ItemAlloy;
 import mekanism.common.item.ItemTierInstaller;
 import mekanism.common.registration.impl.ItemDeferredRegister;
 import mekanism.common.registration.impl.ItemRegistryObject;
+import mekanism.common.resource.IResource;
+import mekanism.common.resource.MiscResource;
+import mekanism.common.resource.PrimaryResource;
+import mekanism.common.resource.ResourceType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,6 +38,10 @@ public class EMItems {
     public static final ItemRegistryObject<ItemAlloy> SUBATOMIC_ALLOY = registerAlloy(EMAlloyTier.SUBATOMIC);
     public static final ItemRegistryObject<ItemAlloy> SINGULAR_ALLOY = registerAlloy(EMAlloyTier.SINGULAR);
     public static final ItemRegistryObject<ItemAlloy> EXOVERSAL_ALLOY = registerAlloy(EMAlloyTier.EXOVERSAL);
+
+    public static final ItemRegistryObject<Item> ENRICHED_URANIUM = registerResource(ResourceType.ENRICHED, PrimaryResource.URANIUM);
+    public static final ItemRegistryObject<Item> ENRICHED_BETTER_GOLD = ITEMS.register("enriched_better_gold");
+
 
     private static ItemRegistryObject<Item> registerCircuit(BaseTier tier) {
         return ITEMS.register(tier.getLowerName() + "_control_circuit", properties -> new Item(properties) {
@@ -56,5 +65,9 @@ public class EMItems {
                 return TextComponentUtil.build(tier.getBaseTier().getColor(), super.getName(stack));
             }
         });
+    }
+
+    private static ItemRegistryObject<Item> registerResource(ResourceType type, IResource resource) {
+        return ITEMS.register(type.getRegistryPrefix() + "_" + resource.getRegistrySuffix());
     }
 }

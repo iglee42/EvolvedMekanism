@@ -139,5 +139,8 @@
     "item.evolvedmekanism.overclocked_tier_installer": "Installeur de niveau overclock\u00e9",
     "item.evolvedmekanism.quantum_tier_installer": "Installeur de niveau quantique",
     "item.evolvedmekanism.dense_tier_installer": "Installeur de niveau dense",
-    "item.evolvedmekanism.multiversal_tier_installer": "Installeur de niveau multiversel"
+    "item.evolvedmekanism.multiversal_tier_installer": "Installeur de niveau multiversel",
+    "infuse_type.evolvedmekanism.uranium": "Uranium",
+    "item.evolvedmekanism.enriched_uranium": "Uranium Enrichi",
+    "item.evolvedmekanism.enriched_better_gold": "Better Gold Enrichi"
 }

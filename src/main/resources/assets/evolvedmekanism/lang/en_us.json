@@ -139,5 +139,8 @@
     "item.evolvedmekanism.overclocked_tier_installer": "Overclocked Tier Installer",
     "item.evolvedmekanism.quantum_tier_installer": "Quantum Tier Installer",
     "item.evolvedmekanism.dense_tier_installer": "Dense Tier Installer",
-    "item.evolvedmekanism.multiversal_tier_installer": "Multiversal Tier Installer"
+    "item.evolvedmekanism.multiversal_tier_installer": "Multiversal Tier Installer",
+    "infuse_type.evolvedmekanism.uranium": "Uranium",
+    "item.evolvedmekanism.enriched_uranium": "Enriched Uranium",
+    "item.evolvedmekanism.enriched_better_gold": "Enriched Better Gold"
 }
