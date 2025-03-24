@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:injecting",
+  "chemicalInput": {
+    "amount": 18,
+    "gas": "mekanism:uranium_hexafluoride"
+  },
+  "itemInput": {
+    "ingredient": {
+      "tag": "forge:storage_blocks/gold"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:block_better_gold"
+  }
+}

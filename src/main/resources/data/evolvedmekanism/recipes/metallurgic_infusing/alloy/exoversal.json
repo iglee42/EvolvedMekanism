@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:metallurgic_infusing",
+  "chemicalInput": {
+    "amount": 20,
+    "tag": "evolvedmekanism:plaslitherite"
+  },
+  "itemInput": {
+    "ingredient": {
+      "tag": "evolvedmekanism:alloys/singular"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:alloy_exoversal"
+  }
+}

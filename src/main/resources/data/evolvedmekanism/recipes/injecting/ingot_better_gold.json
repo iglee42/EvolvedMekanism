@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:injecting",
+  "chemicalInput": {
+    "amount": 2,
+    "gas": "mekanism:uranium_hexafluoride"
+  },
+  "itemInput": {
+    "ingredient": {
+      "tag": "forge:ingots/gold"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:ingot_better_gold"
+  }
+}
