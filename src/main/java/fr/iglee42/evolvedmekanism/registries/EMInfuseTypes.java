@@ -10,4 +10,5 @@ public class EMInfuseTypes {
     public static final InfuseTypeDeferredRegister INFUSE_TYPES = new InfuseTypeDeferredRegister(EvolvedMekanism.MODID);
 
     public static final InfuseTypeRegistryObject<InfuseType> URANIUM = INFUSE_TYPES.register("uranium",0x9BE199);
+    public static final InfuseTypeRegistryObject<InfuseType> BETTER_GOLD = INFUSE_TYPES.register("better_gold",EvolvedMekanism.rl("infuse_type/better_gold"),0xF9C918);
 }

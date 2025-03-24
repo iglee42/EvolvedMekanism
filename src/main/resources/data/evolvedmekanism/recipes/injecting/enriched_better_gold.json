@@ -1,7 +1,7 @@
 {
   "type": "mekanism:injecting",
   "chemicalInput": {
-    "amount": 1000,
+    "amount": 2,
     "gas": "mekanism:uranium_hexafluoride"
   },
   "itemInput": {
