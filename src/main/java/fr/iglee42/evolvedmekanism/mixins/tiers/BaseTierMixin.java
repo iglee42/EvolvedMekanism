@@ -1,7 +1,7 @@
-package fr.iglee42.evolvedmekanism.mixins;
+package fr.iglee42.evolvedmekanism.mixins.tiers;
 
 
-import fr.iglee42.evolvedmekanism.registries.EMBaseTier;
+import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.igleelib.api.utils.ModsUtils;
 import mekanism.api.tier.BaseTier;
 import net.minecraft.world.level.material.MapColor;
@@ -28,10 +28,10 @@ public class BaseTierMixin {
 
     @Inject(method = "<clinit>",at = @At("TAIL"))
     private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 144, 0},MapColor.COLOR_LIGHT_GREEN);
-        EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{154, 83, 183},MapColor.COLOR_PURPLE);
-        EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{233, 177, 21},MapColor.GOLD);
-        EMBaseTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", new int[]{66, 66, 67},MapColor.COLOR_BLACK);
+        EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 221, 0},MapColor.COLOR_LIGHT_GREEN);
+        EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{252, 158, 250},MapColor.COLOR_PURPLE);
+        EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);
+        EMBaseTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", new int[]{90, 87, 90},MapColor.COLOR_BLACK);
     }
 
     @Unique

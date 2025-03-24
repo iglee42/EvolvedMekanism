@@ -1,4 +1,4 @@
-package fr.iglee42.evolvedmekanism.registries;
+package fr.iglee42.evolvedmekanism.tiers;
 
 import mekanism.api.tier.BaseTier;
 

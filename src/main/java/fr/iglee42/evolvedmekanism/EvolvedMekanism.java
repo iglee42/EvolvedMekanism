@@ -7,10 +7,7 @@ import fr.iglee42.evolvedmekanism.registries.EMCreativeTabs;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
-import mekanism.common.registries.MekanismCreativeTabs;
-import mekanism.common.tier.FactoryTier;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.Registries;
+import mekanism.common.tier.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -50,9 +47,7 @@ public class EvolvedMekanism {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
-        BaseTier ignored = BaseTier.BASIC;
-        AlloyTier ignored2 = AlloyTier.ATOMIC;
-        FactoryTier ignored3 = FactoryTier.BASIC;
+        initEnums();
 
         EMBlocks.BLOCKS.register(modEventBus);
         EMItems.ITEMS.register(modEventBus);
@@ -61,6 +56,25 @@ public class EvolvedMekanism {
         MinecraftForge.EVENT_BUS.register(this);
 
 
+    }
+
+    private void initEnums(){
+        BaseTier ignored1 = BaseTier.BASIC;
+        AlloyTier ignored2 = AlloyTier.ATOMIC;
+        FactoryTier ignored3 = FactoryTier.BASIC;
+
+        CableTier cable1 = CableTier.BASIC;
+        ConductorTier cable2 = ConductorTier.BASIC;
+        PipeTier cable3 = PipeTier.BASIC;
+        TubeTier cable4 = TubeTier.BASIC;
+        TransporterTier cable5 = TransporterTier.BASIC;
+
+        BinTier storage1 = BinTier.BASIC;
+        InductionCellTier storage2 = InductionCellTier.BASIC;
+        InductionProviderTier storage3 = InductionProviderTier.BASIC;
+        EnergyCubeTier storage4 = EnergyCubeTier.BASIC;
+        ChemicalTankTier storage5 = ChemicalTankTier.BASIC;
+        FluidTankTier storage6 = FluidTankTier.BASIC;
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

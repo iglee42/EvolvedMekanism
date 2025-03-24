@@ -1,12 +1,10 @@
-package fr.iglee42.evolvedmekanism.mixins;
+package fr.iglee42.evolvedmekanism.mixins.tiers;
 
 
-import fr.iglee42.evolvedmekanism.registries.EMBaseTier;
-import fr.iglee42.evolvedmekanism.registries.EMFactoryTier;
-import fr.iglee42.igleelib.api.utils.ModsUtils;
+import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
+import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.tier.FactoryTier;
-import net.minecraft.world.level.material.MapColor;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
