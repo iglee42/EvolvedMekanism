@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins;
 
-import fr.iglee42.evolvedmekanism.registries.EMBaseTier;
+import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import mekanism.api.tier.ITier;
 import mekanism.common.registration.impl.BlockRegistryObject;
@@ -21,7 +22,7 @@ public class MekanismBlocksMixin {
 
     @Inject(method = "registerTieredBlock(Lmekanism/api/tier/ITier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Function;)Lmekanism/common/registration/impl/BlockRegistryObject;",at = @At(value = "RETURN",shift = At.Shift.BEFORE), cancellable = true)
     private static <BLOCK extends Block, ITEM extends BlockItem> void evolveddraconic$changeModid(ITier tier, String suffix, Supplier<? extends BLOCK> blockSupplier, Function<BLOCK, ITEM> itemCreator, CallbackInfoReturnable<BlockRegistryObject<BLOCK, ITEM>> cir){
-        if (tier.getBaseTier().equals(EMBaseTier.OVERCLOCKED) || tier.getBaseTier().equals(EMBaseTier.QUANTUM) || tier.getBaseTier().equals(EMBaseTier.DENSE) || tier.getBaseTier().equals(EMBaseTier.MULTIVERSAL)){
+        if (EvolvedMekanism.isEvolvedMekanismTier(tier.getBaseTier())){
             cir.setReturnValue(EMBlocks.BLOCKS.register(tier.getBaseTier().getLowerName() + suffix, blockSupplier, itemCreator));
         }
     }
