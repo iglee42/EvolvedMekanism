@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "ingredient": {
+      "tag": "forge:dusts/plaslitherite"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:enriched_plaslitherite"
+  }
+}

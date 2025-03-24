@@ -1,0 +1,22 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/exoversal"
+        },
+        "I": {
+            "tag": "forge:ingots/iron"
+        },
+        "P": {
+            "item": "evolvedmekanism:dense_fluid_tank"
+        }
+    },
+    "pattern": [
+        "AIA",
+        "IPI",
+        "AIA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:multiversal_fluid_tank"
+    }
+}

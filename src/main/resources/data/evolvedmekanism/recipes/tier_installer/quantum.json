@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/subatomic"
+        },
+        "C": {
+            "tag": "forge:circuits/quantum"
+        },
+        "I": {
+            "tag": "forge:gems/diamond"
+        },
+        "P": {
+            "tag": "minecraft:planks"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:quantum_tier_installer"
+    }
+}

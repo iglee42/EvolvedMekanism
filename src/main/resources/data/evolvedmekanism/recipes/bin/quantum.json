@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/subatomic"
+        },
+        "C": {
+            "tag": "forge:circuits/quantum"
+        },
+        "P": {
+            "item": "evolvedmekanism:overclocked_bin"
+        },
+        "_": {
+            "tag": "forge:cobblestone/normal"
+        }
+    },
+    "pattern": [
+        "_C_",
+        "APA",
+        "___"
+    ],
+    "result": {
+        "item": "evolvedmekanism:quantum_bin"
+    }
+}

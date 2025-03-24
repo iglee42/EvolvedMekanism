@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/subatomic"
+        },
+        "P": {
+            "item": "evolvedmekanism:overclocked_thermodynamic_conductor"
+        }
+    },
+    "pattern": [
+        "PPP",
+        "PAP",
+        "PPP"
+    ],
+    "result": {
+        "count": 8,
+        "item": "evolvedmekanism:quantum_thermodynamic_conductor"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/exoversal"
+        },
+        "C": {
+            "tag": "forge:circuits/multiversal"
+        },
+        "I": {
+            "tag": "forge:gems/diamond"
+        },
+        "P": {
+            "item": "evolvedmekanism:dense_sawing_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:multiversal_sawing_factory"
+    }
+}

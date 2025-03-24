@@ -1,0 +1,22 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "#": {
+            "item": "evolvedmekanism:overclocked_energy_cube"
+        },
+        "E": {
+            "item": "mekanism:energy_tablet"
+        },
+        "P": {
+            "item": "mekanism:ultimate_induction_cell"
+        }
+    },
+    "pattern": [
+        "EPE",
+        "P#P",
+        "EPE"
+    ],
+    "result": {
+        "item": "evolvedmekanism:overclocked_induction_cell"
+    }
+}

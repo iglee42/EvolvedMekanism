@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/hypercharged"
+        },
+        "C": {
+            "tag": "forge:circuits/overclocked"
+        },
+        "P": {
+            "item": "mekanism:ultimate_bin"
+        },
+        "_": {
+            "tag": "forge:cobblestone/normal"
+        }
+    },
+    "pattern": [
+        "_C_",
+        "APA",
+        "___"
+    ],
+    "result": {
+        "item": "evolvedmekanism:overclocked_bin"
+    }
+}

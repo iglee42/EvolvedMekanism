@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "forge:storage_blocks/better_gold"
+        }
+    ],
+    "result": {
+        "count": 9,
+        "item": "evolvedmekanism:ingot_better_gold"
+    }
+}

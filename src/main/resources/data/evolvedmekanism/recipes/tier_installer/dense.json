@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/singular"
+        },
+        "C": {
+            "tag": "forge:circuits/dense"
+        },
+        "I": {
+            "tag": "forge:gems/diamond"
+        },
+        "P": {
+            "tag": "minecraft:planks"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:dense_tier_installer"
+    }
+}

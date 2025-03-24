@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/hypercharged"
+        },
+        "P": {
+            "item": "mekanism:ultimate_mechanical_pipe"
+        }
+    },
+    "pattern": [
+        "PPP",
+        "PAP",
+        "PPP"
+    ],
+    "result": {
+        "count": 8,
+        "item": "evolvedmekanism:overclocked_mechanical_pipe"
+    }
+}

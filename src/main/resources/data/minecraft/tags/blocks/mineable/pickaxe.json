@@ -59,6 +59,8 @@
         "evolvedmekanism:multiversal_purifying_factory",
         "evolvedmekanism:multiversal_injecting_factory",
         "evolvedmekanism:multiversal_infusing_factory",
-        "evolvedmekanism:multiversal_sawing_factory"
+        "evolvedmekanism:multiversal_sawing_factory",
+        "evolvedmekanism:block_better_gold",
+        "evolvedmekanism:block_plaslitherite"
     ]
 }

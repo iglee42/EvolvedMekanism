@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "item": "evolvedmekanism:multiversal_energy_cube"
+        },
+        "C": {
+            "tag": "forge:circuits/multiversal"
+        },
+        "P": {
+            "item": "evolvedmekanism:dense_induction_provider"
+        }
+    },
+    "pattern": [
+        "CPC",
+        "P#P",
+        "CPC"
+    ],
+    "result": {
+        "item": "evolvedmekanism:multiversal_induction_provider"
+    }
+}
