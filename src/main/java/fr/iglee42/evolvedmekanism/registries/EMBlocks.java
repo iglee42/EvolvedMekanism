@@ -1,12 +1,15 @@
 package fr.iglee42.evolvedmekanism.registries;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.blocks.EMBlockResource;
+import fr.iglee42.evolvedmekanism.items.EMItemBlockResource;
 import fr.iglee42.evolvedmekanism.tiers.cable.*;
 import mekanism.api.tier.ITier;
 import mekanism.common.block.BlockEnergyCube;
 import mekanism.common.block.attribute.AttributeTier;
 import mekanism.common.block.basic.BlockBin;
 import mekanism.common.block.basic.BlockFluidTank;
+import mekanism.common.block.basic.BlockResource;
 import mekanism.common.block.prefab.BlockFactoryMachine.BlockFactory;
 import mekanism.common.block.prefab.BlockTile;
 import mekanism.common.block.prefab.BlockTile.BlockTileModel;
@@ -21,6 +24,7 @@ import mekanism.common.item.block.machine.ItemBlockFluidTank;
 import mekanism.common.item.block.transmitter.*;
 import mekanism.common.registration.impl.BlockDeferredRegister;
 import mekanism.common.registration.impl.BlockRegistryObject;
+import mekanism.common.resource.BlockResourceInfo;
 import mekanism.common.tier.*;
 import mekanism.common.tile.TileEntityBin;
 import mekanism.common.tile.TileEntityChemicalTank;
@@ -39,6 +43,8 @@ import java.util.function.Supplier;
 public class EMBlocks {
     public static final BlockDeferredRegister BLOCKS = new BlockDeferredRegister(EvolvedMekanism.MODID);
 
+    public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);
+    public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> PLASLITHERITE_BLOCK = registerResourceBlock(EMBlockResourceInfo.PLASLITHERITE);
 
     public static final BlockRegistryObject<BlockBin, ItemBlockBin> OVERCLOCKED_BIN = registerBin(EMBlockTypes.OVERCLOCKED_BIN);
     public static final BlockRegistryObject<BlockBin, ItemBlockBin> QUANTUM_BIN = registerBin(EMBlockTypes.QUANTUM_BIN);
@@ -159,5 +165,14 @@ public class EMBlocks {
     private static <BLOCK extends Block, ITEM extends BlockItem> BlockRegistryObject<BLOCK, ITEM> registerTieredBlock(ITier tier, String suffix,
                                                                                                                       Supplier<? extends BLOCK> blockSupplier, Function<BLOCK, ITEM> itemCreator) {
         return BLOCKS.register(tier.getBaseTier().getLowerName() + suffix, blockSupplier, itemCreator);
+    }
+
+    private static BlockRegistryObject<EMBlockResource, EMItemBlockResource> registerResourceBlock(EMBlockResourceInfo resource) {
+        return BLOCKS.registerDefaultProperties("block_" + resource.getRegistrySuffix(), () -> new EMBlockResource(resource), (block, properties) -> {
+            if (!block.getResourceInfo().burnsInFire()) {
+                properties = properties.fireResistant();
+            }
+            return new EMItemBlockResource(block, properties);
+        });
     }
 }
