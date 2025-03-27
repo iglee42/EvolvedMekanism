@@ -151,5 +151,7 @@
     "item.evolvedmekanism.nugget_plaslitherite": "P\u00e9pite de plaslitherite",
     "item.evolvedmekanism.dust_better_gold": "Poudre d'or am\u00e9lior\u00e9",
     "item.evolvedmekanism.dust_plaslitherite": "Poudre de plaslitherite",
-    "infuse_type.evolvedmekanism.uranium": "Uranium"
+    "infuse_type.evolvedmekanism.uranium": "Uranium",
+    "infuse_type.evolvedmekanism.better_gold": "Or am\u00e9lior\u00e9",
+    "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite"
 }
