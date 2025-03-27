@@ -7,6 +7,7 @@ import mekanism.api.text.TextComponentUtil;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.item.ItemAlloy;
+import mekanism.common.item.ItemRefinedGlowstoneIngot;
 import mekanism.common.item.ItemTierInstaller;
 import mekanism.common.registration.impl.ItemDeferredRegister;
 import mekanism.common.registration.impl.ItemRegistryObject;
@@ -40,7 +41,17 @@ public class EMItems {
     public static final ItemRegistryObject<ItemAlloy> EXOVERSAL_ALLOY = registerAlloy(EMAlloyTier.EXOVERSAL);
 
     public static final ItemRegistryObject<Item> ENRICHED_URANIUM = registerResource(ResourceType.ENRICHED, PrimaryResource.URANIUM);
-    public static final ItemRegistryObject<Item> ENRICHED_BETTER_GOLD = ITEMS.register("enriched_better_gold");
+    public static final ItemRegistryObject<Item> ENRICHED_BETTER_GOLD = registerResource(ResourceType.ENRICHED,EMResources.BETTER_GOLD);
+    public static final ItemRegistryObject<Item> ENRICHED_PLASLITHERITE = registerUnburnableResource(ResourceType.ENRICHED,EMResources.PLASLITHERITE);
+
+    public static final ItemRegistryObject<Item> BETTER_GOLD_DUST = registerResource(ResourceType.DUST, EMResources.BETTER_GOLD);
+    public static final ItemRegistryObject<Item> PLASLITHERITE_DUST = registerUnburnableResource(ResourceType.DUST, EMResources.PLASLITHERITE);
+
+    public static final ItemRegistryObject<Item> BETTER_GOLD_INGOT = registerResource(ResourceType.INGOT, EMResources.BETTER_GOLD);
+    public static final ItemRegistryObject<Item> PLASLITHERITE_INGOT = registerUnburnableResource(ResourceType.INGOT, EMResources.PLASLITHERITE);
+
+    public static final ItemRegistryObject<Item> BETTER_GOLD_NUGGET = registerResource(ResourceType.NUGGET, EMResources.BETTER_GOLD);
+    public static final ItemRegistryObject<Item> PLASLITHERITE_NUGGET = registerUnburnableResource(ResourceType.NUGGET, EMResources.PLASLITHERITE);
 
 
     private static ItemRegistryObject<Item> registerCircuit(BaseTier tier) {
@@ -69,5 +80,8 @@ public class EMItems {
 
     private static ItemRegistryObject<Item> registerResource(ResourceType type, IResource resource) {
         return ITEMS.register(type.getRegistryPrefix() + "_" + resource.getRegistrySuffix());
+    }
+    private static ItemRegistryObject<Item> registerUnburnableResource(ResourceType type, IResource resource) {
+        return ITEMS.registerUnburnable(type.getRegistryPrefix() + "_" + resource.getRegistrySuffix());
     }
 }
