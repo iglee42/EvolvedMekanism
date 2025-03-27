@@ -80,6 +80,8 @@
     "block.evolvedmekanism.multiversal_smelting_factory": "Multiversal Smelting Factory",
     "block.evolvedmekanism.multiversal_thermodynamic_conductor": "Multiversal Thermodynamic Conductor",
     "block.evolvedmekanism.multiversal_universal_cable": "Multiversal Universal Cable",
+    "block.evolvedmekanism.block_better_gold": "Better Gold Block",
+    "block.evolvedmekanism.block_plaslitherite": "Plaslitherite Block",
     "container.evolvedmekanism.overclocked_chemical_tank": "Overclocked Chemical Tank",
     "container.evolvedmekanism.overclocked_combining_factory": "Overclocked Combining Factory",
     "container.evolvedmekanism.overclocked_compressing_factory": "Overclocked Compressing Factory",
@@ -140,7 +142,14 @@
     "item.evolvedmekanism.quantum_tier_installer": "Quantum Tier Installer",
     "item.evolvedmekanism.dense_tier_installer": "Dense Tier Installer",
     "item.evolvedmekanism.multiversal_tier_installer": "Multiversal Tier Installer",
-    "infuse_type.evolvedmekanism.uranium": "Uranium",
     "item.evolvedmekanism.enriched_uranium": "Enriched Uranium",
-    "item.evolvedmekanism.enriched_better_gold": "Enriched Better Gold"
+    "item.evolvedmekanism.enriched_better_gold": "Enriched Better Gold",
+    "item.evolvedmekanism.enriched_plaslitherite": "Enriched Plaslitherite",
+    "item.evolvedmekanism.ingot_better_gold": "Better Gold Ingot",
+    "item.evolvedmekanism.ingot_plaslitherite": "Plaslitherite Ingot",
+    "item.evolvedmekanism.nugget_better_gold": "Better Gold Nugget",
+    "item.evolvedmekanism.nugget_plaslitherite": "Plaslitherite Nugget",
+    "item.evolvedmekanism.dust_better_gold": "Better Gold Dust",
+    "item.evolvedmekanism.dust_plaslitherite": "Plaslitherite Dust",
+    "infuse_type.evolvedmekanism.uranium": "Uranium"
 }
