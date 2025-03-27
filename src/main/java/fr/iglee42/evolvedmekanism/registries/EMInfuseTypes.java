@@ -11,5 +11,5 @@ public class EMInfuseTypes {
 
     public static final InfuseTypeRegistryObject<InfuseType> URANIUM = INFUSE_TYPES.register("uranium",0x9BE199);
     public static final InfuseTypeRegistryObject<InfuseType> BETTER_GOLD = INFUSE_TYPES.register("better_gold",EvolvedMekanism.rl("infuse_type/better_gold"),0xF9C918);
-    public static final InfuseTypeRegistryObject<InfuseType> PLASLITHERITE = INFUSE_TYPES.register("plaslitherite",EvolvedMekanism.rl("infuse_type/plaslitherite"),0xF9C918);
+    public static final InfuseTypeRegistryObject<InfuseType> PLASLITHERITE = INFUSE_TYPES.register("plaslitherite",EvolvedMekanism.rl("infuse_type/plaslitherite"),0x666667);
 }
