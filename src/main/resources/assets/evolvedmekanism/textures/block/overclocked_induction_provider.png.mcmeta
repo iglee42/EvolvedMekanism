@@ -30,7 +30,7 @@
                     "block": "evolvedmekanism:dense_induction_cell"
                 },
                 {
-                    "block": "evolvedmekanism:ultimate_induction_cell"
+                    "block": "evolvedmekanism:multiversal_induction_cell"
                 },
                 {
                     "block": "mekanism:basic_induction_provider"
@@ -54,7 +54,7 @@
                     "block": "evolvedmekanism:dense_induction_provider"
                 },
                 {
-                    "block": "evolvedmekanism:ultimate_induction_provider"
+                    "block": "evolvedmekanism:multiversal_induction_provider"
                 }
 
             ],
