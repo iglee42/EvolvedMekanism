@@ -13,6 +13,8 @@
         "evolvedmekanism:dense_personal_barrel",
         "evolvedmekanism:dense_personal_chest",
         "evolvedmekanism:multiversal_personal_barrel",
-        "evolvedmekanism:multiversal_personal_chest"
+        "evolvedmekanism:multiversal_personal_chest",
+        "evolvedmekanism:creative_personal_barrel",
+        "evolvedmekanism:creative_personal_chest"
     ]
 }

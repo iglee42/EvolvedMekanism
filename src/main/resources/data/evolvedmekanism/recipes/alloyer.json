@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/basic"
+        },
+        "C": {
+            "tag": "forge:circuits/advanced"
+        },
+        "S": {
+            "item": "mekanism:energized_smelter"
+        },
+        "X": {
+            "item": "mekanism:steel_casing"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "SXS",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:alloyer"
+    }
+}

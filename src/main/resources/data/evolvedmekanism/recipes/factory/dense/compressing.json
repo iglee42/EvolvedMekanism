@@ -8,7 +8,7 @@
             "tag": "forge:circuits/dense"
         },
         "I": {
-            "tag": "forge:gems/diamond"
+            "tag": "forge:ingots/bronze"
         },
         "P": {
             "item": "evolvedmekanism:quantum_compressing_factory"
