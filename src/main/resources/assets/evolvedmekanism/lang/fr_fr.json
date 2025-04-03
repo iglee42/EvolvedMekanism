@@ -1,5 +1,7 @@
 {
     "constants.evolvedmekanism.mod_name": "Evolved Mekanism",
+    "advancements.evolvedmekanism.apt.description": "Cette chose ne semble pas s\u00fbre du tout",
+    "advancements.evolvedmekanism.apt.title": "Transmutation protomol\u00e9culaire \u00e0 antimati\u00e8re?",
     "block.evolvedmekanism.alloyer": "Alliageur",
     "block.evolvedmekanism.basic_alloying_factory": "Usine d'alliage basique",
     "block.evolvedmekanism.advanced_alloying_factory": "Usine d'alliage avanc\u00e9",
@@ -124,6 +126,8 @@
     "block.evolvedmekanism.creative_personal_chest": "Coffre personnel cr\u00e2atif",
     "block.evolvedmekanism.block_better_gold": "Bloc d'or am\u00e9lior\u00e9",
     "block.evolvedmekanism.block_plaslitherite": "Block de plaslitherite",
+    "block.evolvedmekanism.apt_casing": "Structure du TPA",
+    "block.evolvedmekanism.apt_port": "Port du TPA",
     "container.evolvedmekanism.alloyer": "Alliageur",
     "container.evolvedmekanism.basic_alloying_factory": "Usine d'alliage basique",
     "container.evolvedmekanism.advanced_alloying_factory": "Usine d'alliage avanc\u00e9",
@@ -239,6 +243,10 @@
     "item.evolvedmekanism.qio_drive_singularity": " Disque OQO Singularit\u00e9",
     "item.evolvedmekanism.qio_drive_hypra_solidified": "Disque OQO Hypra solidifi\u00e9",
     "item.evolvedmekanism.qio_drive_black_hole": "Disque OQO du Trou noir",
+    "apt.evolvedmekanism.energy_input": "Entr\u00e9e d'\u00e9nergie: %1$s/t",
+    "apt.evolvedmekanism.invalid_disconnected_coil": "Formation impossible: Bobine sans connexion a un port TPA d\u00e9tect\u00e9e.",
+    "apt.evolvedmekanism.port_mode": "Basculer le mode du port TPA sur: %1$s.",
+    "apt.evolvedmekanism.apt": "Transmutateur protomol\u00e9culaire \u00e0 antimati\u00e8re",
     "infuse_type.evolvedmekanism.uranium": "Uranium",
     "infuse_type.evolvedmekanism.better_gold": "Or am\u00e9lior\u00e9",
     "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite"

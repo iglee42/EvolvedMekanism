@@ -1,0 +1,23 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "type": "CTM",
+        "layer": "SOLID",
+        "textures": [
+            "evolvedmekanism:ctm/apt_casing"
+        ],
+        "extra": {
+            "connect_to": [
+                {
+                    "block": "evolvedmekanism:apt_casing"
+                },
+                {
+                    "block": "evolvedmekanism:apt_port"
+                },
+                {
+                    "block": "evolvedmekanism:apt_port_output"
+                }
+            ]
+        }
+    }
+}

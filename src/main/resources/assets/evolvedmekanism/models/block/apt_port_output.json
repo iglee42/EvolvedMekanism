@@ -1,0 +1,7 @@
+{
+    "parent": "mekanism:block/template/cube_all_led",
+    "textures": {
+        "all": "evolvedmekanism:block/apt_port_output",
+        "led": "evolvedmekanism:block/apt_port_output_led"
+    }
+}

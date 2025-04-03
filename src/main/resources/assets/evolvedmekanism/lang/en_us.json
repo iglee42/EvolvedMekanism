@@ -1,5 +1,7 @@
 {
     "constants.evolvedmekanism.mod_name": "Evolved Mekanism",
+    "advancements.evolvedmekanism.apt.description": "This thing doesn't seem safe at all",
+    "advancements.evolvedmekanism.apt.title": "Antimatter Protomolecular Transmutation?",
     "block.evolvedmekanism.alloyer": "Alloyer",
     "block.evolvedmekanism.basic_alloying_factory": "Basic Alloying Factory",
     "block.evolvedmekanism.advanced_alloying_factory": "Advanced Alloying Factory",
@@ -124,6 +126,8 @@
     "block.evolvedmekanism.creative_personal_chest": "Creative Personal Chest",
     "block.evolvedmekanism.block_better_gold": "Better Gold Block",
     "block.evolvedmekanism.block_plaslitherite": "Plaslitherite Block",
+    "block.evolvedmekanism.apt_casing": "APT Casing",
+    "block.evolvedmekanism.apt_port": "APT Port",
     "container.evolvedmekanism.alloyer": "Alloyer",
     "container.evolvedmekanism.basic_alloying_factory": "Basic Alloying Factory",
     "container.evolvedmekanism.advanced_alloying_factory": "Advanced Alloying Factory",
@@ -234,5 +238,9 @@
     "item.evolvedmekanism.qio_drive_black_hole": "Black-Hole QIO Drive",
     "infuse_type.evolvedmekanism.uranium": "Uranium",
     "infuse_type.evolvedmekanism.better_gold": "Better Gold",
-    "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite"
+    "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite",
+    "apt.evolvedmekanism.energy_input": "Energy Input: %1$s/t",
+    "apt.evolvedmekanism.invalid_disconnected_coil": "Couldn't form, found a coil without a connection to an APT Port.",
+    "apt.evolvedmekanism.port_mode": "Toggled APT Port mode to: %1$s.",
+    "apt.evolvedmekanism.apt": "Antimatter Protomolecular Transmutator"
 }
