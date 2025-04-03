@@ -1,0 +1,6 @@
+{
+    "parent": "evolvedmekanism:block/personal_barrel/advanced",
+    "textures": {
+        "top": "evolvedmekanism:block/personal_barrel/advanced/top_open"
+    }
+}

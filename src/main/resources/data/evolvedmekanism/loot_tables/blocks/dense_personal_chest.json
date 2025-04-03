@@ -1,0 +1,42 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:copy_name",
+                            "source": "block_entity"
+                        },
+                        {
+                            "function": "minecraft:copy_nbt",
+                            "ops": [
+                                {
+                                    "op": "replace",
+                                    "source": "componentSecurity.owner",
+                                    "target": "mekData.owner"
+                                },
+                                {
+                                    "op": "replace",
+                                    "source": "componentSecurity.securityMode",
+                                    "target": "mekData.securityMode"
+                                }
+                            ],
+                            "source": "block_entity"
+                        },
+                        {
+                            "function": "mekanism:personal_storage_contents"
+                        }
+                    ],
+                    "name": "evolvedmekanism:dense_personal_chest"
+                }
+            ],
+            "name": "main",
+            "rolls": 1.0
+        }
+    ],
+    "random_sequence": "evolvedmekanism:blocks/dense_personal_chest"
+}

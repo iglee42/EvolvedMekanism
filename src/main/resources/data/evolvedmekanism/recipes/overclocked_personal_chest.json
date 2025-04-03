@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "C": {
+            "tag": "forge:circuits/overclocked"
+        },
+        "G": {
+            "tag": "forge:glass/silica"
+        },
+        "P": {
+            "item": "evolvedmekanism:ultimate_personal_chest"
+        },
+        "S": {
+            "tag": "forge:ingots/steel"
+        }
+    },
+    "pattern": [
+        "SGS",
+        "PCP",
+        "SSS"
+    ],
+    "result": {
+        "item": "evolvedmekanism:overclocked_personal_chest"
+    }
+}

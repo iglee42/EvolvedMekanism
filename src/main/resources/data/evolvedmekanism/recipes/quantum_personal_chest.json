@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "C": {
+            "tag": "forge:circuits/quantum"
+        },
+        "G": {
+            "tag": "forge:glass/silica"
+        },
+        "P": {
+            "item": "evolvedmekanism:overclocked_personal_chest"
+        },
+        "S": {
+            "tag": "forge:ingots/steel"
+        }
+    },
+    "pattern": [
+        "SGS",
+        "PCP",
+        "SSS"
+    ],
+    "result": {
+        "item": "evolvedmekanism:quantum_personal_chest"
+    }
+}

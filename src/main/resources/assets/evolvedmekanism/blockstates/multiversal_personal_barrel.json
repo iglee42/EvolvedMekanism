@@ -1,0 +1,56 @@
+{
+    "variants": {
+        "facing=down,open=false": {
+            "model": "evolvedmekanism:block/personal_barrel/multiversal",
+            "x": 180
+        },
+        "facing=down,open=true": {
+            "model": "evolvedmekanism:block/personal_barrel_open/multiversal",
+            "x": 180
+        },
+        "facing=east,open=false": {
+            "model": "evolvedmekanism:block/personal_barrel/multiversal",
+            "x": 90,
+            "y": 90
+        },
+        "facing=east,open=true": {
+            "model": "evolvedmekanism:block/personal_barrel_open/multiversal",
+            "x": 90,
+            "y": 90
+        },
+        "facing=north,open=false": {
+            "model": "evolvedmekanism:block/personal_barrel/multiversal",
+            "x": 90
+        },
+        "facing=north,open=true": {
+            "model": "evolvedmekanism:block/personal_barrel_open/multiversal",
+            "x": 90
+        },
+        "facing=south,open=false": {
+            "model": "evolvedmekanism:block/personal_barrel/multiversal",
+            "x": 90,
+            "y": 180
+        },
+        "facing=south,open=true": {
+            "model": "evolvedmekanism:block/personal_barrel_open/multiversal",
+            "x": 90,
+            "y": 180
+        },
+        "facing=up,open=false": {
+            "model": "evolvedmekanism:block/personal_barrel/multiversal"
+        },
+        "facing=up,open=true": {
+            "model": "evolvedmekanism:block/personal_barrel_open/multiversal"
+        },
+        "facing=west,open=false": {
+            "model": "evolvedmekanism:block/personal_barrel/multiversal",
+            "x": 90,
+            "y": 270
+        },
+        "facing=west,open=true": {
+            "model": "evolvedmekanism:block/personal_barrel_open/multiversal",
+            "x": 90,
+            "y": 270
+        }
+    }
+}

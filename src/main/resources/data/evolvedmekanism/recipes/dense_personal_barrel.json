@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "C": {
+            "tag": "forge:circuits/dense"
+        },
+        "G": {
+            "tag": "forge:glass/silica"
+        },
+        "P": {
+            "item": "evolvedmekanism:quantum_personal_barrel"
+        },
+        "S": {
+            "tag": "forge:ingots/steel"
+        }
+    },
+    "pattern": [
+        "SGS",
+        "PCP",
+        "SSS"
+    ],
+    "result": {
+        "item": "evolvedmekanism:dense_personal_barrel"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "evolvedmekanism:block/personal_chest/quantum"
+        },
+        "facing=south": {
+            "model": "evolvedmekanism:block/personal_chest/quantum",
+            "y": 180
+        },
+        "facing=east": {
+            "model": "evolvedmekanism:block/personal_chest/quantum",
+            "y": 90
+        },
+        "facing=west": {
+            "model": "evolvedmekanism:block/personal_chest/quantum",
+            "y": -90
+        }
+    }
+}

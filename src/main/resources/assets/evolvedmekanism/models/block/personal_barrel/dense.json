@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/cube_bottom_top",
+    "textures": {
+        "bottom": "mekanism:block/personal_barrel/bottom",
+        "side": "evolvedmekanism:block/personal_barrel/dense/side",
+        "top": "evolvedmekanism:block/personal_barrel/dense/top"
+    }
+}

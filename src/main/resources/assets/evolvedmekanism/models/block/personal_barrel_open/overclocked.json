@@ -1,0 +1,6 @@
+{
+    "parent": "evolvedmekanism:block/personal_barrel/overclocked",
+    "textures": {
+        "top": "evolvedmekanism:block/personal_barrel/overclocked/top_open"
+    }
+}
