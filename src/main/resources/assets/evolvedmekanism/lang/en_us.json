@@ -151,6 +151,10 @@
     "item.evolvedmekanism.nugget_plaslitherite": "Plaslitherite Nugget",
     "item.evolvedmekanism.dust_better_gold": "Better Gold Dust",
     "item.evolvedmekanism.dust_plaslitherite": "Plaslitherite Dust",
+    "item.evolvedmekanism.qio_drive_boosted": "Boosted QIO Drive",
+    "item.evolvedmekanism.qio_drive_singularity": "Singularity QIO Drive",
+    "item.evolvedmekanism.qio_drive_hypra_solidified": "Hypra-Solidified QIO Drive",
+    "item.evolvedmekanism.qio_drive_black_hole": "Black-Hole QIO Drive",
     "infuse_type.evolvedmekanism.uranium": "Uranium",
     "infuse_type.evolvedmekanism.better_gold": "Better Gold",
     "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite"
