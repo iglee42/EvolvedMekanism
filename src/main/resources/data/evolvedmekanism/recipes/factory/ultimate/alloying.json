@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/atomic"
+        },
+        "C": {
+            "tag": "forge:circuits/ultimate"
+        },
+        "I": {
+            "tag": "forge:gems/diamond"
+        },
+        "P": {
+            "item": "evolvedmekanism:elite_alloying_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:ultimate_alloying_factory"
+    }
+}

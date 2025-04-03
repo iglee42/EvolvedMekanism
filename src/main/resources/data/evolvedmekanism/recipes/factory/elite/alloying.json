@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/reinforced"
+        },
+        "C": {
+            "tag": "forge:circuits/elite"
+        },
+        "I": {
+            "tag": "forge:ingots/gold"
+        },
+        "P": {
+            "item": "evolvedmekanism:advanced_alloying_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:elite_alloying_factory"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/atomic"
+        },
+        "C": {
+            "tag": "forge:circuits/multiversal"
+        },
+        "I": {
+            "tag": "forge:ingots/netherite"
+        },
+        "P": {
+            "item": "evolvedmekanism:dense_alloying_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:multiversal_alloying_factory"
+    }
+}

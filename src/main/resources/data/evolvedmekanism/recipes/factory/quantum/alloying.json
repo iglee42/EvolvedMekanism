@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/atomic"
+        },
+        "C": {
+            "tag": "forge:circuits/quantum"
+        },
+        "I": {
+            "tag": "forge:ingots/tin"
+        },
+        "P": {
+            "item": "evolvedmekanism:overclocked_alloying_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:quantum_alloying_factory"
+    }
+}
