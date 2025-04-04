@@ -16,6 +16,7 @@
     "blocks.BlockThermodynamicConductorMixin",
     "blocks.BlockUniversalCableMixin",
     "client.TransmitterTypeDecoratorMixin",
+    "containers.FactoryContainerMixin",
     "tiers.AlloyTierMixin",
     "tiers.BaseTierMixin",
     "tiers.FactoryTierMixin",

@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiles.factories;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import mekanism.api.IContentsListener;
 import mekanism.api.inventory.IInventorySlot;
 import mekanism.api.providers.IBlockProvider;
@@ -50,7 +51,10 @@ public class TileEntityCombiningFactoryMixin extends TileEntityItemToItemFactory
     private void evolvedmekanism$moveSlot(InventorySlotHelper builder, IContentsListener listener, IContentsListener updateSortingListener, CallbackInfo ci){
         TileEntityCombiningFactory be = (TileEntityCombiningFactory) ((Object)this);
         if (EvolvedMekanism.isEvolvedMekanismTier(be.tier.getBaseTier())){
-            builder.addSlot(extraSlot = InputInventorySlot.at(be::containsRecipeB, markAllMonitorsChanged(listener), 192, 143));
+            int imageWidth = 176 +(38 *( be.tier.ordinal() - EMFactoryTier.OVERCLOCKED.ordinal() + 1)) + 9;
+            int inventorySize = 9 * 20;
+            int endInventory = (imageWidth / 2 + inventorySize / 2) - 10;
+            builder.addSlot(extraSlot = InputInventorySlot.at(be::containsRecipeB, markAllMonitorsChanged(listener), endInventory + 4, 143));
             extraSlot.setSlotType(ContainerSlotType.EXTRA);
             ci.cancel();
         }
