@@ -31,6 +31,7 @@
     "tiers.storage.FluidTankTierMixin",
     "tiers.storage.InductionCellTierMixin",
     "tiers.storage.InductionProviderTierMixin",
+    "tiers.storage.QIODriveTierMixin",
     "tiles.TileEntityFactoryMixin",
     "tiles.TileEntityItemStackGasToItemStackFactoryMixin",
     "tiles.TileEntityItemToItemFactoryMixin",
