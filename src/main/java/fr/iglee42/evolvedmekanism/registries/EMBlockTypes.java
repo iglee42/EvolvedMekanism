@@ -1,6 +1,9 @@
 package fr.iglee42.evolvedmekanism.registries;
 
+import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.tiers.storage.*;
+import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
+import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import mekanism.common.MekanismLang;
 import mekanism.common.block.attribute.*;
 import mekanism.common.block.attribute.Attributes.AttributeRedstone;
@@ -14,10 +17,7 @@ import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.registries.MekanismContainerTypes;
 import mekanism.common.tier.*;
-import mekanism.common.tile.TileEntityBin;
-import mekanism.common.tile.TileEntityChemicalTank;
-import mekanism.common.tile.TileEntityEnergyCube;
-import mekanism.common.tile.TileEntityFluidTank;
+import mekanism.common.tile.*;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -31,41 +31,75 @@ public class EMBlockTypes {
 
 
     // Induction Cells
-   public static final BlockTypeTile<TileEntityInductionCell> OVERCLOCKED_INDUCTION_CELL = createInductionCell(EMInductionCellTier.OVERCLOCKED, () -> EMBlockEntityTypes.OVERCLOCKED_INDUCTION_CELL);
-   public static final BlockTypeTile<TileEntityInductionCell> QUANTUM_INDUCTION_CELL = createInductionCell(EMInductionCellTier.QUANTUM, () -> EMBlockEntityTypes.QUANTUM_INDUCTION_CELL);
-   public static final BlockTypeTile<TileEntityInductionCell> DENSE_INDUCTION_CELL = createInductionCell(EMInductionCellTier.DENSE, () -> EMBlockEntityTypes.DENSE_INDUCTION_CELL);
-   public static final BlockTypeTile<TileEntityInductionCell> MULTIVERSAL_INDUCTION_CELL = createInductionCell(EMInductionCellTier.MULTIVERSAL, () -> EMBlockEntityTypes.MULTIVERSAL_INDUCTION_CELL);
+   public static final BlockTypeTile<TileEntityInductionCell> OVERCLOCKED_INDUCTION_CELL = createInductionCell(EMInductionCellTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_INDUCTION_CELL);
+   public static final BlockTypeTile<TileEntityInductionCell> QUANTUM_INDUCTION_CELL = createInductionCell(EMInductionCellTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_INDUCTION_CELL);
+   public static final BlockTypeTile<TileEntityInductionCell> DENSE_INDUCTION_CELL = createInductionCell(EMInductionCellTier.DENSE, () -> EMTileEntityTypes.DENSE_INDUCTION_CELL);
+   public static final BlockTypeTile<TileEntityInductionCell> MULTIVERSAL_INDUCTION_CELL = createInductionCell(EMInductionCellTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_INDUCTION_CELL);
 
     // Induction Provider
-   public static final BlockTypeTile<TileEntityInductionProvider> OVERCLOCKED_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.OVERCLOCKED, () -> EMBlockEntityTypes.OVERCLOCKED_INDUCTION_PROVIDER);
-   public static final BlockTypeTile<TileEntityInductionProvider> QUANTUM_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.QUANTUM, () -> EMBlockEntityTypes.QUANTUM_INDUCTION_PROVIDER);
-   public static final BlockTypeTile<TileEntityInductionProvider> DENSE_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.DENSE, () -> EMBlockEntityTypes.DENSE_INDUCTION_PROVIDER);
-   public static final BlockTypeTile<TileEntityInductionProvider> MULTIVERSAL_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.MULTIVERSAL, () -> EMBlockEntityTypes.MULTIVERSAL_INDUCTION_PROVIDER);
+   public static final BlockTypeTile<TileEntityInductionProvider> OVERCLOCKED_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_INDUCTION_PROVIDER);
+   public static final BlockTypeTile<TileEntityInductionProvider> QUANTUM_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_INDUCTION_PROVIDER);
+   public static final BlockTypeTile<TileEntityInductionProvider> DENSE_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.DENSE, () -> EMTileEntityTypes.DENSE_INDUCTION_PROVIDER);
+   public static final BlockTypeTile<TileEntityInductionProvider> MULTIVERSAL_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_INDUCTION_PROVIDER);
 
     // Bins
-    public static final Machine<TileEntityBin> OVERCLOCKED_BIN = createBin(EMBinTier.OVERCLOCKED, () -> EMBlockEntityTypes.OVERCLOCKED_BIN, () -> EMBlocks.QUANTUM_BIN);
-    public static final Machine<TileEntityBin> QUANTUM_BIN = createBin(EMBinTier.QUANTUM, () -> EMBlockEntityTypes.QUANTUM_BIN, () -> EMBlocks.DENSE_BIN);
-    public static final Machine<TileEntityBin> DENSE_BIN = createBin(EMBinTier.DENSE, () -> EMBlockEntityTypes.DENSE_BIN, () -> EMBlocks.MULTIVERSAL_BIN);
-    public static final Machine<TileEntityBin> MULTIVERSAL_BIN = createBin(EMBinTier.MULTIVERSAL, () -> EMBlockEntityTypes.MULTIVERSAL_BIN, null);
+    public static final Machine<TileEntityBin> OVERCLOCKED_BIN = createBin(EMBinTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_BIN, () -> EMBlocks.QUANTUM_BIN);
+    public static final Machine<TileEntityBin> QUANTUM_BIN = createBin(EMBinTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_BIN, () -> EMBlocks.DENSE_BIN);
+    public static final Machine<TileEntityBin> DENSE_BIN = createBin(EMBinTier.DENSE, () -> EMTileEntityTypes.DENSE_BIN, () -> EMBlocks.MULTIVERSAL_BIN);
+    public static final Machine<TileEntityBin> MULTIVERSAL_BIN = createBin(EMBinTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_BIN, null);
 
     // Energy Cubes
-    public static final Machine<TileEntityEnergyCube> OVERCLOCKED_ENERGY_CUBE = createEnergyCube(EMEnergyCubeTier.OVERCLOCKED, () -> EMBlockEntityTypes.OVERCLOCKED_ENERGY_CUBE, () -> EMBlocks.QUANTUM_ENERGY_CUBE);
-    public static final Machine<TileEntityEnergyCube> QUANTUM_ENERGY_CUBE = createEnergyCube(EMEnergyCubeTier.QUANTUM, () -> EMBlockEntityTypes.QUANTUM_ENERGY_CUBE, () -> EMBlocks.DENSE_ENERGY_CUBE);
-    public static final Machine<TileEntityEnergyCube> DENSE_ENERGY_CUBE = createEnergyCube(EMEnergyCubeTier.DENSE, () -> EMBlockEntityTypes.DENSE_ENERGY_CUBE, () -> EMBlocks.MULTIVERSAL_ENERGY_CUBE);
-    public static final Machine<TileEntityEnergyCube> MULTIVERSAL_ENERGY_CUBE = createEnergyCube(EMEnergyCubeTier.MULTIVERSAL, () -> EMBlockEntityTypes.MULTIVERSAL_ENERGY_CUBE, null);
+    public static final Machine<TileEntityEnergyCube> OVERCLOCKED_ENERGY_CUBE = createEnergyCube(EMEnergyCubeTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_ENERGY_CUBE, () -> EMBlocks.QUANTUM_ENERGY_CUBE);
+    public static final Machine<TileEntityEnergyCube> QUANTUM_ENERGY_CUBE = createEnergyCube(EMEnergyCubeTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_ENERGY_CUBE, () -> EMBlocks.DENSE_ENERGY_CUBE);
+    public static final Machine<TileEntityEnergyCube> DENSE_ENERGY_CUBE = createEnergyCube(EMEnergyCubeTier.DENSE, () -> EMTileEntityTypes.DENSE_ENERGY_CUBE, () -> EMBlocks.MULTIVERSAL_ENERGY_CUBE);
+    public static final Machine<TileEntityEnergyCube> MULTIVERSAL_ENERGY_CUBE = createEnergyCube(EMEnergyCubeTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_ENERGY_CUBE, null);
 
     // Fluid Tanks
-    public static final Machine<TileEntityFluidTank> OVERCLOCKED_FLUID_TANK = createFluidTank(EMFluidTankTier.OVERCLOCKED, () -> EMBlockEntityTypes.OVERCLOCKED_FLUID_TANK, () -> EMBlocks.QUANTUM_FLUID_TANK);
-    public static final Machine<TileEntityFluidTank> QUANTUM_FLUID_TANK = createFluidTank(EMFluidTankTier.QUANTUM, () -> EMBlockEntityTypes.QUANTUM_FLUID_TANK, () -> EMBlocks.DENSE_FLUID_TANK);
-    public static final Machine<TileEntityFluidTank> DENSE_FLUID_TANK = createFluidTank(EMFluidTankTier.DENSE, () -> EMBlockEntityTypes.DENSE_FLUID_TANK, () -> EMBlocks.MULTIVERSAL_FLUID_TANK);
-    public static final Machine<TileEntityFluidTank> MULTIVERSAL_FLUID_TANK = createFluidTank(EMFluidTankTier.MULTIVERSAL, () -> EMBlockEntityTypes.MULTIVERSAL_FLUID_TANK, null);
+    public static final Machine<TileEntityFluidTank> OVERCLOCKED_FLUID_TANK = createFluidTank(EMFluidTankTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_FLUID_TANK, () -> EMBlocks.QUANTUM_FLUID_TANK);
+    public static final Machine<TileEntityFluidTank> QUANTUM_FLUID_TANK = createFluidTank(EMFluidTankTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_FLUID_TANK, () -> EMBlocks.DENSE_FLUID_TANK);
+    public static final Machine<TileEntityFluidTank> DENSE_FLUID_TANK = createFluidTank(EMFluidTankTier.DENSE, () -> EMTileEntityTypes.DENSE_FLUID_TANK, () -> EMBlocks.MULTIVERSAL_FLUID_TANK);
+    public static final Machine<TileEntityFluidTank> MULTIVERSAL_FLUID_TANK = createFluidTank(EMFluidTankTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_FLUID_TANK, null);
 
     // Chemical Tanks
-    public static final Machine<TileEntityChemicalTank> OVERCLOCKED_CHEMICAL_TANK = createChemicalTank(EMChemicalTankTier.OVERCLOCKED, () -> EMBlockEntityTypes.OVERCLOCKED_CHEMICAL_TANK, () -> EMBlocks.QUANTUM_CHEMICAL_TANK);
-    public static final Machine<TileEntityChemicalTank> QUANTUM_CHEMICAL_TANK = createChemicalTank(EMChemicalTankTier.QUANTUM, () -> EMBlockEntityTypes.QUANTUM_CHEMICAL_TANK, () -> EMBlocks.DENSE_CHEMICAL_TANK);
-    public static final Machine<TileEntityChemicalTank> DENSE_CHEMICAL_TANK = createChemicalTank(EMChemicalTankTier.DENSE, () -> EMBlockEntityTypes.DENSE_CHEMICAL_TANK, () -> EMBlocks.MULTIVERSAL_CHEMICAL_TANK);
-    public static final Machine<TileEntityChemicalTank> MULTIVERSAL_CHEMICAL_TANK = createChemicalTank(EMChemicalTankTier.MULTIVERSAL, () -> EMBlockEntityTypes.MULTIVERSAL_CHEMICAL_TANK, null);
+    public static final Machine<TileEntityChemicalTank> OVERCLOCKED_CHEMICAL_TANK = createChemicalTank(EMChemicalTankTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_CHEMICAL_TANK, () -> EMBlocks.QUANTUM_CHEMICAL_TANK);
+    public static final Machine<TileEntityChemicalTank> QUANTUM_CHEMICAL_TANK = createChemicalTank(EMChemicalTankTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_CHEMICAL_TANK, () -> EMBlocks.DENSE_CHEMICAL_TANK);
+    public static final Machine<TileEntityChemicalTank> DENSE_CHEMICAL_TANK = createChemicalTank(EMChemicalTankTier.DENSE, () -> EMTileEntityTypes.DENSE_CHEMICAL_TANK, () -> EMBlocks.MULTIVERSAL_CHEMICAL_TANK);
+    public static final Machine<TileEntityChemicalTank> MULTIVERSAL_CHEMICAL_TANK = createChemicalTank(EMChemicalTankTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_CHEMICAL_TANK, null);
 
+    // Personal Barrels
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> ADVANCED_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.ADVANCED_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> ELITE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.ELITE_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> ULTIMATE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.ULTIMATE_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> OVERCLOCKED_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.OVERCLOCKED_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> QUANTUM_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.QUANTUM_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> DENSE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.DENSE_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> MULTIVERSAL_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_BARREL);
+
+    // Personal Chests
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> ADVANCED_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ADVANCED_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> ELITE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ELITE_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> ULTIMATE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ULTIMATE_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> OVERCLOCKED_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.OVERCLOCKED_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> QUANTUM_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.QUANTUM_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> DENSE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.DENSE_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> MULTIVERSAL_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_CHEST);
+
+    private static BlockTypeTile<TileEntityTieredPersonalBarrel> createPersonalBarrel(Supplier<TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel>> teType){
+        return BlockTileBuilder
+                .createBlock(teType, MekanismLang.DESCRIPTION_PERSONAL_BARREL)
+                .withGui(() -> EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK)
+                .with(Attributes.SECURITY, BlockTieredPersonalStorage.TIERED_PERSONAL_STORAGE_INVENTORY, AttributeStateOpen.INSTANCE, new AttributeStateFacing(BlockStateProperties.FACING), new Attributes.AttributeCustomResistance(-1))
+                .withComputerSupport("personalBarrel")
+                .build();
+    }
+    private static BlockTypeTile<TileEntityTieredPersonalChest> createPersonalChest(Supplier<TileEntityTypeRegistryObject<TileEntityTieredPersonalChest>> teType){
+        return  BlockTileBuilder.createBlock(teType, MekanismLang.DESCRIPTION_PERSONAL_CHEST)
+                .withGui(() -> EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK)
+                .with(Attributes.SECURITY, BlockTieredPersonalStorage.TIERED_PERSONAL_STORAGE_INVENTORY, new AttributeStateFacing(), new Attributes.AttributeCustomResistance(-1))
+                .withCustomShape(BlockShapes.PERSONAL_CHEST)
+                .withComputerSupport("personalChest")
+                .build();
+    }
 
     private static <TILE extends TileEntityInductionCell> BlockTypeTile<TILE> createInductionCell(InductionCellTier tier, Supplier<TileEntityTypeRegistryObject<TILE>> tile) {
         return BlockTileBuilder.createBlock(tile, MekanismLang.DESCRIPTION_INDUCTION_CELL)

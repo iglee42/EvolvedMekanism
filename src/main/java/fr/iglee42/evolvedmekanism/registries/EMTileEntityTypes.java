@@ -1,21 +1,24 @@
 package fr.iglee42.evolvedmekanism.registries;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
+import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
+import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
+import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalStorage;
+import mekanism.api.providers.IBlockProvider;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
-import mekanism.common.tile.TileEntityBin;
-import mekanism.common.tile.TileEntityChemicalTank;
-import mekanism.common.tile.TileEntityEnergyCube;
-import mekanism.common.tile.TileEntityFluidTank;
-import mekanism.common.tile.base.TileEntityMekanism;
+import mekanism.common.tile.*;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.transmitter.*;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
 
-public class EMBlockEntityTypes {
+public class EMTileEntityTypes {
 
     public static final TileEntityTypeDeferredRegister TILE_ENTITY_TYPES = new TileEntityTypeDeferredRegister(EvolvedMekanism.MODID);
 
@@ -77,10 +80,35 @@ public class EMBlockEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityInductionProvider> DENSE_INDUCTION_PROVIDER = TILE_ENTITY_TYPES.register(EMBlocks.DENSE_INDUCTION_PROVIDER, (pos, state) -> new TileEntityInductionProvider(EMBlocks.DENSE_INDUCTION_PROVIDER, pos, state));
     public static final TileEntityTypeRegistryObject<TileEntityInductionProvider> MULTIVERSAL_INDUCTION_PROVIDER = TILE_ENTITY_TYPES.register(EMBlocks.MULTIVERSAL_INDUCTION_PROVIDER, (pos, state) -> new TileEntityInductionProvider(EMBlocks.MULTIVERSAL_INDUCTION_PROVIDER, pos, state));
 
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel> ADVANCED_PERSONAL_BARREL = registerTieredStorage(EMBlocks.ADVANCED_PERSONAL_BARREL,PersonalStorageTier.ADVANCED, TileEntityTieredPersonalBarrel::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel> ELITE_PERSONAL_BARREL = registerTieredStorage(EMBlocks.ELITE_PERSONAL_BARREL,PersonalStorageTier.ELITE, TileEntityTieredPersonalBarrel::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel> ULTIMATE_PERSONAL_BARREL = registerTieredStorage(EMBlocks.ULTIMATE_PERSONAL_BARREL,PersonalStorageTier.ULTIMATE, TileEntityTieredPersonalBarrel::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel> OVERCLOCKED_PERSONAL_BARREL = registerTieredStorage(EMBlocks.OVERCLOCKED_PERSONAL_BARREL,PersonalStorageTier.OVERCLOCKED, TileEntityTieredPersonalBarrel::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel> QUANTUM_PERSONAL_BARREL = registerTieredStorage(EMBlocks.QUANTUM_PERSONAL_BARREL,PersonalStorageTier.QUANTUM, TileEntityTieredPersonalBarrel::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel> DENSE_PERSONAL_BARREL = registerTieredStorage(EMBlocks.DENSE_PERSONAL_BARREL,PersonalStorageTier.DENSE, TileEntityTieredPersonalBarrel::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel> MULTIVERSAL_PERSONAL_BARREL = registerTieredStorage(EMBlocks.MULTIVERSAL_PERSONAL_BARREL,PersonalStorageTier.MULTIVERSAL, TileEntityTieredPersonalBarrel::new);
+
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> ADVANCED_PERSONAL_CHEST = registerTieredStorage(EMBlocks.ADVANCED_PERSONAL_CHEST, PersonalStorageTier.ADVANCED, TileEntityTieredPersonalChest::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> ELITE_PERSONAL_CHEST = registerTieredStorage(EMBlocks.ELITE_PERSONAL_CHEST, PersonalStorageTier.ELITE, TileEntityTieredPersonalChest::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> ULTIMATE_PERSONAL_CHEST = registerTieredStorage(EMBlocks.ULTIMATE_PERSONAL_CHEST, PersonalStorageTier.ULTIMATE, TileEntityTieredPersonalChest::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> OVERCLOCKED_PERSONAL_CHEST = registerTieredStorage(EMBlocks.OVERCLOCKED_PERSONAL_CHEST, PersonalStorageTier.OVERCLOCKED, TileEntityTieredPersonalChest::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> QUANTUM_PERSONAL_CHEST = registerTieredStorage(EMBlocks.QUANTUM_PERSONAL_CHEST, PersonalStorageTier.QUANTUM, TileEntityTieredPersonalChest::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> DENSE_PERSONAL_CHEST = registerTieredStorage(EMBlocks.DENSE_PERSONAL_CHEST, PersonalStorageTier.DENSE, TileEntityTieredPersonalChest::new);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> MULTIVERSAL_PERSONAL_CHEST = registerTieredStorage(EMBlocks.MULTIVERSAL_PERSONAL_CHEST, PersonalStorageTier.MULTIVERSAL, TileEntityTieredPersonalChest::new);
 
     private static <BE extends TileEntityTransmitter> TileEntityTypeRegistryObject<BE> registerTransmitter(BlockRegistryObject<?, ?> block,
                                                                                                            BlockEntityType.BlockEntitySupplier<? extends BE> factory) {
         //Note: There is no data fixer type as forge does not currently have a way exposing data fixers to mods yet
         return TILE_ENTITY_TYPES.<BE>builder(block, factory).serverTicker(TileEntityTransmitter::tickServer).build();
+    }
+
+    private static <BE extends TileEntityTieredPersonalStorage> TileEntityTypeRegistryObject<BE> registerTieredStorage(BlockRegistryObject<?, ?> block, PersonalStorageTier tier,
+                                                                                                                       BlockEntitySupplier<? extends BE> factory){
+        return TILE_ENTITY_TYPES.register(block,(pos,state)->factory.create(block,pos,state,tier));
+    }
+
+    @FunctionalInterface
+    public interface BlockEntitySupplier<T extends BlockEntity> {
+        T create(IBlockProvider block, BlockPos pos, BlockState state, PersonalStorageTier tier);
     }
 }
