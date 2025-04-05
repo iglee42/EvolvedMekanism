@@ -1,7 +1,7 @@
 {
     "parent": "block/block",
     "textures": {
-        "all": "evolvedmekanism:block/models/personal_chest/overclocked"
+        "all": "evolvedmekanism:block/models/overclocked_personal_chest"
     },
     "elements": [
         {

@@ -1,7 +1,7 @@
 {
     "parent": "block/block",
     "textures": {
-        "all": "evolvedmekanism:block/models/personal_chest/elite"
+        "all": "evolvedmekanism:block/models/elite_personal_chest"
     },
     "elements": [
         {

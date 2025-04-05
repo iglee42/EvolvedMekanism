@@ -1,7 +1,7 @@
 {
     "parent": "block/block",
     "textures": {
-        "all": "evolvedmekanism:block/models/personal_chest/multiversal"
+        "all": "evolvedmekanism:block/models/multiversal_personal_chest"
     },
     "elements": [
         {
