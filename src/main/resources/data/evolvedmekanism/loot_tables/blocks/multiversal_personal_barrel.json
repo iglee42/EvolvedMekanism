@@ -28,7 +28,7 @@
                             "source": "block_entity"
                         },
                         {
-                            "function": "mekanism:personal_storage_contents"
+                            "function": "evolvedmekanism:tiered_personal_storage_contents"
                         }
                     ],
                     "name": "evolvedmekanism:multiversal_personal_barrel"
