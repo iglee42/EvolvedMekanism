@@ -262,5 +262,6 @@
     "apt.evolvedmekanism.energy_input": "Energy Input: %1$s/t",
     "apt.evolvedmekanism.invalid_disconnected_coil": "Couldn't form, found a coil without a connection to an APT Port.",
     "apt.evolvedmekanism.port_mode": "Toggled APT Port mode to: %1$s.",
-    "apt.evolvedmekanism.apt": "Antimatter Protomolecular Transmutator"
+    "apt.evolvedmekanism.apt": "Antimatter Protomolecular Transmutator",
+    "tiered_storage.evolvedmekanism.capacity": "Capacity: %s"
 }

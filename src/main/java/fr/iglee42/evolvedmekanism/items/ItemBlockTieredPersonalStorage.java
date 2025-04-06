@@ -1,16 +1,22 @@
 package fr.iglee42.evolvedmekanism.items;
 
+import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageItemContainer;
 import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageManager;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import mekanism.api.inventory.IInventorySlot;
+import mekanism.api.text.EnumColor;
+import mekanism.common.MekanismLang;
 import mekanism.common.item.block.ItemBlockTooltip;
 import mekanism.common.item.interfaces.IDroppableContents;
 import mekanism.common.item.interfaces.IGuiItem;
 import mekanism.common.registration.impl.ContainerTypeRegistryObject;
+import mekanism.common.tier.InductionProviderTier;
 import mekanism.common.util.SecurityUtils;
+import mekanism.common.util.text.EnergyDisplay;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -20,6 +26,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -102,5 +109,14 @@ public class ItemBlockTieredPersonalStorage<BLOCK extends BlockTieredPersonalSto
     @Override
     public PersonalStorageTier getTier() {
         return tier;
+    }
+
+    @Override
+    protected void addStats(@NotNull ItemStack stack, Level world, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+        super.addStats(stack, world, tooltip, flag);
+        PersonalStorageTier tier = getTier();
+
+        tooltip.add(EvolvedMekanismLang.TIERED_STORAGE_CAPACITY.translateColored(tier.getBaseTier().getColor(), EnumColor.GRAY, tier.columns * tier.rows + " stacks"));
+
     }
 }

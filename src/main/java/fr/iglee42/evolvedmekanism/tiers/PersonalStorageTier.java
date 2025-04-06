@@ -4,6 +4,7 @@ import mekanism.api.tier.BaseTier;
 import mekanism.api.tier.ITier;
 
 public enum PersonalStorageTier implements ITier {
+    BASIC(BaseTier.BASIC, 6),
     ADVANCED(BaseTier.ADVANCED, 7),
     ELITE(BaseTier.ELITE, 8),
     ULTIMATE(BaseTier.ULTIMATE, 9),

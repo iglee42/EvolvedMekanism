@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.registries;
 
 import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonalStorage;
+import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.*;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
@@ -67,34 +68,37 @@ public class EMBlockTypes {
     public static final Machine<TileEntityChemicalTank> MULTIVERSAL_CHEMICAL_TANK = createChemicalTank(EMChemicalTankTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_CHEMICAL_TANK, null);
 
     // Personal Barrels
-    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> ADVANCED_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.ADVANCED_PERSONAL_BARREL);
-    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> ELITE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.ELITE_PERSONAL_BARREL);
-    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> ULTIMATE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.ULTIMATE_PERSONAL_BARREL);
-    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> OVERCLOCKED_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.OVERCLOCKED_PERSONAL_BARREL);
-    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> QUANTUM_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.QUANTUM_PERSONAL_BARREL);
-    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> DENSE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.DENSE_PERSONAL_BARREL);
-    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> MULTIVERSAL_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> ADVANCED_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.ADVANCED_PERSONAL_BARREL,PersonalStorageTier.ADVANCED,()->EMBlocks.ELITE_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> ELITE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.ELITE_PERSONAL_BARREL,PersonalStorageTier.ELITE,()->EMBlocks.ULTIMATE_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> ULTIMATE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.ULTIMATE_PERSONAL_BARREL,PersonalStorageTier.ULTIMATE,()->EMBlocks.OVERCLOCKED_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> OVERCLOCKED_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.OVERCLOCKED_PERSONAL_BARREL,PersonalStorageTier.OVERCLOCKED,()->EMBlocks.QUANTUM_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> QUANTUM_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.QUANTUM_PERSONAL_BARREL,PersonalStorageTier.QUANTUM,()->EMBlocks.DENSE_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> DENSE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.DENSE_PERSONAL_BARREL,PersonalStorageTier.DENSE,()->EMBlocks.MULTIVERSAL_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> MULTIVERSAL_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_BARREL,PersonalStorageTier.MULTIVERSAL,null);
 
     // Personal Chests
-    public static final BlockTypeTile<TileEntityTieredPersonalChest> ADVANCED_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ADVANCED_PERSONAL_CHEST);
-    public static final BlockTypeTile<TileEntityTieredPersonalChest> ELITE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ELITE_PERSONAL_CHEST);
-    public static final BlockTypeTile<TileEntityTieredPersonalChest> ULTIMATE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ULTIMATE_PERSONAL_CHEST);
-    public static final BlockTypeTile<TileEntityTieredPersonalChest> OVERCLOCKED_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.OVERCLOCKED_PERSONAL_CHEST);
-    public static final BlockTypeTile<TileEntityTieredPersonalChest> QUANTUM_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.QUANTUM_PERSONAL_CHEST);
-    public static final BlockTypeTile<TileEntityTieredPersonalChest> DENSE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.DENSE_PERSONAL_CHEST);
-    public static final BlockTypeTile<TileEntityTieredPersonalChest> MULTIVERSAL_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> ADVANCED_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ADVANCED_PERSONAL_CHEST,PersonalStorageTier.ADVANCED,()->EMBlocks.ELITE_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> ELITE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ELITE_PERSONAL_CHEST,PersonalStorageTier.ELITE,()->EMBlocks.ULTIMATE_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> ULTIMATE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ULTIMATE_PERSONAL_CHEST,PersonalStorageTier.ULTIMATE,()->EMBlocks.OVERCLOCKED_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> OVERCLOCKED_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.OVERCLOCKED_PERSONAL_CHEST,PersonalStorageTier.OVERCLOCKED,()->EMBlocks.QUANTUM_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> QUANTUM_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.QUANTUM_PERSONAL_CHEST,PersonalStorageTier.QUANTUM,()->EMBlocks.DENSE_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> DENSE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.DENSE_PERSONAL_CHEST,PersonalStorageTier.DENSE,()->EMBlocks.MULTIVERSAL_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> MULTIVERSAL_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_CHEST,PersonalStorageTier.MULTIVERSAL,null);
 
-    private static BlockTypeTile<TileEntityTieredPersonalBarrel> createPersonalBarrel(Supplier<TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel>> teType){
+
+    private static BlockTypeTile<TileEntityTieredPersonalBarrel> createPersonalBarrel(Supplier<TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel>> teType, PersonalStorageTier tier,Supplier<BlockRegistryObject<?, ?>> upgradeBlock){
         return BlockTileBuilder
                 .createBlock(teType, MekanismLang.DESCRIPTION_PERSONAL_BARREL)
                 .withGui(() -> EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK)
+                .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
                 .with(Attributes.SECURITY, BlockTieredPersonalStorage.TIERED_PERSONAL_STORAGE_INVENTORY, AttributeStateOpen.INSTANCE, new AttributeStateFacing(BlockStateProperties.FACING), new Attributes.AttributeCustomResistance(-1))
                 .withComputerSupport("personalBarrel")
                 .build();
     }
-    private static BlockTypeTile<TileEntityTieredPersonalChest> createPersonalChest(Supplier<TileEntityTypeRegistryObject<TileEntityTieredPersonalChest>> teType){
+    private static BlockTypeTile<TileEntityTieredPersonalChest> createPersonalChest(Supplier<TileEntityTypeRegistryObject<TileEntityTieredPersonalChest>> teType, PersonalStorageTier tier,Supplier<BlockRegistryObject<?, ?>> upgradeBlock){
         return  BlockTileBuilder.createBlock(teType, MekanismLang.DESCRIPTION_PERSONAL_CHEST)
                 .withGui(() -> EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK)
+                .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
                 .with(Attributes.SECURITY, BlockTieredPersonalStorage.TIERED_PERSONAL_STORAGE_INVENTORY, new AttributeStateFacing(), new Attributes.AttributeCustomResistance(-1))
                 .withCustomShape(BlockShapes.PERSONAL_CHEST)
                 .withComputerSupport("personalChest")

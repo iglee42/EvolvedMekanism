@@ -10,6 +10,7 @@ import mekanism.api.annotations.ParametersAreNotNullByDefault;
 import mekanism.api.inventory.IInventorySlot;
 import mekanism.common.inventory.slot.BasicInventorySlot;
 import mekanism.common.lib.MekanismSavedData;
+import mekanism.common.lib.inventory.personalstorage.AbstractPersonalStorageItemInventory;
 import mekanism.common.util.ItemDataUtils;
 import mekanism.common.util.SecurityUtils;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -114,4 +115,18 @@ public class TieredPersonalStorageManager {
         }
     }
 
+    public static void transferFromBasic(AbstractPersonalStorageItemInventory oldInventory, ItemStack stack) {
+        TieredPersonalStorageItemInventory inventory = getInventoryFor(stack);
+        for (int i = 0; i < oldInventory.getSlots(); i++) {
+            inventory.setStackInSlot(i,oldInventory.getStackInSlot(i));
+        }
+    }
+
+    public static void transferToNew(ItemStack oldItem, ItemStack stack) {
+        TieredPersonalStorageItemInventory oldInventory = getInventoryFor(oldItem);
+        TieredPersonalStorageItemInventory inventory = getInventoryFor(stack);
+        for (int i = 0; i < oldInventory.getSlots(); i++) {
+            inventory.setStackInSlot(i,oldInventory.getStackInSlot(i));
+        }
+    }
 }

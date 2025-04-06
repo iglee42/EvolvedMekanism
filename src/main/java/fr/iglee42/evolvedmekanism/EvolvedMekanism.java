@@ -8,9 +8,12 @@ import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.lib.Version;
+import mekanism.common.registration.impl.ItemRegistryObject;
+import mekanism.common.registries.MekanismItems;
 import mekanism.common.tier.*;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStoppedEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -47,6 +50,7 @@ public class EvolvedMekanism {
         EMInfuseTypes.INFUSE_TYPES.register(modEventBus);
         EMContainerTypes.CONTAINER_TYPES.register(modEventBus);
         EMLootFunctions.REGISTER.register(modEventBus);
+        EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -101,6 +105,18 @@ public class EvolvedMekanism {
 
     public static boolean isEvolvedMekanismTier(BaseTier tier){
         return tier.equals(EMBaseTier.OVERCLOCKED) || tier.equals(EMBaseTier.QUANTUM) || tier.equals(EMBaseTier.DENSE) || tier.equals(EMBaseTier.MULTIVERSAL);
+    }
+
+    public static ItemRegistryObject<Item> getCircuitByTier(BaseTier tier){
+        if (tier.equals(BaseTier.BASIC)) return MekanismItems.BASIC_CONTROL_CIRCUIT;
+        if (tier.equals(BaseTier.ADVANCED)) return MekanismItems.ADVANCED_CONTROL_CIRCUIT;
+        if (tier.equals(BaseTier.ELITE)) return MekanismItems.ELITE_CONTROL_CIRCUIT;
+        if (tier.equals(BaseTier.ULTIMATE)) return MekanismItems.ULTIMATE_CONTROL_CIRCUIT;
+        if (tier.equals(EMBaseTier.OVERCLOCKED)) return EMItems.OVERCLOCKED_CONTROL_CIRCUIT;
+        if (tier.equals(EMBaseTier.QUANTUM)) return EMItems.QUANTUM_CONTROL_CIRCUIT;
+        if (tier.equals(EMBaseTier.DENSE)) return EMItems.DENSE_CONTROL_CIRCUIT;
+        if (tier.equals(EMBaseTier.MULTIVERSAL)) return EMItems.MULTIVERSAL_CONTROL_CIRCUIT;
+        return null;
     }
 
 }

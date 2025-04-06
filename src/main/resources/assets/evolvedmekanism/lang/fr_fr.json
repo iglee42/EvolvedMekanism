@@ -269,5 +269,6 @@
     "apt.evolvedmekanism.apt": "Transmutateur protomol\u00e9culaire \u00e0 antimati\u00e8re",
     "infuse_type.evolvedmekanism.uranium": "Uranium",
     "infuse_type.evolvedmekanism.better_gold": "Or am\u00e9lior\u00e9",
-    "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite"
+    "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite",
+    "tiered_storage.evolvedmekanism.capacity": "Capacit\u00e9: %s"
 }

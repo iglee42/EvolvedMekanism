@@ -1,8 +1,11 @@
 package fr.iglee42.evolvedmekanism.blocks;
 
+import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
+import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import mekanism.common.content.blocktype.BlockTypeTile;
+import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.tile.TileEntityPersonalBarrel;
 import mekanism.common.tile.TileEntityPersonalChest;
 import mekanism.common.util.WorldUtils;
@@ -25,5 +28,18 @@ public class BlockTieredPersonnalBarrel extends BlockTieredPersonalStorage<TileE
         if (barrel != null) {
             barrel.recheckOpen();
         }
+    }
+
+    public static BlockRegistryObject<BlockTieredPersonnalBarrel, ItemBlockTieredPersonalStorage<BlockTieredPersonnalBarrel>> getUpgrade(PersonalStorageTier tier){
+        return switch (tier){
+            case BASIC -> EMBlocks.ADVANCED_PERSONAL_BARREL;
+            case ADVANCED -> EMBlocks.ELITE_PERSONAL_BARREL;
+            case ELITE -> EMBlocks.ULTIMATE_PERSONAL_BARREL;
+            case ULTIMATE -> EMBlocks.OVERCLOCKED_PERSONAL_BARREL;
+            case OVERCLOCKED -> EMBlocks.QUANTUM_PERSONAL_BARREL;
+            case QUANTUM -> EMBlocks.DENSE_PERSONAL_BARREL;
+            case DENSE -> EMBlocks.MULTIVERSAL_PERSONAL_BARREL;
+            case MULTIVERSAL -> null;
+        };
     }
 }
