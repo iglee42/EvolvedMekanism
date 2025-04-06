@@ -8,5 +8,6 @@ public class EMTubeTier {
     public static TubeTier QUANTUM;
     public static TubeTier DENSE;
     public static TubeTier MULTIVERSAL;
+    public static TubeTier CREATIVE;
 
 }

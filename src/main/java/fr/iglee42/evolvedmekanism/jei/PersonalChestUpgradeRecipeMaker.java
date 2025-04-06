@@ -40,7 +40,8 @@ public final class PersonalChestUpgradeRecipeMaker {
 				EMBlocks.OVERCLOCKED_PERSONAL_CHEST.getBlock(),
 				EMBlocks.QUANTUM_PERSONAL_CHEST.getBlock(),
 				EMBlocks.DENSE_PERSONAL_CHEST.getBlock(),
-				EMBlocks.MULTIVERSAL_PERSONAL_CHEST.getBlock()
+				EMBlocks.MULTIVERSAL_PERSONAL_CHEST.getBlock(),
+				EMBlocks.CREATIVE_PERSONAL_CHEST.getBlock()
 		};
 		Arrays.stream(chests)
 				.map(chest -> createRecipe(BlockTieredPersonnalChest.getUpgrade(chest.getTier()),chest.asItem()))

@@ -8,5 +8,6 @@ public class EMAlloyTier {
     public static AlloyTier SUBATOMIC;
     public static AlloyTier SINGULAR;
     public static AlloyTier EXOVERSAL;
+    public static AlloyTier CREATIVE;
 
 }

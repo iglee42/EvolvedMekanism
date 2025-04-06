@@ -9,5 +9,6 @@ public class EMQIODriveTier {
     public static QIODriveTier SINGULARITY;
     public static QIODriveTier HYPRA_SOLIDIFIED;
     public static QIODriveTier BLACK_HOLE;
+    public static QIODriveTier CREATIVE;
 
 }

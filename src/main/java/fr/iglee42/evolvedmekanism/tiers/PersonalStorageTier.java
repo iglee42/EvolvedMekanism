@@ -11,7 +11,8 @@ public enum PersonalStorageTier implements ITier {
     OVERCLOCKED(EMBaseTier.OVERCLOCKED,9,11),
     QUANTUM(EMBaseTier.QUANTUM,9,13),
     DENSE(EMBaseTier.DENSE,9,15),
-    MULTIVERSAL(EMBaseTier.MULTIVERSAL,9,17);
+    MULTIVERSAL(EMBaseTier.MULTIVERSAL,9,17),
+    CREATIVE(BaseTier.CREATIVE,11,19);
 
     public final int columns, rows;
     private final BaseTier baseTier;

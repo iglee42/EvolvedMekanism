@@ -39,7 +39,8 @@ public class BlockTieredPersonnalBarrel extends BlockTieredPersonalStorage<TileE
             case OVERCLOCKED -> EMBlocks.QUANTUM_PERSONAL_BARREL;
             case QUANTUM -> EMBlocks.DENSE_PERSONAL_BARREL;
             case DENSE -> EMBlocks.MULTIVERSAL_PERSONAL_BARREL;
-            case MULTIVERSAL -> null;
+            case MULTIVERSAL -> EMBlocks.CREATIVE_PERSONAL_BARREL;
+            case CREATIVE -> null;
         };
     }
 }

@@ -27,6 +27,7 @@ public abstract class BlockThermodynamicConductorMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMTileEntityTypes.QUANTUM_THERMODYNAMIC_CONDUCTOR;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMTileEntityTypes.DENSE_THERMODYNAMIC_CONDUCTOR;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMTileEntityTypes.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMTileEntityTypes.CREATIVE_THERMODYNAMIC_CONDUCTOR;
             cir.setReturnValue(block);
         }
     }

@@ -33,6 +33,7 @@ public class CableTierMixin {
         EMCableTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,524_288_000L);
         EMCableTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,4_194_304_000L);
         EMCableTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,33_554_432_000L);
+        EMCableTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Long.MAX_VALUE);
     }
 
     @Unique

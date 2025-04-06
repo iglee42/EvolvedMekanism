@@ -37,7 +37,7 @@ public class MatrixValidatorMixin  extends CuboidStructureValidator<MatrixMultib
     private void evolvedmekanism$acceptCustomBlocks(BlockState state, Long2ObjectMap<ChunkAccess> chunkMap, BlockPos pos, CallbackInfoReturnable<Boolean> cir){
         if (BlockType.is(state.getBlock(), EMBlockTypes.OVERCLOCKED_INDUCTION_CELL, EMBlockTypes.QUANTUM_INDUCTION_CELL,
                 EMBlockTypes.DENSE_INDUCTION_CELL, EMBlockTypes.MULTIVERSAL_INDUCTION_CELL, EMBlockTypes.OVERCLOCKED_INDUCTION_PROVIDER,
-                EMBlockTypes.QUANTUM_INDUCTION_PROVIDER, EMBlockTypes.DENSE_INDUCTION_PROVIDER, EMBlockTypes.MULTIVERSAL_INDUCTION_PROVIDER)) {
+                EMBlockTypes.QUANTUM_INDUCTION_PROVIDER, EMBlockTypes.DENSE_INDUCTION_PROVIDER, EMBlockTypes.MULTIVERSAL_INDUCTION_PROVIDER,EMBlockTypes.CREATIVE_INDUCTION_PROVIDER,EMBlockTypes.CREATIVE_INDUCTION_CELL)) {
             //Compare blocks against the type before bothering to look up the tile
             BlockEntity tile = WorldUtils.getTileEntity(world, chunkMap, pos);
             if (tile instanceof TileEntityInductionCell cell) {

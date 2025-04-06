@@ -24,6 +24,7 @@ public class TileEntityMechanicalPipeMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMBlocks.QUANTUM_MECHANICAL_PIPE;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMBlocks.DENSE_MECHANICAL_PIPE;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMBlocks.MULTIVERSAL_MECHANICAL_PIPE;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMBlocks.CREATIVE_MECHANICAL_PIPE;
             cir.setReturnValue(BlockStateHelper.copyStateData(current, block));
         }
     }

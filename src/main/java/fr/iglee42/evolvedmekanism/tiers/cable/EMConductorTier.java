@@ -8,5 +8,6 @@ public class EMConductorTier {
     public static ConductorTier QUANTUM;
     public static ConductorTier DENSE;
     public static ConductorTier MULTIVERSAL;
+    public static ConductorTier CREATIVE;
 
 }

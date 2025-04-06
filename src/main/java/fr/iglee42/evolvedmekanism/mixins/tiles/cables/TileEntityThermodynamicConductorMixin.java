@@ -24,6 +24,7 @@ public class TileEntityThermodynamicConductorMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMBlocks.QUANTUM_THERMODYNAMIC_CONDUCTOR;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMBlocks.DENSE_THERMODYNAMIC_CONDUCTOR;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMBlocks.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMBlocks.CREATIVE_THERMODYNAMIC_CONDUCTOR;
             cir.setReturnValue(BlockStateHelper.copyStateData(current, block));
         }
     }

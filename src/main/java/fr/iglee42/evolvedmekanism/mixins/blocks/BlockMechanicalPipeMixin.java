@@ -27,6 +27,7 @@ public abstract class BlockMechanicalPipeMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMTileEntityTypes.QUANTUM_MECHANICAL_PIPE;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMTileEntityTypes.DENSE_MECHANICAL_PIPE;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMTileEntityTypes.MULTIVERSAL_MECHANICAL_PIPE;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMTileEntityTypes.CREATIVE_MECHANICAL_PIPE;
             cir.setReturnValue(block);
         }
     }

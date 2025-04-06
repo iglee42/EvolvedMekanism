@@ -8,5 +8,6 @@ public class EMTransporterTier {
     public static TransporterTier QUANTUM;
     public static TransporterTier DENSE;
     public static TransporterTier MULTIVERSAL;
+    public static TransporterTier CREATIVE;
 
 }

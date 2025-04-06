@@ -27,6 +27,7 @@ public abstract class BlockPressurizedTubeMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMTileEntityTypes.QUANTUM_PRESSURIZED_TUBE;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMTileEntityTypes.DENSE_PRESSURIZED_TUBE;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMTileEntityTypes.MULTIVERSAL_PRESSURIZED_TUBE;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMTileEntityTypes.CREATIVE_PRESSURIZED_TUBE;
             cir.setReturnValue(block);
         }
     }

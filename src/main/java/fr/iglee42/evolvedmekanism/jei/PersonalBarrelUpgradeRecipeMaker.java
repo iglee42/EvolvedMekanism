@@ -37,7 +37,8 @@ public final class PersonalBarrelUpgradeRecipeMaker {
 				EMBlocks.OVERCLOCKED_PERSONAL_BARREL.getBlock(),
 				EMBlocks.QUANTUM_PERSONAL_BARREL.getBlock(),
 				EMBlocks.DENSE_PERSONAL_BARREL.getBlock(),
-				EMBlocks.MULTIVERSAL_PERSONAL_BARREL.getBlock()
+				EMBlocks.MULTIVERSAL_PERSONAL_BARREL.getBlock(),
+				EMBlocks.CREATIVE_PERSONAL_BARREL.getBlock()
 		};
 		Arrays.stream(chests)
 				.map(chest -> createRecipe(BlockTieredPersonnalBarrel.getUpgrade(chest.getTier()),chest.asItem()))

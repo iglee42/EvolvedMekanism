@@ -34,21 +34,25 @@ public class EMItems {
     public static final ItemRegistryObject<ItemTierInstaller> QUANTUM_TIER_INSTALLER = registerInstaller(EMBaseTier.OVERCLOCKED, EMBaseTier.QUANTUM);
     public static final ItemRegistryObject<ItemTierInstaller> DENSE_TIER_INSTALLER = registerInstaller(EMBaseTier.QUANTUM,EMBaseTier.DENSE);
     public static final ItemRegistryObject<ItemTierInstaller> MULTIVERSAL_TIER_INSTALLER = registerInstaller(EMBaseTier.DENSE,EMBaseTier.MULTIVERSAL);
+    public static final ItemRegistryObject<ItemTierInstaller> CREATIVE_TIER_INSTALLER = registerInstaller(EMBaseTier.MULTIVERSAL,BaseTier.CREATIVE);
 
     public static final ItemRegistryObject<Item> OVERCLOCKED_CONTROL_CIRCUIT = registerCircuit(EMBaseTier.OVERCLOCKED);
     public static final ItemRegistryObject<Item> QUANTUM_CONTROL_CIRCUIT = registerCircuit(EMBaseTier.QUANTUM);
     public static final ItemRegistryObject<Item> DENSE_CONTROL_CIRCUIT = registerCircuit(EMBaseTier.DENSE);
     public static final ItemRegistryObject<Item> MULTIVERSAL_CONTROL_CIRCUIT = registerCircuit(EMBaseTier.MULTIVERSAL);
+    public static final ItemRegistryObject<Item> CREATIVE_CONTROL_CIRCUIT = registerCircuit(BaseTier.CREATIVE);
 
     public static final ItemRegistryObject<ItemQIODrive> BOOSTED_QIO_DRIVE = registerQIODrive(EMQIODriveTier.BOOSTED);
     public static final ItemRegistryObject<ItemQIODrive> SINGULARITY_QIO_DRIVE = registerQIODrive(EMQIODriveTier.SINGULARITY);
     public static final ItemRegistryObject<ItemQIODrive> HYPRA_SOLIDIFIED_QIO_DRIVE = registerQIODrive(EMQIODriveTier.HYPRA_SOLIDIFIED);
     public static final ItemRegistryObject<ItemQIODrive> BLACK_HOLE_QIO_DRIVE = registerQIODrive(EMQIODriveTier.BLACK_HOLE);
+    public static final ItemRegistryObject<ItemQIODrive> CREATIVE_QIO_DRIVE = registerQIODrive(EMQIODriveTier.CREATIVE);
 
     public static final ItemRegistryObject<ItemAlloy> HYPERCHARGED_ALLOY = registerAlloy(EMAlloyTier.HYPERCHARGED);
     public static final ItemRegistryObject<ItemAlloy> SUBATOMIC_ALLOY = registerAlloy(EMAlloyTier.SUBATOMIC);
     public static final ItemRegistryObject<ItemAlloy> SINGULAR_ALLOY = registerAlloy(EMAlloyTier.SINGULAR);
     public static final ItemRegistryObject<ItemAlloy> EXOVERSAL_ALLOY = registerAlloy(EMAlloyTier.EXOVERSAL);
+    public static final ItemRegistryObject<ItemAlloy> CREATIVE_ALLOY = registerAlloy(EMAlloyTier.CREATIVE);
 
     public static final ItemRegistryObject<Item> ENRICHED_URANIUM = registerResource(ResourceType.ENRICHED, PrimaryResource.URANIUM);
     public static final ItemRegistryObject<Item> ENRICHED_BETTER_GOLD = registerResource(ResourceType.ENRICHED,EMResources.BETTER_GOLD);

@@ -27,6 +27,7 @@ public abstract class BlockUniversalCableMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMTileEntityTypes.QUANTUM_UNIVERSAL_CABLE;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMTileEntityTypes.DENSE_UNIVERSAL_CABLE;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMTileEntityTypes.MULTIVERSAL_UNIVERSAL_CABLE;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMTileEntityTypes.CREATIVE_UNIVERSAL_CABLE;
             cir.setReturnValue(block);
         }
     }

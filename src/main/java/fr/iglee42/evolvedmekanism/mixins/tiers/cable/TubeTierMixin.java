@@ -32,6 +32,7 @@ public class TubeTierMixin {
         EMTubeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,65_536_000,16_384_000);
         EMTubeTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,524_288_000,131_072_000);
         EMTubeTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,4_194_304_000L,1_048_576_000);
+        EMTubeTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Long.MAX_VALUE,Long.MAX_VALUE);
     }
 
     @Unique

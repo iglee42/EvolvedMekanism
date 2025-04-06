@@ -24,6 +24,7 @@ public class TileEntityUniversalCableMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMBlocks.QUANTUM_UNIVERSAL_CABLE;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMBlocks.DENSE_UNIVERSAL_CABLE;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMBlocks.MULTIVERSAL_UNIVERSAL_CABLE;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMBlocks.CREATIVE_UNIVERSAL_CABLE;
             cir.setReturnValue(BlockStateHelper.copyStateData(current, block));
         }
     }

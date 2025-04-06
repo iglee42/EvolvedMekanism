@@ -270,5 +270,9 @@
     "infuse_type.evolvedmekanism.uranium": "Uranium",
     "infuse_type.evolvedmekanism.better_gold": "Or am\u00e9lior\u00e9",
     "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite",
-    "tiered_storage.evolvedmekanism.capacity": "Capacit\u00e9: %s"
+    "tiered_storage.evolvedmekanism.capacity": "Capacit\u00e9: %s",
+    "item.evolvedmekanism.alloy_creative": "Alliage Cr\u00e9atif",
+    "item.evolvedmekanism.creative_control_circuit": "Circuit de Controle Cr\u00e9atif",
+    "item.evolvedmekanism.qio_drive_creative": "Disque OQO Cr\u00e9atif",
+    "item.evolvedmekanism.creative_tier_installer": "Installeur de niveau Cr\u00e9atif"
 }

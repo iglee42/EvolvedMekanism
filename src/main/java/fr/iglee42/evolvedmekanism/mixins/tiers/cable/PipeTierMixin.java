@@ -32,6 +32,7 @@ public class PipeTierMixin {
         EMPipeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,8_192_000,2_048_000);
         EMPipeTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,65_536_000,16_384_000);
         EMPipeTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,524_288_000,131_072_000);
+        EMPipeTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Integer.MAX_VALUE,Integer.MAX_VALUE);
     }
 
     @Unique

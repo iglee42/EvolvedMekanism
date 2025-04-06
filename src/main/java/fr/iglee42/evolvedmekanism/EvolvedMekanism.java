@@ -104,7 +104,7 @@ public class EvolvedMekanism {
     }
 
     public static boolean isEvolvedMekanismTier(BaseTier tier){
-        return tier.equals(EMBaseTier.OVERCLOCKED) || tier.equals(EMBaseTier.QUANTUM) || tier.equals(EMBaseTier.DENSE) || tier.equals(EMBaseTier.MULTIVERSAL);
+        return tier.equals(EMBaseTier.OVERCLOCKED) || tier.equals(EMBaseTier.QUANTUM) || tier.equals(EMBaseTier.DENSE) || tier.equals(EMBaseTier.MULTIVERSAL) || tier.equals(BaseTier.CREATIVE);
     }
 
     public static ItemRegistryObject<Item> getCircuitByTier(BaseTier tier){
@@ -116,6 +116,7 @@ public class EvolvedMekanism {
         if (tier.equals(EMBaseTier.QUANTUM)) return EMItems.QUANTUM_CONTROL_CIRCUIT;
         if (tier.equals(EMBaseTier.DENSE)) return EMItems.DENSE_CONTROL_CIRCUIT;
         if (tier.equals(EMBaseTier.MULTIVERSAL)) return EMItems.MULTIVERSAL_CONTROL_CIRCUIT;
+        if (tier.equals(BaseTier.CREATIVE)) return EMItems.CREATIVE_CONTROL_CIRCUIT;
         return null;
     }
 

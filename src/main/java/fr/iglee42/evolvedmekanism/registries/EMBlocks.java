@@ -60,11 +60,13 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockTile<TileEntityInductionCell, BlockTypeTile<TileEntityInductionCell>>, ItemBlockInductionCell> QUANTUM_INDUCTION_CELL = registerInductionCell(EMBlockTypes.QUANTUM_INDUCTION_CELL);
     public static final BlockRegistryObject<BlockTile<TileEntityInductionCell, BlockTypeTile<TileEntityInductionCell>>, ItemBlockInductionCell> DENSE_INDUCTION_CELL = registerInductionCell(EMBlockTypes.DENSE_INDUCTION_CELL);
     public static final BlockRegistryObject<BlockTile<TileEntityInductionCell, BlockTypeTile<TileEntityInductionCell>>, ItemBlockInductionCell> MULTIVERSAL_INDUCTION_CELL = registerInductionCell(EMBlockTypes.MULTIVERSAL_INDUCTION_CELL);
+    public static final BlockRegistryObject<BlockTile<TileEntityInductionCell, BlockTypeTile<TileEntityInductionCell>>, ItemBlockInductionCell> CREATIVE_INDUCTION_CELL = registerInductionCell(EMBlockTypes.CREATIVE_INDUCTION_CELL);
 
     public static final BlockRegistryObject<BlockTile<TileEntityInductionProvider, BlockTypeTile<TileEntityInductionProvider>>, ItemBlockInductionProvider> OVERCLOCKED_INDUCTION_PROVIDER = registerInductionProvider(EMBlockTypes.OVERCLOCKED_INDUCTION_PROVIDER);
     public static final BlockRegistryObject<BlockTile<TileEntityInductionProvider, BlockTypeTile<TileEntityInductionProvider>>, ItemBlockInductionProvider> QUANTUM_INDUCTION_PROVIDER = registerInductionProvider(EMBlockTypes.QUANTUM_INDUCTION_PROVIDER);
     public static final BlockRegistryObject<BlockTile<TileEntityInductionProvider, BlockTypeTile<TileEntityInductionProvider>>, ItemBlockInductionProvider> DENSE_INDUCTION_PROVIDER = registerInductionProvider(EMBlockTypes.DENSE_INDUCTION_PROVIDER);
     public static final BlockRegistryObject<BlockTile<TileEntityInductionProvider, BlockTypeTile<TileEntityInductionProvider>>, ItemBlockInductionProvider> MULTIVERSAL_INDUCTION_PROVIDER = registerInductionProvider(EMBlockTypes.MULTIVERSAL_INDUCTION_PROVIDER);
+    public static final BlockRegistryObject<BlockTile<TileEntityInductionProvider, BlockTypeTile<TileEntityInductionProvider>>, ItemBlockInductionProvider> CREATIVE_INDUCTION_PROVIDER = registerInductionProvider(EMBlockTypes.CREATIVE_INDUCTION_PROVIDER);
 
     public static final BlockRegistryObject<BlockFluidTank, ItemBlockFluidTank> OVERCLOCKED_FLUID_TANK = registerFluidTank(EMBlockTypes.OVERCLOCKED_FLUID_TANK);
     public static final BlockRegistryObject<BlockFluidTank, ItemBlockFluidTank> QUANTUM_FLUID_TANK = registerFluidTank(EMBlockTypes.QUANTUM_FLUID_TANK);
@@ -80,26 +82,31 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockUniversalCable, ItemBlockUniversalCable> QUANTUM_UNIVERSAL_CABLE = registerUniversalCable(EMCableTier.QUANTUM);
     public static final BlockRegistryObject<BlockUniversalCable, ItemBlockUniversalCable> DENSE_UNIVERSAL_CABLE = registerUniversalCable(EMCableTier.DENSE);
     public static final BlockRegistryObject<BlockUniversalCable, ItemBlockUniversalCable> MULTIVERSAL_UNIVERSAL_CABLE = registerUniversalCable(EMCableTier.MULTIVERSAL);
+    public static final BlockRegistryObject<BlockUniversalCable, ItemBlockUniversalCable> CREATIVE_UNIVERSAL_CABLE = registerUniversalCable(EMCableTier.CREATIVE);
 
     public static final BlockRegistryObject<BlockMechanicalPipe, ItemBlockMechanicalPipe> OVERCLOCKED_MECHANICAL_PIPE = registerMechanicalPipe(EMPipeTier.OVERCLOCKED);
     public static final BlockRegistryObject<BlockMechanicalPipe, ItemBlockMechanicalPipe> QUANTUM_MECHANICAL_PIPE = registerMechanicalPipe(EMPipeTier.QUANTUM);
     public static final BlockRegistryObject<BlockMechanicalPipe, ItemBlockMechanicalPipe> DENSE_MECHANICAL_PIPE = registerMechanicalPipe(EMPipeTier.DENSE);
     public static final BlockRegistryObject<BlockMechanicalPipe, ItemBlockMechanicalPipe> MULTIVERSAL_MECHANICAL_PIPE = registerMechanicalPipe(EMPipeTier.MULTIVERSAL);
+    public static final BlockRegistryObject<BlockMechanicalPipe, ItemBlockMechanicalPipe> CREATIVE_MECHANICAL_PIPE = registerMechanicalPipe(EMPipeTier.CREATIVE);
 
     public static final BlockRegistryObject<BlockPressurizedTube, ItemBlockPressurizedTube> OVERCLOCKED_PRESSURIZED_TUBE = registerPressurizedTube(EMTubeTier.OVERCLOCKED);
     public static final BlockRegistryObject<BlockPressurizedTube, ItemBlockPressurizedTube> QUANTUM_PRESSURIZED_TUBE = registerPressurizedTube(EMTubeTier.QUANTUM);
     public static final BlockRegistryObject<BlockPressurizedTube, ItemBlockPressurizedTube> DENSE_PRESSURIZED_TUBE = registerPressurizedTube(EMTubeTier.DENSE);
     public static final BlockRegistryObject<BlockPressurizedTube, ItemBlockPressurizedTube> MULTIVERSAL_PRESSURIZED_TUBE = registerPressurizedTube(EMTubeTier.MULTIVERSAL);
+    public static final BlockRegistryObject<BlockPressurizedTube, ItemBlockPressurizedTube> CREATIVE_PRESSURIZED_TUBE = registerPressurizedTube(EMTubeTier.CREATIVE);
 
     public static final BlockRegistryObject<BlockLogisticalTransporter, ItemBlockLogisticalTransporter> OVERCLOCKED_LOGISTICAL_TRANSPORTER = registerLogisticalTransporter(EMTransporterTier.OVERCLOCKED);
     public static final BlockRegistryObject<BlockLogisticalTransporter, ItemBlockLogisticalTransporter> QUANTUM_LOGISTICAL_TRANSPORTER = registerLogisticalTransporter(EMTransporterTier.QUANTUM);
     public static final BlockRegistryObject<BlockLogisticalTransporter, ItemBlockLogisticalTransporter> DENSE_LOGISTICAL_TRANSPORTER = registerLogisticalTransporter(EMTransporterTier.DENSE);
     public static final BlockRegistryObject<BlockLogisticalTransporter, ItemBlockLogisticalTransporter> MULTIVERSAL_LOGISTICAL_TRANSPORTER = registerLogisticalTransporter(EMTransporterTier.MULTIVERSAL);
-    
+    public static final BlockRegistryObject<BlockLogisticalTransporter, ItemBlockLogisticalTransporter> CREATIVE_LOGISTICAL_TRANSPORTER = registerLogisticalTransporter(EMTransporterTier.CREATIVE);
+
     public static final BlockRegistryObject<BlockThermodynamicConductor, ItemBlockThermodynamicConductor> OVERCLOCKED_THERMODYNAMIC_CONDUCTOR = registerThermodynamicConductor(EMConductorTier.OVERCLOCKED);
     public static final BlockRegistryObject<BlockThermodynamicConductor, ItemBlockThermodynamicConductor> QUANTUM_THERMODYNAMIC_CONDUCTOR = registerThermodynamicConductor(EMConductorTier.QUANTUM);
     public static final BlockRegistryObject<BlockThermodynamicConductor, ItemBlockThermodynamicConductor> DENSE_THERMODYNAMIC_CONDUCTOR = registerThermodynamicConductor(EMConductorTier.DENSE);
     public static final BlockRegistryObject<BlockThermodynamicConductor, ItemBlockThermodynamicConductor> MULTIVERSAL_THERMODYNAMIC_CONDUCTOR = registerThermodynamicConductor(EMConductorTier.MULTIVERSAL);
+    public static final BlockRegistryObject<BlockThermodynamicConductor, ItemBlockThermodynamicConductor> CREATIVE_THERMODYNAMIC_CONDUCTOR = registerThermodynamicConductor(EMConductorTier.CREATIVE);
 
     public static final BlockRegistryObject<BlockTileModel<TileEntityChemicalTank, Machine<TileEntityChemicalTank>>, ItemBlockChemicalTank> OVERCLOCKED_CHEMICAL_TANK = registerChemicalTank(EMBlockTypes.OVERCLOCKED_CHEMICAL_TANK);
     public static final BlockRegistryObject<BlockTileModel<TileEntityChemicalTank, Machine<TileEntityChemicalTank>>, ItemBlockChemicalTank> QUANTUM_CHEMICAL_TANK = registerChemicalTank(EMBlockTypes.QUANTUM_CHEMICAL_TANK);
@@ -113,6 +120,7 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockTieredPersonnalBarrel, ItemBlockTieredPersonalStorage<BlockTieredPersonnalBarrel>> QUANTUM_PERSONAL_BARREL =registerPersonalBarrel(EMBlockTypes.QUANTUM_PERSONAL_BARREL, PersonalStorageTier.QUANTUM);
     public static final BlockRegistryObject<BlockTieredPersonnalBarrel, ItemBlockTieredPersonalStorage<BlockTieredPersonnalBarrel>> DENSE_PERSONAL_BARREL =registerPersonalBarrel(EMBlockTypes.DENSE_PERSONAL_BARREL, PersonalStorageTier.DENSE);
     public static final BlockRegistryObject<BlockTieredPersonnalBarrel, ItemBlockTieredPersonalStorage<BlockTieredPersonnalBarrel>> MULTIVERSAL_PERSONAL_BARREL =registerPersonalBarrel(EMBlockTypes.MULTIVERSAL_PERSONAL_BARREL, PersonalStorageTier.MULTIVERSAL);
+    public static final BlockRegistryObject<BlockTieredPersonnalBarrel, ItemBlockTieredPersonalStorage<BlockTieredPersonnalBarrel>> CREATIVE_PERSONAL_BARREL =registerPersonalBarrel(EMBlockTypes.CREATIVE_PERSONAL_BARREL, PersonalStorageTier.CREATIVE);
 
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> ADVANCED_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.ADVANCED_PERSONAL_CHEST,PersonalStorageTier.ADVANCED);
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> ELITE_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.ELITE_PERSONAL_CHEST,PersonalStorageTier.ELITE);
@@ -121,6 +129,7 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> QUANTUM_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.QUANTUM_PERSONAL_CHEST,PersonalStorageTier.QUANTUM);
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> DENSE_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.DENSE_PERSONAL_CHEST,PersonalStorageTier.DENSE);
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> MULTIVERSAL_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.MULTIVERSAL_PERSONAL_CHEST,PersonalStorageTier.MULTIVERSAL);
+    public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> CREATIVE_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.CREATIVE_PERSONAL_CHEST,PersonalStorageTier.CREATIVE);
 
     private static BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> registerPersonalChest(BlockTypeTile<TileEntityTieredPersonalChest> type,PersonalStorageTier tier) {
         return registerTieredBlock(tier, "_personal_chest", () -> new BlockTieredPersonnalChest(type,tier), block -> new ItemBlockTieredPersonalStorage<>(block, Stats.OPEN_CHEST,block.getTier()));

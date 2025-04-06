@@ -8,5 +8,6 @@ public class EMCableTier {
     public static CableTier QUANTUM;
     public static CableTier DENSE;
     public static CableTier MULTIVERSAL;
+    public static CableTier CREATIVE;
 
 }

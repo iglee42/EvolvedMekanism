@@ -32,6 +32,7 @@ public class FactoryTierMixin {
         EMFactoryTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,13);
         EMFactoryTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,15);
         EMFactoryTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,17);
+        EMFactoryTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,19);
     }
 
     @Unique

@@ -8,5 +8,6 @@ public class EMInductionProviderTier {
     public static InductionProviderTier QUANTUM;
     public static InductionProviderTier DENSE;
     public static InductionProviderTier MULTIVERSAL;
+    public static InductionProviderTier CREATIVE;
 
 }

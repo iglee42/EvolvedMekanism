@@ -27,6 +27,7 @@ public abstract class BlockLogisticalTransporterMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMTileEntityTypes.QUANTUM_LOGISTICAL_TRANSPORTER;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMTileEntityTypes.DENSE_LOGISTICAL_TRANSPORTER;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMTileEntityTypes.MULTIVERSAL_LOGISTICAL_TRANSPORTER;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMTileEntityTypes.CREATIVE_LOGISTICAL_TRANSPORTER;
             cir.setReturnValue(block);
         }
     }

@@ -8,5 +8,6 @@ public class EMFactoryTier {
     public static FactoryTier QUANTUM;
     public static FactoryTier DENSE;
     public static FactoryTier MULTIVERSAL;
+    public static FactoryTier CREATIVE;
 
 }

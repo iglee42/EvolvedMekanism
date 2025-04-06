@@ -36,12 +36,14 @@ public class EMBlockTypes {
    public static final BlockTypeTile<TileEntityInductionCell> QUANTUM_INDUCTION_CELL = createInductionCell(EMInductionCellTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_INDUCTION_CELL);
    public static final BlockTypeTile<TileEntityInductionCell> DENSE_INDUCTION_CELL = createInductionCell(EMInductionCellTier.DENSE, () -> EMTileEntityTypes.DENSE_INDUCTION_CELL);
    public static final BlockTypeTile<TileEntityInductionCell> MULTIVERSAL_INDUCTION_CELL = createInductionCell(EMInductionCellTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_INDUCTION_CELL);
+   public static final BlockTypeTile<TileEntityInductionCell> CREATIVE_INDUCTION_CELL = createInductionCell(EMInductionCellTier.CREATIVE, () -> EMTileEntityTypes.CREATIVE_INDUCTION_CELL);
 
     // Induction Provider
    public static final BlockTypeTile<TileEntityInductionProvider> OVERCLOCKED_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_INDUCTION_PROVIDER);
    public static final BlockTypeTile<TileEntityInductionProvider> QUANTUM_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_INDUCTION_PROVIDER);
    public static final BlockTypeTile<TileEntityInductionProvider> DENSE_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.DENSE, () -> EMTileEntityTypes.DENSE_INDUCTION_PROVIDER);
    public static final BlockTypeTile<TileEntityInductionProvider> MULTIVERSAL_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_INDUCTION_PROVIDER);
+   public static final BlockTypeTile<TileEntityInductionProvider> CREATIVE_INDUCTION_PROVIDER = createInductionProvider(EMInductionProviderTier.CREATIVE, () -> EMTileEntityTypes.CREATIVE_INDUCTION_PROVIDER);
 
     // Bins
     public static final Machine<TileEntityBin> OVERCLOCKED_BIN = createBin(EMBinTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_BIN, () -> EMBlocks.QUANTUM_BIN);
@@ -74,7 +76,8 @@ public class EMBlockTypes {
     public static final BlockTypeTile<TileEntityTieredPersonalBarrel> OVERCLOCKED_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.OVERCLOCKED_PERSONAL_BARREL,PersonalStorageTier.OVERCLOCKED,()->EMBlocks.QUANTUM_PERSONAL_BARREL);
     public static final BlockTypeTile<TileEntityTieredPersonalBarrel> QUANTUM_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.QUANTUM_PERSONAL_BARREL,PersonalStorageTier.QUANTUM,()->EMBlocks.DENSE_PERSONAL_BARREL);
     public static final BlockTypeTile<TileEntityTieredPersonalBarrel> DENSE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.DENSE_PERSONAL_BARREL,PersonalStorageTier.DENSE,()->EMBlocks.MULTIVERSAL_PERSONAL_BARREL);
-    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> MULTIVERSAL_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_BARREL,PersonalStorageTier.MULTIVERSAL,null);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> MULTIVERSAL_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_BARREL,PersonalStorageTier.MULTIVERSAL,()->EMBlocks.CREATIVE_PERSONAL_BARREL);
+    public static final BlockTypeTile<TileEntityTieredPersonalBarrel> CREATIVE_PERSONAL_BARREL = createPersonalBarrel(()-> EMTileEntityTypes.CREATIVE_PERSONAL_BARREL,PersonalStorageTier.CREATIVE,null);
 
     // Personal Chests
     public static final BlockTypeTile<TileEntityTieredPersonalChest> ADVANCED_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.ADVANCED_PERSONAL_CHEST,PersonalStorageTier.ADVANCED,()->EMBlocks.ELITE_PERSONAL_CHEST);
@@ -83,7 +86,8 @@ public class EMBlockTypes {
     public static final BlockTypeTile<TileEntityTieredPersonalChest> OVERCLOCKED_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.OVERCLOCKED_PERSONAL_CHEST,PersonalStorageTier.OVERCLOCKED,()->EMBlocks.QUANTUM_PERSONAL_CHEST);
     public static final BlockTypeTile<TileEntityTieredPersonalChest> QUANTUM_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.QUANTUM_PERSONAL_CHEST,PersonalStorageTier.QUANTUM,()->EMBlocks.DENSE_PERSONAL_CHEST);
     public static final BlockTypeTile<TileEntityTieredPersonalChest> DENSE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.DENSE_PERSONAL_CHEST,PersonalStorageTier.DENSE,()->EMBlocks.MULTIVERSAL_PERSONAL_CHEST);
-    public static final BlockTypeTile<TileEntityTieredPersonalChest> MULTIVERSAL_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_CHEST,PersonalStorageTier.MULTIVERSAL,null);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> MULTIVERSAL_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_CHEST,PersonalStorageTier.MULTIVERSAL,()->EMBlocks.CREATIVE_PERSONAL_CHEST);
+    public static final BlockTypeTile<TileEntityTieredPersonalChest> CREATIVE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.CREATIVE_PERSONAL_CHEST,PersonalStorageTier.CREATIVE,null);
 
 
     private static BlockTypeTile<TileEntityTieredPersonalBarrel> createPersonalBarrel(Supplier<TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel>> teType, PersonalStorageTier tier,Supplier<BlockRegistryObject<?, ?>> upgradeBlock){

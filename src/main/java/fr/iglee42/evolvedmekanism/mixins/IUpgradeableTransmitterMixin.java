@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.mixins;
 
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.tier.AlloyTier;
+import mekanism.api.tier.BaseTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.content.network.transmitter.IUpgradeableTransmitter;
 import org.spongepowered.asm.mixin.Mixin;
@@ -22,6 +23,7 @@ public interface IUpgradeableTransmitterMixin {
       */
      @Overwrite
      default boolean canUpgrade(AlloyTier alloyTier) {
+         if (alloyTier.getBaseTier().equals(BaseTier.CREATIVE)) return getTier().getBaseTier().equals(EMBaseTier.MULTIVERSAL);
          if (alloyTier.getBaseTier().equals(EMBaseTier.OVERCLOCKED)) return alloyTier.getBaseTier().ordinal() == getTier().getBaseTier().ordinal() + 2;
          return alloyTier.getBaseTier().ordinal() == getTier().getBaseTier().ordinal() + 1;
      }

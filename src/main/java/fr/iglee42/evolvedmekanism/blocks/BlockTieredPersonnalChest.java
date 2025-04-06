@@ -37,7 +37,8 @@ public class BlockTieredPersonnalChest extends BlockTieredPersonalStorage<TileEn
             case OVERCLOCKED -> EMBlocks.QUANTUM_PERSONAL_CHEST;
             case QUANTUM -> EMBlocks.DENSE_PERSONAL_CHEST;
             case DENSE -> EMBlocks.MULTIVERSAL_PERSONAL_CHEST;
-            case MULTIVERSAL -> null;
+            case MULTIVERSAL -> EMBlocks.CREATIVE_PERSONAL_CHEST;
+            case CREATIVE -> null;
         };
     }
 }
