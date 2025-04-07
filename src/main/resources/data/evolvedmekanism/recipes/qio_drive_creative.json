@@ -1,0 +1,22 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "#": {
+            "item": "minecraft:nether_star"
+        },
+        "I": {
+            "tag": "forge:ingots/lead"
+        },
+        "P": {
+            "item": "evolvedmekanism:qio_drive_black_hole"
+        }
+    },
+    "pattern": [
+        "IPI",
+        "P#P",
+        "IPI"
+    ],
+    "result": {
+        "item": "evolvedmekanism:qio_drive_creative"
+    }
+}

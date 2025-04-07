@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/exoversal"
+        },
+        "C": {
+            "tag": "forge:circuits/creative"
+        },
+        "I": {
+            "item": "minecraft:nether_star"
+        },
+        "P": {
+            "item": "evolvedmekanism:dense_combining_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:creative_combining_factory"
+    }
+}

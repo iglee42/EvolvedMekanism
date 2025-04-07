@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "item": "mekanism:creative_energy_cube"
+        },
+        "C": {
+            "tag": "forge:circuits/creative"
+        },
+        "P": {
+            "item": "evolvedmekanism:multiversal_induction_provider"
+        }
+    },
+    "pattern": [
+        "CPC",
+        "P#P",
+        "CPC"
+    ],
+    "result": {
+        "item": "evolvedmekanism:creative_induction_provider"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/atomic"
+        },
+        "C": {
+            "tag": "forge:circuits/creative"
+        },
+        "I": {
+            "item": "minecraft:nether_star"
+        },
+        "P": {
+            "item": "evolvedmekanism:dense_alloying_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:creative_alloying_factory"
+    }
+}

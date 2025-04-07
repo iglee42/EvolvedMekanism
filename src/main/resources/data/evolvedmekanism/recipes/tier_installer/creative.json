@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/creative"
+        },
+        "C": {
+            "tag": "forge:circuits/creative"
+        },
+        "I": {
+            "item": "minecraft:nether_star"
+        },
+        "P": {
+            "tag": "minecraft:planks"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:creative_tier_installer"
+    }
+}

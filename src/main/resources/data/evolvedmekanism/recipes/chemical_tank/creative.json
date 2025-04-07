@@ -1,0 +1,22 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/creative"
+        },
+        "O": {
+            "tag": "forge:ingots/osmium"
+        },
+        "P": {
+            "item": "evolvedmekanism:multiversal_chemical_tank"
+        }
+    },
+    "pattern": [
+        "AOA",
+        "OPO",
+        "AOA"
+    ],
+    "result": {
+        "item": "mekanism:creative_chemical_tank"
+    }
+}

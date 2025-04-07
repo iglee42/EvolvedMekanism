@@ -1,0 +1,22 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "#": {
+            "item": "mekanism:creative_energy_cube"
+        },
+        "E": {
+            "item": "mekanism:energy_tablet"
+        },
+        "P": {
+            "item": "evolvedmekanism:multiversal_induction_cell"
+        }
+    },
+    "pattern": [
+        "EPE",
+        "P#P",
+        "EPE"
+    ],
+    "result": {
+        "item": "evolvedmekanism:creative_induction_cell"
+    }
+}
