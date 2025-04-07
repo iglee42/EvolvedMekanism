@@ -1,18 +1,18 @@
 {
     "variants": {
         "facing=north": {
-            "model": "evolvedmekanism:block/personal_chest/creative"
+            "model": "mekanism:block/personal_chest"
         },
         "facing=south": {
-            "model": "evolvedmekanism:block/personal_chest/creative",
+            "model": "mekanism:block/personal_chest",
             "y": 180
         },
         "facing=east": {
-            "model": "evolvedmekanism:block/personal_chest/creative",
+            "model": "mekanism:block/personal_chest",
             "y": 90
         },
         "facing=west": {
-            "model": "evolvedmekanism:block/personal_chest/creative",
+            "model": "mekanism:block/personal_chest",
             "y": -90
         }
     }

@@ -1,5 +1,6 @@
 package fr.iglee42.evolvedmekanism.mixins.client;
 
+import fr.iglee42.evolvedmekanism.client.buttons.GuiSmallerDumpButton;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.client.gui.element.GuiDumpButton;
@@ -11,6 +12,7 @@ import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.tab.GuiEnergyTab;
 import mekanism.client.gui.element.tab.GuiSortingTab;
 import mekanism.client.gui.machine.GuiFactory;
+import mekanism.common.inventory.container.slot.ContainerSlotType;
 import mekanism.common.inventory.container.tile.MekanismTileContainer;
 import mekanism.common.inventory.warning.ISupportsWarning;
 import mekanism.common.inventory.warning.WarningTracker;
@@ -18,6 +20,7 @@ import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.factory.TileEntityItemStackGasToItemStackFactory;
 import mekanism.common.tile.factory.TileEntityMetallurgicInfuserFactory;
 import mekanism.common.tile.factory.TileEntitySawingFactory;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
@@ -29,6 +32,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Mixin(value = GuiFactory.class,remap = false)
 public abstract class GuiFactoryMixin {
@@ -36,56 +40,66 @@ public abstract class GuiFactoryMixin {
     @Shadow protected abstract GuiProgress addProgress(GuiProgress progressBar);
 
     @Unique
-    private TileEntityFactory<?> be;
+    private TileEntityFactory<?> evolvedMekanism$be;
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void evolvedmekanism$makeGuiBigger(MekanismTileContainer container, Inventory inv, Component title, CallbackInfo ci) {
         Object obj = this;
         GuiFactory gui = (GuiFactory) obj;
-        be = (TileEntityFactory<?>) container.getTileEntity();
+        evolvedMekanism$be = (TileEntityFactory<?>) container.getTileEntity();
         if (((TileEntityFactory<?>)container.getTileEntity()).tier.ordinal() >= EMFactoryTier.OVERCLOCKED.ordinal()) {
-            if (be.hasSecondaryResourceBar() && !(be instanceof TileEntitySawingFactory)) {
+            if (evolvedMekanism$be.hasSecondaryResourceBar() && !(evolvedMekanism$be instanceof TileEntitySawingFactory)) {
                 gui.imageHeight -= 11;
                 gui.inventoryLabelY = 75;
             }
 
             gui.imageWidth +=(38 *( ((TileEntityFactory<?>) container.getTileEntity()).tier.ordinal() - EMFactoryTier.OVERCLOCKED.ordinal() + 1)) + 9;
+            gui.inventoryLabelX = gui.imageWidth / 2 - Minecraft.getInstance().font.width(gui.playerInventoryTitle) / 2;
 
         }
     }
 
     @Inject(method = "addGuiElements", at = @At(value = "INVOKE", target = "Lmekanism/client/gui/GuiConfigurableTile;addGuiElements()V",shift = At.Shift.AFTER), cancellable = true)
     private void evolvedmekanism$changeElementPoses(CallbackInfo ci) {
-        if (be.tier.ordinal() >= EMFactoryTier.OVERCLOCKED.ordinal()){
+        if (evolvedMekanism$be.tier.ordinal() >= EMFactoryTier.OVERCLOCKED.ordinal()){
             Object obj = this;
             GuiFactory gui = (GuiFactory) obj;
-            evolvedMekanism$addElement(gui,new GuiVerticalPowerBar(gui, be.getEnergyContainer(), 176, gui.inventoryLabelY + 9, 52))
-                    .warning(WarningTracker.WarningType.NOT_ENOUGH_ENERGY, be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.NOT_ENOUGH_ENERGY, 0));
-            evolvedMekanism$addElement(gui,new GuiSortingTab(gui, be));
-            evolvedMekanism$addElement(gui,new GuiEnergyTab(gui, be.getEnergyContainer(), be::getLastUsage));
-            if (be.hasSecondaryResourceBar()) {
+            AtomicInteger energySlotX = new AtomicInteger();
+            gui.getMenu().getInventoryContainerSlots().stream().filter(slot->slot.getSlotType().equals(ContainerSlotType.POWER)).findFirst().ifPresent(s-> energySlotX.set(s.x));
+            int energyBarOffset = 5;
+            evolvedMekanism$addElement(gui,new GuiVerticalPowerBar(gui, evolvedMekanism$be.getEnergyContainer(), energySlotX.get() + energyBarOffset, gui.inventoryLabelY + 9, 52))
+                    .warning(WarningTracker.WarningType.NOT_ENOUGH_ENERGY, evolvedMekanism$be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.NOT_ENOUGH_ENERGY, 0));
+            evolvedMekanism$addElement(gui,new GuiSortingTab(gui, evolvedMekanism$be));
+            evolvedMekanism$addElement(gui,new GuiEnergyTab(gui, evolvedMekanism$be.getEnergyContainer(), evolvedMekanism$be::getLastUsage));
+            if (evolvedMekanism$be.hasSecondaryResourceBar()) {
                 ISupportsWarning<?> secondaryBar = null;
-                if (be instanceof TileEntityMetallurgicInfuserFactory factory) {
-                    secondaryBar = evolvedMekanism$addElement(gui,new GuiChemicalBar<>(gui, GuiChemicalBar.getProvider(factory.getInfusionTank(), be.getInfusionTanks(null)),
-                            198, gui.inventoryLabelY + 9, 4, 52, false));
-                    evolvedMekanism$addElement(gui,new GuiDumpButton<>(gui, factory, 190, gui.inventoryLabelY - 1));
-                } else if (be instanceof TileEntityItemStackGasToItemStackFactory factory) {
-                    secondaryBar = evolvedMekanism$addElement(gui,new GuiChemicalBar<>(gui, GuiChemicalBar.getProvider(factory.getGasTank(), be.getGasTanks(null)),
-                            198, gui.inventoryLabelY + 9, 4, 52, false));
-                    evolvedMekanism$addElement(gui,new GuiDumpButton<>(gui, factory, 190, gui.inventoryLabelY - 1));
+                AtomicInteger extraSlotX = new AtomicInteger();
+                int imageWidth = 176 +(38 *( evolvedMekanism$be.tier.ordinal() - EMFactoryTier.OVERCLOCKED.ordinal() + 1)) + 9;
+                int inventorySize = 9 * 20;
+                int endInventory = (imageWidth / 2 + inventorySize / 2) - 10;
+                extraSlotX.set(endInventory + 4);
+                int extraBarOffset = 5;
+                if (evolvedMekanism$be instanceof TileEntityMetallurgicInfuserFactory factory) {
+                    secondaryBar = evolvedMekanism$addElement(gui,new GuiChemicalBar<>(gui, GuiChemicalBar.getProvider(factory.getInfusionTank(), evolvedMekanism$be.getInfusionTanks(null)),
+                            extraSlotX.get() + extraBarOffset, gui.inventoryLabelY + 9, 4, 52, false));
+                    evolvedMekanism$addElement(gui,new GuiSmallerDumpButton<>(gui, factory, extraSlotX.get() - 2, gui.inventoryLabelY));
+                } else if (evolvedMekanism$be instanceof TileEntityItemStackGasToItemStackFactory factory) {
+                    secondaryBar = evolvedMekanism$addElement(gui,new GuiChemicalBar<>(gui, GuiChemicalBar.getProvider(factory.getGasTank(), evolvedMekanism$be.getGasTanks(null)),
+                            extraSlotX.get() + extraBarOffset, gui.inventoryLabelY + 9, 4, 52, false));
+                    evolvedMekanism$addElement(gui,new GuiSmallerDumpButton<>(gui, factory, extraSlotX.get() - 2, gui.inventoryLabelY));
                 }
                 if (secondaryBar != null) {
-                    secondaryBar.warning(WarningTracker.WarningType.NO_MATCHING_RECIPE, be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.NOT_ENOUGH_SECONDARY_INPUT, 0));
+                    secondaryBar.warning(WarningTracker.WarningType.NO_MATCHING_RECIPE, evolvedMekanism$be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.NOT_ENOUGH_SECONDARY_INPUT, 0));
                 }
             }
 
 
             int baseX = 9;
             int baseXMult = 19;
-            for (int i = 0; i < be.tier.processes; i++) {
+            for (int i = 0; i < evolvedMekanism$be.tier.processes; i++) {
                 int cacheIndex = i;
-                addProgress(new GuiProgress(() -> be.getScaledProgress(1, cacheIndex), ProgressType.DOWN, gui, 4 + baseX + (i * baseXMult), 33))
-                        .warning(WarningTracker.WarningType.INPUT_DOESNT_PRODUCE_OUTPUT, be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.INPUT_DOESNT_PRODUCE_OUTPUT, cacheIndex));
+                addProgress(new GuiProgress(() -> evolvedMekanism$be.getScaledProgress(1, cacheIndex), ProgressType.DOWN, gui, 4 + baseX + (i * baseXMult), 33))
+                        .warning(WarningTracker.WarningType.INPUT_DOESNT_PRODUCE_OUTPUT, evolvedMekanism$be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.INPUT_DOESNT_PRODUCE_OUTPUT, cacheIndex));
             }
             ci.cancel();
         }

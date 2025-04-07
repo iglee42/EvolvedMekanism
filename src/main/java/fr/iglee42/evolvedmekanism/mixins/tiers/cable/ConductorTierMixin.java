@@ -34,6 +34,7 @@ public class ConductorTierMixin {
         EMConductorTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,65_536_000);
         EMConductorTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,524_288_000);
         EMConductorTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,4_194_304_000L);
+        EMConductorTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Double.MAX_VALUE);
     }
 
     @Unique

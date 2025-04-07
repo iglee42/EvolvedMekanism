@@ -29,7 +29,10 @@ public class TileEntityFactoryMixin {
     private void evolvedmekanism$changeEnergyPos(IContentsListener listener, CallbackInfoReturnable<IInventorySlotHolder> cir, InventorySlotHelper builder){
         if (tier.ordinal() >= EMFactoryTier.OVERCLOCKED.ordinal()){
             TileEntityFactory<?> be = (TileEntityFactory<?>) ((Object)this);
-            builder.addSlot(energySlot = EnergyInventorySlot.fillOrConvert(energyContainer, be::getLevel, listener, 171, be instanceof TileEntitySawingFactory ? 163 :143));
+            int imageWidth = 176 +(38 *( be.tier.ordinal() - EMFactoryTier.OVERCLOCKED.ordinal() + 1)) + 9;
+            int inventorySize = 9 * 20;
+            int startInventory = 8 + (imageWidth / 2 - inventorySize / 2);
+            builder.addSlot(energySlot = EnergyInventorySlot.fillOrConvert(energyContainer, be::getLevel, listener, startInventory - 22, be instanceof TileEntitySawingFactory ? 163 :143));
             cir.setReturnValue(builder.build());
         }
     }

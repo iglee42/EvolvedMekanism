@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiles.factories;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import mekanism.api.IContentsListener;
 import mekanism.api.chemical.infuse.IInfusionTank;
 import mekanism.api.chemical.infuse.InfuseType;
@@ -49,7 +50,10 @@ public class TileEntityMetallurgicInfuserFactoryMixin extends TileEntityItemToIt
     private void evolvedmekanism$moveSlot(InventorySlotHelper builder, IContentsListener listener, IContentsListener updateSortingListener, CallbackInfo ci){
         TileEntityMetallurgicInfuserFactory be = (TileEntityMetallurgicInfuserFactory) ((Object)this);
         if (EvolvedMekanism.isEvolvedMekanismTier(be.tier.getBaseTier())){
-            builder.addSlot(extraSlot = InfusionInventorySlot.fillOrConvert(infusionTank, be::getLevel, listener, 192, 143));
+            int imageWidth = 176 +(38 *( be.tier.ordinal() - EMFactoryTier.OVERCLOCKED.ordinal() + 1)) + 9;
+            int inventorySize = 9 * 20;
+            int endInventory = (imageWidth / 2 + inventorySize / 2) - 10;
+            builder.addSlot(extraSlot = InfusionInventorySlot.fillOrConvert(infusionTank, be::getLevel, listener, endInventory + 4, 143));
 
             ci.cancel();
         }

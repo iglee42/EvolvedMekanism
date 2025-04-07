@@ -8,5 +8,6 @@ public class EMPipeTier {
     public static PipeTier QUANTUM;
     public static PipeTier DENSE;
     public static PipeTier MULTIVERSAL;
+    public static PipeTier CREATIVE;
 
 }

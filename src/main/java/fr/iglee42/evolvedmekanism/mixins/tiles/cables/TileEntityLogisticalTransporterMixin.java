@@ -24,6 +24,7 @@ public class TileEntityLogisticalTransporterMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMBlocks.QUANTUM_LOGISTICAL_TRANSPORTER;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMBlocks.DENSE_LOGISTICAL_TRANSPORTER;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMBlocks.MULTIVERSAL_LOGISTICAL_TRANSPORTER;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMBlocks.CREATIVE_LOGISTICAL_TRANSPORTER;
             cir.setReturnValue(BlockStateHelper.copyStateData(current, block));
         }
     }

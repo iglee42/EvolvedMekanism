@@ -32,6 +32,7 @@ public class AlloyTierMixin {
         EMAlloyTier.SUBATOMIC = evolvedmekanism$addVariant("SUBATOMIC", EMBaseTier.QUANTUM);
         EMAlloyTier.SINGULAR = evolvedmekanism$addVariant("SINGULAR", EMBaseTier.DENSE);
         EMAlloyTier.EXOVERSAL = evolvedmekanism$addVariant("EXOVERSAL", EMBaseTier.MULTIVERSAL);
+        EMAlloyTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE);
     }
 
     @Unique

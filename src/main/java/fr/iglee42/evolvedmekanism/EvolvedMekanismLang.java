@@ -6,8 +6,8 @@ import net.minecraft.Util;
 
 public enum EvolvedMekanismLang implements ILangEntry {
 
-    MEKANISM_EVOLVED("constants","mod_name")
-
+    MEKANISM_EVOLVED("constants","mod_name"),
+    TIERED_STORAGE_CAPACITY("tiered_storage","capacity")
     ;
 
 

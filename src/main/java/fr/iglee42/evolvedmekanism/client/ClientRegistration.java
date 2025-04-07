@@ -1,8 +1,12 @@
 package fr.iglee42.evolvedmekanism.client;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
-import fr.iglee42.evolvedmekanism.registries.EMBlockEntityTypes;
+import fr.iglee42.evolvedmekanism.client.gui.GuiTieredPersonalStorageItem;
+import fr.iglee42.evolvedmekanism.client.gui.GuiTieredPersonalStorageTile;
+import fr.iglee42.evolvedmekanism.client.renderers.RenderTieredPersonalChest;
+import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.BaseTier;
 import mekanism.client.ClientRegistrationUtil;
@@ -12,9 +16,7 @@ import mekanism.client.render.tileentity.RenderBin;
 import mekanism.client.render.tileentity.RenderEnergyCube;
 import mekanism.client.render.tileentity.RenderFluidTank;
 import mekanism.client.render.transmitter.*;
-import mekanism.common.Mekanism;
 import mekanism.common.block.attribute.Attribute;
-import mekanism.common.content.gear.shared.ModuleColorModulationUnit;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
 import mekanism.common.tile.transmitter.TileEntityLogisticalTransporter;
 import mekanism.common.util.WorldUtils;
@@ -49,23 +51,26 @@ public class ClientRegistration {
 
         //Register TileEntityRenderers
 
-        ClientRegistrationUtil.bindTileEntityRenderer(event, RenderBin::new, EMBlockEntityTypes.OVERCLOCKED_BIN, EMBlockEntityTypes.QUANTUM_BIN, EMBlockEntityTypes.DENSE_BIN,
-              EMBlockEntityTypes.MULTIVERSAL_BIN);
-       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderEnergyCube::new, EMBlockEntityTypes.OVERCLOCKED_ENERGY_CUBE, EMBlockEntityTypes.QUANTUM_ENERGY_CUBE,
-             EMBlockEntityTypes.DENSE_ENERGY_CUBE, EMBlockEntityTypes.MULTIVERSAL_ENERGY_CUBE);
-       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderFluidTank::new, EMBlockEntityTypes.OVERCLOCKED_FLUID_TANK, EMBlockEntityTypes.QUANTUM_FLUID_TANK, 
-               EMBlockEntityTypes.DENSE_FLUID_TANK, EMBlockEntityTypes.MULTIVERSAL_FLUID_TANK);
+        ClientRegistrationUtil.bindTileEntityRenderer(event, RenderBin::new, EMTileEntityTypes.OVERCLOCKED_BIN, EMTileEntityTypes.QUANTUM_BIN, EMTileEntityTypes.DENSE_BIN,
+              EMTileEntityTypes.MULTIVERSAL_BIN);
+       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderEnergyCube::new, EMTileEntityTypes.OVERCLOCKED_ENERGY_CUBE, EMTileEntityTypes.QUANTUM_ENERGY_CUBE,
+             EMTileEntityTypes.DENSE_ENERGY_CUBE, EMTileEntityTypes.MULTIVERSAL_ENERGY_CUBE);
+       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderFluidTank::new, EMTileEntityTypes.OVERCLOCKED_FLUID_TANK, EMTileEntityTypes.QUANTUM_FLUID_TANK,
+               EMTileEntityTypes.DENSE_FLUID_TANK, EMTileEntityTypes.MULTIVERSAL_FLUID_TANK);
         //Transmitters
-       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderLogisticalTransporter::new, EMBlockEntityTypes.OVERCLOCKED_LOGISTICAL_TRANSPORTER, EMBlockEntityTypes.QUANTUM_LOGISTICAL_TRANSPORTER,
-             EMBlockEntityTypes.DENSE_LOGISTICAL_TRANSPORTER, EMBlockEntityTypes.MULTIVERSAL_LOGISTICAL_TRANSPORTER);
-       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderMechanicalPipe::new, EMBlockEntityTypes.OVERCLOCKED_MECHANICAL_PIPE,
-             EMBlockEntityTypes.QUANTUM_MECHANICAL_PIPE, EMBlockEntityTypes.DENSE_MECHANICAL_PIPE, EMBlockEntityTypes.MULTIVERSAL_MECHANICAL_PIPE);
-       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderPressurizedTube::new, EMBlockEntityTypes.OVERCLOCKED_PRESSURIZED_TUBE,
-             EMBlockEntityTypes.QUANTUM_PRESSURIZED_TUBE, EMBlockEntityTypes.DENSE_PRESSURIZED_TUBE, EMBlockEntityTypes.MULTIVERSAL_PRESSURIZED_TUBE);
-       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderUniversalCable::new, EMBlockEntityTypes.OVERCLOCKED_UNIVERSAL_CABLE,
-             EMBlockEntityTypes.QUANTUM_UNIVERSAL_CABLE, EMBlockEntityTypes.DENSE_UNIVERSAL_CABLE, EMBlockEntityTypes.MULTIVERSAL_UNIVERSAL_CABLE);
-       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderThermodynamicConductor::new, EMBlockEntityTypes.OVERCLOCKED_THERMODYNAMIC_CONDUCTOR,
-             EMBlockEntityTypes.QUANTUM_THERMODYNAMIC_CONDUCTOR, EMBlockEntityTypes.DENSE_THERMODYNAMIC_CONDUCTOR, EMBlockEntityTypes.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR);
+       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderLogisticalTransporter::new, EMTileEntityTypes.OVERCLOCKED_LOGISTICAL_TRANSPORTER, EMTileEntityTypes.QUANTUM_LOGISTICAL_TRANSPORTER,
+             EMTileEntityTypes.DENSE_LOGISTICAL_TRANSPORTER, EMTileEntityTypes.MULTIVERSAL_LOGISTICAL_TRANSPORTER,EMTileEntityTypes.CREATIVE_LOGISTICAL_TRANSPORTER);
+       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderMechanicalPipe::new, EMTileEntityTypes.OVERCLOCKED_MECHANICAL_PIPE,
+             EMTileEntityTypes.QUANTUM_MECHANICAL_PIPE, EMTileEntityTypes.DENSE_MECHANICAL_PIPE, EMTileEntityTypes.MULTIVERSAL_MECHANICAL_PIPE,EMTileEntityTypes.CREATIVE_MECHANICAL_PIPE);
+       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderPressurizedTube::new, EMTileEntityTypes.OVERCLOCKED_PRESSURIZED_TUBE,
+             EMTileEntityTypes.QUANTUM_PRESSURIZED_TUBE, EMTileEntityTypes.DENSE_PRESSURIZED_TUBE, EMTileEntityTypes.MULTIVERSAL_PRESSURIZED_TUBE,EMTileEntityTypes.CREATIVE_PRESSURIZED_TUBE);
+       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderUniversalCable::new, EMTileEntityTypes.OVERCLOCKED_UNIVERSAL_CABLE,
+             EMTileEntityTypes.QUANTUM_UNIVERSAL_CABLE, EMTileEntityTypes.DENSE_UNIVERSAL_CABLE, EMTileEntityTypes.MULTIVERSAL_UNIVERSAL_CABLE,EMTileEntityTypes.CREATIVE_UNIVERSAL_CABLE);
+       ClientRegistrationUtil.bindTileEntityRenderer(event, RenderThermodynamicConductor::new, EMTileEntityTypes.OVERCLOCKED_THERMODYNAMIC_CONDUCTOR,
+             EMTileEntityTypes.QUANTUM_THERMODYNAMIC_CONDUCTOR, EMTileEntityTypes.DENSE_THERMODYNAMIC_CONDUCTOR, EMTileEntityTypes.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR, EMTileEntityTypes.CREATIVE_THERMODYNAMIC_CONDUCTOR);
+        ClientRegistrationUtil.bindTileEntityRenderer(event,RenderTieredPersonalChest::new, EMTileEntityTypes.ADVANCED_PERSONAL_CHEST,
+                EMTileEntityTypes.ELITE_PERSONAL_CHEST, EMTileEntityTypes.ULTIMATE_PERSONAL_CHEST, EMTileEntityTypes.OVERCLOCKED_PERSONAL_CHEST,
+                EMTileEntityTypes.QUANTUM_PERSONAL_CHEST, EMTileEntityTypes.DENSE_PERSONAL_CHEST, EMTileEntityTypes.MULTIVERSAL_PERSONAL_CHEST,EMTileEntityTypes.CREATIVE_PERSONAL_CHEST);
     }
 
     @SubscribeEvent
@@ -77,7 +82,8 @@ public class ClientRegistration {
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerContainers(RegisterEvent event) {
         event.register(Registries.MENU, helper -> {
-
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.TIERED_PERSONAL_STORAGE_ITEM, GuiTieredPersonalStorageItem::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK, GuiTieredPersonalStorageTile::new);
         });
     }
 
@@ -107,7 +113,7 @@ public class ClientRegistration {
                   }
                   return -1;
               }, EMBlocks.OVERCLOCKED_LOGISTICAL_TRANSPORTER, EMBlocks.QUANTUM_LOGISTICAL_TRANSPORTER, EMBlocks.DENSE_LOGISTICAL_TRANSPORTER,
-              EMBlocks.MULTIVERSAL_LOGISTICAL_TRANSPORTER);
+              EMBlocks.MULTIVERSAL_LOGISTICAL_TRANSPORTER,EMBlocks.CREATIVE_LOGISTICAL_TRANSPORTER);
     }
 
     @SubscribeEvent
@@ -125,9 +131,9 @@ public class ClientRegistration {
     @SubscribeEvent
     public static void registerItemDecorations(RegisterItemDecorationsEvent event) {
         TransmitterTypeDecorator.registerDecorators(event, EMBlocks.OVERCLOCKED_PRESSURIZED_TUBE, EMBlocks.QUANTUM_PRESSURIZED_TUBE,
-              EMBlocks.DENSE_PRESSURIZED_TUBE, EMBlocks.MULTIVERSAL_PRESSURIZED_TUBE, EMBlocks.OVERCLOCKED_THERMODYNAMIC_CONDUCTOR,
-              EMBlocks.QUANTUM_THERMODYNAMIC_CONDUCTOR, EMBlocks.DENSE_THERMODYNAMIC_CONDUCTOR, EMBlocks.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR,
-              EMBlocks.OVERCLOCKED_UNIVERSAL_CABLE, EMBlocks.QUANTUM_UNIVERSAL_CABLE, EMBlocks.DENSE_UNIVERSAL_CABLE, EMBlocks.MULTIVERSAL_UNIVERSAL_CABLE);
+              EMBlocks.DENSE_PRESSURIZED_TUBE, EMBlocks.MULTIVERSAL_PRESSURIZED_TUBE, EMBlocks.CREATIVE_PRESSURIZED_TUBE, EMBlocks.OVERCLOCKED_THERMODYNAMIC_CONDUCTOR,
+              EMBlocks.QUANTUM_THERMODYNAMIC_CONDUCTOR, EMBlocks.DENSE_THERMODYNAMIC_CONDUCTOR, EMBlocks.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR, EMBlocks.CREATIVE_THERMODYNAMIC_CONDUCTOR,
+              EMBlocks.OVERCLOCKED_UNIVERSAL_CABLE, EMBlocks.QUANTUM_UNIVERSAL_CABLE, EMBlocks.DENSE_UNIVERSAL_CABLE, EMBlocks.MULTIVERSAL_UNIVERSAL_CABLE, EMBlocks.CREATIVE_UNIVERSAL_CABLE);
     }
 
 }

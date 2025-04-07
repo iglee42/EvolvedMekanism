@@ -24,6 +24,7 @@ public class TileEntityPressurizedTubeMixin {
             else if (tier.equals(EMBaseTier.QUANTUM)) block = EMBlocks.QUANTUM_PRESSURIZED_TUBE;
             else if (tier.equals(EMBaseTier.DENSE)) block = EMBlocks.DENSE_PRESSURIZED_TUBE;
             else if (tier.equals(EMBaseTier.MULTIVERSAL)) block = EMBlocks.MULTIVERSAL_PRESSURIZED_TUBE;
+            else if (tier.equals(BaseTier.CREATIVE)) block = EMBlocks.CREATIVE_PRESSURIZED_TUBE;
             cir.setReturnValue(BlockStateHelper.copyStateData(current, block));
         }
     }

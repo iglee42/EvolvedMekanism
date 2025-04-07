@@ -32,6 +32,7 @@ public class TransporterTierMixin {
         EMTransporterTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,256,100);
         EMTransporterTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,512,150);
         EMTransporterTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,1024,200);
+        EMTransporterTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Integer.MAX_VALUE,Integer.MAX_VALUE);
     }
 
     @Unique

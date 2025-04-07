@@ -8,5 +8,6 @@ public class EMInductionCellTier {
     public static InductionCellTier QUANTUM;
     public static InductionCellTier DENSE;
     public static InductionCellTier MULTIVERSAL;
+    public static InductionCellTier CREATIVE;
 
 }
