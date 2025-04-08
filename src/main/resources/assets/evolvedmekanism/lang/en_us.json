@@ -267,5 +267,9 @@
     "item.evolvedmekanism.alloy_creative": "Creative Alloy",
     "item.evolvedmekanism.creative_control_circuit": "Creative Control Circuit",
     "item.evolvedmekanism.qio_drive_creative": "Creative QIO Drive",
-    "item.evolvedmekanism.creative_tier_installer": "Creative Tier Installer"
+    "item.evolvedmekanism.creative_tier_installer": "Creative Tier Installer",
+    "factory.mekanism.alloying": "Alloying",
+    "description.mekanism.alloyer": "A machine used to alloy items together.",
+    "factory.mekanism.chemixing": "Chemixing",
+    "description.mekanism.chemixer": "A machine used to alloy items and gases together."
 }
