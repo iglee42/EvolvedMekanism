@@ -1,5 +1,5 @@
 {
-    "type": "mekanism:alloying",
+    "type": "evolvedmekanism:alloying",
     "extraInput": {
         "ingredient": {
             "tag": "forge:dusts/lithium",
