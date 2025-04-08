@@ -6,15 +6,15 @@
         }
     },
     "secondExtraInput": {
+        "amount": 6,
         "ingredient": {
-            "tag": "forge:eggs",
-            "count": 6
+            "tag": "forge:eggs"
         }
     },
     "mainInput": {
+        "amount": 3,
         "ingredient": {
-            "tag": "forge:clay_balls",
-            "count": 3
+            "tag": "forge:clay_balls"
         }
     },
     "output": {

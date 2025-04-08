@@ -1,9 +1,9 @@
 {
     "type": "evolvedmekanism:alloying",
     "extraInput": {
+        "amount": 3,
         "ingredient": {
-            "tag": "forge:dusts/prismarine",
-            "count": 3
+            "tag": "forge:dusts/prismarine"
         }
     },
     "secondExtraInput": {
@@ -12,9 +12,9 @@
         }
     },
     "mainInput": {
+        "amount": 2,
         "ingredient": {
-            "tag": "forge:ingots/nickel",
-            "count": 2
+            "tag": "forge:ingots/nickel"
         }
     },
     "output": {

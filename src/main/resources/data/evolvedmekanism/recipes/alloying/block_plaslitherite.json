@@ -1,15 +1,15 @@
 {
     "type": "evolvedmekanism:alloying",
     "extraInput": {
+        "amount": 9,
         "ingredient": {
-            "tag": "forge:dusts/lithium",
-            "count": 9
+            "tag": "forge:dusts/lithium"
         }
     },
     "secondExtraInput": {
+        "amount": 3,
         "ingredient": {
-            "item": "mekanism:hdpe_sheet",
-            "count": 3
+            "item": "mekanism:hdpe_sheet"
         }
     },
     "mainInput": {

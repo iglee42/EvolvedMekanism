@@ -1,15 +1,15 @@
 {
     "type": "evolvedmekanism:alloying",
     "extraInput": {
+        "amount": 3,
         "ingredient": {
-            "tag": "forge:ingots/lead",
-            "count": 3
+            "tag": "forge:ingots/lead"
         }
     },
     "secondExtraInput": {
+        "amount": 2,
         "ingredient": {
-            "tag": "forge:ender_pearls",
-            "count": 2
+            "tag": "forge:ender_pearls"
         }
     },
     "mainInput": {

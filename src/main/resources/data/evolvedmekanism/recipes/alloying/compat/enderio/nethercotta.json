@@ -6,15 +6,15 @@
         }
     },
     "secondExtraInput": {
+        "amount": 4,
         "ingredient": {
-            "tag": "forge:crops/nether_wart",
-            "count": 4
+            "tag": "forge:crops/nether_wart"
         }
     },
     "mainInput": {
+        "amount": 6,
         "ingredient": {
-            "tag": "forge:clay_balls",
-            "count": 6
+            "tag": "forge:clay_balls"
         }
     },
     "output": {

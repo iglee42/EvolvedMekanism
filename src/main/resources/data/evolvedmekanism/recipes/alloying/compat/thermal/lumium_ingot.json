@@ -6,15 +6,15 @@
         }
     },
     "secondExtraInput": {
+        "amount": 2,
         "ingredient": {
-            "tag": "forge:dusts/glowstone",
-            "count": 2
+            "tag": "forge:dusts/glowstone"
         }
     },
     "mainInput": {
+        "amount": 3,
         "ingredient": {
-            "tag": "forge:ingots/tin",
-            "count": 3
+            "tag": "forge:ingots/tin"
         }
     },
     "output": {

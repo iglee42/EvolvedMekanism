@@ -1,21 +1,21 @@
 {
     "type": "evolvedmekanism:alloying",
     "extraInput": {
+        "amount": 4,
         "ingredient": {
-            "tag": "forge:fruits/chorus",
-            "count": 4
+            "tag": "forge:fruits/chorus"
         }
     },
     "secondExtraInput": {
+        "amount": 4,
         "ingredient": {
-            "tag": "forge:gems/amethyst",
-            "count": 4
+            "tag": "forge:gems/amethyst"
         }
     },
     "mainInput": {
+        "amount": 2,
         "ingredient": {
-            "tag": "forge:ingots/gold",
-            "count": 2
+            "tag": "forge:ingots/gold"
         }
     },
     "output": {

@@ -1,15 +1,15 @@
 {
     "type": "evolvedmekanism:alloying",
     "extraInput": {
+        "amount": 4,
         "ingredient": {
-            "tag": "forge:ingots/netherite",
-            "count": 4
+            "tag": "forge:ingots/netherite"
         }
     },
     "secondExtraInput": {
+        "amount": 4,
         "ingredient": {
-            "tag": "forge:clay_balls",
-            "count": 4
+            "tag": "forge:clay_balls"
         }
     },
     "mainInput": {

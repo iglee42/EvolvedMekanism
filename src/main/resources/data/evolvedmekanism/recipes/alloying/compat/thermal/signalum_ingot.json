@@ -6,15 +6,15 @@
         }
     },
     "secondExtraInput": {
+        "amount": 4,
         "ingredient": {
-            "tag": "forge:dusts/redstone",
-            "count": 4
+            "tag": "forge:dusts/redstone"
         }
     },
     "mainInput": {
+        "amount": 3,
         "ingredient": {
-            "tag": "forge:ingots/copper",
-            "count": 3
+            "tag": "forge:ingots/copper"
         }
     },
     "output": {
