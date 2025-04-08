@@ -1,0 +1,28 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:dusts/quartz"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "forge:obsidian"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:sand"
+        }
+    },
+    "output": {
+        "item": "thermal:obsidian_glass",
+        "count": 2
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "thermal"
+        }
+    ]
+}

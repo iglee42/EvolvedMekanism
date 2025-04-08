@@ -10,13 +10,16 @@
         "S": {
             "item": "mekanism:energized_smelter"
         },
+        "T": {
+            "item": "mekanism:combiner"
+        },
         "X": {
             "item": "mekanism:steel_casing"
         }
     },
     "pattern": [
         "ACA",
-        "SXS",
+        "SXT",
         "ACA"
     ],
     "result": {

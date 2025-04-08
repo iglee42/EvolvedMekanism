@@ -1,0 +1,30 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:ingots/silver"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "forge:dusts/glowstone",
+            "count": 2
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:ingots/tin",
+            "count": 3
+        }
+    },
+    "output": {
+        "item": "thermal:lumium_ingot",
+        "count": 4
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "thermal"
+        }
+    ]
+}

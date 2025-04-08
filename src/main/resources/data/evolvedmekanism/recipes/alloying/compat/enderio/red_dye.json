@@ -1,0 +1,30 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:vegetables/beetroot"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "forge:eggs",
+            "count": 6
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:clay_balls",
+            "count": 3
+        }
+    },
+    "output": {
+        "item": "minecraft:red_dye",
+        "count": 12
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "enderio"
+        }
+    ]
+}

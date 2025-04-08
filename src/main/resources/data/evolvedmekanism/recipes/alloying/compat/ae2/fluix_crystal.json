@@ -1,0 +1,28 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:gems/certus_quartz"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "forge:gems/quartz"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:dusts/redstone"
+        }
+    },
+    "output": {
+        "item": "ae2:fluix_crystal",
+        "count": 2
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "ae2"
+        }
+    ]
+}

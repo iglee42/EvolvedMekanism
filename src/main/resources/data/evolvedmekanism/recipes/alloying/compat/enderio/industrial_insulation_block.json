@@ -1,0 +1,27 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:dusts/lapis"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "enderio:insulation_metals"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "minecraft:wool"
+        }
+    },
+    "output": {
+        "item": "industrial_insulation_block"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "enderio"
+        }
+    ]
+}

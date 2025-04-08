@@ -1,0 +1,30 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:ingots/netherite",
+            "count": 4
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "forge:clay_balls",
+            "count": 4
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:nether_stars"
+        }
+    },
+    "output": {
+        "item": "thermalendergy:stellarium_ingot",
+        "count": 4
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "thermalendergy"
+        }
+    ]
+}

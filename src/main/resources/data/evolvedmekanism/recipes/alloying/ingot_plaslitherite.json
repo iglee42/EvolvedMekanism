@@ -1,0 +1,22 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:dusts/lithium"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "mekanism:hdpe_pellet",
+            "count": 3
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:ingots/netherite"
+        }
+    },
+    "output": {
+        "item": "evolvedmekanism:ingot_plaslitherite"
+    }
+}

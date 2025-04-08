@@ -1,0 +1,27 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "item": "ae2:printed_logic_processor"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "ae2:printed_silicon"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:dusts/redstone"
+        }
+    },
+    "output": {
+        "item": "ae2:logic_processor"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "ae2"
+        }
+    ]
+}

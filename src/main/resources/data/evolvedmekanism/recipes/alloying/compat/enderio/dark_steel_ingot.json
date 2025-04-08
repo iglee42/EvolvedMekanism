@@ -1,0 +1,27 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:ingots/iron"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "forge:dusts/coal"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:obsidian"
+        }
+    },
+    "output": {
+        "item": "enderio:dark_steel_ingot"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "enderio"
+        }
+    ]
+}

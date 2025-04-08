@@ -1,0 +1,23 @@
+{
+    "type": "mekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:dusts/lithium",
+            "count": 9
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "mekanism:hdpe_sheet",
+            "count": 3
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:storage_blocks/netherite"
+        }
+    },
+    "output": {
+        "item": "evolvedmekanism:block_plaslitherite"
+    }
+}
