@@ -1,24 +1,33 @@
 package fr.iglee42.evolvedmekanism.registries;
 
+import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.*;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import mekanism.common.MekanismLang;
 import mekanism.common.block.attribute.*;
 import mekanism.common.block.attribute.Attributes.AttributeRedstone;
 import mekanism.common.block.attribute.Attributes.AttributeSecurity;
+import mekanism.common.config.MekanismConfig;
 import mekanism.common.content.blocktype.BlockShapes;
 import mekanism.common.content.blocktype.BlockTypeTile;
 import mekanism.common.content.blocktype.BlockTypeTile.BlockTileBuilder;
+import mekanism.common.content.blocktype.FactoryType;
 import mekanism.common.content.blocktype.Machine;
 import mekanism.common.content.blocktype.Machine.MachineBuilder;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.registries.MekanismContainerTypes;
+import mekanism.common.registries.MekanismSounds;
+import mekanism.common.registries.MekanismTileEntityTypes;
 import mekanism.common.tier.*;
 import mekanism.common.tile.*;
+import mekanism.common.tile.machine.TileEntityEnrichmentChamber;
+import mekanism.common.tile.machine.TileEntityPressurizedReactionChamber;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -27,9 +36,21 @@ import java.util.function.Supplier;
 
 public class EMBlockTypes {
 
+    public static final Machine.FactoryMachine<TileEntityAlloyer> ALLOYER = MachineBuilder
+            .createFactoryMachine(() -> EMTileEntityTypes.ALLOYER, EvolvedMekanismLang.DESCRIPTION_ALLOYER, EMFactoryType.ALLOYING)
+            .withGui(() -> EMContainerTypes.ALLOYER)
+            .withSound(MekanismSounds.COMBINER)
+            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withComputerSupport("alloyer")
+            .build();
 
-
-
+    public static final Machine<TileEntityChemixer> CHEMIXER = MachineBuilder
+            .createMachine(() -> EMTileEntityTypes.CHEMIXER, MekanismLang.DESCRIPTION_PRESSURIZED_REACTION_CHAMBER)
+            .withGui(() -> EMContainerTypes.CHEMIXER)
+            .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
+            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withComputerSupport("chemixer")
+            .build();
 
     // Induction Cells
    public static final BlockTypeTile<TileEntityInductionCell> OVERCLOCKED_INDUCTION_CELL = createInductionCell(EMInductionCellTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_INDUCTION_CELL);

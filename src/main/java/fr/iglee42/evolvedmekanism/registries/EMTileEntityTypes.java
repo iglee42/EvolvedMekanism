@@ -5,11 +5,16 @@ import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalStorage;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import mekanism.api.providers.IBlockProvider;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
+import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.tile.*;
+import mekanism.common.tile.machine.TileEntityEnrichmentChamber;
+import mekanism.common.tile.machine.TileEntityPressurizedReactionChamber;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.transmitter.*;
@@ -104,6 +109,10 @@ public class EMTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> DENSE_PERSONAL_CHEST = registerTieredStorage(EMBlocks.DENSE_PERSONAL_CHEST, PersonalStorageTier.DENSE, TileEntityTieredPersonalChest::new);
     public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> MULTIVERSAL_PERSONAL_CHEST = registerTieredStorage(EMBlocks.MULTIVERSAL_PERSONAL_CHEST, PersonalStorageTier.MULTIVERSAL, TileEntityTieredPersonalChest::new);
     public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> CREATIVE_PERSONAL_CHEST = registerTieredStorage(EMBlocks.CREATIVE_PERSONAL_CHEST, PersonalStorageTier.CREATIVE, TileEntityTieredPersonalChest::new);
+
+    public static final TileEntityTypeRegistryObject<TileEntityAlloyer> ALLOYER = TILE_ENTITY_TYPES.register(EMBlocks.ALLOYER, TileEntityAlloyer::new);
+    public static final TileEntityTypeRegistryObject<TileEntityChemixer> CHEMIXER = TILE_ENTITY_TYPES.register(EMBlocks.CHEMIXER, TileEntityChemixer::new);
+
 
     private static <BE extends TileEntityTransmitter> TileEntityTypeRegistryObject<BE> registerTransmitter(BlockRegistryObject<?, ?> block,
                                                                                                            BlockEntityType.BlockEntitySupplier<? extends BE> factory) {

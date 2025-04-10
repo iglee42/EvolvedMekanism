@@ -1,37 +1,32 @@
 package fr.iglee42.evolvedmekanism.jei;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.jei.categories.AlloyerRecipeCategory;
+import fr.iglee42.evolvedmekanism.jei.categories.ChemixerRecipeCategory;
+import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
+import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.chemical.IChemicalHandler;
-import mekanism.api.chemical.gas.GasStack;
-import mekanism.api.chemical.infuse.InfusionStack;
-import mekanism.api.chemical.pigment.PigmentStack;
-import mekanism.api.chemical.slurry.SlurryStack;
 import mekanism.api.energy.IStrictEnergyHandler;
 import mekanism.api.math.FloatingLong;
 import mekanism.api.providers.IItemProvider;
-import mekanism.client.jei.ChemicalStackHelper.GasStackHelper;
-import mekanism.client.jei.ChemicalStackHelper.InfusionStackHelper;
-import mekanism.client.jei.ChemicalStackHelper.PigmentStackHelper;
-import mekanism.client.jei.ChemicalStackHelper.SlurryStackHelper;
+import mekanism.client.jei.CatalystRegistryHelper;
+import mekanism.client.jei.MekanismJEIRecipeType;
+import mekanism.client.jei.RecipeRegistryHelper;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.util.RegistryUtils;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.ingredients.IIngredientType;
 import mezz.jei.api.ingredients.subtypes.IIngredientSubtypeInterpreter;
 import mezz.jei.api.ingredients.subtypes.UidContext;
-import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IModIngredientRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
@@ -49,6 +44,10 @@ import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
 public class EMJEI implements IModPlugin {
+
+    public static final MekanismJEIRecipeType<AlloyerRecipe> ALLOYING = new MekanismJEIRecipeType<>(EMBlocks.ALLOYER, AlloyerRecipe.class);
+    public static final MekanismJEIRecipeType<ChemixerRecipe> CHEMIXING = new MekanismJEIRecipeType<>(EMBlocks.CHEMIXER, ChemixerRecipe.class);
+
 
     private static final IIngredientSubtypeInterpreter<ItemStack> MEKANISM_NBT_INTERPRETER = (stack, context) -> {
         if (context == UidContext.Ingredient && stack.hasTag()) {
@@ -155,6 +154,8 @@ public class EMJEI implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
         IGuiHelper guiHelper = registry.getJeiHelpers().getGuiHelper();
+        registry.addRecipeCategories(new AlloyerRecipeCategory(guiHelper, ALLOYING));
+        registry.addRecipeCategories(new ChemixerRecipeCategory(guiHelper, CHEMIXING));
 
     }
 
@@ -165,11 +166,15 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registry) {
+        RecipeRegistryHelper.register(registry, ALLOYING, EMRecipeType.ALLOYING);
+        RecipeRegistryHelper.register(registry, CHEMIXING, EMRecipeType.CHEMIXING);
 
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
+        CatalystRegistryHelper.register(registry, EMBlocks.ALLOYER);
+        CatalystRegistryHelper.register(registry, EMBlocks.CHEMIXER);
 
     }
 

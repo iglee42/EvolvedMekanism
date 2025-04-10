@@ -1,6 +1,8 @@
 package fr.iglee42.evolvedmekanism.client;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.client.gui.GuiAlloyer;
+import fr.iglee42.evolvedmekanism.client.gui.GuiChemixer;
 import fr.iglee42.evolvedmekanism.client.gui.GuiTieredPersonalStorageItem;
 import fr.iglee42.evolvedmekanism.client.gui.GuiTieredPersonalStorageTile;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderTieredPersonalChest;
@@ -10,6 +12,7 @@ import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.BaseTier;
 import mekanism.client.ClientRegistrationUtil;
+import mekanism.client.gui.machine.GuiCombiner;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.item.TransmitterTypeDecorator;
 import mekanism.client.render.tileentity.RenderBin;
@@ -18,6 +21,7 @@ import mekanism.client.render.tileentity.RenderFluidTank;
 import mekanism.client.render.transmitter.*;
 import mekanism.common.block.attribute.Attribute;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
+import mekanism.common.registries.MekanismContainerTypes;
 import mekanism.common.tile.transmitter.TileEntityLogisticalTransporter;
 import mekanism.common.util.WorldUtils;
 import net.minecraft.core.registries.Registries;
@@ -84,6 +88,8 @@ public class ClientRegistration {
         event.register(Registries.MENU, helper -> {
             ClientRegistrationUtil.registerScreen(EMContainerTypes.TIERED_PERSONAL_STORAGE_ITEM, GuiTieredPersonalStorageItem::new);
             ClientRegistrationUtil.registerScreen(EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK, GuiTieredPersonalStorageTile::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.ALLOYER, GuiAlloyer::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.CHEMIXER, GuiChemixer::new);
         });
     }
 

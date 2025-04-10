@@ -1,6 +1,8 @@
 package fr.iglee42.evolvedmekanism.mixins.client;
 
 import fr.iglee42.evolvedmekanism.client.buttons.GuiSmallerDumpButton;
+import fr.iglee42.evolvedmekanism.jei.EMJEI;
+import fr.iglee42.evolvedmekanism.registries.EMFactoryType;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.client.gui.element.GuiDumpButton;
@@ -12,6 +14,7 @@ import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.tab.GuiEnergyTab;
 import mekanism.client.gui.element.tab.GuiSortingTab;
 import mekanism.client.gui.machine.GuiFactory;
+import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.common.inventory.container.slot.ContainerSlotType;
 import mekanism.common.inventory.container.tile.MekanismTileContainer;
 import mekanism.common.inventory.warning.ISupportsWarning;
@@ -30,6 +33,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -113,6 +117,14 @@ public abstract class GuiFactoryMixin {
         return element;
     }
 
+    @Inject(method = "addProgress", at = @At("HEAD"), cancellable = true)
+    private void evolvedmekanism$fixProgressBar(GuiProgress progressBar, CallbackInfoReturnable<GuiProgress> cir) {
+        Object obj = this;
+        GuiFactory gui = (GuiFactory) obj;
+        if (evolvedMekanism$be.getFactoryType().equals(EMFactoryType.ALLOYING)){
+            cir.setReturnValue(evolvedMekanism$addElement(gui,progressBar.jeiCategories(EMJEI.ALLOYING)));
+        }
+    }
 
 
 }

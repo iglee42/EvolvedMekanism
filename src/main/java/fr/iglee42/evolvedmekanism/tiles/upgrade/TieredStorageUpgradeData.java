@@ -1,6 +1,5 @@
-package fr.iglee42.evolvedmekanism.tiles;
+package fr.iglee42.evolvedmekanism.tiles.upgrade;
 
-import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageItemInventory;
 import mekanism.api.inventory.IInventorySlot;
 import mekanism.common.upgrade.IUpgradeData;
 

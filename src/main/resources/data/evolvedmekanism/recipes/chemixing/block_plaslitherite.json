@@ -1,16 +1,14 @@
 {
-    "type": "evolvedmekanism:alloying",
+    "type": "evolvedmekanism:chemixing",
     "extraInput": {
-        "amount": 9,
-        "ingredient": {
-            "tag": "forge:dusts/lithium"
-        }
-    },
-    "secondExtraInput": {
         "amount": 3,
         "ingredient": {
             "item": "mekanism:hdpe_sheet"
         }
+    },
+    "gasInput": {
+        "amount": 900,
+        "gas": "mekanism:lithium"
     },
     "mainInput": {
         "ingredient": {

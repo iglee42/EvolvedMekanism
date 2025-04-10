@@ -1,6 +1,6 @@
 package fr.iglee42.evolvedmekanism.mixins.tiles;
 
-import fr.iglee42.evolvedmekanism.tiles.TieredStorageUpgradeData;
+import fr.iglee42.evolvedmekanism.tiles.upgrade.TieredStorageUpgradeData;
 import mekanism.api.inventory.IInventorySlot;
 import mekanism.api.providers.IBlockProvider;
 import mekanism.common.tile.TileEntityPersonalStorage;

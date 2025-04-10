@@ -7,6 +7,8 @@ import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
+import mekanism.common.MekanismLang;
+import mekanism.common.content.blocktype.FactoryType;
 import mekanism.common.lib.Version;
 import mekanism.common.registration.impl.ItemRegistryObject;
 import mekanism.common.registries.MekanismItems;
@@ -73,9 +75,11 @@ public class EvolvedMekanism {
 
 
     private void initEnums(){
+        MekanismLang ignoredLType = MekanismLang.MEKANISM;
         BaseTier ignored1 = BaseTier.BASIC;
         AlloyTier ignored2 = AlloyTier.ATOMIC;
         FactoryTier ignored3 = FactoryTier.BASIC;
+        FactoryType ignoredFType = FactoryType.COMBINING;
 
         CableTier cable1 = CableTier.BASIC;
         ConductorTier cable2 = ConductorTier.BASIC;
