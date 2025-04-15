@@ -33,6 +33,9 @@
                     "block": "evolvedmekanism:multiversal_induction_cell"
                 },
                 {
+                    "block": "evolvedmekanism:creative_induction_cell"
+                },
+                {
                     "block": "mekanism:basic_induction_provider"
                 },
                 {
@@ -55,8 +58,10 @@
                 },
                 {
                     "block": "evolvedmekanism:multiversal_induction_provider"
+                },
+                {
+                    "block": "evolvedmekanism:creative_induction_provider"
                 }
-
             ],
             "connect_inside": true
         }
