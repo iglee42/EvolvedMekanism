@@ -6,6 +6,8 @@ import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonnalChest;
 import fr.iglee42.evolvedmekanism.blocks.EMBlockResource;
 import fr.iglee42.evolvedmekanism.items.EMItemBlockResource;
 import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
+import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
+import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiers.cable.*;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
@@ -17,6 +19,8 @@ import mekanism.common.block.BlockEnergyCube;
 import mekanism.common.block.attribute.AttributeTier;
 import mekanism.common.block.basic.BlockBin;
 import mekanism.common.block.basic.BlockFluidTank;
+import mekanism.common.block.interfaces.IHasDescription;
+import mekanism.common.block.prefab.BlockBasicMultiblock;
 import mekanism.common.block.prefab.BlockFactoryMachine;
 import mekanism.common.block.prefab.BlockFactoryMachine.BlockFactory;
 import mekanism.common.block.prefab.BlockTile;
@@ -45,8 +49,11 @@ import mekanism.common.tile.machine.TileEntityCombiner;
 import mekanism.common.tile.machine.TileEntityPressurizedReactionChamber;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
+import mekanism.common.tile.multiblock.TileEntitySPSCasing;
+import mekanism.common.tile.multiblock.TileEntitySPSPort;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MapColor;
 
@@ -55,6 +62,10 @@ import java.util.function.Supplier;
 
 public class EMBlocks {
     public static final BlockDeferredRegister BLOCKS = new BlockDeferredRegister(EvolvedMekanism.MODID);
+
+    public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTCasing>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTCasing>>> APT_CASING = registerBlock("apt_casing", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_CASING, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
+    public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTPort>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTPort>>> APT_PORT = registerBlock("apt_port", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_PORT, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
+
 
     public static final BlockRegistryObject<BlockFactoryMachine<TileEntityAlloyer, Machine.FactoryMachine<TileEntityAlloyer>>, ItemBlockMachine> ALLOYER = BLOCKS.register("alloyer", () -> new BlockFactoryMachine<>(EMBlockTypes.ALLOYER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
 
@@ -143,6 +154,11 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> DENSE_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.DENSE_PERSONAL_CHEST,PersonalStorageTier.DENSE);
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> MULTIVERSAL_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.MULTIVERSAL_PERSONAL_CHEST,PersonalStorageTier.MULTIVERSAL);
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> CREATIVE_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.CREATIVE_PERSONAL_CHEST,PersonalStorageTier.CREATIVE);
+
+    private static <BLOCK extends Block & IHasDescription> BlockRegistryObject<BLOCK, ItemBlockTooltip<BLOCK>> registerBlock(String name,
+                                                                                                                             Supplier<? extends BLOCK> blockSupplier, Rarity rarity) {
+        return BLOCKS.registerDefaultProperties(name, blockSupplier, (block, props) -> new ItemBlockTooltip<>(block, props.rarity(rarity)));
+    }
 
     private static BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> registerPersonalChest(BlockTypeTile<TileEntityTieredPersonalChest> type,PersonalStorageTier tier) {
         return registerTieredBlock(tier, "_personal_chest", () -> new BlockTieredPersonnalChest(type,tier), block -> new ItemBlockTieredPersonalStorage<>(block, Stats.OPEN_CHEST,block.getTier()));

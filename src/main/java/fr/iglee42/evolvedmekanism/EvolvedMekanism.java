@@ -2,6 +2,9 @@ package fr.iglee42.evolvedmekanism;
 
 import com.mojang.logging.LogUtils;
 import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageManager;
+import fr.iglee42.evolvedmekanism.multiblock.apt.APTCache;
+import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
+import fr.iglee42.evolvedmekanism.multiblock.apt.APTValidator;
 import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
 import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
@@ -10,6 +13,7 @@ import mekanism.api.tier.BaseTier;
 import mekanism.common.MekanismLang;
 import mekanism.common.content.blocktype.FactoryType;
 import mekanism.common.lib.Version;
+import mekanism.common.lib.multiblock.MultiblockManager;
 import mekanism.common.registration.impl.ItemRegistryObject;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.tier.*;
@@ -36,6 +40,9 @@ public class EvolvedMekanism {
     private final EMPacketHandler packetHandler;
 
     public final Version versionNumber;
+
+    public static final MultiblockManager<APTMultiblockData> aptManager = new MultiblockManager<>("apt", APTCache::new, APTValidator::new);
+
 
 
     public EvolvedMekanism() {

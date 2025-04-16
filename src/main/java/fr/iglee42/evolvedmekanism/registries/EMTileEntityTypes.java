@@ -1,6 +1,8 @@
 package fr.iglee42.evolvedmekanism.registries;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
+import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
@@ -13,10 +15,10 @@ import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.tile.*;
-import mekanism.common.tile.machine.TileEntityEnrichmentChamber;
-import mekanism.common.tile.machine.TileEntityPressurizedReactionChamber;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
+import mekanism.common.tile.multiblock.TileEntitySPSCasing;
+import mekanism.common.tile.multiblock.TileEntitySPSPort;
 import mekanism.common.tile.transmitter.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -26,6 +28,10 @@ import net.minecraft.world.level.block.state.BlockState;
 public class EMTileEntityTypes {
 
     public static final TileEntityTypeDeferredRegister TILE_ENTITY_TYPES = new TileEntityTypeDeferredRegister(EvolvedMekanism.MODID);
+
+    public static final TileEntityTypeRegistryObject<TileEntityAPTCasing> APT_CASING = TILE_ENTITY_TYPES.register(EMBlocks.APT_CASING, TileEntityAPTCasing::new);
+    public static final TileEntityTypeRegistryObject<TileEntityAPTPort> APT_PORT = TILE_ENTITY_TYPES.register(EMBlocks.APT_PORT, TileEntityAPTPort::new);
+
 
     //Logistic Transporters
     public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> OVERCLOCKED_LOGISTICAL_TRANSPORTER = TILE_ENTITY_TYPES.builder(EMBlocks.OVERCLOCKED_LOGISTICAL_TRANSPORTER, (pos, state) -> new TileEntityLogisticalTransporter(EMBlocks.OVERCLOCKED_LOGISTICAL_TRANSPORTER, pos, state)).clientTicker(TileEntityLogisticalTransporterBase::tickClient).serverTicker(TileEntityTransmitter::tickServer).build();

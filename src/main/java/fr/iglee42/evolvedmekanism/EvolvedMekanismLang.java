@@ -11,6 +11,11 @@ public enum EvolvedMekanismLang implements ILangEntry {
 
     MEKANISM_EVOLVED("constants","mod_name"),
     TIERED_STORAGE_CAPACITY("tiered_storage","capacity"),
+    DESCRIPTION_APT_CASING("description", "apt_casing"),
+    DESCRIPTION_APT_PORT("description", "apt_port"),
+
+    APT("apt", "apt"),
+    APT_PORT_MODE("apt", "port_mode"),
 
     ;
 

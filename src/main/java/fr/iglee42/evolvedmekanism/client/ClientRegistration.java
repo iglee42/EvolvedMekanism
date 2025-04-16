@@ -1,18 +1,16 @@
 package fr.iglee42.evolvedmekanism.client;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
-import fr.iglee42.evolvedmekanism.client.gui.GuiAlloyer;
-import fr.iglee42.evolvedmekanism.client.gui.GuiChemixer;
-import fr.iglee42.evolvedmekanism.client.gui.GuiTieredPersonalStorageItem;
-import fr.iglee42.evolvedmekanism.client.gui.GuiTieredPersonalStorageTile;
+import fr.iglee42.evolvedmekanism.client.gui.*;
+import fr.iglee42.evolvedmekanism.client.renderers.RenderAPT;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderTieredPersonalChest;
+import fr.iglee42.evolvedmekanism.client.renderers.datas.MultipleCustomRenderData;
 import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.BaseTier;
 import mekanism.client.ClientRegistrationUtil;
-import mekanism.client.gui.machine.GuiCombiner;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.item.TransmitterTypeDecorator;
 import mekanism.client.render.tileentity.RenderBin;
@@ -21,9 +19,9 @@ import mekanism.client.render.tileentity.RenderFluidTank;
 import mekanism.client.render.transmitter.*;
 import mekanism.common.block.attribute.Attribute;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
-import mekanism.common.registries.MekanismContainerTypes;
 import mekanism.common.tile.transmitter.TileEntityLogisticalTransporter;
 import mekanism.common.util.WorldUtils;
+import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
@@ -75,6 +73,9 @@ public class ClientRegistration {
         ClientRegistrationUtil.bindTileEntityRenderer(event,RenderTieredPersonalChest::new, EMTileEntityTypes.ADVANCED_PERSONAL_CHEST,
                 EMTileEntityTypes.ELITE_PERSONAL_CHEST, EMTileEntityTypes.ULTIMATE_PERSONAL_CHEST, EMTileEntityTypes.OVERCLOCKED_PERSONAL_CHEST,
                 EMTileEntityTypes.QUANTUM_PERSONAL_CHEST, EMTileEntityTypes.DENSE_PERSONAL_CHEST, EMTileEntityTypes.MULTIVERSAL_PERSONAL_CHEST,EMTileEntityTypes.CREATIVE_PERSONAL_CHEST);
+
+        event.registerBlockEntityRenderer(EMTileEntityTypes.APT_CASING.get(), RenderAPT::new);
+        event.registerBlockEntityRenderer(EMTileEntityTypes.APT_PORT.get(), RenderAPT::new);
     }
 
     @SubscribeEvent
@@ -90,6 +91,8 @@ public class ClientRegistration {
             ClientRegistrationUtil.registerScreen(EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK, GuiTieredPersonalStorageTile::new);
             ClientRegistrationUtil.registerScreen(EMContainerTypes.ALLOYER, GuiAlloyer::new);
             ClientRegistrationUtil.registerScreen(EMContainerTypes.CHEMIXER, GuiChemixer::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.APT, GuiAPT::new);
+
         });
     }
 
@@ -142,4 +145,12 @@ public class ClientRegistration {
               EMBlocks.OVERCLOCKED_UNIVERSAL_CABLE, EMBlocks.QUANTUM_UNIVERSAL_CABLE, EMBlocks.DENSE_UNIVERSAL_CABLE, EMBlocks.MULTIVERSAL_UNIVERSAL_CABLE, EMBlocks.CREATIVE_UNIVERSAL_CABLE);
     }
 
+    @SubscribeEvent
+    public static void onStitch(TextureStitchEvent.Post event) {
+        if (!event.getAtlas().location().equals(TextureAtlas.LOCATION_BLOCKS)) {
+            return;
+        }
+        CustomModelRenderer.resetCachedModels();
+        MultipleCustomRenderData.clearCaches();
+    }
 }

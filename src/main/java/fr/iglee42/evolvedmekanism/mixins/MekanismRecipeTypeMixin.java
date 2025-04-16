@@ -5,8 +5,10 @@ import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.recipes.MekanismRecipe;
+import mekanism.api.recipes.chemical.ItemStackChemicalToItemStackRecipe;
 import mekanism.common.recipe.MekanismRecipeType;
 import mekanism.common.recipe.lookup.cache.IInputRecipeCache;
+import mekanism.common.recipe.lookup.cache.InputRecipeCache;
 import mekanism.common.registration.impl.RecipeTypeRegistryObject;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -28,6 +30,8 @@ public abstract class MekanismRecipeTypeMixin {
     private static void evolvedmekanism$initEmRecipe(CallbackInfo ci){
         EMRecipeType.ALLOYING = register("alloying", recipeType -> new EMInputRecipeCache.TripleItem<>(recipeType, AlloyerRecipe::getMainInput, AlloyerRecipe::getExtraInput, AlloyerRecipe::getTertiaryExtraInput));
         EMRecipeType.CHEMIXING = register("chemixing", recipeType -> new EMInputRecipeCache.ItemItemChemical<>(recipeType, ChemixerRecipe::getInputMain, ChemixerRecipe::getInputExtra, ChemixerRecipe::getInputGas));
+        EMRecipeType.APT = register("apt", recipeType -> new InputRecipeCache.ItemChemical<>(recipeType, ItemStackChemicalToItemStackRecipe::getItemInput,
+                ItemStackChemicalToItemStackRecipe::getChemicalInput));
     }
 
 

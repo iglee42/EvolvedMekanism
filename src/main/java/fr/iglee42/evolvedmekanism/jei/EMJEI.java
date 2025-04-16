@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.jei.categories.APTRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.AlloyerRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.ChemixerRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
@@ -16,6 +17,7 @@ import mekanism.api.chemical.IChemicalHandler;
 import mekanism.api.energy.IStrictEnergyHandler;
 import mekanism.api.math.FloatingLong;
 import mekanism.api.providers.IItemProvider;
+import mekanism.api.recipes.ItemStackGasToItemStackRecipe;
 import mekanism.client.jei.CatalystRegistryHelper;
 import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.client.jei.RecipeRegistryHelper;
@@ -47,6 +49,7 @@ public class EMJEI implements IModPlugin {
 
     public static final MekanismJEIRecipeType<AlloyerRecipe> ALLOYING = new MekanismJEIRecipeType<>(EMBlocks.ALLOYER, AlloyerRecipe.class);
     public static final MekanismJEIRecipeType<ChemixerRecipe> CHEMIXING = new MekanismJEIRecipeType<>(EMBlocks.CHEMIXER, ChemixerRecipe.class);
+    public static final MekanismJEIRecipeType<ItemStackGasToItemStackRecipe> APT = new MekanismJEIRecipeType<>(EMItems.BETTER_GOLD_INGOT, ItemStackGasToItemStackRecipe.class);
 
 
     private static final IIngredientSubtypeInterpreter<ItemStack> MEKANISM_NBT_INTERPRETER = (stack, context) -> {
@@ -156,6 +159,7 @@ public class EMJEI implements IModPlugin {
         IGuiHelper guiHelper = registry.getJeiHelpers().getGuiHelper();
         registry.addRecipeCategories(new AlloyerRecipeCategory(guiHelper, ALLOYING));
         registry.addRecipeCategories(new ChemixerRecipeCategory(guiHelper, CHEMIXING));
+        registry.addRecipeCategories(new APTRecipeCategory(guiHelper, APT));
 
     }
 
@@ -168,6 +172,7 @@ public class EMJEI implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registry) {
         RecipeRegistryHelper.register(registry, ALLOYING, EMRecipeType.ALLOYING);
         RecipeRegistryHelper.register(registry, CHEMIXING, EMRecipeType.CHEMIXING);
+        RecipeRegistryHelper.register(registry, APT, EMRecipeType.APT);
 
     }
 
@@ -175,6 +180,7 @@ public class EMJEI implements IModPlugin {
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
         CatalystRegistryHelper.register(registry, EMBlocks.ALLOYER);
         CatalystRegistryHelper.register(registry, EMBlocks.CHEMIXER);
+        CatalystRegistryHelper.register(registry,APT, EMBlocks.APT_CASING,EMBlocks.APT_PORT);
 
     }
 
