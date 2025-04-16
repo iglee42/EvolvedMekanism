@@ -2,7 +2,7 @@
     "type": "mekanism:mek_data",
     "key": {
         "A": {
-            "tag": "evolvedmekanism:alloys/basic"
+            "tag": "mekanism:alloys/basic"
         },
         "C": {
             "tag": "forge:circuits/basic"
