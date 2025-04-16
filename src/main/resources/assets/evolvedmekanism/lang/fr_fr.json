@@ -271,5 +271,7 @@
     "factory.mekanism.alloying": "Alliageur",
     "description.mekanism.alloyer": "Une machine utilis\u00e9e pour allier des objets ensemble.",
     "factory.mekanism.chemixing": "Chimixeur",
-    "description.mekanism.chemixer": "Une machine utilis\u00e9e pour allier des objets et des gaz ensemble."
+    "description.mekanism.chemixer": "Une machine utilis\u00e9e pour allier des objets et des gaz ensemble.",
+    "description.evolvedmekanism.apt_casing": "Structure renforc\u00e9es \u00e0 l'antimati\u00e8re capables de r\u00e9sister aux effets chimiques et thermiques intenses des r\u00e9actions de transmutation.",
+    "description.evolvedmekanism.apt_port": "Un port utilis\u00e9 pour le transfert d'\u00e9nergie et de substances dans la transmutation protomol\u00e9culaire \u00e0 antimati\u00e8re."
 }
