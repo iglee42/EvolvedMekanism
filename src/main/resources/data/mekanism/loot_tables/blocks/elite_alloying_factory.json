@@ -63,12 +63,12 @@
                             "source": "block_entity"
                         }
                     ],
-                    "name": "evolvedmekanism:ultimate_alloying_factory"
+                    "name": "mekanism:elite_alloying_factory"
                 }
             ],
             "name": "main",
             "rolls": 1.0
         }
     ],
-    "random_sequence": "evolvedmekanism:blocks/ultimate_alloying_factory"
+    "random_sequence": "mekanism:blocks/elite_alloying_factory"
 }

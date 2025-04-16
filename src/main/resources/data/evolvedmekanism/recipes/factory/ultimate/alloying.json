@@ -11,7 +11,7 @@
             "tag": "forge:gems/diamond"
         },
         "P": {
-            "item": "evolvedmekanism:elite_alloying_factory"
+            "item": "mekanism:elite_alloying_factory"
         }
     },
     "pattern": [
@@ -20,6 +20,6 @@
         "ACA"
     ],
     "result": {
-        "item": "evolvedmekanism:ultimate_alloying_factory"
+        "item": "mekanism:ultimate_alloying_factory"
     }
 }
