@@ -142,9 +142,11 @@ repositories {
 
     maven { url 'https://modmaven.dev/' }
 
-    maven { url 'https://iglee.fr:8081/releases/'}
+    maven { url 'https://maven.iglee.fr/releases/'}
 
     maven { url = "https://maven.blamejared.com/"}
+
+    maven { url "https://cursemaven.com" }
 }
 
 dependencies {
@@ -178,6 +180,8 @@ dependencies {
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:additions")// Mekanism: Additions
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:generators")// Mekanism: Generators
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")// Mekanism: Tools
+
+    runtimeOnly fg.deobf("curse.maven:ctm-267602:5983309")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
