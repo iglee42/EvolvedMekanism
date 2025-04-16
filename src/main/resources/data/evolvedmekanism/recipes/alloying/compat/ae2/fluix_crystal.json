@@ -2,7 +2,7 @@
     "type": "evolvedmekanism:alloying",
     "extraInput": {
         "ingredient": {
-            "tag": "forge:gems/certus_quartz"
+            "item": "ae2:charged_certus_quartz_crystal"
         }
     },
     "secondExtraInput": {
