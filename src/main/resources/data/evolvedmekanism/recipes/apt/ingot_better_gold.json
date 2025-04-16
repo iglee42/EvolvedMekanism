@@ -1,8 +1,8 @@
 {
-  "type": "mekanism:injecting",
+  "type": "evolvedmekanism:apt",
   "chemicalInput": {
-    "amount": 2,
-    "gas": "mekanism:uranium_hexafluoride"
+    "amount": 100,
+    "gas": "mekanism:spent_nuclear_waste"
   },
   "itemInput": {
     "ingredient": {
