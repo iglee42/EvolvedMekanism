@@ -1,5 +1,6 @@
 package fr.iglee42.evolvedmekanism.multiblock.apt;
 
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.Action;
 import mekanism.api.AutomationType;
@@ -32,9 +33,6 @@ import net.minecraft.world.level.Level;
 
 public class APTMultiblockData extends MultiblockData implements IValveHandler{
 
-    public static final int DEFAULT_PROGRESS = 200;
-    public static final int DEFAULT_USAGE = 1000;
-
     @ContainerSync
     @WrappingComputerMethod(wrapper = ComputerChemicalTankWrapper.class, methodNames = {"getInput", "getInputCapacity", "getInputNeeded", "getInputFilledPercentage"}, docPlaceholder = "input tank")
     public IGasTank inputTank;
@@ -59,11 +57,11 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
 
     public APTMultiblockData(TileEntityAPTCasing tile) {
         super(tile);
-        gasTanks.add(inputTank = MultiblockChemicalTankBuilder.GAS.input(this, this::getMaxInputGas, this::hasRecipeWith,
+        gasTanks.add(inputTank = MultiblockChemicalTankBuilder.GAS.input(this, EMConfig.general.aptInputStorage::getOrDefault, this::hasRecipeWith,
               ChemicalAttributeValidator.ALWAYS_ALLOW, createSaveAndComparator()));
         inventorySlots.add(inputSlot = InputInventorySlot.at(item->hasRecipeForInputs(item,inputTank.getStack()),this::hasRecipeWith,createSaveAndComparator(), 28, 40));
         inventorySlots.add(outputSlot = OutputInventorySlot.at(createSaveAndComparator(), 132, 40));
-        energyContainers.add(energyContainer =  BasicEnergyContainer.create(FloatingLong.create(1_000_000), automationType -> isFormed(),type->isFormed(), createSaveAndComparator()));
+        energyContainers.add(energyContainer =  BasicEnergyContainer.create(EMConfig.general.aptEnergyStorage.getOrDefault(), automationType -> isFormed(), type->isFormed(), createSaveAndComparator()));
     }
 
     private boolean hasRecipeWith(ItemStack item) {
@@ -79,11 +77,6 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
         return hasRecipeWith(stack) && getWorld().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().anyMatch(r-> r.getChemicalInput().testType(gas));
     }
 
-
-    private long getMaxInputGas() {
-        return MekanismConfig.general.spsInputPerAntimatter.get() * 2L;
-    }
-
     @Override
     public boolean tick(Level world) {
         boolean needsPacket = super.tick(world);
@@ -94,7 +87,7 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
             world.getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().filter(r->r.test(inputSlot.getStack(),inputTank.getStack())).findFirst().ifPresent(r->{
                 currentRecipe = r;
                 markDirty();
-                progress = (int) (DEFAULT_PROGRESS * (r.getChemicalInput().getNeededAmount(inputTank.getStack()) / 100));
+                progress = (int) (EMConfig.general.aptDefaultDuration.getOrDefault() * (r.getChemicalInput().getNeededAmount(inputTank.getStack()) / 100));
                 defaultRecipeProgress = progress;
             });
         } else {
@@ -106,7 +99,7 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
                 return true;
             }
             if (canProcess()){
-                extractEnergy(0,FloatingLong.create(DEFAULT_USAGE),null,Action.EXECUTE);
+                extractEnergy(0,EMConfig.general.aptEnergyConsumption.getOrDefault(),null,Action.EXECUTE);
                 progress--;
                 if (progress == 0){
                     extractItem(0,Math.toIntExact(currentRecipe.getItemInput().getNeededAmount(inputSlot.getStack())),null,Action.EXECUTE);
@@ -133,7 +126,7 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
     }
 
     private boolean canProcess() {
-        return getEnergy(0).greaterOrEqual(FloatingLong.create(DEFAULT_USAGE)) && (outputSlot.isEmpty() || outputSlot.insertItem(currentRecipe.getOutput(inputSlot.getStack(), inputTank.getStack()), Action.SIMULATE, AutomationType.INTERNAL).isEmpty());
+        return getEnergy(0).greaterOrEqual(EMConfig.general.aptEnergyConsumption.getOrDefault()) && (outputSlot.isEmpty() || outputSlot.insertItem(currentRecipe.getOutput(inputSlot.getStack(), inputTank.getStack()), Action.SIMULATE, AutomationType.INTERNAL).isEmpty());
     }
 
     @Override

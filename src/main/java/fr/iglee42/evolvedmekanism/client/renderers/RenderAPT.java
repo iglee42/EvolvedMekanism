@@ -33,8 +33,6 @@ public class RenderAPT extends MultiblockTileEntityRenderer<APTMultiblockData, T
           int light, int overlayLight, ProfilerFiller profiler) {
         BlockPos pos = tile.getBlockPos();
         Lazy<VertexConsumer> buffer = Lazy.of(() -> renderer.getBuffer(Sheets.translucentCullBlockSheet()));
-        FluidRenderData data = RenderData.Builder.create(MekanismFluids.HEAVY_WATER.getFluidStack(1000)).of(multiblock).dimensions(1,1,1).build();
-        renderObject(data, multiblock.valves, pos, matrix, buffer.get(), overlayLight, 1);
         if (!multiblock.inputTank.isEmpty()) {
             MultipleCustomRenderData renderData = new MultipleCustomRenderData();
 

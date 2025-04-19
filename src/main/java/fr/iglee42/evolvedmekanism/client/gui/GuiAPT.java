@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.iglee42.evolvedmekanism.client.bars.GuiCustomDynamicHorizontalRateBar;
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.jei.EMJEI;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
@@ -60,7 +61,7 @@ public class GuiAPT extends GuiMekanismTile<TileEntityAPTCasing, MekanismTileCon
             boolean active = multiblock.progress > 0;
             list.add(MekanismLang.STATUS.translate(active ? MekanismLang.ACTIVE : MekanismLang.IDLE));
             if (active) {
-                list.add(MekanismLang.USING.translate(EnergyDisplay.of(FloatingLong.create(APTMultiblockData.DEFAULT_USAGE))));
+                list.add(MekanismLang.USING.translate(EnergyDisplay.of(EMConfig.general.aptEnergyConsumption.getOrDefault())));
             }
             return list;
         }).jeiCategories(EMJEI.APT));

@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.jei.categories;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.client.bars.GuiCustomDynamicHorizontalRateBar;
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
@@ -57,7 +58,7 @@ public class APTRecipeCategory extends BaseRecipeCategory<ItemStackGasToItemStac
         addElement(new GuiInnerScreen(this, 47, 17, 82, 60, () -> {
             List<Component> list = new ArrayList<>();
             list.add(MekanismLang.STATUS.translate(MekanismLang.ACTIVE));
-            list.add(MekanismLang.USING.translate(EnergyDisplay.of(FloatingLong.create(APTMultiblockData.DEFAULT_USAGE))));
+            list.add(MekanismLang.USING.translate(EnergyDisplay.of(EMConfig.general.aptEnergyConsumption.getOrDefault())));
             return list;
         }));
         addElement(new GuiEnergyGauge(new GuiEnergyGauge.IEnergyInfoHandler() {

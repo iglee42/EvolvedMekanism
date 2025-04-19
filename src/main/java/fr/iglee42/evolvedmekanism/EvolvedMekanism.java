@@ -1,7 +1,9 @@
 package fr.iglee42.evolvedmekanism;
 
 import com.mojang.logging.LogUtils;
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageManager;
+import fr.iglee42.evolvedmekanism.multiblock.EMBuilders;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTCache;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTValidator;
@@ -11,6 +13,7 @@ import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.MekanismLang;
+import mekanism.common.command.builders.BuildCommand;
 import mekanism.common.content.blocktype.FactoryType;
 import mekanism.common.lib.Version;
 import mekanism.common.lib.multiblock.MultiblockManager;
@@ -34,6 +37,7 @@ public class EvolvedMekanism {
 
     public static final String MODID = "evolvedmekanism";
     public static final Logger logger = LogUtils.getLogger();
+    public static final String MOD_NAME = "EvolvedMekanism";
 
     public static EvolvedMekanism instance;
 
@@ -48,6 +52,8 @@ public class EvolvedMekanism {
     public EvolvedMekanism() {
         instance = this;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        EMConfig.registerConfigs(FMLJavaModLoadingContext.get());
 
         modEventBus.addListener(this::commonSetup);
         initEnums();
@@ -87,6 +93,7 @@ public class EvolvedMekanism {
         AlloyTier ignored2 = AlloyTier.ATOMIC;
         FactoryTier ignored3 = FactoryTier.BASIC;
         FactoryType ignoredFType = FactoryType.COMBINING;
+        QIODriveTier ignoredQIO = QIODriveTier.BASE;
 
         CableTier cable1 = CableTier.BASIC;
         ConductorTier cable2 = ConductorTier.BASIC;
@@ -104,6 +111,9 @@ public class EvolvedMekanism {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         packetHandler.initialize();
+        event.enqueueWork(()->{
+            BuildCommand.register("apt",EvolvedMekanismLang.APT,new EMBuilders.APTBuilder());
+        });
     }
 
     public static ResourceLocation rl(String path){

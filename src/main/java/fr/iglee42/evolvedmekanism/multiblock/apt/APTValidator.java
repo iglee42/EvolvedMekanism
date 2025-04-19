@@ -20,6 +20,7 @@ import mekanism.common.lib.multiblock.StructureHelper;
 import mekanism.common.registries.MekanismBlockTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
@@ -38,8 +39,8 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
     };
     private static final byte[][] ALLOWED_LAYERS = {
             {0, 0, 0, 1, 2, 1, 0, 0, 0},
-            {0, 0, 1, 3, 3, 3, 2, 0, 0},
-            {0, 1, 3, 3, 3, 3, 3, 2, 0},
+            {0, 0, 2, 3, 3, 3, 2, 0, 0},
+            {0, 2, 3, 3, 3, 3, 3, 2, 0},
             {1, 3, 3, 3, 3, 3, 3, 3, 1},
             {2, 3, 3, 3, 3, 3, 3, 3, 2},
             {1, 3, 3, 3, 3, 3, 3, 3, 1},
@@ -66,8 +67,6 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
             return CasingType.FRAME;
         } else if (BlockType.is(block, EMBlockTypes.APT_PORT)) {
             return CasingType.VALVE;
-        } else if (BlockType.is(block,MekanismBlockTypes.STRUCTURAL_GLASS)){
-            return CasingType.FRAME;
         }
         return CasingType.INVALID;
     }
@@ -77,6 +76,22 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
         // 144 = (24 missing blocks possible on each face) * (6 sides)
         cuboid = fetchCuboid(structure, BOUNDS, BOUNDS,EnumSet.allOf(CuboidSide.class),168);
         return cuboid != null;
+    }
+
+    @Override
+    protected boolean isFrameCompatible(BlockEntity tile) {
+        if (tile instanceof TileEntityAPTPort port){
+            BlockPos posInStruct = tile.getBlockPos().subtract(cuboid.getMinPos());
+            int requirement = 0;
+            if (posInStruct.getY() == 0 || posInStruct.getY() == 4){
+                requirement= ALLOWED_TOP_BOTTOM[posInStruct.getX()][posInStruct.getZ()];
+            }
+            else {
+                requirement= ALLOWED_LAYERS[posInStruct.getX()][posInStruct.getZ()];
+            }
+            if (requirement == 0) return false;
+        }
+        return super.isFrameCompatible(tile);
     }
 
     public static VoxelCuboid fetchCuboid(Structure structure, VoxelCuboid minBounds, VoxelCuboid maxBounds, Set<CuboidSide> sides, int tolerance) {
