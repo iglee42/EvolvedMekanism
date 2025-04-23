@@ -2,7 +2,7 @@
     "type": "mekanism:mek_data",
     "key": {
         "A": {
-            "tag": "mekanism:alloys/atomic"
+            "tag": "evolvedmekanism:alloys/creative"
         },
         "C": {
             "tag": "forge:circuits/creative"
