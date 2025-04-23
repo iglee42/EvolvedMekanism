@@ -25,11 +25,11 @@ side = "BOTH"
 modId = "mekanism"
 mandatory = true
 versionRange = "${mekanism_version_range}"
-ordering = "NONE"
+ordering = "AFTER"
 side = "BOTH"
 [[dependencies."${mod_id}"]]
 modId = "igleelib"
 mandatory = true
 versionRange = "${lib_version_range}"
-ordering = "NONE"
+ordering = "AFTER"
 side = "BOTH"

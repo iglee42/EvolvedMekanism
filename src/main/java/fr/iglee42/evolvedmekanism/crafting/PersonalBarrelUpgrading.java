@@ -70,7 +70,8 @@ public class PersonalBarrelUpgrading extends CustomRecipe {
         if (container.getItem(4).getItem() instanceof ItemBlockPersonalStorage<?> it){
             UUID owner = SecurityUtils.get().getOwnerUUID(oldBarrel);
             if (owner == null) return new ItemStack(EMBlocks.ADVANCED_PERSONAL_BARREL.asItem());
-            AbstractPersonalStorageItemInventory inventory = PersonalStorageManager.getInventoryFor(oldBarrel);
+            AbstractPersonalStorageItemInventory inventory = PersonalStorageManager.getInventoryFor(oldBarrel).orElse(null);
+            if (inventory == null)return new ItemStack(EMBlocks.ADVANCED_PERSONAL_BARREL.asItem());
             ItemStack stack = new ItemStack(EMBlocks.ADVANCED_PERSONAL_BARREL.asItem());
             stack.getCapability(Capabilities.OWNER_OBJECT).ifPresent(i->i.setOwnerUUID(SecurityUtils.get().getOwnerUUID(oldBarrel)));
             TieredPersonalStorageManager.transferFromBasic(inventory,stack);

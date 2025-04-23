@@ -1,7 +1,6 @@
 package fr.iglee42.evolvedmekanism.mixins;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
-import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import mekanism.api.tier.BaseTier;
 import mekanism.api.tier.ITier;

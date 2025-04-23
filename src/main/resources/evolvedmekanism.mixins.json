@@ -25,10 +25,6 @@
     "blocks.BlockUniversalCableMixin",
     "client.TransmitterTypeDecoratorMixin",
     "containers.FactoryContainerMixin",
-    "items.ItemBlockLogisticalTransporterMixin",
-    "items.ItemBlockMechanicalPipeMixin",
-    "items.ItemBlockPressurizedTubeMixin",
-    "items.ItemBlockUniversalCableMixin",
     "tiers.AlloyTierMixin",
     "tiers.BaseTierMixin",
     "tiers.FactoryTierMixin",
@@ -58,7 +54,11 @@
     "tiles.factories.TileEntityMetallurgicInfuserFactoryMixin"
   ],
   "client": [
-    "client.GuiFactoryMixin"
+    "client.GuiFactoryMixin",
+    "items.ItemBlockLogisticalTransporterMixin",
+    "items.ItemBlockMechanicalPipeMixin",
+    "items.ItemBlockPressurizedTubeMixin",
+    "items.ItemBlockUniversalCableMixin"
   ],
   "injectors": {
     "defaultRequire": 1

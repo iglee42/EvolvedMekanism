@@ -77,7 +77,8 @@ public class PersonalChestUpgrading extends CustomRecipe {
         if (container.getItem(4).getItem() instanceof ItemBlockPersonalStorage<?> it){
             UUID owner = SecurityUtils.get().getOwnerUUID(oldChest);
             if (owner == null) return new ItemStack(EMBlocks.ADVANCED_PERSONAL_CHEST.asItem());
-            AbstractPersonalStorageItemInventory inventory = PersonalStorageManager.getInventoryFor(oldChest);
+            AbstractPersonalStorageItemInventory inventory = PersonalStorageManager.getInventoryFor(oldChest).orElse(null);
+            if (inventory == null ) return new ItemStack(EMBlocks.ADVANCED_PERSONAL_CHEST.asItem());
             ItemStack stack = new ItemStack(EMBlocks.ADVANCED_PERSONAL_CHEST.asItem());
             stack.getCapability(Capabilities.OWNER_OBJECT).ifPresent(i->i.setOwnerUUID(SecurityUtils.get().getOwnerUUID(oldChest)));
             TieredPersonalStorageManager.transferFromBasic(inventory,stack);
