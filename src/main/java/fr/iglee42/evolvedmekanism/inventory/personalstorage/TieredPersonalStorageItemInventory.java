@@ -1,7 +1,7 @@
 package fr.iglee42.evolvedmekanism.inventory.personalstorage;
 
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
-import mekanism.api.DataHandlerUtils;
+import fr.iglee42.evolvedmekanism.utils.EMDataHandlerUtils;
 import mekanism.api.IContentsListener;
 import mekanism.api.annotations.NothingNullByDefault;
 import net.minecraft.nbt.ListTag;
@@ -27,11 +27,11 @@ public class TieredPersonalStorageItemInventory extends AbstractTieredPersonalSt
 
     @Override
     public ListTag serializeNBT() {
-        return DataHandlerUtils.writeContainers(this.slots);
+        return EMDataHandlerUtils.writeContainers(this.slots);
     }
 
     @Override
     public void deserializeNBT(ListTag nbt) {
-        DataHandlerUtils.readContainers(this.slots, nbt);
+        EMDataHandlerUtils.readContainers(this.slots, nbt);
     }
 }

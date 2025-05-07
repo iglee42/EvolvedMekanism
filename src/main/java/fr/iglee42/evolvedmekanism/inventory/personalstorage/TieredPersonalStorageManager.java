@@ -2,8 +2,8 @@ package fr.iglee42.evolvedmekanism.inventory.personalstorage;
 
 import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
+import fr.iglee42.evolvedmekanism.utils.EMDataHandlerUtils;
 import mekanism.api.AutomationType;
-import mekanism.api.DataHandlerUtils;
 import mekanism.api.IContentsListener;
 import mekanism.api.NBTConstants;
 import mekanism.api.annotations.ParametersAreNotNullByDefault;
@@ -55,7 +55,7 @@ public class TieredPersonalStorageManager {
         //TODO - After 1.20: Remove legacy loading
         ListTag legacyData = ItemDataUtils.getList(stack, NBTConstants.ITEMS);
         if (!legacyData.isEmpty()) {
-            DataHandlerUtils.readContainers(storageItemInventory.getInventorySlots(null), legacyData);
+            EMDataHandlerUtils.readContainers(storageItemInventory.getInventorySlots(null), legacyData);
             ItemDataUtils.removeData(stack, NBTConstants.ITEMS);
         }
 
