@@ -3,7 +3,7 @@
     "extraInput": {
         "amount": 4,
         "ingredient": {
-            "tag": "forge:fruits/chorus"
+            "item": "minecraft:chorus_fruit"
         }
     },
     "secondExtraInput": {
