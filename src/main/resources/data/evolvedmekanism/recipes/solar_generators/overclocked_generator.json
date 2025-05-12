@@ -1,0 +1,31 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/hypercharged"
+        },
+        "C": {
+            "tag": "forge:circuits/overclocked"
+        },
+        "I": {
+            "tag": "forge:ingots/uranium"
+        },
+        "P": {
+            "item": "evolvedmekanism:ultimate_solar_generator"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:overclocked_solar_generator"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismgenerators"
+        }
+    ]
+}

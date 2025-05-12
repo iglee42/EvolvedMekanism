@@ -1,0 +1,31 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/creative"
+        },
+        "G": {
+            "item": "evolvedmekanism:multiversal_solar_panel"
+        },
+        "O": {
+            "tag": "forge:ingots/osmium"
+        },
+        "R": {
+            "tag": "evolvedmekanism:alloys/exoversal"
+        }
+    },
+    "pattern": [
+        "GGG",
+        "RAR",
+        "OOO"
+    ],
+    "result": {
+        "item": "evolvedmekanism:creative_solar_panel"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismgenerators"
+        }
+    ]
+}

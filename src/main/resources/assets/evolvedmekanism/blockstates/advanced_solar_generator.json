@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "evolvedmekanism:block/advanced_solar_generator"
+        },
+        "facing=south": {
+            "model": "evolvedmekanism:block/advanced_solar_generator",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "evolvedmekanism:block/advanced_solar_generator",
+            "y": -90
+        },
+        "facing=east": {
+            "model": "evolvedmekanism:block/advanced_solar_generator",
+            "y": 90
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/infused"
+        },
+        "G": {
+            "item": "mekanismgenerators:solar_panel"
+        },
+        "O": {
+            "tag": "forge:ingots/osmium"
+        },
+        "R": {
+            "tag": "mekanism:alloys/basic"
+        }
+    },
+    "pattern": [
+        "GGG",
+        "RAR",
+        "OOO"
+    ],
+    "result": {
+        "item": "evolvedmekanism:advanced_solar_panel"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismgenerators"
+        }
+    ]
+}
