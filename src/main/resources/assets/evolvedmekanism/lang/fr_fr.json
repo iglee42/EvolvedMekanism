@@ -273,5 +273,19 @@
     "factory.mekanism.chemixing": "Chimixeur",
     "description.mekanism.chemixer": "Une machine utilis\u00e9e pour allier des objets et des gaz ensemble.",
     "description.evolvedmekanism.apt_casing": "Structure renforc\u00e9es \u00e0 l'antimati\u00e8re capables de r\u00e9sister aux effets chimiques et thermiques intenses des r\u00e9actions de transmutation.",
-    "description.evolvedmekanism.apt_port": "Un port utilis\u00e9 pour le transfert d'\u00e9nergie et de substances dans la transmutation protomol\u00e9culaire \u00e0 antimati\u00e8re."
+    "description.evolvedmekanism.apt_port": "Un port utilis\u00e9 pour le transfert d'\u00e9nergie et de substances dans la transmutation protomol\u00e9culaire \u00e0 antimati\u00e8re.",
+    "module.evolvedmekanism.air_affinity_unit": "Unit\u00e9 d'affinit\u00e9 a\u00e9rienne",
+    "description.evolvedmekanism.air_affinity_unit": "D\u00e9 le malus de minage en vol.",
+    "module.evolvedmekanism.module_aoe_unit": "Unit\u00e9 de zone d'effet",
+    "description.evolvedmekanism.module_aoe_unit": "Augmente la zone d'effet des outils.",
+    "module.evolvedmekanism.aqua_affinity_unit": "Unit\u00e9 d'affinit\u00e9 aquatique",
+    "description.evolvedmekanism.aqua_affinity_unit": "D\u00e9sactive le malus de minage sous l'eau.",
+    "module.evolvedmekanism.module_bee_shielding_unit": "Unit\u00e9 de bouclier anti-abeilles",
+    "description.evolvedmekanism.module_bee_shielding_unit": "Fournit des plaques m\u00e9talliques \u00e9paisses et r\u00e9sistantes aux abeilles \u00e0 n'importe quelle pi\u00e8ce d'armure Meka.",
+    "module.evolvedmekanism.module_capturing_unit": "Unit\u00e9 de capture",
+    "description.evolvedmekanism.module_capturing_unit": "Offre une chance d'obtenir les oeufs d'apparition des monstres en les tuant.",
+    "module.evolvedmekanism.module_luck_unit": "Unit\u00e9 de chance",
+    "description.evolvedmekanism.module_luck_unit": "Augmente la chance d'obtenir de meilleurs butins.",
+    "module.evolvedmekanism.module_thermal_shielding_unit": "Unit\u00e9 de bouclier thermique",
+    "description.evolvedmekanism.module_thermal_shielding_unit": "Fournit des plaques m\u00e9talliques \u00e9paisses et r\u00e9sistantes aux chaleurs \u00e0 n'importe quelle pi\u00e8ce d'armure Meka."
 }
