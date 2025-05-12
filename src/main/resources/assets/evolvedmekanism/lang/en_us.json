@@ -271,5 +271,9 @@
     "factory.mekanism.chemixing": "Chemixing",
     "description.mekanism.chemixer": "A machine used to alloy items and gases together.",
     "description.evolvedmekanism.apt_casing": "Reinforced antimattered casing capable of resisting intense chemical and thermal effects from transmutating reactions.",
-    "description.evolvedmekanism.apt_port": "A port used for the transfer of energy and substances in the Antimatter Protomolecular Transmutator."
+    "description.evolvedmekanism.apt_port": "A port used for the transfer of energy and substances in the Antimatter Protomolecular Transmutator.",
+    "module.evolvedmekanism.air_affinity_unit": "Air Affinity Unit",
+    "description.evolvedmekanism.air_affinity_unit": "Allow the user to break blocks at normal speed when flying.",
+    "module.evolvedmekanism.aqua_affinity_unit": "Aqua Affinity Unit",
+    "description.evolvedmekanism.aqua_affinity_unit": "Increases mining speed while underwater."
 }
