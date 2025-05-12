@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "tag": "mekanism:alloys/reinforced"
+        },
+        "P": {
+            "item": "mekanism:alloy_reinforced"
+        }
+    },
+    "pattern": [
+        "###",
+        "#P#",
+        "###"
+    ],
+    "result": {
+        "item": "evolvedmekanism:block_alloy_reinforced"
+    }
+}

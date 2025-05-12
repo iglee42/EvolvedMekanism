@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "evolvedmekanism:block_alloy_reinforced"
+        }
+    ],
+    "result": {
+        "count": 9,
+        "item": "mekanism:alloy_reinforced"
+    }
+}

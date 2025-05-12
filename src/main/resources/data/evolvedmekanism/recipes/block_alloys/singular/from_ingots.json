@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "tag": "evolvedmekanism:alloys/singular"
+        },
+        "P": {
+            "item": "evolvedmekanism:alloy_singular"
+        }
+    },
+    "pattern": [
+        "###",
+        "#P#",
+        "###"
+    ],
+    "result": {
+        "item": "evolvedmekanism:block_alloy_singular"
+    }
+}

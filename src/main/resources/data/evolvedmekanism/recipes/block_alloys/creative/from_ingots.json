@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "tag": "evolvedmekanism:alloys/creative"
+        },
+        "P": {
+            "item": "evolvedmekanism:alloy_creative"
+        }
+    },
+    "pattern": [
+        "###",
+        "#P#",
+        "###"
+    ],
+    "result": {
+        "item": "evolvedmekanism:block_alloy_creative"
+    }
+}

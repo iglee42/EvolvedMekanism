@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "tag": "mekanism:alloys/infused"
+        },
+        "P": {
+            "item": "mekanism:alloy_infused"
+        }
+    },
+    "pattern": [
+        "###",
+        "#P#",
+        "###"
+    ],
+    "result": {
+        "item": "evolvedmekanism:block_alloy_infused"
+    }
+}
