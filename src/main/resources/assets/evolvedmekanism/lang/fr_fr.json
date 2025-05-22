@@ -329,6 +329,6 @@
     "description.evolvedmekanism.dense_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie.",
     "description.evolvedmekanism.multiversal_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie.",
     "description.evolvedmekanism.creative_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie..",
-    "upgrade.evolvedmekanism.radioactive": "Radioactive",
-    "upgrade.evolvedmekanism.radioactive.description": "Permet l'insertion de gaz radioactif."
+    "upgrade.mekanism.radioactive": "Radioactive",
+    "upgrade.mekanism.radioactive.description": "Permet l'insertion de gaz radioactif."
 }
