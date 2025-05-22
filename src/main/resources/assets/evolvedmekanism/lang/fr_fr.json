@@ -290,6 +290,7 @@
     "item.evolvedmekanism.dense_solar_panel": "Panneau solaire dense",
     "item.evolvedmekanism.multiversal_solar_panel": "Panneau solaire multiversel",
     "item.evolvedmekanism.creative_solar_panel": "Panneau solaire cr\u00e9atif",
+    "item.evolvedmekanism.radioactive_upgrade": "Mise \u00e0 niveau Radioactive",
     "apt.evolvedmekanism.port_mode": "Basculer le mode du port TPA sur: %1$s.",
     "apt.evolvedmekanism.apt": "Transmutateur protomol\u00e9culaire \u00e0 antimati\u00e8re",
     "infuse_type.evolvedmekanism.uranium": "Uranium",
@@ -327,5 +328,7 @@
     "description.evolvedmekanism.quantum_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie.",
     "description.evolvedmekanism.dense_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie.",
     "description.evolvedmekanism.multiversal_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie.",
-    "description.evolvedmekanism.creative_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie.."
+    "description.evolvedmekanism.creative_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie..",
+    "upgrade.evolvedmekanism.radioactive": "Radioactive",
+    "upgrade.evolvedmekanism.radioactive.description": "Permet l'insertion de gaz radioactif."
 }

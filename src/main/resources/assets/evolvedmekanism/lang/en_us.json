@@ -288,6 +288,7 @@
     "item.evolvedmekanism.dense_solar_panel": "Dense Solar Panel",
     "item.evolvedmekanism.multiversal_solar_panel": "Multiversal Solar Panel",
     "item.evolvedmekanism.creative_solar_panel": "Creative Solar Panel",
+    "item.evolvedmekanism.radioactive_upgrade": "Radioactive Upgrade",
     "infuse_type.evolvedmekanism.uranium": "Uranium",
     "infuse_type.evolvedmekanism.better_gold": "Better Gold",
     "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite",
@@ -325,5 +326,7 @@
     "description.evolvedmekanism.quantum_solar_generator": "A quantum generator that directly absorbs the sun's rays with little loss to produce energy.",
     "description.evolvedmekanism.dense_solar_generator": "A dense generator that directly absorbs the sun's rays with little loss to produce energy.",
     "description.evolvedmekanism.multiversal_solar_generator": "A multiversal generator that directly absorbs the sun's rays with little loss to produce energy.",
-    "description.evolvedmekanism.creative_solar_generator": "A creative generator that directly absorbs the sun's rays with little loss to produce energy."
+    "description.evolvedmekanism.creative_solar_generator": "A creative generator that directly absorbs the sun's rays with little loss to produce energy.",
+    "upgrade.evolvedmekanism.radioactive": "Radioactive",
+    "upgrade.evolvedmekanism.radioactive.description": "Allow radioactive gas insertion."
 }
