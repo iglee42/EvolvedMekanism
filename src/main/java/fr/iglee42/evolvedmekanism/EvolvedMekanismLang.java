@@ -1,7 +1,7 @@
 package fr.iglee42.evolvedmekanism;
 
+import mekanism.api.text.APILang;
 import mekanism.api.text.ILangEntry;
-import mekanism.common.Mekanism;
 import mekanism.common.MekanismLang;
 import net.minecraft.Util;
 
@@ -22,6 +22,8 @@ public enum EvolvedMekanismLang implements ILangEntry {
     // <type>.mekanism.<path>
     public static MekanismLang ALLOYING; // type : factory | path : alloying
     public static MekanismLang DESCRIPTION_ALLOYER; // type : description | path : alloyer
+    public static APILang UPGRADE_RADIOACTIVE; // type : upgrade | path : radioactive
+    public static APILang UPGRADE_RADIOACTIVE_DESCRIPTION; // type : upgrade | path : radioactive.description
 
 
     private final String key;

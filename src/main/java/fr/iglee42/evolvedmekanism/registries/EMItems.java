@@ -4,6 +4,7 @@ import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMQIODriveTier;
+import mekanism.api.Upgrade;
 import mekanism.api.text.TextComponentUtil;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
@@ -29,6 +30,7 @@ import java.util.Locale;
 public class EMItems {
     public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(EvolvedMekanism.MODID);
 
+    public static final ItemRegistryObject<ItemUpgrade> RADIOACTIVE_UPGRADE = registerUpgrade(EMUpgrades.RADIOACTIVE_UPGRADE);
 
     public static final ItemRegistryObject<ItemTierInstaller> OVERCLOCKED_TIER_INSTALLER = registerInstaller(BaseTier.ULTIMATE, EMBaseTier.OVERCLOCKED);
     public static final ItemRegistryObject<ItemTierInstaller> QUANTUM_TIER_INSTALLER = registerInstaller(EMBaseTier.OVERCLOCKED, EMBaseTier.QUANTUM);

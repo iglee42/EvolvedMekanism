@@ -7,6 +7,7 @@ import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
+import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.api.AutomationType;
 import mekanism.api.IContentsListener;
 import mekanism.api.chemical.ChemicalTankBuilder;
@@ -14,6 +15,7 @@ import mekanism.api.chemical.attribute.ChemicalAttributeValidator;
 import mekanism.api.chemical.gas.Gas;
 import mekanism.api.chemical.gas.GasStack;
 import mekanism.api.chemical.gas.IGasTank;
+import mekanism.api.chemical.gas.attribute.GasAttributes;
 import mekanism.api.math.FloatingLong;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.api.recipes.cache.CachedRecipe.OperationTracker.RecipeError;
@@ -45,6 +47,7 @@ import mekanism.common.tile.component.TileComponentEjector;
 import mekanism.common.tile.prefab.TileEntityProgressMachine;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
@@ -109,8 +112,12 @@ public class TileEntityChemixer extends TileEntityProgressMachine<ChemixerRecipe
         ChemicalTankHelper<Gas, GasStack, IGasTank> builder = ChemicalTankHelper.forSideGasWithConfig(this::getDirection, this::getConfig);
         //Allow extracting out of the input gas tank if it isn't external OR the output tank is empty AND the input is radioactive
         builder.addTank(inputGasTank = ChemicalTankBuilder.GAS.create(MAX_GAS, (gas,type)->type != AutomationType.EXTERNAL,
-              (gas, automationType) -> containsRecipeCAB(mainInputSlot.getStack(), extraInputSlot.getStack(), gas), this::containsRecipeC,
-              ChemicalAttributeValidator.ALWAYS_ALLOW, recipeCacheListener));
+              (gas, automationType) ->{
+                boolean flag = upgradeComponent != null && upgradeComponent.getUpgrades(EMUpgrades.RADIOACTIVE_UPGRADE) > 0;
+                if (!flag && gas.has(GasAttributes.Radiation.class)) return false;
+                return containsRecipeCAB(mainInputSlot.getStack(), extraInputSlot.getStack(), gas);
+              }, this::containsRecipeC,
+                ChemicalAttributeValidator.ALWAYS_ALLOW, recipeCacheListener));
         return builder.build();
     }
 

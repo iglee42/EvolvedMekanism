@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "evolvedmekanism.refmap.json",
   "mixins": [
+    "APILangMixin",
     "BlockShapesMixin",
     "BlockTypeBuilderMixin",
     "FactoryContainerMixin",
@@ -17,6 +18,8 @@
     "MekanismRecipeTypeMixin",
     "MekanismTileEntityTypesMixin",
     "TripleInputRecipeCacheMixin",
+    "UpgradeMixin",
+    "UpgradeUtilsMixin",
     "VanillaPluginMixin",
     "blocks.BlockLogisticalTransporterMixin",
     "blocks.BlockMechanicalPipeMixin",

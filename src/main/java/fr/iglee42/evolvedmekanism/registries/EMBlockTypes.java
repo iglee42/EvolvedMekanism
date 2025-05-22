@@ -10,6 +10,7 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import mekanism.api.Upgrade;
 import mekanism.common.MekanismLang;
 import mekanism.common.block.attribute.*;
 import mekanism.common.block.attribute.Attributes.AttributeRedstone;
@@ -32,6 +33,8 @@ import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.multiblock.TileEntitySPSPort;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
+import java.util.EnumSet;
+import java.util.Set;
 import java.util.function.Supplier;
 
 public class EMBlockTypes {
@@ -41,6 +44,7 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.ALLOYER)
             .withSound(MekanismSounds.COMBINER)
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
             .withComputerSupport("alloyer")
             .build();
 
@@ -49,6 +53,7 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.CHEMIXER)
             .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING,EMUpgrades.RADIOACTIVE_UPGRADE))
             .withComputerSupport("chemixer")
             .build();
 
