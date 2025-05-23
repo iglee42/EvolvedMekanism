@@ -8,14 +8,10 @@ import mekanism.api.Upgrade;
 import mekanism.api.text.TextComponentUtil;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
-import mekanism.common.item.ItemAlloy;
-import mekanism.common.item.ItemQIODrive;
-import mekanism.common.item.ItemRefinedGlowstoneIngot;
-import mekanism.common.item.ItemTierInstaller;
+import mekanism.common.item.*;
 import mekanism.common.registration.impl.ItemDeferredRegister;
 import mekanism.common.registration.impl.ItemRegistryObject;
 import mekanism.common.resource.IResource;
-import mekanism.common.resource.MiscResource;
 import mekanism.common.resource.PrimaryResource;
 import mekanism.common.resource.ResourceType;
 import mekanism.common.tier.QIODriveTier;
@@ -29,6 +25,12 @@ import java.util.Locale;
 
 public class EMItems {
     public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(EvolvedMekanism.MODID);
+
+    //MODULES
+    public static final ItemRegistryObject<ItemModule> AIR_AFFINITY = ITEMS.registerModule(EMModules.AIR_AFFINITY);
+    public static final ItemRegistryObject<ItemModule> AQUA_AFFINITY = ITEMS.registerModule(EMModules.AQUA_AFFINITY);
+    public static final ItemRegistryObject<ItemModule> CAPTURING = ITEMS.registerModule(EMModules.CAPTURING);
+    public static final ItemRegistryObject<ItemModule> LUCK = ITEMS.registerModule(EMModules.LUCK);
 
     public static final ItemRegistryObject<ItemUpgrade> RADIOACTIVE_UPGRADE = registerUpgrade(EMUpgrades.RADIOACTIVE_UPGRADE);
 
@@ -103,5 +105,9 @@ public class EMItems {
 
     private static ItemRegistryObject<ItemQIODrive> registerQIODrive(QIODriveTier tier) {
         return ITEMS.register("qio_drive_" + tier.name().toLowerCase(Locale.ROOT), properties -> new ItemQIODrive(tier, properties));
+    }
+
+    private static ItemRegistryObject<ItemUpgrade> registerUpgrade(Upgrade type) {
+        return ITEMS.register("upgrade_" + type.getRawName(), properties -> new ItemUpgrade(type, properties));
     }
 }

@@ -8,12 +8,14 @@ import fr.iglee42.evolvedmekanism.items.EMItemBlockResource;
 import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
+import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiers.cable.*;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.block.BlockEnergyCube;
 import mekanism.common.block.attribute.AttributeTier;
@@ -37,7 +39,6 @@ import mekanism.common.item.block.machine.ItemBlockMachine;
 import mekanism.common.item.block.transmitter.*;
 import mekanism.common.registration.impl.BlockDeferredRegister;
 import mekanism.common.registration.impl.BlockRegistryObject;
-import mekanism.common.registries.MekanismBlockTypes;
 import mekanism.common.resource.BlockResourceInfo;
 import mekanism.common.tier.*;
 import mekanism.common.tile.TileEntityBin;
@@ -45,16 +46,14 @@ import mekanism.common.tile.TileEntityChemicalTank;
 import mekanism.common.tile.TileEntityEnergyCube;
 import mekanism.common.tile.TileEntityFluidTank;
 import mekanism.common.tile.factory.TileEntityFactory;
-import mekanism.common.tile.machine.TileEntityCombiner;
-import mekanism.common.tile.machine.TileEntityPressurizedReactionChamber;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
-import mekanism.common.tile.multiblock.TileEntitySPSCasing;
-import mekanism.common.tile.multiblock.TileEntitySPSPort;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Function;
@@ -74,6 +73,15 @@ public class EMBlocks {
 
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> PLASLITHERITE_BLOCK = registerResourceBlock(EMBlockResourceInfo.PLASLITHERITE);
+
+    public static final BlockRegistryObject<Block,BlockItem> INFUSED_ALLOY_BLOCK = registerAlloyBlock(AlloyTier.INFUSED);
+    public static final BlockRegistryObject<Block,BlockItem> REINFORCED_ALLOY_BLOCK = registerAlloyBlock(AlloyTier.REINFORCED);
+    public static final BlockRegistryObject<Block,BlockItem> ATOMIC_ALLOY_BLOCK = registerAlloyBlock(AlloyTier.ATOMIC);
+    public static final BlockRegistryObject<Block,BlockItem> HYPERCHARGED_ALLOY_BLOCK = registerAlloyBlock(EMAlloyTier.HYPERCHARGED);
+    public static final BlockRegistryObject<Block,BlockItem> SUBATOMIC_ALLOY_BLOCK = registerAlloyBlock(EMAlloyTier.SUBATOMIC);
+    public static final BlockRegistryObject<Block,BlockItem> SINGULAR_ALLOY_BLOCK = registerAlloyBlock(EMAlloyTier.SINGULAR);
+    public static final BlockRegistryObject<Block,BlockItem> EXOVERSAL_ALLOY_BLOCK = registerAlloyBlock(EMAlloyTier.EXOVERSAL);
+    public static final BlockRegistryObject<Block,BlockItem> CREATIVE_ALLOY_BLOCK = registerAlloyBlock(EMAlloyTier.CREATIVE);
 
     public static final BlockRegistryObject<BlockBin, ItemBlockBin> OVERCLOCKED_BIN = registerBin(EMBlockTypes.OVERCLOCKED_BIN);
     public static final BlockRegistryObject<BlockBin, ItemBlockBin> QUANTUM_BIN = registerBin(EMBlockTypes.QUANTUM_BIN);
@@ -231,6 +239,10 @@ public class EMBlocks {
                                                                                                                       Supplier<? extends BLOCK> blockSupplier, Function<BLOCK, ITEM> itemCreator) {
         return BLOCKS.register(tier.getBaseTier().getLowerName() + suffix, blockSupplier, itemCreator);
     }
+    private static BlockRegistryObject<Block, BlockItem> registerAlloyBlock(AlloyTier tier) {
+        return BLOCKS.register("block_alloy_"+tier.getName(), ()->new Block(BlockBehaviour.Properties.of().strength(5,9)), b->new BlockItem(b,new Item.Properties()));
+    }
+
 
     private static BlockRegistryObject<EMBlockResource, EMItemBlockResource> registerResourceBlock(EMBlockResourceInfo resource) {
         return BLOCKS.registerDefaultProperties("block_" + resource.getRegistrySuffix(), () -> new EMBlockResource(resource), (block, properties) -> {

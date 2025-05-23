@@ -10,6 +10,7 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.APTValidator;
 import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
 import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
+import mekanism.api.MekanismIMC;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.MekanismLang;
@@ -29,6 +30,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
@@ -56,6 +58,7 @@ public class EvolvedMekanism {
         EMConfig.registerConfigs(FMLJavaModLoadingContext.get());
 
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::enqueueIMC);
         initEnums();
 
         EMBlocks.BLOCKS.register(modEventBus);
@@ -66,6 +69,8 @@ public class EvolvedMekanism {
         EMContainerTypes.CONTAINER_TYPES.register(modEventBus);
         EMLootFunctions.REGISTER.register(modEventBus);
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
+        EMModules.MODULES.createAndRegister(modEventBus);
+
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -139,6 +144,13 @@ public class EvolvedMekanism {
         if (tier.equals(EMBaseTier.MULTIVERSAL)) return EMItems.MULTIVERSAL_CONTROL_CIRCUIT;
         if (tier.equals(BaseTier.CREATIVE)) return EMItems.CREATIVE_CONTROL_CIRCUIT;
         return null;
+    }
+
+    private void enqueueIMC(InterModEnqueueEvent event){
+        MekanismIMC.addMekaSuitBootsModules(EMModules.AIR_AFFINITY);
+        MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY);
+        MekanismIMC.addMekaSuitPantsModules(EMModules.LUCK);
+        MekanismIMC.addMekaToolModules(EMModules.CAPTURING);
     }
 
 }
