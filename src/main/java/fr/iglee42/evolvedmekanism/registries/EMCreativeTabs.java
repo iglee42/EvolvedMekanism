@@ -4,6 +4,7 @@ import java.util.function.BooleanSupplier;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
+import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.api.MekanismAPI;
 import mekanism.api.chemical.Chemical;
 import mekanism.api.providers.IBlockProvider;
@@ -36,6 +37,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
+import fr.iglee42.emgenerators.registries.EMGenBlocks;
 
 public class EMCreativeTabs {
 
@@ -48,6 +50,7 @@ public class EMCreativeTabs {
                 .displayItems((displayParameters, output) -> {
                     CreativeTabDeferredRegister.addToDisplay(EMItems.ITEMS, output);
                     CreativeTabDeferredRegister.addToDisplay(EMBlocks.BLOCKS, output);
+                    if (ModsCompats.MEKANISMGENERATORS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMGenBlocks.BLOCKS, output);
                     //CreativeTabDeferredRegister.addToDisplay(MekanismFluids.FLUIDS, output);
                     //addFilledTanks(output, true);
                 })

@@ -4,6 +4,7 @@
   "package": "fr.iglee42.evolvedmekanism.mixins",
   "compatibilityLevel": "JAVA_17",
   "refmap": "evolvedmekanism.refmap.json",
+  "plugin": "fr.iglee42.evolvedmekanism.utils.EMMixinConfig",
   "mixins": [
     "APILangMixin",
     "BlockShapesMixin",

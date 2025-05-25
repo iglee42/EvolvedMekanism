@@ -14,6 +14,14 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_APT_CASING("description", "apt_casing"),
     DESCRIPTION_APT_PORT("description", "apt_port"),
 
+    DESCRIPTION_ADVANCED_SOLAR_GENERATOR("description", "advanced_solar_generator"),
+    DESCRIPTION_ELITE_SOLAR_GENERATOR("description", "elite_solar_generator"),
+    DESCRIPTION_ULTIMATE_SOLAR_GENERATOR("description", "ultimate_solar_generator"),
+    DESCRIPTION_OVERCLOCKED_SOLAR_GENERATOR("description", "overclocked_solar_generator"),
+    DESCRIPTION_QUANTUM_SOLAR_GENERATOR("description", "quantum_solar_generator"),
+    DESCRIPTION_DENSE_SOLAR_GENERATOR("description", "dense_solar_generator"),
+    DESCRIPTION_MULTIVERSAL_SOLAR_GENERATOR("description", "multiversal_solar_generator"),
+
     APT("apt", "apt"),
     APT_PORT_MODE("apt", "port_mode"),
 
