@@ -289,6 +289,7 @@
     "item.evolvedmekanism.multiversal_solar_panel": "Multiversal Solar Panel",
     "item.evolvedmekanism.creative_solar_panel": "Creative Solar Panel",
     "item.evolvedmekanism.upgrade_radioactive": "Radioactive Upgrade",
+    "item.evolvedmekanism.upgrade_solar": "Solar Upgrade",
     "infuse_type.evolvedmekanism.uranium": "Uranium",
     "infuse_type.evolvedmekanism.better_gold": "Better Gold",
     "infuse_type.evolvedmekanism.plaslitherite": "Plaslitherite",
@@ -328,5 +329,7 @@
     "description.evolvedmekanism.multiversal_solar_generator": "A multiversal generator that directly absorbs the sun's rays with little loss to produce energy.",
     "description.evolvedmekanism.creative_solar_generator": "A creative generator that directly absorbs the sun's rays with little loss to produce energy.",
     "upgrade.mekanism.radioactive": "Radioactive",
-    "upgrade.mekanism.radioactive.description": "Allow radioactive gas insertion."
+    "upgrade.mekanism.radioactive.description": "Allow radioactive gas insertion.",
+    "upgrade.mekanism.solar": "Solar",
+    "upgrade.mekanism.solar.description": "Increases solar production of generators."
 }
