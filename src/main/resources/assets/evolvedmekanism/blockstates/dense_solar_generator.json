@@ -1,18 +1,18 @@
 {
     "variants": {
         "facing=north": {
-            "model": "evolvedmekanism:block/dense_solar_generator"
+            "model": "evolvedmekanism:block/solar_generators/dense_solar_generator"
         },
         "facing=south": {
-            "model": "evolvedmekanism:block/dense_solar_generator",
+            "model": "evolvedmekanism:block/solar_generators/dense_solar_generator",
             "y": 180
         },
         "facing=west": {
-            "model": "evolvedmekanism:block/dense_solar_generator",
+            "model": "evolvedmekanism:block/solar_generators/dense_solar_generator",
             "y": -90
         },
         "facing=east": {
-            "model": "evolvedmekanism:block/dense_solar_generator",
+            "model": "evolvedmekanism:block/solar_generators/dense_solar_generator",
             "y": 90
         }
     }
