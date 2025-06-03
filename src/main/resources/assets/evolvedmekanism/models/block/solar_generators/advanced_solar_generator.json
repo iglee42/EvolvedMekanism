@@ -1,9 +1,9 @@
 {
     "textures": {
-        "0": "evolvedmekanism:block/models/advanced_solar_generator",
+        "0": "evolvedmekanism:block/models/solar_generators/advanced_solar_generator",
         "1": "mekanism:block/models/ports",
         "2": "mekanism:block/models/ports_led",
-        "particle": "evolvedmekanism:block/models/advanced_solar_generator"
+        "particle": "evolvedmekanism:block/models/solar_generators/advanced_solar_generator"
     },
     "render_type": "minecraft:cutout",
     "elements": [
