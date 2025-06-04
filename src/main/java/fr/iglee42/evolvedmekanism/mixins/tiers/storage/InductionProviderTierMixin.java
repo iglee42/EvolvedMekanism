@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers.storage;
 
 
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMInductionProviderTier;
 import mekanism.api.math.FloatingLong;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Mixin(value = InductionProviderTier.class,remap = false)
-public class InductionProviderTierMixin {
+public class InductionProviderTierMixin implements InitializableEnum {
     @Shadow
     @Final
     @Mutable
@@ -25,15 +26,6 @@ public class InductionProviderTierMixin {
     @Invoker("<init>")
     public static InductionProviderTier evolvedmekanism$initInvoker(String internalName, int internalId,BaseTier tier, FloatingLong out){
         throw new AssertionError();
-    }
-
-    @Inject(method = "<clinit>",at = @At("TAIL"))
-    private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EMInductionProviderTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_048_576_000L);
-        EMInductionProviderTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,8_388_608_000L);
-        EMInductionProviderTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,67_108_864_000L);
-        EMInductionProviderTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,536_870_912_000L);
-        EMInductionProviderTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,FloatingLong.MAX_VALUE);
     }
 
     @Unique
@@ -55,5 +47,15 @@ public class InductionProviderTierMixin {
         variants.add(casing);
         InductionProviderTierMixin.$VALUES = variants.toArray(new InductionProviderTier[0]);
         return casing;
+    }
+
+    @Override
+    public void evolvedmekanism$initNewValues() {
+        if (EMInductionProviderTier.OVERCLOCKED != null) return;
+        EMInductionProviderTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_048_576_000L);
+        EMInductionProviderTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,8_388_608_000L);
+        EMInductionProviderTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,67_108_864_000L);
+        EMInductionProviderTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,536_870_912_000L);
+        EMInductionProviderTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,FloatingLong.MAX_VALUE);
     }
 }

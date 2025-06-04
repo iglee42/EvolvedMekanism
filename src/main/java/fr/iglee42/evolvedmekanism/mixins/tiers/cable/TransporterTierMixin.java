@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers.cable;
 
 
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.cable.EMTransporterTier;
 import mekanism.api.tier.BaseTier;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Mixin(value = TransporterTier.class,remap = false)
-public class TransporterTierMixin {
+public class TransporterTierMixin implements InitializableEnum {
     @Shadow
     @Final
     @Mutable
@@ -24,15 +25,6 @@ public class TransporterTierMixin {
     @Invoker("<init>")
     public static TransporterTier evolvedmekanism$initInvoker(String internalName, int internalId,BaseTier tier, int pull,int s){
         throw new AssertionError();
-    }
-
-    @Inject(method = "<clinit>",at = @At("TAIL"))
-    private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EMTransporterTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 128,75);
-        EMTransporterTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,256,100);
-        EMTransporterTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,512,150);
-        EMTransporterTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,1024,200);
-        EMTransporterTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Integer.MAX_VALUE,Integer.MAX_VALUE);
     }
 
     @Unique
@@ -44,5 +36,15 @@ public class TransporterTierMixin {
         variants.add(casing);
         TransporterTierMixin.$VALUES = variants.toArray(new TransporterTier[0]);
         return casing;
+    }
+
+    @Override
+    public void evolvedmekanism$initNewValues() {
+        if (EMTransporterTier.OVERCLOCKED != null)return;
+        EMTransporterTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 128,75);
+        EMTransporterTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,256,100);
+        EMTransporterTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,512,150);
+        EMTransporterTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,1024,200);
+        EMTransporterTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Integer.MAX_VALUE,Integer.MAX_VALUE);
     }
 }

@@ -37,6 +37,7 @@ public class UpgradeMixin {
     @Inject(method = "<clinit>",at = @At("TAIL"))
     private static void evolvedmekanism$clinit(CallbackInfo ci) {
         EMUpgrades.RADIOACTIVE_UPGRADE = evolvedmekanism$addVariant("RADIOACTIVE", "radioactive", EvolvedMekanismLang.UPGRADE_RADIOACTIVE,EvolvedMekanismLang.UPGRADE_RADIOACTIVE_DESCRIPTION,1, EnumColor.DARK_GREEN);
+        EMUpgrades.SOLAR_UPGRADE = evolvedmekanism$addVariant("SOLAR", "solar", EvolvedMekanismLang.UPGRADE_SOLAR,EvolvedMekanismLang.UPGRADE_SOLAR_DESCRIPTION,4, EnumColor.YELLOW);
 
         UPGRADES = $VALUES;
     }

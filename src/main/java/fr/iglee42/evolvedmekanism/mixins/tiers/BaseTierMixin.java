@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers;
 
 
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.igleelib.api.utils.ModsUtils;
 import mekanism.api.tier.BaseTier;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Mixin(value = BaseTier.class,remap = false)
-public class BaseTierMixin {
+public class BaseTierMixin implements InitializableEnum {
     @Shadow
     @Final
     @Mutable
@@ -24,14 +25,6 @@ public class BaseTierMixin {
     @Invoker("<init>")
     public static BaseTier evolvedmekanism$initInvoker(String internalName, int internalId,String name, int[] rgbCode, MapColor mapColor){
         throw new AssertionError();
-    }
-
-    @Inject(method = "<clinit>",at = @At("TAIL"))
-    private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 221, 0},MapColor.COLOR_LIGHT_GREEN);
-        EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{252, 158, 250},MapColor.COLOR_PURPLE);
-        EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);
-        EMBaseTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", new int[]{90, 87, 90},MapColor.COLOR_BLACK);
     }
 
     @Unique
@@ -45,5 +38,14 @@ public class BaseTierMixin {
         variants.add(casing);
         BaseTierMixin.$VALUES = variants.toArray(new BaseTier[0]);
         return casing;
+    }
+
+    @Override
+    public void evolvedmekanism$initNewValues() {
+        if (EMBaseTier.OVERCLOCKED != null) return;
+        EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 221, 0},MapColor.COLOR_LIGHT_GREEN);
+        EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{252, 158, 250},MapColor.COLOR_PURPLE);
+        EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);
+        EMBaseTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", new int[]{90, 87, 90},MapColor.COLOR_BLACK);
     }
 }
