@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/infused"
+        },
+        "C": {
+            "tag": "forge:circuits/advanced"
+        },
+        "I": {
+            "tag": "forge:ingots/osmium"
+        },
+        "P": {
+            "item": "mekanism:basic_thermalizing_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "mekanism:advanced_thermalizing_factory"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "parent": "evolvedmekanism:block/solidification_chamber",
+    "textures": {
+        "front": "evolvedmekanism:block/solidification_chamber/front_active",
+        "west": "evolvedmekanism:block/solidification_chamber/right_active",
+        "east": "evolvedmekanism:block/solidification_chamber/left_active",
+        "south": "evolvedmekanism:block/solidification_chamber/back_active",
+        "up": "evolvedmekanism:block/solidification_chamber/top_active"
+    }
+}

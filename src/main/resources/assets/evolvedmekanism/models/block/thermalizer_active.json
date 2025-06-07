@@ -1,0 +1,7 @@
+{
+    "parent": "evolvedmekanism:block/thermalizer",
+    "textures": {
+        "front": "evolvedmekanism:block/thermalizer/front_active",
+        "down": "evolvedmekanism:block/thermalizer/bottom_active"
+    }
+}
