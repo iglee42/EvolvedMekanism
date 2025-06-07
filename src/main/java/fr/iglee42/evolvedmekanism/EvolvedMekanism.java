@@ -1,13 +1,13 @@
 package fr.iglee42.evolvedmekanism;
 
+import fr.iglee42.emgenerators.client.EMGenClientRegistration;
+import fr.iglee42.emgenerators.registries.*;
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
+import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import fr.iglee42.emgenerators.registries.EMGenBlockTypes;
-import fr.iglee42.emgenerators.registries.EMGenBlocks;
-import fr.iglee42.emgenerators.registries.EMGenContainerTypes;
-import fr.iglee42.emgenerators.registries.EMGenTileEntityTypes;
 import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageManager;
 import fr.iglee42.evolvedmekanism.multiblock.EMBuilders;
@@ -80,12 +80,12 @@ public class EvolvedMekanism {
     public EvolvedMekanism() {
         instance = this;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        initEnums();
 
         EMConfig.registerConfigs(FMLJavaModLoadingContext.get());
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
-        initEnums();
 
         EMBlocks.BLOCKS.register(modEventBus);
         EMItems.ITEMS.register(modEventBus);
@@ -109,10 +109,12 @@ public class EvolvedMekanism {
     private void registerCompats() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         if (ModsCompats.MEKANISMGENERATORS.isLoaded()) {
-            EMGenBlocks.register(modEventBus);
-            EMGenTileEntityTypes.register(modEventBus);
-            EMGenContainerTypes.register(modEventBus);
-            EMGenBlockTypes.register();
+           EMGenItems.register(modEventBus);
+           EMGenBlocks.register(modEventBus);
+           EMGenTileEntityTypes.register(modEventBus);
+           EMGenContainerTypes.register(modEventBus);
+           EMGenBlockTypes.register();
+           modEventBus.register(new EMGenClientRegistration());
         }
     }
 
@@ -126,24 +128,25 @@ public class EvolvedMekanism {
 
     private void initEnums() {
         MekanismLang ignoredLType = MekanismLang.MEKANISM;
-        BaseTier ignored1 = BaseTier.BASIC;
-        AlloyTier ignored2 = AlloyTier.ATOMIC;
-        FactoryTier ignored3 = FactoryTier.BASIC;
-        FactoryType ignoredFType = FactoryType.COMBINING;
-        QIODriveTier ignoredQIO = QIODriveTier.BASE;
+        ((InitializableEnum)(Object)BaseTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)AlloyTier.INFUSED).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)FactoryTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)QIODriveTier.BASE).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)FactoryType.COMBINING).evolvedmekanism$initNewValues();
 
-        CableTier cable1 = CableTier.BASIC;
-        ConductorTier cable2 = ConductorTier.BASIC;
-        PipeTier cable3 = PipeTier.BASIC;
-        TubeTier cable4 = TubeTier.BASIC;
-        TransporterTier cable5 = TransporterTier.BASIC;
+        ((InitializableEnum)(Object)CableTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)ConductorTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)PipeTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)TubeTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)TransporterTier.BASIC).evolvedmekanism$initNewValues();
 
-        BinTier storage1 = BinTier.BASIC;
-        InductionCellTier storage2 = InductionCellTier.BASIC;
-        InductionProviderTier storage3 = InductionProviderTier.BASIC;
-        EnergyCubeTier storage4 = EnergyCubeTier.BASIC;
-        ChemicalTankTier storage5 = ChemicalTankTier.BASIC;
-        FluidTankTier storage6 = FluidTankTier.BASIC;
+        ((InitializableEnum)(Object)BinTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)InductionCellTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)InductionProviderTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)EnergyCubeTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)ChemicalTankTier.BASIC).evolvedmekanism$initNewValues();
+        ((InitializableEnum)(Object)FluidTankTier.BASIC).evolvedmekanism$initNewValues();
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

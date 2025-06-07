@@ -9,12 +9,13 @@ import net.minecraftforge.fml.loading.LoadingModList;
 
 public enum ModsCompats {
 
-    MEKANISMGENERATORS();
+    MEKANISMGENERATORS("tiles.TileEntitySolarGeneratorMixin",
+            "tiles.TileEntityAdvancedSolarGeneratorMixin");
 
     private final String[] mixinClasses;
 
     ModsCompats(String... mixinClasses) {
-        this.mixinClasses = mixinClasses;
+        this.mixinClasses = Arrays.stream(mixinClasses).map(s->"fr.iglee42.evolvedmekanism.mixins."+s).toArray(String[]::new);
     }
 
     public List<String> getMixinClasses() {

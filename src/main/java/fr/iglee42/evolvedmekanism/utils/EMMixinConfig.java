@@ -39,10 +39,10 @@ public class EMMixinConfig implements IMixinConfigPlugin{
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return ModsCompats.getAllMixinsClasses().contains(mixinClassName) ? Arrays.stream(ModsCompats.values())
+        System.out.println("Mixin " + mixinClassName + " -> " + targetClassName);
+        return !ModsCompats.getAllMixinsClasses().contains(mixinClassName) || Arrays.stream(ModsCompats.values())
                 .filter(m -> m.getMixinClasses().contains(mixinClassName))
-                .allMatch(ModsCompats::isLoaded)
-        : true;
+                .allMatch(ModsCompats::isLoaded);
     }
 
 }

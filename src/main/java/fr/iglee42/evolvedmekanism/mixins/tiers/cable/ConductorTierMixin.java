@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers.cable;
 
 
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.cable.EMConductorTier;
 import mekanism.api.heat.HeatAPI;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Mixin(value = ConductorTier.class,remap = false)
-public class ConductorTierMixin {
+public class ConductorTierMixin implements InitializableEnum {
     @Shadow
     @Final
     @Mutable
@@ -26,15 +27,6 @@ public class ConductorTierMixin {
     @Invoker("<init>")
     public static ConductorTier evolvedmekanism$initInvoker(String internalName, int internalId,BaseTier tier, double conduction, double heatCapacity, double conductionInsulation, Color color){
         throw new AssertionError();
-    }
-
-    @Inject(method = "<clinit>",at = @At("TAIL"))
-    private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EMConductorTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 8_192_000);
-        EMConductorTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,65_536_000);
-        EMConductorTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,524_288_000);
-        EMConductorTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,4_194_304_000L);
-        EMConductorTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Double.MAX_VALUE);
     }
 
     @Unique
@@ -46,5 +38,15 @@ public class ConductorTierMixin {
         variants.add(casing);
         ConductorTierMixin.$VALUES = variants.toArray(new ConductorTier[0]);
         return casing;
+    }
+
+    @Override
+    public void evolvedmekanism$initNewValues() {
+        if (EMConductorTier.OVERCLOCKED != null)return;
+        EMConductorTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 8_192_000);
+        EMConductorTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,65_536_000);
+        EMConductorTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,524_288_000);
+        EMConductorTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,4_194_304_000L);
+        EMConductorTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Double.MAX_VALUE);
     }
 }

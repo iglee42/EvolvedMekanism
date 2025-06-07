@@ -1,6 +1,7 @@
 package fr.iglee42.emgenerators.tile;
 
 import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
+import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.api.IEvaporationSolar;
 import mekanism.api.RelativeSide;
 import mekanism.api.math.FloatingLong;
@@ -8,12 +9,15 @@ import mekanism.api.providers.IBlockProvider;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.capabilities.resolver.BasicCapabilityResolver;
 import mekanism.common.tile.interfaces.IBoundingBlock;
+import mekanism.common.upgrade.IUpgradeData;
 import mekanism.generators.common.config.MekanismGeneratorsConfig;
 import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGenerator
         implements IBoundingBlock, IEvaporationSolar {
@@ -41,7 +45,8 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
 
     @Override
     protected FloatingLong getConfiguredMax() {
-        return MekanismGeneratorsConfig.generators.advancedSolarGeneration.get().multiply(tier.getMultiplier());
+        int modifier = 1 + (upgradeComponent != null ? upgradeComponent.getUpgrades(EMUpgrades.SOLAR_UPGRADE) : 0);
+        return MekanismGeneratorsConfig.generators.advancedSolarGeneration.get().multiply(tier.getMultiplier()).multiply(modifier) ;
     }
 
     @Override
@@ -161,5 +166,14 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
                 }
             }
         }
+    }
+
+    @Override
+    public @Nullable IUpgradeData getUpgradeData() {
+        return new IUpgradeData() {};
+    }
+
+    @Override
+    public void parseUpgradeData(@NotNull IUpgradeData data) {
     }
 }

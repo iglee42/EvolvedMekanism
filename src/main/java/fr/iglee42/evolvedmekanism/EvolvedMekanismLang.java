@@ -31,7 +31,9 @@ public enum EvolvedMekanismLang implements ILangEntry {
     public static MekanismLang ALLOYING; // type : factory | path : alloying
     public static MekanismLang DESCRIPTION_ALLOYER; // type : description | path : alloyer
     public static APILang UPGRADE_RADIOACTIVE; // type : upgrade | path : radioactive
+    public static APILang UPGRADE_SOLAR; // type : upgrade | path : solar
     public static APILang UPGRADE_RADIOACTIVE_DESCRIPTION; // type : upgrade | path : radioactive.description
+    public static APILang UPGRADE_SOLAR_DESCRIPTION; // type : upgrade | path : solar.description
 
 
     private final String key;

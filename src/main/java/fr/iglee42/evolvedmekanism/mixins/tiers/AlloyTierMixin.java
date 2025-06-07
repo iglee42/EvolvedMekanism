@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers;
 
 
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.tier.AlloyTier;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Mixin(value = AlloyTier.class,remap = false)
-public class AlloyTierMixin {
+public class AlloyTierMixin implements InitializableEnum {
     @Shadow
     @Final
     @Mutable
@@ -24,15 +25,6 @@ public class AlloyTierMixin {
     @Invoker("<init>")
     public static AlloyTier evolvedmekanism$initInvoker(String internalName, int internalId,String name, BaseTier tier){
         throw new AssertionError();
-    }
-
-    @Inject(method = "<clinit>",at = @At("TAIL"))
-    private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EMAlloyTier.HYPERCHARGED = evolvedmekanism$addVariant("HYPERCHARGED", EMBaseTier.OVERCLOCKED);
-        EMAlloyTier.SUBATOMIC = evolvedmekanism$addVariant("SUBATOMIC", EMBaseTier.QUANTUM);
-        EMAlloyTier.SINGULAR = evolvedmekanism$addVariant("SINGULAR", EMBaseTier.DENSE);
-        EMAlloyTier.EXOVERSAL = evolvedmekanism$addVariant("EXOVERSAL", EMBaseTier.MULTIVERSAL);
-        EMAlloyTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE);
     }
 
     @Unique
@@ -45,5 +37,15 @@ public class AlloyTierMixin {
         variants.add(casing);
         AlloyTierMixin.$VALUES = variants.toArray(new AlloyTier[0]);
         return casing;
+    }
+
+    @Override
+    public void evolvedmekanism$initNewValues() {
+        if (EMAlloyTier.HYPERCHARGED != null)return;
+        EMAlloyTier.HYPERCHARGED = evolvedmekanism$addVariant("HYPERCHARGED", EMBaseTier.OVERCLOCKED);
+        EMAlloyTier.SUBATOMIC = evolvedmekanism$addVariant("SUBATOMIC", EMBaseTier.QUANTUM);
+        EMAlloyTier.SINGULAR = evolvedmekanism$addVariant("SINGULAR", EMBaseTier.DENSE);
+        EMAlloyTier.EXOVERSAL = evolvedmekanism$addVariant("EXOVERSAL", EMBaseTier.MULTIVERSAL);
+        EMAlloyTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE);
     }
 }

@@ -27,6 +27,8 @@ public class APILangMixin {
     private static void evolvedmekanism$clinit(CallbackInfo ci) {
         EvolvedMekanismLang.UPGRADE_RADIOACTIVE = evolvedmekanism$addVariant("UPGRADE_RADIOACTIVE", "upgrade","radioactive");
         EvolvedMekanismLang.UPGRADE_RADIOACTIVE_DESCRIPTION = evolvedmekanism$addVariant("UPGRADE_RADIOACTIVE_DESCRIPTION", "upgrade","radioactive.description");
+        EvolvedMekanismLang.UPGRADE_SOLAR = evolvedmekanism$addVariant("UPGRADE_SOLAR", "upgrade","solar");
+        EvolvedMekanismLang.UPGRADE_SOLAR_DESCRIPTION = evolvedmekanism$addVariant("UPGRADE_SOLAR_DESCRIPTION", "upgrade","solar.description");
     }
 
     @Unique

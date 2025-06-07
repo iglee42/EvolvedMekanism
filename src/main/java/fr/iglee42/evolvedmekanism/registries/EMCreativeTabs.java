@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.registries;
 
 import java.util.function.BooleanSupplier;
 
+import fr.iglee42.emgenerators.registries.EMGenItems;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
@@ -49,6 +50,7 @@ public class EMCreativeTabs {
                   .withTabsBefore(MekanismCreativeTabs.MEKANISM.key())
                 .displayItems((displayParameters, output) -> {
                     CreativeTabDeferredRegister.addToDisplay(EMItems.ITEMS, output);
+                    if (ModsCompats.MEKANISMGENERATORS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMGenItems.ITEMS, output);
                     CreativeTabDeferredRegister.addToDisplay(EMBlocks.BLOCKS, output);
                     if (ModsCompats.MEKANISMGENERATORS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMGenBlocks.BLOCKS, output);
                     //CreativeTabDeferredRegister.addToDisplay(MekanismFluids.FLUIDS, output);

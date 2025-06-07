@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers.storage;
 
 
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMEnergyCubeTier;
 import mekanism.api.math.FloatingLong;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Mixin(value = EnergyCubeTier.class,remap = false)
-public class EnergyCubeTierMixin {
+public class EnergyCubeTierMixin implements InitializableEnum {
     @Shadow
     @Final
     @Mutable
@@ -25,14 +26,6 @@ public class EnergyCubeTierMixin {
     @Invoker("<init>")
     public static EnergyCubeTier evolvedmekanism$initInvoker(String internalName, int internalId,BaseTier tier, FloatingLong max, FloatingLong out){
         throw new AssertionError();
-    }
-
-    @Inject(method = "<clinit>",at = @At("TAIL"))
-    private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EMEnergyCubeTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_024_000_000L,1_024_000);
-        EMEnergyCubeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,4_096_000_000L,4_096_000);
-        EMEnergyCubeTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,16_384_000_000L,16_384_000);
-        EMEnergyCubeTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,65_536_000_000L,65_536_000);
     }
 
     @Unique
@@ -44,5 +37,14 @@ public class EnergyCubeTierMixin {
         variants.add(casing);
         EnergyCubeTierMixin.$VALUES = variants.toArray(new EnergyCubeTier[0]);
         return casing;
+    }
+
+    @Override
+    public void evolvedmekanism$initNewValues() {
+        if (EMEnergyCubeTier.OVERCLOCKED != null) return;
+        EMEnergyCubeTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_024_000_000L,1_024_000);
+        EMEnergyCubeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,4_096_000_000L,4_096_000);
+        EMEnergyCubeTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,16_384_000_000L,16_384_000);
+        EMEnergyCubeTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,65_536_000_000L,65_536_000);
     }
 }

@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers.storage;
 
 
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMChemicalTankTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMQIODriveTier;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @Mixin(value = QIODriveTier.class,remap = false)
-public class QIODriveTierMixin {
+public class QIODriveTierMixin implements InitializableEnum {
     @Shadow
     @Final
     @Mutable
@@ -28,14 +29,6 @@ public class QIODriveTierMixin {
         throw new AssertionError();
     }
 
-    @Inject(method = "<clinit>",at = @At("TAIL"))
-    private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EMQIODriveTier.BOOSTED = evolvedmekanism$addVariant("BOOSTED", EMBaseTier.OVERCLOCKED, 32_000_000_000L,16_384);
-        EMQIODriveTier.SINGULARITY = evolvedmekanism$addVariant("SINGULARITY",  EMBaseTier.QUANTUM,64_000_000_000L,32_768);
-        EMQIODriveTier.HYPRA_SOLIDIFIED = evolvedmekanism$addVariant("HYPRA_SOLIDIFIED", EMBaseTier.DENSE,128_000_000_000L,65_536);
-        EMQIODriveTier.BLACK_HOLE = evolvedmekanism$addVariant("BLACK_HOLE", EMBaseTier.MULTIVERSAL,256_000_000_000L,131_072);
-        EMQIODriveTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Long.MAX_VALUE,Integer.MAX_VALUE);
-    }
 
     @Unique
     private static QIODriveTier evolvedmekanism$addVariant(String internalName, BaseTier tier, long max,int out) {
@@ -46,5 +39,15 @@ public class QIODriveTierMixin {
         variants.add(casing);
         QIODriveTierMixin.$VALUES = variants.toArray(new QIODriveTier[0]);
         return casing;
+    }
+
+    @Override
+    public void evolvedmekanism$initNewValues() {
+        if (EMQIODriveTier.BOOSTED != null)return;
+        EMQIODriveTier.BOOSTED = evolvedmekanism$addVariant("BOOSTED", EMBaseTier.OVERCLOCKED, 32_000_000_000L,16_384);
+        EMQIODriveTier.SINGULARITY = evolvedmekanism$addVariant("SINGULARITY",  EMBaseTier.QUANTUM,64_000_000_000L,32_768);
+        EMQIODriveTier.HYPRA_SOLIDIFIED = evolvedmekanism$addVariant("HYPRA_SOLIDIFIED", EMBaseTier.DENSE,128_000_000_000L,65_536);
+        EMQIODriveTier.BLACK_HOLE = evolvedmekanism$addVariant("BLACK_HOLE", EMBaseTier.MULTIVERSAL,256_000_000_000L,131_072);
+        EMQIODriveTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Long.MAX_VALUE,Integer.MAX_VALUE);
     }
 }
