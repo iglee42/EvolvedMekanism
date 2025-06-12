@@ -13,6 +13,7 @@ import mekanism.common.item.block.ItemBlockPersonalStorage;
 import mekanism.common.lib.inventory.personalstorage.AbstractPersonalStorageItemInventory;
 import mekanism.common.lib.inventory.personalstorage.PersonalStorageManager;
 import mekanism.common.registries.MekanismItems;
+import mekanism.common.tags.MekanismTags;
 import mekanism.common.util.SecurityUtils;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,7 @@ import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.Tags.Items;
 import org.jetbrains.annotations.NotNull;
 
@@ -42,9 +44,9 @@ public class PersonalBarrelUpgrading extends CustomRecipe {
             isValid[4] = true;
             for (int i = 0; i < container.getContainerSize(); i++){
                 if (i == 4) continue;
-                if (i == 0 || i == 2 || i >= 6) isValid[i] = container.getItem(i).is(MekanismItems.STEEL_INGOT.asItem());
+                if (i == 0 || i == 2 || i >= 6) isValid[i] = container.getItem(i).is(MekanismTags.Items.INGOTS_STEEL);
                 if (i == 1) isValid[i] = container.getItem(i).is(Items.GLASS_SILICA);
-                if (i == 3 || i == 5) isValid[i] = container.getItem(i).is(MekanismItems.ADVANCED_CONTROL_CIRCUIT.asItem());
+                if (i == 3 || i == 5) isValid[i] = container.getItem(i).is(MekanismTags.Items.CIRCUITS_ADVANCED);
             }
             return Arrays.stream(isValid).allMatch(Boolean::booleanValue);
         }
@@ -58,7 +60,7 @@ public class PersonalBarrelUpgrading extends CustomRecipe {
         isValid[4] = true;
         for (int i = 0; i < container.getContainerSize(); i++){
             if (i == 4) continue;
-            if (i == 0 || i == 2 || i >= 6) isValid[i] = container.getItem(i).is(MekanismItems.STEEL_INGOT.asItem());
+            if (i == 0 || i == 2 || i >= 6) isValid[i] = container.getItem(i).is(MekanismTags.Items.INGOTS_STEEL);
             if (i == 1) isValid[i] = container.getItem(i).is(Items.GLASS_SILICA);
             if (i == 3 || i == 5) isValid[i] = container.getItem(i).is(EvolvedMekanism.getCircuitByTier(nextTier.getBaseTier()).asItem());
         }
