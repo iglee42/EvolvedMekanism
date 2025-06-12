@@ -1,0 +1,18 @@
+{
+    "loader": "forge:composite",
+    "parent": "block/block",
+    "textures": {
+        "particle": "evolvedmekanism:block/factory/solidifying/solidifying_factory_front"
+    },
+    "children": {
+        "base": {
+            "parent": "evolvedmekanism:block/factory/solidifying/base",
+            "textures": {
+                "front": "evolvedmekanism:block/factory/solidifying/solidifying_factory_front_active"
+            }
+        },
+        "front_led": {
+            "parent": "evolvedmekanism:block/factory/front_led/active/overclocked"
+        }
+    }
+}

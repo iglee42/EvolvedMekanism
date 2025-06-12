@@ -1,0 +1,12 @@
+{
+    "parent": "mekanism:block/machine",
+    "textures": {
+        "sides": "evolvedmekanism:block/solidification_chamber/right",
+        "front": "evolvedmekanism:block/solidification_chamber/front",
+        "west": "evolvedmekanism:block/solidification_chamber/right",
+        "east": "evolvedmekanism:block/solidification_chamber/left",
+        "south": "evolvedmekanism:block/solidification_chamber/back",
+        "up": "evolvedmekanism:block/solidification_chamber/top",
+        "down": "evolvedmekanism:block/solidification_chamber/bottom"
+    }
+}

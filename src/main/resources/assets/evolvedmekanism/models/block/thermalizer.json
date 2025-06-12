@@ -1,0 +1,12 @@
+{
+    "parent": "mekanism:block/machine",
+    "textures": {
+        "sides": "evolvedmekanism:block/thermalizer/side",
+        "front": "evolvedmekanism:block/thermalizer/front",
+        "west": "evolvedmekanism:block/thermalizer/side",
+        "east": "evolvedmekanism:block/thermalizer/side",
+        "south": "evolvedmekanism:block/thermalizer/back",
+        "up": "evolvedmekanism:block/thermalizer/top",
+        "down": "evolvedmekanism:block/thermalizer/bottom"
+    }
+}
