@@ -17,7 +17,7 @@
         " G "
     ],
     "result": {
-        "item": "evolvedmekanism:solar_upgrade"
+        "item": "evolvedmekanism:upgrade_solar"
     },
     "conditions": [
         {

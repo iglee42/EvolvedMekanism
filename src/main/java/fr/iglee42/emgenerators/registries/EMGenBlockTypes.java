@@ -44,6 +44,8 @@ public class EMGenBlockTypes {
 
     public static final Generator<TileEntityTieredAdvancedSolarGenerator> MULTIVERSAL_SOLAR_GENERATOR =
             createTieredSolarGenerator(AdvancedSolarPanelTier.MULTIVERSAL, () -> EMGenTileEntityTypes.MULTIVERSAL_SOLAR_PANEL, EvolvedMekanismLang.DESCRIPTION_MULTIVERSAL_SOLAR_GENERATOR, ()->null);
+    public static final Generator<TileEntityTieredAdvancedSolarGenerator> CREATIVE_SOLAR_GENERATOR =
+            createTieredSolarGenerator(AdvancedSolarPanelTier.CREATIVE, () -> EMGenTileEntityTypes.CREATIVE_SOLAR_PANEL, EvolvedMekanismLang.DESCRIPTION_CREATIVE_SOLAR_GENERATOR, ()->null);
 
 
     public static Generator<TileEntityTieredAdvancedSolarGenerator> createTieredSolarGenerator(

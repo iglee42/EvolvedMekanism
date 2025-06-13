@@ -20,6 +20,7 @@ public class EMGenTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> QUANTUM_SOLAR_PANEL = registerTieredSolarPanel(EMGenBlocks.QUANTUM_SOLAR_GENERATOR, AdvancedSolarPanelTier.QUANTUM);
     public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> DENSE_SOLAR_PANEL = registerTieredSolarPanel(EMGenBlocks.DENSE_SOLAR_GENERATOR, AdvancedSolarPanelTier.DENSE);
     public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> MULTIVERSAL_SOLAR_PANEL = registerTieredSolarPanel(EMGenBlocks.MULTIVERSAL_SOLAR_GENERATOR, AdvancedSolarPanelTier.MULTIVERSAL);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> CREATIVE_SOLAR_PANEL = registerTieredSolarPanel(EMGenBlocks.CREATIVE_SOLAR_GENERATOR, AdvancedSolarPanelTier.CREATIVE);
 
     public static TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> registerTieredSolarPanel(BlockRegistryObject<?,?> block, AdvancedSolarPanelTier tier) {
         return TILE_ENTITY_TYPES.register(block, (pos,state)->new TileEntityTieredAdvancedSolarGenerator(block,pos, state, tier));

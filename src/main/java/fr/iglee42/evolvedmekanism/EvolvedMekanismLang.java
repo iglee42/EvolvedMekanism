@@ -21,15 +21,20 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_QUANTUM_SOLAR_GENERATOR("description", "quantum_solar_generator"),
     DESCRIPTION_DENSE_SOLAR_GENERATOR("description", "dense_solar_generator"),
     DESCRIPTION_MULTIVERSAL_SOLAR_GENERATOR("description", "multiversal_solar_generator"),
+    DESCRIPTION_CREATIVE_SOLAR_GENERATOR("description", "creative_solar_generator"),
 
     APT("apt", "apt"),
     APT_PORT_MODE("apt", "port_mode"),
+
+    TOOLTIP_NO_CONSUMED("tooltip","not_consumed")
 
     ;
 
     // <type>.mekanism.<path>
     public static MekanismLang ALLOYING; // type : factory | path : alloying
     public static MekanismLang DESCRIPTION_ALLOYER; // type : description | path : alloyer
+    public static MekanismLang DESCRIPTION_MELTER; // type : description | path : thermalizer
+    public static MekanismLang DESCRIPTION_SOLIDIFIER; // type : description | path : solidification_chamber
     public static APILang UPGRADE_RADIOACTIVE; // type : upgrade | path : radioactive
     public static APILang UPGRADE_SOLAR; // type : upgrade | path : solar
     public static APILang UPGRADE_RADIOACTIVE_DESCRIPTION; // type : upgrade | path : radioactive.description

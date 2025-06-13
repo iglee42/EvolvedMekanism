@@ -30,7 +30,8 @@ public class EMGenBlocks {
             OVERCLOCKED_SOLAR_GENERATOR = registerTieredSolarGenerator("overclocked_solar_generator", EMGenBlockTypes.OVERCLOCKED_SOLAR_GENERATOR),
             QUANTUM_SOLAR_GENERATOR = registerTieredSolarGenerator("quantum_solar_generator", EMGenBlockTypes.QUANTUM_SOLAR_GENERATOR),
             DENSE_SOLAR_GENERATOR = registerTieredSolarGenerator("dense_solar_generator", EMGenBlockTypes.DENSE_SOLAR_GENERATOR),
-            MULTIVERSAL_SOLAR_GENERATOR = registerTieredSolarGenerator("multiversal_solar_generator", EMGenBlockTypes.MULTIVERSAL_SOLAR_GENERATOR);
+            MULTIVERSAL_SOLAR_GENERATOR = registerTieredSolarGenerator("multiversal_solar_generator", EMGenBlockTypes.MULTIVERSAL_SOLAR_GENERATOR),
+            CREATIVE_SOLAR_GENERATOR = registerTieredSolarGenerator("creative_solar_generator", EMGenBlockTypes.CREATIVE_SOLAR_GENERATOR);
 
 
     private static BlockRegistryObject<BlockTileModel<TileEntityTieredAdvancedSolarGenerator, Generator<TileEntityTieredAdvancedSolarGenerator>>, ItemBlockTieredSolarGenerator> registerTieredSolarGenerator(String name, Generator<TileEntityTieredAdvancedSolarGenerator> type) {

@@ -8,12 +8,15 @@ import mekanism.api.recipes.ingredients.FluidStackIngredient;
 import mekanism.api.recipes.ingredients.InputIngredient;
 import mekanism.api.recipes.ingredients.ItemStackIngredient;
 import mekanism.common.recipe.MekanismRecipeType;
+import mekanism.common.recipe.lookup.ITripleRecipeLookupHandler;
 import mekanism.common.recipe.lookup.cache.DoubleInputRecipeCache;
+import mekanism.common.recipe.lookup.cache.InputRecipeCache;
 import mekanism.common.recipe.lookup.cache.TripleInputRecipeCache;
 import mekanism.common.recipe.lookup.cache.type.ChemicalInputCache;
 import mekanism.common.recipe.lookup.cache.type.FluidInputCache;
 import mekanism.common.recipe.lookup.cache.type.IInputCache;
 import mekanism.common.recipe.lookup.cache.type.ItemInputCache;
+import mekanism.common.util.ChemicalUtil;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.util.TriPredicate;
@@ -63,5 +66,28 @@ public class EMInputRecipeCache {
                                 Function<RECIPE, ItemStackIngredient> inputBExtractor, Function<RECIPE, ChemicalStackIngredient<CHEMICAL, STACK>> inputCExtractor) {
             super(recipeType, inputAExtractor, new ItemInputCache<>(), inputBExtractor, new ItemInputCache<>(), inputCExtractor, new ChemicalInputCache<>());
         }
+    }
+
+    public static class ItemFluidFluid<RECIPE extends MekanismRecipe &
+            TriPredicate<ItemStack, FluidStack, FluidStack>> extends TripleInputRecipeCache<ItemStack, ItemStackIngredient, FluidStack, FluidStackIngredient, FluidStack,
+            FluidStackIngredient, RECIPE, ItemInputCache<RECIPE>, FluidInputCache<RECIPE>, FluidInputCache<RECIPE>> {
+
+        public ItemFluidFluid(MekanismRecipeType<RECIPE, ?> recipeType, Function<RECIPE, ItemStackIngredient> inputAExtractor,
+                                 Function<RECIPE, FluidStackIngredient> inputBExtractor, Function<RECIPE, FluidStackIngredient> inputCExtractor) {
+            super(recipeType, inputAExtractor, new ItemInputCache<>(), inputBExtractor, new FluidInputCache<>(), inputCExtractor, new FluidInputCache<>());
+        }
+    }
+
+    /**
+     * Helper interface to make the generics that we have to pass to {@link ITripleRecipeLookupHandler} not as messy.
+     */
+    public interface ItemFluidFluidRecipeLookupHandler<RECIPE extends MekanismRecipe &
+            TriPredicate<ItemStack, FluidStack, FluidStack>> extends ObjectObjectObjectRecipeLookupHandler<ItemStack, FluidStack, FluidStack, RECIPE,
+            ItemFluidFluid<RECIPE>> {
+    }
+
+    interface ObjectObjectObjectRecipeLookupHandler<INPUT_A, INPUT_B, INPUT_C,
+            RECIPE extends MekanismRecipe & TriPredicate<INPUT_A, INPUT_B, INPUT_C>, INPUT_CACHE extends TripleInputRecipeCache<INPUT_A, ?, INPUT_B, ?, INPUT_C, ?, RECIPE, ?, ?, ?>>
+            extends ITripleRecipeLookupHandler<INPUT_A, INPUT_B, INPUT_C, RECIPE, INPUT_CACHE> {
     }
 }

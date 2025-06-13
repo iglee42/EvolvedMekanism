@@ -10,7 +10,7 @@ import net.minecraftforge.fml.loading.LoadingModList;
 public enum ModsCompats {
 
     MEKANISMGENERATORS("tiles.TileEntitySolarGeneratorMixin",
-            "tiles.TileEntityAdvancedSolarGeneratorMixin");
+            "tiles.TileEntityAdvancedSolarGeneratorMixin","items.GenItemTierInstallerMixin");
 
     private final String[] mixinClasses;
 

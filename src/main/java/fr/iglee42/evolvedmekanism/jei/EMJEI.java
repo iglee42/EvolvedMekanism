@@ -7,8 +7,10 @@ import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.jei.categories.APTRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.AlloyerRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.ChemixerRecipeCategory;
+import fr.iglee42.evolvedmekanism.jei.categories.SolidificationRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
@@ -18,9 +20,11 @@ import mekanism.api.energy.IStrictEnergyHandler;
 import mekanism.api.math.FloatingLong;
 import mekanism.api.providers.IItemProvider;
 import mekanism.api.recipes.ItemStackGasToItemStackRecipe;
+import mekanism.api.recipes.ItemStackToFluidRecipe;
 import mekanism.client.jei.CatalystRegistryHelper;
 import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.client.jei.RecipeRegistryHelper;
+import mekanism.client.jei.machine.ItemStackToFluidRecipeCategory;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.util.RegistryUtils;
 import mezz.jei.api.IModPlugin;
@@ -50,6 +54,8 @@ public class EMJEI implements IModPlugin {
     public static final MekanismJEIRecipeType<AlloyerRecipe> ALLOYING = new MekanismJEIRecipeType<>(EMBlocks.ALLOYER, AlloyerRecipe.class);
     public static final MekanismJEIRecipeType<ChemixerRecipe> CHEMIXING = new MekanismJEIRecipeType<>(EMBlocks.CHEMIXER, ChemixerRecipe.class);
     public static final MekanismJEIRecipeType<ItemStackGasToItemStackRecipe> APT = new MekanismJEIRecipeType<>(EMItems.BETTER_GOLD_INGOT, ItemStackGasToItemStackRecipe.class);
+    public static final MekanismJEIRecipeType<ItemStackToFluidRecipe> MELTING = new MekanismJEIRecipeType<>(EMBlocks.MELTER, ItemStackToFluidRecipe.class);
+    public static final MekanismJEIRecipeType<SolidificationRecipe> SOLIDIFICATION = new MekanismJEIRecipeType<>(EMBlocks.SOLIDIFIER, SolidificationRecipe.class);
 
 
     private static final IIngredientSubtypeInterpreter<ItemStack> MEKANISM_NBT_INTERPRETER = (stack, context) -> {
@@ -160,6 +166,8 @@ public class EMJEI implements IModPlugin {
         registry.addRecipeCategories(new AlloyerRecipeCategory(guiHelper, ALLOYING));
         registry.addRecipeCategories(new ChemixerRecipeCategory(guiHelper, CHEMIXING));
         registry.addRecipeCategories(new APTRecipeCategory(guiHelper, APT));
+        registry.addRecipeCategories(new ItemStackToFluidRecipeCategory(guiHelper, MELTING,EMBlocks.MELTER,false));
+        registry.addRecipeCategories(new SolidificationRecipeCategory(guiHelper, SOLIDIFICATION));
 
     }
 
@@ -173,6 +181,8 @@ public class EMJEI implements IModPlugin {
         RecipeRegistryHelper.register(registry, ALLOYING, EMRecipeType.ALLOYING);
         RecipeRegistryHelper.register(registry, CHEMIXING, EMRecipeType.CHEMIXING);
         RecipeRegistryHelper.register(registry, APT, EMRecipeType.APT);
+        RecipeRegistryHelper.register(registry, MELTING, EMRecipeType.MELTING);
+        RecipeRegistryHelper.register(registry, SOLIDIFICATION, EMRecipeType.SOLIDIFICATION);
 
     }
 
@@ -181,6 +191,8 @@ public class EMJEI implements IModPlugin {
         CatalystRegistryHelper.register(registry, EMBlocks.ALLOYER);
         CatalystRegistryHelper.register(registry, EMBlocks.CHEMIXER);
         CatalystRegistryHelper.register(registry,APT, EMBlocks.APT_CASING,EMBlocks.APT_PORT);
+        CatalystRegistryHelper.register(registry, EMBlocks.MELTER);
+        CatalystRegistryHelper.register(registry, EMBlocks.SOLIDIFIER);
 
     }
 

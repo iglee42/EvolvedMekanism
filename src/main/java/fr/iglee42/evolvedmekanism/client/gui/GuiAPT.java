@@ -16,6 +16,7 @@ import mekanism.client.gui.element.bar.GuiDynamicHorizontalRateBar;
 import mekanism.client.gui.element.gauge.GaugeType;
 import mekanism.client.gui.element.gauge.GuiEnergyGauge;
 import mekanism.client.gui.element.gauge.GuiGasGauge;
+import mekanism.client.gui.element.tab.GuiEnergyTab;
 import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.common.MekanismLang;
 import mekanism.common.content.sps.SPSMultiblockData;
@@ -41,6 +42,10 @@ public class GuiAPT extends GuiMekanismTile<TileEntityAPTCasing, MekanismTileCon
     @Override
     protected void addGuiElements() {
         super.addGuiElements();
+        addRenderableWidget(new GuiEnergyTab(this, ()->{
+            FloatingLong using = tile.getMultiblock().progress > 0 ? EMConfig.general.aptEnergyConsumption.getOrDefault() : FloatingLong.ZERO;
+            return List.of(MekanismLang.USING.translate(EnergyDisplay.of(using)));
+        }));
         addRenderableWidget(new GuiGasGauge(() -> tile.getMultiblock().inputTank, () -> tile.getMultiblock().getGasTanks(null), GaugeType.STANDARD, this, 7, 17));
         addRenderableWidget(new GuiCustomDynamicHorizontalRateBar(this, new IBarInfoHandler() {
             @Override
