@@ -10,6 +10,8 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import mekanism.api.Upgrade;
 import mekanism.common.MekanismLang;
 import mekanism.common.block.attribute.*;
@@ -55,6 +57,24 @@ public class EMBlockTypes {
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
             .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING,EMUpgrades.RADIOACTIVE_UPGRADE))
             .withComputerSupport("chemixer")
+            .build();
+
+    public static final Machine<TileEntityMelter> MELTER = MachineBuilder
+            .createMachine(() -> EMTileEntityTypes.MELTER, EvolvedMekanismLang.DESCRIPTION_MELTER)
+            .withGui(() -> EMContainerTypes.MELTER)
+            .withSound(MekanismSounds.CHEMICAL_OXIDIZER)
+            .withEnergyConfig(MekanismConfig.usage.oxidationChamber, MekanismConfig.storage.oxidationChamber)
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .withComputerSupport("melter")
+            .build();
+
+    public static final Machine<TileEntitySolidifier> SOLIDIFIER = MachineBuilder
+            .createMachine(() -> EMTileEntityTypes.SOLIDIFIER, EvolvedMekanismLang.DESCRIPTION_SOLIDIFIER)
+            .withGui(() -> EMContainerTypes.SOLIDIFIER)
+            .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
+            .withEnergyConfig(MekanismConfig.usage.pressurizedReactionBase, MekanismConfig.storage.pressurizedReactionBase)
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .withComputerSupport("solidifier")
             .build();
 
     // APT Casing

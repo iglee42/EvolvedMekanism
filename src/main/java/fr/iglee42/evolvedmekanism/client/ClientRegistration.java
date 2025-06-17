@@ -92,6 +92,8 @@ public class ClientRegistration {
             ClientRegistrationUtil.registerScreen(EMContainerTypes.ALLOYER, GuiAlloyer::new);
             ClientRegistrationUtil.registerScreen(EMContainerTypes.CHEMIXER, GuiChemixer::new);
             ClientRegistrationUtil.registerScreen(EMContainerTypes.APT, GuiAPT::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.MELTER, GuiMelter::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.SOLIDIFIER, GuiSolidifier::new);
 
         });
     }

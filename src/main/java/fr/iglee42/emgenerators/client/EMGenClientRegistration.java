@@ -46,6 +46,7 @@ public class EMGenClientRegistration {
         ClientRegistration.addCustomModel(EMGenBlocks.QUANTUM_SOLAR_GENERATOR, this::translatedSolarModels);
         ClientRegistration.addCustomModel(EMGenBlocks.DENSE_SOLAR_GENERATOR, this::translatedSolarModels);
         ClientRegistration.addCustomModel(EMGenBlocks.MULTIVERSAL_SOLAR_GENERATOR, this::translatedSolarModels);
+        ClientRegistration.addCustomModel(EMGenBlocks.CREATIVE_SOLAR_GENERATOR, this::translatedSolarModels);
     }
 
     private BakedModel translatedSolarModels(BakedModel original, ModelEvent.ModifyBakingResult event){

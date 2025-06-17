@@ -13,7 +13,7 @@ public enum AdvancedSolarPanelTier implements ITier {
     QUANTUM(EMBaseTier.QUANTUM, 6),
     DENSE(EMBaseTier.DENSE, 7),
     MULTIVERSAL(EMBaseTier.MULTIVERSAL, 8),
-    CREATIVE(BaseTier.CREATIVE, 9),;
+    CREATIVE(BaseTier.CREATIVE, 16),;
 
     private final BaseTier baseTier;
     private final int multiplier;

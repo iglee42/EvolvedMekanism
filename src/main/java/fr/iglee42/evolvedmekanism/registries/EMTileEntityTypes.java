@@ -9,6 +9,8 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import mekanism.api.providers.IBlockProvider;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
@@ -118,6 +120,8 @@ public class EMTileEntityTypes {
 
     public static final TileEntityTypeRegistryObject<TileEntityAlloyer> ALLOYER = TILE_ENTITY_TYPES.register(EMBlocks.ALLOYER, TileEntityAlloyer::new);
     public static final TileEntityTypeRegistryObject<TileEntityChemixer> CHEMIXER = TILE_ENTITY_TYPES.register(EMBlocks.CHEMIXER, TileEntityChemixer::new);
+    public static final TileEntityTypeRegistryObject<TileEntityMelter> MELTER = TILE_ENTITY_TYPES.register(EMBlocks.MELTER, TileEntityMelter::new);
+    public static final TileEntityTypeRegistryObject<TileEntitySolidifier> SOLIDIFIER = TILE_ENTITY_TYPES.register(EMBlocks.SOLIDIFIER, TileEntitySolidifier::new);
 
 
     private static <BE extends TileEntityTransmitter> TileEntityTypeRegistryObject<BE> registerTransmitter(BlockRegistryObject<?, ?> block,

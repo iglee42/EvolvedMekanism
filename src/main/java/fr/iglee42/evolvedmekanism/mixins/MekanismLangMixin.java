@@ -27,6 +27,8 @@ public class MekanismLangMixin {
     private static void evolvedmekanism$clinit(CallbackInfo ci) {
         EvolvedMekanismLang.ALLOYING = evolvedmekanism$addVariant("ALLOYING", "factory","alloying");
         EvolvedMekanismLang.DESCRIPTION_ALLOYER = evolvedmekanism$addVariant("DESCRIPTION_ALLOYER", "description","alloyer");
+        EvolvedMekanismLang.DESCRIPTION_MELTER = evolvedmekanism$addVariant("DESCRIPTION_MELTER", "description","thermalizer");
+        EvolvedMekanismLang.DESCRIPTION_SOLIDIFIER = evolvedmekanism$addVariant("DESCRIPTION_SOLIDIFIER", "description","solidification_chamber");
     }
 
     @Unique

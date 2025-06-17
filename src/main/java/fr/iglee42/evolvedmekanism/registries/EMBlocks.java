@@ -15,6 +15,8 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.block.BlockEnergyCube;
@@ -69,6 +71,8 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockFactoryMachine<TileEntityAlloyer, Machine.FactoryMachine<TileEntityAlloyer>>, ItemBlockMachine> ALLOYER = BLOCKS.register("alloyer", () -> new BlockFactoryMachine<>(EMBlockTypes.ALLOYER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
 
     public static final BlockRegistryObject<BlockTileModel<TileEntityChemixer, Machine<TileEntityChemixer>>, ItemBlockMachine> CHEMIXER = BLOCKS.register("chemixer", () -> new BlockTileModel<>(EMBlockTypes.CHEMIXER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
+    public static final BlockRegistryObject<BlockTileModel<TileEntityMelter, Machine<TileEntityMelter>>, ItemBlockMachine> MELTER = BLOCKS.register("thermalizer", () -> new BlockTileModel<>(EMBlockTypes.MELTER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
+    public static final BlockRegistryObject<BlockTileModel<TileEntitySolidifier, Machine<TileEntitySolidifier>>, ItemBlockMachine> SOLIDIFIER = BLOCKS.register("solidification_chamber", () -> new BlockTileModel<>(EMBlockTypes.SOLIDIFIER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
 
 
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);

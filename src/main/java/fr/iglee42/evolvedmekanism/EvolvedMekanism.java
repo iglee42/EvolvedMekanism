@@ -3,7 +3,10 @@ package fr.iglee42.evolvedmekanism;
 import fr.iglee42.emgenerators.client.EMGenClientRegistration;
 import fr.iglee42.emgenerators.registries.*;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
+import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
+import mekanism.api.text.EnumColor;
+import net.minecraft.network.chat.Component;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -15,15 +18,6 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.APTCache;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTValidator;
 import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
-import fr.iglee42.evolvedmekanism.registries.EMBlocks;
-import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
-import fr.iglee42.evolvedmekanism.registries.EMCreativeTabs;
-import fr.iglee42.evolvedmekanism.registries.EMInfuseTypes;
-import fr.iglee42.evolvedmekanism.registries.EMItems;
-import fr.iglee42.evolvedmekanism.registries.EMLootFunctions;
-import fr.iglee42.evolvedmekanism.registries.EMModules;
-import fr.iglee42.evolvedmekanism.registries.EMRecipeSerializers;
-import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.api.MekanismIMC;
@@ -96,6 +90,7 @@ public class EvolvedMekanism {
         EMLootFunctions.REGISTER.register(modEventBus);
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         EMModules.MODULES.createAndRegister(modEventBus);
+        EMFluids.FLUIDS.register(modEventBus);
 
         registerCompats();
 
@@ -198,4 +193,11 @@ public class EvolvedMekanism {
         MekanismIMC.addMekaToolModules(EMModules.CAPTURING);
     }
 
+    public static Component logFormat(Object message) {
+        return logFormat(EnumColor.GRAY,message);
+    }
+
+    public static Component logFormat(EnumColor messageColor, Object message) {
+        return MekanismLang.LOG_FORMAT.translateColored(EnumColor.DARK_GREEN, EvolvedMekanismLang.MEKANISM_EVOLVED, messageColor, message);
+    }
 }
