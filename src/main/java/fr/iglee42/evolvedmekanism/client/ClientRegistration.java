@@ -5,6 +5,7 @@ import fr.iglee42.evolvedmekanism.client.gui.*;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderAPT;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.MultipleCustomRenderData;
+import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
@@ -19,6 +20,7 @@ import mekanism.client.render.tileentity.RenderFluidTank;
 import mekanism.client.render.transmitter.*;
 import mekanism.common.block.attribute.Attribute;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
+import mekanism.common.registries.MekanismFluids;
 import mekanism.common.tile.transmitter.TileEntityLogisticalTransporter;
 import mekanism.common.util.WorldUtils;
 import net.minecraft.client.renderer.texture.TextureAtlas;
@@ -129,7 +131,8 @@ public class ClientRegistration {
 
     @SubscribeEvent
     public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event) {
-       ClientRegistrationUtil.registerItemColorHandler(event, (stack, tintIndex) -> {
+        ClientRegistrationUtil.registerBucketColorHandler(event, EMFluids.FLUIDS);
+        ClientRegistrationUtil.registerItemColorHandler(event, (stack, tintIndex) -> {
                   Item item = stack.getItem();
                   if (tintIndex == 1 && item instanceof ItemBlockFluidTank tank) {
                       return MekanismRenderer.getColorARGB(tank.getTier().getBaseTier(), 1);

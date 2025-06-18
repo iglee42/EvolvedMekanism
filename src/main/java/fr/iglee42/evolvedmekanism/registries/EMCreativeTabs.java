@@ -53,7 +53,7 @@ public class EMCreativeTabs {
                     if (ModsCompats.MEKANISMGENERATORS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMGenItems.ITEMS, output);
                     CreativeTabDeferredRegister.addToDisplay(EMBlocks.BLOCKS, output);
                     if (ModsCompats.MEKANISMGENERATORS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMGenBlocks.BLOCKS, output);
-                    //CreativeTabDeferredRegister.addToDisplay(EMFluids.FLUIDS, output);
+                    CreativeTabDeferredRegister.addToDisplay(EMFluids.FLUIDS, output);
                     //addFilledTanks(output, true);
                 })
     );
