@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_rod"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_fluix",
+        "amount": 162
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 162
+    },
+    "output": {
+        "tag": "forge:rods/fluix"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/fluix"
+            }
+        }
+    ]
+}

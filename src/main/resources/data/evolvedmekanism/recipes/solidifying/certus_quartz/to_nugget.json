@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_nugget"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_certus_quartz",
+        "amount": 36
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 36
+    },
+    "output": {
+        "tag": "forge:nuggets/certus_quartz"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/certus_quartz"
+            }
+        }
+    ]
+}

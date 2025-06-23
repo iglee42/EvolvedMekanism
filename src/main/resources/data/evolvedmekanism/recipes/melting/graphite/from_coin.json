@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:coins/graphite"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_graphite",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:coins/graphite"
+            }
+        }
+    ]
+}

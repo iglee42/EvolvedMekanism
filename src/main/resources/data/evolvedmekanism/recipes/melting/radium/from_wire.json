@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:wires/radium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_radium",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:wires/radium"
+            }
+        }
+    ]
+}

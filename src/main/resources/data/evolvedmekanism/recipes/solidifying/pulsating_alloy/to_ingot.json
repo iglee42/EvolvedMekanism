@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_ingot"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_pulsating_alloy",
+        "amount": 144
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 144
+    },
+    "output": {
+        "tag": "forge:ingots/pulsating_alloy"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:ingots/pulsating_alloy"
+            }
+        }
+    ]
+}

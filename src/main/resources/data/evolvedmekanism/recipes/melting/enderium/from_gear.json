@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gears/enderium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_enderium",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/enderium"
+            }
+        }
+    ]
+}

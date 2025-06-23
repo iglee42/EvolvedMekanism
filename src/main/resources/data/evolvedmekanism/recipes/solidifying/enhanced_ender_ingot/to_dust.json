@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_dust"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_enhanced_ender_ingot",
+        "amount": 144
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 144
+    },
+    "output": {
+        "tag": "forge:dusts/enhanced_ender_ingot"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:dusts/enhanced_ender_ingot"
+            }
+        }
+    ]
+}

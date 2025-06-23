@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:wires/skyjade"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_skyjade",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:wires/skyjade"
+            }
+        }
+    ]
+}

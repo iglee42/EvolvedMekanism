@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_wire"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_the_ultimate",
+        "amount": 72
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 72
+    },
+    "output": {
+        "tag": "forge:wires/the_ultimate"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:wires/the_ultimate"
+            }
+        }
+    ]
+}

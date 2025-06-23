@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:storage_blocks/nether_star"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_nether_star",
+        "amount": 1296
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:storage_blocks/nether_star"
+            }
+        }
+    ]
+}

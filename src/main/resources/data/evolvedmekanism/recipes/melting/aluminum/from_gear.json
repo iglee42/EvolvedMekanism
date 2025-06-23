@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gears/aluminum"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_aluminum",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/aluminum"
+            }
+        }
+    ]
+}

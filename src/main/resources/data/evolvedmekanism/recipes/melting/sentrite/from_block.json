@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:storage_blocks/sentrite"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_sentrite",
+        "amount": 1296
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:storage_blocks/sentrite"
+            }
+        }
+    ]
+}

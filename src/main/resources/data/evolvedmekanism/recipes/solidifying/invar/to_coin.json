@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_coin"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_invar",
+        "amount": 48
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 48
+    },
+    "output": {
+        "tag": "forge:coins/invar"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:coins/invar"
+            }
+        }
+    ]
+}

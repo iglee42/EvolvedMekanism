@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:nuggets/boron"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_boron",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/boron"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:plates/hellforged"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_hellforged",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:plates/hellforged"
+            }
+        }
+    ]
+}

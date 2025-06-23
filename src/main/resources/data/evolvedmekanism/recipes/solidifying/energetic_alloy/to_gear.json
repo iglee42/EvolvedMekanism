@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_gear"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_energetic_alloy",
+        "amount": 576
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 576
+    },
+    "output": {
+        "tag": "forge:gears/energetic_alloy"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/energetic_alloy"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:coins/the_ultimate"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_the_ultimate",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:coins/the_ultimate"
+            }
+        }
+    ]
+}

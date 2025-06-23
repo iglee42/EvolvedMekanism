@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:nuggets/certus_quartz"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_certus_quartz",
+        "amount": 36
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/certus_quartz"
+            }
+        }
+    ]
+}

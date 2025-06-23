@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:coins/lumium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_lumium",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:coins/lumium"
+            }
+        }
+    ]
+}

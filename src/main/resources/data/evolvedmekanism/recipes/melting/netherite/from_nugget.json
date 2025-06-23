@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:nuggets/netherite"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_netherite",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/netherite"
+            }
+        }
+    ]
+}

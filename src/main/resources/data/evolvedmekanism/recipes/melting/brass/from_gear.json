@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gears/brass"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_brass",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/brass"
+            }
+        }
+    ]
+}

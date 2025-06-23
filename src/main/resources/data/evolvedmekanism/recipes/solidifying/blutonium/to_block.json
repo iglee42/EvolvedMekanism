@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_storage_block"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_blutonium",
+        "amount": 1296
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 1296
+    },
+    "output": {
+        "tag": "forge:storage_blocks/blutonium"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:storage_blocks/blutonium"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:coins/soulium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_soulium",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:coins/soulium"
+            }
+        }
+    ]
+}

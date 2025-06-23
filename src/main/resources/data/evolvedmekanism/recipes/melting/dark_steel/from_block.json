@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:storage_blocks/dark_steel"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_dark_steel",
+        "amount": 1296
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:storage_blocks/dark_steel"
+            }
+        }
+    ]
+}

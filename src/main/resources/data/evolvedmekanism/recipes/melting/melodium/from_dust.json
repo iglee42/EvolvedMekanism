@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:dusts/melodium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_melodium",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:dusts/melodium"
+            }
+        }
+    ]
+}

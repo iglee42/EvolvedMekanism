@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gears/queens_slime"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_queens_slime",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/queens_slime"
+            }
+        }
+    ]
+}

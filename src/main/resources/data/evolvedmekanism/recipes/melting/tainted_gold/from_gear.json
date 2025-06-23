@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gears/tainted_gold"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_tainted_gold",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/tainted_gold"
+            }
+        }
+    ]
+}

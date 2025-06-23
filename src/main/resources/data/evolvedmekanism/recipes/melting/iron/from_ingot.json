@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:ingots/iron"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_iron",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:ingots/iron"
+            }
+        }
+    ]
+}

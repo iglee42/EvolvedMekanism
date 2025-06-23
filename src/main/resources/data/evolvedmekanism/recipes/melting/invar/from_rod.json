@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:rods/invar"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_invar",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/invar"
+            }
+        }
+    ]
+}

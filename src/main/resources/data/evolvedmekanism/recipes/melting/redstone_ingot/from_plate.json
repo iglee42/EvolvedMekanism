@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:plates/redstone_ingot"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_redstone_ingot",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:plates/redstone_ingot"
+            }
+        }
+    ]
+}

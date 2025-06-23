@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_plate"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_certus_quartz",
+        "amount": 324
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 324
+    },
+    "output": {
+        "tag": "forge:plates/certus_quartz"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:plates/certus_quartz"
+            }
+        }
+    ]
+}

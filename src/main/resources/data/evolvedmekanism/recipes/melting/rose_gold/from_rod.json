@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:rods/rose_gold"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_rose_gold",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/rose_gold"
+            }
+        }
+    ]
+}

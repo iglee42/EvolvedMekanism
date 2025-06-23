@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:rods/manasteel"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_manasteel",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/manasteel"
+            }
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_storage_block"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_debris",
+        "amount": 288
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 288
+    },
+    "output": {
+        "tag": "forge:ores/netherite_scrap"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:ores/netherite_scrap"
+            }
+        }
+    ]
+}

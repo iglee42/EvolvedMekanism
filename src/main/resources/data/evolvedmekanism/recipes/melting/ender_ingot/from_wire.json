@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:wires/ender_ingot"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_ender_ingot",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:wires/ender_ingot"
+            }
+        }
+    ]
+}

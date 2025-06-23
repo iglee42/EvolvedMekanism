@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:rods/refined_glowstone"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_refined_glowstone",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/refined_glowstone"
+            }
+        }
+    ]
+}

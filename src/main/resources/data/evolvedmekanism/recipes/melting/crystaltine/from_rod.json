@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:rods/crystaltine"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_crystaltine",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/crystaltine"
+            }
+        }
+    ]
+}

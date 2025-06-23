@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gears/end_steel"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_end_steel",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/end_steel"
+            }
+        }
+    ]
+}

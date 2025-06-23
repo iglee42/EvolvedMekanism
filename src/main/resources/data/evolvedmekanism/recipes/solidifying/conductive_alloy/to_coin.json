@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_coin"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_conductive_alloy",
+        "amount": 48
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 48
+    },
+    "output": {
+        "tag": "forge:coins/conductive_alloy"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:coins/conductive_alloy"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:dusts/copper_alloy"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_copper_alloy",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:dusts/copper_alloy"
+            }
+        }
+    ]
+}

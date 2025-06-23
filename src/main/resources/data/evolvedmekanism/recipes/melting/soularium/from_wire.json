@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:wires/soularium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_soularium",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:wires/soularium"
+            }
+        }
+    ]
+}

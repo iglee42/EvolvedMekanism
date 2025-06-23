@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:rods/pulsating_alloy"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_pulsating_alloy",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/pulsating_alloy"
+            }
+        }
+    ]
+}

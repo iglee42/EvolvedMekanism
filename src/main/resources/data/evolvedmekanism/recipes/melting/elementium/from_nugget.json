@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:nuggets/elementium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_elementium",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/elementium"
+            }
+        }
+    ]
+}

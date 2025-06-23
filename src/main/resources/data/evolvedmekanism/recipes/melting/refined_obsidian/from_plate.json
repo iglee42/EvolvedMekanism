@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:plates/refined_obsidian"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_refined_obsidian",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:plates/refined_obsidian"
+            }
+        }
+    ]
+}

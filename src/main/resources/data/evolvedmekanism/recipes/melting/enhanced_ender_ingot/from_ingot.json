@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:ingots/enhanced_ender_ingot"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_enhanced_ender_ingot",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:ingots/enhanced_ender_ingot"
+            }
+        }
+    ]
+}

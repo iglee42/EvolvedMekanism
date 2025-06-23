@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:dusts/oratchalcum"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_oratchalcum",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:dusts/oratchalcum"
+            }
+        }
+    ]
+}

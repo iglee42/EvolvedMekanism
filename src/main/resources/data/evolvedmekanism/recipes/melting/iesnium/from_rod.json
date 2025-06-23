@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:rods/iesnium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_iesnium",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/iesnium"
+            }
+        }
+    ]
+}

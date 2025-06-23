@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:rods/pig_iron"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_pig_iron",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/pig_iron"
+            }
+        }
+    ]
+}

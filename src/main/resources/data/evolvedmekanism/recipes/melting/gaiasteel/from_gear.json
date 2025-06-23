@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gears/gaiasteel"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_gaiasteel",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/gaiasteel"
+            }
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_gear"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_electrolyte",
+        "amount": 576
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 576
+    },
+    "output": {
+        "tag": "forge:gears/electrolyte"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/electrolyte"
+            }
+        }
+    ]
+}

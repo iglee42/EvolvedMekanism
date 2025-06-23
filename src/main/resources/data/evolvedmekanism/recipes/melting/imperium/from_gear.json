@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gears/imperium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_imperium",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/imperium"
+            }
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_nugget"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_redstone_alloy",
+        "amount": 16
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 16
+    },
+    "output": {
+        "tag": "forge:nuggets/redstone_alloy"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/redstone_alloy"
+            }
+        }
+    ]
+}

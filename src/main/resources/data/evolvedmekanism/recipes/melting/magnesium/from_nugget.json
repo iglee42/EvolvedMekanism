@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:nuggets/magnesium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_magnesium",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/magnesium"
+            }
+        }
+    ]
+}

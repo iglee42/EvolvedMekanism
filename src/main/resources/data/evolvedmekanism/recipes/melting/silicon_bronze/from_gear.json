@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gears/silicon_bronze"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_silicon_bronze",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gears/silicon_bronze"
+            }
+        }
+    ]
+}

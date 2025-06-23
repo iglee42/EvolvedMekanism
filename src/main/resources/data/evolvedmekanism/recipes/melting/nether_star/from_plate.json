@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:plates/nether_star"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_nether_star",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:plates/nether_star"
+            }
+        }
+    ]
+}

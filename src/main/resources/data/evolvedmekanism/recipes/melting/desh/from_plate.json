@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:plates/desh"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_desh",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:plates/desh"
+            }
+        }
+    ]
+}

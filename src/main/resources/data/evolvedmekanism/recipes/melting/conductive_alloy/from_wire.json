@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:wires/conductive_alloy"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_conductive_alloy",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:wires/conductive_alloy"
+            }
+        }
+    ]
+}

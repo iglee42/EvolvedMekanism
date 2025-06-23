@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:rods/veridium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_veridium",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/veridium"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:storage_blocks/ender_ingot"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_ender_ingot",
+        "amount": 1296
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:storage_blocks/ender_ingot"
+            }
+        }
+    ]
+}

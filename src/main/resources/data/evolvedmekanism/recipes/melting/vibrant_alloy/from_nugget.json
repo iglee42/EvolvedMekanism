@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:nuggets/vibrant_alloy"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_vibrant_alloy",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/vibrant_alloy"
+            }
+        }
+    ]
+}

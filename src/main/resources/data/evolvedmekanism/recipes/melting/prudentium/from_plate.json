@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:plates/prudentium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_prudentium",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:plates/prudentium"
+            }
+        }
+    ]
+}

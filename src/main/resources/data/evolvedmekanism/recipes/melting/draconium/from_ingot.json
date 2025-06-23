@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:ingots/draconium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_draconium",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:ingots/draconium"
+            }
+        }
+    ]
+}

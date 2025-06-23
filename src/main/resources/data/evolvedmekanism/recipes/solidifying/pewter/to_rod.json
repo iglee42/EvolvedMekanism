@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "input": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_rod"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_pewter",
+        "amount": 72
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 72
+    },
+    "output": {
+        "tag": "forge:rods/pewter"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/pewter"
+            }
+        }
+    ]
+}

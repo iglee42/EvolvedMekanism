@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:ingots/better_gold"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_better_gold",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:ingots/better_gold"
+            }
+        }
+    ]
+}

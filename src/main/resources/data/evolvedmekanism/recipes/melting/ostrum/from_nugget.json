@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:nuggets/ostrum"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_ostrum",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/ostrum"
+            }
+        }
+    ]
+}

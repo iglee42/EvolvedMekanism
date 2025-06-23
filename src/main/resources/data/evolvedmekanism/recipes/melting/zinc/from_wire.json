@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:wires/zinc"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_zinc",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:wires/zinc"
+            }
+        }
+    ]
+}
