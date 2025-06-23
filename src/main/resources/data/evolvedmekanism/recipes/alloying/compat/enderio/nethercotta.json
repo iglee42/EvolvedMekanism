@@ -14,7 +14,7 @@
     "mainInput": {
         "amount": 6,
         "ingredient": {
-            "tag": "minecraft:clay_ball"
+            "item": "minecraft:clay_ball"
         }
     },
     "output": {

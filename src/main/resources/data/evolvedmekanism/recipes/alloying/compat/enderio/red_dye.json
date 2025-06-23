@@ -2,13 +2,13 @@
     "type": "evolvedmekanism:alloying",
     "extraInput": {
         "ingredient": {
-            "tag": "forge:crops/beetroot"
+            "item": "minecraft:beetroot"
         }
     },
     "secondExtraInput": {
         "amount": 6,
         "ingredient": {
-            "tag": "forge:eggs"
+            "item": "minecraft:egg"
         }
     },
     "mainInput": {

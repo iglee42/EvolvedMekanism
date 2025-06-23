@@ -16,7 +16,7 @@
         }
     },
     "output": {
-        "item": "industrial_insulation_block"
+        "item": "enderio:industrial_insulation_block"
     },
     "conditions": [
         {
