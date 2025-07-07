@@ -34,6 +34,18 @@ public class EMItems {
 
     public static final ItemRegistryObject<ItemUpgrade> RADIOACTIVE_UPGRADE = registerUpgrade(EMUpgrades.RADIOACTIVE_UPGRADE);
 
+    public static final ItemRegistryObject<Item> MOLD_BLOCK = registerMold("storage_block");
+    public static final ItemRegistryObject<Item> MOLD_INGOT = registerMold("ingot");
+    public static final ItemRegistryObject<Item> MOLD_GEM = registerMold("gem");
+    public static final ItemRegistryObject<Item> MOLD_NUGGET = registerMold("nugget");
+    public static final ItemRegistryObject<Item> MOLD_DUST = registerMold("dust");
+    public static final ItemRegistryObject<Item> MOLD_PLATE = registerMold("plate");
+    public static final ItemRegistryObject<Item> MOLD_GEAR = registerMold("gear");
+    public static final ItemRegistryObject<Item> MOLD_ROD = registerMold("rod");
+    public static final ItemRegistryObject<Item> MOLD_WIRE = registerMold("wire");
+    public static final ItemRegistryObject<Item> MOLD_COIN = registerMold("coin");
+
+
     public static final ItemRegistryObject<ItemTierInstaller> OVERCLOCKED_TIER_INSTALLER = registerInstaller(BaseTier.ULTIMATE, EMBaseTier.OVERCLOCKED);
     public static final ItemRegistryObject<ItemTierInstaller> QUANTUM_TIER_INSTALLER = registerInstaller(EMBaseTier.OVERCLOCKED, EMBaseTier.QUANTUM);
     public static final ItemRegistryObject<ItemTierInstaller> DENSE_TIER_INSTALLER = registerInstaller(EMBaseTier.QUANTUM,EMBaseTier.DENSE);
@@ -80,6 +92,10 @@ public class EMItems {
                 return TextComponentUtil.build(tier.getColor(), super.getName(stack));
             }
         });
+    }
+
+    private static ItemRegistryObject<Item> registerMold(String name) {
+        return ITEMS.register("mold_"+name, ()-> new Item(new Item.Properties().stacksTo(1)));
     }
 
     private static ItemRegistryObject<ItemTierInstaller> registerInstaller(@Nullable BaseTier fromTier, @NotNull BaseTier toTier) {

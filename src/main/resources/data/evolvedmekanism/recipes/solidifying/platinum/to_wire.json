@@ -1,6 +1,7 @@
 {
     "type": "evolvedmekanism:solidifying",
-    "input": {
+    "duration": 30,
+    "itemInput": {
         "ingredient": {
             "item": "evolvedmekanism:mold_wire"
         }

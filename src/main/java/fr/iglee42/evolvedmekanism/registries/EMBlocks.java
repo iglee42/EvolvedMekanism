@@ -20,6 +20,7 @@ import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.block.BlockEnergyCube;
+import mekanism.common.block.BlockOre;
 import mekanism.common.block.attribute.AttributeTier;
 import mekanism.common.block.basic.BlockBin;
 import mekanism.common.block.basic.BlockFluidTank;
@@ -42,6 +43,8 @@ import mekanism.common.item.block.transmitter.*;
 import mekanism.common.registration.impl.BlockDeferredRegister;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.resource.BlockResourceInfo;
+import mekanism.common.resource.ore.OreBlockType;
+import mekanism.common.resource.ore.OreType;
 import mekanism.common.tier.*;
 import mekanism.common.tile.TileEntityBin;
 import mekanism.common.tile.TileEntityChemicalTank;
@@ -50,12 +53,16 @@ import mekanism.common.tile.TileEntityFluidTank;
 import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
+import mekanism.common.util.EnumUtils;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Function;
@@ -64,6 +71,12 @@ import java.util.function.Supplier;
 public class EMBlocks {
     public static final BlockDeferredRegister BLOCKS = new BlockDeferredRegister(EvolvedMekanism.MODID);
 
+
+    static {
+        for (OreType ore : EnumUtils.ORE_TYPES) {
+            registerOre(ore);
+        }
+    }
     public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTCasing>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTCasing>>> APT_CASING = registerBlock("apt_casing", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_CASING, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
     public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTPort>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTPort>>> APT_PORT = registerBlock("apt_port", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_PORT, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
 
@@ -166,6 +179,25 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> DENSE_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.DENSE_PERSONAL_CHEST,PersonalStorageTier.DENSE);
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> MULTIVERSAL_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.MULTIVERSAL_PERSONAL_CHEST,PersonalStorageTier.MULTIVERSAL);
     public static final BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> CREATIVE_PERSONAL_CHEST = registerPersonalChest(EMBlockTypes.CREATIVE_PERSONAL_CHEST,PersonalStorageTier.CREATIVE);
+
+
+    private static void registerOre(OreType ore) {
+        String name = ore.getResource().getRegistrySuffix() + "_ore";
+        BlockRegistryObject<BlockOre, ItemBlockTooltip<BlockOre>> nether = registerBlock("netherrack_"+name, () -> new BlockOre(ore,BlockBehaviour.Properties.copy(Blocks.NETHERRACK)));
+        BlockRegistryObject<BlockOre, ItemBlockTooltip<BlockOre>> endStone = registerBlock("end_stone_" + name,
+                () -> new BlockOre(ore, BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+        BlockRegistryObject<BlockOre, ItemBlockTooltip<BlockOre>> aether = registerBlock("holystone_" + name,
+                () -> new BlockOre(ore, BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.WOOL).instrument(NoteBlockInstrument.BASEDRUM).strength(3.0F).requiresCorrectToolForDrops()));
+        BlockRegistryObject<BlockOre, ItemBlockTooltip<BlockOre>> undergarden = registerBlock("depthrock_" + name,
+                () -> new BlockOre(ore, BlockBehaviour.Properties.copy(Blocks.STONE).instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).strength(1.5F, 6.0F).sound(SoundType.BASALT).requiresCorrectToolForDrops()));
+        BlockRegistryObject<BlockOre, ItemBlockTooltip<BlockOre>> undergarden2 = registerBlock("shiverstone_" + name,
+                () -> new BlockOre(ore, BlockBehaviour.Properties.copy(Blocks.STONE).instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.GLOW_LICHEN).strength(3.5F, 12F).sound(SoundType.NETHER_BRICKS).requiresCorrectToolForDrops().friction(0.98F)));
+    }
+
+    private static <BLOCK extends Block & IHasDescription> BlockRegistryObject<BLOCK, ItemBlockTooltip<BLOCK>> registerBlock(String name,
+                                                                                                                             Supplier<? extends BLOCK> blockSupplier) {
+        return BLOCKS.registerDefaultProperties(name, blockSupplier, ItemBlockTooltip::new);
+    }
 
     private static <BLOCK extends Block & IHasDescription> BlockRegistryObject<BLOCK, ItemBlockTooltip<BLOCK>> registerBlock(String name,
                                                                                                                              Supplier<? extends BLOCK> blockSupplier, Rarity rarity) {

@@ -1,27 +1,28 @@
 {
     "type": "evolvedmekanism:solidifying",
-    "input": {
+    "duration": 1215,
+    "itemInput": {
         "ingredient": {
             "item": "evolvedmekanism:mold_storage_block"
         }
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_clay",
-        "amount": 576
+        "amount": 2916
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 576
+        "amount": 2916
     },
     "output": {
-        "item": "minecraft:clay"
+        "tag": "forge:storage_blocks/clay"
     },
     "conditions": [
         {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:clay_balls"
+                "tag": "forge:storage_blocks/clay"
             }
         }
     ]

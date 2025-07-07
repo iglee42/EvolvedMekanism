@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "evolvedmekanism:item/mold_storage_block"
+    "layer0": "evolvedmekanism:item/mold_block"
   }
 }

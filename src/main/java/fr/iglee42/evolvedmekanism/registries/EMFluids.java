@@ -159,6 +159,6 @@ public class EMFluids {
 
 
     private static FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> registerMolten(String name,int color){
-        return FLUIDS.register("molten_" + name, properties -> properties.tint(color).texture(EvolvedMekanism.rl("block/molten_still"),EvolvedMekanism.rl("block/molten_flowing")).renderOverlay(EvolvedMekanism.rl("block/molten_flowing")));
+        return FLUIDS.register("molten_" + name, properties -> properties.tint(color).texture(EvolvedMekanism.rl("block/molten_still"),EvolvedMekanism.rl("block/molten_flowing")).renderOverlay(EvolvedMekanism.rl("block/molten_still")));
     }
 }

@@ -1,17 +1,18 @@
 {
     "type": "evolvedmekanism:solidifying",
-    "input": {
+    "duration": 30,
+    "itemInput": {
         "ingredient": {
             "item": "evolvedmekanism:mold_rod"
         }
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_blaze",
-        "amount": 144
+        "amount": 72
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 144
+        "amount": 72
     },
     "output": {
         "tag": "forge:rods/blaze"

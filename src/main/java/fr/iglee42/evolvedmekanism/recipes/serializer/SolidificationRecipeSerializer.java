@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.recipes.serializer;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.utils.EMJsonConstants;
@@ -15,12 +16,22 @@ import mekanism.api.recipes.ingredients.FluidStackIngredient;
 import mekanism.api.recipes.ingredients.ItemStackIngredient;
 import mekanism.api.recipes.ingredients.creator.IngredientCreatorAccess;
 import mekanism.common.Mekanism;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.GsonHelper;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.tags.ITag;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Iterator;
+import java.util.Objects;
 
 public class SolidificationRecipeSerializer<RECIPE extends SolidificationRecipe> implements RecipeSerializer<RECIPE> {
 
@@ -55,7 +66,17 @@ public class SolidificationRecipeSerializer<RECIPE extends SolidificationRecipe>
         if (duration <= 0) {
             throw new JsonSyntaxException("Expected duration to be a number greater than zero.");
         }
-        ItemStack itemOutput = SerializerHelper.getItemStack(json, JsonConstants.OUTPUT);
+        if (!json.has(JsonConstants.OUTPUT) || !json.get(JsonConstants.OUTPUT).isJsonObject()){
+            throw new JsonSyntaxException("Expected output to be a json object.");
+        }
+        JsonObject outputObj = json.getAsJsonObject(JsonConstants.OUTPUT);
+        JsonObject ingredient = new JsonObject();
+        if (outputObj.has("count")) outputObj.add("amount", outputObj.get("count"));
+        if (outputObj.has("item")) ingredient.add("item",outputObj.get("item"));
+        if (outputObj.has("tag")) ingredient.add("tag",outputObj.get("tag"));
+        outputObj.add("ingredient",ingredient);
+        ItemStackIngredient outputIngr = IngredientCreatorAccess.item().deserialize(outputObj);
+        ItemStack itemOutput = outputIngr.getRepresentations().get(0);
         if (itemOutput.isEmpty()) {
             throw new JsonSyntaxException("Solidification chamber item output must not be empty.");
         }

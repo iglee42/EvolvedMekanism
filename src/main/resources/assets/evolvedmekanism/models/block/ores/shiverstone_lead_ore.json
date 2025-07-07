@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "evolvedmekanism:block/ores/shiverstone__ore"
+        "all": "evolvedmekanism:block/ores/shiverstone_lead_ore"
     }
 }

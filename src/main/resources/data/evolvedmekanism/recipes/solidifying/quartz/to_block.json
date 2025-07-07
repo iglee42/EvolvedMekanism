@@ -1,17 +1,18 @@
 {
     "type": "evolvedmekanism:solidifying",
-    "input": {
+    "duration": 1215,
+    "itemInput": {
         "ingredient": {
             "item": "evolvedmekanism:mold_storage_block"
         }
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_quartz",
-        "amount": 576
+        "amount": 2916
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 576
+        "amount": 2916
     },
     "output": {
         "tag": "forge:storage_blocks/quartz"

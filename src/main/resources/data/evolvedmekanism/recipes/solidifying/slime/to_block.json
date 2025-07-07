@@ -1,6 +1,7 @@
 {
     "type": "evolvedmekanism:solidifying",
-    "input": {
+    "duration": 540,
+    "itemInput": {
         "ingredient": {
             "item": "evolvedmekanism:mold_storage_block"
         }
@@ -14,14 +15,14 @@
         "amount": 1296
     },
     "output": {
-        "item": "minecraft:slime_block"
+        "tag": "forge:storage_blocks/slime"
     },
     "conditions": [
         {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:slimeballs"
+                "tag": "forge:storage_blocks/slime"
             }
         }
     ]

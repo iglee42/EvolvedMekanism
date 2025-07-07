@@ -1,27 +1,28 @@
 {
     "type": "evolvedmekanism:solidifying",
-    "input": {
+    "duration": 540,
+    "itemInput": {
         "ingredient": {
             "item": "evolvedmekanism:mold_storage_block"
         }
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_glass",
-        "amount": 1000
+        "amount": 1296
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 1000
+        "amount": 1296
     },
     "output": {
-        "item": "minecraft:glass"
+        "tag": "forge:storage_blocks/glass"
     },
     "conditions": [
         {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:glass"
+                "tag": "forge:storage_blocks/glass"
             }
         }
     ]
