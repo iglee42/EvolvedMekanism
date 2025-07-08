@@ -6,6 +6,7 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.*;
+import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
@@ -33,6 +34,7 @@ import mekanism.common.tile.*;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.multiblock.TileEntitySPSPort;
+import mekanism.common.tile.multiblock.TileEntitySuperheatingElement;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.EnumSet;
@@ -92,6 +94,12 @@ public class EMBlockTypes {
             .with(Attributes.ACTIVE, Attributes.COMPARATOR)
             .externalMultiblock()
             .withComputerSupport("aptPort")
+            .build();
+
+    public static final BlockTypeTile<TileEntitySuperchargingElement> SUPERCHARGING_ELEMENT = BlockTileBuilder
+            .createBlock(() -> EMTileEntityTypes.SUPERCHARGING_ELEMENT, EvolvedMekanismLang.DESCRIPTION_SUPERCHARGING_ELEMENT)
+            .with(Attributes.ACTIVE_LIGHT)
+            .internalMultiblock()
             .build();
 
     // Induction Cells

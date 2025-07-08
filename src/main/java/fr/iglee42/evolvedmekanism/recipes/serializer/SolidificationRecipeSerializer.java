@@ -76,12 +76,8 @@ public class SolidificationRecipeSerializer<RECIPE extends SolidificationRecipe>
         if (outputObj.has("tag")) ingredient.add("tag",outputObj.get("tag"));
         outputObj.add("ingredient",ingredient);
         ItemStackIngredient outputIngr = IngredientCreatorAccess.item().deserialize(outputObj);
-        ItemStack itemOutput = outputIngr.getRepresentations().get(0);
-        if (itemOutput.isEmpty()) {
-            throw new JsonSyntaxException("Solidification chamber item output must not be empty.");
-        }
         boolean keepItem = !json.has(EMJsonConstants.KEEP_ITEM) || json.get(EMJsonConstants.KEEP_ITEM).getAsBoolean();
-        return this.factory.create(recipeId, solidIngredient, fluidIngredient, extraFluidIngredient, energyRequired, duration, itemOutput,keepItem);
+        return this.factory.create(recipeId, solidIngredient, fluidIngredient, extraFluidIngredient, energyRequired, duration, outputIngr,keepItem);
     }
 
     @Override
@@ -92,7 +88,7 @@ public class SolidificationRecipeSerializer<RECIPE extends SolidificationRecipe>
             FluidStackIngredient inputExtraFluid = IngredientCreatorAccess.fluid().read(buffer);
             FloatingLong energyRequired = FloatingLong.readFromBuffer(buffer);
             int duration = buffer.readVarInt();
-            ItemStack outputItem = buffer.readItem();
+            ItemStackIngredient outputItem =IngredientCreatorAccess.item().read(buffer);
             boolean keepItem = buffer.readBoolean();
             return this.factory.create(recipeId, inputSolid, inputFluid, inputExtraFluid, energyRequired, duration, outputItem,keepItem);
         } catch (Exception e) {
@@ -115,6 +111,6 @@ public class SolidificationRecipeSerializer<RECIPE extends SolidificationRecipe>
     public interface IFactory<RECIPE extends SolidificationRecipe> {
 
         RECIPE create(ResourceLocation id, ItemStackIngredient itemInput, FluidStackIngredient fluidInput, FluidStackIngredient extraFluidInput, FloatingLong energyRequired, int duration,
-              ItemStack outputItem,boolean keepItem);
+                      ItemStackIngredient outputItem,boolean keepItem);
     }
 }

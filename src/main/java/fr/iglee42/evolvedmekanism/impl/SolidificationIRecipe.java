@@ -23,7 +23,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 public class SolidificationIRecipe extends SolidificationRecipe {
 
     public SolidificationIRecipe(ResourceLocation id, ItemStackIngredient inputSolid, FluidStackIngredient inputFluid, FluidStackIngredient inputExtraFluid,
-                                 FloatingLong energyRequired, int duration, ItemStack outputItem,boolean keepItem) {
+                                 FloatingLong energyRequired, int duration, ItemStackIngredient outputItem,boolean keepItem) {
         super(id, inputSolid, inputFluid, inputExtraFluid, energyRequired, duration, outputItem,keepItem);
     }
 

@@ -22,9 +22,11 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_DENSE_SOLAR_GENERATOR("description", "dense_solar_generator"),
     DESCRIPTION_MULTIVERSAL_SOLAR_GENERATOR("description", "multiversal_solar_generator"),
     DESCRIPTION_CREATIVE_SOLAR_GENERATOR("description", "creative_solar_generator"),
+    DESCRIPTION_SUPERCHARGING_ELEMENT("description", "supercharging_element"),
 
     APT("apt", "apt"),
     APT_PORT_MODE("apt", "port_mode"),
+    APT_INVALID_SUPERCHARGING("apt", "invalid_supercharging"),
 
     TOOLTIP_NO_CONSUMED("tooltip","not_consumed")
 
