@@ -63,6 +63,6 @@
         }
     ],
     "textures": {
-        "layer0": "evolvedmekanism:item/plaslitherite/boots"
+        "layer0": "evolvedmekanism:item/tools/plaslitherite/boots"
     }
 }
