@@ -1,0 +1,32 @@
+{
+    "type": "evolvedmekanism:paxel",
+    "category": "equipment",
+    "key": {
+        "A": {
+            "tag": "forge:tools/axes/plaslitherite"
+        },
+        "P": {
+            "tag": "forge:tools/pickaxes/plaslitherite"
+        },
+        "R": {
+            "tag": "forge:rods/wooden"
+        },
+        "S": {
+            "tag": "forge:tools/shovels/plaslitherite"
+        }
+    },
+    "pattern": [
+        "APS",
+        " R ",
+        " R "
+    ],
+    "result": {
+        "item": "evolvedmekanism:plaslitherite_paxel"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

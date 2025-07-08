@@ -1,0 +1,32 @@
+{
+    "type": "evolvedmekanism:paxel",
+    "category": "equipment",
+    "key": {
+        "A": {
+            "tag": "forge:tools/axes/better_gold"
+        },
+        "P": {
+            "tag": "forge:tools/pickaxes/better_gold"
+        },
+        "R": {
+            "tag": "forge:rods/wooden"
+        },
+        "S": {
+            "tag": "forge:tools/shovels/better_gold"
+        }
+    },
+    "pattern": [
+        "APS",
+        " R ",
+        " R "
+    ],
+    "result": {
+        "item": "evolvedmekanism:better_gold_paxel"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

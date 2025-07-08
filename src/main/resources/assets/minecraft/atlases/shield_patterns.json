@@ -1,0 +1,12 @@
+{
+    "sources": [
+        {
+            "type": "minecraft:single",
+            "resource": "evolvedmekanism:entity/shield/better_gold"
+        },
+        {
+            "type": "minecraft:single",
+            "resource": "evolvedmekanism:entity/shield/plaslitherite"
+        }
+    ]
+}

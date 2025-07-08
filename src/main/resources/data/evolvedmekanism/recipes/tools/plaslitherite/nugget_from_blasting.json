@@ -1,0 +1,44 @@
+{
+    "type": "minecraft:blasting",
+    "cookingtime": 100,
+    "experience": 0.1,
+    "ingredient": [
+        {
+            "item": "evolvedmekanism:plaslitherite_helmet"
+        },
+        {
+            "item": "evolvedmekanism:plaslitherite_chestplate"
+        },
+        {
+            "item": "evolvedmekanism:plaslitherite_leggings"
+        },
+        {
+            "item": "evolvedmekanism:plaslitherite_boots"
+        },
+        {
+            "item": "evolvedmekanism:plaslitherite_sword"
+        },
+        {
+            "item": "evolvedmekanism:plaslitherite_pickaxe"
+        },
+        {
+            "item": "evolvedmekanism:plaslitherite_axe"
+        },
+        {
+            "item": "evolvedmekanism:plaslitherite_shovel"
+        },
+        {
+            "item": "evolvedmekanism:plaslitherite_hoe"
+        },
+        {
+            "item": "evolvedmekanism:plaslitherite_paxel"
+        }
+    ],
+    "result": "evolvedmekanism:nugget_plaslitherite",
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}
