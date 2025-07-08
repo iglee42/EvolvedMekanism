@@ -29,6 +29,7 @@
     "blocks.BlockPressurizedTubeMixin",
     "blocks.BlockThermodynamicConductorMixin",
     "blocks.BlockUniversalCableMixin",
+    "client.ShieldTexturesMixin",
     "client.TransmitterTypeDecoratorMixin",
     "containers.FactoryContainerMixin",
     "items.GenItemTierInstallerMixin",
@@ -65,6 +66,7 @@
   ],
   "client": [
     "client.GuiFactoryMixin",
+    "client.ToolsRenderMekanismShieldItemMixin",
     "items.ItemBlockLogisticalTransporterMixin",
     "items.ItemBlockMechanicalPipeMixin",
     "items.ItemBlockPressurizedTubeMixin",

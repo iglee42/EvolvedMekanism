@@ -2,10 +2,17 @@ package fr.iglee42.evolvedmekanism;
 
 import fr.iglee42.emgenerators.client.EMGenClientRegistration;
 import fr.iglee42.emgenerators.registries.*;
+import fr.iglee42.emtools.client.EMToolsClientRegistration;
+import fr.iglee42.emtools.config.EMToolsConfig;
+import fr.iglee42.emtools.registries.EMToolsItems;
+import fr.iglee42.emtools.registries.EMToolsTags;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import mekanism.api.text.EnumColor;
+import mekanism.common.tags.MekanismTags;
+import mekanism.tools.client.ShieldTextures;
+import mekanism.tools.common.MekanismTools;
 import net.minecraft.network.chat.Component;
 import org.slf4j.Logger;
 
@@ -77,6 +84,7 @@ public class EvolvedMekanism {
         initEnums();
 
         EMConfig.registerConfigs(FMLJavaModLoadingContext.get());
+        if (ModsCompats.MEKANISMTOOLS.isLoaded()) EMToolsConfig.registerConfigs(FMLJavaModLoadingContext.get());
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
@@ -111,6 +119,11 @@ public class EvolvedMekanism {
            EMGenBlockTypes.register();
            modEventBus.register(new EMGenClientRegistration());
         }
+
+        if (ModsCompats.MEKANISMTOOLS.isLoaded()) {
+            EMToolsItems.register(modEventBus);
+            modEventBus.register(new EMToolsClientRegistration());
+        }
     }
 
     private void serverStopped(ServerStoppedEvent event) {
@@ -142,11 +155,15 @@ public class EvolvedMekanism {
         ((InitializableEnum)(Object)ChemicalTankTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)FluidTankTier.BASIC).evolvedmekanism$initNewValues();
 
+        if (ModsCompats.MEKANISMTOOLS.isLoaded())((InitializableEnum)(Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         packetHandler.initialize();
         event.enqueueWork(() -> {
+            EMTags.init();
+            if (ModsCompats.MEKANISMTOOLS.isLoaded()) EMToolsTags.init();
             BuildCommand.register("apt", EvolvedMekanismLang.APT, new EMBuilders.APTBuilder());
         });
     }
