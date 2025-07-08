@@ -344,6 +344,7 @@
     "description.evolvedmekanism.dense_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie.",
     "description.evolvedmekanism.multiversal_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie.",
     "description.evolvedmekanism.creative_solar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons du soleil, avec peu de pertes, pour produire de l'\u00e9nergie..",
+    "description.evolvedmekanism.supercharging_element": "Un chargeur modulaire, quelque peu dangereux, qui est capable de charger massivement le TPA.",
     "upgrade.mekanism.radioactive": "Radioactive",
     "upgrade.mekanism.radioactive.description": "Permet l'insertion de gaz radioactif.",
     "upgrade.mekanism.solar": "Solaire",
@@ -508,6 +509,7 @@
     "block.evolvedmekanism.shiverstone_osmium_ore": "Minerais d'osmium des frissons",
     "block.evolvedmekanism.shiverstone_tin_ore": "Minerais d'\u00e8tain des frissons",
     "block.evolvedmekanism.shiverstone_uranium_ore": "Minerais d'uranium des frissons",
+    "block.evolvedmekanism.supercharging_element": "\u00c9l\u00e9ment de surcharge",
     "item.evolvedmekanism.molten_copper_bucket": "Seau de cuivre fondu",
     "item.evolvedmekanism.molten_amethyst_bucket": "Seau d'am\u00e9thyste fondue",
     "item.evolvedmekanism.molten_coal_bucket": "Seau de charbon fondu",
@@ -641,5 +643,6 @@
     "item.evolvedmekanism.molten_zanite_bucket": "Seau de zanite fondu",
     "item.evolvedmekanism.molten_lapis_bucket": "Seau de lapis fondu",
     "item.evolvedmekanism.molten_glowstone_bucket": "Seau de pierre lumineuse fondue",
-    "item.evolvedmekanism.molten_debris_bucket": "Seau de d\u00e9bris fondu"
+    "item.evolvedmekanism.molten_debris_bucket": "Seau de d\u00e9bris fondu",
+    "apt.evolvedmekanism.invalid_supercharging": "Formation impossible: Arrangement des \u00e9l\u00e9ments de surcharge invalide."
 }
