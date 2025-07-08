@@ -34,7 +34,7 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
     private final FluidStackIngredient fluidInputExtra;
     private final FloatingLong energyRequired;
     private final int duration;
-    private final ItemStack outputItem;
+    private final ItemStackIngredient outputItem;
     private final boolean keepItem;
 
     /**
@@ -50,7 +50,7 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
      * @apiNote At least one output must not be empty.
      */
     public SolidificationRecipe(ResourceLocation id, ItemStackIngredient inputSolid, FluidStackIngredient inputFluid, FluidStackIngredient inputFluidExtra,
-                                FloatingLong energyRequired, int duration, ItemStack outputItem,boolean keepItem) {
+                                FloatingLong energyRequired, int duration, ItemStackIngredient outputItem,boolean keepItem) {
         super(id);
         this.inputSolid = Objects.requireNonNull(inputSolid, "Item input cannot be null.");
         this.inputFluid = Objects.requireNonNull(inputFluid, "Fluid input cannot be null.");
@@ -61,10 +61,7 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
         }
         this.duration = duration;
         Objects.requireNonNull(outputItem, "Item output cannot be null.");
-        if (outputItem.isEmpty()) {
-            throw new IllegalArgumentException("Output Item can't be empty");
-        }
-        this.outputItem = outputItem.copy();
+        this.outputItem = outputItem;
         this.keepItem = keepItem;
     }
 
@@ -118,7 +115,7 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
      * @return Representation of the output, <strong>MUST NOT</strong> be modified.
      */
     public List<ItemStack> getOutputDefinition() {
-        return Collections.singletonList(outputItem);
+        return outputItem.getRepresentations();
     }
 
     /**
@@ -136,12 +133,12 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
      */
     @Contract(value = "_, _, _ -> new", pure = true)
     public ItemStack getOutput(ItemStack solid, FluidStack liquid, FluidStack extra) {
-        return outputItem.copy();
+        return outputItem.getRepresentations().get(0);
     }
 
     @Override
     public boolean isIncomplete() {
-        return inputSolid.hasNoMatchingInstances() || inputFluid.hasNoMatchingInstances() || fluidInputExtra.hasNoMatchingInstances();
+        return inputSolid.hasNoMatchingInstances() || inputFluid.hasNoMatchingInstances() || fluidInputExtra.hasNoMatchingInstances() || outputItem.hasNoMatchingInstances();
     }
 
     @Override
@@ -158,7 +155,7 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
         fluidInputExtra.write(buffer);
         energyRequired.writeToBuffer(buffer);
         buffer.writeVarInt(duration);
-        buffer.writeItem(outputItem);
+        outputItem.write(buffer);
         buffer.writeBoolean(keepItem);
     }
 

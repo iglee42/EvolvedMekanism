@@ -10,13 +10,12 @@ import mekanism.api.chemical.gas.Gas;
 import mekanism.api.chemical.gas.GasStack;
 import mekanism.api.chemical.gas.IGasTank;
 import mekanism.api.energy.IEnergyContainer;
-import mekanism.api.math.FloatingLong;
 import mekanism.api.recipes.ItemStackGasToItemStackRecipe;
 import mekanism.common.capabilities.chemical.multiblock.MultiblockChemicalTankBuilder;
 import mekanism.common.capabilities.energy.BasicEnergyContainer;
-import mekanism.common.config.MekanismConfig;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerChemicalTankWrapper;
+import mekanism.common.integration.computer.annotation.SyntheticComputerMethod;
 import mekanism.common.integration.computer.annotation.WrappingComputerMethod;
 import mekanism.common.inventory.container.sync.dynamic.ContainerSync;
 import mekanism.common.inventory.slot.InputInventorySlot;
@@ -27,7 +26,6 @@ import mekanism.common.lib.multiblock.MultiblockData;
 import mekanism.common.util.MekanismUtils;
 import mekanism.common.util.NBTUtils;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
@@ -47,6 +45,11 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
     @ContainerSync
     public int defaultRecipeProgress = -1;
     public int lastProgress;
+
+    @ContainerSync
+    @SyntheticComputerMethod(getter = "getSuperchargers", getterDescription = "How many superchargers this APT has")
+    public int superchargingElements;
+
 
     @ContainerSync
     public IEnergyContainer energyContainer;
@@ -87,7 +90,7 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
             world.getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().filter(r->r.test(inputSlot.getStack(),inputTank.getStack())).findFirst().ifPresent(r->{
                 currentRecipe = r;
                 markDirty();
-                progress = (int) (EMConfig.general.aptDefaultDuration.getOrDefault() * (r.getChemicalInput().getNeededAmount(inputTank.getStack()) / 100));
+                progress = (int) ((EMConfig.general.aptDefaultDuration.getOrDefault() * (r.getChemicalInput().getNeededAmount(inputTank.getStack()) / 100)) / (superchargingElements  + 1));
                 defaultRecipeProgress = progress;
             });
         } else {

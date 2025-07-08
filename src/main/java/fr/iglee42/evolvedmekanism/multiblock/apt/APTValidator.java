@@ -1,32 +1,44 @@
 package fr.iglee42.evolvedmekanism.multiblock.apt;
 
 import java.util.EnumSet;
-import java.util.Map;
-import java.util.NavigableMap;
 import java.util.Set;
 
+import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.registries.EMBlockTypes;
-import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
+import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import mekanism.common.content.blocktype.BlockType;
-import mekanism.common.content.sps.SPSMultiblockData;
 import mekanism.common.lib.math.voxel.VoxelCuboid;
 import mekanism.common.lib.math.voxel.VoxelCuboid.CuboidSide;
-import mekanism.common.lib.math.voxel.VoxelPlane;
 import mekanism.common.lib.multiblock.CuboidStructureValidator;
+import mekanism.common.lib.multiblock.FormationProtocol;
 import mekanism.common.lib.multiblock.FormationProtocol.CasingType;
 import mekanism.common.lib.multiblock.FormationProtocol.StructureRequirement;
 import mekanism.common.lib.multiblock.Structure;
 import mekanism.common.lib.multiblock.StructureHelper;
-import mekanism.common.registries.MekanismBlockTypes;
+import mekanism.common.tile.multiblock.TileEntitySuperheatingElement;
+import mekanism.common.util.WorldUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.ChunkAccess;
 
 public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
 
-    private static final VoxelCuboid BOUNDS = new VoxelCuboid(9, 5, 9);
-    private static final byte[][] ALLOWED_TOP_BOTTOM = {
+    private static final VoxelCuboid BOUNDS = new VoxelCuboid(7, 5, 7);
+    private static final byte[][] ALLOWED_GRID = {
+            {0, 0, 1, 1, 1, 0, 0},
+            {0, 1, 2, 2, 2, 1, 0},
+            {1, 2, 2, 2, 2, 2, 1},
+            {1, 2, 2, 2, 2, 2, 1},
+            {1, 2, 2, 2, 2, 2, 1},
+            {0, 1, 2, 2, 2, 1, 0},
+            {0, 0, 1, 1, 1, 0, 0}
+    };
+/*    private static final byte[][] ALLOWED_TOP_BOTTOM = {
           {0, 0, 0, 1, 1, 1, 0, 0, 0},
           {0, 0, 1, 2, 2, 2, 1, 0, 0},
           {0, 1, 2, 2, 2, 2, 2, 1, 0},
@@ -47,17 +59,22 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
             {0, 2, 3, 3, 3, 3, 3, 2, 0},
             {0, 0, 2, 3, 3, 3, 2, 0, 0},
             {0, 0, 0, 1, 2, 1, 0, 0, 0},
-    };
+    };*/
 
     @Override
     protected StructureRequirement getStructureRequirement(BlockPos pos) {
-        pos = pos.subtract(cuboid.getMinPos());
-        if (pos.getY() == 0 || pos.getY() == 4){
-            return StructureRequirement.REQUIREMENTS[ALLOWED_TOP_BOTTOM[pos.getX()][pos.getZ()]];
+        VoxelCuboid.WallRelative relative = cuboid.getWallRelative(pos);
+        if (relative.isWall()) {
+            Structure.Axis axis = Structure.Axis.get(cuboid.getSide(pos));
+            Structure.Axis h = axis.horizontal(), v = axis.vertical();
+            //Note: This ends up becoming immutable by doing this but that is fine and doesn't really matter
+            Direction side = cuboid.getSide(pos);
+            pos = pos.subtract(cuboid.getMinPos());
+            return side.getAxis().isHorizontal() && pos.getY() >= 3?
+                    StructureRequirement.REQUIREMENTS[ALLOWED_GRID[h.getCoord(pos)][v.getCoord(pos) + 2]] :
+                            StructureRequirement.REQUIREMENTS[ALLOWED_GRID[h.getCoord(pos)][v.getCoord(pos)]];
         }
-        else {
-            return StructureRequirement.REQUIREMENTS[ALLOWED_LAYERS[pos.getX()][pos.getZ()]];
-        }
+        return super.getStructureRequirement(pos);
     }
 
     @Override
@@ -72,113 +89,36 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
     }
 
     @Override
+    protected boolean validateInner(BlockState state, Long2ObjectMap<ChunkAccess> chunkMap, BlockPos pos) {
+        if (super.validateInner(state, chunkMap, pos)) return true;
+        pos = pos.subtract(cuboid.getMinPos());
+        return pos.getY() == 1 && BlockType.is(state.getBlock(),EMBlockTypes.SUPERCHARGING_ELEMENT);
+    }
+
+    @Override
     public boolean precheck() {
         // 144 = (24 missing blocks possible on each face) * (6 sides)
-        cuboid = fetchCuboid(structure, BOUNDS, BOUNDS,EnumSet.allOf(CuboidSide.class),168);
+        cuboid = StructureHelper.fetchCuboid(structure, BOUNDS, BOUNDS, EnumSet.allOf(CuboidSide.class), 72);
         return cuboid != null;
     }
 
     @Override
-    protected boolean isFrameCompatible(BlockEntity tile) {
-        if (tile instanceof TileEntityAPTPort port){
-            BlockPos posInStruct = tile.getBlockPos().subtract(cuboid.getMinPos());
-            int requirement = 0;
-            if (posInStruct.getY() == 0 || posInStruct.getY() == 4){
-                requirement= ALLOWED_TOP_BOTTOM[posInStruct.getX()][posInStruct.getZ()];
+    public FormationProtocol.FormationResult postcheck(APTMultiblockData structure, Long2ObjectMap<ChunkAccess> chunkMap) {
+        Set<BlockPos> elements = new ObjectOpenHashSet<>();
+        for (BlockPos pos : structure.internalLocations) {
+            BlockEntity tile = WorldUtils.getTileEntity(world, chunkMap, pos);
+            if (tile instanceof TileEntitySuperchargingElement) {
+                elements.add(pos);
             }
-            else {
-                requirement= ALLOWED_LAYERS[posInStruct.getX()][posInStruct.getZ()];
-            }
-            if (requirement == 0) return false;
         }
-        return super.isFrameCompatible(tile);
-    }
 
-    public static VoxelCuboid fetchCuboid(Structure structure, VoxelCuboid minBounds, VoxelCuboid maxBounds, Set<CuboidSide> sides, int tolerance) {
-        // make sure we have enough sides to create cuboidal dimensions
-        if (sides.size() < 2) {
-            return null;
-        }
-        int missing = 0;
-        VoxelCuboid.CuboidBuilder builder = new VoxelCuboid.CuboidBuilder();
-        for (CuboidSide side : sides) {
-            Structure.Axis axis = side.getAxis(), horizontal = axis.horizontal(), vertical = axis.vertical();
-            NavigableMap<Integer, VoxelPlane> majorAxisMap = structure.getMajorAxisMap(axis);
-            Map.Entry<Integer, VoxelPlane> majorEntry = side.getFace().isPositive() ? majorAxisMap.lastEntry() : majorAxisMap.firstEntry();
-            // fail fast if the plane doesn't exist
-            if (majorEntry == null) {
-                return null;
-            }
-            VoxelPlane plane = majorEntry.getValue();
-            // handle missing blocks based on tolerance value
-            missing += plane.getMissing();
-            if (missing > tolerance) {
-                return null;
-            }
-            int majorKey = majorEntry.getKey();
-            // set bounds from dimension of plane's axis
-            builder.set(side, majorKey);
-            // update cuboidal dimensions from each corner of the plane
-            builder.trySet(CuboidSide.get(CuboidSide.Face.NEGATIVE, horizontal), plane.getMinCol());
-            builder.trySet(CuboidSide.get(CuboidSide.Face.POSITIVE, horizontal), plane.getMaxCol());
-            builder.trySet(CuboidSide.get(CuboidSide.Face.NEGATIVE, vertical), plane.getMinRow());
-            builder.trySet(CuboidSide.get(CuboidSide.Face.POSITIVE, vertical), plane.getMaxRow());
-            // check to make sure that we don't have any framed minor planes sticking out of our plane
-            NavigableMap<Integer, VoxelPlane> minorAxisMap = structure.getMinorAxisMap(axis);
-            if (!minorAxisMap.isEmpty()) {
-                if (side.getFace().isPositive()) {
-                    if (hasOutOfBoundsPositiveMinor(minorAxisMap, majorKey)) {
-                        return null;
-                    }
-                } else if (hasOutOfBoundsNegativeMinor(minorAxisMap, majorKey)) {
-                    return null;
-                }
-            }
-        }
-        VoxelCuboid ret = builder.build();
-        // make sure the cuboid has the correct bounds
-        if (!ret.greaterOrEqual(minBounds) || !maxBounds.greaterOrEqual(ret)) {
-            return null;
-        }
-        return ret;
-    }
-    private static boolean hasOutOfBoundsNegativeMinor(NavigableMap<Integer, VoxelPlane> minorAxisMap, int majorKey) {
-        Map.Entry<Integer, VoxelPlane> minorEntry = minorAxisMap.firstEntry();
-        while (minorEntry != null) {
-            int minorKey = minorEntry.getKey();
-            if (minorKey >= majorKey) {
-                //If our outer minor plane is in the bounds of our major plane
-                // then just exit as the other minor planes will be as well
-                break;
-            } else if (minorEntry.getValue().hasFrame()) {
-                //Otherwise, if it isn't in the bounds, and it has a frame, fail out
-                return true;
-            }
-            //If we don't have a frame and are out of bounds, see if we have any minor entries that
-            // are "smaller" that may be invalid
-            minorEntry = minorAxisMap.higherEntry(minorKey);
-        }
-        return false;
-    }
+        structure.superchargingElements = FormationProtocol.explore(elements.iterator().next(), coord ->
+                coord.subtract(cuboid.getMinPos()).getY() == 1 && WorldUtils.getTileEntity(TileEntitySuperchargingElement.class, world, chunkMap, coord) != null);
 
-    private static boolean hasOutOfBoundsPositiveMinor(NavigableMap<Integer, VoxelPlane> minorAxisMap, int majorKey) {
-        Map.Entry<Integer, VoxelPlane> minorEntry = minorAxisMap.lastEntry();
-        while (minorEntry != null) {
-            int minorKey = minorEntry.getKey();
-            if (minorKey <= majorKey) {
-                //If our outer minor plane is in the bounds of our major plane
-                // then just exit as the other minor planes will be as well
-                break;
-            } else if (minorEntry.getValue().hasFrame()) {
-                //Otherwise, if it isn't in the bounds, and it has a frame, fail out
-                return true;
-            }
-            //If we don't have a frame and are out of bounds, see if we have any minor entries that
-            // are "smaller" that may be invalid
-            minorEntry = minorAxisMap.lowerEntry(minorKey);
+        if (elements.size() > structure.superchargingElements) {
+            return FormationProtocol.FormationResult.fail(EvolvedMekanismLang.APT_INVALID_SUPERCHARGING);
         }
-        return false;
+
+        return FormationProtocol.FormationResult.SUCCESS;
     }
-
-
 }
