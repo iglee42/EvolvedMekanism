@@ -2,7 +2,7 @@
   "type": "evolvedmekanism:apt",
   "chemical_input": {
     "amount": 900,
-    "gas": "mekanism:spent_nuclear_waste"
+    "chemical": "mekanism:spent_nuclear_waste"
   },
   "item_input": {
     "tag": "c:storage_blocks/gold"

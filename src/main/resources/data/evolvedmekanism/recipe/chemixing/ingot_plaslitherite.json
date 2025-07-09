@@ -8,7 +8,7 @@
   },
   "chemical_input": {
     "amount": 100,
-    "gas": "mekanism:lithium"
+    "chemical": "mekanism:lithium"
   },
   "main_input": {
     "tag": "c:ingots/netherite"

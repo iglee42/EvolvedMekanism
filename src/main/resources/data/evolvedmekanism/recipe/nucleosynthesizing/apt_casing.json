@@ -3,7 +3,7 @@
   "duration": 1000,
   "chemical_input": {
     "amount": 50,
-    "gas": "mekanism:antimatter"
+    "chemical": "mekanism:antimatter"
   },
   "item_input": {
     "ingredient": {
