@@ -1,6 +1,7 @@
 {
     "values": [
         "#forge:tools/axes/better_gold",
-        "#forge:tools/axes/plaslitherite"
+        "#forge:tools/axes/plaslitherite",
+        "#forge:tools/axes/refined_redstone"
     ]
 }

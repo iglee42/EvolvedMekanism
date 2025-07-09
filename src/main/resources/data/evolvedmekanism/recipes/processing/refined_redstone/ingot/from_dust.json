@@ -1,0 +1,15 @@
+{
+    "type": "mekanism:compressing",
+    "chemicalInput": {
+        "amount": 1,
+        "gas": "mekanism:osmium"
+    },
+    "itemInput": {
+        "ingredient": {
+            "tag": "forge:dusts/redstone"
+        }
+    },
+    "output": {
+        "item": "evolvedmekanism:ingot_refined_redstone"
+    }
+}

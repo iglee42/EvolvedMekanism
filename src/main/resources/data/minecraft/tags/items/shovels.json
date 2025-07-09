@@ -1,6 +1,7 @@
 {
     "values": [
         "#forge:tools/shovels/better_gold",
-        "#forge:tools/shovels/plaslitherite"
+        "#forge:tools/shovels/plaslitherite",
+        "#forge:tools/shovels/refined_redstone"
     ]
 }

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "I": {
+            "tag": "forge:ingots/refined_redstone"
+        },
+        "R": {
+            "tag": "forge:rods/wooden"
+        }
+    },
+    "pattern": [
+        "II",
+        "IR",
+        " R"
+    ],
+    "result": {
+        "item": "evolvedmekanism:refined_redstone_axe"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

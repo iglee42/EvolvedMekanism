@@ -7,6 +7,10 @@
         "evolvedmekanism:plaslitherite_helmet",
         "evolvedmekanism:plaslitherite_chestplate",
         "evolvedmekanism:plaslitherite_leggings",
-        "evolvedmekanism:plaslitherite_boots"
+        "evolvedmekanism:plaslitherite_boots",
+        "evolvedmekanism:refined_redstone_helmet",
+        "evolvedmekanism:refined_redstone_chestplate",
+        "evolvedmekanism:refined_redstone_leggings",
+        "evolvedmekanism:refined_redstone_boots"
     ]
 }

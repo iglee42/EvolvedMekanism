@@ -1,0 +1,32 @@
+{
+    "type": "mekanismtools:paxel",
+    "category": "equipment",
+    "key": {
+        "A": {
+            "tag": "forge:tools/axes/refined_redstone"
+        },
+        "P": {
+            "tag": "forge:tools/pickaxes/refined_redstone"
+        },
+        "R": {
+            "tag": "forge:rods/wooden"
+        },
+        "S": {
+            "tag": "forge:tools/shovels/refined_redstone"
+        }
+    },
+    "pattern": [
+        "APS",
+        " R ",
+        " R "
+    ],
+    "result": {
+        "item": "evolvedmekanism:refined_redstone_paxel"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

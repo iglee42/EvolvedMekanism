@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "I": {
+            "tag": "forge:ingots/refined_redstone"
+        }
+    },
+    "pattern": [
+        "III",
+        "I I"
+    ],
+    "result": {
+        "item": "evolvedmekanism:refined_redstone_helmet"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

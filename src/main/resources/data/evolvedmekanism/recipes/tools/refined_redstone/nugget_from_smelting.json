@@ -1,0 +1,44 @@
+{
+    "type": "minecraft:smelting",
+    "cookingtime": 200,
+    "experience": 0.1,
+    "ingredient": [
+        {
+            "item": "evolvedmekanism:refined_redstone_helmet"
+        },
+        {
+            "item": "evolvedmekanism:refined_redstone_chestplate"
+        },
+        {
+            "item": "evolvedmekanism:refined_redstone_leggings"
+        },
+        {
+            "item": "evolvedmekanism:refined_redstone_boots"
+        },
+        {
+            "item": "evolvedmekanism:refined_redstone_sword"
+        },
+        {
+            "item": "evolvedmekanism:refined_redstone_pickaxe"
+        },
+        {
+            "item": "evolvedmekanism:refined_redstone_axe"
+        },
+        {
+            "item": "evolvedmekanism:refined_redstone_shovel"
+        },
+        {
+            "item": "evolvedmekanism:refined_redstone_hoe"
+        },
+        {
+            "item": "evolvedmekanism:refined_redstone_paxel"
+        }
+    ],
+    "result": "evolvedmekanism:nugget_refined_redstone",
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

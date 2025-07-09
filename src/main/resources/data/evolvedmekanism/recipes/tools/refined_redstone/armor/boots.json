@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "I": {
+            "tag": "forge:ingots/refined_redstone"
+        }
+    },
+    "pattern": [
+        "I I",
+        "I I"
+    ],
+    "result": {
+        "item": "evolvedmekanism:refined_redstone_boots"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}
