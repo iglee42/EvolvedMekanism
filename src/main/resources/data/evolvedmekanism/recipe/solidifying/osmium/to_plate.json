@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/osmium"
+        "ingredient": {
+            "tag": "c:plates/osmium"
+        }
     },
     "conditions": [
         {

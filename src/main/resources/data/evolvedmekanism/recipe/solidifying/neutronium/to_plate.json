@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/neutronium"
+        "ingredient": {
+            "tag": "c:plates/neutronium"
+        }
     },
     "conditions": [
         {

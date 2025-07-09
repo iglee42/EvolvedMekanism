@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/magnesium"
+        "ingredient": {
+            "tag": "c:nuggets/magnesium"
+        }
     },
     "conditions": [
         {

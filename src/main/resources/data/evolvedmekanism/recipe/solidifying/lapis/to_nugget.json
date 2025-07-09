@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/lapis"
+        "ingredient": {
+            "tag": "c:nuggets/lapis"
+        }
     },
     "conditions": [
         {

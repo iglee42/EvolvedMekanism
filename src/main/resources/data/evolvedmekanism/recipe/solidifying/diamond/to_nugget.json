@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/diamond"
+        "ingredient": {
+            "tag": "c:nuggets/diamond"
+        }
     },
     "conditions": [
         {

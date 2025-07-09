@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/hepatizon"
+        "ingredient": {
+            "tag": "c:nuggets/hepatizon"
+        }
     },
     "conditions": [
         {

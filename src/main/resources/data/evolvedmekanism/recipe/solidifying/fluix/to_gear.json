@@ -15,7 +15,9 @@
         "amount": 1296
     },
     "output": {
-        "tag": "c:gears/fluix"
+        "ingredient": {
+            "tag": "c:gears/fluix"
+        }
     },
     "conditions": [
         {

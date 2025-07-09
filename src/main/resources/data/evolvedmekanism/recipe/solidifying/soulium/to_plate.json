@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/soulium"
+        "ingredient": {
+            "tag": "c:plates/soulium"
+        }
     },
     "conditions": [
         {

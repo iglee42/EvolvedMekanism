@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/ornium"
+        "ingredient": {
+            "tag": "c:gears/ornium"
+        }
     },
     "conditions": [
         {

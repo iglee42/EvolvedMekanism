@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/ludicrite"
+        "ingredient": {
+            "tag": "c:nuggets/ludicrite"
+        }
     },
     "conditions": [
         {

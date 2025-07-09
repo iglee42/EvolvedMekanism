@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/soulsteel"
+        "ingredient": {
+            "tag": "c:dusts/soulsteel"
+        }
     },
     "conditions": [
         {

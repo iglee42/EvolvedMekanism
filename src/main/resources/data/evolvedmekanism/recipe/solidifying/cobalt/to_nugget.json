@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/cobalt"
+        "ingredient": {
+            "tag": "c:nuggets/cobalt"
+        }
     },
     "conditions": [
         {

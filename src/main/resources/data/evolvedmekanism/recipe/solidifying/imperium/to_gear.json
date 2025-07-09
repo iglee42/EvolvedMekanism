@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/imperium"
+        "ingredient": {
+            "tag": "c:gears/imperium"
+        }
     },
     "conditions": [
         {

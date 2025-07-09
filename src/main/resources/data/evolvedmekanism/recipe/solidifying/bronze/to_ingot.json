@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/bronze"
+        "ingredient": {
+            "tag": "c:ingots/bronze"
+        }
     },
     "conditions": [
         {

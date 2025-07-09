@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/manasteel"
+        "ingredient": {
+            "tag": "c:gears/manasteel"
+        }
     },
     "conditions": [
         {

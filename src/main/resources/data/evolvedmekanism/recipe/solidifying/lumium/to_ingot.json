@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/lumium"
+        "ingredient": {
+            "tag": "c:ingots/lumium"
+        }
     },
     "conditions": [
         {

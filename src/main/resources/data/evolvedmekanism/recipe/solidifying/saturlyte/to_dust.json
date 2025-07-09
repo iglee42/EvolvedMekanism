@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/saturlyte"
+        "ingredient": {
+            "tag": "c:dusts/saturlyte"
+        }
     },
     "conditions": [
         {

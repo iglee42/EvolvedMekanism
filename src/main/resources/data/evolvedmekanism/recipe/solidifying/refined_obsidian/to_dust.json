@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/refined_obsidian"
+        "ingredient": {
+            "tag": "c:dusts/refined_obsidian"
+        }
     },
     "conditions": [
         {

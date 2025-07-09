@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/redstone_ingot"
+        "ingredient": {
+            "tag": "c:nuggets/redstone_ingot"
+        }
     },
     "conditions": [
         {

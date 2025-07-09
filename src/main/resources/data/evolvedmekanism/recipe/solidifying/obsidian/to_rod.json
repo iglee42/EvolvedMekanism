@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/obsidian"
+        "ingredient": {
+            "tag": "c:rods/obsidian"
+        }
     },
     "conditions": [
         {

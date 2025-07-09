@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/steel"
+        "ingredient": {
+            "tag": "c:coins/steel"
+        }
     },
     "conditions": [
         {

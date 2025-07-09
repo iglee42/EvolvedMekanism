@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:gems/ornium"
+        "ingredient": {
+            "tag": "c:gems/ornium"
+        }
     },
     "conditions": [
         {

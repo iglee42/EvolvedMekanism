@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/lapis"
+        "ingredient": {
+            "tag": "c:dusts/lapis"
+        }
     },
     "conditions": [
         {

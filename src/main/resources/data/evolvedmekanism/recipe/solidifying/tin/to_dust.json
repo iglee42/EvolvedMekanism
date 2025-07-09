@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/tin"
+        "ingredient": {
+            "tag": "c:dusts/tin"
+        }
     },
     "conditions": [
         {

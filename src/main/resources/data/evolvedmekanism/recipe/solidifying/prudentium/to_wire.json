@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/prudentium"
+        "ingredient": {
+            "tag": "c:wires/prudentium"
+        }
     },
     "conditions": [
         {

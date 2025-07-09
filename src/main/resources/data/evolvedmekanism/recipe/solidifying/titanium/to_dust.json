@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/titanium"
+        "ingredient": {
+            "tag": "c:dusts/titanium"
+        }
     },
     "conditions": [
         {

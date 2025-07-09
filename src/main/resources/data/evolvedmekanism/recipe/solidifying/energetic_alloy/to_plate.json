@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/energetic_alloy"
+        "ingredient": {
+            "tag": "c:plates/energetic_alloy"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/slimesteel"
+        "ingredient": {
+            "tag": "c:plates/slimesteel"
+        }
     },
     "conditions": [
         {

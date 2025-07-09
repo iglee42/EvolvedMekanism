@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/ender_ingot"
+        "ingredient": {
+            "tag": "c:wires/ender_ingot"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/sentrite"
+        "ingredient": {
+            "tag": "c:ingots/sentrite"
+        }
     },
     "conditions": [
         {

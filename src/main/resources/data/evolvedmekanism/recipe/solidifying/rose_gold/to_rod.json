@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/rose_gold"
+        "ingredient": {
+            "tag": "c:rods/rose_gold"
+        }
     },
     "conditions": [
         {

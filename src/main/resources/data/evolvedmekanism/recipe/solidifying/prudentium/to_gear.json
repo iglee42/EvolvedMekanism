@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/prudentium"
+        "ingredient": {
+            "tag": "c:gears/prudentium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/tin"
+        "ingredient": {
+            "tag": "c:coins/tin"
+        }
     },
     "conditions": [
         {

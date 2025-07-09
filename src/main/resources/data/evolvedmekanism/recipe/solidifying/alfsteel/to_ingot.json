@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/alfsteel"
+        "ingredient": {
+            "tag": "c:ingots/alfsteel"
+        }
     },
     "conditions": [
         {

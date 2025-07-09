@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/veridium"
+        "ingredient": {
+            "tag": "c:rods/veridium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/pewter"
+        "ingredient": {
+            "tag": "c:dusts/pewter"
+        }
     },
     "conditions": [
         {

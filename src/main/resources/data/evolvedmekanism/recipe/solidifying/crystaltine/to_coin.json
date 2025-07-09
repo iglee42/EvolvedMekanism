@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/crystaltine"
+        "ingredient": {
+            "tag": "c:coins/crystaltine"
+        }
     },
     "conditions": [
         {

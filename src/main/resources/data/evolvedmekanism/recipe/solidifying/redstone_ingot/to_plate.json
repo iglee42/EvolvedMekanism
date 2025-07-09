@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/redstone_ingot"
+        "ingredient": {
+            "tag": "c:plates/redstone_ingot"
+        }
     },
     "conditions": [
         {

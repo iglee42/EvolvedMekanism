@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/stellarium"
+        "ingredient": {
+            "tag": "c:wires/stellarium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/chorium"
+        "ingredient": {
+            "tag": "c:gears/chorium"
+        }
     },
     "conditions": [
         {

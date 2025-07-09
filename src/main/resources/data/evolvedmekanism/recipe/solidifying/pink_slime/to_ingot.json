@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/pink_slime"
+        "ingredient": {
+            "tag": "c:ingots/pink_slime"
+        }
     },
     "conditions": [
         {

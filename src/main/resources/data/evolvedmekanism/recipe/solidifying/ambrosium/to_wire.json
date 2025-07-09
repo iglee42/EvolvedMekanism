@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/ambrosium"
+        "ingredient": {
+            "tag": "c:wires/ambrosium"
+        }
     },
     "conditions": [
         {

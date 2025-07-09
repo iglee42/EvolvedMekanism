@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/tainted_gold"
+        "ingredient": {
+            "tag": "c:rods/tainted_gold"
+        }
     },
     "conditions": [
         {

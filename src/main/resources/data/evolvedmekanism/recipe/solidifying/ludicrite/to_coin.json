@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/ludicrite"
+        "ingredient": {
+            "tag": "c:coins/ludicrite"
+        }
     },
     "conditions": [
         {

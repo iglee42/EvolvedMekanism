@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/crystaltine"
+        "ingredient": {
+            "tag": "c:nuggets/crystaltine"
+        }
     },
     "conditions": [
         {

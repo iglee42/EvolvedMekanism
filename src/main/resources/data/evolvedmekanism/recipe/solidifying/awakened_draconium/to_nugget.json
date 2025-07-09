@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/awakened_draconium"
+        "ingredient": {
+            "tag": "c:nuggets/awakened_draconium"
+        }
     },
     "conditions": [
         {

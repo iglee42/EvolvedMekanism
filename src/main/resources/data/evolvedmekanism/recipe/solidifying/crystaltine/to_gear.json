@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/crystaltine"
+        "ingredient": {
+            "tag": "c:gears/crystaltine"
+        }
     },
     "conditions": [
         {

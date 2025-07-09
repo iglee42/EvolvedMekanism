@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/tungsten"
+        "ingredient": {
+            "tag": "c:nuggets/tungsten"
+        }
     },
     "conditions": [
         {

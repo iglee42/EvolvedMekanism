@@ -15,7 +15,9 @@
         "amount": 108
     },
     "output": {
-        "tag": "c:coins/quartz"
+        "ingredient": {
+            "tag": "c:coins/quartz"
+        }
     },
     "conditions": [
         {

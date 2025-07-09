@@ -15,7 +15,9 @@
         "amount": 324
     },
     "output": {
-        "tag": "c:plates/fluix"
+        "ingredient": {
+            "tag": "c:plates/fluix"
+        }
     },
     "conditions": [
         {

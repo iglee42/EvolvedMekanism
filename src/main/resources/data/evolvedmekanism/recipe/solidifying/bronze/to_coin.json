@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/bronze"
+        "ingredient": {
+            "tag": "c:coins/bronze"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/steel"
+        "ingredient": {
+            "tag": "c:rods/steel"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/oratchalcum"
+        "ingredient": {
+            "tag": "c:coins/oratchalcum"
+        }
     },
     "conditions": [
         {

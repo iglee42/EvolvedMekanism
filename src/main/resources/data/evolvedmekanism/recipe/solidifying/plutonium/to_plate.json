@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/plutonium"
+        "ingredient": {
+            "tag": "c:plates/plutonium"
+        }
     },
     "conditions": [
         {

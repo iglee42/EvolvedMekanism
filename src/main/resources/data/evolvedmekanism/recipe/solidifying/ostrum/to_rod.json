@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/ostrum"
+        "ingredient": {
+            "tag": "c:rods/ostrum"
+        }
     },
     "conditions": [
         {

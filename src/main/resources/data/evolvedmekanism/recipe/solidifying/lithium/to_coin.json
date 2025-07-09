@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/lithium"
+        "ingredient": {
+            "tag": "c:coins/lithium"
+        }
     },
     "conditions": [
         {

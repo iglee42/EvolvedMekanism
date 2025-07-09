@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/tin"
+        "ingredient": {
+            "tag": "c:gears/tin"
+        }
     },
     "conditions": [
         {

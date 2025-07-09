@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/silver"
+        "ingredient": {
+            "tag": "c:nuggets/silver"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/magnesium"
+        "ingredient": {
+            "tag": "c:plates/magnesium"
+        }
     },
     "conditions": [
         {

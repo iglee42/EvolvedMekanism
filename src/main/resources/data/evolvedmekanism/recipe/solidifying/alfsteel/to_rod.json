@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/alfsteel"
+        "ingredient": {
+            "tag": "c:rods/alfsteel"
+        }
     },
     "conditions": [
         {

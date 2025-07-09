@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/boron"
+        "ingredient": {
+            "tag": "c:wires/boron"
+        }
     },
     "conditions": [
         {

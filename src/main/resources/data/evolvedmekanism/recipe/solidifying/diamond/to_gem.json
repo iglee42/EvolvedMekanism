@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:gems/diamond"
+        "ingredient": {
+            "tag": "c:gems/diamond"
+        }
     },
     "conditions": [
         {

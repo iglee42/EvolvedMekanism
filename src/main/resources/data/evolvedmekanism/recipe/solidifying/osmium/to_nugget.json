@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/osmium"
+        "ingredient": {
+            "tag": "c:nuggets/osmium"
+        }
     },
     "conditions": [
         {

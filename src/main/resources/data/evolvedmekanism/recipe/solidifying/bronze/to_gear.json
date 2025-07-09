@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/bronze"
+        "ingredient": {
+            "tag": "c:gears/bronze"
+        }
     },
     "conditions": [
         {

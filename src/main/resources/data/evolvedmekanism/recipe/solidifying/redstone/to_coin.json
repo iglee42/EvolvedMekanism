@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/redstone"
+        "ingredient": {
+            "tag": "c:coins/redstone"
+        }
     },
     "conditions": [
         {

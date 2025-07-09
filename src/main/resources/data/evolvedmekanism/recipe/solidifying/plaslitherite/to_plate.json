@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/plaslitherite"
+        "ingredient": {
+            "tag": "c:plates/plaslitherite"
+        }
     },
     "conditions": [
         {

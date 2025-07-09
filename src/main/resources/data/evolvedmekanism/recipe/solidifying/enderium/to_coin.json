@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/enderium"
+        "ingredient": {
+            "tag": "c:coins/enderium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/constantan"
+        "ingredient": {
+            "tag": "c:gears/constantan"
+        }
     },
     "conditions": [
         {

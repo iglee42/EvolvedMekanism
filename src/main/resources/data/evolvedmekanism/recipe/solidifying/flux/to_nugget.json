@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/flux"
+        "ingredient": {
+            "tag": "c:nuggets/flux"
+        }
     },
     "conditions": [
         {

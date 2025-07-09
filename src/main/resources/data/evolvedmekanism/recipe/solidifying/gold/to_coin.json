@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/gold"
+        "ingredient": {
+            "tag": "c:coins/gold"
+        }
     },
     "conditions": [
         {

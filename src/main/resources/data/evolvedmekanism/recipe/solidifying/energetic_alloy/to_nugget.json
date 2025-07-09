@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/energetic_alloy"
+        "ingredient": {
+            "tag": "c:nuggets/energetic_alloy"
+        }
     },
     "conditions": [
         {

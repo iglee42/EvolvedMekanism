@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/desh"
+        "ingredient": {
+            "tag": "c:nuggets/desh"
+        }
     },
     "conditions": [
         {

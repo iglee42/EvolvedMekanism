@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/dark_steel"
+        "ingredient": {
+            "tag": "c:gears/dark_steel"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/sentrite"
+        "ingredient": {
+            "tag": "c:coins/sentrite"
+        }
     },
     "conditions": [
         {

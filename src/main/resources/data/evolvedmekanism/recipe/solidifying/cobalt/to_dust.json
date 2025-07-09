@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/cobalt"
+        "ingredient": {
+            "tag": "c:dusts/cobalt"
+        }
     },
     "conditions": [
         {

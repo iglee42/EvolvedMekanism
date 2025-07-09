@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/hepatizon"
+        "ingredient": {
+            "tag": "c:plates/hepatizon"
+        }
     },
     "conditions": [
         {

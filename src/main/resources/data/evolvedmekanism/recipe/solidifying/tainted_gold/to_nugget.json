@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/tainted_gold"
+        "ingredient": {
+            "tag": "c:nuggets/tainted_gold"
+        }
     },
     "conditions": [
         {

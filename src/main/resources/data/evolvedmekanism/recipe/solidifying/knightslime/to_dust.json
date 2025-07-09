@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/knightslime"
+        "ingredient": {
+            "tag": "c:dusts/knightslime"
+        }
     },
     "conditions": [
         {

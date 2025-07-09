@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/nickel"
+        "ingredient": {
+            "tag": "c:gears/nickel"
+        }
     },
     "conditions": [
         {

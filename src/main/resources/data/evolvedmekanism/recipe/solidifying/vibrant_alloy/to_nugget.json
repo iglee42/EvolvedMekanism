@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/vibrant_alloy"
+        "ingredient": {
+            "tag": "c:nuggets/vibrant_alloy"
+        }
     },
     "conditions": [
         {

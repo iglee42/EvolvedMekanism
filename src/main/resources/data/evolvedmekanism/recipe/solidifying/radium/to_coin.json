@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/radium"
+        "ingredient": {
+            "tag": "c:coins/radium"
+        }
     },
     "conditions": [
         {

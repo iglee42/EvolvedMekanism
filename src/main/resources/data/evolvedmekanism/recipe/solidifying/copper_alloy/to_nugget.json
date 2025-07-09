@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/copper_alloy"
+        "ingredient": {
+            "tag": "c:nuggets/copper_alloy"
+        }
     },
     "conditions": [
         {

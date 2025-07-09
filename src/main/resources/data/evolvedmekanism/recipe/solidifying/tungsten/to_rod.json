@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/tungsten"
+        "ingredient": {
+            "tag": "c:rods/tungsten"
+        }
     },
     "conditions": [
         {

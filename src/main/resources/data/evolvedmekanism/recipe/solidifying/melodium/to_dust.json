@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/melodium"
+        "ingredient": {
+            "tag": "c:dusts/melodium"
+        }
     },
     "conditions": [
         {

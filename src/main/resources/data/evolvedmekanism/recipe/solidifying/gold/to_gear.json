@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/gold"
+        "ingredient": {
+            "tag": "c:gears/gold"
+        }
     },
     "conditions": [
         {

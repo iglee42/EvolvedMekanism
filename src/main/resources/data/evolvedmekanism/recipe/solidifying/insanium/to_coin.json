@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/insanium"
+        "ingredient": {
+            "tag": "c:coins/insanium"
+        }
     },
     "conditions": [
         {

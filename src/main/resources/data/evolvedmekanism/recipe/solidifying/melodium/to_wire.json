@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/melodium"
+        "ingredient": {
+            "tag": "c:wires/melodium"
+        }
     },
     "conditions": [
         {

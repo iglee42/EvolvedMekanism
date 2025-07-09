@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/juperium"
+        "ingredient": {
+            "tag": "c:wires/juperium"
+        }
     },
     "conditions": [
         {

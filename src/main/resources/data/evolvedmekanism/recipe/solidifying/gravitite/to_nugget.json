@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/gravitite"
+        "ingredient": {
+            "tag": "c:nuggets/gravitite"
+        }
     },
     "conditions": [
         {

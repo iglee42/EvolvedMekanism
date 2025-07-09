@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/enhanced_ender_ingot"
+        "ingredient": {
+            "tag": "c:dusts/enhanced_ender_ingot"
+        }
     },
     "conditions": [
         {

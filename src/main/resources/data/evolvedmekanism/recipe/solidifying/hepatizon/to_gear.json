@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/hepatizon"
+        "ingredient": {
+            "tag": "c:gears/hepatizon"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/prudentium"
+        "ingredient": {
+            "tag": "c:ingots/prudentium"
+        }
     },
     "conditions": [
         {

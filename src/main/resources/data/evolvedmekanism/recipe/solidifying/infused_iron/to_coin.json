@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/infused_iron"
+        "ingredient": {
+            "tag": "c:coins/infused_iron"
+        }
     },
     "conditions": [
         {

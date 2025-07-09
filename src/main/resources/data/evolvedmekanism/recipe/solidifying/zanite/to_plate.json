@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/zanite"
+        "ingredient": {
+            "tag": "c:plates/zanite"
+        }
     },
     "conditions": [
         {

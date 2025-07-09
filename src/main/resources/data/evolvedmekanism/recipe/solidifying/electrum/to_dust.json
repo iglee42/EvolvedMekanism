@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/electrum"
+        "ingredient": {
+            "tag": "c:dusts/electrum"
+        }
     },
     "conditions": [
         {

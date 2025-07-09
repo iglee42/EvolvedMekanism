@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/refined_glowstone"
+        "ingredient": {
+            "tag": "c:plates/refined_glowstone"
+        }
     },
     "conditions": [
         {

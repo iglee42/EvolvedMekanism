@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/gaiasteel"
+        "ingredient": {
+            "tag": "c:plates/gaiasteel"
+        }
     },
     "conditions": [
         {

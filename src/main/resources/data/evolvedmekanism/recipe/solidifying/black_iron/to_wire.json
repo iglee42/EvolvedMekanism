@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/black_iron"
+        "ingredient": {
+            "tag": "c:wires/black_iron"
+        }
     },
     "conditions": [
         {

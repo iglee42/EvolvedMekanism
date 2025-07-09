@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/prismalium"
+        "ingredient": {
+            "tag": "c:rods/prismalium"
+        }
     },
     "conditions": [
         {

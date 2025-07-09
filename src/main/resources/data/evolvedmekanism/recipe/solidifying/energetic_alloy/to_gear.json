@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/energetic_alloy"
+        "ingredient": {
+            "tag": "c:gears/energetic_alloy"
+        }
     },
     "conditions": [
         {

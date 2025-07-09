@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/end_steel"
+        "ingredient": {
+            "tag": "c:plates/end_steel"
+        }
     },
     "conditions": [
         {

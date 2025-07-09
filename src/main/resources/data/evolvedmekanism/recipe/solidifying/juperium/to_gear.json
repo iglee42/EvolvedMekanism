@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/juperium"
+        "ingredient": {
+            "tag": "c:gears/juperium"
+        }
     },
     "conditions": [
         {

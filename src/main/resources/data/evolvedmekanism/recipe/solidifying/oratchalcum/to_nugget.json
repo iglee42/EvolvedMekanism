@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/oratchalcum"
+        "ingredient": {
+            "tag": "c:nuggets/oratchalcum"
+        }
     },
     "conditions": [
         {

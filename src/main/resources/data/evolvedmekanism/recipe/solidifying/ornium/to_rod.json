@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/ornium"
+        "ingredient": {
+            "tag": "c:rods/ornium"
+        }
     },
     "conditions": [
         {

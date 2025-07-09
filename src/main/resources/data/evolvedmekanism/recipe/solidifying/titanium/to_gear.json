@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/titanium"
+        "ingredient": {
+            "tag": "c:gears/titanium"
+        }
     },
     "conditions": [
         {

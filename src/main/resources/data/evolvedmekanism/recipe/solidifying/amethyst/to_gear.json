@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/amethyst"
+        "ingredient": {
+            "tag": "c:gears/amethyst"
+        }
     },
     "conditions": [
         {

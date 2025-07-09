@@ -15,7 +15,9 @@
         "amount": 36
     },
     "output": {
-        "tag": "c:nuggets/fluix"
+        "ingredient": {
+            "tag": "c:nuggets/fluix"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/coal"
+        "ingredient": {
+            "tag": "c:coins/coal"
+        }
     },
     "conditions": [
         {

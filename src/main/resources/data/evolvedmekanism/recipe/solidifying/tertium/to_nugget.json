@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/tertium"
+        "ingredient": {
+            "tag": "c:nuggets/tertium"
+        }
     },
     "conditions": [
         {

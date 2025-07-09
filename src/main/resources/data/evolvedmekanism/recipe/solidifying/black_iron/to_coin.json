@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/black_iron"
+        "ingredient": {
+            "tag": "c:coins/black_iron"
+        }
     },
     "conditions": [
         {

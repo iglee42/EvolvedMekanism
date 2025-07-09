@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/insanium"
+        "ingredient": {
+            "tag": "c:wires/insanium"
+        }
     },
     "conditions": [
         {

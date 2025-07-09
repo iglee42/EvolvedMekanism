@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/magnesium"
+        "ingredient": {
+            "tag": "c:wires/magnesium"
+        }
     },
     "conditions": [
         {

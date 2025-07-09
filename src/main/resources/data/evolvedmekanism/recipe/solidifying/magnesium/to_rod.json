@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/magnesium"
+        "ingredient": {
+            "tag": "c:rods/magnesium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 162
     },
     "output": {
-        "tag": "c:wires/quartz"
+        "ingredient": {
+            "tag": "c:wires/quartz"
+        }
     },
     "conditions": [
         {

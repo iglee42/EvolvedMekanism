@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/emerald"
+        "ingredient": {
+            "tag": "c:coins/emerald"
+        }
     },
     "conditions": [
         {

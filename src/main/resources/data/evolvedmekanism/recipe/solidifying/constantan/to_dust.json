@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/constantan"
+        "ingredient": {
+            "tag": "c:dusts/constantan"
+        }
     },
     "conditions": [
         {

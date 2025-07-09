@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/signalum"
+        "ingredient": {
+            "tag": "c:gears/signalum"
+        }
     },
     "conditions": [
         {

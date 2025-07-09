@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/manasteel"
+        "ingredient": {
+            "tag": "c:nuggets/manasteel"
+        }
     },
     "conditions": [
         {

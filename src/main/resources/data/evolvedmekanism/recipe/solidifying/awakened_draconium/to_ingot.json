@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/awakened_draconium"
+        "ingredient": {
+            "tag": "c:ingots/awakened_draconium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/cyanite"
+        "ingredient": {
+            "tag": "c:dusts/cyanite"
+        }
     },
     "conditions": [
         {

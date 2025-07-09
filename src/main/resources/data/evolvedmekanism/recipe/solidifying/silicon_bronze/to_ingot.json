@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/silicon_bronze"
+        "ingredient": {
+            "tag": "c:ingots/silicon_bronze"
+        }
     },
     "conditions": [
         {

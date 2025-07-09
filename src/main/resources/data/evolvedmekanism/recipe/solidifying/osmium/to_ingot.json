@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/osmium"
+        "ingredient": {
+            "tag": "c:ingots/osmium"
+        }
     },
     "conditions": [
         {

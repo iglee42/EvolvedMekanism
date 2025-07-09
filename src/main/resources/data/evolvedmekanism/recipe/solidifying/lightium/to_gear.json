@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/lightium"
+        "ingredient": {
+            "tag": "c:gears/lightium"
+        }
     },
     "conditions": [
         {

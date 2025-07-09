@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/nether_star"
+        "ingredient": {
+            "tag": "c:dusts/nether_star"
+        }
     },
     "conditions": [
         {

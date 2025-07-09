@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/pewter"
+        "ingredient": {
+            "tag": "c:gears/pewter"
+        }
     },
     "conditions": [
         {

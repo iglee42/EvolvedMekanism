@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/slimesteel"
+        "ingredient": {
+            "tag": "c:rods/slimesteel"
+        }
     },
     "conditions": [
         {

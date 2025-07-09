@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/veridium"
+        "ingredient": {
+            "tag": "c:nuggets/veridium"
+        }
     },
     "conditions": [
         {

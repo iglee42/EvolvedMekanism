@@ -15,7 +15,9 @@
         "amount": 162
     },
     "output": {
-        "tag": "c:rods/fluix"
+        "ingredient": {
+            "tag": "c:rods/fluix"
+        }
     },
     "conditions": [
         {

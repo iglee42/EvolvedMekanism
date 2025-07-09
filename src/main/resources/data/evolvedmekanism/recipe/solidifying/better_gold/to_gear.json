@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/better_gold"
+        "ingredient": {
+            "tag": "c:gears/better_gold"
+        }
     },
     "conditions": [
         {

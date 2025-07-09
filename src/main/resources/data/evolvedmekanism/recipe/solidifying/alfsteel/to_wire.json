@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/alfsteel"
+        "ingredient": {
+            "tag": "c:wires/alfsteel"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/soularium"
+        "ingredient": {
+            "tag": "c:gears/soularium"
+        }
     },
     "conditions": [
         {

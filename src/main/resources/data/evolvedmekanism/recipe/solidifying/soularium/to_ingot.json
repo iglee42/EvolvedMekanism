@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/soularium"
+        "ingredient": {
+            "tag": "c:ingots/soularium"
+        }
     },
     "conditions": [
         {

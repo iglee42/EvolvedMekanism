@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/iron"
+        "ingredient": {
+            "tag": "c:gears/iron"
+        }
     },
     "conditions": [
         {

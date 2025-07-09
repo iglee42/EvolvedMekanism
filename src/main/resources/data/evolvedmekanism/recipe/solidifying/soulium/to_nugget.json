@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/soulium"
+        "ingredient": {
+            "tag": "c:nuggets/soulium"
+        }
     },
     "conditions": [
         {

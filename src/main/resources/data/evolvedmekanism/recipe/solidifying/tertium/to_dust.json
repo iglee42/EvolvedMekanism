@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/tertium"
+        "ingredient": {
+            "tag": "c:dusts/tertium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/stellarium"
+        "ingredient": {
+            "tag": "c:ingots/stellarium"
+        }
     },
     "conditions": [
         {

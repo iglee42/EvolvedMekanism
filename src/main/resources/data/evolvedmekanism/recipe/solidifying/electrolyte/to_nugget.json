@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/electrolyte"
+        "ingredient": {
+            "tag": "c:nuggets/electrolyte"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/tin"
+        "ingredient": {
+            "tag": "c:nuggets/tin"
+        }
     },
     "conditions": [
         {

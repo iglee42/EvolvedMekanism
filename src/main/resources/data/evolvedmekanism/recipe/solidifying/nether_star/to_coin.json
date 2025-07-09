@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/nether_star"
+        "ingredient": {
+            "tag": "c:coins/nether_star"
+        }
     },
     "conditions": [
         {

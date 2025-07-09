@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/invar"
+        "ingredient": {
+            "tag": "c:plates/invar"
+        }
     },
     "conditions": [
         {

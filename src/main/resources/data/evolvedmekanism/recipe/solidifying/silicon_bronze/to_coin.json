@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/silicon_bronze"
+        "ingredient": {
+            "tag": "c:coins/silicon_bronze"
+        }
     },
     "conditions": [
         {

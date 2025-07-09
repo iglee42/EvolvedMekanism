@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/uranium"
+        "ingredient": {
+            "tag": "c:gears/uranium"
+        }
     },
     "conditions": [
         {

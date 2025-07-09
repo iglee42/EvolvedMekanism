@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/cobalt"
+        "ingredient": {
+            "tag": "c:rods/cobalt"
+        }
     },
     "conditions": [
         {

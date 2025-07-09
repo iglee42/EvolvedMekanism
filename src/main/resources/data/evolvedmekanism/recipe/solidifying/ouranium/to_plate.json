@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/ouranium"
+        "ingredient": {
+            "tag": "c:plates/ouranium"
+        }
     },
     "conditions": [
         {

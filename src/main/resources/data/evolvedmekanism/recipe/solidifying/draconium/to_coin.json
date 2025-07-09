@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/draconium"
+        "ingredient": {
+            "tag": "c:coins/draconium"
+        }
     },
     "conditions": [
         {

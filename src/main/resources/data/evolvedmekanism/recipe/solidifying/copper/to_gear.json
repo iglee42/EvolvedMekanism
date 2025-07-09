@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/copper"
+        "ingredient": {
+            "tag": "c:gears/copper"
+        }
     },
     "conditions": [
         {

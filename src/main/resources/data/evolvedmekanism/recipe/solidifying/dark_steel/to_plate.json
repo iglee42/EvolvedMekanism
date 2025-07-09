@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/dark_steel"
+        "ingredient": {
+            "tag": "c:plates/dark_steel"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/obsidian"
+        "ingredient": {
+            "tag": "c:nuggets/obsidian"
+        }
     },
     "conditions": [
         {

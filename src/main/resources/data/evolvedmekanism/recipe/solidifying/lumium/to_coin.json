@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/lumium"
+        "ingredient": {
+            "tag": "c:coins/lumium"
+        }
     },
     "conditions": [
         {

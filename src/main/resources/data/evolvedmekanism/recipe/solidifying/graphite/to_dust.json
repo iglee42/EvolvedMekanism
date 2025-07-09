@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/graphite"
+        "ingredient": {
+            "tag": "c:dusts/graphite"
+        }
     },
     "conditions": [
         {

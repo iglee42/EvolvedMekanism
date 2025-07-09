@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/diamond"
+        "ingredient": {
+            "tag": "c:rods/diamond"
+        }
     },
     "conditions": [
         {

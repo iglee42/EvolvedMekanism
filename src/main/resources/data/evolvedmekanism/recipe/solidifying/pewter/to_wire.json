@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/pewter"
+        "ingredient": {
+            "tag": "c:wires/pewter"
+        }
     },
     "conditions": [
         {

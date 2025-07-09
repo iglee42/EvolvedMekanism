@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/prismalium"
+        "ingredient": {
+            "tag": "c:ingots/prismalium"
+        }
     },
     "conditions": [
         {

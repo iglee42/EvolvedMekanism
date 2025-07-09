@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/melodium"
+        "ingredient": {
+            "tag": "c:ingots/melodium"
+        }
     },
     "conditions": [
         {

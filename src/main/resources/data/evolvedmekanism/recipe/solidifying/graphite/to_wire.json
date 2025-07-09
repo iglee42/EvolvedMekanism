@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/graphite"
+        "ingredient": {
+            "tag": "c:wires/graphite"
+        }
     },
     "conditions": [
         {

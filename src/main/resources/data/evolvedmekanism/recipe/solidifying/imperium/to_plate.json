@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/imperium"
+        "ingredient": {
+            "tag": "c:plates/imperium"
+        }
     },
     "conditions": [
         {

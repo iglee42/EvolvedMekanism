@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/iesnium"
+        "ingredient": {
+            "tag": "c:plates/iesnium"
+        }
     },
     "conditions": [
         {

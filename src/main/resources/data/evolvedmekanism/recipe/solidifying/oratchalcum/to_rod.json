@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/oratchalcum"
+        "ingredient": {
+            "tag": "c:rods/oratchalcum"
+        }
     },
     "conditions": [
         {

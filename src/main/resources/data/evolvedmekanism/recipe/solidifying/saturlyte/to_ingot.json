@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/saturlyte"
+        "ingredient": {
+            "tag": "c:ingots/saturlyte"
+        }
     },
     "conditions": [
         {

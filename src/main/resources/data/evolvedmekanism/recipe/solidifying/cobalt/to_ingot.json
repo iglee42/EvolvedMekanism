@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/cobalt"
+        "ingredient": {
+            "tag": "c:ingots/cobalt"
+        }
     },
     "conditions": [
         {

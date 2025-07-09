@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/aluminum"
+        "ingredient": {
+            "tag": "c:coins/aluminum"
+        }
     },
     "conditions": [
         {

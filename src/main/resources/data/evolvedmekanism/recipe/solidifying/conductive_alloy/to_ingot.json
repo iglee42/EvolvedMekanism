@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/conductive_alloy"
+        "ingredient": {
+            "tag": "c:ingots/conductive_alloy"
+        }
     },
     "conditions": [
         {

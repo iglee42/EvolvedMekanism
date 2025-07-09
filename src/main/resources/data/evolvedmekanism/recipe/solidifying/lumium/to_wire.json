@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/lumium"
+        "ingredient": {
+            "tag": "c:wires/lumium"
+        }
     },
     "conditions": [
         {

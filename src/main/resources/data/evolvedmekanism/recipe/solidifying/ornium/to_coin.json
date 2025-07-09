@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/ornium"
+        "ingredient": {
+            "tag": "c:coins/ornium"
+        }
     },
     "conditions": [
         {

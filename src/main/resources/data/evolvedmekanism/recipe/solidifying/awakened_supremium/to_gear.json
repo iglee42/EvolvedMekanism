@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/awakened_supremium"
+        "ingredient": {
+            "tag": "c:gears/awakened_supremium"
+        }
     },
     "conditions": [
         {

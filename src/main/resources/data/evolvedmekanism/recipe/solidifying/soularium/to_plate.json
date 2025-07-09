@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/soularium"
+        "ingredient": {
+            "tag": "c:plates/soularium"
+        }
     },
     "conditions": [
         {

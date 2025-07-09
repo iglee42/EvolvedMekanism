@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/plaslitherite"
+        "ingredient": {
+            "tag": "c:rods/plaslitherite"
+        }
     },
     "conditions": [
         {

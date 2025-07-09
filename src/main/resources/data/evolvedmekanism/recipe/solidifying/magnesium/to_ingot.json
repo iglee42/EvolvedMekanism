@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/magnesium"
+        "ingredient": {
+            "tag": "c:ingots/magnesium"
+        }
     },
     "conditions": [
         {

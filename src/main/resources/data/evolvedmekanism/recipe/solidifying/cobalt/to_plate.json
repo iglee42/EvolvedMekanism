@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/cobalt"
+        "ingredient": {
+            "tag": "c:plates/cobalt"
+        }
     },
     "conditions": [
         {

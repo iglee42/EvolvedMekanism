@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/better_gold"
+        "ingredient": {
+            "tag": "c:nuggets/better_gold"
+        }
     },
     "conditions": [
         {

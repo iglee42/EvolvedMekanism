@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/the_ultimate"
+        "ingredient": {
+            "tag": "c:plates/the_ultimate"
+        }
     },
     "conditions": [
         {

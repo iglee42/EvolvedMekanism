@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:gems/ouranium"
+        "ingredient": {
+            "tag": "c:gems/ouranium"
+        }
     },
     "conditions": [
         {

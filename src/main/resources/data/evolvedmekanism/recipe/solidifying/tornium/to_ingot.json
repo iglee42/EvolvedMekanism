@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/tornium"
+        "ingredient": {
+            "tag": "c:ingots/tornium"
+        }
     },
     "conditions": [
         {

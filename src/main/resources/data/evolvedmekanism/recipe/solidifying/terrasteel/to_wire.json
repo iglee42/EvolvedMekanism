@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/terrasteel"
+        "ingredient": {
+            "tag": "c:wires/terrasteel"
+        }
     },
     "conditions": [
         {

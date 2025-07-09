@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/infused_iron"
+        "ingredient": {
+            "tag": "c:plates/infused_iron"
+        }
     },
     "conditions": [
         {

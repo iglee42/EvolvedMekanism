@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/silver"
+        "ingredient": {
+            "tag": "c:coins/silver"
+        }
     },
     "conditions": [
         {

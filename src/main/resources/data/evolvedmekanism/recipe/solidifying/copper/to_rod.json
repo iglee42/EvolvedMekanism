@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/copper"
+        "ingredient": {
+            "tag": "c:rods/copper"
+        }
     },
     "conditions": [
         {

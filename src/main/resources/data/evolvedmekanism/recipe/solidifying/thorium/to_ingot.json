@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/thorium"
+        "ingredient": {
+            "tag": "c:ingots/thorium"
+        }
     },
     "conditions": [
         {

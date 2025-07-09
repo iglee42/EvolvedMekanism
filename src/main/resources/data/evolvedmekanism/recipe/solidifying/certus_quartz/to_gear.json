@@ -15,7 +15,9 @@
         "amount": 1296
     },
     "output": {
-        "tag": "c:gears/certus_quartz"
+        "ingredient": {
+            "tag": "c:gears/certus_quartz"
+        }
     },
     "conditions": [
         {

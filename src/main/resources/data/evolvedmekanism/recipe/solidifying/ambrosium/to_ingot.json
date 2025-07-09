@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/ambrosium"
+        "ingredient": {
+            "tag": "c:ingots/ambrosium"
+        }
     },
     "conditions": [
         {

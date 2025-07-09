@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/netherite"
+        "ingredient": {
+            "tag": "c:rods/netherite"
+        }
     },
     "conditions": [
         {

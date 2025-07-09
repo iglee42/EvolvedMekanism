@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/iron"
+        "ingredient": {
+            "tag": "c:coins/iron"
+        }
     },
     "conditions": [
         {

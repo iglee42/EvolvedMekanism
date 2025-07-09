@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/zanite"
+        "ingredient": {
+            "tag": "c:dusts/zanite"
+        }
     },
     "conditions": [
         {

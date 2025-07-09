@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/lightium"
+        "ingredient": {
+            "tag": "c:plates/lightium"
+        }
     },
     "conditions": [
         {

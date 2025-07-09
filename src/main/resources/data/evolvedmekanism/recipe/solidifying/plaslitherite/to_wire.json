@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/plaslitherite"
+        "ingredient": {
+            "tag": "c:wires/plaslitherite"
+        }
     },
     "conditions": [
         {

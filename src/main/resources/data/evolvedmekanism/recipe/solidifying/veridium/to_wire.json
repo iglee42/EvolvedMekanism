@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/veridium"
+        "ingredient": {
+            "tag": "c:wires/veridium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/veridium"
+        "ingredient": {
+            "tag": "c:coins/veridium"
+        }
     },
     "conditions": [
         {

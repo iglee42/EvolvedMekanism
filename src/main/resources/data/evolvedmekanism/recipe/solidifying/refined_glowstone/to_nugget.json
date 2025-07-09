@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/refined_glowstone"
+        "ingredient": {
+            "tag": "c:nuggets/refined_glowstone"
+        }
     },
     "conditions": [
         {

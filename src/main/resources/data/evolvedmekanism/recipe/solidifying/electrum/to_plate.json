@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/electrum"
+        "ingredient": {
+            "tag": "c:plates/electrum"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 324
     },
     "output": {
-        "tag": "c:dusts/quartz"
+        "ingredient": {
+            "tag": "c:dusts/quartz"
+        }
     },
     "conditions": [
         {

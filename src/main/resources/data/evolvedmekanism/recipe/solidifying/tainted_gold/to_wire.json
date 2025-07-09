@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/tainted_gold"
+        "ingredient": {
+            "tag": "c:wires/tainted_gold"
+        }
     },
     "conditions": [
         {

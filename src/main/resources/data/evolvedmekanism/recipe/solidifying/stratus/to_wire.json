@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/stratus"
+        "ingredient": {
+            "tag": "c:wires/stratus"
+        }
     },
     "conditions": [
         {

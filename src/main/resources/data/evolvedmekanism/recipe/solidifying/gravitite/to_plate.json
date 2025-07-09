@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/gravitite"
+        "ingredient": {
+            "tag": "c:plates/gravitite"
+        }
     },
     "conditions": [
         {

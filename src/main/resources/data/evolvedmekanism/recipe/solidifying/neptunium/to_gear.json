@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/neptunium"
+        "ingredient": {
+            "tag": "c:gears/neptunium"
+        }
     },
     "conditions": [
         {

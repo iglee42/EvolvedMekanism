@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/black_iron"
+        "ingredient": {
+            "tag": "c:rods/black_iron"
+        }
     },
     "conditions": [
         {

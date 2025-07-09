@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/conductive_alloy"
+        "ingredient": {
+            "tag": "c:rods/conductive_alloy"
+        }
     },
     "conditions": [
         {

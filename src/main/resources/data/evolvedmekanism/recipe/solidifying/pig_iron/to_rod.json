@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/pig_iron"
+        "ingredient": {
+            "tag": "c:rods/pig_iron"
+        }
     },
     "conditions": [
         {

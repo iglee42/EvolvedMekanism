@@ -15,7 +15,9 @@
         "amount": 108
     },
     "output": {
-        "tag": "c:coins/certus_quartz"
+        "ingredient": {
+            "tag": "c:coins/certus_quartz"
+        }
     },
     "conditions": [
         {

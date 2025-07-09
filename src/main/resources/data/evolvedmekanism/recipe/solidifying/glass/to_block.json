@@ -15,7 +15,9 @@
         "amount": 1296
     },
     "output": {
-        "tag": "c:storage_blocks/glass"
+        "ingredient": {
+            "tag": "c:storage_blocks/glass"
+        }
     },
     "conditions": [
         {

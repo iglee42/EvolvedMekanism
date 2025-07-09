@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/slimesteel"
+        "ingredient": {
+            "tag": "c:coins/slimesteel"
+        }
     },
     "conditions": [
         {

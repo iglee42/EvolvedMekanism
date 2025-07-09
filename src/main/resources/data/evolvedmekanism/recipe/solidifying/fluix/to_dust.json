@@ -15,7 +15,9 @@
         "amount": 324
     },
     "output": {
-        "tag": "c:dusts/fluix"
+        "ingredient": {
+            "tag": "c:dusts/fluix"
+        }
     },
     "conditions": [
         {

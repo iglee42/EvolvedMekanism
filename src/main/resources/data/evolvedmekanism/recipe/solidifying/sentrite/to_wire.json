@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/sentrite"
+        "ingredient": {
+            "tag": "c:wires/sentrite"
+        }
     },
     "conditions": [
         {

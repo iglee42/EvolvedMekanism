@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/elementium"
+        "ingredient": {
+            "tag": "c:nuggets/elementium"
+        }
     },
     "conditions": [
         {

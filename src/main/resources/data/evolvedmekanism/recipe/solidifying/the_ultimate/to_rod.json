@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/the_ultimate"
+        "ingredient": {
+            "tag": "c:rods/the_ultimate"
+        }
     },
     "conditions": [
         {

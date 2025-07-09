@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/radium"
+        "ingredient": {
+            "tag": "c:wires/radium"
+        }
     },
     "conditions": [
         {

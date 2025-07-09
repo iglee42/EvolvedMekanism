@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/sentrite"
+        "ingredient": {
+            "tag": "c:nuggets/sentrite"
+        }
     },
     "conditions": [
         {

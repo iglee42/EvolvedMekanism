@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/queens_slime"
+        "ingredient": {
+            "tag": "c:rods/queens_slime"
+        }
     },
     "conditions": [
         {

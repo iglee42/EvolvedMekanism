@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/prismalium"
+        "ingredient": {
+            "tag": "c:wires/prismalium"
+        }
     },
     "conditions": [
         {

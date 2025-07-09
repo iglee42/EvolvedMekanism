@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/tertium"
+        "ingredient": {
+            "tag": "c:ingots/tertium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/pink_slime"
+        "ingredient": {
+            "tag": "c:dusts/pink_slime"
+        }
     },
     "conditions": [
         {

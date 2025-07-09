@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/amethyst"
+        "ingredient": {
+            "tag": "c:plates/amethyst"
+        }
     },
     "conditions": [
         {

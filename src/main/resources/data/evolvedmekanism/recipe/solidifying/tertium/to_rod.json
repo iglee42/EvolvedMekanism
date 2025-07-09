@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/tertium"
+        "ingredient": {
+            "tag": "c:rods/tertium"
+        }
     },
     "conditions": [
         {

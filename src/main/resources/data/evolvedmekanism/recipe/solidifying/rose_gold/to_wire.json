@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/rose_gold"
+        "ingredient": {
+            "tag": "c:wires/rose_gold"
+        }
     },
     "conditions": [
         {

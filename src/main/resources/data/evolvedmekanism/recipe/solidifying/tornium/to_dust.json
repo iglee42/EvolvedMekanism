@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/tornium"
+        "ingredient": {
+            "tag": "c:dusts/tornium"
+        }
     },
     "conditions": [
         {

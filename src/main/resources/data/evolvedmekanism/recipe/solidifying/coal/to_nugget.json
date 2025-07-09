@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/coal"
+        "ingredient": {
+            "tag": "c:nuggets/coal"
+        }
     },
     "conditions": [
         {

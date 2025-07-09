@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/stratus"
+        "ingredient": {
+            "tag": "c:gears/stratus"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/nether_star"
+        "ingredient": {
+            "tag": "c:rods/nether_star"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/signalum"
+        "ingredient": {
+            "tag": "c:nuggets/signalum"
+        }
     },
     "conditions": [
         {

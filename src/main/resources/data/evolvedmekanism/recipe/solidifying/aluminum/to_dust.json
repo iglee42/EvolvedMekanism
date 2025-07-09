@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/aluminum"
+        "ingredient": {
+            "tag": "c:dusts/aluminum"
+        }
     },
     "conditions": [
         {

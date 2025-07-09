@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/ludicrite"
+        "ingredient": {
+            "tag": "c:rods/ludicrite"
+        }
     },
     "conditions": [
         {

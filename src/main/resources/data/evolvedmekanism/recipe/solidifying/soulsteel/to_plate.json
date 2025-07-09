@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/soulsteel"
+        "ingredient": {
+            "tag": "c:plates/soulsteel"
+        }
     },
     "conditions": [
         {

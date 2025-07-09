@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/queens_slime"
+        "ingredient": {
+            "tag": "c:coins/queens_slime"
+        }
     },
     "conditions": [
         {

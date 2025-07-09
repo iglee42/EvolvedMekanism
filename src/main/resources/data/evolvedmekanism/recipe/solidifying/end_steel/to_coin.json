@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/end_steel"
+        "ingredient": {
+            "tag": "c:coins/end_steel"
+        }
     },
     "conditions": [
         {

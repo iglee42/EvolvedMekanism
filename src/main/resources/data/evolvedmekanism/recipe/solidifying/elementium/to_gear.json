@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/elementium"
+        "ingredient": {
+            "tag": "c:gears/elementium"
+        }
     },
     "conditions": [
         {

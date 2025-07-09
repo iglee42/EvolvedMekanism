@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/calorite"
+        "ingredient": {
+            "tag": "c:nuggets/calorite"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/awakened_supremium"
+        "ingredient": {
+            "tag": "c:coins/awakened_supremium"
+        }
     },
     "conditions": [
         {

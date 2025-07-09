@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/boron"
+        "ingredient": {
+            "tag": "c:plates/boron"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/oratchalcum"
+        "ingredient": {
+            "tag": "c:ingots/oratchalcum"
+        }
     },
     "conditions": [
         {

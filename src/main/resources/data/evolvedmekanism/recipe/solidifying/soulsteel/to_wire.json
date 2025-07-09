@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/soulsteel"
+        "ingredient": {
+            "tag": "c:wires/soulsteel"
+        }
     },
     "conditions": [
         {

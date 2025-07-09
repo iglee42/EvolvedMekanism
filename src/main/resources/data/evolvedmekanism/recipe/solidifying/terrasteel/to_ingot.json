@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/terrasteel"
+        "ingredient": {
+            "tag": "c:ingots/terrasteel"
+        }
     },
     "conditions": [
         {

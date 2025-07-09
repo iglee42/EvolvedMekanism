@@ -15,7 +15,9 @@
         "amount": 1296
     },
     "output": {
-        "tag": "c:storage_blocks/enhanced_redstone_ingot"
+        "ingredient": {
+            "tag": "c:storage_blocks/enhanced_redstone_ingot"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/iron"
+        "ingredient": {
+            "tag": "c:plates/iron"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/lightium"
+        "ingredient": {
+            "tag": "c:coins/lightium"
+        }
     },
     "conditions": [
         {

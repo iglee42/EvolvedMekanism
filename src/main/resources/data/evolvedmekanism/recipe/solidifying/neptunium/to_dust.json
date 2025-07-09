@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/neptunium"
+        "ingredient": {
+            "tag": "c:dusts/neptunium"
+        }
     },
     "conditions": [
         {

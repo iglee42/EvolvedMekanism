@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/melodium"
+        "ingredient": {
+            "tag": "c:rods/melodium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/infused_iron"
+        "ingredient": {
+            "tag": "c:rods/infused_iron"
+        }
     },
     "conditions": [
         {

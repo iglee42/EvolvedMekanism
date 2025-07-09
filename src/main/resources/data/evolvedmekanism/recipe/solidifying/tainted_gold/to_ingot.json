@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/tainted_gold"
+        "ingredient": {
+            "tag": "c:ingots/tainted_gold"
+        }
     },
     "conditions": [
         {

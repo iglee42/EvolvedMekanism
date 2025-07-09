@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/signalum"
+        "ingredient": {
+            "tag": "c:plates/signalum"
+        }
     },
     "conditions": [
         {

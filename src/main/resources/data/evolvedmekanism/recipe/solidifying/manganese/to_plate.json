@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/manganese"
+        "ingredient": {
+            "tag": "c:plates/manganese"
+        }
     },
     "conditions": [
         {

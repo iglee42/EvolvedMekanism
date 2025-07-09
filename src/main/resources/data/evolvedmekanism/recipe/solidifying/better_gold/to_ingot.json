@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/better_gold"
+        "ingredient": {
+            "tag": "c:ingots/better_gold"
+        }
     },
     "conditions": [
         {

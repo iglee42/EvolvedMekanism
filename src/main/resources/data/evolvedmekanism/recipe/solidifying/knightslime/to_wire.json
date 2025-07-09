@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/knightslime"
+        "ingredient": {
+            "tag": "c:wires/knightslime"
+        }
     },
     "conditions": [
         {

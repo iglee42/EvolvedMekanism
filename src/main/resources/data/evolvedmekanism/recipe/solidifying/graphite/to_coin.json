@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/graphite"
+        "ingredient": {
+            "tag": "c:coins/graphite"
+        }
     },
     "conditions": [
         {

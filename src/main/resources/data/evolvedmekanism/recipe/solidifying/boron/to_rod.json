@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/boron"
+        "ingredient": {
+            "tag": "c:rods/boron"
+        }
     },
     "conditions": [
         {

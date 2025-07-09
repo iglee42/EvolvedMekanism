@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/melodium"
+        "ingredient": {
+            "tag": "c:plates/melodium"
+        }
     },
     "conditions": [
         {

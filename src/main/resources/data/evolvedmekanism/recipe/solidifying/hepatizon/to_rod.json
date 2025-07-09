@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/hepatizon"
+        "ingredient": {
+            "tag": "c:rods/hepatizon"
+        }
     },
     "conditions": [
         {

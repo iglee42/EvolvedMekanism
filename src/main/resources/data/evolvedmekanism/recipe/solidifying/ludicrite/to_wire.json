@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/ludicrite"
+        "ingredient": {
+            "tag": "c:wires/ludicrite"
+        }
     },
     "conditions": [
         {

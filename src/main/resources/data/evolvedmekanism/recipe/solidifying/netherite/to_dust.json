@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/netherite"
+        "ingredient": {
+            "tag": "c:dusts/netherite"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 2916
     },
     "output": {
-        "tag": "c:storage_blocks/ender"
+        "ingredient": {
+            "tag": "c:storage_blocks/ender"
+        }
     },
     "conditions": [
         {

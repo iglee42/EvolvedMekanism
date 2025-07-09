@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/redstone_alloy"
+        "ingredient": {
+            "tag": "c:ingots/redstone_alloy"
+        }
     },
     "conditions": [
         {

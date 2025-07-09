@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/stellarium"
+        "ingredient": {
+            "tag": "c:coins/stellarium"
+        }
     },
     "conditions": [
         {

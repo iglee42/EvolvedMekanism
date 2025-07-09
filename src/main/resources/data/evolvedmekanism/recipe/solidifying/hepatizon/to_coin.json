@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/hepatizon"
+        "ingredient": {
+            "tag": "c:coins/hepatizon"
+        }
     },
     "conditions": [
         {

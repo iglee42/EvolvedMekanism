@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/nether_star"
+        "ingredient": {
+            "tag": "c:nuggets/nether_star"
+        }
     },
     "conditions": [
         {

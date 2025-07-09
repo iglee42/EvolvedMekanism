@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/lithium"
+        "ingredient": {
+            "tag": "c:wires/lithium"
+        }
     },
     "conditions": [
         {

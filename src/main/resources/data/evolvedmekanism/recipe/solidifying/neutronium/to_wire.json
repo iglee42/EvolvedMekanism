@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/neutronium"
+        "ingredient": {
+            "tag": "c:wires/neutronium"
+        }
     },
     "conditions": [
         {

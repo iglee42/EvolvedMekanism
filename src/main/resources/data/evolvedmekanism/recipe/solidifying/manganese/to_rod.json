@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/manganese"
+        "ingredient": {
+            "tag": "c:rods/manganese"
+        }
     },
     "conditions": [
         {

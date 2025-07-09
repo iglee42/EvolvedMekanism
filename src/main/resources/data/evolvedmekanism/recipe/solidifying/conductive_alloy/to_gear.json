@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/conductive_alloy"
+        "ingredient": {
+            "tag": "c:gears/conductive_alloy"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/thorium"
+        "ingredient": {
+            "tag": "c:gears/thorium"
+        }
     },
     "conditions": [
         {

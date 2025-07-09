@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/enderium"
+        "ingredient": {
+            "tag": "c:rods/enderium"
+        }
     },
     "conditions": [
         {

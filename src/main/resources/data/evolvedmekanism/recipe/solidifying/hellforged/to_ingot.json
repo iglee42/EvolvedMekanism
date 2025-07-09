@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/hellforged"
+        "ingredient": {
+            "tag": "c:ingots/hellforged"
+        }
     },
     "conditions": [
         {

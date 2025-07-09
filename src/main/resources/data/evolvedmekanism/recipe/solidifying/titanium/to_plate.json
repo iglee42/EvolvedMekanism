@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/titanium"
+        "ingredient": {
+            "tag": "c:plates/titanium"
+        }
     },
     "conditions": [
         {

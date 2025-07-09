@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/iesnium"
+        "ingredient": {
+            "tag": "c:wires/iesnium"
+        }
     },
     "conditions": [
         {

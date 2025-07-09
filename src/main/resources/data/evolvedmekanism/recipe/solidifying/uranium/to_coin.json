@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/uranium"
+        "ingredient": {
+            "tag": "c:coins/uranium"
+        }
     },
     "conditions": [
         {

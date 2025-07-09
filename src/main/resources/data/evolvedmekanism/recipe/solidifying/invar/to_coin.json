@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/invar"
+        "ingredient": {
+            "tag": "c:coins/invar"
+        }
     },
     "conditions": [
         {

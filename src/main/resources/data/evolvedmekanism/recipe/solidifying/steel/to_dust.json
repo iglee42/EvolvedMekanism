@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/steel"
+        "ingredient": {
+            "tag": "c:dusts/steel"
+        }
     },
     "conditions": [
         {

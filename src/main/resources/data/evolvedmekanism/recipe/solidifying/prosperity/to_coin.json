@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/prosperity"
+        "ingredient": {
+            "tag": "c:coins/prosperity"
+        }
     },
     "conditions": [
         {

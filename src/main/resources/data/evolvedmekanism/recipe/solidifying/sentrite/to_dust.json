@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/sentrite"
+        "ingredient": {
+            "tag": "c:dusts/sentrite"
+        }
     },
     "conditions": [
         {

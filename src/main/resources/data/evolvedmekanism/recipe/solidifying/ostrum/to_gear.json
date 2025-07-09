@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/ostrum"
+        "ingredient": {
+            "tag": "c:gears/ostrum"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/radium"
+        "ingredient": {
+            "tag": "c:nuggets/radium"
+        }
     },
     "conditions": [
         {

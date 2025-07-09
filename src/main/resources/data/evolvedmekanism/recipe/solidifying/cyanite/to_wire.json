@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/cyanite"
+        "ingredient": {
+            "tag": "c:wires/cyanite"
+        }
     },
     "conditions": [
         {

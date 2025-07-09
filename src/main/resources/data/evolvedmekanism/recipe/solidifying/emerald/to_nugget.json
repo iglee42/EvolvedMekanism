@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/emerald"
+        "ingredient": {
+            "tag": "c:nuggets/emerald"
+        }
     },
     "conditions": [
         {

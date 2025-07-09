@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/elementium"
+        "ingredient": {
+            "tag": "c:plates/elementium"
+        }
     },
     "conditions": [
         {

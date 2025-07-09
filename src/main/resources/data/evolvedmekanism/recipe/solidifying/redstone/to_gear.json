@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/redstone"
+        "ingredient": {
+            "tag": "c:gears/redstone"
+        }
     },
     "conditions": [
         {

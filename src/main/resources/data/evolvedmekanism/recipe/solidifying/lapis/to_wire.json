@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/lapis"
+        "ingredient": {
+            "tag": "c:wires/lapis"
+        }
     },
     "conditions": [
         {

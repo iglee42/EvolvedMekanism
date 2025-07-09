@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/ender_ingot"
+        "ingredient": {
+            "tag": "c:nuggets/ender_ingot"
+        }
     },
     "conditions": [
         {

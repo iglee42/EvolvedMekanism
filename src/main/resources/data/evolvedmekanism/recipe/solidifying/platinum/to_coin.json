@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/platinum"
+        "ingredient": {
+            "tag": "c:coins/platinum"
+        }
     },
     "conditions": [
         {

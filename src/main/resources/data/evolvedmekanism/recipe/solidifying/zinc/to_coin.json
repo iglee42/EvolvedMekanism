@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/zinc"
+        "ingredient": {
+            "tag": "c:coins/zinc"
+        }
     },
     "conditions": [
         {

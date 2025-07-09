@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/constantan"
+        "ingredient": {
+            "tag": "c:wires/constantan"
+        }
     },
     "conditions": [
         {

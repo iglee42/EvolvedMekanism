@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/redstone_alloy"
+        "ingredient": {
+            "tag": "c:plates/redstone_alloy"
+        }
     },
     "conditions": [
         {

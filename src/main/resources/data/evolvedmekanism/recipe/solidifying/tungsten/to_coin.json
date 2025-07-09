@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/tungsten"
+        "ingredient": {
+            "tag": "c:coins/tungsten"
+        }
     },
     "conditions": [
         {

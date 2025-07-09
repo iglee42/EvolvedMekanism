@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/refined_glowstone"
+        "ingredient": {
+            "tag": "c:rods/refined_glowstone"
+        }
     },
     "conditions": [
         {

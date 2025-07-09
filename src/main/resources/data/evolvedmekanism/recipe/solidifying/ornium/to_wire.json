@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/ornium"
+        "ingredient": {
+            "tag": "c:wires/ornium"
+        }
     },
     "conditions": [
         {

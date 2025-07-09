@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/supremium"
+        "ingredient": {
+            "tag": "c:nuggets/supremium"
+        }
     },
     "conditions": [
         {

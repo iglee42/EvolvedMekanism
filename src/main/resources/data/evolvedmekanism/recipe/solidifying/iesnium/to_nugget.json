@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/iesnium"
+        "ingredient": {
+            "tag": "c:nuggets/iesnium"
+        }
     },
     "conditions": [
         {

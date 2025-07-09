@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/silicon_bronze"
+        "ingredient": {
+            "tag": "c:plates/silicon_bronze"
+        }
     },
     "conditions": [
         {

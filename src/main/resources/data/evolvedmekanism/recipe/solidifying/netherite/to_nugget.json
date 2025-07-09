@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/netherite"
+        "ingredient": {
+            "tag": "c:nuggets/netherite"
+        }
     },
     "conditions": [
         {

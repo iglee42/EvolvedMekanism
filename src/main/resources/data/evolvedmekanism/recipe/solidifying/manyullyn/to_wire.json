@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/manyullyn"
+        "ingredient": {
+            "tag": "c:wires/manyullyn"
+        }
     },
     "conditions": [
         {

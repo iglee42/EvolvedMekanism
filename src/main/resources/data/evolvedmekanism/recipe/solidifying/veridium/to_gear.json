@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/veridium"
+        "ingredient": {
+            "tag": "c:gears/veridium"
+        }
     },
     "conditions": [
         {

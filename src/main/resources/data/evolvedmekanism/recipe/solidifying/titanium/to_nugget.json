@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/titanium"
+        "ingredient": {
+            "tag": "c:nuggets/titanium"
+        }
     },
     "conditions": [
         {

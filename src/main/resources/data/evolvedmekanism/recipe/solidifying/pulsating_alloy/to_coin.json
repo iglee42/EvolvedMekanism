@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/pulsating_alloy"
+        "ingredient": {
+            "tag": "c:coins/pulsating_alloy"
+        }
     },
     "conditions": [
         {

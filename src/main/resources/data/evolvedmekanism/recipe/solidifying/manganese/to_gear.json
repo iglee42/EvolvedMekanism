@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/manganese"
+        "ingredient": {
+            "tag": "c:gears/manganese"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/silicon_bronze"
+        "ingredient": {
+            "tag": "c:wires/silicon_bronze"
+        }
     },
     "conditions": [
         {

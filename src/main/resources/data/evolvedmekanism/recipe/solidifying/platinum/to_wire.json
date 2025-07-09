@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/platinum"
+        "ingredient": {
+            "tag": "c:wires/platinum"
+        }
     },
     "conditions": [
         {

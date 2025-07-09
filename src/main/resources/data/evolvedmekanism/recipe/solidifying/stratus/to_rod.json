@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/stratus"
+        "ingredient": {
+            "tag": "c:rods/stratus"
+        }
     },
     "conditions": [
         {

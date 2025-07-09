@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/pink_slime"
+        "ingredient": {
+            "tag": "c:gears/pink_slime"
+        }
     },
     "conditions": [
         {

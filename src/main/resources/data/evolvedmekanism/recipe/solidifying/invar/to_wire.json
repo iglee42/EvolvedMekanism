@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/invar"
+        "ingredient": {
+            "tag": "c:wires/invar"
+        }
     },
     "conditions": [
         {

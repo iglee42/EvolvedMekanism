@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/infused_iron"
+        "ingredient": {
+            "tag": "c:wires/infused_iron"
+        }
     },
     "conditions": [
         {

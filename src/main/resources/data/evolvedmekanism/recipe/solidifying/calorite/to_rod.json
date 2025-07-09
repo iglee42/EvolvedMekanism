@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/calorite"
+        "ingredient": {
+            "tag": "c:rods/calorite"
+        }
     },
     "conditions": [
         {

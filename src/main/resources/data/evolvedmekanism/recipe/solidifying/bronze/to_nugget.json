@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/bronze"
+        "ingredient": {
+            "tag": "c:nuggets/bronze"
+        }
     },
     "conditions": [
         {

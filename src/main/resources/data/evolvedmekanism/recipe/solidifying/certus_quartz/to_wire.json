@@ -15,7 +15,9 @@
         "amount": 162
     },
     "output": {
-        "tag": "c:wires/certus_quartz"
+        "ingredient": {
+            "tag": "c:wires/certus_quartz"
+        }
     },
     "conditions": [
         {

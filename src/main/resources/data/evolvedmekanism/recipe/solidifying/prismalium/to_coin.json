@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/prismalium"
+        "ingredient": {
+            "tag": "c:coins/prismalium"
+        }
     },
     "conditions": [
         {

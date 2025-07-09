@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/ender_ingot"
+        "ingredient": {
+            "tag": "c:ingots/ender_ingot"
+        }
     },
     "conditions": [
         {

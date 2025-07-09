@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/osmium"
+        "ingredient": {
+            "tag": "c:wires/osmium"
+        }
     },
     "conditions": [
         {

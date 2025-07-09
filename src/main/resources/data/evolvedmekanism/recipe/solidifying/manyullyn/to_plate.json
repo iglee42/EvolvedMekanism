@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/manyullyn"
+        "ingredient": {
+            "tag": "c:plates/manyullyn"
+        }
     },
     "conditions": [
         {

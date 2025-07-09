@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/neutronium"
+        "ingredient": {
+            "tag": "c:rods/neutronium"
+        }
     },
     "conditions": [
         {

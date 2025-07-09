@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/neptunium"
+        "ingredient": {
+            "tag": "c:ingots/neptunium"
+        }
     },
     "conditions": [
         {

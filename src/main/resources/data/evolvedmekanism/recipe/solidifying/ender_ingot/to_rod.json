@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/ender_ingot"
+        "ingredient": {
+            "tag": "c:rods/ender_ingot"
+        }
     },
     "conditions": [
         {

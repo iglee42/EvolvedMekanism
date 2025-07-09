@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/pulsating_alloy"
+        "ingredient": {
+            "tag": "c:nuggets/pulsating_alloy"
+        }
     },
     "conditions": [
         {

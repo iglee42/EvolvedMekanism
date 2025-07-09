@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/soulium"
+        "ingredient": {
+            "tag": "c:wires/soulium"
+        }
     },
     "conditions": [
         {

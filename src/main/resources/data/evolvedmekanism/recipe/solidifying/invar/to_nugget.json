@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/invar"
+        "ingredient": {
+            "tag": "c:nuggets/invar"
+        }
     },
     "conditions": [
         {

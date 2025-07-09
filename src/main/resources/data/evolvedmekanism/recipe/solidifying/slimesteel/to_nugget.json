@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/slimesteel"
+        "ingredient": {
+            "tag": "c:nuggets/slimesteel"
+        }
     },
     "conditions": [
         {

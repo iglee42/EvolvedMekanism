@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/lead"
+        "ingredient": {
+            "tag": "c:coins/lead"
+        }
     },
     "conditions": [
         {

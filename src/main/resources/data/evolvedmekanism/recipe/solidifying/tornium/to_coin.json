@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/tornium"
+        "ingredient": {
+            "tag": "c:coins/tornium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/soularium"
+        "ingredient": {
+            "tag": "c:wires/soularium"
+        }
     },
     "conditions": [
         {

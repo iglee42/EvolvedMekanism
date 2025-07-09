@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/dark_steel"
+        "ingredient": {
+            "tag": "c:coins/dark_steel"
+        }
     },
     "conditions": [
         {

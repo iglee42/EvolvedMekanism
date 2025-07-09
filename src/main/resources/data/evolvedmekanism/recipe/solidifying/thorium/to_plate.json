@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/thorium"
+        "ingredient": {
+            "tag": "c:plates/thorium"
+        }
     },
     "conditions": [
         {

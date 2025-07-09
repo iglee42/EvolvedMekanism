@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/amethyst"
+        "ingredient": {
+            "tag": "c:coins/amethyst"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/prudentium"
+        "ingredient": {
+            "tag": "c:rods/prudentium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/tainted_gold"
+        "ingredient": {
+            "tag": "c:coins/tainted_gold"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/nether_star"
+        "ingredient": {
+            "tag": "c:ingots/nether_star"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 324
     },
     "output": {
-        "tag": "c:dusts/certus_quartz"
+        "ingredient": {
+            "tag": "c:dusts/certus_quartz"
+        }
     },
     "conditions": [
         {

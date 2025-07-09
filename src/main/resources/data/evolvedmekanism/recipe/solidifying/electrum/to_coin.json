@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/electrum"
+        "ingredient": {
+            "tag": "c:coins/electrum"
+        }
     },
     "conditions": [
         {

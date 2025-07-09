@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/saturlyte"
+        "ingredient": {
+            "tag": "c:wires/saturlyte"
+        }
     },
     "conditions": [
         {

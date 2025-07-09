@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/chorium"
+        "ingredient": {
+            "tag": "c:rods/chorium"
+        }
     },
     "conditions": [
         {

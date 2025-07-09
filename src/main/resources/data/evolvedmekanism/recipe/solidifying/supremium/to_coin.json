@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/supremium"
+        "ingredient": {
+            "tag": "c:coins/supremium"
+        }
     },
     "conditions": [
         {

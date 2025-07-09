@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/diamond"
+        "ingredient": {
+            "tag": "c:coins/diamond"
+        }
     },
     "conditions": [
         {

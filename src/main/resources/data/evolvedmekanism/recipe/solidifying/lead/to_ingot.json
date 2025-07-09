@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/lead"
+        "ingredient": {
+            "tag": "c:ingots/lead"
+        }
     },
     "conditions": [
         {

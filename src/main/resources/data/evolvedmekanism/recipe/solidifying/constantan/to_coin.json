@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/constantan"
+        "ingredient": {
+            "tag": "c:coins/constantan"
+        }
     },
     "conditions": [
         {

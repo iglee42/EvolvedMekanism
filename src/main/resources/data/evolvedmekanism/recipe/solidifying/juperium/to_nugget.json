@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/juperium"
+        "ingredient": {
+            "tag": "c:nuggets/juperium"
+        }
     },
     "conditions": [
         {

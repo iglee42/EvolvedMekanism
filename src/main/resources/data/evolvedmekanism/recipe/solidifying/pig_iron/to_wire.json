@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/pig_iron"
+        "ingredient": {
+            "tag": "c:wires/pig_iron"
+        }
     },
     "conditions": [
         {

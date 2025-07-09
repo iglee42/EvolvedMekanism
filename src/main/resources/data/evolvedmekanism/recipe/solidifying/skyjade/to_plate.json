@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/skyjade"
+        "ingredient": {
+            "tag": "c:plates/skyjade"
+        }
     },
     "conditions": [
         {

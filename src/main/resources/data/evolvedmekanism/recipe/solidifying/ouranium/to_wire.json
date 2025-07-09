@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/ouranium"
+        "ingredient": {
+            "tag": "c:wires/ouranium"
+        }
     },
     "conditions": [
         {

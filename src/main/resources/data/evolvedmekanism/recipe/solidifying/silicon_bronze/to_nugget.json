@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/silicon_bronze"
+        "ingredient": {
+            "tag": "c:nuggets/silicon_bronze"
+        }
     },
     "conditions": [
         {

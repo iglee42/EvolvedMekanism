@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/draconium"
+        "ingredient": {
+            "tag": "c:gears/draconium"
+        }
     },
     "conditions": [
         {

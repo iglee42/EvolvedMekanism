@@ -15,7 +15,9 @@
         "amount": 1296
     },
     "output": {
-        "tag": "c:storage_blocks/tin"
+        "ingredient": {
+            "tag": "c:storage_blocks/tin"
+        }
     },
     "conditions": [
         {

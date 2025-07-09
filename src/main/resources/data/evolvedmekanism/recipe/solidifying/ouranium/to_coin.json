@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/ouranium"
+        "ingredient": {
+            "tag": "c:coins/ouranium"
+        }
     },
     "conditions": [
         {

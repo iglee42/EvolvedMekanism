@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/bronze"
+        "ingredient": {
+            "tag": "c:wires/bronze"
+        }
     },
     "conditions": [
         {

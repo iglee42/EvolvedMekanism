@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/vibrant_alloy"
+        "ingredient": {
+            "tag": "c:rods/vibrant_alloy"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 1296
     },
     "output": {
-        "tag": "c:storage_blocks/pig_iron"
+        "ingredient": {
+            "tag": "c:storage_blocks/pig_iron"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/nether_star"
+        "ingredient": {
+            "tag": "c:wires/nether_star"
+        }
     },
     "conditions": [
         {

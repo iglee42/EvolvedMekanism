@@ -15,7 +15,9 @@
         "amount": 108
     },
     "output": {
-        "tag": "c:coins/fluix"
+        "ingredient": {
+            "tag": "c:coins/fluix"
+        }
     },
     "conditions": [
         {

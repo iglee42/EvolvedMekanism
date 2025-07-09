@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/boron"
+        "ingredient": {
+            "tag": "c:dusts/boron"
+        }
     },
     "conditions": [
         {

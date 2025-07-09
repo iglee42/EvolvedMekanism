@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/juperium"
+        "ingredient": {
+            "tag": "c:plates/juperium"
+        }
     },
     "conditions": [
         {

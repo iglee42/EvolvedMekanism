@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/manyullyn"
+        "ingredient": {
+            "tag": "c:gears/manyullyn"
+        }
     },
     "conditions": [
         {

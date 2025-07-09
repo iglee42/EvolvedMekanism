@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/electrum"
+        "ingredient": {
+            "tag": "c:rods/electrum"
+        }
     },
     "conditions": [
         {

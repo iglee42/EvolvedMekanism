@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/coal"
+        "ingredient": {
+            "tag": "c:gears/coal"
+        }
     },
     "conditions": [
         {

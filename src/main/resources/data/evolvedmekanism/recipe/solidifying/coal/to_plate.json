@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/coal"
+        "ingredient": {
+            "tag": "c:plates/coal"
+        }
     },
     "conditions": [
         {

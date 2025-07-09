@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/infinity"
+        "ingredient": {
+            "tag": "c:nuggets/infinity"
+        }
     },
     "conditions": [
         {

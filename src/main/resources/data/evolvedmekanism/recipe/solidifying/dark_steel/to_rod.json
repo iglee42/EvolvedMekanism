@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/dark_steel"
+        "ingredient": {
+            "tag": "c:rods/dark_steel"
+        }
     },
     "conditions": [
         {

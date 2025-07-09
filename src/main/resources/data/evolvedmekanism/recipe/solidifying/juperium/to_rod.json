@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/juperium"
+        "ingredient": {
+            "tag": "c:rods/juperium"
+        }
     },
     "conditions": [
         {

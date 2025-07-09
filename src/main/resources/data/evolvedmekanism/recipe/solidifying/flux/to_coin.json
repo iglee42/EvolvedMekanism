@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/flux"
+        "ingredient": {
+            "tag": "c:coins/flux"
+        }
     },
     "conditions": [
         {

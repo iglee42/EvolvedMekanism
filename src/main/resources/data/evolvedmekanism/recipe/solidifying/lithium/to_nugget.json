@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/lithium"
+        "ingredient": {
+            "tag": "c:nuggets/lithium"
+        }
     },
     "conditions": [
         {

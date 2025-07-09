@@ -15,7 +15,9 @@
         "amount": 162
     },
     "output": {
-        "tag": "c:wires/fluix"
+        "ingredient": {
+            "tag": "c:wires/fluix"
+        }
     },
     "conditions": [
         {

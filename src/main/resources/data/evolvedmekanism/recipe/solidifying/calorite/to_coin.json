@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/calorite"
+        "ingredient": {
+            "tag": "c:coins/calorite"
+        }
     },
     "conditions": [
         {

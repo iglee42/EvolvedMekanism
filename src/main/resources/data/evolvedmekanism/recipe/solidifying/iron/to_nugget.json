@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/iron"
+        "ingredient": {
+            "tag": "c:nuggets/iron"
+        }
     },
     "conditions": [
         {

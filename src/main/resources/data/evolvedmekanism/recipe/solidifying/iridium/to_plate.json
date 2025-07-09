@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/iridium"
+        "ingredient": {
+            "tag": "c:plates/iridium"
+        }
     },
     "conditions": [
         {

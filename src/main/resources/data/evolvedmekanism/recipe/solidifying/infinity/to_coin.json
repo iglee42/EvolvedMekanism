@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/infinity"
+        "ingredient": {
+            "tag": "c:coins/infinity"
+        }
     },
     "conditions": [
         {

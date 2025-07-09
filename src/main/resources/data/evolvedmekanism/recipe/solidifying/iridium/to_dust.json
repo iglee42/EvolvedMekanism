@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/iridium"
+        "ingredient": {
+            "tag": "c:dusts/iridium"
+        }
     },
     "conditions": [
         {

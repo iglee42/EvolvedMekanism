@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/draconium"
+        "ingredient": {
+            "tag": "c:wires/draconium"
+        }
     },
     "conditions": [
         {

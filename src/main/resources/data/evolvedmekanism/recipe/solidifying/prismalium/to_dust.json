@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/prismalium"
+        "ingredient": {
+            "tag": "c:dusts/prismalium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/calorite"
+        "ingredient": {
+            "tag": "c:ingots/calorite"
+        }
     },
     "conditions": [
         {

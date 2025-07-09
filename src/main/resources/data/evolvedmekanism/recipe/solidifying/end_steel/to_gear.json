@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/end_steel"
+        "ingredient": {
+            "tag": "c:gears/end_steel"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/brass"
+        "ingredient": {
+            "tag": "c:ingots/brass"
+        }
     },
     "conditions": [
         {

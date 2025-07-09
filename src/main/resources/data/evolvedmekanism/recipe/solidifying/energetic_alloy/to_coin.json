@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/energetic_alloy"
+        "ingredient": {
+            "tag": "c:coins/energetic_alloy"
+        }
     },
     "conditions": [
         {

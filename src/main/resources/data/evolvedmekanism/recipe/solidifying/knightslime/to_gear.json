@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/knightslime"
+        "ingredient": {
+            "tag": "c:gears/knightslime"
+        }
     },
     "conditions": [
         {

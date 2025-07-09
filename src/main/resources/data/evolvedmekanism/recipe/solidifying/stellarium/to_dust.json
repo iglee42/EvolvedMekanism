@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/stellarium"
+        "ingredient": {
+            "tag": "c:dusts/stellarium"
+        }
     },
     "conditions": [
         {

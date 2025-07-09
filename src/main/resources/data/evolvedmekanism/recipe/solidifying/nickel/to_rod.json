@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/nickel"
+        "ingredient": {
+            "tag": "c:rods/nickel"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/gravitite"
+        "ingredient": {
+            "tag": "c:coins/gravitite"
+        }
     },
     "conditions": [
         {

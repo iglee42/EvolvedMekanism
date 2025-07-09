@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/pig_iron"
+        "ingredient": {
+            "tag": "c:nuggets/pig_iron"
+        }
     },
     "conditions": [
         {

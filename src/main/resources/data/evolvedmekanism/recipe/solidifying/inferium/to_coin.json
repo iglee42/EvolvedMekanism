@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/inferium"
+        "ingredient": {
+            "tag": "c:coins/inferium"
+        }
     },
     "conditions": [
         {

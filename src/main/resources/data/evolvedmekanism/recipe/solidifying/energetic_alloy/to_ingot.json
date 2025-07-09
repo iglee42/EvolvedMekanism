@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/energetic_alloy"
+        "ingredient": {
+            "tag": "c:ingots/energetic_alloy"
+        }
     },
     "conditions": [
         {

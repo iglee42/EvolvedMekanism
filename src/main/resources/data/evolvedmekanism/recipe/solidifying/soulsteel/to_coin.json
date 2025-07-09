@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/soulsteel"
+        "ingredient": {
+            "tag": "c:coins/soulsteel"
+        }
     },
     "conditions": [
         {

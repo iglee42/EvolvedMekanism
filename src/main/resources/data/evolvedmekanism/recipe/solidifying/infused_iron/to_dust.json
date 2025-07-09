@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/infused_iron"
+        "ingredient": {
+            "tag": "c:dusts/infused_iron"
+        }
     },
     "conditions": [
         {

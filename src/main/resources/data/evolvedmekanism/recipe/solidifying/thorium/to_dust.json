@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/thorium"
+        "ingredient": {
+            "tag": "c:dusts/thorium"
+        }
     },
     "conditions": [
         {

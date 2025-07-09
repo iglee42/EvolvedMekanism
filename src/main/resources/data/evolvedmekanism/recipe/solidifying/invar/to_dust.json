@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/invar"
+        "ingredient": {
+            "tag": "c:dusts/invar"
+        }
     },
     "conditions": [
         {

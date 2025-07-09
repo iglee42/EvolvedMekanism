@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/blutonium"
+        "ingredient": {
+            "tag": "c:rods/blutonium"
+        }
     },
     "conditions": [
         {

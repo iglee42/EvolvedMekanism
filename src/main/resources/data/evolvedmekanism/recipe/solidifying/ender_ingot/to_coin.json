@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/ender_ingot"
+        "ingredient": {
+            "tag": "c:coins/ender_ingot"
+        }
     },
     "conditions": [
         {

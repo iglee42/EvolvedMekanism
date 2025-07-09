@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/soularium"
+        "ingredient": {
+            "tag": "c:nuggets/soularium"
+        }
     },
     "conditions": [
         {

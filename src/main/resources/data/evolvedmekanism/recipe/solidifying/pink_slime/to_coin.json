@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/pink_slime"
+        "ingredient": {
+            "tag": "c:coins/pink_slime"
+        }
     },
     "conditions": [
         {

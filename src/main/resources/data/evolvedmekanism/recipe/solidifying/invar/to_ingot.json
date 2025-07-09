@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/invar"
+        "ingredient": {
+            "tag": "c:ingots/invar"
+        }
     },
     "conditions": [
         {

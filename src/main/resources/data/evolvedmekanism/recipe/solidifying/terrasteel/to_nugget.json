@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/terrasteel"
+        "ingredient": {
+            "tag": "c:nuggets/terrasteel"
+        }
     },
     "conditions": [
         {

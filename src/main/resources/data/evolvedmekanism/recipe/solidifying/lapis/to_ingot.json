@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/lapis"
+        "ingredient": {
+            "tag": "c:ingots/lapis"
+        }
     },
     "conditions": [
         {

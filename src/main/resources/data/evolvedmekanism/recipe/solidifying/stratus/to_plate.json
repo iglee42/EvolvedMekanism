@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/stratus"
+        "ingredient": {
+            "tag": "c:plates/stratus"
+        }
     },
     "conditions": [
         {

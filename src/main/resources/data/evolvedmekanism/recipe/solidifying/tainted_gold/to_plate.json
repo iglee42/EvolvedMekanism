@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/tainted_gold"
+        "ingredient": {
+            "tag": "c:plates/tainted_gold"
+        }
     },
     "conditions": [
         {

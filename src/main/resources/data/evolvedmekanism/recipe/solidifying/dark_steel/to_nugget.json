@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/dark_steel"
+        "ingredient": {
+            "tag": "c:nuggets/dark_steel"
+        }
     },
     "conditions": [
         {

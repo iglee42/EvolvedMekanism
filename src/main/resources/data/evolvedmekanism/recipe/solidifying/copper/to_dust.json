@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/copper"
+        "ingredient": {
+            "tag": "c:dusts/copper"
+        }
     },
     "conditions": [
         {

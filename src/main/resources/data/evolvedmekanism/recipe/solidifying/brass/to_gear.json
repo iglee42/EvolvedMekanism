@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/brass"
+        "ingredient": {
+            "tag": "c:gears/brass"
+        }
     },
     "conditions": [
         {

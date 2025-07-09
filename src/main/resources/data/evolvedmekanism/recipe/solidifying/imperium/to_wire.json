@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/imperium"
+        "ingredient": {
+            "tag": "c:wires/imperium"
+        }
     },
     "conditions": [
         {

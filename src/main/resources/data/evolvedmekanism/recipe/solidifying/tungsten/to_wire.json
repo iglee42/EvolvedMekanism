@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/tungsten"
+        "ingredient": {
+            "tag": "c:wires/tungsten"
+        }
     },
     "conditions": [
         {

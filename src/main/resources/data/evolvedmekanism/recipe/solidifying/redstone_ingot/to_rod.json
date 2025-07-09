@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/redstone_ingot"
+        "ingredient": {
+            "tag": "c:rods/redstone_ingot"
+        }
     },
     "conditions": [
         {

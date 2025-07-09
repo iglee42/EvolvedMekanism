@@ -15,7 +15,9 @@
         "amount": 16
     },
     "output": {
-        "tag": "c:nuggets/saturlyte"
+        "ingredient": {
+            "tag": "c:nuggets/saturlyte"
+        }
     },
     "conditions": [
         {

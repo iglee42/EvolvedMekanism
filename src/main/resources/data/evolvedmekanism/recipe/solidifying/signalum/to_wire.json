@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/signalum"
+        "ingredient": {
+            "tag": "c:wires/signalum"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/ambrosium"
+        "ingredient": {
+            "tag": "c:plates/ambrosium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/tungsten"
+        "ingredient": {
+            "tag": "c:plates/tungsten"
+        }
     },
     "conditions": [
         {

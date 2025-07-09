@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/iridium"
+        "ingredient": {
+            "tag": "c:ingots/iridium"
+        }
     },
     "conditions": [
         {

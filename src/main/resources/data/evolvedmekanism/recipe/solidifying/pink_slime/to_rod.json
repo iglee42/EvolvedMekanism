@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/pink_slime"
+        "ingredient": {
+            "tag": "c:rods/pink_slime"
+        }
     },
     "conditions": [
         {

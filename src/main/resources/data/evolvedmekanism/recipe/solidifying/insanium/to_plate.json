@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/insanium"
+        "ingredient": {
+            "tag": "c:plates/insanium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/terrasteel"
+        "ingredient": {
+            "tag": "c:plates/terrasteel"
+        }
     },
     "conditions": [
         {

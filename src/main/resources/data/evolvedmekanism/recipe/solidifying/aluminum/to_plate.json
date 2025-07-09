@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/aluminum"
+        "ingredient": {
+            "tag": "c:plates/aluminum"
+        }
     },
     "conditions": [
         {

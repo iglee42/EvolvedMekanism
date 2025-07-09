@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/the_ultimate"
+        "ingredient": {
+            "tag": "c:ingots/the_ultimate"
+        }
     },
     "conditions": [
         {

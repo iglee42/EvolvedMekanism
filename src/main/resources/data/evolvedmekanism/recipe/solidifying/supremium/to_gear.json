@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/supremium"
+        "ingredient": {
+            "tag": "c:gears/supremium"
+        }
     },
     "conditions": [
         {

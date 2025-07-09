@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:rods/osmium"
+        "ingredient": {
+            "tag": "c:rods/osmium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 162
     },
     "output": {
-        "tag": "c:rods/quartz"
+        "ingredient": {
+            "tag": "c:rods/quartz"
+        }
     },
     "conditions": [
         {

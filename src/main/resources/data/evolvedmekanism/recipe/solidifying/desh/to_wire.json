@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/desh"
+        "ingredient": {
+            "tag": "c:wires/desh"
+        }
     },
     "conditions": [
         {

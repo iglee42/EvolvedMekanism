@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/infinity"
+        "ingredient": {
+            "tag": "c:plates/infinity"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/crystaltine"
+        "ingredient": {
+            "tag": "c:ingots/crystaltine"
+        }
     },
     "conditions": [
         {

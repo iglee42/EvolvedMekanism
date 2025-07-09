@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:dusts/better_gold"
+        "ingredient": {
+            "tag": "c:dusts/better_gold"
+        }
     },
     "conditions": [
         {

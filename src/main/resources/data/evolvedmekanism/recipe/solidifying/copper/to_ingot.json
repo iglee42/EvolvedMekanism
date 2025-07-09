@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/copper"
+        "ingredient": {
+            "tag": "c:ingots/copper"
+        }
     },
     "conditions": [
         {

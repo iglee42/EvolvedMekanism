@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/vibrant_alloy"
+        "ingredient": {
+            "tag": "c:gears/vibrant_alloy"
+        }
     },
     "conditions": [
         {

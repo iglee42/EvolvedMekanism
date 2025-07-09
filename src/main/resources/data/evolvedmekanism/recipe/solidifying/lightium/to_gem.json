@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:gems/lightium"
+        "ingredient": {
+            "tag": "c:gems/lightium"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/vibrant_alloy"
+        "ingredient": {
+            "tag": "c:ingots/vibrant_alloy"
+        }
     },
     "conditions": [
         {

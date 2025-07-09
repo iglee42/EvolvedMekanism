@@ -15,7 +15,9 @@
         "amount": 324
     },
     "output": {
-        "tag": "c:gems/certus_quartz"
+        "ingredient": {
+            "tag": "c:gems/certus_quartz"
+        }
     },
     "conditions": [
         {

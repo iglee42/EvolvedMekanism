@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/cobalt"
+        "ingredient": {
+            "tag": "c:gears/cobalt"
+        }
     },
     "conditions": [
         {

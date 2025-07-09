@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/neptunium"
+        "ingredient": {
+            "tag": "c:wires/neptunium"
+        }
     },
     "conditions": [
         {

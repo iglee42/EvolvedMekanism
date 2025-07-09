@@ -15,7 +15,9 @@
         "amount": 72
     },
     "output": {
-        "tag": "c:wires/zanite"
+        "ingredient": {
+            "tag": "c:wires/zanite"
+        }
     },
     "conditions": [
         {

@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:plates/rose_gold"
+        "ingredient": {
+            "tag": "c:plates/rose_gold"
+        }
     },
     "conditions": [
         {

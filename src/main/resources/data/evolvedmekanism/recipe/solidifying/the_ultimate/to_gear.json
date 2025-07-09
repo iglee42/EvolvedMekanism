@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/the_ultimate"
+        "ingredient": {
+            "tag": "c:gears/the_ultimate"
+        }
     },
     "conditions": [
         {

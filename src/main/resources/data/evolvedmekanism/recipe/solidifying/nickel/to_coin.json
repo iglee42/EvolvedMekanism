@@ -15,7 +15,9 @@
         "amount": 48
     },
     "output": {
-        "tag": "c:coins/nickel"
+        "ingredient": {
+            "tag": "c:coins/nickel"
+        }
     },
     "conditions": [
         {

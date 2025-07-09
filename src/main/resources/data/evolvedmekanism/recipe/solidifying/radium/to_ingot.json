@@ -15,7 +15,9 @@
         "amount": 144
     },
     "output": {
-        "tag": "c:ingots/radium"
+        "ingredient": {
+            "tag": "c:ingots/radium"
+        }
     },
     "conditions": [
         {

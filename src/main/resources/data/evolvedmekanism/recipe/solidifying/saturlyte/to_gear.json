@@ -15,7 +15,9 @@
         "amount": 576
     },
     "output": {
-        "tag": "c:gears/saturlyte"
+        "ingredient": {
+            "tag": "c:gears/saturlyte"
+        }
     },
     "conditions": [
         {
