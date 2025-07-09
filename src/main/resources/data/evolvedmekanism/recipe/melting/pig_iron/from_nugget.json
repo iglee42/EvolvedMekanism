@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:nuggets/pig_iron"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_pig_iron",
-        "amount": 16
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/pig_iron"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:nuggets/pig_iron"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_pig_iron",
+    "amount": 16
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/pig_iron"
+      }
+    }
+  ]
 }

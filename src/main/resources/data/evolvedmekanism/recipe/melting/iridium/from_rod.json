@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:rods/iridium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_iridium",
-        "amount": 72
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:rods/iridium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:rods/iridium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_iridium",
+    "amount": 72
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:rods/iridium"
+      }
+    }
+  ]
 }

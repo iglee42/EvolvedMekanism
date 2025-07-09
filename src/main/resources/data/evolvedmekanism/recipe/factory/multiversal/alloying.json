@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/exoversal"
-        },
-        "C": {
-            "tag": "c:circuits/multiversal"
-        },
-        "I": {
-            "tag": "c:ingots/netherite"
-        },
-        "P": {
-            "item": "evolvedmekanism:dense_alloying_factory"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/exoversal"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:multiversal_alloying_factory"
+    "C": {
+      "tag": "c:circuits/multiversal"
+    },
+    "I": {
+      "tag": "c:ingots/netherite"
+    },
+    "P": {
+      "item": "evolvedmekanism:dense_alloying_factory"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:multiversal_alloying_factory"
+  }
 }

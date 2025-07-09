@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 60,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_dust"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_calorite",
-        "amount": 144
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 144
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:dusts/calorite"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:dusts/calorite"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 60,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_dust"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_calorite",
+    "amount": 144
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 144
+  },
+  "output": {
+    "tag": "c:dusts/calorite"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/calorite"
+      }
+    }
+  ]
 }

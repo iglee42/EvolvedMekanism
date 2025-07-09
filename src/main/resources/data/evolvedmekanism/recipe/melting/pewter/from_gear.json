@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:gears/pewter"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_pewter",
-        "amount": 576
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:gears/pewter"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:gears/pewter"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_pewter",
+    "amount": 576
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gears/pewter"
+      }
+    }
+  ]
 }

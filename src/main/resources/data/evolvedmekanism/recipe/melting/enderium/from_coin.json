@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/enderium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_enderium",
-        "amount": 48
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/enderium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/enderium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_enderium",
+    "amount": 48
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/enderium"
+      }
+    }
+  ]
 }

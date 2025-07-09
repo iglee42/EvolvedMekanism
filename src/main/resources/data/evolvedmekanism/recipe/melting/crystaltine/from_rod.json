@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:rods/crystaltine"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_crystaltine",
-        "amount": 72
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:rods/crystaltine"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:rods/crystaltine"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_crystaltine",
+    "amount": 72
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:rods/crystaltine"
+      }
+    }
+  ]
 }

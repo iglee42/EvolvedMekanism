@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:rods/flux"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_flux",
-        "amount": 72
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:rods/flux"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:rods/flux"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_flux",
+    "amount": 72
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:rods/flux"
+      }
+    }
+  ]
 }

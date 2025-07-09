@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/certus_quartz"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_certus_quartz",
-        "amount": 108
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/certus_quartz"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/certus_quartz"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_certus_quartz",
+    "amount": 108
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/certus_quartz"
+      }
+    }
+  ]
 }

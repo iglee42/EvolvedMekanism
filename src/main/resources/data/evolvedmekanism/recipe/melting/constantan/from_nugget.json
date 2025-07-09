@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:nuggets/constantan"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_constantan",
-        "amount": 16
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/constantan"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:nuggets/constantan"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_constantan",
+    "amount": 16
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/constantan"
+      }
+    }
+  ]
 }

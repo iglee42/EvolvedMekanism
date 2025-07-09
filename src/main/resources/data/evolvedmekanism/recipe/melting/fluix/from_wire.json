@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:wires/fluix"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_fluix",
-        "amount": 162
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:wires/fluix"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:wires/fluix"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_fluix",
+    "amount": 162
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/fluix"
+      }
+    }
+  ]
 }

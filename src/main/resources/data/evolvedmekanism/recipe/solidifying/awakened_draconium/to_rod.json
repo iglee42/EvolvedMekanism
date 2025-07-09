@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 30,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_rod"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_awakened_draconium",
-        "amount": 72
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 72
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:rods/awakened_draconium"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:rods/awakened_draconium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 30,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_rod"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_awakened_draconium",
+    "amount": 72
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 72
+  },
+  "output": {
+    "tag": "c:rods/awakened_draconium"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:rods/awakened_draconium"
+      }
+    }
+  ]
 }

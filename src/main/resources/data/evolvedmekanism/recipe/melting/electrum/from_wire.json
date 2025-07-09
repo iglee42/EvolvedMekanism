@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:wires/electrum"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_electrum",
-        "amount": 72
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:wires/electrum"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:wires/electrum"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_electrum",
+    "amount": 72
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/electrum"
+      }
+    }
+  ]
 }

@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/subatomic"
-        },
-        "C": {
-            "tag": "c:circuits/quantum"
-        },
-        "I": {
-            "tag": "c:ingots/tin"
-        },
-        "P": {
-            "item": "evolvedmekanism:overclocked_infusing_factory"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/subatomic"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:quantum_infusing_factory"
+    "C": {
+      "tag": "c:circuits/quantum"
+    },
+    "I": {
+      "tag": "c:ingots/tin"
+    },
+    "P": {
+      "item": "evolvedmekanism:overclocked_infusing_factory"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:quantum_infusing_factory"
+  }
 }

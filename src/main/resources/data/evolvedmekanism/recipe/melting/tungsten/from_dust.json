@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:dusts/tungsten"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_tungsten",
-        "amount": 144
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:dusts/tungsten"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:dusts/tungsten"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_tungsten",
+    "amount": 144
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/tungsten"
+      }
+    }
+  ]
 }

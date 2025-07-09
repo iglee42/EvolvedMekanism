@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/emerald"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_emerald",
-        "amount": 48
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/emerald"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/emerald"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_emerald",
+    "amount": 48
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/emerald"
+      }
+    }
+  ]
 }

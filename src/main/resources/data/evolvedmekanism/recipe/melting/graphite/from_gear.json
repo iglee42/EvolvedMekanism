@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:gears/graphite"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_graphite",
-        "amount": 576
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:gears/graphite"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:gears/graphite"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_graphite",
+    "amount": 576
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gears/graphite"
+      }
+    }
+  ]
 }

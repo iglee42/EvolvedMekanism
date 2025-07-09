@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:wires/juperium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_juperium",
-        "amount": 72
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:wires/juperium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:wires/juperium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_juperium",
+    "amount": 72
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/juperium"
+      }
+    }
+  ]
 }

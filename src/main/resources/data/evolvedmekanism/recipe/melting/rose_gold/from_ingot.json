@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:ingots/rose_gold"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_rose_gold",
-        "amount": 144
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:ingots/rose_gold"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:ingots/rose_gold"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_rose_gold",
+    "amount": 144
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/rose_gold"
+      }
+    }
+  ]
 }

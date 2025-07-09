@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/prosperity"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_prosperity",
-        "amount": 48
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/prosperity"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/prosperity"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_prosperity",
+    "amount": 48
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/prosperity"
+      }
+    }
+  ]
 }

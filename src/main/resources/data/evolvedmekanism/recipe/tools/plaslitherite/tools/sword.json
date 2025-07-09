@@ -1,26 +1,26 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "category": "equipment",
-    "key": {
-        "I": {
-            "tag": "c:ingots/plaslitherite"
-        },
-        "R": {
-            "tag": "c:rods/wooden"
-        }
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "tag": "c:ingots/plaslitherite"
     },
-    "pattern": [
-        "I",
-        "I",
-        "R"
-    ],
-    "result": {
-        "item": "evolvedmekanism:plaslitherite_sword"
-    },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "mekanismtools"
-        }
-    ]
+    "R": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "I",
+    "I",
+    "R"
+  ],
+  "result": {
+    "id": "evolvedmekanism:plaslitherite_sword"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
 }

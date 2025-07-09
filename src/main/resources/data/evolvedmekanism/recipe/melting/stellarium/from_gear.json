@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:gears/stellarium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_stellarium",
-        "amount": 576
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:gears/stellarium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:gears/stellarium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_stellarium",
+    "amount": 576
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gears/stellarium"
+      }
+    }
+  ]
 }

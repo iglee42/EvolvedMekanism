@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:gears/infinity"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_infinity",
-        "amount": 576
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:gears/infinity"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:gears/infinity"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_infinity",
+    "amount": 576
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gears/infinity"
+      }
+    }
+  ]
 }

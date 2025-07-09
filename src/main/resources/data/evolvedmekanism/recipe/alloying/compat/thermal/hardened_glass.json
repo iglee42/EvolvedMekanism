@@ -1,28 +1,22 @@
 {
-    "type": "evolvedmekanism:alloying",
-    "extra_input": {
-        "ingredient": {
-            "tag": "c:dusts/quartz"
-        }
-    },
-    "second_extra_input": {
-        "ingredient": {
-            "tag": "c:obsidian"
-        }
-    },
-    "main_input": {
-        "ingredient": {
-            "tag": "c:sand"
-        }
-    },
-    "output": {
-        "item": "thermal:obsidian_glass",
-        "count": 2
-    },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "thermal"
-        }
-    ]
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "tag": "c:dusts/quartz"
+  },
+  "second_extra_input": {
+    "tag": "c:obsidian"
+  },
+  "main_input": {
+    "tag": "c:sand"
+  },
+  "output": {
+    "item": "thermal:obsidian_glass",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "thermal"
+    }
+  ]
 }

@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 135,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_plate"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_quartz",
-        "amount": 324
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 324
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:plates/quartz"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:plates/quartz"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 135,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_plate"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_quartz",
+    "amount": 324
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 324
+  },
+  "output": {
+    "tag": "c:plates/quartz"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:plates/quartz"
+      }
+    }
+  ]
 }

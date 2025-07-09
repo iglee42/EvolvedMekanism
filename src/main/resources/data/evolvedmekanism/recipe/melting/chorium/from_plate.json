@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:plates/chorium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_chorium",
-        "amount": 144
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:plates/chorium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:plates/chorium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_chorium",
+    "amount": 144
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:plates/chorium"
+      }
+    }
+  ]
 }

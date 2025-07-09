@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:rods/vibrant_alloy"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_vibrant_alloy",
-        "amount": 72
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:rods/vibrant_alloy"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:rods/vibrant_alloy"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_vibrant_alloy",
+    "amount": 72
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:rods/vibrant_alloy"
+      }
+    }
+  ]
 }

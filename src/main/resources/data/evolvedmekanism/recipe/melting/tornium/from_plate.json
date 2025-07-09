@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:plates/tornium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_tornium",
-        "amount": 144
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:plates/tornium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:plates/tornium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_tornium",
+    "amount": 144
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:plates/tornium"
+      }
+    }
+  ]
 }

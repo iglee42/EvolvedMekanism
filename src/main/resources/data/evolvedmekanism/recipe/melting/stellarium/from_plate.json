@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:plates/stellarium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_stellarium",
-        "amount": 144
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:plates/stellarium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:plates/stellarium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_stellarium",
+    "amount": 144
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:plates/stellarium"
+      }
+    }
+  ]
 }

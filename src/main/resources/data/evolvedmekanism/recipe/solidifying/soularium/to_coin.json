@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 20,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_coin"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_soularium",
-        "amount": 48
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 48
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:coins/soularium"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/soularium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 20,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_coin"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_soularium",
+    "amount": 48
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 48
+  },
+  "output": {
+    "tag": "c:coins/soularium"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/soularium"
+      }
+    }
+  ]
 }

@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "mekanism:alloys/atomic"
-        },
-        "C": {
-            "tag": "c:circuits/ultimate"
-        },
-        "I": {
-            "tag": "c:gems/diamond"
-        },
-        "P": {
-            "item": "mekanism:elite_alloying_factory"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/atomic"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "mekanism:ultimate_alloying_factory"
+    "C": {
+      "tag": "c:circuits/ultimate"
+    },
+    "I": {
+      "tag": "c:gems/diamond"
+    },
+    "P": {
+      "item": "mekanism:elite_alloying_factory"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism:ultimate_alloying_factory"
+  }
 }

@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:wires/stellarium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_stellarium",
-        "amount": 72
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:wires/stellarium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:wires/stellarium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_stellarium",
+    "amount": 72
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/stellarium"
+      }
+    }
+  ]
 }

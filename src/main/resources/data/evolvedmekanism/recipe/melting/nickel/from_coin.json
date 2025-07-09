@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/nickel"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_nickel",
-        "amount": 48
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/nickel"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/nickel"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_nickel",
+    "amount": 48
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/nickel"
+      }
+    }
+  ]
 }

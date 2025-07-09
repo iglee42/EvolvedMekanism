@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:ingots/signalum"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_signalum",
-        "amount": 144
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:ingots/signalum"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:ingots/signalum"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_signalum",
+    "amount": 144
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/signalum"
+      }
+    }
+  ]
 }

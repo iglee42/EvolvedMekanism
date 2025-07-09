@@ -1,26 +1,26 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "category": "equipment",
-    "key": {
-        "I": {
-            "tag": "c:ingots/better_gold"
-        },
-        "P": {
-            "item": "minecraft:shield"
-        }
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "tag": "c:ingots/better_gold"
     },
-    "pattern": [
-        "IPI",
-        "III",
-        " I "
-    ],
-    "result": {
-        "item": "evolvedmekanism:better_gold_shield"
-    },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "mekanismtools"
-        }
-    ]
+    "P": {
+      "item": "minecraft:shield"
+    }
+  },
+  "pattern": [
+    "IPI",
+    "III",
+    " I "
+  ],
+  "result": {
+    "id": "evolvedmekanism:better_gold_shield"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
 }

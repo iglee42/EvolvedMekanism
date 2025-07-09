@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:nuggets/neutronium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_neutronium",
-        "amount": 16
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/neutronium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:nuggets/neutronium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_neutronium",
+    "amount": 16
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/neutronium"
+      }
+    }
+  ]
 }

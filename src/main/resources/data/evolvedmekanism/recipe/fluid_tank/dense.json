@@ -1,22 +1,22 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/singular"
-        },
-        "I": {
-            "tag": "c:ingots/iron"
-        },
-        "P": {
-            "item": "evolvedmekanism:quantum_fluid_tank"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
     },
-    "pattern": [
-        "AIA",
-        "IPI",
-        "AIA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:dense_fluid_tank"
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "P": {
+      "item": "evolvedmekanism:quantum_fluid_tank"
     }
+  },
+  "pattern": [
+    "AIA",
+    "IPI",
+    "AIA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:dense_fluid_tank"
+  }
 }

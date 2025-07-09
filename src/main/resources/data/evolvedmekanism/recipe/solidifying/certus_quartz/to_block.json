@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 1215,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_storage_block"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_certus_quartz",
-        "amount": 2916
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 2916
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:storage_blocks/certus_quartz"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:storage_blocks/certus_quartz"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 1215,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_storage_block"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_certus_quartz",
+    "amount": 2916
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 2916
+  },
+  "output": {
+    "tag": "c:storage_blocks/certus_quartz"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:storage_blocks/certus_quartz"
+      }
+    }
+  ]
 }

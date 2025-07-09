@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/soularium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_soularium",
-        "amount": 48
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/soularium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/soularium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_soularium",
+    "amount": 48
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/soularium"
+      }
+    }
+  ]
 }

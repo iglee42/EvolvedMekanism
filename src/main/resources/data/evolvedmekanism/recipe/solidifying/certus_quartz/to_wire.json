@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 67,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_wire"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_certus_quartz",
-        "amount": 162
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 162
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:wires/certus_quartz"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:wires/certus_quartz"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 67,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_wire"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_certus_quartz",
+    "amount": 162
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 162
+  },
+  "output": {
+    "tag": "c:wires/certus_quartz"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/certus_quartz"
+      }
+    }
+  ]
 }

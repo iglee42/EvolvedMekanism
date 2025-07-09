@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:nuggets/lead"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_lead",
-        "amount": 16
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/lead"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:nuggets/lead"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_lead",
+    "amount": 16
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/lead"
+      }
+    }
+  ]
 }

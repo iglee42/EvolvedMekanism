@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:wires/refined_obsidian"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_refined_obsidian",
-        "amount": 72
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:wires/refined_obsidian"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:wires/refined_obsidian"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_refined_obsidian",
+    "amount": 72
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/refined_obsidian"
+      }
+    }
+  ]
 }

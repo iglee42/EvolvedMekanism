@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:ingots/pink_slime"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_pink_slime",
-        "amount": 144
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:ingots/pink_slime"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:ingots/pink_slime"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_pink_slime",
+    "amount": 144
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/pink_slime"
+      }
+    }
+  ]
 }

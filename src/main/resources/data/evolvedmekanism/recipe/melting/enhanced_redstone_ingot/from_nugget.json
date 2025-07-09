@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:nuggets/enhanced_redstone_ingot"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_enhanced_redstone_ingot",
-        "amount": 16
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/enhanced_redstone_ingot"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:nuggets/enhanced_redstone_ingot"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_enhanced_redstone_ingot",
+    "amount": 16
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/enhanced_redstone_ingot"
+      }
+    }
+  ]
 }

@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "mekanism:alloys/basic"
-        },
-        "C": {
-            "tag": "c:circuits/basic"
-        },
-        "I": {
-            "tag": "c:ingots/iron"
-        },
-        "P": {
-            "item": "evolvedmekanism:alloyer"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/basic"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "mekanism:basic_alloying_factory"
+    "C": {
+      "tag": "c:circuits/basic"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "P": {
+      "item": "evolvedmekanism:alloyer"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism:basic_alloying_factory"
+  }
 }

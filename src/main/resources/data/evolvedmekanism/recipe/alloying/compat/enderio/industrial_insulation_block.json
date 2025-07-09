@@ -1,27 +1,21 @@
 {
-    "type": "evolvedmekanism:alloying",
-    "extra_input": {
-        "ingredient": {
-            "tag": "c:dusts/lapis"
-        }
-    },
-    "second_extra_input": {
-        "ingredient": {
-            "tag": "enderio:insulation_metals"
-        }
-    },
-    "main_input": {
-        "ingredient": {
-            "tag": "minecraft:wool"
-        }
-    },
-    "output": {
-        "item": "enderio:industrial_insulation_block"
-    },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "enderio"
-        }
-    ]
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "tag": "c:dusts/lapis"
+  },
+  "second_extra_input": {
+    "tag": "enderio:insulation_metals"
+  },
+  "main_input": {
+    "tag": "minecraft:wool"
+  },
+  "output": {
+    "id": "enderio:industrial_insulation_block"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio"
+    }
+  ]
 }

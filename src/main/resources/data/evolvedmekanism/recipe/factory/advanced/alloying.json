@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "mekanism:alloys/infused"
-        },
-        "C": {
-            "tag": "c:circuits/advanced"
-        },
-        "I": {
-            "tag": "c:ingots/osmium"
-        },
-        "P": {
-            "item": "mekanism:basic_alloying_factory"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/infused"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "mekanism:advanced_alloying_factory"
+    "C": {
+      "tag": "c:circuits/advanced"
+    },
+    "I": {
+      "tag": "c:ingots/osmium"
+    },
+    "P": {
+      "item": "mekanism:basic_alloying_factory"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "mekanism:advanced_alloying_factory"
+  }
 }

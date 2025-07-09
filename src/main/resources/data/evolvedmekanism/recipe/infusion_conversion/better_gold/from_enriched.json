@@ -1,12 +1,10 @@
 {
-    "type": "mekanism:infusion_conversion",
-    "input": {
-        "ingredient": {
-            "tag": "evolvedmekanism:enriched/better_gold"
-        }
-    },
-    "output": {
-        "amount": 80,
-        "infuse_type": "evolvedmekanism:better_gold"
-    }
+  "type": "mekanism:infusion_conversion",
+  "input": {
+    "tag": "evolvedmekanism:enriched/better_gold"
+  },
+  "output": {
+    "amount": 80,
+    "infuse_type": "evolvedmekanism:better_gold"
+  }
 }

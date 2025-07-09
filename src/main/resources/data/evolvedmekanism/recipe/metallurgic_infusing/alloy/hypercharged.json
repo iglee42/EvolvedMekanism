@@ -5,11 +5,9 @@
     "tag": "evolvedmekanism:uranium"
   },
   "item_input": {
-    "ingredient": {
-      "tag": "mekanism:alloys/atomic"
-    }
+    "tag": "mekanism:alloys/atomic"
   },
   "output": {
-    "item": "evolvedmekanism:alloy_hypercharged"
+    "id": "evolvedmekanism:alloy_hypercharged"
   }
 }

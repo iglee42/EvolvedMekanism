@@ -1,25 +1,25 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/singular"
-        },
-        "C": {
-            "tag": "c:circuits/dense"
-        },
-        "I": {
-            "tag": "c:ingots/bronze"
-        },
-        "P": {
-            "tag": "minecraft:planks"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:dense_tier_installer"
+    "C": {
+      "tag": "c:circuits/dense"
+    },
+    "I": {
+      "tag": "c:ingots/bronze"
+    },
+    "P": {
+      "tag": "minecraft:planks"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:dense_tier_installer"
+  }
 }

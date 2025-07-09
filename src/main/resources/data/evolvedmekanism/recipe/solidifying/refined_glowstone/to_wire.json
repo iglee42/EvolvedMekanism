@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 30,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_wire"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_refined_glowstone",
-        "amount": 72
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 72
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:wires/refined_glowstone"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:wires/refined_glowstone"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 30,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_wire"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_refined_glowstone",
+    "amount": 72
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 72
+  },
+  "output": {
+    "tag": "c:wires/refined_glowstone"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/refined_glowstone"
+      }
+    }
+  ]
 }

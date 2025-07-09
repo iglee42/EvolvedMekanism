@@ -1,22 +1,22 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "#": {
-            "tag": "c:pellets/antimatter"
-        },
-        "I": {
-            "tag": "c:ingots/lead"
-        },
-        "P": {
-            "item": "evolvedmekanism:qio_drive_boosted"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "#": {
+      "tag": "c:pellets/antimatter"
     },
-    "pattern": [
-        "IPI",
-        "P#P",
-        "IPI"
-    ],
-    "result": {
-        "item": "evolvedmekanism:qio_drive_singularity"
+    "I": {
+      "tag": "c:ingots/lead"
+    },
+    "P": {
+      "item": "evolvedmekanism:qio_drive_boosted"
     }
+  },
+  "pattern": [
+    "IPI",
+    "P#P",
+    "IPI"
+  ],
+  "result": {
+    "id": "evolvedmekanism:qio_drive_singularity"
+  }
 }

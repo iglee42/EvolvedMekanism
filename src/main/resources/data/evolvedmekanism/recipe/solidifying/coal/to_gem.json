@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 60,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_gem"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_coal",
-        "amount": 144
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 144
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:gems/coal"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:gems/coal"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 60,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_gem"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_coal",
+    "amount": 144
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 144
+  },
+  "output": {
+    "tag": "c:gems/coal"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gems/coal"
+      }
+    }
+  ]
 }

@@ -1,31 +1,27 @@
 {
-    "type": "evolvedmekanism:alloying",
-    "extra_input": {
-        "amount": 4,
-        "ingredient": {
-            "item": "minecraft:chorus_fruit"
-        }
-    },
-    "second_extra_input": {
-        "amount": 4,
-        "ingredient": {
-            "tag": "c:gems/amethyst"
-        }
-    },
-    "main_input": {
-        "amount": 2,
-        "ingredient": {
-            "tag": "c:ingots/gold"
-        }
-    },
-    "output": {
-        "item": "thermalendergy:melodium_ingot",
-        "count": 2
-    },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "thermalendergy"
-        }
-    ]
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "amount": 4,
+    "ingredient": {
+      "item": "minecraft:chorus_fruit"
+    }
+  },
+  "second_extra_input": {
+    "amount": 4,
+    "tag": "c:gems/amethyst"
+  },
+  "main_input": {
+    "amount": 2,
+    "tag": "c:ingots/gold"
+  },
+  "output": {
+    "item": "thermalendergy:melodium_ingot",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "thermalendergy"
+    }
+  ]
 }

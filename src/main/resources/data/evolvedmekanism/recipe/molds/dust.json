@@ -1,31 +1,31 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "mekanism:alloys/infused"
-        },
-        "B": {
-            "tag": "c:storage_blocks/steel"
-        },
-        "C": {
-            "tag": "c:dusts"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/infused"
     },
-    "pattern": [
-        "ABA",
-        "BCB",
-        "ABA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:mold_dust"
+    "B": {
+      "tag": "c:storage_blocks/steel"
     },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:dusts"
-            }
-        }
-    ]
+    "C": {
+      "tag": "c:dusts"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:mold_dust"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts"
+      }
+    }
+  ]
 }

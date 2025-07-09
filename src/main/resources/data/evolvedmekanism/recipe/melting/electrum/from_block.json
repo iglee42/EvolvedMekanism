@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:storage_blocks/electrum"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_electrum",
-        "amount": 1296
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:storage_blocks/electrum"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:storage_blocks/electrum"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_electrum",
+    "amount": 1296
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:storage_blocks/electrum"
+      }
+    }
+  ]
 }

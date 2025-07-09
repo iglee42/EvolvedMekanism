@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/fluix"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_fluix",
-        "amount": 108
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/fluix"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/fluix"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_fluix",
+    "amount": 108
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/fluix"
+      }
+    }
+  ]
 }

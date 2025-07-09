@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/singular"
-        },
-        "E": {
-            "item": "mekanism:energy_tablet"
-        },
-        "I": {
-            "tag": "c:gems/diamond"
-        },
-        "P": {
-            "item": "evolvedmekanism:quantum_energy_cube"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
     },
-    "pattern": [
-        "AEA",
-        "IPI",
-        "AEA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:dense_energy_cube"
+    "E": {
+      "item": "mekanism:energy_tablet"
+    },
+    "I": {
+      "tag": "c:gems/diamond"
+    },
+    "P": {
+      "item": "evolvedmekanism:quantum_energy_cube"
     }
+  },
+  "pattern": [
+    "AEA",
+    "IPI",
+    "AEA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:dense_energy_cube"
+  }
 }

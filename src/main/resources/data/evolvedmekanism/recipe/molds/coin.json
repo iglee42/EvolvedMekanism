@@ -1,31 +1,31 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "mekanism:alloys/infused"
-        },
-        "B": {
-            "tag": "c:storage_blocks/steel"
-        },
-        "C": {
-            "tag": "c:coins"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/infused"
     },
-    "pattern": [
-        "ABA",
-        "BCB",
-        "ABA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:mold_coin"
+    "B": {
+      "tag": "c:storage_blocks/steel"
     },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins"
-            }
-        }
-    ]
+    "C": {
+      "tag": "c:coins"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:mold_coin"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins"
+      }
+    }
+  ]
 }

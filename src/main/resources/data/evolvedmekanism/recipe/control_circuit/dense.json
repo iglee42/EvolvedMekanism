@@ -1,19 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/singular"
-        },
-        "C": {
-            "tag": "c:circuits/quantum"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
     },
-    "pattern": [
-        " A ",
-        "ACA",
-        " A "
-    ],
-    "result": {
-        "item": "evolvedmekanism:dense_control_circuit"
+    "C": {
+      "tag": "c:circuits/quantum"
     }
+  },
+  "pattern": [
+    " A ",
+    "ACA",
+    " A "
+  ],
+  "result": {
+    "id": "evolvedmekanism:dense_control_circuit"
+  }
 }

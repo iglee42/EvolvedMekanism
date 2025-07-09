@@ -5,11 +5,9 @@
     "tag": "evolvedmekanism:better_gold"
   },
   "item_input": {
-    "ingredient": {
-      "tag": "evolvedmekanism:alloys/subatomic"
-    }
+    "tag": "evolvedmekanism:alloys/subatomic"
   },
   "output": {
-    "item": "evolvedmekanism:alloy_singular"
+    "id": "evolvedmekanism:alloy_singular"
   }
 }

@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 240,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_gear"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_veridium",
-        "amount": 576
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 576
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:gears/veridium"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:gears/veridium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 240,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_gear"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_veridium",
+    "amount": 576
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 576
+  },
+  "output": {
+    "tag": "c:gears/veridium"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gears/veridium"
+      }
+    }
+  ]
 }

@@ -1,25 +1,25 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/hypercharged"
-        },
-        "C": {
-            "tag": "c:circuits/overclocked"
-        },
-        "I": {
-            "tag": "c:ingots/uranium"
-        },
-        "P": {
-            "tag": "minecraft:planks"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/hypercharged"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:overclocked_tier_installer"
+    "C": {
+      "tag": "c:circuits/overclocked"
+    },
+    "I": {
+      "tag": "c:ingots/uranium"
+    },
+    "P": {
+      "tag": "minecraft:planks"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:overclocked_tier_installer"
+  }
 }

@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:nuggets/copper_alloy"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_copper_alloy",
-        "amount": 16
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/copper_alloy"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:nuggets/copper_alloy"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_copper_alloy",
+    "amount": 16
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/copper_alloy"
+      }
+    }
+  ]
 }

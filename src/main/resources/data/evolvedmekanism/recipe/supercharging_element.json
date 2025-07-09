@@ -1,22 +1,22 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "c:storage_blocks/alloys/singular"
-        },
-        "I": {
-            "tag": "c:pellets/plutonium"
-        },
-        "X": {
-            "item": "mekanism:superheating_element"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "c:storage_blocks/alloys/singular"
     },
-    "pattern": [
-        "AIA",
-        "IXI",
-        "AIA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:supercharging_element"
+    "I": {
+      "tag": "c:pellets/plutonium"
+    },
+    "X": {
+      "item": "mekanism:superheating_element"
     }
+  },
+  "pattern": [
+    "AIA",
+    "IXI",
+    "AIA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:supercharging_element"
+  }
 }

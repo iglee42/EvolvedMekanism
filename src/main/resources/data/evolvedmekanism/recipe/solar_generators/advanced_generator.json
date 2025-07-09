@@ -1,31 +1,31 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "mekanism:alloys/infused"
-        },
-        "C": {
-            "tag": "c:circuits/advanced"
-        },
-        "I": {
-            "tag": "c:ingots/osmium"
-        },
-        "P": {
-            "item": "mekanismgenerators:advanced_solar_generator"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/infused"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:advanced_solar_generator"
+    "C": {
+      "tag": "c:circuits/advanced"
     },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "mekanismgenerators"
-        }
-    ]
+    "I": {
+      "tag": "c:ingots/osmium"
+    },
+    "P": {
+      "item": "mekanismgenerators:advanced_solar_generator"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:advanced_solar_generator"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismgenerators"
+    }
+  ]
 }

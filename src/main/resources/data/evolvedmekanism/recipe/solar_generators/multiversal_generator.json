@@ -1,31 +1,31 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/exoversal"
-        },
-        "C": {
-            "tag": "c:circuits/multiversal"
-        },
-        "I": {
-            "tag": "c:ingots/netherite"
-        },
-        "P": {
-            "item": "evolvedmekanism:dense_solar_generator"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/exoversal"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:multiversal_solar_generator"
+    "C": {
+      "tag": "c:circuits/multiversal"
     },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "mekanismgenerators"
-        }
-    ]
+    "I": {
+      "tag": "c:ingots/netherite"
+    },
+    "P": {
+      "item": "evolvedmekanism:dense_solar_generator"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:multiversal_solar_generator"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismgenerators"
+    }
+  ]
 }

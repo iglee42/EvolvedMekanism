@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:dusts/saturlyte"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_saturlyte",
-        "amount": 144
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:dusts/saturlyte"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:dusts/saturlyte"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_saturlyte",
+    "amount": 144
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/saturlyte"
+      }
+    }
+  ]
 }

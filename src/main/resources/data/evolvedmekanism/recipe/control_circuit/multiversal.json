@@ -1,19 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/exoversal"
-        },
-        "C": {
-            "tag": "c:circuits/dense"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/exoversal"
     },
-    "pattern": [
-        " A ",
-        "ACA",
-        " A "
-    ],
-    "result": {
-        "item": "evolvedmekanism:multiversal_control_circuit"
+    "C": {
+      "tag": "c:circuits/dense"
     }
+  },
+  "pattern": [
+    " A ",
+    "ACA",
+    " A "
+  ],
+  "result": {
+    "id": "evolvedmekanism:multiversal_control_circuit"
+  }
 }

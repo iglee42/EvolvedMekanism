@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:nuggets/awakened_draconium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_awakened_draconium",
-        "amount": 16
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/awakened_draconium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:nuggets/awakened_draconium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_awakened_draconium",
+    "amount": 16
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/awakened_draconium"
+      }
+    }
+  ]
 }

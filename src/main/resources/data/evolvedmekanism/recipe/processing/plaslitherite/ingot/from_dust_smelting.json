@@ -1,9 +1,7 @@
 {
-    "type": "minecraft:smelting",
-    "cookingtime": 200,
-    "experience": 0.3,
-    "ingredient": {
-        "tag": "c:dusts/plaslitherite"
-    },
-    "result": "evolvedmekanism:ingot_plaslitherite"
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "tag": "c:dusts/plaslitherite",
+  "result": "evolvedmekanism:ingot_plaslitherite"
 }

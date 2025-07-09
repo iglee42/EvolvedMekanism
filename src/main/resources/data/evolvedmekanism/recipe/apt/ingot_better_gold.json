@@ -5,11 +5,9 @@
     "gas": "mekanism:spent_nuclear_waste"
   },
   "item_input": {
-    "ingredient": {
-      "tag": "c:ingots/gold"
-    }
+    "tag": "c:ingots/gold"
   },
   "output": {
-    "item": "evolvedmekanism:ingot_better_gold"
+    "id": "evolvedmekanism:ingot_better_gold"
   }
 }

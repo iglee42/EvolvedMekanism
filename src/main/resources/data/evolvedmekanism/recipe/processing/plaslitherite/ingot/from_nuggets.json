@@ -1,19 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "#": {
-            "tag": "c:nuggets/plaslitherite"
-        },
-        "P": {
-            "item": "evolvedmekanism:nugget_plaslitherite"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "c:nuggets/plaslitherite"
     },
-    "pattern": [
-        "###",
-        "#P#",
-        "###"
-    ],
-    "result": {
-        "item": "evolvedmekanism:ingot_plaslitherite"
+    "P": {
+      "item": "evolvedmekanism:nugget_plaslitherite"
     }
+  },
+  "pattern": [
+    "###",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "id": "evolvedmekanism:ingot_plaslitherite"
+  }
 }

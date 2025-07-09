@@ -1,19 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "#": {
-            "tag": "evolvedmekanism:alloys/hypercharged"
-        },
-        "P": {
-            "item": "evolvedmekanism:alloy_hypercharged"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "evolvedmekanism:alloys/hypercharged"
     },
-    "pattern": [
-        "###",
-        "#P#",
-        "###"
-    ],
-    "result": {
-        "item": "evolvedmekanism:block_alloy_hypercharged"
+    "P": {
+      "item": "evolvedmekanism:alloy_hypercharged"
     }
+  },
+  "pattern": [
+    "###",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "id": "evolvedmekanism:block_alloy_hypercharged"
+  }
 }

@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/singular"
-        },
-        "C": {
-            "tag": "c:circuits/dense"
-        },
-        "I": {
-            "tag": "c:ingots/bronze"
-        },
-        "P": {
-            "item": "evolvedmekanism:quantum_alloying_factory"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:dense_alloying_factory"
+    "C": {
+      "tag": "c:circuits/dense"
+    },
+    "I": {
+      "tag": "c:ingots/bronze"
+    },
+    "P": {
+      "item": "evolvedmekanism:quantum_alloying_factory"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:dense_alloying_factory"
+  }
 }

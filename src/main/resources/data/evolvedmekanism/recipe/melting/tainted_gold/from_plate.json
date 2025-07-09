@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:plates/tainted_gold"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_tainted_gold",
-        "amount": 144
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:plates/tainted_gold"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:plates/tainted_gold"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_tainted_gold",
+    "amount": 144
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:plates/tainted_gold"
+      }
+    }
+  ]
 }

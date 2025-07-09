@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 15,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_nugget"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_fluix",
-        "amount": 36
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 36
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:nuggets/fluix"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/fluix"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 15,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_nugget"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_fluix",
+    "amount": 36
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 36
+  },
+  "output": {
+    "tag": "c:nuggets/fluix"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/fluix"
+      }
+    }
+  ]
 }

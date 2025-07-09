@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:dusts/quartz"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_quartz",
-        "amount": 324
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:dusts/quartz"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:dusts/quartz"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_quartz",
+    "amount": 324
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/quartz"
+      }
+    }
+  ]
 }

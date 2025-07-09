@@ -1,19 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/creative"
-        },
-        "C": {
-            "tag": "c:circuits/multiversal"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/creative"
     },
-    "pattern": [
-        " A ",
-        "ACA",
-        " A "
-    ],
-    "result": {
-        "item": "evolvedmekanism:creative_control_circuit"
+    "C": {
+      "tag": "c:circuits/multiversal"
     }
+  },
+  "pattern": [
+    " A ",
+    "ACA",
+    " A "
+  ],
+  "result": {
+    "id": "evolvedmekanism:creative_control_circuit"
+  }
 }

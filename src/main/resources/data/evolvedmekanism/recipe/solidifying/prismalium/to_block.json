@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 540,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_storage_block"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_prismalium",
-        "amount": 1296
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 1296
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:storage_blocks/prismalium"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:storage_blocks/prismalium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 540,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_storage_block"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_prismalium",
+    "amount": 1296
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 1296
+  },
+  "output": {
+    "tag": "c:storage_blocks/prismalium"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:storage_blocks/prismalium"
+      }
+    }
+  ]
 }

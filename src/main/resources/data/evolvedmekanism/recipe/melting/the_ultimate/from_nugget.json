@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:nuggets/the_ultimate"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_the_ultimate",
-        "amount": 16
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/the_ultimate"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:nuggets/the_ultimate"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_the_ultimate",
+    "amount": 16
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/the_ultimate"
+      }
+    }
+  ]
 }

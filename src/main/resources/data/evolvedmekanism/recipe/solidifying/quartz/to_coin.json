@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 45,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_coin"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_quartz",
-        "amount": 108
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 108
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:coins/quartz"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/quartz"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 45,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_coin"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_quartz",
+    "amount": 108
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 108
+  },
+  "output": {
+    "tag": "c:coins/quartz"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/quartz"
+      }
+    }
+  ]
 }

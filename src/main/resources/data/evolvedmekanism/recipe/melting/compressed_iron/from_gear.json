@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:gears/compressed_iron"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_compressed_iron",
-        "amount": 576
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:gears/compressed_iron"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:gears/compressed_iron"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_compressed_iron",
+    "amount": 576
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gears/compressed_iron"
+      }
+    }
+  ]
 }

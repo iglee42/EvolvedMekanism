@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:rods/plaslitherite"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_plaslitherite",
-        "amount": 72
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:rods/plaslitherite"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:rods/plaslitherite"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_plaslitherite",
+    "amount": 72
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:rods/plaslitherite"
+      }
+    }
+  ]
 }

@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 60,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_ingot"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_redstone_alloy",
-        "amount": 144
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 144
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:ingots/redstone_alloy"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:ingots/redstone_alloy"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 60,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_ingot"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_redstone_alloy",
+    "amount": 144
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 144
+  },
+  "output": {
+    "tag": "c:ingots/redstone_alloy"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/redstone_alloy"
+      }
+    }
+  ]
 }

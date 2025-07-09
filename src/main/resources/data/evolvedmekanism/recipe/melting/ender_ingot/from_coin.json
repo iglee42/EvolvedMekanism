@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/ender_ingot"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_ender_ingot",
-        "amount": 48
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/ender_ingot"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/ender_ingot"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_ender_ingot",
+    "amount": 48
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/ender_ingot"
+      }
+    }
+  ]
 }

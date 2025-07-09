@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/subatomic"
-        },
-        "E": {
-            "item": "mekanism:energy_tablet"
-        },
-        "I": {
-            "tag": "c:gems/diamond"
-        },
-        "P": {
-            "item": "evolvedmekanism:overclocked_energy_cube"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/subatomic"
     },
-    "pattern": [
-        "AEA",
-        "IPI",
-        "AEA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:quantum_energy_cube"
+    "E": {
+      "item": "mekanism:energy_tablet"
+    },
+    "I": {
+      "tag": "c:gems/diamond"
+    },
+    "P": {
+      "item": "evolvedmekanism:overclocked_energy_cube"
     }
+  },
+  "pattern": [
+    "AEA",
+    "IPI",
+    "AEA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:quantum_energy_cube"
+  }
 }

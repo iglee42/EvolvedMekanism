@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:gears/silicon_bronze"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_silicon_bronze",
-        "amount": 576
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:gears/silicon_bronze"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:gears/silicon_bronze"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_silicon_bronze",
+    "amount": 576
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gears/silicon_bronze"
+      }
+    }
+  ]
 }

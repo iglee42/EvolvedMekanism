@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 67,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_rod"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_quartz",
-        "amount": 162
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 162
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:rods/quartz"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:rods/quartz"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 67,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_rod"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_quartz",
+    "amount": 162
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 162
+  },
+  "output": {
+    "tag": "c:rods/quartz"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:rods/quartz"
+      }
+    }
+  ]
 }

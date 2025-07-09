@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/creative"
-        },
-        "C": {
-            "tag": "c:circuits/creative"
-        },
-        "I": {
-            "item": "minecraft:nether_star"
-        },
-        "P": {
-            "item": "evolvedmekanism:multiversal_smelting_factory"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/creative"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:creative_smelting_factory"
+    "C": {
+      "tag": "c:circuits/creative"
+    },
+    "I": {
+      "item": "minecraft:nether_star"
+    },
+    "P": {
+      "item": "evolvedmekanism:multiversal_smelting_factory"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:creative_smelting_factory"
+  }
 }

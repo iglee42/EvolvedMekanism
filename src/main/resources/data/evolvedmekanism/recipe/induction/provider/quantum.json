@@ -1,22 +1,22 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "#": {
-            "item": "evolvedmekanism:quantum_energy_cube"
-        },
-        "C": {
-            "tag": "c:circuits/quantum"
-        },
-        "P": {
-            "item": "evolvedmekanism:overclocked_induction_provider"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "evolvedmekanism:quantum_energy_cube"
     },
-    "pattern": [
-        "CPC",
-        "P#P",
-        "CPC"
-    ],
-    "result": {
-        "item": "evolvedmekanism:quantum_induction_provider"
+    "C": {
+      "tag": "c:circuits/quantum"
+    },
+    "P": {
+      "item": "evolvedmekanism:overclocked_induction_provider"
     }
+  },
+  "pattern": [
+    "CPC",
+    "P#P",
+    "CPC"
+  ],
+  "result": {
+    "id": "evolvedmekanism:quantum_induction_provider"
+  }
 }

@@ -1,22 +1,22 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/subatomic"
-        },
-        "O": {
-            "tag": "c:ingots/osmium"
-        },
-        "P": {
-            "item": "evolvedmekanism:overclocked_chemical_tank"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/subatomic"
     },
-    "pattern": [
-        "AOA",
-        "OPO",
-        "AOA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:quantum_chemical_tank"
+    "O": {
+      "tag": "c:ingots/osmium"
+    },
+    "P": {
+      "item": "evolvedmekanism:overclocked_chemical_tank"
     }
+  },
+  "pattern": [
+    "AOA",
+    "OPO",
+    "AOA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:quantum_chemical_tank"
+  }
 }

@@ -1,11 +1,9 @@
 {
   "type": "mekanism:enriching",
   "input": {
-    "ingredient": {
-      "tag": "c:dusts/plaslitherite"
-    }
+    "tag": "c:dusts/plaslitherite"
   },
   "output": {
-    "item": "evolvedmekanism:enriched_plaslitherite"
+    "id": "evolvedmekanism:enriched_plaslitherite"
   }
 }

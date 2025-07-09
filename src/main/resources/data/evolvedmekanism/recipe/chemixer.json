@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/singular"
-        },
-        "C": {
-            "tag": "c:circuits/dense"
-        },
-        "O": {
-            "tag": "c:ingots/osmium"
-        },
-        "P": {
-            "item": "evolvedmekanism:alloyer"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
     },
-    "pattern": [
-        "ACA",
-        "OPO",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:chemixer"
+    "C": {
+      "tag": "c:circuits/dense"
+    },
+    "O": {
+      "tag": "c:ingots/osmium"
+    },
+    "P": {
+      "item": "evolvedmekanism:alloyer"
     }
+  },
+  "pattern": [
+    "ACA",
+    "OPO",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:chemixer"
+  }
 }

@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/pulsating_alloy"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_pulsating_alloy",
-        "amount": 48
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/pulsating_alloy"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/pulsating_alloy"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_pulsating_alloy",
+    "amount": 48
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/pulsating_alloy"
+      }
+    }
+  ]
 }

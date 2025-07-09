@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "tag": "c:coins/awakened_supremium"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_awakened_supremium",
-        "amount": 48
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/awakened_supremium"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:coins/awakened_supremium"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_awakened_supremium",
+    "amount": 48
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/awakened_supremium"
+      }
+    }
+  ]
 }

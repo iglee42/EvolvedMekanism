@@ -1,22 +1,22 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "category": "equipment",
-    "key": {
-        "I": {
-            "tag": "c:ingots/better_gold"
-        }
-    },
-    "pattern": [
-        "I I",
-        "I I"
-    ],
-    "result": {
-        "item": "evolvedmekanism:better_gold_boots"
-    },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "mekanismtools"
-        }
-    ]
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "tag": "c:ingots/better_gold"
+    }
+  },
+  "pattern": [
+    "I I",
+    "I I"
+  ],
+  "result": {
+    "id": "evolvedmekanism:better_gold_boots"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
 }

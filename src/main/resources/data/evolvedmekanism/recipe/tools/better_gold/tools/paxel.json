@@ -1,32 +1,32 @@
 {
-    "type": "mekanismtools:paxel",
-    "category": "equipment",
-    "key": {
-        "A": {
-            "tag": "c:tools/axes/better_gold"
-        },
-        "P": {
-            "tag": "c:tools/pickaxes/better_gold"
-        },
-        "R": {
-            "tag": "c:rods/wooden"
-        },
-        "S": {
-            "tag": "c:tools/shovels/better_gold"
-        }
+  "type": "mekanismtools:paxel",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:tools/axes/better_gold"
     },
-    "pattern": [
-        "APS",
-        " R ",
-        " R "
-    ],
-    "result": {
-        "item": "evolvedmekanism:better_gold_paxel"
+    "P": {
+      "tag": "c:tools/pickaxes/better_gold"
     },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "mekanismtools"
-        }
-    ]
+    "R": {
+      "tag": "c:rods/wooden"
+    },
+    "S": {
+      "tag": "c:tools/shovels/better_gold"
+    }
+  },
+  "pattern": [
+    "APS",
+    " R ",
+    " R "
+  ],
+  "result": {
+    "id": "evolvedmekanism:better_gold_paxel"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
 }

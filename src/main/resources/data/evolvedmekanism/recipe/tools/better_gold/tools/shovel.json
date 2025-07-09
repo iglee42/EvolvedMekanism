@@ -1,26 +1,26 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "category": "equipment",
-    "key": {
-        "I": {
-            "tag": "c:ingots/better_gold"
-        },
-        "R": {
-            "tag": "c:rods/wooden"
-        }
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "tag": "c:ingots/better_gold"
     },
-    "pattern": [
-        "I",
-        "R",
-        "R"
-    ],
-    "result": {
-        "item": "evolvedmekanism:better_gold_shovel"
-    },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "mekanismtools"
-        }
-    ]
+    "R": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "I",
+    "R",
+    "R"
+  ],
+  "result": {
+    "id": "evolvedmekanism:better_gold_shovel"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
 }

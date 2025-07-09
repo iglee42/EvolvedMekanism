@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:chemixing",
-    "extra_input": {
-        "amount": 3,
-        "ingredient": {
-            "item": "mekanism:hdpe_sheet"
-        }
-    },
-    "chemical_input": {
-        "amount": 900,
-        "gas": "mekanism:lithium"
-    },
-    "main_input": {
-        "ingredient": {
-            "tag": "c:storage_blocks/netherite"
-        }
-    },
-    "output": {
-        "item": "evolvedmekanism:block_plaslitherite"
+  "type": "evolvedmekanism:chemixing",
+  "extra_input": {
+    "amount": 3,
+    "ingredient": {
+      "item": "mekanism:hdpe_sheet"
     }
+  },
+  "chemical_input": {
+    "amount": 900,
+    "gas": "mekanism:lithium"
+  },
+  "main_input": {
+    "tag": "c:storage_blocks/netherite"
+  },
+  "output": {
+    "id": "evolvedmekanism:block_plaslitherite"
+  }
 }

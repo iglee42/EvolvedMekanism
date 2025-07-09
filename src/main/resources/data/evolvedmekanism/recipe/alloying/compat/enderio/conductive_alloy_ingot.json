@@ -1,27 +1,21 @@
 {
-    "type": "evolvedmekanism:alloying",
-    "extra_input": {
-        "ingredient": {
-            "tag": "c:ingots/copper_alloy"
-        }
-    },
-    "second_extra_input": {
-        "ingredient": {
-            "tag": "c:ingots/iron"
-        }
-    },
-    "main_input": {
-        "ingredient": {
-            "tag": "c:dusts/redstone"
-        }
-    },
-    "output": {
-        "item": "enderio:conductive_alloy_ingot"
-    },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "enderio"
-        }
-    ]
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "tag": "c:ingots/copper_alloy"
+  },
+  "second_extra_input": {
+    "tag": "c:ingots/iron"
+  },
+  "main_input": {
+    "tag": "c:dusts/redstone"
+  },
+  "output": {
+    "id": "enderio:conductive_alloy_ingot"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio"
+    }
+  ]
 }

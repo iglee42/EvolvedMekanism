@@ -1,12 +1,10 @@
 {
-    "type": "mekanism:infusion_conversion",
-    "input": {
-        "ingredient": {
-            "tag": "evolvedmekanism:enriched/plaslitherite"
-        }
-    },
-    "output": {
-        "amount": 80,
-        "infuse_type": "evolvedmekanism:plaslitherite"
-    }
+  "type": "mekanism:infusion_conversion",
+  "input": {
+    "tag": "evolvedmekanism:enriched/plaslitherite"
+  },
+  "output": {
+    "amount": 80,
+    "infuse_type": "evolvedmekanism:plaslitherite"
+  }
 }

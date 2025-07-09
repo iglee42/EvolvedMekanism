@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:chemixing",
-    "extra_input": {
-        "amount": 3,
-        "ingredient": {
-            "item": "mekanism:hdpe_pellet"
-        }
-    },
-    "chemical_input": {
-        "amount": 100,
-        "gas": "mekanism:lithium"
-    },
-    "main_input": {
-        "ingredient": {
-            "tag": "c:ingots/netherite"
-        }
-    },
-    "output": {
-        "item": "evolvedmekanism:ingot_plaslitherite"
+  "type": "evolvedmekanism:chemixing",
+  "extra_input": {
+    "amount": 3,
+    "ingredient": {
+      "item": "mekanism:hdpe_pellet"
     }
+  },
+  "chemical_input": {
+    "amount": 100,
+    "gas": "mekanism:lithium"
+  },
+  "main_input": {
+    "tag": "c:ingots/netherite"
+  },
+  "output": {
+    "id": "evolvedmekanism:ingot_plaslitherite"
+  }
 }

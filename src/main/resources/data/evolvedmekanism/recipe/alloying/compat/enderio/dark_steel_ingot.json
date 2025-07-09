@@ -1,27 +1,21 @@
 {
-    "type": "evolvedmekanism:alloying",
-    "extra_input": {
-        "ingredient": {
-            "tag": "c:ingots/iron"
-        }
-    },
-    "second_extra_input": {
-        "ingredient": {
-            "tag": "c:dusts/coal"
-        }
-    },
-    "main_input": {
-        "ingredient": {
-            "tag": "c:obsidian"
-        }
-    },
-    "output": {
-        "item": "enderio:dark_steel_ingot"
-    },
-    "conditions": [
-        {
-            "type": "neoforge:mod_loaded",
-            "modid": "enderio"
-        }
-    ]
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "tag": "c:ingots/iron"
+  },
+  "second_extra_input": {
+    "tag": "c:dusts/coal"
+  },
+  "main_input": {
+    "tag": "c:obsidian"
+  },
+  "output": {
+    "id": "enderio:dark_steel_ingot"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio"
+    }
+  ]
 }

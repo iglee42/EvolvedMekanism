@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 6,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_nugget"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_skyjade",
-        "amount": 16
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 16
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:nuggets/skyjade"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:nuggets/skyjade"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 6,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_nugget"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_skyjade",
+    "amount": 16
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 16
+  },
+  "output": {
+    "tag": "c:nuggets/skyjade"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/skyjade"
+      }
+    }
+  ]
 }

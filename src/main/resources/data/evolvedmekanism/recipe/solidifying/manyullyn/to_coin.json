@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 20,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_coin"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_manyullyn",
-        "amount": 48
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 48
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:coins/manyullyn"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:coins/manyullyn"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 20,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_coin"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_manyullyn",
+    "amount": 48
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 48
+  },
+  "output": {
+    "tag": "c:coins/manyullyn"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/manyullyn"
+      }
+    }
+  ]
 }

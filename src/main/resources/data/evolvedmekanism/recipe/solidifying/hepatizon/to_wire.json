@@ -1,31 +1,29 @@
 {
-    "type": "evolvedmekanism:solidifying",
-    "duration": 30,
-    "item_input": {
-        "ingredient": {
-            "item": "evolvedmekanism:mold_wire"
-        }
-    },
-    "fluid_input": {
-        "fluid": "evolvedmekanism:molten_hepatizon",
-        "amount": 72
-    },
-    "extra_input": {
-        "fluid": "mekanism:oxygen",
-        "amount": 72
-    },
-    "output": {
-        "ingredient": {
-            "tag": "c:wires/hepatizon"
-        }
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:wires/hepatizon"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:solidifying",
+  "duration": 30,
+  "item_input": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_wire"
+    }
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_hepatizon",
+    "amount": 72
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 72
+  },
+  "output": {
+    "tag": "c:wires/hepatizon"
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/hepatizon"
+      }
+    }
+  ]
 }

@@ -5,11 +5,9 @@
     "tag": "evolvedmekanism:plaslitherite"
   },
   "item_input": {
-    "ingredient": {
-      "tag": "evolvedmekanism:alloys/singular"
-    }
+    "tag": "evolvedmekanism:alloys/singular"
   },
   "output": {
-    "item": "evolvedmekanism:alloy_exoversal"
+    "id": "evolvedmekanism:alloy_exoversal"
   }
 }

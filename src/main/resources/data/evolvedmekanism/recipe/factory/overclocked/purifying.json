@@ -1,25 +1,25 @@
 {
-    "type": "mekanism:mek_data",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/hypercharged"
-        },
-        "C": {
-            "tag": "c:circuits/overclocked"
-        },
-        "I": {
-            "tag": "c:ingots/uranium"
-        },
-        "P": {
-            "item": "mekanism:ultimate_purifying_factory"
-        }
+  "type": "mekanism:mek_data",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/hypercharged"
     },
-    "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
-    ],
-    "result": {
-        "item": "evolvedmekanism:overclocked_purifying_factory"
+    "C": {
+      "tag": "c:circuits/overclocked"
+    },
+    "I": {
+      "tag": "c:ingots/uranium"
+    },
+    "P": {
+      "item": "mekanism:ultimate_purifying_factory"
     }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "id": "evolvedmekanism:overclocked_purifying_factory"
+  }
 }
