@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/subatomic"
-        },
-        "P": {
-            "item": "evolvedmekanism:overclocked_mechanical_pipe"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/subatomic"
     },
-    "pattern": [
-        "PPP",
-        "PAP",
-        "PPP"
-    ],
-    "result": {
-        "count": 8,
-        "item": "evolvedmekanism:quantum_mechanical_pipe"
+    "P": {
+      "item": "evolvedmekanism:overclocked_mechanical_pipe"
     }
+  },
+  "pattern": [
+    "PPP",
+    "PAP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "evolvedmekanism:quantum_mechanical_pipe"
+  }
 }

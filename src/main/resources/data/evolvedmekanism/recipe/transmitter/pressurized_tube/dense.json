@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/singular"
-        },
-        "P": {
-            "item": "evolvedmekanism:quantum_pressurized_tube"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
     },
-    "pattern": [
-        "PPP",
-        "PAP",
-        "PPP"
-    ],
-    "result": {
-        "count": 8,
-        "item": "evolvedmekanism:dense_pressurized_tube"
+    "P": {
+      "item": "evolvedmekanism:quantum_pressurized_tube"
     }
+  },
+  "pattern": [
+    "PPP",
+    "PAP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "evolvedmekanism:dense_pressurized_tube"
+  }
 }

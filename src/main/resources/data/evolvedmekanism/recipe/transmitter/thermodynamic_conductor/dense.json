@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/singular"
-        },
-        "P": {
-            "item": "evolvedmekanism:quantum_thermodynamic_conductor"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
     },
-    "pattern": [
-        "PPP",
-        "PAP",
-        "PPP"
-    ],
-    "result": {
-        "count": 8,
-        "item": "evolvedmekanism:dense_thermodynamic_conductor"
+    "P": {
+      "item": "evolvedmekanism:quantum_thermodynamic_conductor"
     }
+  },
+  "pattern": [
+    "PPP",
+    "PAP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "evolvedmekanism:dense_thermodynamic_conductor"
+  }
 }

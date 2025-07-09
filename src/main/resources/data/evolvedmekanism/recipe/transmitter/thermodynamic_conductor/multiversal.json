@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "key": {
-        "A": {
-            "tag": "evolvedmekanism:alloys/exoversal"
-        },
-        "P": {
-            "item": "evolvedmekanism:dense_thermodynamic_conductor"
-        }
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/exoversal"
     },
-    "pattern": [
-        "PPP",
-        "PAP",
-        "PPP"
-    ],
-    "result": {
-        "count": 8,
-        "item": "evolvedmekanism:multiversal_thermodynamic_conductor"
+    "P": {
+      "item": "evolvedmekanism:dense_thermodynamic_conductor"
     }
+  },
+  "pattern": [
+    "PPP",
+    "PAP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "evolvedmekanism:multiversal_thermodynamic_conductor"
+  }
 }

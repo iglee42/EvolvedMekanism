@@ -1,12 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "evolvedmekanism:block_alloy_creative"
-        }
-    ],
-    "result": {
-        "count": 9,
-        "item": "evolvedmekanism:alloy_creative"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "evolvedmekanism:block_alloy_creative"
     }
+  ],
+  "result": {
+    "count": 9,
+    "id": "evolvedmekanism:alloy_creative"
+  }
 }
