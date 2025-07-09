@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.List;
 
-@Mixin(value = TileEntityMekanism.class,remap = false)
+@Mixin(value = TileEntityMekanism.class)
 public class TileEntityMekanismMixin {
 
     @Redirect(method = "load",at = @At(value = "INVOKE", target = "Lmekanism/api/DataHandlerUtils;readContainers(Ljava/util/List;Lnet/minecraft/nbt/ListTag;)V"))

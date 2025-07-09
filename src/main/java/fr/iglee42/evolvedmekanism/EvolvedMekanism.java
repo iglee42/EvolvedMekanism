@@ -6,6 +6,7 @@ import fr.iglee42.emtools.client.EMToolsClientRegistration;
 import fr.iglee42.emtools.config.EMToolsConfig;
 import fr.iglee42.emtools.registries.EMToolsItems;
 import fr.iglee42.emtools.registries.EMToolsTags;
+import fr.iglee42.emtools.utils.EMMobEquipmentHelper;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
@@ -13,6 +14,7 @@ import mekanism.api.text.EnumColor;
 import mekanism.common.tags.MekanismTags;
 import mekanism.tools.client.ShieldTextures;
 import mekanism.tools.common.MekanismTools;
+import mekanism.tools.common.MobEquipmentHelper;
 import net.minecraft.network.chat.Component;
 import org.slf4j.Logger;
 
@@ -104,6 +106,8 @@ public class EvolvedMekanism {
 
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(this::serverStopped);
+
+        if (ModsCompats.MEKANISMTOOLS.isLoaded()) MinecraftForge.EVENT_BUS.addListener(EMMobEquipmentHelper::onLivingSpecialSpawn);
 
         versionNumber = new Version(ModLoadingContext.get().getActiveContainer());
         packetHandler = new EMPacketHandler();
