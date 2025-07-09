@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "evolvedmekanism:block_refined_redstone"
+                }
+            ],
+            "name": "main",
+            "rolls": 1.0
+        }
+    ],
+    "random_sequence": "evolvedmekanism:blocks/block_refined_redstone"
+}
