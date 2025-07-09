@@ -1,16 +1,16 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 240,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_gear"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_ludicrite",
         "amount": 576
     },
-    "extraInput": {
+    "extra_input": {
         "fluid": "mekanism:oxygen",
         "amount": 576
     },

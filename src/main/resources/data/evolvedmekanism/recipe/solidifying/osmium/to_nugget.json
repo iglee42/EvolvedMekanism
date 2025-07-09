@@ -1,16 +1,16 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 6,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_nugget"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_osmium",
         "amount": 16
     },
-    "extraInput": {
+    "extra_input": {
         "fluid": "mekanism:oxygen",
         "amount": 16
     },

@@ -1,16 +1,16 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 30,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_wire"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_bronze",
         "amount": 72
     },
-    "extraInput": {
+    "extra_input": {
         "fluid": "mekanism:oxygen",
         "amount": 72
     },

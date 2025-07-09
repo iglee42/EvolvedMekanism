@@ -4,7 +4,7 @@
     "amount": 20,
     "tag": "evolvedmekanism:better_gold"
   },
-  "itemInput": {
+  "item_input": {
     "ingredient": {
       "tag": "evolvedmekanism:alloys/subatomic"
     }

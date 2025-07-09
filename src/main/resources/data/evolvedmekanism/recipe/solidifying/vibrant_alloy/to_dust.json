@@ -1,12 +1,12 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 60,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_dust"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_vibrant_alloy",
         "amount": 144
     },

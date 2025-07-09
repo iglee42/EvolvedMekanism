@@ -1,12 +1,12 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 30,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_rod"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_zanite",
         "amount": 72
     },

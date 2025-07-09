@@ -1,12 +1,12 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 540,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_storage_block"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_terrasteel",
         "amount": 1296
     },

@@ -1,16 +1,16 @@
 {
     "type": "evolvedmekanism:chemixing",
-    "extraInput": {
+    "extra_input": {
         "amount": 3,
         "ingredient": {
             "item": "mekanism:hdpe_pellet"
         }
     },
-    "gasInput": {
+    "chemical_input": {
         "amount": 100,
         "gas": "mekanism:lithium"
     },
-    "mainInput": {
+    "main_input": {
         "ingredient": {
             "tag": "c:ingots/netherite"
         }

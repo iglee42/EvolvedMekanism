@@ -1,18 +1,18 @@
 {
     "type": "evolvedmekanism:alloying",
-    "extraInput": {
+    "extra_input": {
         "amount": 4,
         "ingredient": {
             "item": "minecraft:chorus_fruit"
         }
     },
-    "secondExtraInput": {
+    "second_extra_input": {
         "amount": 4,
         "ingredient": {
             "tag": "c:gems/amethyst"
         }
     },
-    "mainInput": {
+    "main_input": {
         "amount": 2,
         "ingredient": {
             "tag": "c:ingots/gold"

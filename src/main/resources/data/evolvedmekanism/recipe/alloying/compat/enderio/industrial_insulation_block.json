@@ -1,16 +1,16 @@
 {
     "type": "evolvedmekanism:alloying",
-    "extraInput": {
+    "extra_input": {
         "ingredient": {
             "tag": "c:dusts/lapis"
         }
     },
-    "secondExtraInput": {
+    "second_extra_input": {
         "ingredient": {
             "tag": "enderio:insulation_metals"
         }
     },
-    "mainInput": {
+    "main_input": {
         "ingredient": {
             "tag": "minecraft:wool"
         }

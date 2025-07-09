@@ -4,7 +4,7 @@
     "amount": 100,
     "gas": "mekanism:spent_nuclear_waste"
   },
-  "itemInput": {
+  "item_input": {
     "ingredient": {
       "tag": "c:ingots/gold"
     }

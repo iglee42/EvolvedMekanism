@@ -1,16 +1,16 @@
 {
     "type": "evolvedmekanism:alloying",
-    "extraInput": {
+    "extra_input": {
         "ingredient": {
             "tag": "c:ingots/dark_steel"
         }
     },
-    "secondExtraInput": {
+    "second_extra_input": {
         "ingredient": {
             "tag": "c:end_stones"
         }
     },
-    "mainInput": {
+    "main_input": {
         "ingredient": {
             "tag": "c:obsidian"
         }

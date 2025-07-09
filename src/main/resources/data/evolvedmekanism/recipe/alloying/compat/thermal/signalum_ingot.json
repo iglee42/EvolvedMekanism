@@ -1,17 +1,17 @@
 {
     "type": "evolvedmekanism:alloying",
-    "extraInput": {
+    "extra_input": {
         "ingredient": {
             "tag": "c:ingots/silver"
         }
     },
-    "secondExtraInput": {
+    "second_extra_input": {
         "amount": 4,
         "ingredient": {
             "tag": "c:dusts/redstone"
         }
     },
-    "mainInput": {
+    "main_input": {
         "amount": 3,
         "ingredient": {
             "tag": "c:ingots/copper"

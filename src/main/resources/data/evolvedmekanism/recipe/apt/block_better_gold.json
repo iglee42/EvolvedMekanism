@@ -4,7 +4,7 @@
     "amount": 900,
     "gas": "mekanism:spent_nuclear_waste"
   },
-  "itemInput": {
+  "item_input": {
     "ingredient": {
       "tag": "c:storage_blocks/gold"
     }

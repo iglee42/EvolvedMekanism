@@ -1,17 +1,17 @@
 {
     "type": "evolvedmekanism:alloying",
-    "extraInput": {
+    "extra_input": {
         "ingredient": {
             "tag": "c:ingots/nether_brick"
         }
     },
-    "secondExtraInput": {
+    "second_extra_input": {
         "amount": 4,
         "ingredient": {
             "tag": "c:crops/nether_wart"
         }
     },
-    "mainInput": {
+    "main_input": {
         "amount": 6,
         "ingredient": {
             "item": "minecraft:clay_ball"

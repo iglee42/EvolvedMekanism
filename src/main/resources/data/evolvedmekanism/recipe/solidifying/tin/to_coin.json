@@ -1,12 +1,12 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 20,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_coin"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_tin",
         "amount": 48
     },

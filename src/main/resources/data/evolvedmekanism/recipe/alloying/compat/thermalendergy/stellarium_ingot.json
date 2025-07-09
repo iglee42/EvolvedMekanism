@@ -1,18 +1,18 @@
 {
     "type": "evolvedmekanism:alloying",
-    "extraInput": {
+    "extra_input": {
         "amount": 4,
         "ingredient": {
             "tag": "c:ingots/netherite"
         }
     },
-    "secondExtraInput": {
+    "second_extra_input": {
         "amount": 4,
         "ingredient": {
             "item": "minecraft:clay_ball"
         }
     },
-    "mainInput": {
+    "main_input": {
         "ingredient": {
             "tag": "c:nether_stars"
         }

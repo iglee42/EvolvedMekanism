@@ -1,12 +1,12 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 30,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_wire"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_soulsteel",
         "amount": 72
     },

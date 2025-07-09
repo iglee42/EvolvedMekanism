@@ -1,16 +1,16 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 1215,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_storage_block"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_quartz",
         "amount": 2916
     },
-    "extraInput": {
+    "extra_input": {
         "fluid": "mekanism:oxygen",
         "amount": 2916
     },

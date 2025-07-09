@@ -1,18 +1,18 @@
 {
     "type": "evolvedmekanism:alloying",
-    "extraInput": {
+    "extra_input": {
         "amount": 3,
         "ingredient": {
             "tag": "c:ingots/lead"
         }
     },
-    "secondExtraInput": {
+    "second_extra_input": {
         "amount": 2,
         "ingredient": {
             "tag": "c:ender_pearls"
         }
     },
-    "mainInput": {
+    "main_input": {
         "ingredient": {
             "tag": "c:dusts/diamond"
         }

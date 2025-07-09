@@ -1,16 +1,16 @@
 {
     "type": "evolvedmekanism:chemixing",
-    "extraInput": {
+    "extra_input": {
         "amount": 3,
         "ingredient": {
             "item": "mekanism:hdpe_sheet"
         }
     },
-    "gasInput": {
+    "chemical_input": {
         "amount": 900,
         "gas": "mekanism:lithium"
     },
-    "mainInput": {
+    "main_input": {
         "ingredient": {
             "tag": "c:storage_blocks/netherite"
         }

@@ -1,17 +1,17 @@
 {
     "type": "evolvedmekanism:alloying",
-    "extraInput": {
+    "extra_input": {
         "ingredient": {
             "item": "minecraft:beetroot"
         }
     },
-    "secondExtraInput": {
+    "second_extra_input": {
         "amount": 6,
         "ingredient": {
             "item": "minecraft:egg"
         }
     },
-    "mainInput": {
+    "main_input": {
         "amount": 3,
         "ingredient": {
             "item": "minecraft:clay_ball"

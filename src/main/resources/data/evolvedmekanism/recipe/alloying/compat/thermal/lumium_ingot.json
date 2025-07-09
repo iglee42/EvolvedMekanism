@@ -1,17 +1,17 @@
 {
     "type": "evolvedmekanism:alloying",
-    "extraInput": {
+    "extra_input": {
         "ingredient": {
             "tag": "c:ingots/silver"
         }
     },
-    "secondExtraInput": {
+    "second_extra_input": {
         "amount": 2,
         "ingredient": {
             "tag": "c:dusts/glowstone"
         }
     },
-    "mainInput": {
+    "main_input": {
         "amount": 3,
         "ingredient": {
             "tag": "c:ingots/tin"

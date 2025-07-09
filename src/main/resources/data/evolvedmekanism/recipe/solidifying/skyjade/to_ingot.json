@@ -1,16 +1,16 @@
 {
     "type": "evolvedmekanism:solidifying",
     "duration": 60,
-    "itemInput": {
+    "item_input": {
         "ingredient": {
             "item": "evolvedmekanism:mold_ingot"
         }
     },
-    "fluidInput": {
+    "fluid_input": {
         "fluid": "evolvedmekanism:molten_skyjade",
         "amount": 144
     },
-    "extraInput": {
+    "extra_input": {
         "fluid": "mekanism:oxygen",
         "amount": 144
     },
