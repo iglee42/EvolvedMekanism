@@ -9,5 +9,6 @@
   },
   "output": {
     "id": "evolvedmekanism:alloy_hypercharged"
-  }
+  },
+  "per_tick_usage": true
 }

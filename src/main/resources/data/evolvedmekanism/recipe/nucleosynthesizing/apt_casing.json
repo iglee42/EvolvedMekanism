@@ -10,5 +10,6 @@
   },
   "output": {
     "id": "evolvedmekanism:apt_casing"
-  }
+  },
+  "per_tick_usage": true
 }

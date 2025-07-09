@@ -9,5 +9,6 @@
   },
   "output": {
     "id": "evolvedmekanism:alloy_exoversal"
-  }
+  },
+  "per_tick_usage": true
 }

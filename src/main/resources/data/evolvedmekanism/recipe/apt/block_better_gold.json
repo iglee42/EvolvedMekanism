@@ -9,5 +9,6 @@
   },
   "output": {
     "id": "evolvedmekanism:block_better_gold"
-  }
+  },
+  "per_tick_usage": true
 }

@@ -10,5 +10,6 @@
   },
   "output": {
     "id": "evolvedmekanism:alloy_subatomic"
-  }
+  },
+  "per_tick_usage": true
 }
