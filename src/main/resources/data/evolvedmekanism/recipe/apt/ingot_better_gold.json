@@ -1,6 +1,6 @@
 {
   "type": "evolvedmekanism:apt",
-  "chemicalInput": {
+  "chemical_input": {
     "amount": 100,
     "gas": "mekanism:spent_nuclear_waste"
   },

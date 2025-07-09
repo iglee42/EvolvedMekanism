@@ -10,7 +10,7 @@
         "fluid": "evolvedmekanism:molten_steel",
         "amount": 1296
     },
-    "extraInput": {
+    "extra_input": {
         "fluid": "mekanism:oxygen",
         "amount": 1296
     },

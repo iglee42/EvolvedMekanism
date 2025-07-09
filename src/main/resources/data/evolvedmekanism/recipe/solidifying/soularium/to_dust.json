@@ -10,7 +10,7 @@
         "fluid": "evolvedmekanism:molten_soularium",
         "amount": 144
     },
-    "extraInput": {
+    "extra_input": {
         "fluid": "mekanism:oxygen",
         "amount": 144
     },

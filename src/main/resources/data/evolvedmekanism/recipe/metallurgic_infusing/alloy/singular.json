@@ -1,6 +1,6 @@
 {
   "type": "mekanism:metallurgic_infusing",
-  "chemicalInput": {
+  "chemical_input": {
     "amount": 20,
     "tag": "evolvedmekanism:better_gold"
   },
