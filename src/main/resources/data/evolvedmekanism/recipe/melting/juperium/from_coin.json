@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:coins/juperium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_juperium",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coins/juperium"
+            }
+        }
+    ]
+}

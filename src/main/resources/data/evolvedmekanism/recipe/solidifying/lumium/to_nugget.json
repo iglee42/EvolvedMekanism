@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 6,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_nugget"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_lumium",
+        "amount": 16
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 16
+    },
+    "output": {
+        "tag": "c:nuggets/lumium"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:nuggets/lumium"
+            }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "I": {
+            "tag": "c:ingots/better_gold"
+        }
+    },
+    "pattern": [
+        "III",
+        "I I"
+    ],
+    "result": {
+        "item": "evolvedmekanism:better_gold_helmet"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

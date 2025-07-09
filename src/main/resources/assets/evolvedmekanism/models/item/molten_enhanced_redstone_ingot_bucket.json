@@ -1,1 +1,1 @@
-{"parent":"forge:item/bucket","fluid":"evolvedmekanism:molten_enhanced_redstone_ingot","loader":"forge:fluid_container"}
+{"parent":"neoforge:item/bucket","fluid":"evolvedmekanism:molten_enhanced_redstone_ingot","loader":"neoforge:fluid_container"}

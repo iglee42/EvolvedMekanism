@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:storage_blocks/awakened_draconium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_awakened_draconium",
+        "amount": 1296
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:storage_blocks/awakened_draconium"
+            }
+        }
+    ]
+}

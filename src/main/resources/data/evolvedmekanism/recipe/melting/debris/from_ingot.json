@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+        "item": "minecraft:netherite_scrap"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_debris",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:ores/netherite_scrap"
+            }
+        }
+    ]
+}

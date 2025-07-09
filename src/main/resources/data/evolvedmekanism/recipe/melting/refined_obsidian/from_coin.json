@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:coins/refined_obsidian"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_refined_obsidian",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coins/refined_obsidian"
+            }
+        }
+    ]
+}

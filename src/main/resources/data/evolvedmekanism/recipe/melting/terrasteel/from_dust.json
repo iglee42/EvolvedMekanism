@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:dusts/terrasteel"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_terrasteel",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:dusts/terrasteel"
+            }
+        }
+    ]
+}

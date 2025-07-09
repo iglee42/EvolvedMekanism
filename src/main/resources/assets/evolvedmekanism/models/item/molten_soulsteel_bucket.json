@@ -1,1 +1,1 @@
-{"parent":"forge:item/bucket","fluid":"evolvedmekanism:molten_soulsteel","loader":"forge:fluid_container"}
+{"parent":"neoforge:item/bucket","fluid":"evolvedmekanism:molten_soulsteel","loader":"neoforge:fluid_container"}

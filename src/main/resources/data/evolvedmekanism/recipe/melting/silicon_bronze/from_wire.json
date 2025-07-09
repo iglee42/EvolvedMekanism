@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:wires/silicon_bronze"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_silicon_bronze",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:wires/silicon_bronze"
+            }
+        }
+    ]
+}

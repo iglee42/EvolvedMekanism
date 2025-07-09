@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 15,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_nugget"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_fluix",
+        "amount": 36
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 36
+    },
+    "output": {
+        "tag": "c:nuggets/fluix"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:nuggets/fluix"
+            }
+        }
+    ]
+}

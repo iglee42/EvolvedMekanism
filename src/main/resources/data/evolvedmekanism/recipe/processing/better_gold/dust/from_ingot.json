@@ -1,0 +1,11 @@
+{
+    "type": "mekanism:crushing",
+    "input": {
+        "ingredient": {
+            "tag": "c:ingots/better_gold"
+        }
+    },
+    "output": {
+        "item": "evolvedmekanism:dust_better_gold"
+    }
+}

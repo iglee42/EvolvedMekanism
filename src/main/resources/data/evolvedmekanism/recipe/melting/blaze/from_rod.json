@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:rods/blaze"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_blaze",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:rods/blaze"
+            }
+        }
+    ]
+}

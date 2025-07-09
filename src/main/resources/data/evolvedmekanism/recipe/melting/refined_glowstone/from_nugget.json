@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:nuggets/refined_glowstone"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_refined_glowstone",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:nuggets/refined_glowstone"
+            }
+        }
+    ]
+}

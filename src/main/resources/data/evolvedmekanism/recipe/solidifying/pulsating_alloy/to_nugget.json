@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 6,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_nugget"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_pulsating_alloy",
+        "amount": 16
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 16
+    },
+    "output": {
+        "tag": "c:nuggets/pulsating_alloy"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:nuggets/pulsating_alloy"
+            }
+        }
+    ]
+}

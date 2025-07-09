@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:coins/enhanced_redstone_ingot"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_enhanced_redstone_ingot",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coins/enhanced_redstone_ingot"
+            }
+        }
+    ]
+}

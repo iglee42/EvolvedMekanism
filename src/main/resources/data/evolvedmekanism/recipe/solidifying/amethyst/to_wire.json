@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 30,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_wire"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_amethyst",
+        "amount": 72
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 72
+    },
+    "output": {
+        "tag": "c:wires/amethyst"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:wires/amethyst"
+            }
+        }
+    ]
+}

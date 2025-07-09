@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 540,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_storage_block"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_tainted_gold",
+        "amount": 1296
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 1296
+    },
+    "output": {
+        "tag": "c:storage_blocks/tainted_gold"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:storage_blocks/tainted_gold"
+            }
+        }
+    ]
+}

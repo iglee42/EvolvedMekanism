@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:wires/awakened_draconium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_awakened_draconium",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:wires/awakened_draconium"
+            }
+        }
+    ]
+}

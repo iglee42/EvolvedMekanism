@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/subatomic"
+        },
+        "C": {
+            "tag": "c:circuits/quantum"
+        },
+        "I": {
+            "tag": "c:ingots/tin"
+        },
+        "P": {
+            "item": "evolvedmekanism:overclocked_smelting_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:quantum_smelting_factory"
+    }
+}

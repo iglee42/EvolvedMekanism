@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 67,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_rod"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_certus_quartz",
+        "amount": 162
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 162
+    },
+    "output": {
+        "tag": "c:rods/certus_quartz"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:rods/certus_quartz"
+            }
+        }
+    ]
+}

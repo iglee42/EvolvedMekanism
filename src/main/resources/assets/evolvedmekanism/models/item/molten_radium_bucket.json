@@ -1,1 +1,1 @@
-{"parent":"forge:item/bucket","fluid":"evolvedmekanism:molten_radium","loader":"forge:fluid_container"}
+{"parent":"neoforge:item/bucket","fluid":"evolvedmekanism:molten_radium","loader":"neoforge:fluid_container"}

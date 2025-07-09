@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:gears/tornium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_tornium",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:gears/tornium"
+            }
+        }
+    ]
+}

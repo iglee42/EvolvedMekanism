@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "tag": "c:nuggets/better_gold"
+        },
+        "P": {
+            "item": "evolvedmekanism:nugget_better_gold"
+        }
+    },
+    "pattern": [
+        "###",
+        "#P#",
+        "###"
+    ],
+    "result": {
+        "item": "evolvedmekanism:ingot_better_gold"
+    }
+}

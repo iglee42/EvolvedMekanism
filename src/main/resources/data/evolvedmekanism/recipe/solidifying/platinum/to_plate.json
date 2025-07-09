@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 60,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_plate"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_platinum",
+        "amount": 144
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 144
+    },
+    "output": {
+        "tag": "c:plates/platinum"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:plates/platinum"
+            }
+        }
+    ]
+}

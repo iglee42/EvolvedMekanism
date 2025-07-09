@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 30,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_rod"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_electrolyte",
+        "amount": 72
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 72
+    },
+    "output": {
+        "tag": "c:rods/electrolyte"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:rods/electrolyte"
+            }
+        }
+    ]
+}

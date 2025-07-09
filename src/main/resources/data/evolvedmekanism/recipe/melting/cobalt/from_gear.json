@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:gears/cobalt"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_cobalt",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:gears/cobalt"
+            }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 60,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_dust"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_electrum",
+        "amount": 144
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 144
+    },
+    "output": {
+        "tag": "c:dusts/electrum"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:dusts/electrum"
+            }
+        }
+    ]
+}

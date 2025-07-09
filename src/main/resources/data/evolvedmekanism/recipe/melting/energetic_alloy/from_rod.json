@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:rods/energetic_alloy"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_energetic_alloy",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:rods/energetic_alloy"
+            }
+        }
+    ]
+}

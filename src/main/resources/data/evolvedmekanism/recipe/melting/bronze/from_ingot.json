@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:ingots/bronze"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_bronze",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:ingots/bronze"
+            }
+        }
+    ]
+}

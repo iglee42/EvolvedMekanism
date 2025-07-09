@@ -1,1 +1,1 @@
-{"parent":"forge:item/bucket","fluid":"evolvedmekanism:molten_boron","loader":"forge:fluid_container"}
+{"parent":"neoforge:item/bucket","fluid":"evolvedmekanism:molten_boron","loader":"neoforge:fluid_container"}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:plates/tungsten"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_tungsten",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:plates/tungsten"
+            }
+        }
+    ]
+}

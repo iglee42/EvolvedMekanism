@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:wires/invar"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_invar",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:wires/invar"
+            }
+        }
+    ]
+}

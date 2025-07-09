@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:gears/black_iron"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_black_iron",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:gears/black_iron"
+            }
+        }
+    ]
+}

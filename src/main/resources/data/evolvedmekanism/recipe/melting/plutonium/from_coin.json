@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:coins/plutonium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_plutonium",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coins/plutonium"
+            }
+        }
+    ]
+}

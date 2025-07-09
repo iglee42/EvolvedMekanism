@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:rods/infused_iron"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_infused_iron",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:rods/infused_iron"
+            }
+        }
+    ]
+}

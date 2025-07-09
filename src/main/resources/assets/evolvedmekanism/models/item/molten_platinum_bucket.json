@@ -1,1 +1,1 @@
-{"parent":"forge:item/bucket","fluid":"evolvedmekanism:molten_platinum","loader":"forge:fluid_container"}
+{"parent":"neoforge:item/bucket","fluid":"evolvedmekanism:molten_platinum","loader":"neoforge:fluid_container"}

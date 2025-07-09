@@ -1,5 +1,5 @@
 {
-    "loader": "forge:composite",
+    "loader": "neoforge:composite",
     "parent": "block/block",
     "textures": {
         "particle": "evolvedmekanism:block/factory/thermalizing/thermalizing_factory_front"

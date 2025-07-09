@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/hypercharged"
+        },
+        "C": {
+            "tag": "c:circuits/ultimate"
+        }
+    },
+    "pattern": [
+        " A ",
+        "ACA",
+        " A "
+    ],
+    "result": {
+        "item": "evolvedmekanism:overclocked_control_circuit"
+    }
+}

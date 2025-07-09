@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:wires/certus_quartz"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_certus_quartz",
+        "amount": 162
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:wires/certus_quartz"
+            }
+        }
+    ]
+}

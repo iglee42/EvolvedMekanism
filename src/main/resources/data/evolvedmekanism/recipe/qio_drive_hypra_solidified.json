@@ -1,0 +1,22 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "#": {
+            "tag": "c:nuggets/better_gold"
+        },
+        "I": {
+            "tag": "c:ingots/lead"
+        },
+        "P": {
+            "item": "evolvedmekanism:qio_drive_singularity"
+        }
+    },
+    "pattern": [
+        "IPI",
+        "P#P",
+        "IPI"
+    ],
+    "result": {
+        "item": "evolvedmekanism:qio_drive_hypra_solidified"
+    }
+}

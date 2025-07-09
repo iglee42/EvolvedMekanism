@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "item": "minecraft:slime_block"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_slime",
+        "amount": 1296
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:slimeballs"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:gems/awakened_supremium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_awakened_supremium",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:gems/awakened_supremium"
+            }
+        }
+    ]
+}

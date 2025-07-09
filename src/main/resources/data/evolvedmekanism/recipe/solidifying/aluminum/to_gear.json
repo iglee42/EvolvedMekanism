@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 240,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_gear"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_aluminum",
+        "amount": 576
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 576
+    },
+    "output": {
+        "tag": "c:gears/aluminum"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:gears/aluminum"
+            }
+        }
+    ]
+}

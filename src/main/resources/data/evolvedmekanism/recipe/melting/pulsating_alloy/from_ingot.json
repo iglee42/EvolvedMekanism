@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:ingots/pulsating_alloy"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_pulsating_alloy",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:ingots/pulsating_alloy"
+            }
+        }
+    ]
+}

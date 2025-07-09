@@ -1,0 +1,30 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "c:ingots/silver"
+        }
+    },
+    "secondExtraInput": {
+        "amount": 4,
+        "ingredient": {
+            "tag": "c:dusts/redstone"
+        }
+    },
+    "mainInput": {
+        "amount": 3,
+        "ingredient": {
+            "tag": "c:ingots/copper"
+        }
+    },
+    "output": {
+        "item": "thermal:signalum_ingot",
+        "count": 4
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "thermal"
+        }
+    ]
+}

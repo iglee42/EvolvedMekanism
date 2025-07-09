@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:nuggets/manyullyn"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_manyullyn",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:nuggets/manyullyn"
+            }
+        }
+    ]
+}

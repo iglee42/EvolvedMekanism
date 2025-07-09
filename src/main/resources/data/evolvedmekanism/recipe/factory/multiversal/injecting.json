@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/exoversal"
+        },
+        "C": {
+            "tag": "c:circuits/multiversal"
+        },
+        "I": {
+            "tag": "c:ingots/netherite"
+        },
+        "P": {
+            "item": "evolvedmekanism:dense_injecting_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:multiversal_injecting_factory"
+    }
+}

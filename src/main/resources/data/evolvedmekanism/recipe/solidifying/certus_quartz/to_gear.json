@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 540,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_gear"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_certus_quartz",
+        "amount": 1296
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 1296
+    },
+    "output": {
+        "tag": "c:gears/certus_quartz"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:gears/certus_quartz"
+            }
+        }
+    ]
+}

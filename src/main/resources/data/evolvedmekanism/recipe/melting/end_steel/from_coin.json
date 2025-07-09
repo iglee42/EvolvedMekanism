@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:coins/end_steel"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_end_steel",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coins/end_steel"
+            }
+        }
+    ]
+}

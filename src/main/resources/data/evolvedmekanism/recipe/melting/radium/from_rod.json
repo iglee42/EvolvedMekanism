@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:rods/radium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_radium",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:rods/radium"
+            }
+        }
+    ]
+}

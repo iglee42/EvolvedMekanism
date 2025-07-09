@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:nuggets/neptunium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_neptunium",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:nuggets/neptunium"
+            }
+        }
+    ]
+}

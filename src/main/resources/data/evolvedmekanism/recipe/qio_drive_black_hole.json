@@ -1,0 +1,22 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "#": {
+            "tag": "c:nuggets/plaslitherite"
+        },
+        "I": {
+            "tag": "c:ingots/lead"
+        },
+        "P": {
+            "item": "evolvedmekanism:qio_drive_hypra_solidified"
+        }
+    },
+    "pattern": [
+        "IPI",
+        "P#P",
+        "IPI"
+    ],
+    "result": {
+        "item": "evolvedmekanism:qio_drive_black_hole"
+    }
+}

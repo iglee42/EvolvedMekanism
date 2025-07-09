@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:glass"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_glass",
+        "amount": 1000
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:glass"
+            }
+        }
+    ]
+}

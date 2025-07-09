@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:coins/pewter"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_pewter",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coins/pewter"
+            }
+        }
+    ]
+}

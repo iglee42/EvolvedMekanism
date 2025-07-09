@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:rods/infinity"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_infinity",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:rods/infinity"
+            }
+        }
+    ]
+}

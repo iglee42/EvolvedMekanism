@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:rods/blutonium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_blutonium",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:rods/blutonium"
+            }
+        }
+    ]
+}

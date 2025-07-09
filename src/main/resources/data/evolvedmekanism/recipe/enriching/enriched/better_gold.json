@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "ingredient": {
+      "tag": "c:dusts/better_gold"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:enriched_better_gold"
+  }
+}

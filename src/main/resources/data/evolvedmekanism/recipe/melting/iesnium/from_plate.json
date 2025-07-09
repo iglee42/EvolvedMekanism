@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:plates/iesnium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_iesnium",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:plates/iesnium"
+            }
+        }
+    ]
+}

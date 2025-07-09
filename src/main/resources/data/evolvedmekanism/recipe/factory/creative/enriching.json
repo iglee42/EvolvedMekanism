@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/creative"
+        },
+        "C": {
+            "tag": "c:circuits/creative"
+        },
+        "I": {
+            "item": "minecraft:nether_star"
+        },
+        "P": {
+            "item": "evolvedmekanism:multiversal_enriching_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:creative_enriching_factory"
+    }
+}

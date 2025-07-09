@@ -1,0 +1,27 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "c:dusts/glowstone"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "c:ingots/gold"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "c:dusts/redstone"
+        }
+    },
+    "output": {
+        "item": "enderio:energetic_alloy_ingot"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "enderio"
+        }
+    ]
+}

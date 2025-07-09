@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "tag": "c:pellets/antimatter"
+        },
+        "A": {
+            "tag": "evolvedmekanism:alloys/singular"
+        },
+        "G": {
+            "tag": "c:glass/silica"
+        }
+    },
+    "pattern": [
+        " G ",
+        "A#A",
+        " G "
+    ],
+    "result": {
+        "item": "evolvedmekanism:upgrade_radioactive"
+    }
+}

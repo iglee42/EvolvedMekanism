@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:gears/enhanced_ender_ingot"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_enhanced_ender_ingot",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:gears/enhanced_ender_ingot"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:coins/manyullyn"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_manyullyn",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coins/manyullyn"
+            }
+        }
+    ]
+}

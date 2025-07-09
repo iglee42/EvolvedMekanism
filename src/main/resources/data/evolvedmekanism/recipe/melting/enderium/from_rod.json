@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:rods/enderium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_enderium",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:rods/enderium"
+            }
+        }
+    ]
+}

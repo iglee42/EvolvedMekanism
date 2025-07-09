@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/hypercharged"
+        },
+        "C": {
+            "tag": "c:circuits/overclocked"
+        },
+        "I": {
+            "tag": "c:ingots/uranium"
+        },
+        "P": {
+            "item": "mekanism:ultimate_smelting_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:overclocked_smelting_factory"
+    }
+}

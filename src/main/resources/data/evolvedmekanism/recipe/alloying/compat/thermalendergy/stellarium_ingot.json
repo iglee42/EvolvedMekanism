@@ -1,0 +1,30 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "amount": 4,
+        "ingredient": {
+            "tag": "c:ingots/netherite"
+        }
+    },
+    "secondExtraInput": {
+        "amount": 4,
+        "ingredient": {
+            "item": "minecraft:clay_ball"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "c:nether_stars"
+        }
+    },
+    "output": {
+        "item": "thermalendergy:stellarium_ingot",
+        "count": 4
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "thermalendergy"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:ingots/soulsteel"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_soulsteel",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:ingots/soulsteel"
+            }
+        }
+    ]
+}

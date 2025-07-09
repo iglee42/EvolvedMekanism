@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:coins/vibrant_alloy"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_vibrant_alloy",
+        "amount": 48
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coins/vibrant_alloy"
+            }
+        }
+    ]
+}

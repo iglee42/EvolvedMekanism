@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/singular"
+        },
+        "C": {
+            "tag": "c:circuits/dense"
+        },
+        "I": {
+            "tag": "c:ingots/bronze"
+        },
+        "P": {
+            "item": "evolvedmekanism:quantum_combining_factory"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:dense_combining_factory"
+    }
+}

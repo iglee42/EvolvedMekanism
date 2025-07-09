@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 1215,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_storage_block"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_glowstone",
+        "amount": 2916
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 2916
+    },
+    "output": {
+        "tag": "c:storage_blocks/glowstone"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:storage_blocks/glowstone"
+            }
+        }
+    ]
+}

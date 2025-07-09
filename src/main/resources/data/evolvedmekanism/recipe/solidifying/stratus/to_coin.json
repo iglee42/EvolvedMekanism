@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 20,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_coin"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_stratus",
+        "amount": 48
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 48
+    },
+    "output": {
+        "tag": "c:coins/stratus"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:coins/stratus"
+            }
+        }
+    ]
+}

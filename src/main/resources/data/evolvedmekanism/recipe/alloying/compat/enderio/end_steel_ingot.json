@@ -1,0 +1,27 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "c:ingots/dark_steel"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "c:end_stones"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "c:obsidian"
+        }
+    },
+    "output": {
+        "item": "enderio:end_steel_ingot"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "enderio"
+        }
+    ]
+}

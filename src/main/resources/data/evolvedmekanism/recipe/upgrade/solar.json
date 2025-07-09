@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "tag": "c:dusts/glowstone"
+        },
+        "A": {
+            "tag": "evolvedmekanism:alloys/singular"
+        },
+        "G": {
+            "tag": "c:glass/silica"
+        }
+    },
+    "pattern": [
+        " G ",
+        "A#A",
+        " G "
+    ],
+    "result": {
+        "item": "evolvedmekanism:upgrade_solar"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "mekanismgenerators"
+        }
+    ]
+}

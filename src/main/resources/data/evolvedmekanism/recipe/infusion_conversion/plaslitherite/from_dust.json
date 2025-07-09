@@ -1,0 +1,12 @@
+{
+    "type": "mekanism:infusion_conversion",
+    "input": {
+        "ingredient": {
+            "tag": "c:dusts/plaslitherite"
+        }
+    },
+    "output": {
+        "amount": 10,
+        "infuse_type": "evolvedmekanism:plaslitherite"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:ingots/end_steel"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_end_steel",
+        "amount": 144
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:ingots/end_steel"
+            }
+        }
+    ]
+}

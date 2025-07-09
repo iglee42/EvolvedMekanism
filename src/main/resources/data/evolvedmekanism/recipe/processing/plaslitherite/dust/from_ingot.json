@@ -1,0 +1,11 @@
+{
+    "type": "mekanism:crushing",
+    "input": {
+        "ingredient": {
+            "tag": "c:ingots/plaslitherite"
+        }
+    },
+    "output": {
+        "item": "evolvedmekanism:dust_plaslitherite"
+    }
+}

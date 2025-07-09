@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "I": {
+            "tag": "c:ingots/plaslitherite"
+        },
+        "R": {
+            "tag": "c:rods/wooden"
+        }
+    },
+    "pattern": [
+        "II",
+        " R",
+        " R"
+    ],
+    "result": {
+        "item": "evolvedmekanism:plaslitherite_hoe"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

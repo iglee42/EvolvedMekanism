@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:gears/manasteel"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_manasteel",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:gears/manasteel"
+            }
+        }
+    ]
+}

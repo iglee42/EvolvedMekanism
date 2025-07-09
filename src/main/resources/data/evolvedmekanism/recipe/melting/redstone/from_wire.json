@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:wires/redstone"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_redstone",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:wires/redstone"
+            }
+        }
+    ]
+}

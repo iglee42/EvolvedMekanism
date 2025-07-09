@@ -1,0 +1,31 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/infused"
+        },
+        "B": {
+            "tag": "c:storage_blocks/steel"
+        },
+        "C": {
+            "tag": "c:plates"
+        }
+    },
+    "pattern": [
+        "ABA",
+        "BCB",
+        "ABA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:mold_plate"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:plates"
+            }
+        }
+    ]
+}

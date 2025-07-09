@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "I": {
+            "tag": "c:ingots/plaslitherite"
+        }
+    },
+    "pattern": [
+        "III",
+        "I I",
+        "I I"
+    ],
+    "result": {
+        "item": "evolvedmekanism:plaslitherite_leggings"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

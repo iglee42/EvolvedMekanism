@@ -1,0 +1,22 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/subatomic"
+        },
+        "I": {
+            "tag": "c:ingots/iron"
+        },
+        "P": {
+            "item": "evolvedmekanism:overclocked_fluid_tank"
+        }
+    },
+    "pattern": [
+        "AIA",
+        "IPI",
+        "AIA"
+    ],
+    "result": {
+        "item": "evolvedmekanism:quantum_fluid_tank"
+    }
+}

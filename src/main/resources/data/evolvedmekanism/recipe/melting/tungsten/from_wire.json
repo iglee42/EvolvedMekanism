@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:wires/tungsten"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_tungsten",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:wires/tungsten"
+            }
+        }
+    ]
+}

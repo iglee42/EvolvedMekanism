@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:nuggets/energetic_alloy"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_energetic_alloy",
+        "amount": 16
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:nuggets/energetic_alloy"
+            }
+        }
+    ]
+}

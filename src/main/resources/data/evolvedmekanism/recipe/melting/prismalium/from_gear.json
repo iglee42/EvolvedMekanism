@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:gears/prismalium"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_prismalium",
+        "amount": 576
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:gears/prismalium"
+            }
+        }
+    ]
+}

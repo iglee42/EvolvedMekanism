@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "c:ingots/nether_brick"
+        }
+    },
+    "secondExtraInput": {
+        "amount": 4,
+        "ingredient": {
+            "tag": "c:crops/nether_wart"
+        }
+    },
+    "mainInput": {
+        "amount": 6,
+        "ingredient": {
+            "item": "minecraft:clay_ball"
+        }
+    },
+    "output": {
+        "item": "enderio:nethercotta"
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "enderio"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "tag": "c:ingots/silver"
+        }
+    },
+    "secondExtraInput": {
+        "amount": 2,
+        "ingredient": {
+            "tag": "c:dusts/glowstone"
+        }
+    },
+    "mainInput": {
+        "amount": 3,
+        "ingredient": {
+            "tag": "c:ingots/tin"
+        }
+    },
+    "output": {
+        "item": "thermal:lumium_ingot",
+        "count": 4
+    },
+    "conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "thermal"
+        }
+    ]
+}

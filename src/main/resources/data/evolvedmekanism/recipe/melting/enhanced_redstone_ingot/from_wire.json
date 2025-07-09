@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "c:wires/enhanced_redstone_ingot"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_enhanced_redstone_ingot",
+        "amount": 72
+    },
+    "conditions": [
+        {
+            "type": "neoforge:not",
+            "value": {
+                "type": "neoforge:tag_empty",
+                "tag": "c:wires/enhanced_redstone_ingot"
+            }
+        }
+    ]
+}
