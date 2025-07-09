@@ -2,6 +2,10 @@
   "type": "minecraft:smelting",
   "cookingtime": 200,
   "experience": 0.3,
-  "tag": "c:dusts/better_gold",
-  "result": "evolvedmekanism:ingot_better_gold"
+  "ingredient": {
+    "tag": "c:dusts/better_gold"
+  },
+  "result": {
+    "id": "evolvedmekanism:ingot_better_gold"
+  }
 }
