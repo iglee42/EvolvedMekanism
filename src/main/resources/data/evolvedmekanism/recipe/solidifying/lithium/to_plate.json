@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:solidifying",
   "duration": 60,
   "item_input": {
-    "ingredient": {
-      "item": "evolvedmekanism:mold_plate"
-    }
+    "item": "evolvedmekanism:mold_plate"
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_lithium",

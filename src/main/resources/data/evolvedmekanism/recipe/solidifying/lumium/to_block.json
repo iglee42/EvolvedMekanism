@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:solidifying",
   "duration": 540,
   "item_input": {
-    "ingredient": {
-      "item": "evolvedmekanism:mold_storage_block"
-    }
+    "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_lumium",

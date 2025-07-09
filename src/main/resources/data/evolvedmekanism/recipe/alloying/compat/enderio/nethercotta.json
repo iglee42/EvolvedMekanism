@@ -9,9 +9,7 @@
   },
   "main_input": {
     "amount": 6,
-    "ingredient": {
-      "item": "minecraft:clay_ball"
-    }
+    "item": "minecraft:clay_ball"
   },
   "output": {
     "id": "enderio:nethercotta"

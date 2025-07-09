@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:solidifying",
   "duration": 30,
   "item_input": {
-    "ingredient": {
-      "item": "evolvedmekanism:mold_rod"
-    }
+    "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_tainted_gold",

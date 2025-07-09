@@ -1,14 +1,10 @@
 {
   "type": "evolvedmekanism:alloying",
   "extra_input": {
-    "ingredient": {
-      "item": "ae2:printed_logic_processor"
-    }
+    "item": "ae2:printed_logic_processor"
   },
   "second_extra_input": {
-    "ingredient": {
-      "item": "ae2:printed_silicon"
-    }
+    "item": "ae2:printed_silicon"
   },
   "main_input": {
     "tag": "c:dusts/redstone"

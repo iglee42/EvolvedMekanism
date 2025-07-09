@@ -6,9 +6,7 @@
     "chemical": "mekanism:antimatter"
   },
   "item_input": {
-    "ingredient": {
-      "item": "mekanism:sps_casing"
-    }
+    "item": "mekanism:sps_casing"
   },
   "output": {
     "id": "evolvedmekanism:apt_casing"

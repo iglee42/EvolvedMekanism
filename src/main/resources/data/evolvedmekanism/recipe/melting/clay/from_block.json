@@ -1,21 +1,19 @@
 {
-    "type": "evolvedmekanism:melting",
-    "input": {
-        "ingredient": {
-            "item": "minecraft:clay"
-        }
-    },
-    "output": {
-        "fluid": "evolvedmekanism:molten_clay",
-        "amount": 576
-    },
-    "conditions": [
-        {
-            "type": "neoforge:not",
-            "value": {
-                "type": "neoforge:tag_empty",
-                "tag": "c:clay_balls"
-            }
-        }
-    ]
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "item": "minecraft:clay"
+  },
+  "output": {
+    "fluid": "evolvedmekanism:molten_clay",
+    "amount": 576
+  },
+  "conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:clay_balls"
+      }
+    }
+  ]
 }

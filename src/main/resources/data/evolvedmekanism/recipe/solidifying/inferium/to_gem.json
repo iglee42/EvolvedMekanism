@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:solidifying",
   "duration": 60,
   "item_input": {
-    "ingredient": {
-      "item": "evolvedmekanism:mold_gem"
-    }
+    "item": "evolvedmekanism:mold_gem"
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_inferium",

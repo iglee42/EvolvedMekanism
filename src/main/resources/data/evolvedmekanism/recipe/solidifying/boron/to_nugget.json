@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:solidifying",
   "duration": 6,
   "item_input": {
-    "ingredient": {
-      "item": "evolvedmekanism:mold_nugget"
-    }
+    "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_boron",

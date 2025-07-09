@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:alloying",
   "extra_input": {
     "amount": 4,
-    "ingredient": {
-      "item": "minecraft:chorus_fruit"
-    }
+    "item": "minecraft:chorus_fruit"
   },
   "second_extra_input": {
     "amount": 4,

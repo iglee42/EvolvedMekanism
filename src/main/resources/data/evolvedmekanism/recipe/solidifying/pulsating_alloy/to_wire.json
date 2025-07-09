@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:solidifying",
   "duration": 30,
   "item_input": {
-    "ingredient": {
-      "item": "evolvedmekanism:mold_wire"
-    }
+    "item": "evolvedmekanism:mold_wire"
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_pulsating_alloy",

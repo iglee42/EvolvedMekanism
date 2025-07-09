@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:solidifying",
   "duration": 60,
   "item_input": {
-    "ingredient": {
-      "item": "evolvedmekanism:mold_ingot"
-    }
+    "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_saturlyte",

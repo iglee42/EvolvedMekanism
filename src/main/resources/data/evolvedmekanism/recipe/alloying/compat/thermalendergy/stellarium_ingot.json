@@ -6,9 +6,7 @@
   },
   "second_extra_input": {
     "amount": 4,
-    "ingredient": {
-      "item": "minecraft:clay_ball"
-    }
+    "item": "minecraft:clay_ball"
   },
   "main_input": {
     "tag": "c:nether_stars"

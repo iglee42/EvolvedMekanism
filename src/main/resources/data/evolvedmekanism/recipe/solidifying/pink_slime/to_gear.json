@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:solidifying",
   "duration": 240,
   "item_input": {
-    "ingredient": {
-      "item": "evolvedmekanism:mold_gear"
-    }
+    "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_pink_slime",

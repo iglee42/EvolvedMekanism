@@ -2,9 +2,7 @@
   "type": "evolvedmekanism:chemixing",
   "extra_input": {
     "amount": 3,
-    "ingredient": {
-      "item": "mekanism:hdpe_pellet"
-    }
+    "item": "mekanism:hdpe_pellet"
   },
   "chemical_input": {
     "amount": 100,
