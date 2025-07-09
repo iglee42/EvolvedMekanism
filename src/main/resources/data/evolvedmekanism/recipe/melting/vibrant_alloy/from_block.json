@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/vibrant_alloy"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_vibrant_alloy",
+    "id": "evolvedmekanism:molten_vibrant_alloy",
     "amount": 1296
   },
   "conditions": [

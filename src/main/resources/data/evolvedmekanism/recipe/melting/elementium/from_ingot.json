@@ -4,7 +4,7 @@
     "tag": "c:ingots/elementium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_elementium",
+    "id": "evolvedmekanism:molten_elementium",
     "amount": 144
   },
   "conditions": [

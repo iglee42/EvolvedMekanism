@@ -4,7 +4,7 @@
     "tag": "c:nuggets/bronze"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_bronze",
+    "id": "evolvedmekanism:molten_bronze",
     "amount": 16
   },
   "conditions": [

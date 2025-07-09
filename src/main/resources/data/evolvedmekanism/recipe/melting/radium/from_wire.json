@@ -4,7 +4,7 @@
     "tag": "c:wires/radium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_radium",
+    "id": "evolvedmekanism:molten_radium",
     "amount": 72
   },
   "conditions": [

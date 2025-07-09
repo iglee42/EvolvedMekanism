@@ -4,7 +4,7 @@
     "tag": "c:nuggets/brass"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_brass",
+    "id": "evolvedmekanism:molten_brass",
     "amount": 16
   },
   "conditions": [

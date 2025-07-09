@@ -4,7 +4,7 @@
     "tag": "c:coins/neptunium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_neptunium",
+    "id": "evolvedmekanism:molten_neptunium",
     "amount": 48
   },
   "conditions": [

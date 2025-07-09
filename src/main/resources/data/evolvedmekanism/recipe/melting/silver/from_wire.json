@@ -4,7 +4,7 @@
     "tag": "c:wires/silver"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_silver",
+    "id": "evolvedmekanism:molten_silver",
     "amount": 72
   },
   "conditions": [

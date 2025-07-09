@@ -4,7 +4,7 @@
     "tag": "c:rods/terrasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_terrasteel",
+    "id": "evolvedmekanism:molten_terrasteel",
     "amount": 72
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/pulsating_alloy"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_pulsating_alloy",
+    "id": "evolvedmekanism:molten_pulsating_alloy",
     "amount": 48
   },
   "conditions": [

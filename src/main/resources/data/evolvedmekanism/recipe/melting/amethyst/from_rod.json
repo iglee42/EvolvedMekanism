@@ -4,7 +4,7 @@
     "tag": "c:rods/amethyst"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_amethyst",
+    "id": "evolvedmekanism:molten_amethyst",
     "amount": 72
   },
   "conditions": [

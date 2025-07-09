@@ -4,7 +4,7 @@
     "tag": "c:nuggets/stellarium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_stellarium",
+    "id": "evolvedmekanism:molten_stellarium",
     "amount": 16
   },
   "conditions": [

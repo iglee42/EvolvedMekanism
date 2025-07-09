@@ -4,7 +4,7 @@
     "item": "minecraft:netherite_scrap"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_debris",
+    "id": "evolvedmekanism:molten_debris",
     "amount": 144
   },
   "conditions": [

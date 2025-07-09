@@ -4,7 +4,7 @@
     "tag": "c:nuggets/silver"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_silver",
+    "id": "evolvedmekanism:molten_silver",
     "amount": 16
   },
   "conditions": [

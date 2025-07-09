@@ -4,7 +4,7 @@
     "tag": "c:ingots/refined_glowstone"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_refined_glowstone",
+    "id": "evolvedmekanism:molten_refined_glowstone",
     "amount": 144
   },
   "conditions": [

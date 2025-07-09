@@ -4,7 +4,7 @@
     "tag": "c:coins/sentrite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_sentrite",
+    "id": "evolvedmekanism:molten_sentrite",
     "amount": 48
   },
   "conditions": [

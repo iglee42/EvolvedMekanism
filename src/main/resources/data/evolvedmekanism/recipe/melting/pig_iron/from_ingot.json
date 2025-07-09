@@ -4,7 +4,7 @@
     "tag": "c:ingots/pig_iron"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_pig_iron",
+    "id": "evolvedmekanism:molten_pig_iron",
     "amount": 144
   },
   "conditions": [

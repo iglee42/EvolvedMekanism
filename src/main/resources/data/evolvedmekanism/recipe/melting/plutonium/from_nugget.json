@@ -4,7 +4,7 @@
     "tag": "c:nuggets/plutonium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_plutonium",
+    "id": "evolvedmekanism:molten_plutonium",
     "amount": 16
   },
   "conditions": [

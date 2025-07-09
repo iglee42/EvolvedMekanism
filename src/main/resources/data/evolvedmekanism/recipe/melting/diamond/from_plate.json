@@ -4,7 +4,7 @@
     "tag": "c:plates/diamond"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_diamond",
+    "id": "evolvedmekanism:molten_diamond",
     "amount": 144
   },
   "conditions": [

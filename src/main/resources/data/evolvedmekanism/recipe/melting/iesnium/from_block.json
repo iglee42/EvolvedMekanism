@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/iesnium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_iesnium",
+    "id": "evolvedmekanism:molten_iesnium",
     "amount": 1296
   },
   "conditions": [

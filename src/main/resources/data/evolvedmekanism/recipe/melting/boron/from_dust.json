@@ -4,7 +4,7 @@
     "tag": "c:dusts/boron"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_boron",
+    "id": "evolvedmekanism:molten_boron",
     "amount": 144
   },
   "conditions": [

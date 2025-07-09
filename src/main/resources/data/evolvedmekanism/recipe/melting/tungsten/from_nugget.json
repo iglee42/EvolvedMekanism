@@ -4,7 +4,7 @@
     "tag": "c:nuggets/tungsten"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tungsten",
+    "id": "evolvedmekanism:molten_tungsten",
     "amount": 16
   },
   "conditions": [

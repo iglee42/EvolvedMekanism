@@ -4,7 +4,7 @@
     "tag": "c:wires/graphite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_graphite",
+    "id": "evolvedmekanism:molten_graphite",
     "amount": 72
   },
   "conditions": [

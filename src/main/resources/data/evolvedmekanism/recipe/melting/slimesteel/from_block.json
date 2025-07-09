@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/slimesteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_slimesteel",
+    "id": "evolvedmekanism:molten_slimesteel",
     "amount": 1296
   },
   "conditions": [

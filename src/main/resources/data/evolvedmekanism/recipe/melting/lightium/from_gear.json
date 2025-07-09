@@ -4,7 +4,7 @@
     "tag": "c:gears/lightium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lightium",
+    "id": "evolvedmekanism:molten_lightium",
     "amount": 576
   },
   "conditions": [

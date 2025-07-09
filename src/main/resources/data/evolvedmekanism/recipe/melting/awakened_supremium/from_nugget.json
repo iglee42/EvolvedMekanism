@@ -4,7 +4,7 @@
     "tag": "c:nuggets/awakened_supremium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_awakened_supremium",
+    "id": "evolvedmekanism:molten_awakened_supremium",
     "amount": 16
   },
   "conditions": [

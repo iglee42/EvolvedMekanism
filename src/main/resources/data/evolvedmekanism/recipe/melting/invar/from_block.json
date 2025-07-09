@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/invar"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_invar",
+    "id": "evolvedmekanism:molten_invar",
     "amount": 1296
   },
   "conditions": [

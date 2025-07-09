@@ -4,7 +4,7 @@
     "tag": "c:ingots/zinc"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_zinc",
+    "id": "evolvedmekanism:molten_zinc",
     "amount": 144
   },
   "conditions": [

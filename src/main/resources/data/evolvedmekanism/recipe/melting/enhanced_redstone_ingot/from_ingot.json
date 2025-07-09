@@ -4,7 +4,7 @@
     "tag": "c:ingots/enhanced_redstone_ingot"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_enhanced_redstone_ingot",
+    "id": "evolvedmekanism:molten_enhanced_redstone_ingot",
     "amount": 144
   },
   "conditions": [

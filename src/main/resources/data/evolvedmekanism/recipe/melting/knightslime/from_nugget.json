@@ -4,7 +4,7 @@
     "tag": "c:nuggets/knightslime"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_knightslime",
+    "id": "evolvedmekanism:molten_knightslime",
     "amount": 16
   },
   "conditions": [

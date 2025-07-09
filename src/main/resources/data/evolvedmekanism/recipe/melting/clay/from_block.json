@@ -4,7 +4,7 @@
     "item": "minecraft:clay"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_clay",
+    "id": "evolvedmekanism:molten_clay",
     "amount": 576
   },
   "conditions": [

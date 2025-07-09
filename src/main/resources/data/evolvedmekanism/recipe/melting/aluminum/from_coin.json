@@ -4,7 +4,7 @@
     "tag": "c:coins/aluminum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_aluminum",
+    "id": "evolvedmekanism:molten_aluminum",
     "amount": 48
   },
   "conditions": [

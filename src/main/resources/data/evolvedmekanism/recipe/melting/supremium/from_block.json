@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/supremium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_supremium",
+    "id": "evolvedmekanism:molten_supremium",
     "amount": 1296
   },
   "conditions": [

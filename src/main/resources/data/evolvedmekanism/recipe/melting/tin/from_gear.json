@@ -4,7 +4,7 @@
     "tag": "c:gears/tin"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tin",
+    "id": "evolvedmekanism:molten_tin",
     "amount": 576
   },
   "conditions": [

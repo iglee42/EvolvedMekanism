@@ -4,7 +4,7 @@
     "tag": "c:wires/stellarium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_stellarium",
+    "id": "evolvedmekanism:molten_stellarium",
     "amount": 72
   },
   "conditions": [

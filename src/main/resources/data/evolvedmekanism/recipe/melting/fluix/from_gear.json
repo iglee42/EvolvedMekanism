@@ -4,7 +4,7 @@
     "tag": "c:gears/fluix"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_fluix",
+    "id": "evolvedmekanism:molten_fluix",
     "amount": 1296
   },
   "conditions": [

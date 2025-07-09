@@ -4,7 +4,7 @@
     "tag": "c:ingots/cyanite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_cyanite",
+    "id": "evolvedmekanism:molten_cyanite",
     "amount": 144
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/flux"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_flux",
+    "id": "evolvedmekanism:molten_flux",
     "amount": 1296
   },
   "conditions": [

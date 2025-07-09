@@ -4,7 +4,7 @@
     "tag": "c:coins/queens_slime"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_queens_slime",
+    "id": "evolvedmekanism:molten_queens_slime",
     "amount": 48
   },
   "conditions": [

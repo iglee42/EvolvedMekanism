@@ -4,7 +4,7 @@
     "tag": "c:gears/gaiasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_gaiasteel",
+    "id": "evolvedmekanism:molten_gaiasteel",
     "amount": 576
   },
   "conditions": [

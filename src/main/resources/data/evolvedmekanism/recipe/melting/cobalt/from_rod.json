@@ -4,7 +4,7 @@
     "tag": "c:rods/cobalt"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_cobalt",
+    "id": "evolvedmekanism:molten_cobalt",
     "amount": 72
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:wires/constantan"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_constantan",
+    "id": "evolvedmekanism:molten_constantan",
     "amount": 72
   },
   "conditions": [

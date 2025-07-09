@@ -4,7 +4,7 @@
     "tag": "c:plates/iridium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_iridium",
+    "id": "evolvedmekanism:molten_iridium",
     "amount": 144
   },
   "conditions": [

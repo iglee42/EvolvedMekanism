@@ -4,7 +4,7 @@
     "tag": "c:ingots/plaslitherite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_plaslitherite",
+    "id": "evolvedmekanism:molten_plaslitherite",
     "amount": 144
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/desh"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_desh",
+    "id": "evolvedmekanism:molten_desh",
     "amount": 48
   },
   "conditions": [

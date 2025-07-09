@@ -4,7 +4,7 @@
     "tag": "c:coins/skyjade"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_skyjade",
+    "id": "evolvedmekanism:molten_skyjade",
     "amount": 48
   },
   "conditions": [

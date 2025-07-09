@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/silver"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_silver",
+    "id": "evolvedmekanism:molten_silver",
     "amount": 1296
   },
   "conditions": [

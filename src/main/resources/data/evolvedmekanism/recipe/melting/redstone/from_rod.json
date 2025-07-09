@@ -4,7 +4,7 @@
     "tag": "c:rods/redstone"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_redstone",
+    "id": "evolvedmekanism:molten_redstone",
     "amount": 72
   },
   "conditions": [

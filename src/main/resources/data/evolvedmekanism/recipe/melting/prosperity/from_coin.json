@@ -4,7 +4,7 @@
     "tag": "c:coins/prosperity"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_prosperity",
+    "id": "evolvedmekanism:molten_prosperity",
     "amount": 48
   },
   "conditions": [

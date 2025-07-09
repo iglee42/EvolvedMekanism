@@ -4,7 +4,7 @@
     "tag": "c:rods/netherite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_netherite",
+    "id": "evolvedmekanism:molten_netherite",
     "amount": 72
   },
   "conditions": [

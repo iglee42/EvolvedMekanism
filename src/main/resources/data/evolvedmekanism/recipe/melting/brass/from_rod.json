@@ -4,7 +4,7 @@
     "tag": "c:rods/brass"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_brass",
+    "id": "evolvedmekanism:molten_brass",
     "amount": 72
   },
   "conditions": [

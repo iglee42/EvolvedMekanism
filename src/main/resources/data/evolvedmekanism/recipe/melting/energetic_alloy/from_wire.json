@@ -4,7 +4,7 @@
     "tag": "c:wires/energetic_alloy"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_energetic_alloy",
+    "id": "evolvedmekanism:molten_energetic_alloy",
     "amount": 72
   },
   "conditions": [

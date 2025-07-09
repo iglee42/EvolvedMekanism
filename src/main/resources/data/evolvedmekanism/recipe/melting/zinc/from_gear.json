@@ -4,7 +4,7 @@
     "tag": "c:gears/zinc"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_zinc",
+    "id": "evolvedmekanism:molten_zinc",
     "amount": 576
   },
   "conditions": [

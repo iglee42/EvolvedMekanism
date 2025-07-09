@@ -4,7 +4,7 @@
     "tag": "c:coins/silver"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_silver",
+    "id": "evolvedmekanism:molten_silver",
     "amount": 48
   },
   "conditions": [

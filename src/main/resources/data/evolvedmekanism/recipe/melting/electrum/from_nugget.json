@@ -4,7 +4,7 @@
     "tag": "c:nuggets/electrum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_electrum",
+    "id": "evolvedmekanism:molten_electrum",
     "amount": 16
   },
   "conditions": [

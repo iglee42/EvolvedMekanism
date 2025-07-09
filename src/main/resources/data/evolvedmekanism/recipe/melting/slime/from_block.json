@@ -4,7 +4,7 @@
     "item": "minecraft:slime_block"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_slime",
+    "id": "evolvedmekanism:molten_slime",
     "amount": 1296
   },
   "conditions": [

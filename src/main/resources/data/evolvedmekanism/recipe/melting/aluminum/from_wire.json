@@ -4,7 +4,7 @@
     "tag": "c:wires/aluminum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_aluminum",
+    "id": "evolvedmekanism:molten_aluminum",
     "amount": 72
   },
   "conditions": [

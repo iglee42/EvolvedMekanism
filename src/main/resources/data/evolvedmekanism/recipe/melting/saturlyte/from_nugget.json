@@ -4,7 +4,7 @@
     "tag": "c:nuggets/saturlyte"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_saturlyte",
+    "id": "evolvedmekanism:molten_saturlyte",
     "amount": 16
   },
   "conditions": [

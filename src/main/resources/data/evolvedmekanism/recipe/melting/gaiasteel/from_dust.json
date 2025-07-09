@@ -4,7 +4,7 @@
     "tag": "c:dusts/gaiasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_gaiasteel",
+    "id": "evolvedmekanism:molten_gaiasteel",
     "amount": 144
   },
   "conditions": [

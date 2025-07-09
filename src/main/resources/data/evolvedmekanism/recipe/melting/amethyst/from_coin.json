@@ -4,7 +4,7 @@
     "tag": "c:coins/amethyst"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_amethyst",
+    "id": "evolvedmekanism:molten_amethyst",
     "amount": 48
   },
   "conditions": [

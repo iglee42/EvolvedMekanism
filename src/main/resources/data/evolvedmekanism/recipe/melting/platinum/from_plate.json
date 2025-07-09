@@ -4,7 +4,7 @@
     "tag": "c:plates/platinum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_platinum",
+    "id": "evolvedmekanism:molten_platinum",
     "amount": 144
   },
   "conditions": [

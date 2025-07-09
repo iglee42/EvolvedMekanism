@@ -4,7 +4,7 @@
     "tag": "c:ingots/lapis"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lapis",
+    "id": "evolvedmekanism:molten_lapis",
     "amount": 144
   },
   "conditions": [

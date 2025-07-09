@@ -4,7 +4,7 @@
     "tag": "c:ingots/crystaltine"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_crystaltine",
+    "id": "evolvedmekanism:molten_crystaltine",
     "amount": 144
   },
   "conditions": [

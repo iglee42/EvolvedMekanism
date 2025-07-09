@@ -4,7 +4,7 @@
     "tag": "c:nuggets/oratchalcum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_oratchalcum",
+    "id": "evolvedmekanism:molten_oratchalcum",
     "amount": 16
   },
   "conditions": [

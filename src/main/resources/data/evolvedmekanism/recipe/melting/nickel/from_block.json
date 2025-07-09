@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/nickel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_nickel",
+    "id": "evolvedmekanism:molten_nickel",
     "amount": 1296
   },
   "conditions": [

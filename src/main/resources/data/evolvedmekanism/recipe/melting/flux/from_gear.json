@@ -4,7 +4,7 @@
     "tag": "c:gears/flux"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_flux",
+    "id": "evolvedmekanism:molten_flux",
     "amount": 576
   },
   "conditions": [

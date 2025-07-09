@@ -4,7 +4,7 @@
     "tag": "c:ingots/melodium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_melodium",
+    "id": "evolvedmekanism:molten_melodium",
     "amount": 144
   },
   "conditions": [

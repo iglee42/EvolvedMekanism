@@ -4,7 +4,7 @@
     "tag": "c:coins/cyanite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_cyanite",
+    "id": "evolvedmekanism:molten_cyanite",
     "amount": 48
   },
   "conditions": [

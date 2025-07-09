@@ -4,7 +4,7 @@
     "tag": "c:wires/hepatizon"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_hepatizon",
+    "id": "evolvedmekanism:molten_hepatizon",
     "amount": 72
   },
   "conditions": [

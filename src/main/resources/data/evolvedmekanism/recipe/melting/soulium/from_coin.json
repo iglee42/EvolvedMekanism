@@ -4,7 +4,7 @@
     "tag": "c:coins/soulium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_soulium",
+    "id": "evolvedmekanism:molten_soulium",
     "amount": 48
   },
   "conditions": [

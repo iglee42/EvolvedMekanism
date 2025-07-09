@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/ludicrite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ludicrite",
+    "id": "evolvedmekanism:molten_ludicrite",
     "amount": 1296
   },
   "conditions": [

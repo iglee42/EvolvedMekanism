@@ -4,7 +4,7 @@
     "tag": "c:nuggets/neutronium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_neutronium",
+    "id": "evolvedmekanism:molten_neutronium",
     "amount": 16
   },
   "conditions": [

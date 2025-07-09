@@ -4,7 +4,7 @@
     "tag": "c:nuggets/titanium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_titanium",
+    "id": "evolvedmekanism:molten_titanium",
     "amount": 16
   },
   "conditions": [

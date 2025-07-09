@@ -4,7 +4,7 @@
     "tag": "c:dusts/certus_quartz"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_certus_quartz",
+    "id": "evolvedmekanism:molten_certus_quartz",
     "amount": 324
   },
   "conditions": [

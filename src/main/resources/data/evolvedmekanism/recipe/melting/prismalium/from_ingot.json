@@ -4,7 +4,7 @@
     "tag": "c:ingots/prismalium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_prismalium",
+    "id": "evolvedmekanism:molten_prismalium",
     "amount": 144
   },
   "conditions": [

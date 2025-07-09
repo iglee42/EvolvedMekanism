@@ -4,7 +4,7 @@
     "tag": "c:plates/prosperity"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_prosperity",
+    "id": "evolvedmekanism:molten_prosperity",
     "amount": 144
   },
   "conditions": [

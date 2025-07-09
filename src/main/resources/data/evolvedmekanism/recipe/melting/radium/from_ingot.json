@@ -4,7 +4,7 @@
     "tag": "c:ingots/radium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_radium",
+    "id": "evolvedmekanism:molten_radium",
     "amount": 144
   },
   "conditions": [

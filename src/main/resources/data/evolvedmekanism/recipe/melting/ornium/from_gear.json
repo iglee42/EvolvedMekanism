@@ -4,7 +4,7 @@
     "tag": "c:gears/ornium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ornium",
+    "id": "evolvedmekanism:molten_ornium",
     "amount": 576
   },
   "conditions": [

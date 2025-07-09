@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/prismalium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_prismalium",
+    "id": "evolvedmekanism:molten_prismalium",
     "amount": 1296
   },
   "conditions": [

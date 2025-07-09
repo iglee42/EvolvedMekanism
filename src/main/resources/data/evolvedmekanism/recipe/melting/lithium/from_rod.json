@@ -4,7 +4,7 @@
     "tag": "c:rods/lithium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lithium",
+    "id": "evolvedmekanism:molten_lithium",
     "amount": 72
   },
   "conditions": [

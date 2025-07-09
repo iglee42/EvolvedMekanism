@@ -4,7 +4,7 @@
     "tag": "c:nuggets/lithium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lithium",
+    "id": "evolvedmekanism:molten_lithium",
     "amount": 16
   },
   "conditions": [

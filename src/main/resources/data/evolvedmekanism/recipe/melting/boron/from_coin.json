@@ -4,7 +4,7 @@
     "tag": "c:coins/boron"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_boron",
+    "id": "evolvedmekanism:molten_boron",
     "amount": 48
   },
   "conditions": [

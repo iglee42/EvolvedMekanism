@@ -4,7 +4,7 @@
     "tag": "c:dusts/tornium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tornium",
+    "id": "evolvedmekanism:molten_tornium",
     "amount": 144
   },
   "conditions": [

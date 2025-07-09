@@ -4,7 +4,7 @@
     "tag": "c:coins/redstone"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_redstone",
+    "id": "evolvedmekanism:molten_redstone",
     "amount": 48
   },
   "conditions": [

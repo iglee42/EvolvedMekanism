@@ -4,7 +4,7 @@
     "tag": "c:dusts/aluminum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_aluminum",
+    "id": "evolvedmekanism:molten_aluminum",
     "amount": 144
   },
   "conditions": [

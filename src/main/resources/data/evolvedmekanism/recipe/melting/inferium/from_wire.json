@@ -4,7 +4,7 @@
     "tag": "c:wires/inferium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_inferium",
+    "id": "evolvedmekanism:molten_inferium",
     "amount": 72
   },
   "conditions": [

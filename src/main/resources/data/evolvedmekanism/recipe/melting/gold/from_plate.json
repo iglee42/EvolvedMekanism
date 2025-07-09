@@ -4,7 +4,7 @@
     "tag": "c:plates/gold"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_gold",
+    "id": "evolvedmekanism:molten_gold",
     "amount": 144
   },
   "conditions": [

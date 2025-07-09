@@ -4,7 +4,7 @@
     "tag": "c:coins/brass"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_brass",
+    "id": "evolvedmekanism:molten_brass",
     "amount": 48
   },
   "conditions": [

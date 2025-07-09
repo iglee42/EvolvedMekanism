@@ -4,7 +4,7 @@
     "tag": "c:coins/certus_quartz"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_certus_quartz",
+    "id": "evolvedmekanism:molten_certus_quartz",
     "amount": 108
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:plates/obsidian"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_obsidian",
+    "id": "evolvedmekanism:molten_obsidian",
     "amount": 144
   },
   "conditions": [

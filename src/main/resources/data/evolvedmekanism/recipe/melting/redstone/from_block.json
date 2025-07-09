@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/redstone"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_redstone",
+    "id": "evolvedmekanism:molten_redstone",
     "amount": 1296
   },
   "conditions": [

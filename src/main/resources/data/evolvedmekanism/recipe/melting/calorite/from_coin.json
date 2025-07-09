@@ -4,7 +4,7 @@
     "tag": "c:coins/calorite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_calorite",
+    "id": "evolvedmekanism:molten_calorite",
     "amount": 48
   },
   "conditions": [

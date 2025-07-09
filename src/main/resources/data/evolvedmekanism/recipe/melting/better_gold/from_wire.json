@@ -4,7 +4,7 @@
     "tag": "c:wires/better_gold"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_better_gold",
+    "id": "evolvedmekanism:molten_better_gold",
     "amount": 72
   },
   "conditions": [

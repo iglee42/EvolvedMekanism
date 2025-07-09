@@ -4,7 +4,7 @@
     "tag": "c:coins/iesnium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_iesnium",
+    "id": "evolvedmekanism:molten_iesnium",
     "amount": 48
   },
   "conditions": [

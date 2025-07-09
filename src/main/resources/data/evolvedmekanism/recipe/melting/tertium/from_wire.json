@@ -4,7 +4,7 @@
     "tag": "c:wires/tertium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tertium",
+    "id": "evolvedmekanism:molten_tertium",
     "amount": 72
   },
   "conditions": [

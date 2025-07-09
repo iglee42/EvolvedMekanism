@@ -4,7 +4,7 @@
     "tag": "c:ingots/brass"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_brass",
+    "id": "evolvedmekanism:molten_brass",
     "amount": 144
   },
   "conditions": [

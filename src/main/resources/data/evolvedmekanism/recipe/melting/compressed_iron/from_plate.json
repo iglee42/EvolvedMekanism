@@ -4,7 +4,7 @@
     "tag": "c:plates/compressed_iron"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_compressed_iron",
+    "id": "evolvedmekanism:molten_compressed_iron",
     "amount": 144
   },
   "conditions": [

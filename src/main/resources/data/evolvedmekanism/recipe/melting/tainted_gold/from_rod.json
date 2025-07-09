@@ -4,7 +4,7 @@
     "tag": "c:rods/tainted_gold"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tainted_gold",
+    "id": "evolvedmekanism:molten_tainted_gold",
     "amount": 72
   },
   "conditions": [

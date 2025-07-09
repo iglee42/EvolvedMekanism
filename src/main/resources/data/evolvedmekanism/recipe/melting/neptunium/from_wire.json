@@ -4,7 +4,7 @@
     "tag": "c:wires/neptunium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_neptunium",
+    "id": "evolvedmekanism:molten_neptunium",
     "amount": 72
   },
   "conditions": [

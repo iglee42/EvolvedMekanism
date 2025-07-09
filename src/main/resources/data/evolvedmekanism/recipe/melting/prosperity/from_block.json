@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/prosperity"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_prosperity",
+    "id": "evolvedmekanism:molten_prosperity",
     "amount": 1296
   },
   "conditions": [

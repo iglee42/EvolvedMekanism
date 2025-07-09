@@ -4,7 +4,7 @@
     "tag": "c:gears/end_steel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_end_steel",
+    "id": "evolvedmekanism:molten_end_steel",
     "amount": 576
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:dusts/knightslime"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_knightslime",
+    "id": "evolvedmekanism:molten_knightslime",
     "amount": 144
   },
   "conditions": [

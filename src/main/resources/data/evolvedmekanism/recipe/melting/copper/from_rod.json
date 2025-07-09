@@ -4,7 +4,7 @@
     "tag": "c:rods/copper"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_copper",
+    "id": "evolvedmekanism:molten_copper",
     "amount": 72
   },
   "conditions": [

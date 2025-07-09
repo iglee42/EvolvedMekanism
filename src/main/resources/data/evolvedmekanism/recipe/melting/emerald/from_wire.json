@@ -4,7 +4,7 @@
     "tag": "c:wires/emerald"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_emerald",
+    "id": "evolvedmekanism:molten_emerald",
     "amount": 72
   },
   "conditions": [

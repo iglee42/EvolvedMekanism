@@ -4,7 +4,7 @@
     "tag": "c:dusts/infinity"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_infinity",
+    "id": "evolvedmekanism:molten_infinity",
     "amount": 144
   },
   "conditions": [

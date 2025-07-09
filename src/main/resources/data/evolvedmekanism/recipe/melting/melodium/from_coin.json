@@ -4,7 +4,7 @@
     "tag": "c:coins/melodium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_melodium",
+    "id": "evolvedmekanism:molten_melodium",
     "amount": 48
   },
   "conditions": [

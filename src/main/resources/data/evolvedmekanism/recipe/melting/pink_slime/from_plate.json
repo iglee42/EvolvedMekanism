@@ -4,7 +4,7 @@
     "tag": "c:plates/pink_slime"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_pink_slime",
+    "id": "evolvedmekanism:molten_pink_slime",
     "amount": 144
   },
   "conditions": [

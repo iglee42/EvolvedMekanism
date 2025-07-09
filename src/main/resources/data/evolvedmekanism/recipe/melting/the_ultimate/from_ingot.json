@@ -4,7 +4,7 @@
     "tag": "c:ingots/the_ultimate"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_the_ultimate",
+    "id": "evolvedmekanism:molten_the_ultimate",
     "amount": 144
   },
   "conditions": [

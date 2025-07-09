@@ -4,7 +4,7 @@
     "tag": "c:coins/alfsteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_alfsteel",
+    "id": "evolvedmekanism:molten_alfsteel",
     "amount": 48
   },
   "conditions": [

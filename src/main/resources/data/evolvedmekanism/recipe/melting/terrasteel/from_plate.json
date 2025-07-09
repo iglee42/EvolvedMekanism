@@ -4,7 +4,7 @@
     "tag": "c:plates/terrasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_terrasteel",
+    "id": "evolvedmekanism:molten_terrasteel",
     "amount": 144
   },
   "conditions": [

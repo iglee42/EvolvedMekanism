@@ -4,7 +4,7 @@
     "tag": "c:wires/melodium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_melodium",
+    "id": "evolvedmekanism:molten_melodium",
     "amount": 72
   },
   "conditions": [

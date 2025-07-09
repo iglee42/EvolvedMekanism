@@ -4,7 +4,7 @@
     "tag": "c:dusts/redstone"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_redstone",
+    "id": "evolvedmekanism:molten_redstone",
     "amount": 144
   },
   "conditions": [

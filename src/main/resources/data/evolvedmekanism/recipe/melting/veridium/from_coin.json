@@ -4,7 +4,7 @@
     "tag": "c:coins/veridium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_veridium",
+    "id": "evolvedmekanism:molten_veridium",
     "amount": 48
   },
   "conditions": [

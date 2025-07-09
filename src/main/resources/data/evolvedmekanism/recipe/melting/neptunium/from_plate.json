@@ -4,7 +4,7 @@
     "tag": "c:plates/neptunium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_neptunium",
+    "id": "evolvedmekanism:molten_neptunium",
     "amount": 144
   },
   "conditions": [

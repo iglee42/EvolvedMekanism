@@ -4,7 +4,7 @@
     "tag": "c:dusts/soulsteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_soulsteel",
+    "id": "evolvedmekanism:molten_soulsteel",
     "amount": 144
   },
   "conditions": [

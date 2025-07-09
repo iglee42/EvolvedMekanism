@@ -4,7 +4,7 @@
     "tag": "c:nuggets/cyanite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_cyanite",
+    "id": "evolvedmekanism:molten_cyanite",
     "amount": 16
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:wires/redstone_alloy"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_redstone_alloy",
+    "id": "evolvedmekanism:molten_redstone_alloy",
     "amount": 72
   },
   "conditions": [

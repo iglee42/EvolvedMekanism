@@ -4,7 +4,7 @@
     "tag": "c:wires/zanite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_zanite",
+    "id": "evolvedmekanism:molten_zanite",
     "amount": 72
   },
   "conditions": [

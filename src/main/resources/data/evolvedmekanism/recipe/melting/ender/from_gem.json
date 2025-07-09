@@ -4,7 +4,7 @@
     "tag": "c:ender_pearls"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ender",
+    "id": "evolvedmekanism:molten_ender",
     "amount": 144
   },
   "conditions": [

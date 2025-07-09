@@ -4,7 +4,7 @@
     "tag": "c:dusts/end_steel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_end_steel",
+    "id": "evolvedmekanism:molten_end_steel",
     "amount": 144
   },
   "conditions": [

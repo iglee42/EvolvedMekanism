@@ -4,7 +4,7 @@
     "tag": "c:plates/thorium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_thorium",
+    "id": "evolvedmekanism:molten_thorium",
     "amount": 144
   },
   "conditions": [

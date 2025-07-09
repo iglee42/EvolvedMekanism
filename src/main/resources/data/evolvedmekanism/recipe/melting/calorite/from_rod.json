@@ -4,7 +4,7 @@
     "tag": "c:rods/calorite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_calorite",
+    "id": "evolvedmekanism:molten_calorite",
     "amount": 72
   },
   "conditions": [

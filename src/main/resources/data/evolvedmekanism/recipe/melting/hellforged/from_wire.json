@@ -4,7 +4,7 @@
     "tag": "c:wires/hellforged"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_hellforged",
+    "id": "evolvedmekanism:molten_hellforged",
     "amount": 72
   },
   "conditions": [

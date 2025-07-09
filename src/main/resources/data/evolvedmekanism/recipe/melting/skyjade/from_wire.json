@@ -4,7 +4,7 @@
     "tag": "c:wires/skyjade"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_skyjade",
+    "id": "evolvedmekanism:molten_skyjade",
     "amount": 72
   },
   "conditions": [

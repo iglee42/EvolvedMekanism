@@ -4,7 +4,7 @@
     "tag": "c:nuggets/soulium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_soulium",
+    "id": "evolvedmekanism:molten_soulium",
     "amount": 16
   },
   "conditions": [

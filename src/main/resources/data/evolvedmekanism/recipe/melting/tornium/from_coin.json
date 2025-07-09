@@ -4,7 +4,7 @@
     "tag": "c:coins/tornium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tornium",
+    "id": "evolvedmekanism:molten_tornium",
     "amount": 48
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:plates/gravitite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_gravitite",
+    "id": "evolvedmekanism:molten_gravitite",
     "amount": 144
   },
   "conditions": [

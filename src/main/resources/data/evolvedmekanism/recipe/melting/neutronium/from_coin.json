@@ -4,7 +4,7 @@
     "tag": "c:coins/neutronium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_neutronium",
+    "id": "evolvedmekanism:molten_neutronium",
     "amount": 48
   },
   "conditions": [

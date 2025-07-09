@@ -4,7 +4,7 @@
     "tag": "c:dusts/ender_ingot"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ender_ingot",
+    "id": "evolvedmekanism:molten_ender_ingot",
     "amount": 144
   },
   "conditions": [

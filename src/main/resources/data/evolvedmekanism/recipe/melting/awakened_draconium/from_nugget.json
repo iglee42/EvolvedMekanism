@@ -4,7 +4,7 @@
     "tag": "c:nuggets/awakened_draconium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_awakened_draconium",
+    "id": "evolvedmekanism:molten_awakened_draconium",
     "amount": 16
   },
   "conditions": [

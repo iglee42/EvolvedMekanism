@@ -4,7 +4,7 @@
     "tag": "c:wires/lapis"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lapis",
+    "id": "evolvedmekanism:molten_lapis",
     "amount": 72
   },
   "conditions": [

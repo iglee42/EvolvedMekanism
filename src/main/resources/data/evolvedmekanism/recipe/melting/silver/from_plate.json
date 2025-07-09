@@ -4,7 +4,7 @@
     "tag": "c:plates/silver"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_silver",
+    "id": "evolvedmekanism:molten_silver",
     "amount": 144
   },
   "conditions": [

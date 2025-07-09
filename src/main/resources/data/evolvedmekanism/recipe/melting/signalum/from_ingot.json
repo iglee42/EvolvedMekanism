@@ -4,7 +4,7 @@
     "tag": "c:ingots/signalum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_signalum",
+    "id": "evolvedmekanism:molten_signalum",
     "amount": 144
   },
   "conditions": [

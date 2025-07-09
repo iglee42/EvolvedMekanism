@@ -4,7 +4,7 @@
     "tag": "c:nuggets/prismalium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_prismalium",
+    "id": "evolvedmekanism:molten_prismalium",
     "amount": 16
   },
   "conditions": [

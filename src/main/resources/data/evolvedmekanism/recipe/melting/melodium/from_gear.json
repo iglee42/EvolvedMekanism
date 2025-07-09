@@ -4,7 +4,7 @@
     "tag": "c:gears/melodium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_melodium",
+    "id": "evolvedmekanism:molten_melodium",
     "amount": 576
   },
   "conditions": [

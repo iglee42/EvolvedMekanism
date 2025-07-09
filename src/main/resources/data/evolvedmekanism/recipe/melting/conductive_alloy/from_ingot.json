@@ -4,7 +4,7 @@
     "tag": "c:ingots/conductive_alloy"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_conductive_alloy",
+    "id": "evolvedmekanism:molten_conductive_alloy",
     "amount": 144
   },
   "conditions": [

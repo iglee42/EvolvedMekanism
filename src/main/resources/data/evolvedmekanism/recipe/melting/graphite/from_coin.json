@@ -4,7 +4,7 @@
     "tag": "c:coins/graphite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_graphite",
+    "id": "evolvedmekanism:molten_graphite",
     "amount": 48
   },
   "conditions": [

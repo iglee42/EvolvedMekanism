@@ -4,7 +4,7 @@
     "tag": "c:nuggets/elementium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_elementium",
+    "id": "evolvedmekanism:molten_elementium",
     "amount": 16
   },
   "conditions": [

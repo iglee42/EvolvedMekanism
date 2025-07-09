@@ -4,7 +4,7 @@
     "tag": "c:dusts/stratus"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_stratus",
+    "id": "evolvedmekanism:molten_stratus",
     "amount": 144
   },
   "conditions": [

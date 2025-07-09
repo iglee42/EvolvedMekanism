@@ -4,7 +4,7 @@
     "tag": "c:coins/awakened_supremium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_awakened_supremium",
+    "id": "evolvedmekanism:molten_awakened_supremium",
     "amount": 48
   },
   "conditions": [

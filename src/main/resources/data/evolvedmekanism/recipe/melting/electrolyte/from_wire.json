@@ -4,7 +4,7 @@
     "tag": "c:wires/electrolyte"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_electrolyte",
+    "id": "evolvedmekanism:molten_electrolyte",
     "amount": 72
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:wires/plaslitherite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_plaslitherite",
+    "id": "evolvedmekanism:molten_plaslitherite",
     "amount": 72
   },
   "conditions": [

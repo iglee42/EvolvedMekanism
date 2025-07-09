@@ -4,7 +4,7 @@
     "tag": "c:wires/platinum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_platinum",
+    "id": "evolvedmekanism:molten_platinum",
     "amount": 72
   },
   "conditions": [

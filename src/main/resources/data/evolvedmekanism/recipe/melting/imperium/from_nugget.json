@@ -4,7 +4,7 @@
     "tag": "c:nuggets/imperium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_imperium",
+    "id": "evolvedmekanism:molten_imperium",
     "amount": 16
   },
   "conditions": [

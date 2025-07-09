@@ -4,7 +4,7 @@
     "tag": "c:gears/hepatizon"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_hepatizon",
+    "id": "evolvedmekanism:molten_hepatizon",
     "amount": 576
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/pulsating_alloy"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_pulsating_alloy",
+    "id": "evolvedmekanism:molten_pulsating_alloy",
     "amount": 16
   },
   "conditions": [

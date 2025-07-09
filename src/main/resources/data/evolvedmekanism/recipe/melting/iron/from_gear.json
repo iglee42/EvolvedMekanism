@@ -4,7 +4,7 @@
     "tag": "c:gears/iron"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_iron",
+    "id": "evolvedmekanism:molten_iron",
     "amount": 576
   },
   "conditions": [

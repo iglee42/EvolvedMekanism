@@ -4,7 +4,7 @@
     "tag": "c:rods/prosperity"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_prosperity",
+    "id": "evolvedmekanism:molten_prosperity",
     "amount": 72
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:ingots/ouranium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ouranium",
+    "id": "evolvedmekanism:molten_ouranium",
     "amount": 144
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:ingots/juperium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_juperium",
+    "id": "evolvedmekanism:molten_juperium",
     "amount": 144
   },
   "conditions": [

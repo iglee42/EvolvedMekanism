@@ -4,7 +4,7 @@
     "tag": "c:wires/quartz"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_quartz",
+    "id": "evolvedmekanism:molten_quartz",
     "amount": 162
   },
   "conditions": [

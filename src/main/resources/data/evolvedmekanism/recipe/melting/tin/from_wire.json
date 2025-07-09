@@ -4,7 +4,7 @@
     "tag": "c:wires/tin"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tin",
+    "id": "evolvedmekanism:molten_tin",
     "amount": 72
   },
   "conditions": [

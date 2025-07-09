@@ -4,7 +4,7 @@
     "tag": "c:coins/invar"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_invar",
+    "id": "evolvedmekanism:molten_invar",
     "amount": 48
   },
   "conditions": [

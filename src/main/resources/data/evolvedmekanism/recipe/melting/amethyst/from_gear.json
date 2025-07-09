@@ -4,7 +4,7 @@
     "tag": "c:gears/amethyst"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_amethyst",
+    "id": "evolvedmekanism:molten_amethyst",
     "amount": 576
   },
   "conditions": [

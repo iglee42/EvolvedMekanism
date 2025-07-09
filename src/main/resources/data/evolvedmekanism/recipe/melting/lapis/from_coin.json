@@ -4,7 +4,7 @@
     "tag": "c:coins/lapis"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lapis",
+    "id": "evolvedmekanism:molten_lapis",
     "amount": 48
   },
   "conditions": [

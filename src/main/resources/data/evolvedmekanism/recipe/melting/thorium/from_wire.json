@@ -4,7 +4,7 @@
     "tag": "c:wires/thorium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_thorium",
+    "id": "evolvedmekanism:molten_thorium",
     "amount": 72
   },
   "conditions": [

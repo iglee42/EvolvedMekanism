@@ -4,7 +4,7 @@
     "tag": "c:rods/alfsteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_alfsteel",
+    "id": "evolvedmekanism:molten_alfsteel",
     "amount": 72
   },
   "conditions": [

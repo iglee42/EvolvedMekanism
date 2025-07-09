@@ -4,7 +4,7 @@
     "tag": "c:wires/invar"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_invar",
+    "id": "evolvedmekanism:molten_invar",
     "amount": 72
   },
   "conditions": [

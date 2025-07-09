@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/emerald"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_emerald",
+    "id": "evolvedmekanism:molten_emerald",
     "amount": 1296
   },
   "conditions": [

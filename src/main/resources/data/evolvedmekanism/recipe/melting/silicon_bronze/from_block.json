@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/silicon_bronze"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_silicon_bronze",
+    "id": "evolvedmekanism:molten_silicon_bronze",
     "amount": 1296
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/copper_alloy"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_copper_alloy",
+    "id": "evolvedmekanism:molten_copper_alloy",
     "amount": 48
   },
   "conditions": [

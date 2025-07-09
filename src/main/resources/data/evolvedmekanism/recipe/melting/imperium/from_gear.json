@@ -4,7 +4,7 @@
     "tag": "c:gears/imperium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_imperium",
+    "id": "evolvedmekanism:molten_imperium",
     "amount": 576
   },
   "conditions": [

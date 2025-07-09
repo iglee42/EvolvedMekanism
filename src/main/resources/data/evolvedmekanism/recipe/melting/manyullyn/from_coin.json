@@ -4,7 +4,7 @@
     "tag": "c:coins/manyullyn"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_manyullyn",
+    "id": "evolvedmekanism:molten_manyullyn",
     "amount": 48
   },
   "conditions": [

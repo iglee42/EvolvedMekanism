@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/netherite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_netherite",
+    "id": "evolvedmekanism:molten_netherite",
     "amount": 1296
   },
   "conditions": [

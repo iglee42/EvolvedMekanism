@@ -4,7 +4,7 @@
     "tag": "c:plates/chorium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_chorium",
+    "id": "evolvedmekanism:molten_chorium",
     "amount": 144
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:wires/crystaltine"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_crystaltine",
+    "id": "evolvedmekanism:molten_crystaltine",
     "amount": 72
   },
   "conditions": [

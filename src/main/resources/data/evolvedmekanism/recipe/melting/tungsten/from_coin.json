@@ -4,7 +4,7 @@
     "tag": "c:coins/tungsten"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tungsten",
+    "id": "evolvedmekanism:molten_tungsten",
     "amount": 48
   },
   "conditions": [

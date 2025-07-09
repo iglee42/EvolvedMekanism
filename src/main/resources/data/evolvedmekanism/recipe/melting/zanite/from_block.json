@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/zanite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_zanite",
+    "id": "evolvedmekanism:molten_zanite",
     "amount": 1296
   },
   "conditions": [

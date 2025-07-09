@@ -4,7 +4,7 @@
     "tag": "c:wires/osmium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_osmium",
+    "id": "evolvedmekanism:molten_osmium",
     "amount": 72
   },
   "conditions": [

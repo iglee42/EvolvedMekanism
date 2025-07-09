@@ -4,7 +4,7 @@
     "tag": "c:rods/stratus"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_stratus",
+    "id": "evolvedmekanism:molten_stratus",
     "amount": 72
   },
   "conditions": [

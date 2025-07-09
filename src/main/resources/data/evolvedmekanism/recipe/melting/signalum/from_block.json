@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/signalum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_signalum",
+    "id": "evolvedmekanism:molten_signalum",
     "amount": 1296
   },
   "conditions": [

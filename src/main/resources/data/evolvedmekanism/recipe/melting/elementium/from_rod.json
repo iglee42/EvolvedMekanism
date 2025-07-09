@@ -4,7 +4,7 @@
     "tag": "c:rods/elementium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_elementium",
+    "id": "evolvedmekanism:molten_elementium",
     "amount": 72
   },
   "conditions": [

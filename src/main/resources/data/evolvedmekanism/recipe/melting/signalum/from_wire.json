@@ -4,7 +4,7 @@
     "tag": "c:wires/signalum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_signalum",
+    "id": "evolvedmekanism:molten_signalum",
     "amount": 72
   },
   "conditions": [

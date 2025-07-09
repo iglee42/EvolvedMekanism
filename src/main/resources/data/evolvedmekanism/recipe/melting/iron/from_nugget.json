@@ -4,7 +4,7 @@
     "tag": "c:nuggets/iron"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_iron",
+    "id": "evolvedmekanism:molten_iron",
     "amount": 16
   },
   "conditions": [

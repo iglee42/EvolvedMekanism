@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/calorite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_calorite",
+    "id": "evolvedmekanism:molten_calorite",
     "amount": 1296
   },
   "conditions": [

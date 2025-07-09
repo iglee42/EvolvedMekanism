@@ -4,7 +4,7 @@
     "tag": "c:rods/manasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_manasteel",
+    "id": "evolvedmekanism:molten_manasteel",
     "amount": 72
   },
   "conditions": [

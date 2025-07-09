@@ -4,7 +4,7 @@
     "tag": "c:ingots/electrum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_electrum",
+    "id": "evolvedmekanism:molten_electrum",
     "amount": 144
   },
   "conditions": [

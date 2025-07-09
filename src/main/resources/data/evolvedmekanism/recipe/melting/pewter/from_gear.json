@@ -4,7 +4,7 @@
     "tag": "c:gears/pewter"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_pewter",
+    "id": "evolvedmekanism:molten_pewter",
     "amount": 576
   },
   "conditions": [

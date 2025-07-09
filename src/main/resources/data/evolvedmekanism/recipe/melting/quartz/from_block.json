@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/quartz"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_quartz",
+    "id": "evolvedmekanism:molten_quartz",
     "amount": 576
   },
   "conditions": [

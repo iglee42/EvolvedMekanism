@@ -4,7 +4,7 @@
     "tag": "c:coins/dark_steel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_dark_steel",
+    "id": "evolvedmekanism:molten_dark_steel",
     "amount": 48
   },
   "conditions": [

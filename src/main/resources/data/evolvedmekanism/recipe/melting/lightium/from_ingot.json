@@ -4,7 +4,7 @@
     "tag": "c:ingots/lightium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lightium",
+    "id": "evolvedmekanism:molten_lightium",
     "amount": 144
   },
   "conditions": [

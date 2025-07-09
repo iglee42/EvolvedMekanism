@@ -4,7 +4,7 @@
     "tag": "c:coins/gaiasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_gaiasteel",
+    "id": "evolvedmekanism:molten_gaiasteel",
     "amount": 48
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:ingots/ambrosium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ambrosium",
+    "id": "evolvedmekanism:molten_ambrosium",
     "amount": 144
   },
   "conditions": [

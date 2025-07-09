@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/radium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_radium",
+    "id": "evolvedmekanism:molten_radium",
     "amount": 1296
   },
   "conditions": [

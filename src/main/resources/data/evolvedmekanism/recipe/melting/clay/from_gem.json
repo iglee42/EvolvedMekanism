@@ -4,7 +4,7 @@
     "tag": "c:clay_balls"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_clay",
+    "id": "evolvedmekanism:molten_clay",
     "amount": 144
   },
   "conditions": [

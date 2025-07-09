@@ -4,7 +4,7 @@
     "tag": "c:dusts/glowstone"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_glowstone",
+    "id": "evolvedmekanism:molten_glowstone",
     "amount": 144
   },
   "conditions": [

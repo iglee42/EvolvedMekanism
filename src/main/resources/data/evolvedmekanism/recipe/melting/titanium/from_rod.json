@@ -4,7 +4,7 @@
     "tag": "c:rods/titanium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_titanium",
+    "id": "evolvedmekanism:molten_titanium",
     "amount": 72
   },
   "conditions": [

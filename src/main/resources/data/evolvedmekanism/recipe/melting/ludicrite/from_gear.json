@@ -4,7 +4,7 @@
     "tag": "c:gears/ludicrite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ludicrite",
+    "id": "evolvedmekanism:molten_ludicrite",
     "amount": 576
   },
   "conditions": [

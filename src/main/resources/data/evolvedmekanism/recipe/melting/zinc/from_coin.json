@@ -4,7 +4,7 @@
     "tag": "c:coins/zinc"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_zinc",
+    "id": "evolvedmekanism:molten_zinc",
     "amount": 48
   },
   "conditions": [

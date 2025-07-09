@@ -4,7 +4,7 @@
     "tag": "c:gears/electrum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_electrum",
+    "id": "evolvedmekanism:molten_electrum",
     "amount": 576
   },
   "conditions": [

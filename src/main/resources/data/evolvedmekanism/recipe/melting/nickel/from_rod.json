@@ -4,7 +4,7 @@
     "tag": "c:rods/nickel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_nickel",
+    "id": "evolvedmekanism:molten_nickel",
     "amount": 72
   },
   "conditions": [

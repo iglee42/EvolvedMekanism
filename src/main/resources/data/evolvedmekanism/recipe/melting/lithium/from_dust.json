@@ -4,7 +4,7 @@
     "tag": "c:dusts/lithium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lithium",
+    "id": "evolvedmekanism:molten_lithium",
     "amount": 144
   },
   "conditions": [

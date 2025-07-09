@@ -4,7 +4,7 @@
     "tag": "c:ingots/ostrum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ostrum",
+    "id": "evolvedmekanism:molten_ostrum",
     "amount": 144
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:wires/bronze"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_bronze",
+    "id": "evolvedmekanism:molten_bronze",
     "amount": 72
   },
   "conditions": [

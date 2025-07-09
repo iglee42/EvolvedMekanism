@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/electrolyte"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_electrolyte",
+    "id": "evolvedmekanism:molten_electrolyte",
     "amount": 1296
   },
   "conditions": [

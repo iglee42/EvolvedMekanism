@@ -4,7 +4,7 @@
     "tag": "c:nuggets/chorium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_chorium",
+    "id": "evolvedmekanism:molten_chorium",
     "amount": 16
   },
   "conditions": [

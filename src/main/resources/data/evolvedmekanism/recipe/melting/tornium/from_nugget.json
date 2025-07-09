@@ -4,7 +4,7 @@
     "tag": "c:nuggets/tornium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tornium",
+    "id": "evolvedmekanism:molten_tornium",
     "amount": 16
   },
   "conditions": [

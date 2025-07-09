@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/draconium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_draconium",
+    "id": "evolvedmekanism:molten_draconium",
     "amount": 1296
   },
   "conditions": [

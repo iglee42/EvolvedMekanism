@@ -4,7 +4,7 @@
     "tag": "c:plates/coal"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_coal",
+    "id": "evolvedmekanism:molten_coal",
     "amount": 144
   },
   "conditions": [

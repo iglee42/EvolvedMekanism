@@ -4,7 +4,7 @@
     "tag": "c:coins/terrasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_terrasteel",
+    "id": "evolvedmekanism:molten_terrasteel",
     "amount": 48
   },
   "conditions": [

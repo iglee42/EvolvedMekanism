@@ -4,7 +4,7 @@
     "tag": "c:gears/oratchalcum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_oratchalcum",
+    "id": "evolvedmekanism:molten_oratchalcum",
     "amount": 576
   },
   "conditions": [

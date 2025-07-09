@@ -4,7 +4,7 @@
     "tag": "c:rods/iridium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_iridium",
+    "id": "evolvedmekanism:molten_iridium",
     "amount": 72
   },
   "conditions": [

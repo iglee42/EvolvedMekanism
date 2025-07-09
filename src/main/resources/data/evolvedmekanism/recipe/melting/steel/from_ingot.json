@@ -4,7 +4,7 @@
     "tag": "c:ingots/steel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_steel",
+    "id": "evolvedmekanism:molten_steel",
     "amount": 144
   },
   "conditions": [

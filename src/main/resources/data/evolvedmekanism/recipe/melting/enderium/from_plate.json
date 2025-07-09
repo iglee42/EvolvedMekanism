@@ -4,7 +4,7 @@
     "tag": "c:plates/enderium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_enderium",
+    "id": "evolvedmekanism:molten_enderium",
     "amount": 144
   },
   "conditions": [

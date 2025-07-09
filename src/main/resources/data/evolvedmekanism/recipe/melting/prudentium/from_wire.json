@@ -4,7 +4,7 @@
     "tag": "c:wires/prudentium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_prudentium",
+    "id": "evolvedmekanism:molten_prudentium",
     "amount": 72
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:plates/redstone_ingot"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_redstone_ingot",
+    "id": "evolvedmekanism:molten_redstone_ingot",
     "amount": 144
   },
   "conditions": [

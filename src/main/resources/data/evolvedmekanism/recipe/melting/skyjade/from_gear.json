@@ -4,7 +4,7 @@
     "tag": "c:gears/skyjade"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_skyjade",
+    "id": "evolvedmekanism:molten_skyjade",
     "amount": 576
   },
   "conditions": [

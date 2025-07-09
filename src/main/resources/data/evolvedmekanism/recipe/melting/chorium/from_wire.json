@@ -4,7 +4,7 @@
     "tag": "c:wires/chorium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_chorium",
+    "id": "evolvedmekanism:molten_chorium",
     "amount": 72
   },
   "conditions": [

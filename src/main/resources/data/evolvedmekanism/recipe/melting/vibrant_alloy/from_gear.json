@@ -4,7 +4,7 @@
     "tag": "c:gears/vibrant_alloy"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_vibrant_alloy",
+    "id": "evolvedmekanism:molten_vibrant_alloy",
     "amount": 576
   },
   "conditions": [

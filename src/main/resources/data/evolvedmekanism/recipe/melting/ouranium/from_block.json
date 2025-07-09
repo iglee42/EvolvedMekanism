@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/ouranium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ouranium",
+    "id": "evolvedmekanism:molten_ouranium",
     "amount": 1296
   },
   "conditions": [

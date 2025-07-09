@@ -4,7 +4,7 @@
     "tag": "c:nuggets/boron"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_boron",
+    "id": "evolvedmekanism:molten_boron",
     "amount": 16
   },
   "conditions": [

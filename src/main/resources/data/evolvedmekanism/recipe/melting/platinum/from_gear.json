@@ -4,7 +4,7 @@
     "tag": "c:gears/platinum"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_platinum",
+    "id": "evolvedmekanism:molten_platinum",
     "amount": 576
   },
   "conditions": [

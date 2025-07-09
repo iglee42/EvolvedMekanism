@@ -4,7 +4,7 @@
     "tag": "c:rods/nether_star"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_nether_star",
+    "id": "evolvedmekanism:molten_nether_star",
     "amount": 72
   },
   "conditions": [

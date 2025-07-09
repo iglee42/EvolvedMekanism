@@ -4,7 +4,7 @@
     "tag": "c:ores/netherite_scrap"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_debris",
+    "id": "evolvedmekanism:molten_debris",
     "amount": 288
   },
   "conditions": [

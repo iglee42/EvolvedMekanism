@@ -4,7 +4,7 @@
     "tag": "c:glass"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_glass",
+    "id": "evolvedmekanism:molten_glass",
     "amount": 1000
   },
   "conditions": [

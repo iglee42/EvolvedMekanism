@@ -4,7 +4,7 @@
     "tag": "c:nuggets/invar"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_invar",
+    "id": "evolvedmekanism:molten_invar",
     "amount": 16
   },
   "conditions": [

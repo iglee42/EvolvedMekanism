@@ -4,7 +4,7 @@
     "tag": "c:nuggets/gaiasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_gaiasteel",
+    "id": "evolvedmekanism:molten_gaiasteel",
     "amount": 16
   },
   "conditions": [

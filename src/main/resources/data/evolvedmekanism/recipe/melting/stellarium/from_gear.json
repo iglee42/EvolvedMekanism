@@ -4,7 +4,7 @@
     "tag": "c:gears/stellarium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_stellarium",
+    "id": "evolvedmekanism:molten_stellarium",
     "amount": 576
   },
   "conditions": [

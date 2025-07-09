@@ -4,7 +4,7 @@
     "tag": "c:wires/titanium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_titanium",
+    "id": "evolvedmekanism:molten_titanium",
     "amount": 72
   },
   "conditions": [

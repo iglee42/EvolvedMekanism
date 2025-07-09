@@ -4,7 +4,7 @@
     "tag": "c:gears/blutonium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_blutonium",
+    "id": "evolvedmekanism:molten_blutonium",
     "amount": 576
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:rods/lumium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lumium",
+    "id": "evolvedmekanism:molten_lumium",
     "amount": 72
   },
   "conditions": [

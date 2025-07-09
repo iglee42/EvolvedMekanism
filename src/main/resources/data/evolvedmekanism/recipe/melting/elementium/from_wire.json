@@ -4,7 +4,7 @@
     "tag": "c:wires/elementium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_elementium",
+    "id": "evolvedmekanism:molten_elementium",
     "amount": 72
   },
   "conditions": [

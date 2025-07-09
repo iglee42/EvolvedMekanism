@@ -4,7 +4,7 @@
     "tag": "c:nuggets/infinity"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_infinity",
+    "id": "evolvedmekanism:molten_infinity",
     "amount": 16
   },
   "conditions": [

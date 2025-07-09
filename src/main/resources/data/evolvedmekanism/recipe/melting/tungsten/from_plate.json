@@ -4,7 +4,7 @@
     "tag": "c:plates/tungsten"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tungsten",
+    "id": "evolvedmekanism:molten_tungsten",
     "amount": 144
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:gears/netherite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_netherite",
+    "id": "evolvedmekanism:molten_netherite",
     "amount": 576
   },
   "conditions": [

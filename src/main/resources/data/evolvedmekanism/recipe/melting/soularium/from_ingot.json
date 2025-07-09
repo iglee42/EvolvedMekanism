@@ -4,7 +4,7 @@
     "tag": "c:ingots/soularium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_soularium",
+    "id": "evolvedmekanism:molten_soularium",
     "amount": 144
   },
   "conditions": [

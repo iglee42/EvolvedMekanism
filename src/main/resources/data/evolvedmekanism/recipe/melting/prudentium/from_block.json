@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/prudentium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_prudentium",
+    "id": "evolvedmekanism:molten_prudentium",
     "amount": 1296
   },
   "conditions": [

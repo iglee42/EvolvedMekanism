@@ -4,7 +4,7 @@
     "tag": "c:plates/supremium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_supremium",
+    "id": "evolvedmekanism:molten_supremium",
     "amount": 144
   },
   "conditions": [

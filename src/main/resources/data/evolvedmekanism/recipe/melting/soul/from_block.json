@@ -4,7 +4,7 @@
     "tag": "minecraft:soul_fire_base_blocks"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_soul",
+    "id": "evolvedmekanism:molten_soul",
     "amount": 1000
   },
   "conditions": [

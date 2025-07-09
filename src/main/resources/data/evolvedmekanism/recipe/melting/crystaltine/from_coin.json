@@ -4,7 +4,7 @@
     "tag": "c:coins/crystaltine"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_crystaltine",
+    "id": "evolvedmekanism:molten_crystaltine",
     "amount": 48
   },
   "conditions": [

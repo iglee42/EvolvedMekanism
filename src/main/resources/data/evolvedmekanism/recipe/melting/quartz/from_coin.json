@@ -4,7 +4,7 @@
     "tag": "c:coins/quartz"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_quartz",
+    "id": "evolvedmekanism:molten_quartz",
     "amount": 108
   },
   "conditions": [

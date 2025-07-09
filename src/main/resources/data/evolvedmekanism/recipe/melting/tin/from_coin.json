@@ -4,7 +4,7 @@
     "tag": "c:coins/tin"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tin",
+    "id": "evolvedmekanism:molten_tin",
     "amount": 48
   },
   "conditions": [

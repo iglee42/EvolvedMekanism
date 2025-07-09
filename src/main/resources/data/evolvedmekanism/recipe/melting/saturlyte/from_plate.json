@@ -4,7 +4,7 @@
     "tag": "c:plates/saturlyte"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_saturlyte",
+    "id": "evolvedmekanism:molten_saturlyte",
     "amount": 144
   },
   "conditions": [

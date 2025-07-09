@@ -4,7 +4,7 @@
     "tag": "c:plates/hepatizon"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_hepatizon",
+    "id": "evolvedmekanism:molten_hepatizon",
     "amount": 144
   },
   "conditions": [

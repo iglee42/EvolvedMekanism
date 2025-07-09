@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/gaiasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_gaiasteel",
+    "id": "evolvedmekanism:molten_gaiasteel",
     "amount": 1296
   },
   "conditions": [

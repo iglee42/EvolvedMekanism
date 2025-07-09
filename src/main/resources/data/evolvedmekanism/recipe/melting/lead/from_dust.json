@@ -4,7 +4,7 @@
     "tag": "c:dusts/lead"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_lead",
+    "id": "evolvedmekanism:molten_lead",
     "amount": 144
   },
   "conditions": [

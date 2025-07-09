@@ -4,7 +4,7 @@
     "tag": "c:gears/rose_gold"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_rose_gold",
+    "id": "evolvedmekanism:molten_rose_gold",
     "amount": 576
   },
   "conditions": [

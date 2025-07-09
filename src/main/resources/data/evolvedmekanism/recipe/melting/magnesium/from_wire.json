@@ -4,7 +4,7 @@
     "tag": "c:wires/magnesium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_magnesium",
+    "id": "evolvedmekanism:molten_magnesium",
     "amount": 72
   },
   "conditions": [

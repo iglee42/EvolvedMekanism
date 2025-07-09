@@ -4,7 +4,7 @@
     "tag": "c:wires/blutonium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_blutonium",
+    "id": "evolvedmekanism:molten_blutonium",
     "amount": 72
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:rods/pulsating_alloy"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_pulsating_alloy",
+    "id": "evolvedmekanism:molten_pulsating_alloy",
     "amount": 72
   },
   "conditions": [

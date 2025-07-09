@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/nether_star"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_nether_star",
+    "id": "evolvedmekanism:molten_nether_star",
     "amount": 1296
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/iridium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_iridium",
+    "id": "evolvedmekanism:molten_iridium",
     "amount": 1296
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/manasteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_manasteel",
+    "id": "evolvedmekanism:molten_manasteel",
     "amount": 16
   },
   "conditions": [

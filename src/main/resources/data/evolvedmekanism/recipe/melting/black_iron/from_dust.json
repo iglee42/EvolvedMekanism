@@ -4,7 +4,7 @@
     "tag": "c:dusts/black_iron"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_black_iron",
+    "id": "evolvedmekanism:molten_black_iron",
     "amount": 144
   },
   "conditions": [

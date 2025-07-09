@@ -4,7 +4,7 @@
     "tag": "c:dusts/draconium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_draconium",
+    "id": "evolvedmekanism:molten_draconium",
     "amount": 144
   },
   "conditions": [

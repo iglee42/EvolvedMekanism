@@ -4,7 +4,7 @@
     "tag": "c:nuggets/nickel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_nickel",
+    "id": "evolvedmekanism:molten_nickel",
     "amount": 16
   },
   "conditions": [

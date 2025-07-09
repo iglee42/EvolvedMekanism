@@ -4,7 +4,7 @@
     "tag": "c:gears/graphite"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_graphite",
+    "id": "evolvedmekanism:molten_graphite",
     "amount": 576
   },
   "conditions": [

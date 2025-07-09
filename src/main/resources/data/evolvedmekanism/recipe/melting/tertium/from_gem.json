@@ -4,7 +4,7 @@
     "tag": "c:gems/tertium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tertium",
+    "id": "evolvedmekanism:molten_tertium",
     "amount": 144
   },
   "conditions": [

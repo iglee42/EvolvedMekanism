@@ -4,7 +4,7 @@
     "tag": "c:coins/gold"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_gold",
+    "id": "evolvedmekanism:molten_gold",
     "amount": 48
   },
   "conditions": [

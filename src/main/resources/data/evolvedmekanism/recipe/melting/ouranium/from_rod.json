@@ -4,7 +4,7 @@
     "tag": "c:rods/ouranium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_ouranium",
+    "id": "evolvedmekanism:molten_ouranium",
     "amount": 72
   },
   "conditions": [

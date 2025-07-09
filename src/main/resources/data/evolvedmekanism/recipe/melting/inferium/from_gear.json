@@ -4,7 +4,7 @@
     "tag": "c:gears/inferium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_inferium",
+    "id": "evolvedmekanism:molten_inferium",
     "amount": 576
   },
   "conditions": [

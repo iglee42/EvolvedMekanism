@@ -4,7 +4,7 @@
     "tag": "c:nuggets/tertium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_tertium",
+    "id": "evolvedmekanism:molten_tertium",
     "amount": 16
   },
   "conditions": [

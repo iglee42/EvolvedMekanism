@@ -4,7 +4,7 @@
     "tag": "c:coins/constantan"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_constantan",
+    "id": "evolvedmekanism:molten_constantan",
     "amount": 48
   },
   "conditions": [

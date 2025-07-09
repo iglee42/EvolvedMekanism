@@ -4,7 +4,7 @@
     "tag": "c:ingots/slimesteel"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_slimesteel",
+    "id": "evolvedmekanism:molten_slimesteel",
     "amount": 144
   },
   "conditions": [

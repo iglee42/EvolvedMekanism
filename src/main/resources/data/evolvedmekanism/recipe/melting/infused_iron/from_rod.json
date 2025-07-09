@@ -4,7 +4,7 @@
     "tag": "c:rods/infused_iron"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_infused_iron",
+    "id": "evolvedmekanism:molten_infused_iron",
     "amount": 72
   },
   "conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:plates/plutonium"
   },
   "output": {
-    "fluid": "evolvedmekanism:molten_plutonium",
+    "id": "evolvedmekanism:molten_plutonium",
     "amount": 144
   },
   "conditions": [
