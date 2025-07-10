@@ -13,16 +13,10 @@
                     "type": "minecraft:item",
                     "functions": [
                         {
-                            "function": "minecraft:copy_nbt",
-                            "ops": [
-                                {
-                                    "op": "replace",
-                                    "source": "EnergyContainers",
-                                    "target": "mekData.EnergyContainers"
-                                }
-                            ],
-                            "source": "block_entity"
-                        }
+				"function": "minecraft:copy_components",
+				"include": ["mekanism:energy"],
+				"source": "block_entity"
+			}
                     ],
                     "name": "evolvedmekanism:apt_port"
                 }

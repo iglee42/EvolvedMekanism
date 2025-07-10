@@ -11,21 +11,18 @@
                             "function": "minecraft:copy_name",
                             "source": "block_entity"
                         },
-                       {
+{
 				"function": "minecraft:copy_components",
-				"include": ["mekanism:owner", "mekanism:security"],
+				"include": ["mekanism:ejector", "mekanism:owner", "mekanism:redstone_control", "mekanism:security", "mekanism:side_config", "mekanism:sorting", "mekanism:upgrades", "mekanism:energy", "mekanism:items"],
 				"source": "block_entity"
-			},
-                        {
-                            "function": "evolvedmekanism:tiered_personal_storage_contents"
-                        }
+			}
                     ],
-                    "name": "evolvedmekanism:creative_personal_barrel"
+                    "name": "evolvedmekanism:ultimate_alloying_factory"
                 }
             ],
             "name": "main",
             "rolls": 1.0
         }
     ],
-    "random_sequence": "evolvedmekanism:blocks/creative_personal_barrel"
+    "random_sequence": "evolvedmekanism:blocks/ultimate_alloying_factory"
 }

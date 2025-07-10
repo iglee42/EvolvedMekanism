@@ -7,17 +7,11 @@
                 {
                     "type": "minecraft:item",
                     "functions": [
-                        {
-                            "function": "minecraft:copy_nbt",
-                            "ops": [
-                                {
-                                    "op": "replace",
-                                    "source": "Items",
-                                    "target": "mekData.Items"
-                                }
-                            ],
-                            "source": "block_entity"
-                        }
+                       {
+				"function": "minecraft:copy_components",
+				"include": ["mekanism:lock", "mekanism:items"],
+				"source": "block_entity"
+			}
                     ],
                     "name": "evolvedmekanism:multiversal_bin"
                 }

@@ -11,22 +11,11 @@
                             "function": "minecraft:copy_name",
                             "source": "block_entity"
                         },
-                        {
-                            "function": "minecraft:copy_nbt",
-                            "ops": [
-                                {
-                                    "op": "replace",
-                                    "source": "componentSecurity.owner",
-                                    "target": "mekData.owner"
-                                },
-                                {
-                                    "op": "replace",
-                                    "source": "componentSecurity.securityMode",
-                                    "target": "mekData.securityMode"
-                                }
-                            ],
-                            "source": "block_entity"
-                        },
+                       {
+				"function": "minecraft:copy_components",
+				"include": ["mekanism:owner", "mekanism:security"],
+				"source": "block_entity"
+			},
                         {
                             "function": "evolvedmekanism:tiered_personal_storage_contents"
                         }
