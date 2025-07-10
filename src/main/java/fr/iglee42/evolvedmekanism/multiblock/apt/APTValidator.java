@@ -1,8 +1,6 @@
 package fr.iglee42.evolvedmekanism.multiblock.apt;
 
 import java.util.EnumSet;
-import java.util.LinkedHashSet;
-import java.util.SequencedSet;
 import java.util.Set;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
@@ -106,20 +104,23 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
 
     @Override
     public FormationProtocol.FormationResult postcheck(APTMultiblockData structure, Long2ObjectMap<ChunkAccess> chunkMap) {
-        SequencedSet<BlockPos> elements = new LinkedHashSet<>();
+        Set<BlockPos> elements = new ObjectOpenHashSet<>();
         for (BlockPos pos : structure.internalLocations) {
             BlockEntity tile = WorldUtils.getTileEntity(world, chunkMap, pos);
             if (tile instanceof TileEntitySuperchargingElement) {
+                if (pos.subtract(cuboid.getMinPos()).getY() != 1)  return FormationProtocol.FormationResult.fail(EvolvedMekanismLang.APT_INVALID_SUPERCHARGING);
                 elements.add(pos);
             }
         }
-        if (!elements.isEmpty())
-            structure.superchargingElements = FormationProtocol.explore(world, chunkMap, elements.getFirst(), null, (level, chunks, start, n, coord) ->
+
+        /*if (!elements.isEmpty())
+            structure.superchargingElements = FormationProtocol.explore(elements.iterator().next(), coord ->
                 coord.subtract(cuboid.getMinPos()).getY() == 1 && WorldUtils.getTileEntity(TileEntitySuperchargingElement.class, world, chunkMap, coord) != null);
 
         if (elements.size() > structure.superchargingElements) {
             return FormationProtocol.FormationResult.fail(EvolvedMekanismLang.APT_INVALID_SUPERCHARGING);
-        }
+        }*/
+        structure.superchargingElements = elements.size();
 
         return FormationProtocol.FormationResult.SUCCESS;
     }
