@@ -1,5 +1,9 @@
 package fr.iglee42.evolvedmekanism.jei;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.impl.BasicItemStackToFluidRecipe;
 import fr.iglee42.evolvedmekanism.jei.categories.*;
@@ -7,6 +11,7 @@ import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.recipes.ItemStackChemicalToItemStackRecipe;
@@ -19,15 +24,21 @@ import mekanism.client.recipe_viewer.type.RVRecipeTypeWrapper;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismItems;
+import mekanism.common.item.block.machine.ItemBlockFluidTank;
+import mekanism.common.util.RegistryUtils;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter;
+import mezz.jei.api.neoforge.NeoForgeTypes;
 import mezz.jei.api.registration.*;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
@@ -87,6 +98,14 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registry) {
+        EMFluids.FLUIDS.getFluidEntries().forEach(ro->{
+            boolean hasMelting = EMRecipeType.MELTING.getRecipes(null).stream().anyMatch(r->r.value().getOutput(ItemStack.EMPTY).getFluid().equals(ro.get()));
+            boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.value().getInputFluid().test(new FluidStack(ro.get(), (int) r.value().getInputFluid().getNeededAmount(new FluidStack(ro.get(),1)))));
+            if (!hasMelting && !hasSolidifying){
+                registry.getJeiHelpers().getIngredientManager().removeIngredientsAtRuntime(NeoForgeTypes.FLUID_STACK, List.of(new FluidStack(ro.get(),1000)));
+                registry.getJeiHelpers().getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, List.of(ro.get().getBucket().getDefaultInstance()));
+            }
+        });
         RecipeRegistryHelper.register(registry, JEIRecipeTypes.ALLOYING, EMRecipeType.ALLOYING);
         RecipeRegistryHelper.register(registry, JEIRecipeTypes.CHEMIXING, EMRecipeType.CHEMIXING);
         RecipeRegistryHelper.register(registry, JEIRecipeTypes.APT, EMRecipeType.APT);
