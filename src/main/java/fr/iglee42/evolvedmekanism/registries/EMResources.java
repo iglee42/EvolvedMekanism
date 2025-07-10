@@ -5,6 +5,7 @@ import mekanism.common.resource.IResource;
 public enum EMResources implements IResource {
     BETTER_GOLD("better_gold"),
     PLASLITHERITE("plaslitherite"),
+    REFINED_REDSTONE("refined_redstone"),
     ;
 
     private final String registrySuffix;

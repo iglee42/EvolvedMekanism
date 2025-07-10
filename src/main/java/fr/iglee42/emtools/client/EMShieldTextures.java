@@ -6,4 +6,5 @@ public class EMShieldTextures {
 
     public static ShieldTextures BETTER_GOLD;
     public static ShieldTextures PLASLITHERITE;
+    public static ShieldTextures REFINED_REDSTONE;
 }

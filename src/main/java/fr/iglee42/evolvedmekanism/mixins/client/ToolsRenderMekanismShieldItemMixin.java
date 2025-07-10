@@ -34,7 +34,7 @@ public class ToolsRenderMekanismShieldItemMixin {
 
     @Inject(method = "renderByItem", at = @At("HEAD"),cancellable = true)
     private void em$changeForEmShields(ItemStack stack, ItemDisplayContext displayContext, PoseStack matrix, MultiBufferSource renderer, int light, int overlayLight, CallbackInfo ci){
-        if (stack.is(EMToolsItems.PLASLITHERITE_SHIELD.asItem()) || stack.is(EMToolsItems.BETTER_GOLD_SHIELD.asItem())){
+        if (stack.is(EMToolsItems.PLASLITHERITE_SHIELD.asItem()) || stack.is(EMToolsItems.BETTER_GOLD_SHIELD.asItem())|| stack.is(EMToolsItems.REFINED_REDSTONE_SHIELD.asItem())){
             Item item = stack.getItem();
             ((InitializableEnum)(Object)ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
             ShieldTextures textures;
@@ -42,6 +42,8 @@ public class ToolsRenderMekanismShieldItemMixin {
                 textures = EMShieldTextures.PLASLITHERITE;
             } else if (item == EMToolsItems.BETTER_GOLD_SHIELD.asItem()) {
                 textures = EMShieldTextures.BETTER_GOLD;
+            } else if (item == EMToolsItems.REFINED_REDSTONE_SHIELD.asItem()) {
+                textures = EMShieldTextures.REFINED_REDSTONE;
             } else {
                 return;
             }

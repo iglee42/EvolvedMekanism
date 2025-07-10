@@ -33,7 +33,7 @@ public class EMToolsClientRegistration {
     public void init(FMLClientSetupEvent event) {
         event.enqueueWork(() -> addShieldPropertyOverrides(MekanismTools.rl("blocking"),
                 (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F,
-                EMToolsItems.BETTER_GOLD_SHIELD, EMToolsItems.PLASLITHERITE_SHIELD));
+                EMToolsItems.BETTER_GOLD_SHIELD,EMToolsItems.REFINED_REDSTONE_SHIELD, EMToolsItems.PLASLITHERITE_SHIELD));
 
     }
 

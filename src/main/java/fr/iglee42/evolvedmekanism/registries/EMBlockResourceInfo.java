@@ -10,6 +10,7 @@ import org.jetbrains.annotations.Nullable;
 public enum EMBlockResourceInfo implements IResource {
     BETTER_GOLD("better_gold", 5, 9, MapColor.COLOR_YELLOW),
     PLASLITHERITE("plaslitherite", 25, 2_400, MapColor.SNOW, NoteBlockInstrument.BASEDRUM, 0, 0, false,false,PushReaction.NORMAL),
+    REFINED_REDSTONE("refined_redstone", 5, 6, MapColor.COLOR_RED, NoteBlockInstrument.BASEDRUM, 0, 15);
 
     ;
     private final String registrySuffix;

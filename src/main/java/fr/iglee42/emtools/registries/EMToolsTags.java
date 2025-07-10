@@ -37,36 +37,47 @@ public class EMToolsTags {
 
         public static final TagKey<Item> ARMORS_HELMETS_BETTER_GOLD = commonTag("armors/helmets/better_gold");
         public static final TagKey<Item> ARMORS_HELMETS_PLASLITHERITE = commonTag("armors/helmets/plaslitherite");
+        public static final TagKey<Item> ARMORS_HELMETS_REFINED_REDSTONE = commonTag("armors/helmets/refined_redstone");
 
         public static final TagKey<Item> ARMORS_CHESTPLATES_BETTER_GOLD = commonTag("armors/chestplates/better_gold");
         public static final TagKey<Item> ARMORS_CHESTPLATES_PLASLITHERITE = commonTag("armors/chestplates/plaslitherite");
+        public static final TagKey<Item> ARMORS_CHESTPLATES_REFINED_REDSTONE = commonTag("armors/chestplates/refined_redstone");
 
         public static final TagKey<Item> ARMORS_LEGGINGS_BETTER_GOLD = commonTag("armors/leggings/better_gold");
         public static final TagKey<Item> ARMORS_LEGGINGS_PLASLITHERITE = commonTag("armors/leggings/plaslitherite");
+        public static final TagKey<Item> ARMORS_LEGGINGS_REFINED_REDSTONE = commonTag("armors/leggings/refined_redstone");
 
         public static final TagKey<Item> ARMORS_BOOTS_BETTER_GOLD = commonTag("armors/boots/better_gold");
         public static final TagKey<Item> ARMORS_BOOTS_PLASLITHERITE = commonTag("armors/boots/plaslitherite");
+        public static final TagKey<Item> ARMORS_BOOTS_REFINED_REDSTONE = commonTag("armors/boots/refined_redstone");
 
         public static final TagKey<Item> TOOLS_AXES_BETTER_GOLD = commonTag("tools/axes/better_gold");
         public static final TagKey<Item> TOOLS_AXES_PLASLITHERITE = commonTag("tools/axes/plaslitherite");
+        public static final TagKey<Item> TOOLS_AXES_REFINED_REDSTONE = commonTag("tools/axes/refined_redstone");
 
         public static final TagKey<Item> TOOLS_PICKAXES_BETTER_GOLD = commonTag("tools/pickaxes/better_gold");
         public static final TagKey<Item> TOOLS_PICKAXES_PLASLITHERITE = commonTag("tools/pickaxes/plaslitherite");
+        public static final TagKey<Item> TOOLS_PICKAXES_REFINED_REDSTONE = commonTag("tools/pickaxes/refined_redstone");
 
         public static final TagKey<Item> TOOLS_HOES_BETTER_GOLD = commonTag("tools/hoes/better_gold");
         public static final TagKey<Item> TOOLS_HOES_PLASLITHERITE = commonTag("tools/hoes/plaslitherite");
+        public static final TagKey<Item> TOOLS_HOES_REFINED_REDSTONE = commonTag("tools/hoes/refined_redstone");
 
         public static final TagKey<Item> TOOLS_SHOVELS_BETTER_GOLD = commonTag("tools/shovels/better_gold");
         public static final TagKey<Item> TOOLS_SHOVELS_PLASLITHERITE = commonTag("tools/shovels/plaslitherite");
+        public static final TagKey<Item> TOOLS_SHOVELS_REFINED_REDSTONE = commonTag("tools/shovels/refined_redstone");
 
         public static final TagKey<Item> TOOLS_SWORDS_BETTER_GOLD = commonTag("tools/swords/better_gold");
         public static final TagKey<Item> TOOLS_SWORDS_PLASLITHERITE = commonTag("tools/swords/plaslitherite");
+        public static final TagKey<Item> TOOLS_SWORDS_REFINED_REDSTONE = commonTag("tools/swords/refined_redstone");
 
         public static final TagKey<Item> TOOLS_PAXELS_BETTER_GOLD = commonTag("tools/paxels/better_gold");
         public static final TagKey<Item> TOOLS_PAXELS_PLASLITHERITE = commonTag("tools/paxels/plaslitherite");
+        public static final TagKey<Item> TOOLS_PAXELS_REFINED_REDSTONE = commonTag("tools/paxels/refined_redstone");
 
         public static final TagKey<Item> TOOLS_SHIELDS_BETTER_GOLD = commonTag("tools/shields/better_gold");
         public static final TagKey<Item> TOOLS_SHIELDS_PLASLITHERITE = commonTag("tools/shields/plaslitherite");
+        public static final TagKey<Item> TOOLS_SHIELDSREFINED_REDSTONE = commonTag("tools/shields/refined_redstone");
 
 
         private static TagKey<Item> commonTag(String name) {
@@ -91,6 +102,7 @@ public class EMToolsTags {
 
         public static final TagKey<Block> INCORRECT_FOR_NEEDS_BETTER_GOLD_TOOL = tag("incorrect_for_better_gold_tool");
         public static final TagKey<Block> INCORRECT_FOR_PLASLITHERITE_TOOL = tag("incorrect_for_plaslitherite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_REFINED_REDSTONE_TOOL = tag("incorrect_for_refined_redstone_tool");
 
         private static TagKey<Block> forgeTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
