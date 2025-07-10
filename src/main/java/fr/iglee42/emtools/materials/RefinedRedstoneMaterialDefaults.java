@@ -17,13 +17,34 @@ public class RefinedRedstoneMaterialDefaults extends BaseMekanismMaterial {
 
     @Override
     public int getShieldDurability() {
-        return 448;
+        return 381;
     }
 
     @Override
     public float getAxeDamage() {
+        return 9;
+    }
+
+    @Override
+    public float getSwordDamage() {
         return 7;
     }
+
+    @Override
+    public float getPickaxeDamage() {
+        return 2;
+    }
+
+    @Override
+    public float getShovelDamage() {
+        return 2.5f;
+    }
+
+    @Override
+    public float getHoeDamage() {
+        return 0;
+    }
+
 
     @Override
     public float getAxeAtkSpeed() {
@@ -32,22 +53,22 @@ public class RefinedRedstoneMaterialDefaults extends BaseMekanismMaterial {
 
     @Override
     public int getUses() {
-        return 500;
+        return 384;
     }
 
     @Override
     public float getSpeed() {
-        return 8;
+        return 5;
     }
 
     @Override
     public float getAttackDamageBonus() {
-        return 3;
+        return 0;
     }
 
     @Override
     public int getLevel() {
-        return 3;
+        return 2;
     }
 
     @Override
@@ -57,7 +78,7 @@ public class RefinedRedstoneMaterialDefaults extends BaseMekanismMaterial {
 
     @Override
     public float getToughness() {
-        return 2;
+        return 0;
     }
 
     @Override

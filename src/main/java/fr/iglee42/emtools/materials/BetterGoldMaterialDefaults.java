@@ -19,12 +19,12 @@ public class BetterGoldMaterialDefaults extends BaseMekanismMaterial {
 
     @Override
     public int getShieldDurability() {
-        return 448;
+        return 3360;
     }
 
     @Override
     public float getAxeDamage() {
-        return 7;
+        return 16;
     }
 
     @Override
@@ -33,8 +33,28 @@ public class BetterGoldMaterialDefaults extends BaseMekanismMaterial {
     }
 
     @Override
+    public float getSwordDamage() {
+        return 14;
+    }
+
+    @Override
+    public float getPickaxeDamage() {
+        return 10;
+    }
+
+    @Override
+    public float getShovelDamage() {
+        return 10.5f;
+    }
+
+    @Override
+    public float getHoeDamage() {
+        return 0;
+    }
+
+    @Override
     public int getUses() {
-        return 500;
+        return 8192;
     }
 
     @Override
@@ -44,7 +64,7 @@ public class BetterGoldMaterialDefaults extends BaseMekanismMaterial {
 
     @Override
     public float getAttackDamageBonus() {
-        return 3;
+        return 2;
     }
 
     @Override
@@ -59,26 +79,26 @@ public class BetterGoldMaterialDefaults extends BaseMekanismMaterial {
 
     @Override
     public float getToughness() {
-        return 2;
+        return 5;
     }
 
     @Override
     public int getDurabilityForType(@NotNull ArmorItem.Type armorType) {
         return switch (armorType) {
-            case BOOTS -> 260;
-            case LEGGINGS -> 300;
-            case CHESTPLATE -> 320;
-            case HELMET -> 220;
+            case BOOTS -> 1650;
+            case LEGGINGS -> 2250;
+            case CHESTPLATE -> 2400;
+            case HELMET -> 1950;
         };
     }
 
     @Override
     public int getDefenseForType(@NotNull ArmorItem.Type armorType) {
         return switch (armorType) {
-            case BOOTS -> 3;
-            case LEGGINGS -> 6;
-            case CHESTPLATE -> 8;
-            case HELMET -> 3;
+            case BOOTS -> 7;
+            case LEGGINGS -> 10;
+            case CHESTPLATE -> 12;
+            case HELMET -> 8;
         };
     }
 
@@ -114,7 +134,7 @@ public class BetterGoldMaterialDefaults extends BaseMekanismMaterial {
 
     @Override
     public float getKnockbackResistance() {
-        return 0;
+        return 0.2f;
     }
 
     @Override
