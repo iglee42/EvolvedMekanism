@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/radium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

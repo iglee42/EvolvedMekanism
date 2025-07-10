@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/compressed_iron"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

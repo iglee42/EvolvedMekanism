@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/alfsteel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

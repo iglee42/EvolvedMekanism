@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/desh"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

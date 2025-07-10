@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/tornium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

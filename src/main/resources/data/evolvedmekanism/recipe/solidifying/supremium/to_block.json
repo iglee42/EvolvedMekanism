@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/supremium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -34,8 +34,10 @@
             "item": "evolvedmekanism:better_gold_paxel"
         }
     ],
-    "result": "evolvedmekanism:nugget_better_gold",
-    "conditions": [
+    "result": {
+        "id": "evolvedmekanism:nugget_better_gold"
+    },
+    "neoforge:conditions": [
         {
             "type": "neoforge:mod_loaded",
             "modid": "mekanismtools"

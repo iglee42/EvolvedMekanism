@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/steel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/amethyst"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

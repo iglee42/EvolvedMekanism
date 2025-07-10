@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/uranium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/brass"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

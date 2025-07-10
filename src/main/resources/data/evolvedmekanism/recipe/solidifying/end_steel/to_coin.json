@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/end_steel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

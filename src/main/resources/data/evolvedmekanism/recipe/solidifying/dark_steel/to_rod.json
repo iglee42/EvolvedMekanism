@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/dark_steel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

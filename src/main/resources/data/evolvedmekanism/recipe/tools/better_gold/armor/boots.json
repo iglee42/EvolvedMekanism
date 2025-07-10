@@ -13,7 +13,7 @@
   "result": {
     "id": "evolvedmekanism:better_gold_boots"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "mekanismtools"

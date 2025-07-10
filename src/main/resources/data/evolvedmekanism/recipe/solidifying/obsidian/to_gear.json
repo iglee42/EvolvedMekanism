@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/obsidian"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

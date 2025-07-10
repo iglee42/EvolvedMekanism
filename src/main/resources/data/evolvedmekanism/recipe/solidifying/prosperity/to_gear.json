@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/prosperity"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

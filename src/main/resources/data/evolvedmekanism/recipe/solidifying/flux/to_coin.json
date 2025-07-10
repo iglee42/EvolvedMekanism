@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/flux"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

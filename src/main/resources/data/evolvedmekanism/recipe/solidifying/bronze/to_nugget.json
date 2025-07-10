@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/bronze"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -13,10 +13,10 @@
     "tag": "c:ingots/gold"
   },
   "output": {
-    "item": "thermalendergy:melodium_ingot",
+    "id": "thermalendergy:melodium_ingot",
     "count": 2
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "thermalendergy"

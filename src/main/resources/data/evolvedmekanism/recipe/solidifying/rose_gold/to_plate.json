@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/rose_gold"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_aluminum",
     "amount": 48
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

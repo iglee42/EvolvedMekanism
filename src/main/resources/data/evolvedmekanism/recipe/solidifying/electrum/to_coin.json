@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/electrum"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

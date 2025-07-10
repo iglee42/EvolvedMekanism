@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/infused_iron"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

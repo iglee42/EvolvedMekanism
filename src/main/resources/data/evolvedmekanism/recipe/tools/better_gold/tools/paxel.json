@@ -23,7 +23,7 @@
   "result": {
     "id": "evolvedmekanism:better_gold_paxel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "mekanismtools"

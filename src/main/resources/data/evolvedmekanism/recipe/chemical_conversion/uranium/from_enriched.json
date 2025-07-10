@@ -1,10 +1,10 @@
 {
-  "type": "mekanism:infusion_conversion",
+  "type": "mekanism:chemical_conversion",
   "input": {
     "tag": "evolvedmekanism:enriched/uranium"
   },
   "output": {
     "amount": 80,
-    "chemical": "evolvedmekanism:uranium"
+    "id": "evolvedmekanism:uranium"
   }
 }

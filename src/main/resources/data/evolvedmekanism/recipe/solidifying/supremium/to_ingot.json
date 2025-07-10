@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/supremium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/nether_star"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

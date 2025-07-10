@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/certus_quartz"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

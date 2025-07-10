@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/hepatizon"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

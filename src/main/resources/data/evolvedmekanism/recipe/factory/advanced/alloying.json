@@ -11,7 +11,7 @@
       "tag": "c:ingots/osmium"
     },
     "P": {
-      "item": "mekanism:basic_alloying_factory"
+      "item": "evolvedmekanism:basic_alloying_factory"
     }
   },
   "pattern": [
@@ -20,6 +20,6 @@
     "ACA"
   ],
   "result": {
-    "id": "mekanism:advanced_alloying_factory"
+    "id": "evolvedmekanism:advanced_alloying_factory"
   }
 }

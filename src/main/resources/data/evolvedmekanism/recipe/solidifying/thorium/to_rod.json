@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/thorium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

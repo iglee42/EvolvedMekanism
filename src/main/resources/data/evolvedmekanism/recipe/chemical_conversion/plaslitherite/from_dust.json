@@ -1,10 +1,10 @@
 {
-  "type": "mekanism:infusion_conversion",
+  "type": "mekanism:chemical_conversion",
   "input": {
     "tag": "c:dusts/plaslitherite"
   },
   "output": {
     "amount": 10,
-    "chemical": "evolvedmekanism:plaslitherite"
+    "id": "evolvedmekanism:plaslitherite"
   }
 }

@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_soulsteel",
     "amount": 48
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/saturlyte"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

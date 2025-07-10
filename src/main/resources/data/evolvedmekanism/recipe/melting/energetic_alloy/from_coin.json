@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_energetic_alloy",
     "amount": 48
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

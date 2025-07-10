@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/amethyst"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

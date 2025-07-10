@@ -10,10 +10,10 @@
     "tag": "c:dusts/redstone"
   },
   "output": {
-    "item": "ae2:fluix_crystal",
+    "id": "ae2:fluix_crystal",
     "count": 2
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "ae2"

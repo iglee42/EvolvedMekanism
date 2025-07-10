@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:dusts/prudentium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

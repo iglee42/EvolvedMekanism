@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/tin"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

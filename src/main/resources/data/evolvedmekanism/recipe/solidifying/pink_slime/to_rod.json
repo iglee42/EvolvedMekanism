@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/pink_slime"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

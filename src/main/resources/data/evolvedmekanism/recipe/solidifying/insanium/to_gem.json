@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gems/insanium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

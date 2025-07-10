@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/soularium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:dusts/manganese"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

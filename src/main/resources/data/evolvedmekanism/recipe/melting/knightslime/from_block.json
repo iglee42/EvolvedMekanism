@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_knightslime",
     "amount": 1296
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

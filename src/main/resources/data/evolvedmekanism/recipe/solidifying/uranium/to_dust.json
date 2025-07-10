@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:dusts/uranium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

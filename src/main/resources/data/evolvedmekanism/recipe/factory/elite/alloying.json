@@ -11,7 +11,7 @@
       "tag": "c:ingots/gold"
     },
     "P": {
-      "item": "mekanism:advanced_alloying_factory"
+      "item": "evolvedmekanism:advanced_alloying_factory"
     }
   },
   "pattern": [
@@ -20,6 +20,6 @@
     "ACA"
   ],
   "result": {
-    "id": "mekanism:elite_alloying_factory"
+    "id": "evolvedmekanism:elite_alloying_factory"
   }
 }

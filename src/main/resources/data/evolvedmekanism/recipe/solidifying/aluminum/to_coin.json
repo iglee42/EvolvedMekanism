@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/aluminum"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

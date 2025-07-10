@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/neptunium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

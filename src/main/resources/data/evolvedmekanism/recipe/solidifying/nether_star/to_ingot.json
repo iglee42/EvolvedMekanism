@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/nether_star"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

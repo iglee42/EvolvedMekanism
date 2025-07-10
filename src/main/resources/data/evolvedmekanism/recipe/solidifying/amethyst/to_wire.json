@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/amethyst"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/ouranium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

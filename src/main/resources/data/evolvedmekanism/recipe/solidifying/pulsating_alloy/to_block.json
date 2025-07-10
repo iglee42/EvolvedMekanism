@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/pulsating_alloy"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/ender_ingot"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

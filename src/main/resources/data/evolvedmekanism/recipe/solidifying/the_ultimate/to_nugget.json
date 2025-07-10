@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/the_ultimate"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

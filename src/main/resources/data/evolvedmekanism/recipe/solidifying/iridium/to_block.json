@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/iridium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

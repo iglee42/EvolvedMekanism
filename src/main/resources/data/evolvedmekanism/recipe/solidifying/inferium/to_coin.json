@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/inferium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:dusts/zanite"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

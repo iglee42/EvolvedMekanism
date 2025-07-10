@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/radium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

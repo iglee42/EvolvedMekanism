@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/iesnium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

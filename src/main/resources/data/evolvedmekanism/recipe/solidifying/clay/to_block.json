@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/clay"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

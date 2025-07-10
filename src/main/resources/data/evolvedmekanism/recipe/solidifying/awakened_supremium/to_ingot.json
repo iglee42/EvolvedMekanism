@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/awakened_supremium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

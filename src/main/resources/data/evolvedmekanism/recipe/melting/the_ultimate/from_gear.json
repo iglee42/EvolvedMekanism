@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_the_ultimate",
     "amount": 576
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

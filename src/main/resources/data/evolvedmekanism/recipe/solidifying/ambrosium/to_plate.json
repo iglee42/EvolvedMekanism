@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/ambrosium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/terrasteel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

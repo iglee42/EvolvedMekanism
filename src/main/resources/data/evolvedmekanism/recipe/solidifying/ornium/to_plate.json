@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/ornium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

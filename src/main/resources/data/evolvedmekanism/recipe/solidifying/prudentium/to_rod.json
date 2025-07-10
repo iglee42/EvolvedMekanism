@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/prudentium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

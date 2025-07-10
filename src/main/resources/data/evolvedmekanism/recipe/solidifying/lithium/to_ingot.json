@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/lithium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

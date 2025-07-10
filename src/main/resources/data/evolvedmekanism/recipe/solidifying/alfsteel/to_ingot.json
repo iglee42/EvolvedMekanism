@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/alfsteel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/diamond"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

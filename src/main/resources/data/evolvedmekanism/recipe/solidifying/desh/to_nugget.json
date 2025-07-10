@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/desh"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

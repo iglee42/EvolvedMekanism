@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/black_iron"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

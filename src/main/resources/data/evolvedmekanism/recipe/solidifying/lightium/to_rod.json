@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/lightium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

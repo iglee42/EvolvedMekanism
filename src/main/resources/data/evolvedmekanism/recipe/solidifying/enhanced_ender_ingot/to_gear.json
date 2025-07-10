@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/enhanced_ender_ingot"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

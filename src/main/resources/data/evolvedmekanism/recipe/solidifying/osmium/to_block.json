@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/osmium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

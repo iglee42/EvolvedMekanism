@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/signalum"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/prosperity"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

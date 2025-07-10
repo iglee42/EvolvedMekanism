@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/plutonium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

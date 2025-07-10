@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/redstone"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

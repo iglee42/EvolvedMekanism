@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/oratchalcum"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

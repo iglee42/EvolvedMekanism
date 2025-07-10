@@ -23,7 +23,7 @@
   "result": {
     "id": "evolvedmekanism:plaslitherite_paxel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "mekanismtools"

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/enhanced_redstone_ingot"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

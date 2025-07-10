@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/constantan"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

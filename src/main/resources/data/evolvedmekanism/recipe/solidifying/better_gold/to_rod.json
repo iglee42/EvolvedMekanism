@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/better_gold"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

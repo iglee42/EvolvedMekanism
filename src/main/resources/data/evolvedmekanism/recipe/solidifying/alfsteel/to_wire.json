@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/alfsteel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

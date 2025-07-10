@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_manganese",
     "amount": 1296
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

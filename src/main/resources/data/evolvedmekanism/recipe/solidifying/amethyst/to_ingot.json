@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/amethyst"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

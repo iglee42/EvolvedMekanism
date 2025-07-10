@@ -19,7 +19,7 @@
   "result": {
     "id": "evolvedmekanism:mold_storage_block"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

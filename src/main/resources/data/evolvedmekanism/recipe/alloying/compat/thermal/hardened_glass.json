@@ -10,10 +10,10 @@
     "tag": "c:sand"
   },
   "output": {
-    "item": "thermal:obsidian_glass",
+    "id": "thermal:obsidian_glass",
     "count": 2
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "thermal"

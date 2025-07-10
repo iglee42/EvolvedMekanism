@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/infinity"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

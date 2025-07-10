@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/rose_gold"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

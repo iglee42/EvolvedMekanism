@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/invar"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

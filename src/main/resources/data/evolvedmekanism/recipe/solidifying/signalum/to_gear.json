@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/signalum"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_pulsating_alloy",
     "amount": 576
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

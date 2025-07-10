@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/nether_star"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

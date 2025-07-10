@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/pewter"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

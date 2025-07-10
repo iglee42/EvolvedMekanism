@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/saturlyte"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

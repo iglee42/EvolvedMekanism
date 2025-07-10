@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/end_steel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

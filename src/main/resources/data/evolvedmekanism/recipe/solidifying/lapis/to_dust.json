@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:dusts/lapis"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

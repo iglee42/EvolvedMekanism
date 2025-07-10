@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_ornium",
     "amount": 72
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

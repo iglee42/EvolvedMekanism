@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/gaiasteel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

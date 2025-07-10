@@ -12,10 +12,10 @@
     "item": "minecraft:clay_ball"
   },
   "output": {
-    "item": "minecraft:red_dye",
+    "id": "minecraft:red_dye",
     "count": 12
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "enderio"

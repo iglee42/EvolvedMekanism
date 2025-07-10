@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/conductive_alloy"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

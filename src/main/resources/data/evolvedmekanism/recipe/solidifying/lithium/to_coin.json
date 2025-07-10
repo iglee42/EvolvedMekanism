@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/lithium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

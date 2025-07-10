@@ -19,7 +19,7 @@
   "result": {
     "id": "evolvedmekanism:mold_plate"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

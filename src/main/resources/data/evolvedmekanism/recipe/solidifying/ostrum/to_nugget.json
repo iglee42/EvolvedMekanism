@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/ostrum"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

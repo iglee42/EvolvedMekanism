@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_brass",
     "amount": 144
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

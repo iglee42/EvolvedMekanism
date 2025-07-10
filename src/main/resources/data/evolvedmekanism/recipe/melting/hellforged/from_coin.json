@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_hellforged",
     "amount": 48
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

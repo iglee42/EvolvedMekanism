@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/tornium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

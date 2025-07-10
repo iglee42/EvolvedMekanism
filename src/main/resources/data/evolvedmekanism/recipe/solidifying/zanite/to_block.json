@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/zanite"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/calorite"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/draconium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/netherite"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

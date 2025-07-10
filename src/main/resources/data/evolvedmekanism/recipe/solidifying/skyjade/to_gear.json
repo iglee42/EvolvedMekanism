@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/skyjade"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

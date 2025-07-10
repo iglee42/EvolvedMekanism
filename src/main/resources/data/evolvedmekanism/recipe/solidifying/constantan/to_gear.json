@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/constantan"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -34,8 +34,10 @@
             "item": "evolvedmekanism:plaslitherite_paxel"
         }
     ],
-    "result": "evolvedmekanism:nugget_plaslitherite",
-    "conditions": [
+    "result": {
+        "id": "evolvedmekanism:nugget_plaslitherite"
+    },
+    "neoforge:conditions": [
         {
             "type": "neoforge:mod_loaded",
             "modid": "mekanismtools"

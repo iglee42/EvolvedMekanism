@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/iesnium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

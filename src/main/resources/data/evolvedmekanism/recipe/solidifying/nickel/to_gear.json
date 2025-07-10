@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/nickel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

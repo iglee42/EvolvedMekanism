@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/zanite"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

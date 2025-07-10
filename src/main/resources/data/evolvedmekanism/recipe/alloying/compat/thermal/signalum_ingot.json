@@ -12,10 +12,10 @@
     "tag": "c:ingots/copper"
   },
   "output": {
-    "item": "thermal:signalum_ingot",
+    "id": "thermal:signalum_ingot",
     "count": 4
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "thermal"

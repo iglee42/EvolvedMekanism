@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/iridium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

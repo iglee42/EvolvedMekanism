@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/imperium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

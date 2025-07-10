@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/tornium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_certus_quartz",
     "amount": 36
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

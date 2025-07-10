@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/knightslime"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

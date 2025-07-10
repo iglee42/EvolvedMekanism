@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:ingots/silicon_bronze"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

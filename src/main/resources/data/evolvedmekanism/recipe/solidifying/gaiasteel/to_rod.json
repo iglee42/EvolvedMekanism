@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:rods/gaiasteel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

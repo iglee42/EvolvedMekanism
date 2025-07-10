@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/ouranium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

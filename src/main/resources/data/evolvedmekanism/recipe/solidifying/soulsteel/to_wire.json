@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/soulsteel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:dusts/end_steel"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

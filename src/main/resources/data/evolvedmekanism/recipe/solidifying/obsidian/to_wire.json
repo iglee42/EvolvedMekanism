@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/obsidian"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

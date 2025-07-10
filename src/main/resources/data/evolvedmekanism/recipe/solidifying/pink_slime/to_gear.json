@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:gears/pink_slime"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

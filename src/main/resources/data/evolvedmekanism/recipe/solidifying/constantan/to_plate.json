@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:plates/constantan"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

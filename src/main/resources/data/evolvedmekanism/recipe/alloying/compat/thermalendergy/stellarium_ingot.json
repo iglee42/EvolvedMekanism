@@ -12,10 +12,10 @@
     "tag": "c:nether_stars"
   },
   "output": {
-    "item": "thermalendergy:stellarium_ingot",
+    "id": "thermalendergy:stellarium_ingot",
     "count": 4
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "thermalendergy"

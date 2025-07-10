@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:dusts/sentrite"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:storage_blocks/lead"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

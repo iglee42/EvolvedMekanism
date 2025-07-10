@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/vibrant_alloy"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

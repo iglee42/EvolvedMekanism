@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:coins/refined_obsidian"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

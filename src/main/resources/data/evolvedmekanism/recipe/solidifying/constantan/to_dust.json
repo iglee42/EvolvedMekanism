@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:dusts/constantan"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

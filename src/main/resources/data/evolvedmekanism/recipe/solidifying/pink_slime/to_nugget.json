@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:nuggets/pink_slime"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:dusts/ouranium"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

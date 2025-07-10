@@ -15,7 +15,7 @@
   "output": {
     "tag": "c:wires/plaslitherite"
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {

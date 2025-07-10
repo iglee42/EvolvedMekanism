@@ -7,7 +7,7 @@
     "id": "evolvedmekanism:molten_copper_alloy",
     "amount": 144
   },
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {
