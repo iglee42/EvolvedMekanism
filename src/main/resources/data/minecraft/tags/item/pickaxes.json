@@ -1,6 +1,6 @@
 {
     "values": [
-        "#c:tools/pickaxes/better_gold",
-        "#c:tools/pickaxes/plaslitherite"
+        "evolvedmekanism:better_gold_pickaxe",
+        "evolvedmekanism:plaslitherite_pickaxe"
     ]
 }

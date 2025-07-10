@@ -1,6 +1,6 @@
 {
     "values": [
-        "#c:tools/swords/better_gold",
-        "#c:tools/swords/plaslitherite"
+        "evolvedmekanism:better_gold_sword",
+        "evolvedmekanism:plaslitherite_sword"
     ]
 }

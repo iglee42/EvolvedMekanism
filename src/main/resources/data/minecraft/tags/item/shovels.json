@@ -1,6 +1,6 @@
 {
     "values": [
-        "#c:tools/shovels/better_gold",
-        "#c:tools/shovels/plaslitherite"
+        "evolvedmekanism:better_gold_shovel",
+        "evolvedmekanism:plaslitherite_shovel"
     ]
 }

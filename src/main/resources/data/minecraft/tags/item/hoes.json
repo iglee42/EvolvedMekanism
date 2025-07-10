@@ -1,6 +1,6 @@
 {
     "values": [
-        "#c:tools/hoes/better_gold",
-        "#c:tools/hoes/plaslitherite"
+        "evolvedmekanism:better_gold_hoe",
+        "evolvedmekanism:plaslitherite_hoe"
     ]
 }
