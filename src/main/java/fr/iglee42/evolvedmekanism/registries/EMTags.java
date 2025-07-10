@@ -62,12 +62,15 @@ public class EMTags {
 
         public static final TagKey<Item> STORAGE_BLOCKS_BETTER_GOLD = forgeTag("storage_blocks/better_gold");
         public static final TagKey<Item> STORAGE_BLOCKS_PLASLITHERITE = forgeTag("storage_blocks/plaslitherite");
+        public static final TagKey<Item> STORAGE_BLOCKS_REFINED_REDSTONE = forgeTag("storage_blocks/refined_redstone");
 
         public static final TagKey<Item> INGOTS_BETTER_GOLD = forgeTag("ingots/better_gold");
         public static final TagKey<Item> INGOTS_PLASLITHERITE = forgeTag("ingots/plaslitherite");
+        public static final TagKey<Item> INGOTS_REFINED_REDSTONE = forgeTag("ingots/refined_redstone");
 
         public static final TagKey<Item> NUGGETS_BETTER_GOLD = forgeTag("nuggets/better_gold");
         public static final TagKey<Item> NUGGETS_PLASLITHERITE = forgeTag("nuggets/plaslitherite");
+        public static final TagKey<Item> NUGGETS_REFINED_REDSTONE = forgeTag("nuggets/refined_redstone");
 
 
         public static final TagKey<Item> DUSTS_BETTER_GOLD = forgeTag("dusts/better_gold");
@@ -119,6 +122,7 @@ public class EMTags {
 
         public static final TagKey<Block> STORAGE_BLOCKS_BETTER_GOLD = forgeTag("storage_blocks/better_gold");
         public static final TagKey<Block> STORAGE_BLOCKS_PLASLITHERITE = forgeTag("storage_blocks/plaslitherite");
+        public static final TagKey<Block> STORAGE_BLOCKS_REFINED_REDSTONE = forgeTag("storage_blocks/refined_redstone");
 
         public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS = forgeTag("storage_blocks/alloys");
         public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_INFUSED = forgeTag("storage_blocks/alloys/infused");

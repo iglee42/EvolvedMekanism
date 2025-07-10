@@ -112,7 +112,8 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
             }
         }
 
-        structure.superchargingElements = FormationProtocol.explore(elements.iterator().next(), coord ->
+        if (!elements.isEmpty())
+            structure.superchargingElements = FormationProtocol.explore(elements.iterator().next(), coord ->
                 coord.subtract(cuboid.getMinPos()).getY() == 1 && WorldUtils.getTileEntity(TileEntitySuperchargingElement.class, world, chunkMap, coord) != null);
 
         if (elements.size() > structure.superchargingElements) {

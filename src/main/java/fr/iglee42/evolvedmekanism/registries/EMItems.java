@@ -79,9 +79,11 @@ public class EMItems {
 
     public static final ItemRegistryObject<Item> BETTER_GOLD_INGOT = registerResource(ResourceType.INGOT, EMResources.BETTER_GOLD);
     public static final ItemRegistryObject<Item> PLASLITHERITE_INGOT = registerUnburnableResource(ResourceType.INGOT, EMResources.PLASLITHERITE);
+    public static final ItemRegistryObject<Item> REFINED_REDSTONE_INGOT = registerUnburnableResource(ResourceType.INGOT, EMResources.REFINED_REDSTONE);
 
     public static final ItemRegistryObject<Item> BETTER_GOLD_NUGGET = registerResource(ResourceType.NUGGET, EMResources.BETTER_GOLD);
     public static final ItemRegistryObject<Item> PLASLITHERITE_NUGGET = registerUnburnableResource(ResourceType.NUGGET, EMResources.PLASLITHERITE);
+    public static final ItemRegistryObject<Item> REFINED_REDSTONE_NUGGET = registerUnburnableResource(ResourceType.NUGGET, EMResources.REFINED_REDSTONE);
 
 
     private static ItemRegistryObject<Item> registerCircuit(BaseTier tier) {

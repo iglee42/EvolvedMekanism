@@ -94,6 +94,7 @@ public class EMBlocks {
 
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> PLASLITHERITE_BLOCK = registerResourceBlock(EMBlockResourceInfo.PLASLITHERITE);
+    public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> REFINED_REDSTONE_BLOCK = registerResourceBlock(EMBlockResourceInfo.REFINED_REDSTONE);
 
     public static final BlockRegistryObject<Block,BlockItem> INFUSED_ALLOY_BLOCK = registerAlloyBlock(AlloyTier.INFUSED);
     public static final BlockRegistryObject<Block,BlockItem> REINFORCED_ALLOY_BLOCK = registerAlloyBlock(AlloyTier.REINFORCED);

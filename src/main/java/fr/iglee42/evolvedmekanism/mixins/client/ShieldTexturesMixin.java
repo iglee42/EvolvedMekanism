@@ -40,5 +40,6 @@ public class ShieldTexturesMixin implements InitializableEnum {
         if (EMShieldTextures.BETTER_GOLD != null) return;
         EMShieldTextures.BETTER_GOLD = evolvedmekanism$addVariant("BETTER_GOLD");
         EMShieldTextures.PLASLITHERITE = evolvedmekanism$addVariant("PLASLITHERITE");
+        EMShieldTextures.REFINED_REDSTONE = evolvedmekanism$addVariant("REFINED_REDSTONE");
     }
 }

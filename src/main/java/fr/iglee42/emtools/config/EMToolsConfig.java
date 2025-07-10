@@ -2,6 +2,7 @@ package fr.iglee42.emtools.config;
 
 import fr.iglee42.emtools.materials.BetterGoldMaterialDefaults;
 import fr.iglee42.emtools.materials.PlaslitheriteMaterialDefaults;
+import fr.iglee42.emtools.materials.RefinedRedstoneMaterialDefaults;
 import fr.iglee42.evolvedmekanism.config.EMConfigHelper;
 import fr.iglee42.evolvedmekanism.config.EMGeneralConfig;
 import mekanism.common.config.BaseMekanismConfig;
@@ -28,8 +29,10 @@ public class EMToolsConfig extends BaseMekanismConfig {
 
     public final ArmorSpawnChanceConfig betterGoldSpawnRate;
     public final ArmorSpawnChanceConfig plaslitheriteSpawnRate;
+    public final ArmorSpawnChanceConfig refinedRedstoneSpawnRate;
     public final MaterialCreator betterGold;
     public final MaterialCreator plaslitherite;
+    public final MaterialCreator refinedRedstone;
 
 
 
@@ -40,9 +43,11 @@ public class EMToolsConfig extends BaseMekanismConfig {
         builder.push("mobArmorSpawnRate");
         betterGoldSpawnRate = new ArmorSpawnChanceConfig(this, builder, "better_gold", "better_gold");
         plaslitheriteSpawnRate = new ArmorSpawnChanceConfig(this, builder, "plaslitherite", "plaslitherite");
+        refinedRedstoneSpawnRate = new ArmorSpawnChanceConfig(this, builder, "refined_redstone", "refined_redstone");
         builder.pop();
         betterGold = new MaterialCreator(this, builder, new BetterGoldMaterialDefaults());
         plaslitherite = new MaterialCreator(this, builder, new PlaslitheriteMaterialDefaults());
+        refinedRedstone = new MaterialCreator(this, builder, new RefinedRedstoneMaterialDefaults());
         builder.pop();
         configSpec = builder.build();
     }

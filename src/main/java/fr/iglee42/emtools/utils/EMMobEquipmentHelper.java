@@ -27,6 +27,8 @@ public class EMMobEquipmentHelper {
           EMToolsConfig.tools.betterGoldSpawnRate);
     private static final GearType PLASLITHERITE = new GearType(EMToolsItems.PLASLITHERITE_SWORD, EMToolsItems.PLASLITHERITE_SHOVEL, EMToolsItems.PLASLITHERITE_HELMET,
           EMToolsItems.PLASLITHERITE_CHESTPLATE, EMToolsItems.PLASLITHERITE_LEGGINGS, EMToolsItems.PLASLITHERITE_BOOTS, EMToolsConfig.tools.plaslitheriteSpawnRate);
+    private static final GearType REFINED_REDSTONE = new GearType(EMToolsItems.REFINED_REDSTONE_SWORD, EMToolsItems.PLASLITHERITE_SHOVEL, EMToolsItems.PLASLITHERITE_HELMET,
+            EMToolsItems.PLASLITHERITE_CHESTPLATE, EMToolsItems.PLASLITHERITE_LEGGINGS, EMToolsItems.PLASLITHERITE_BOOTS, EMToolsConfig.tools.plaslitheriteSpawnRate);
 
     private static boolean isZombie(LivingEntity entity) {
         //Ignore the specific subclasses that can't spawn with armor in vanilla
@@ -44,14 +46,14 @@ public class EMMobEquipmentHelper {
             GearType gearType = null;
             if (random.nextFloat() < MekanismToolsConfig.tools.armorSpawnChance.get() * difficultyMultiplier) {
                 //We can only spawn refined glowstone armor on piglins
-                gearType = getGearType(entity instanceof Piglin ? 0 : random.nextInt(2));
+                gearType = getGearType(entity instanceof Piglin ? 0 : random.nextInt(3));
                 setEntityArmorWithChance(random, entity, isHard, difficultyMultiplier, gearType);
             }
             if (isZombie) {
                 CachedFloatValue spawnChance = isHard ? MekanismToolsConfig.tools.weaponSpawnChanceHard : MekanismToolsConfig.tools.weaponSpawnChance;
                 if (random.nextFloat() < spawnChance.get()) {
                     if (gearType == null) {
-                        gearType = getGearType(random.nextInt(2));
+                        gearType = getGearType(random.nextInt(3));
                     }
                     if (gearType.spawnChance.canSpawnWeapon.get()) {
                         IItemProvider weapon = random.nextFloat() < gearType.spawnChance.swordWeight.get() ? gearType.sword : gearType.shovel;
@@ -66,6 +68,7 @@ public class EMMobEquipmentHelper {
         return switch (type) {
             default -> BETTER_GOLD;
             case 1 -> PLASLITHERITE;
+            case 2 -> REFINED_REDSTONE;
         };
     }
 
