@@ -8,7 +8,7 @@ import java.util.Map;
 
 import mekanism.client.render.MekanismRenderer.Model3D;
 import mekanism.common.util.MekanismUtils;
-import net.minecraftforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.FluidStack;
 
 public final class CustomModelRenderer {
 

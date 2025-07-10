@@ -3,16 +3,18 @@ package fr.iglee42.evolvedmekanism.recipes;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+
+import fr.iglee42.evolvedmekanism.recipes.vanilla_input.SingleItemBiFluidRecipeInput;
 import mekanism.api.annotations.NothingNullByDefault;
-import mekanism.api.math.FloatingLong;
 import mekanism.api.recipes.MekanismRecipe;
 import mekanism.api.recipes.ingredients.FluidStackIngredient;
 import mekanism.api.recipes.ingredients.ItemStackIngredient;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.util.TriPredicate;
-import net.minecraftforge.fluids.FluidStack;
+import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.util.TriPredicate;
+import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,18 +29,17 @@ import org.jetbrains.annotations.NotNull;
  * @apiNote Pressurized Reaction Chambers can process this recipe type.
  */
 @NothingNullByDefault
-public abstract class SolidificationRecipe extends MekanismRecipe implements TriPredicate<@NotNull ItemStack, @NotNull FluidStack, @NotNull FluidStack> {
+public abstract class SolidificationRecipe extends MekanismRecipe<SingleItemBiFluidRecipeInput> implements TriPredicate<@NotNull ItemStack, @NotNull FluidStack, @NotNull FluidStack> {
 
     private final ItemStackIngredient inputSolid;
     private final FluidStackIngredient inputFluid;
     private final FluidStackIngredient fluidInputExtra;
-    private final FloatingLong energyRequired;
+    private final long energyRequired;
     private final int duration;
     private final ItemStackIngredient outputItem;
     private final boolean keepItem;
 
     /**
-     * @param id             Recipe name.
      * @param inputSolid     Item input.
      * @param inputFluid     Fluid input.
      * @param inputFluidExtra Extra fluid input.
@@ -49,13 +50,12 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
      *
      * @apiNote At least one output must not be empty.
      */
-    public SolidificationRecipe(ResourceLocation id, ItemStackIngredient inputSolid, FluidStackIngredient inputFluid, FluidStackIngredient inputFluidExtra,
-                                FloatingLong energyRequired, int duration, ItemStackIngredient outputItem,boolean keepItem) {
-        super(id);
+    public SolidificationRecipe(ItemStackIngredient inputSolid, FluidStackIngredient inputFluid, FluidStackIngredient inputFluidExtra,
+                                long energyRequired, int duration, ItemStackIngredient outputItem,boolean keepItem) {
         this.inputSolid = Objects.requireNonNull(inputSolid, "Item input cannot be null.");
         this.inputFluid = Objects.requireNonNull(inputFluid, "Fluid input cannot be null.");
         this.fluidInputExtra = Objects.requireNonNull(inputFluidExtra, "Gas input cannot be null.");
-        this.energyRequired = Objects.requireNonNull(energyRequired, "Required energy cannot be null.").copyAsConst();
+        this.energyRequired = Objects.requireNonNull(energyRequired, "Required energy cannot be null.");
         if (duration <= 0) {
             throw new IllegalArgumentException("Duration must be positive.");
         }
@@ -89,7 +89,7 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
     /**
      * Gets the amount of "extra" energy this recipe requires, compared to the base energy requirements of the machine performing the recipe.
      */
-    public FloatingLong getEnergyRequired() {
+    public long getEnergyRequired() {
         return energyRequired;
     }
 
@@ -133,7 +133,11 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
      */
     @Contract(value = "_, _, _ -> new", pure = true)
     public ItemStack getOutput(ItemStack solid, FluidStack liquid, FluidStack extra) {
-        return outputItem.getRepresentations().get(0);
+        return outputItem.getRepresentations().get(0).copy();
+    }
+
+    public ItemStackIngredient getOutputRaw(){
+        return outputItem;
     }
 
     @Override
@@ -142,21 +146,7 @@ public abstract class SolidificationRecipe extends MekanismRecipe implements Tri
     }
 
     @Override
-    public void logMissingTags() {
-        inputSolid.logMissingTags();
-        inputFluid.logMissingTags();
-        fluidInputExtra.logMissingTags();
+    public boolean matches(SingleItemBiFluidRecipeInput input, Level level) {
+        return !isIncomplete() && test(input.item(),input.fluid(),input.fluidExtra());
     }
-
-    @Override
-    public void write(FriendlyByteBuf buffer) {
-        inputSolid.write(buffer);
-        inputFluid.write(buffer);
-        fluidInputExtra.write(buffer);
-        energyRequired.writeToBuffer(buffer);
-        buffer.writeVarInt(duration);
-        outputItem.write(buffer);
-        buffer.writeBoolean(keepItem);
-    }
-
 }

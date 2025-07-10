@@ -2,31 +2,20 @@ package fr.iglee42.evolvedmekanism.mixins.tiles;
 
 import fr.iglee42.evolvedmekanism.interfaces.IGetEnergySlot;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
-import fr.iglee42.evolvedmekanism.tiles.factory.TileEntityAlloyingFactory;
 import mekanism.api.IContentsListener;
-import mekanism.api.inventory.IInventorySlot;
-import mekanism.api.providers.IBlockProvider;
 import mekanism.common.capabilities.energy.MachineEnergyContainer;
 import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;
 import mekanism.common.capabilities.holder.slot.InventorySlotHelper;
 import mekanism.common.inventory.slot.EnergyInventorySlot;
 import mekanism.common.tier.FactoryTier;
-import mekanism.common.tile.component.config.ConfigInfo;
 import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.factory.TileEntitySawingFactory;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyArgs;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-
-import java.util.List;
-import java.util.Set;
 
 @Mixin(value = TileEntityFactory.class,remap = false)
 public class TileEntityFactoryMixin implements IGetEnergySlot {

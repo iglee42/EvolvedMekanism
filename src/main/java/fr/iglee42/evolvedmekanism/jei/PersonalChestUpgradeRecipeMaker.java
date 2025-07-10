@@ -18,30 +18,26 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ShulkerBoxBlock;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public final class PersonalChestUpgradeRecipeMaker {
 	private static final String group = "jei.personal_upgrade.barrel";
 
-	public static List<CraftingRecipe> createRecipes() {
-		List<CraftingRecipe> recipes = new ArrayList<>();
+	public static List<RecipeHolder<CraftingRecipe>> createRecipes() {
+		List<RecipeHolder<CraftingRecipe>> recipes = new ArrayList<>();
 		recipes.add(createRecipe(EMBlocks.ADVANCED_PERSONAL_CHEST,MekanismBlocks.PERSONAL_CHEST.asItem()));
 		BlockTieredPersonnalChest[] chests = new BlockTieredPersonnalChest[]{
-				EMBlocks.ADVANCED_PERSONAL_CHEST.getBlock(),
-				EMBlocks.ELITE_PERSONAL_CHEST.getBlock(),
-				EMBlocks.ULTIMATE_PERSONAL_CHEST.getBlock(),
-				EMBlocks.OVERCLOCKED_PERSONAL_CHEST.getBlock(),
-				EMBlocks.QUANTUM_PERSONAL_CHEST.getBlock(),
-				EMBlocks.DENSE_PERSONAL_CHEST.getBlock(),
-				EMBlocks.MULTIVERSAL_PERSONAL_CHEST.getBlock(),
-				EMBlocks.CREATIVE_PERSONAL_CHEST.getBlock()
+				EMBlocks.ADVANCED_PERSONAL_CHEST.get(),
+				EMBlocks.ELITE_PERSONAL_CHEST.get(),
+				EMBlocks.ULTIMATE_PERSONAL_CHEST.get(),
+				EMBlocks.OVERCLOCKED_PERSONAL_CHEST.get(),
+				EMBlocks.QUANTUM_PERSONAL_CHEST.get(),
+				EMBlocks.DENSE_PERSONAL_CHEST.get(),
+				EMBlocks.MULTIVERSAL_PERSONAL_CHEST.get(),
+				EMBlocks.CREATIVE_PERSONAL_CHEST.get()
 		};
 		Arrays.stream(chests)
 				.map(chest -> createRecipe(BlockTieredPersonnalChest.getUpgrade(chest.getTier()),chest.asItem()))
@@ -50,15 +46,16 @@ public final class PersonalChestUpgradeRecipeMaker {
 		return recipes;
 	}
 
-	private static CraftingRecipe createRecipe(@Nullable BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> nextChest, Item baseChest) {
+	private static RecipeHolder<CraftingRecipe> createRecipe(@Nullable BlockRegistryObject<BlockTieredPersonnalChest, ItemBlockTieredPersonalStorage<BlockTieredPersonnalChest>> nextChest, Item baseChest) {
 		Ingredient steel = Ingredient.of(MekanismItems.STEEL_INGOT);
-		Ingredient glass = Ingredient.of(Tags.Items.GLASS_SILICA);
+		Ingredient glass = Ingredient.of(Tags.Items.GLASS_BLOCKS_COLORLESS);
 		if (nextChest == null) return null;
-		Ingredient circuit = Ingredient.of(EvolvedMekanism.getCircuitByTier(nextChest.getBlock().getTier().getBaseTier()));
+		Ingredient circuit = Ingredient.of(EvolvedMekanism.getCircuitByTier(nextChest.get().getTier().getBaseTier()));
 		NonNullList<Ingredient> inputs = NonNullList.of(Ingredient.EMPTY, steel,glass,steel,circuit,Ingredient.of(baseChest),circuit,steel,steel,steel);
 		ItemStack output = new ItemStack(nextChest.asItem());
+		ShapedRecipe recipe = new ShapedRecipe(group,CraftingBookCategory.MISC,new ShapedRecipePattern(3,3,inputs, Optional.empty()),output);
 		ResourceLocation id = EvolvedMekanism.rl(group + "." + output.getDescriptionId());
-		return new ShapedRecipe(id, group, CraftingBookCategory.MISC,3,3,inputs,output);
+		return new RecipeHolder<>(id,recipe);
 	}
 
 	private PersonalChestUpgradeRecipeMaker() {

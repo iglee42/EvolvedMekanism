@@ -12,6 +12,7 @@ import mekanism.common.tier.CableTier;
 import mekanism.common.tier.TubeTier;
 import mekanism.common.util.text.EnergyDisplay;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -24,17 +25,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
 
-@Mixin(ItemBlockUniversalCable.class)
+@Mixin(value = ItemBlockUniversalCable.class,remap = false)
 public abstract class ItemBlockUniversalCableMixin {
 
     @Shadow public abstract @NotNull CableTier getTier();
 
-    @Inject(method = "appendHoverText",at = @At("HEAD"),cancellable = true)
-    private void evolvedmekanism$changeForCreative(@NotNull ItemStack stack, Level world, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag, CallbackInfo ci){
+    @Inject(method = "addStats",at = @At("HEAD"),cancellable = true)
+    private void evolvedmekanism$changeForCreative(@NotNull ItemStack stack, Item.TooltipContext world, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag, CallbackInfo ci){
         CableTier tier = getTier();
         if (tier.equals(EMCableTier.CREATIVE) && !MekKeyHandler.isKeyPressed(MekanismKeyHandler.detailsKey)) {
             tooltip.add(MekanismLang.CAPACITY_PER_TICK.translateColored(EnumColor.INDIGO, EnumColor.GRAY, MekanismLang.INFINITE));
-            tooltip.add(MekanismLang.HOLD_FOR_DETAILS.translateColored(EnumColor.GRAY, EnumColor.INDIGO, MekanismKeyHandler.detailsKey.getTranslatedKeyMessage()));
             ci.cancel();
         }
     }

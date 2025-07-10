@@ -15,13 +15,11 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SpawnEggItem;
-import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 
-@Mod.EventBusSubscriber(modid = EvolvedMekanism.MODID)
+@EventBusSubscriber(modid = EvolvedMekanism.MODID)
 @ParametersAreNotNullByDefault
 public class ModuleCapturing implements ICustomModule<ModuleCapturing> {
     @SubscribeEvent
@@ -30,10 +28,10 @@ public class ModuleCapturing implements ICustomModule<ModuleCapturing> {
         if (event.getSource().getEntity() == null) return;
         Entity killerE = event.getSource().getEntity();
         if (!(killerE instanceof LivingEntity killer)) return;
-        if ( ModuleHelper.INSTANCE.isEnabled(killer.getItemBySlot(EquipmentSlot.MAINHAND), EMModules.CAPTURING.get())) {
-            IModule<?> module = ModuleHelper.INSTANCE.load(killer.getItemBySlot(EquipmentSlot.MAINHAND), EMModules.CAPTURING);
+        if ( ModuleHelper.INSTANCE.isEnabled(killer.getItemBySlot(EquipmentSlot.MAINHAND), EMModules.CAPTURING)) {
+            IModule<?> module = ModuleHelper.INSTANCE.getModule(killer.getItemBySlot(EquipmentSlot.MAINHAND), EMModules.CAPTURING);
             if (module != null && module.isEnabled()){
-                SpawnEggItem item = ForgeSpawnEggItem.fromEntityType(entity.getType());
+                SpawnEggItem item = SpawnEggItem.byId(entity.getType());
                 if (item == null) return;
                 int level = module.getInstalledCount();
                 int valueToReach = switch (level){

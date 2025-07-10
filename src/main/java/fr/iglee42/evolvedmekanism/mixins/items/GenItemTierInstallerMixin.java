@@ -12,6 +12,7 @@ import mekanism.common.tile.interfaces.ITierUpgradable;
 import mekanism.generators.common.tile.TileEntityAdvancedSolarGenerator;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -30,7 +31,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 public class GenItemTierInstallerMixin {
 
     @Inject(method = "useOn",at = @At(value = "INVOKE", target = "Ljava/util/Set;isEmpty()Z",shift = At.Shift.BEFORE),cancellable = true,locals = LocalCapture.CAPTURE_FAILSOFT)
-    private void evolvedmekanism$disableOnSolarGenerator(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir, Player player, Level world, BlockPos pos, BlockState state, Block block, AttributeUpgradeable upgradeableBlock, BaseTier baseTier, BlockState upgradeState, BlockEntity tile, ITierUpgradable tierUpgradable){
+    private void evolvedmekanism$disableOnSolarGenerator(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir, Player player, Level world, BlockPos pos, BlockState state, Holder block, AttributeUpgradeable upgradeableBlock, BaseTier baseTier, BlockState upgradeState, BlockEntity tile, ITierUpgradable tierUpgradable){
         if (tile instanceof TileEntityAdvancedSolarGenerator || tile instanceof TileEntityTieredAdvancedSolarGenerator){
             player.displayClientMessage( EvolvedMekanism.logFormat(EnumColor.RED, "Sorry, tier installers are disabled on these blocks, we're waiting Mekanism to fix the issue."),false);
             cir.setReturnValue(InteractionResult.PASS);

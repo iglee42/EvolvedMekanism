@@ -3,8 +3,6 @@ package fr.iglee42.evolvedmekanism.mixins.tiles;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import mekanism.api.IContentsListener;
 import mekanism.api.inventory.IInventorySlot;
-import mekanism.api.providers.IBlockProvider;
-import mekanism.api.recipes.MekanismRecipe;
 import mekanism.api.recipes.SawmillRecipe;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.api.recipes.inputs.IInputHandler;
@@ -18,13 +16,14 @@ import mekanism.common.inventory.warning.WarningTracker;
 import mekanism.common.recipe.IMekanismRecipeTypeProvider;
 import mekanism.common.recipe.lookup.ISingleRecipeLookupHandler;
 import mekanism.common.recipe.lookup.cache.InputRecipeCache;
-import mekanism.common.tier.FactoryTier;
 import mekanism.common.tile.factory.TileEntityFactory;
-import mekanism.common.tile.factory.TileEntityItemToItemFactory;
 import mekanism.common.tile.factory.TileEntitySawingFactory;
 import mekanism.common.tile.machine.TileEntityPrecisionSawmill;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -46,7 +45,7 @@ public class TileEntitySawingFactoryMixin extends TileEntityFactory<SawmillRecip
 
     @Shadow protected IOutputHandler<SawmillRecipe.@NotNull ChanceOutput>[] outputHandlers;
 
-    protected TileEntitySawingFactoryMixin(IBlockProvider blockProvider, BlockPos pos, BlockState state, List<CachedRecipe.OperationTracker.RecipeError> errorTypes, Set<CachedRecipe.OperationTracker.RecipeError> globalErrorTypes) {
+    protected TileEntitySawingFactoryMixin(Holder<Block> blockProvider, BlockPos pos, BlockState state, List<CachedRecipe.OperationTracker.RecipeError> errorTypes, Set<CachedRecipe.OperationTracker.RecipeError> globalErrorTypes) {
         super(blockProvider, pos, state, errorTypes, globalErrorTypes);
     }
 
@@ -100,13 +99,18 @@ public class TileEntitySawingFactoryMixin extends TileEntityFactory<SawmillRecip
         return 0;
     }
 
+    @Override
+    public boolean isItemValidForSlot(@NotNull ItemStack stack) {
+        return false;
+    }
+
     @Unique
     public boolean isValidInputItem(@NotNull ItemStack stack) {
         return false;
     }
 
     @Unique
-    public @NotNull IMekanismRecipeTypeProvider<SawmillRecipe, InputRecipeCache.SingleItem<SawmillRecipe>> getRecipeType() {
+    public @NotNull IMekanismRecipeTypeProvider<SingleRecipeInput,SawmillRecipe, InputRecipeCache.SingleItem<SawmillRecipe>> getRecipeType() {
         return null;
     }
 

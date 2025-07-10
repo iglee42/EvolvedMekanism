@@ -1,9 +1,9 @@
 package fr.iglee42.evolvedmekanism.multiblock.apt;
 
-import mekanism.api.NBTConstants;
-import mekanism.api.math.FloatingLong;
+import mekanism.api.SerializationConstants;
 import mekanism.common.lib.multiblock.MultiblockCache;
 import mekanism.common.util.NBTUtils;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 
 public class APTCache extends MultiblockCache<APTMultiblockData> {
@@ -17,8 +17,8 @@ public class APTCache extends MultiblockCache<APTMultiblockData> {
     }
 
     @Override
-    public void apply(APTMultiblockData data) {
-        super.apply(data);
+    public void apply(HolderLookup.Provider provider,APTMultiblockData data) {
+        super.apply(provider,data);
         data.progress = progress;
     }
 
@@ -29,14 +29,14 @@ public class APTCache extends MultiblockCache<APTMultiblockData> {
     }
 
     @Override
-    public void load(CompoundTag nbtTags) {
-        super.load(nbtTags);
-        NBTUtils.setIntIfPresent(nbtTags, NBTConstants.PROGRESS, val -> progress = val);
+    public void load(HolderLookup.Provider provider,CompoundTag nbtTags) {
+        super.load(provider,nbtTags);
+        NBTUtils.setIntIfPresent(nbtTags, SerializationConstants.PROGRESS, val -> progress = val);
     }
 
     @Override
-    public void save(CompoundTag nbtTags) {
-        super.save(nbtTags);
-        nbtTags.putDouble(NBTConstants.PROGRESS, progress);
+    public void save(HolderLookup.Provider provider,CompoundTag nbtTags) {
+        super.save(provider,nbtTags);
+        nbtTags.putDouble(SerializationConstants.PROGRESS, progress);
     }
 }

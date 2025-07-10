@@ -1,17 +1,10 @@
 package fr.iglee42.evolvedmekanism.inventory.personalstorage;
 
-import java.util.List;
-
 import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
-import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import mekanism.api.inventory.IInventorySlot;
 import mekanism.common.inventory.container.item.MekanismItemContainer;
 import mekanism.common.inventory.container.slot.HotBarSlot;
-import mekanism.common.lib.inventory.personalstorage.AbstractPersonalStorageItemInventory;
-import mekanism.common.lib.inventory.personalstorage.ClientSidePersonalStorageInventory;
-import mekanism.common.lib.inventory.personalstorage.PersonalStorageManager;
-import mekanism.common.registries.MekanismContainerTypes;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -19,6 +12,8 @@ import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class TieredPersonalStorageItemContainer extends MekanismItemContainer {
 
@@ -28,7 +23,7 @@ public class TieredPersonalStorageItemContainer extends MekanismItemContainer {
         super(EMContainerTypes.TIERED_PERSONAL_STORAGE_ITEM, id, inv, hand, stack);
         //We have to initialize this before actually adding the slots
         ItemBlockTieredPersonalStorage<?> item = (ItemBlockTieredPersonalStorage<?>) stack.getItem();
-        itemInventory = !isRemote ? TieredPersonalStorageManager.getInventoryFor(stack) : new ClientSideTieredPersonalStorageInventory(item.getTier());
+        itemInventory = !isRemote ? TieredPersonalStorageManager.getInventoryFor(stack).orElseThrow(() -> new IllegalStateException("Inventory not available")) : new ClientSideTieredPersonalStorageInventory(item.getTier());
         super.addSlotsAndOpen();
     }
 

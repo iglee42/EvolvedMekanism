@@ -26,7 +26,7 @@ public class EMContainerTypes {
 
     public static final ContainerTypeDeferredRegister CONTAINER_TYPES = new ContainerTypeDeferredRegister(EvolvedMekanism.MODID);
 
-    public static final ContainerTypeRegistryObject<TieredPersonalStorageItemContainer> TIERED_PERSONAL_STORAGE_ITEM = CONTAINER_TYPES.register("tiered_personal_storage_item", () -> MekanismItemContainerType.item(ItemBlockTieredPersonalStorage.class, TieredPersonalStorageItemContainer::new));
+    public static final ContainerTypeRegistryObject<TieredPersonalStorageItemContainer> TIERED_PERSONAL_STORAGE_ITEM = CONTAINER_TYPES.registerMenu("tiered_personal_storage_item", () -> MekanismItemContainerType.item(ItemBlockTieredPersonalStorage.class, TieredPersonalStorageItemContainer::new));
     public static final ContainerTypeRegistryObject<TieredPersonalStorageContainer> TIERED_PERSONAL_STORAGE_BLOCK = CONTAINER_TYPES.register("tiered_personal_storage_block", TileEntityTieredPersonalStorage.class,TieredPersonalStorageContainer::new);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityAlloyer>> ALLOYER = CONTAINER_TYPES.register(EMBlocks.ALLOYER, TileEntityAlloyer.class);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityChemixer>> CHEMIXER = CONTAINER_TYPES.register(EMBlocks.CHEMIXER, TileEntityChemixer.class);

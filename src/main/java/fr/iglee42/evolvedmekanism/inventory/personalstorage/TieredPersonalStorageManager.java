@@ -2,29 +2,25 @@ package fr.iglee42.evolvedmekanism.inventory.personalstorage;
 
 import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
-import fr.iglee42.evolvedmekanism.utils.EMDataHandlerUtils;
 import mekanism.api.AutomationType;
 import mekanism.api.IContentsListener;
-import mekanism.api.NBTConstants;
 import mekanism.api.annotations.ParametersAreNotNullByDefault;
 import mekanism.api.inventory.IInventorySlot;
+import mekanism.api.security.IItemSecurityUtils;
+import mekanism.common.Mekanism;
 import mekanism.common.inventory.slot.BasicInventorySlot;
 import mekanism.common.lib.MekanismSavedData;
 import mekanism.common.lib.inventory.personalstorage.AbstractPersonalStorageItemInventory;
-import mekanism.common.util.ItemDataUtils;
-import mekanism.common.util.SecurityUtils;
+import mekanism.common.registries.MekanismDataComponents;
 import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.Tag;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.fml.util.thread.EffectiveSide;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 
@@ -33,74 +29,116 @@ import java.util.function.Consumer;
 public class TieredPersonalStorageManager {
     private static final Map<UUID, TieredPersonalStorageData> STORAGE_BY_PLAYER_UUID = new HashMap<>();
 
-    private static TieredPersonalStorageData forOwner(UUID playerUUID) {
-        return STORAGE_BY_PLAYER_UUID.computeIfAbsent(playerUUID, uuid->MekanismSavedData.createSavedData(TieredPersonalStorageData::new, "tiered_personal_storage" + File.separator + uuid));
+    private static Optional<TieredPersonalStorageData> forOwner(UUID playerUUID) {
+        if (EffectiveSide.get().isClient()) {
+            return Optional.empty();
+        }
+        return Optional.of(STORAGE_BY_PLAYER_UUID.computeIfAbsent(playerUUID, uuid -> MekanismSavedData.createSavedData(TieredPersonalStorageData::new, "personal_storage" + File.separator + uuid)));
     }
 
     /**
      * Only call on the server. Gets or creates an inventory for the supplied stack
      *
      * @param stack Personal storage ItemStack (type not checked) - will be modified if it didn't have an inventory id
+     *
      * @return the existing or new inventory
      */
-    public static TieredPersonalStorageItemInventory getInventoryFor(ItemStack stack) {
-        UUID owner = SecurityUtils.get().getOwnerUUID(stack);
+    public static Optional<AbstractTieredPersonalStorageItemInventory> getInventoryFor(ItemStack stack) {
+        UUID owner = IItemSecurityUtils.INSTANCE.getOwnerUUID(stack);
         if (owner == null) {
-            throw new IllegalStateException("Stack has no owner!");
+            Mekanism.logger.error("Storage inventory asked for but stack has no owner! {}", stack, new Exception());
+            return Optional.empty();
         }
+        return getInventoryFor(stack, owner);
+    }
+
+    /**
+     * Only call on the server. Gets or creates an inventory for the supplied stack
+     *
+     * @param stack Personal storage ItemStack (type not checked) - will be modified if it didn't have an inventory id
+     * @param owner The owner of the stack
+     *
+     * @return the existing or new inventory
+     */
+    public static Optional<AbstractTieredPersonalStorageItemInventory> getInventoryFor(ItemStack stack, @NotNull UUID owner) {
         UUID invId = getInventoryId(stack);
         if (!(stack.getItem() instanceof ItemBlockTieredPersonalStorage<?> item)) throw new IllegalStateException("Item isn't ItemBlockTieredPersonalStorage");
-        TieredPersonalStorageItemInventory storageItemInventory = forOwner(owner).getOrAddInventory(invId,item.getTier());
+        return getInventoryForUnchecked(item.getTier(),invId, owner);
+    }
 
-        //TODO - After 1.20: Remove legacy loading
-        ListTag legacyData = ItemDataUtils.getList(stack, NBTConstants.ITEMS);
-        if (!legacyData.isEmpty()) {
-            EMDataHandlerUtils.readContainers(storageItemInventory.getInventorySlots(null), legacyData);
-            ItemDataUtils.removeData(stack, NBTConstants.ITEMS);
+    /**
+     * Only call on the server. Gets an inventory for the supplied stack
+     *
+     * @param tier
+     * @param inventoryId Personal storage inventory id
+     * @param owner       The owner of the stack
+     * @return the existing or new inventory
+     */
+    public static Optional<AbstractTieredPersonalStorageItemInventory> getInventoryForUnchecked(PersonalStorageTier tier, @Nullable UUID inventoryId, @NotNull UUID owner) {
+        if (inventoryId == null) {
+            return Optional.empty();
         }
+        Optional<TieredPersonalStorageData> data = forOwner(owner);
+        //noinspection OptionalIsPresent - Capturing lambda
+        if (data.isPresent()) {
+            return Optional.of(data.get().getOrAddInventory(inventoryId,tier));
+        }
+        return Optional.empty();
+    }
 
-        return storageItemInventory;
-
+    public static boolean createInventoryFor(PersonalStorageTier tier,HolderLookup.Provider provider, ItemStack stack, List<IInventorySlot> contents) {
+        UUID owner = IItemSecurityUtils.INSTANCE.getOwnerUUID(stack);
+        if (owner == null || contents.size() != 54) {
+            //No owner or wrong number of slots, something went wrong
+            return false;
+        }
+        //Get a new inventory id
+        Optional<TieredPersonalStorageData> data = forOwner(owner);
+        //noinspection OptionalIsPresent - Capturing lambda
+        if (data.isPresent()) {
+            data.get().addInventory(provider, getInventoryId(stack), contents,tier);
+        }
+        return true;
     }
 
     /**
      * Only call on the server
      * <p>
-     * Version of {@link #getInventoryFor(ItemStack)} which will NOT create an inventory if none exists already.
-     * The stack will only be modified if it contained a legacy inventory
+     * Version of {@link #getInventoryFor(ItemStack)} which will NOT create an inventory if none exists already. The stack will only be modified if it contained a legacy
+     * inventory
      *
      * @param stack Personal storage ItemStack
+     *
      * @return the existing or converted inventory, or an empty optional if none exists in saved data nor legacy data
      */
-    public static Optional<TieredPersonalStorageItemInventory> getInventoryIfPresent(ItemStack stack) {
-        UUID owner = SecurityUtils.get().getOwnerUUID(stack);
-        UUID invId = getInventoryIdNullable(stack);
-        //TODO - After 1.20: Remove legacy loading
-        boolean hasLegacyData = ItemDataUtils.hasData(stack, NBTConstants.ITEMS, Tag.TAG_LIST);
-        return Optional.ofNullable(owner != null && (invId != null || hasLegacyData) ? getInventoryFor(stack) : null);
+    public static Optional<AbstractTieredPersonalStorageItemInventory> getInventoryIfPresent(ItemStack stack) {
+        UUID owner = IItemSecurityUtils.INSTANCE.getOwnerUUID(stack);
+        return owner != null && stack.has(MekanismDataComponents.PERSONAL_STORAGE_ID) ? getInventoryFor(stack, owner) : Optional.empty();
     }
 
     public static void deleteInventory(ItemStack stack) {
-        UUID owner = SecurityUtils.get().getOwnerUUID(stack);
-        UUID invId = getInventoryIdNullable(stack);
-        if (owner != null && invId != null) {
-            forOwner(owner).removeInventory(invId);
+        UUID owner = IItemSecurityUtils.INSTANCE.getOwnerUUID(stack);
+        if (owner != null) {
+            UUID storageId = stack.remove(MekanismDataComponents.PERSONAL_STORAGE_ID);
+            if (storageId != null) {
+                //If there actually was an id stored then remove the corresponding inventory
+                Optional<TieredPersonalStorageData> data = forOwner(owner);
+                //noinspection OptionalIsPresent - Capturing lambda
+                if (data.isPresent()) {
+                    data.get().removeInventory(storageId);
+                }
+            }
         }
     }
 
     @NotNull
     private static UUID getInventoryId(ItemStack stack) {
-        UUID invId = getInventoryIdNullable(stack);
+        UUID invId = stack.get(MekanismDataComponents.PERSONAL_STORAGE_ID);
         if (invId == null) {
             invId = UUID.randomUUID();
-            ItemDataUtils.setUUID(stack, NBTConstants.PERSONAL_STORAGE_ID, invId);
+            stack.set(MekanismDataComponents.PERSONAL_STORAGE_ID, invId);
         }
         return invId;
-    }
-
-    @Nullable
-    private static UUID getInventoryIdNullable(ItemStack stack) {
-        return ItemDataUtils.getUniqueID(stack, NBTConstants.PERSONAL_STORAGE_ID);
     }
 
     public static void reset() {
@@ -116,17 +154,21 @@ public class TieredPersonalStorageManager {
     }
 
     public static void transferFromBasic(AbstractPersonalStorageItemInventory oldInventory, ItemStack stack) {
-        TieredPersonalStorageItemInventory inventory = getInventoryFor(stack);
-        for (int i = 0; i < oldInventory.getSlots(); i++) {
-            inventory.setStackInSlot(i,oldInventory.getStackInSlot(i));
-        }
+        getInventoryFor(stack).ifPresent(inventory->{
+            for (int i = 0; i < oldInventory.getSlots(); i++) {
+                inventory.setStackInSlot(i,oldInventory.getStackInSlot(i));
+            }
+        });
+
     }
 
     public static void transferToNew(ItemStack oldItem, ItemStack stack) {
-        TieredPersonalStorageItemInventory oldInventory = getInventoryFor(oldItem);
-        TieredPersonalStorageItemInventory inventory = getInventoryFor(stack);
-        for (int i = 0; i < oldInventory.getSlots(); i++) {
-            inventory.setStackInSlot(i,oldInventory.getStackInSlot(i));
-        }
+         getInventoryFor(oldItem).ifPresent(oldInventory->{
+             getInventoryFor(stack).ifPresent(inventory->{
+                 for (int i = 0; i < oldInventory.getSlots(); i++) {
+                     inventory.setStackInSlot(i,oldInventory.getStackInSlot(i));
+                 }
+             });
+         });
     }
 }

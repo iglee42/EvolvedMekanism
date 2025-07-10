@@ -4,20 +4,15 @@ import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.api.IEvaporationSolar;
 import mekanism.api.RelativeSide;
-import mekanism.api.math.FloatingLong;
-import mekanism.api.providers.IBlockProvider;
-import mekanism.common.capabilities.Capabilities;
-import mekanism.common.capabilities.resolver.BasicCapabilityResolver;
 import mekanism.common.tile.interfaces.IBoundingBlock;
-import mekanism.common.upgrade.IUpgradeData;
 import mekanism.generators.common.config.MekanismGeneratorsConfig;
 import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGenerator
         implements IBoundingBlock, IEvaporationSolar {
@@ -25,11 +20,10 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
     private final AdvancedSolarPanelTier tier;
     private final SolarCheck[] solarChecks = new SolarCheck[8];
 
-    public TileEntityTieredAdvancedSolarGenerator(IBlockProvider blockProvider,BlockPos pos, BlockState state,AdvancedSolarPanelTier tier) {
+    public TileEntityTieredAdvancedSolarGenerator(Holder<Block> blockProvider, BlockPos pos, BlockState state, AdvancedSolarPanelTier tier) {
         super(blockProvider, pos, state,
-                ()->MekanismGeneratorsConfig.generators.advancedSolarGeneration.get().multiply(tier.getMultiplier()));
+                ()->MekanismGeneratorsConfig.generators.advancedSolarGeneration.get() * tier.getMultiplier());
         this.tier = tier;
-        addCapabilityResolver(BasicCapabilityResolver.constant(Capabilities.EVAPORATION_SOLAR, this));
     }
 
     
@@ -44,9 +38,9 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
     }
 
     @Override
-    protected FloatingLong getConfiguredMax() {
+    protected long getConfiguredMax() {
         int modifier = 1 + (upgradeComponent != null ? upgradeComponent.getUpgrades(EMUpgrades.SOLAR_UPGRADE) : 0);
-        return MekanismGeneratorsConfig.generators.advancedSolarGeneration.get().multiply(tier.getMultiplier()).multiply(modifier) ;
+        return MekanismGeneratorsConfig.generators.advancedSolarGeneration.get() * tier.getMultiplier() * modifier;
     }
 
     @Override
@@ -69,7 +63,7 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
             }
             totalPeak += solarChecks[i].getPeakMultiplier();
         }
-        updateMaxOutputRaw(getConfiguredMax().multiply(totalPeak / 9));
+        updateMaxOutputRaw((long) (getConfiguredMax() *(totalPeak / 9)));
     }
 
     @Override
@@ -97,12 +91,12 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
     }
 
     @Override
-    public FloatingLong getProduction() {
+    public long getProduction() {
         if (level == null || solarCheck == null) {
             // Note: We assume if solarCheck is null then solarChecks will be filled with
             // null, and if it isn't
             // then it won't be as they get initialized at the same time
-            return FloatingLong.ZERO;
+            return 0;
         }
         float brightness = getBrightnessMultiplier(level);
         // Calculate the generation multiplier of all the solar panels together
@@ -115,7 +109,7 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
         generationMultiplier /= solarChecks.length + 1;
         // Production is a function of the peak possible output in this biome and sun's
         // current brightness
-        return getConfiguredMax().multiply(brightness * generationMultiplier);
+        return (long) (getConfiguredMax() * (brightness * generationMultiplier));
     }
 
     private static class AdvancedSolarCheck extends SolarCheck {
@@ -168,12 +162,4 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
         }
     }
 
-    @Override
-    public @Nullable IUpgradeData getUpgradeData() {
-        return new IUpgradeData() {};
-    }
-
-    @Override
-    public void parseUpgradeData(@NotNull IUpgradeData data) {
-    }
 }

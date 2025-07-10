@@ -4,14 +4,18 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.BiPredicate;
+
+import fr.iglee42.evolvedmekanism.recipes.vanilla_input.TriItemRecipeInput;
 import mekanism.api.annotations.NothingNullByDefault;
 import mekanism.api.recipes.MekanismRecipe;
 import mekanism.api.recipes.ingredients.ItemStackIngredient;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.util.TriPredicate;
+import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.util.TriPredicate;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
  * @apiNote Alloyers and Alloying Factories can process this recipe type.
  */
 @NothingNullByDefault
-public abstract class AlloyerRecipe extends MekanismRecipe implements TriPredicate<@NotNull ItemStack, @NotNull ItemStack, @NotNull ItemStack> {
+public abstract class AlloyerRecipe extends MekanismRecipe<TriItemRecipeInput> implements TriPredicate<@NotNull ItemStack, @NotNull ItemStack, @NotNull ItemStack> {
 
     private final ItemStackIngredient mainInput;
     private final ItemStackIngredient extraInput;
@@ -35,14 +39,12 @@ public abstract class AlloyerRecipe extends MekanismRecipe implements TriPredica
     private final ItemStack output;
 
     /**
-     * @param id         Recipe name.
      * @param mainInput  Main input.
      * @param extraInput Secondary input.
      * @param secondaryExtraInput Tertiary input.
      * @param output     Output.
      */
-    public AlloyerRecipe(ResourceLocation id, ItemStackIngredient mainInput, ItemStackIngredient extraInput, ItemStackIngredient secondaryExtraInput, ItemStack output) {
-        super(id);
+    public AlloyerRecipe(ItemStackIngredient mainInput, ItemStackIngredient extraInput, ItemStackIngredient secondaryExtraInput, ItemStack output) {
         this.mainInput = Objects.requireNonNull(mainInput, "Main input cannot be null.");
         this.extraInput = Objects.requireNonNull(extraInput, "Secondary input cannot be null.");
         this.tertiaryExtraInput = Objects.requireNonNull(secondaryExtraInput, "Tertiary input cannot be null.");
@@ -59,7 +61,7 @@ public abstract class AlloyerRecipe extends MekanismRecipe implements TriPredica
     }
 
     /**
-     * Gets the main input ingredient.
+     * Gets the item input ingredient.
      */
     public ItemStackIngredient getMainInput() {
         return mainInput;
@@ -99,7 +101,16 @@ public abstract class AlloyerRecipe extends MekanismRecipe implements TriPredica
 
     @NotNull
     @Override
-    public ItemStack getResultItem(@NotNull RegistryAccess registryAccess) {
+    public ItemStack getResultItem(HolderLookup.@NotNull Provider provider) {
+        return output.copy();
+    }
+
+    @Override
+    public boolean matches(TriItemRecipeInput input, Level level) {
+        return !isIncomplete() && test(input.main(),input.extra(),input.secondExtra());
+    }
+
+    public ItemStack getOutputRaw(){
         return output.copy();
     }
 
@@ -117,11 +128,5 @@ public abstract class AlloyerRecipe extends MekanismRecipe implements TriPredica
         return mainInput.hasNoMatchingInstances() || extraInput.hasNoMatchingInstances() || tertiaryExtraInput.hasNoMatchingInstances();
     }
 
-    @Override
-    public void write(FriendlyByteBuf buffer) {
-        mainInput.write(buffer);
-        extraInput.write(buffer);
-        tertiaryExtraInput.write(buffer);
-        buffer.writeItem(output);
-    }
+
 }

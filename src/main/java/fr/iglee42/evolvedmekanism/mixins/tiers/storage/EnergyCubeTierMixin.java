@@ -4,14 +4,10 @@ package fr.iglee42.evolvedmekanism.mixins.tiers.storage;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMEnergyCubeTier;
-import mekanism.api.math.FloatingLong;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.tier.EnergyCubeTier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +20,7 @@ public class EnergyCubeTierMixin implements InitializableEnum {
     private static EnergyCubeTier[] $VALUES;
 
     @Invoker("<init>")
-    public static EnergyCubeTier evolvedmekanism$initInvoker(String internalName, int internalId,BaseTier tier, FloatingLong max, FloatingLong out){
+    public static EnergyCubeTier evolvedmekanism$initInvoker(String internalName, int internalId,BaseTier tier, long max, long out){
         throw new AssertionError();
     }
 
@@ -33,7 +29,7 @@ public class EnergyCubeTierMixin implements InitializableEnum {
         ArrayList<EnergyCubeTier> variants = new ArrayList<>(Arrays.asList($VALUES));
         EnergyCubeTier casing = evolvedmekanism$initInvoker(internalName,
                 variants.get(variants.size() - 1).ordinal() + 1,
-                tier,FloatingLong.create(max),FloatingLong.create(out));
+                tier,max,out);
         variants.add(casing);
         EnergyCubeTierMixin.$VALUES = variants.toArray(new EnergyCubeTier[0]);
         return casing;

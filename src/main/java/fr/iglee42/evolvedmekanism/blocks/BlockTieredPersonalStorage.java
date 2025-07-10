@@ -30,10 +30,10 @@ import java.util.List;
 
 public class BlockTieredPersonalStorage<TILE extends TileEntityTieredPersonalStorage, BLOCK extends BlockTypeTile<TILE>> extends BlockPersonalStorage<TILE,BLOCK> {
 
-    public static final Attribute TIERED_PERSONAL_STORAGE_INVENTORY = new Attributes.AttributeInventory<>(((lootBuilder, nbtBuilder) -> {
+    public static final Attribute TIERED_PERSONAL_STORAGE_INVENTORY = new Attributes.AttributeInventory<>(lootBuilder -> {
         lootBuilder.apply(PersonalTieredStorageContentsLootFunction.builder());
         return true;
-    }));
+    });
 
     private final PersonalStorageTier tier;
 

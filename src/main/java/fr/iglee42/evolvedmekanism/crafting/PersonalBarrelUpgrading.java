@@ -12,40 +12,43 @@ import mekanism.common.capabilities.Capabilities;
 import mekanism.common.item.block.ItemBlockPersonalStorage;
 import mekanism.common.lib.inventory.personalstorage.AbstractPersonalStorageItemInventory;
 import mekanism.common.lib.inventory.personalstorage.PersonalStorageManager;
+import mekanism.common.lib.security.ItemSecurityUtils;
+import mekanism.common.lib.security.SecurityUtils;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.tags.MekanismTags;
-import mekanism.common.util.SecurityUtils;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
+import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.Tags.Items;
+import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.UUID;
 
 public class PersonalBarrelUpgrading extends CustomRecipe {
-    public PersonalBarrelUpgrading(ResourceLocation p_248647_, CraftingBookCategory p_250756_) {
-        super(p_248647_, p_250756_);
+    public PersonalBarrelUpgrading(CraftingBookCategory p_250756_) {
+        super(p_250756_);
     }
 
-    public boolean matches(CraftingContainer container, Level level) {
+    public boolean matches(CraftingInput container, Level level) {
         Boolean[] isValid = new Boolean[9];
 
-        if (container.getContainerSize() > 9) return false;
+        if (container.size() > 9) return false;
         if (container.getItem(4).getItem() instanceof ItemBlockPersonalStorage<?> it){
             if (!(it.getBlock() instanceof BlockPersonalBarrel)) return false;
             isValid[4] = true;
-            for (int i = 0; i < container.getContainerSize(); i++){
+            for (int i = 0; i < container.size(); i++){
                 if (i == 4) continue;
                 if (i == 0 || i == 2 || i >= 6) isValid[i] = container.getItem(i).is(MekanismTags.Items.INGOTS_STEEL);
-                if (i == 1) isValid[i] = container.getItem(i).is(Items.GLASS_SILICA);
+                if (i == 1) isValid[i] = container.getItem(i).is(Tags.Items.GLASS_BLOCKS_COLORLESS);
                 if (i == 3 || i == 5) isValid[i] = container.getItem(i).is(MekanismTags.Items.CIRCUITS_ADVANCED);
             }
             return Arrays.stream(isValid).allMatch(Boolean::booleanValue);
@@ -58,24 +61,24 @@ public class PersonalBarrelUpgrading extends CustomRecipe {
         PersonalStorageTier nextTier = PersonalStorageTier.values()[tier.ordinal()+1];
         if (EvolvedMekanism.getCircuitByTier(nextTier.getBaseTier()) == null) return false;
         isValid[4] = true;
-        for (int i = 0; i < container.getContainerSize(); i++){
+        for (int i = 0; i < container.size(); i++){
             if (i == 4) continue;
             if (i == 0 || i == 2 || i >= 6) isValid[i] = container.getItem(i).is(MekanismTags.Items.INGOTS_STEEL);
-            if (i == 1) isValid[i] = container.getItem(i).is(Items.GLASS_SILICA);
+            if (i == 1) isValid[i] = container.getItem(i).is(Tags.Items.GLASS_BLOCKS_COLORLESS);
             if (i == 3 || i == 5) isValid[i] = container.getItem(i).is(EvolvedMekanism.getCircuitByTier(nextTier.getBaseTier()).asItem());
         }
         return Arrays.stream(isValid).allMatch(Boolean::booleanValue);
     }
 
-    public @NotNull ItemStack assemble(CraftingContainer container, RegistryAccess access) {
+    public @NotNull ItemStack assemble(CraftingInput container, HolderLookup.Provider access) {
         ItemStack oldBarrel = container.getItem(4);
         if (container.getItem(4).getItem() instanceof ItemBlockPersonalStorage<?> it){
-            UUID owner = SecurityUtils.get().getOwnerUUID(oldBarrel);
+            UUID owner = ItemSecurityUtils.get().getOwnerUUID(oldBarrel);
             if (owner == null) return new ItemStack(EMBlocks.ADVANCED_PERSONAL_BARREL.asItem());
             AbstractPersonalStorageItemInventory inventory = PersonalStorageManager.getInventoryFor(oldBarrel).orElse(null);
             if (inventory == null)return new ItemStack(EMBlocks.ADVANCED_PERSONAL_BARREL.asItem());
             ItemStack stack = new ItemStack(EMBlocks.ADVANCED_PERSONAL_BARREL.asItem());
-            stack.getCapability(Capabilities.OWNER_OBJECT).ifPresent(i->i.setOwnerUUID(SecurityUtils.get().getOwnerUUID(oldBarrel)));
+            Optional.ofNullable(ItemSecurityUtils.get().securityCapability(stack)).ifPresent(i->i.setOwnerUUID(owner));
             TieredPersonalStorageManager.transferFromBasic(inventory,stack);
             return stack;
         }
@@ -84,10 +87,10 @@ public class PersonalBarrelUpgrading extends CustomRecipe {
         PersonalStorageTier tier = chest.getTier();
         if (BlockTieredPersonnalBarrel.getUpgrade(tier) == null) return ItemStack.EMPTY;
         if (tier.ordinal() >= PersonalStorageTier.values().length - 1) return ItemStack.EMPTY;
-        UUID owner = SecurityUtils.get().getOwnerUUID(oldBarrel);
+        UUID owner = ItemSecurityUtils.get().getOwnerUUID(oldBarrel);
         if (owner == null) return new ItemStack(BlockTieredPersonnalBarrel.getUpgrade(tier).asItem());
         ItemStack stack = new ItemStack(BlockTieredPersonnalBarrel.getUpgrade(tier).asItem());
-        stack.getCapability(Capabilities.OWNER_OBJECT).ifPresent(i->i.setOwnerUUID(SecurityUtils.get().getOwnerUUID(oldBarrel)));
+        Optional.ofNullable(ItemSecurityUtils.get().securityCapability(stack)).ifPresent(i->i.setOwnerUUID(owner));
         TieredPersonalStorageManager.transferToNew(oldBarrel,stack);
         return stack;
     }

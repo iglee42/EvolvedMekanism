@@ -1,32 +1,31 @@
 package fr.iglee42.evolvedmekanism.recipes;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import fr.iglee42.evolvedmekanism.recipes.vanilla_input.BiItemChemicalRecipeInput;
 import mekanism.api.annotations.NothingNullByDefault;
-import mekanism.api.chemical.gas.GasStack;
-import mekanism.api.math.FloatingLong;
+import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.recipes.MekanismRecipe;
-import mekanism.api.recipes.ingredients.ChemicalStackIngredient.GasStackIngredient;
+import mekanism.api.recipes.ingredients.ChemicalStackIngredient;
 import mekanism.api.recipes.ingredients.ItemStackIngredient;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.util.TriPredicate;
-import net.minecraftforge.fluids.FluidStack;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
+import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.util.TriPredicate;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+
 @NothingNullByDefault
-public abstract class ChemixerRecipe extends MekanismRecipe implements TriPredicate<@NotNull ItemStack, @NotNull ItemStack, @NotNull GasStack> {
+public abstract class ChemixerRecipe extends MekanismRecipe<BiItemChemicalRecipeInput> implements TriPredicate<@NotNull ItemStack, @NotNull ItemStack, @NotNull ChemicalStack> {
 
     private final ItemStackIngredient inputMain;
     private final ItemStackIngredient inputExtra;
-    private final GasStackIngredient inputGas;
+    private final ChemicalStackIngredient inputGas;
     private final ItemStack outputItem;
 
-    public ChemixerRecipe(ResourceLocation id, ItemStackIngredient inputMain, ItemStackIngredient inputExtra, GasStackIngredient inputGas, ItemStack outputItem) {
-        super(id);
+    public ChemixerRecipe(ItemStackIngredient inputMain, ItemStackIngredient inputExtra, ChemicalStackIngredient inputGas, ItemStack outputItem) {
         this.inputMain = Objects.requireNonNull(inputMain, "Item input cannot be null.");
         this.inputExtra = Objects.requireNonNull(inputExtra, "Extra input cannot be null.");
         this.inputGas = Objects.requireNonNull(inputGas, "Gas input cannot be null.");
@@ -42,18 +41,22 @@ public abstract class ChemixerRecipe extends MekanismRecipe implements TriPredic
         return inputExtra;
     }
 
-    public GasStackIngredient getInputGas() {
+    public ChemicalStackIngredient getInputGas() {
         return inputGas;
     }
 
 
     @Override
-    public boolean test(ItemStack solid, ItemStack extra, GasStack gas) {
+    public boolean test(ItemStack solid, ItemStack extra, ChemicalStack gas) {
         return this.inputMain.test(solid) && this.inputExtra.test(extra) && this.inputGas.test(gas);
     }
 
     @Contract(value = "_, _, _ -> new", pure = true)
-    public ItemStack getOutput(@NotNull ItemStack input, @NotNull ItemStack extra, @NotNull GasStack gas) {
+    public ItemStack getOutput(@NotNull ItemStack input, @NotNull ItemStack extra, @NotNull ChemicalStack gas) {
+        return outputItem.copy();
+    }
+
+    public ItemStack getOutputRaw(){
         return outputItem.copy();
     }
 
@@ -62,16 +65,14 @@ public abstract class ChemixerRecipe extends MekanismRecipe implements TriPredic
         return inputMain.hasNoMatchingInstances() || inputExtra.hasNoMatchingInstances() || inputGas.hasNoMatchingInstances();
     }
 
-    @Override
-    public void write(FriendlyByteBuf buffer) {
-        inputMain.write(buffer);
-        inputExtra.write(buffer);
-        inputGas.write(buffer);
-        buffer.writeItem(outputItem);
-    }
-
     public List<ItemStack> getOutputDefinition() {
         return Collections.singletonList(outputItem);
+    }
+
+    @Override
+    public boolean matches(BiItemChemicalRecipeInput input, Level level) {
+        //Don't match incomplete recipes or ones that don't match
+        return !isIncomplete() && test(input.item(),input.extra(),input.chemical());
     }
 
 }

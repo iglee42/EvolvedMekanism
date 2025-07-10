@@ -9,6 +9,7 @@ import fr.iglee42.evolvedmekanism.interfaces.IGetEnergySlot;
 import fr.iglee42.evolvedmekanism.interfaces.ThreeInputCachedRecipe;
 import fr.iglee42.evolvedmekanism.interfaces.TripleItemRecipeLookupHandler;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.vanilla_input.TriItemRecipeInput;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import fr.iglee42.evolvedmekanism.tiles.LimitedInputInventorySlot;
@@ -47,7 +48,10 @@ import mekanism.common.upgrade.IUpgradeData;
 import mekanism.common.util.InventoryUtils;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -74,7 +78,7 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
     @WrappingComputerMethod(wrapper = ComputerIInventorySlotWrapper.class, methodNames = "getTertiaryInput", docPlaceholder = "tertiary input slot")
     LimitedInputInventorySlot secondExtraSlot;
 
-    public TileEntityAlloyingFactory(IBlockProvider blockProvider, BlockPos pos, BlockState state) {
+    public TileEntityAlloyingFactory(Holder<Block> blockProvider, BlockPos pos, BlockState state) {
         super(blockProvider, pos, state, TRACKED_ERROR_TYPES, GLOBAL_ERROR_TYPES);
         extraInputHandler = InputHelper.getInputHandler(extraSlot, RecipeError.NOT_ENOUGH_SECONDARY_INPUT);
         secondExtraInputHandler = InputHelper.getInputHandler(secondExtraSlot, RecipeError.NOT_ENOUGH_SECONDARY_INPUT);
@@ -119,6 +123,11 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
     }
 
     @Override
+    public boolean isItemValidForSlot(@NotNull ItemStack stack) {
+        return containsRecipeA(stack);
+    }
+
+    @Override
     protected boolean isCachedRecipeValid(@Nullable CachedRecipe<AlloyerRecipe> cached, @NotNull ItemStack stack) {
         if (cached != null) {
             AlloyerRecipe cachedRecipe = cached.getRecipe();
@@ -139,7 +148,7 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
 
     @NotNull
     @Override
-    public IMekanismRecipeTypeProvider<AlloyerRecipe, EMInputRecipeCache.TripleItem<AlloyerRecipe>> getRecipeType() {
+    public IMekanismRecipeTypeProvider<TriItemRecipeInput,AlloyerRecipe, EMInputRecipeCache.TripleItem<AlloyerRecipe>> getRecipeType() {
         return EMRecipeType.ALLOYING;
     }
 
@@ -154,7 +163,7 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
     public CachedRecipe<AlloyerRecipe> createNewCachedRecipe(@NotNull AlloyerRecipe recipe, int cacheIndex) {
         return ThreeInputCachedRecipe.alloyer(recipe, recheckAllRecipeErrors[cacheIndex], inputHandlers[cacheIndex], extraInputHandler,secondExtraInputHandler, outputHandlers[cacheIndex])
               .setErrorsChanged(errors -> errorTracker.onErrorsChanged(errors, cacheIndex))
-              .setCanHolderFunction(() -> MekanismUtils.canFunction(this))
+              .setCanHolderFunction(this::canFunction)
               .setActive(active -> setActiveState(active, cacheIndex))
               .setEnergyRequirements(energyContainer::getEnergyPerTick, energyContainer)
               .setRequiredTicks(this::getTicksRequired)
@@ -163,21 +172,22 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
     }
 
     @Override
-    public void parseUpgradeData(@NotNull IUpgradeData upgradeData) {
+    public void parseUpgradeData(HolderLookup.Provider provider,@NotNull IUpgradeData upgradeData) {
         if (upgradeData instanceof AlloyerUpgradeData data) {
             //Generic factory upgrade data handling
-            super.parseUpgradeData(upgradeData);
+            super.parseUpgradeData(provider,upgradeData);
             //Copy the stack using NBT so that if it is not actually valid due to a reload we don't crash
-            extraSlot.deserializeNBT(data.extraSlot.serializeNBT());
-            secondExtraSlot.deserializeNBT(data.secondaryExtraSlot.serializeNBT());
+            extraSlot.deserializeNBT(provider,data.extraSlot.serializeNBT(provider));
+            secondExtraSlot.deserializeNBT(provider,data.secondaryExtraSlot.serializeNBT(provider));
         } else {
             Mekanism.logger.warn("Unhandled upgrade data.", new Throwable());
         }
     }
 
+
     @NotNull
     @Override
-    public AlloyerUpgradeData getUpgradeData() {
-        return new AlloyerUpgradeData(redstone, getControlType(), getEnergyContainer(), progress, ((IGetEnergySlot)this).getEnergySlot(), extraSlot,secondExtraSlot, inputSlots, outputSlots, isSorting(), getComponents());
+    public AlloyerUpgradeData getUpgradeData(HolderLookup.Provider provider) {
+        return new AlloyerUpgradeData(provider,redstone, getControlType(), getEnergyContainer(), progress, ((IGetEnergySlot)this).getEnergySlot(), extraSlot,secondExtraSlot, inputSlots, outputSlots, isSorting(), getComponents());
     }
 }

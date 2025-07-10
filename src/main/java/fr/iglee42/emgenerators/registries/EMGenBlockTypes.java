@@ -9,6 +9,7 @@ import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.api.Upgrade;
 import mekanism.api.text.ILangEntry;
+import mekanism.common.block.attribute.AttributeHasBounding;
 import mekanism.common.block.attribute.AttributeTier;
 import mekanism.common.block.attribute.AttributeUpgradeable;
 import mekanism.common.block.attribute.Attributes;
@@ -21,6 +22,9 @@ import mekanism.generators.common.content.blocktype.BlockShapes;
 import mekanism.generators.common.content.blocktype.Generator;
 import mekanism.generators.common.content.blocktype.Generator.GeneratorBuilder;
 import mekanism.generators.common.registries.GeneratorsSounds;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class EMGenBlockTypes {
 
@@ -57,16 +61,26 @@ public class EMGenBlockTypes {
         return GeneratorBuilder
                 .createGenerator(tileEntityRegistrar, description)
                 .withGui(() -> EMGenContainerTypes.TIERED_ADVANCED_SOLAR_GENERATOR)
-                .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.advancedSolarGenerator.get().multiply(tier.getMultiplier()))
+                .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.advancedSolarGenerator.get() * tier.getMultiplier())
                 .withCustomShape(BlockShapes.ADVANCED_SOLAR_GENERATOR)
                 .withSound(GeneratorsSounds.SOLAR_GENERATOR)
-                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, EMUpgrades.SOLAR_UPGRADE))
-                .withBounding((pos, state, builder) -> {
-                    builder.add(pos.above());
-                    for (int x = -1; x <= 1; x++) {
-                        for (int z = -1; z <= 1; z++) {
-                            builder.add(pos.offset(x, 2, z));
+                .withSupportedUpgrades(Upgrade.MUFFLING, EMUpgrades.SOLAR_UPGRADE)
+                .withBounding(new AttributeHasBounding.HandleBoundingBlock() {
+                    @Override
+                    public <DATA> boolean handle(Level level, BlockPos pos, BlockState state, DATA data, AttributeHasBounding.TriBooleanFunction<Level, BlockPos, DATA> consumer) {
+                        BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
+                        if (!consumer.accept(level, mutable, data)) {
+                            return false;
                         }
+                        for (int x = -1; x <= 1; x++) {
+                            for (int z = -1; z <= 1; z++) {
+                                mutable.setWithOffset(pos, x, 2, z);
+                                if (!consumer.accept(level, mutable, data)) {
+                                    return false;
+                                }
+                            }
+                        }
+                        return true;
                     }
                 })
                 .withComputerSupport("advancedSolarGenerator")

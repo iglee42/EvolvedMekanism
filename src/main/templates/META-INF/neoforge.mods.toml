@@ -9,27 +9,40 @@ displayName = "${mod_name}"
 authors = "${mod_authors}"
 description = '''${mod_description}'''
 
-[[dependencies."${mod_id}"]]
-modId = "forge"
+[[mixins]]
+config="${mod_id}.mixins.json"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"
+
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
 mandatory = true
-versionRange = "${forge_version_range}"
+versionRange = "${neo_version_range}"
 ordering = "NONE"
 side = "BOTH"
-[[dependencies."${mod_id}"]]
+[[dependencies.${mod_id}]]
 modId = "minecraft"
 mandatory = true
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
-[[dependencies."${mod_id}"]]
+[[dependencies.${mod_id}]]
 modId = "mekanism"
 mandatory = true
 versionRange = "${mekanism_version_range}"
 ordering = "AFTER"
 side = "BOTH"
-[[dependencies."${mod_id}"]]
+[[dependencies.${mod_id}]]
 modId = "igleelib"
 mandatory = true
 versionRange = "${lib_version_range}"
 ordering = "AFTER"
+side = "BOTH"
+[[dependencies.${mod_id}]]
+modId = "jei"
+mandatory = false
+versionRange = "[19,)"
+ordering = "BEFORE"
 side = "BOTH"

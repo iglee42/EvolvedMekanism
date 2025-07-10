@@ -1,35 +1,27 @@
 package fr.iglee42.evolvedmekanism;
 
+import com.mojang.logging.LogUtils;
 import fr.iglee42.emgenerators.client.EMGenClientRegistration;
 import fr.iglee42.emgenerators.registries.*;
 import fr.iglee42.emtools.client.EMToolsClientRegistration;
-import fr.iglee42.emtools.config.EMToolsConfig;
+import fr.iglee42.emtools.config.EvolvedMekanismToolsConfig;
+import fr.iglee42.emtools.registries.EMToolsArmorMaterials;
 import fr.iglee42.emtools.registries.EMToolsItems;
 import fr.iglee42.emtools.registries.EMToolsTags;
 import fr.iglee42.emtools.utils.EMMobEquipmentHelper;
-import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
-import fr.iglee42.evolvedmekanism.registries.*;
-import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
-import mekanism.api.text.EnumColor;
-import mekanism.common.tags.MekanismTags;
-import mekanism.tools.client.ShieldTextures;
-import mekanism.tools.common.MekanismTools;
-import mekanism.tools.common.MobEquipmentHelper;
-import net.minecraft.network.chat.Component;
-import org.slf4j.Logger;
-
-import com.mojang.logging.LogUtils;
-
 import fr.iglee42.evolvedmekanism.config.EMConfig;
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageManager;
 import fr.iglee42.evolvedmekanism.multiblock.EMBuilders;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTCache;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTValidator;
 import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
+import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.api.MekanismIMC;
+import mekanism.api.text.EnumColor;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.MekanismLang;
@@ -39,30 +31,20 @@ import mekanism.common.lib.Version;
 import mekanism.common.lib.multiblock.MultiblockManager;
 import mekanism.common.registration.impl.ItemRegistryObject;
 import mekanism.common.registries.MekanismItems;
-import mekanism.common.tier.BinTier;
-import mekanism.common.tier.CableTier;
-import mekanism.common.tier.ChemicalTankTier;
-import mekanism.common.tier.ConductorTier;
-import mekanism.common.tier.EnergyCubeTier;
-import mekanism.common.tier.FactoryTier;
-import mekanism.common.tier.FluidTankTier;
-import mekanism.common.tier.InductionCellTier;
-import mekanism.common.tier.InductionProviderTier;
-import mekanism.common.tier.PipeTier;
-import mekanism.common.tier.QIODriveTier;
-import mekanism.common.tier.TransporterTier;
-import mekanism.common.tier.TubeTier;
+import mekanism.common.tier.*;
 import mekanism.common.util.MekanismUtils;
+import mekanism.tools.client.ShieldTextures;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStoppedEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.event.lifecycle.InterModEnqueueEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.server.ServerStoppedEvent;
+import org.slf4j.Logger;
 
 @Mod(EvolvedMekanism.MODID)
 public class EvolvedMekanism {
@@ -80,14 +62,13 @@ public class EvolvedMekanism {
     public static final MultiblockManager<APTMultiblockData> aptManager = new MultiblockManager<>("apt", APTCache::new,
             APTValidator::new);
 
-    public EvolvedMekanism() {
+    public EvolvedMekanism(IEventBus modEventBus, ModContainer container) {
+        logger.info("Evolved Mekanism Launched");
         instance = this;
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        EMConfig.registerConfigs(container);
+        if (ModsCompats.MEKANISMTOOLS.isLoaded()) EvolvedMekanismToolsConfig.registerConfigs(container);
+
         initEnums();
-
-        EMConfig.registerConfigs(FMLJavaModLoadingContext.get());
-        if (ModsCompats.MEKANISMTOOLS.isLoaded()) EMToolsConfig.registerConfigs(FMLJavaModLoadingContext.get());
-
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
 
@@ -95,26 +76,32 @@ public class EvolvedMekanism {
         EMItems.ITEMS.register(modEventBus);
         EMCreativeTabs.CREATIVE_TABS.register(modEventBus);
         EMTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
-        EMInfuseTypes.INFUSE_TYPES.register(modEventBus);
+        EMChemicals.CHEMICALS.register(modEventBus);
         EMContainerTypes.CONTAINER_TYPES.register(modEventBus);
         EMLootFunctions.REGISTER.register(modEventBus);
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
-        EMModules.MODULES.createAndRegister(modEventBus);
+        EMModules.MODULES.register(modEventBus);
         EMFluids.FLUIDS.register(modEventBus);
+        if (ModsCompats.MEKANISMTOOLS.isLoaded())EMToolsArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
 
-        registerCompats();
+        registerCompats(modEventBus);
 
-        MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(this::serverStopped);
 
-        if (ModsCompats.MEKANISMTOOLS.isLoaded()) MinecraftForge.EVENT_BUS.addListener(EMMobEquipmentHelper::onLivingSpecialSpawn);
+        //NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.addListener(this::serverStopped);
 
-        versionNumber = new Version(ModLoadingContext.get().getActiveContainer());
-        packetHandler = new EMPacketHandler();
+        modEventBus.addListener(EMConfig::onConfigLoad);
+        if (ModsCompats.MEKANISMTOOLS.isLoaded())modEventBus.addListener(EvolvedMekanismToolsConfig::onConfigLoad);
+
+
+        if (ModsCompats.MEKANISMTOOLS.isLoaded()) NeoForge.EVENT_BUS.addListener(EMMobEquipmentHelper::onLivingSpecialSpawn);
+
+        versionNumber = new Version(container);
+        packetHandler = new EMPacketHandler(modEventBus);
     }
 
-    private void registerCompats() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    private void registerCompats(IEventBus modEventBus) {
+
         if (ModsCompats.MEKANISMGENERATORS.isLoaded()) {
            EMGenItems.register(modEventBus);
            EMGenBlocks.register(modEventBus);
@@ -139,7 +126,7 @@ public class EvolvedMekanism {
     }
 
     private void initEnums() {
-        MekanismLang ignoredLType = MekanismLang.MEKANISM;
+        logger.info("Initializing Enum Injections");
         ((InitializableEnum)(Object)BaseTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)AlloyTier.INFUSED).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)FactoryTier.BASIC).evolvedmekanism$initNewValues();
@@ -158,13 +145,10 @@ public class EvolvedMekanism {
         ((InitializableEnum)(Object)EnergyCubeTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)ChemicalTankTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)FluidTankTier.BASIC).evolvedmekanism$initNewValues();
-
-        if (ModsCompats.MEKANISMTOOLS.isLoaded())((InitializableEnum)(Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
-
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        packetHandler.initialize();
+        initEnums();
         event.enqueueWork(() -> {
             EMTags.init();
             if (ModsCompats.MEKANISMTOOLS.isLoaded()) EMToolsTags.init();

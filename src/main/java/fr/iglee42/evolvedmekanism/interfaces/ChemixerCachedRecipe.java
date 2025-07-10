@@ -5,12 +5,11 @@ import java.util.function.BooleanSupplier;
 
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import mekanism.api.annotations.NothingNullByDefault;
-import mekanism.api.chemical.gas.GasStack;
+import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.api.recipes.inputs.IInputHandler;
 import mekanism.api.recipes.outputs.IOutputHandler;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -20,17 +19,17 @@ public class ChemixerCachedRecipe extends CachedRecipe<ChemixerRecipe> {
     private final IOutputHandler<@NotNull ItemStack> outputHandler;
     private final IInputHandler<@NotNull ItemStack> itemInputHandler;
     private final IInputHandler<@NotNull ItemStack> extraInputHandler;
-    private final IInputHandler<@NotNull GasStack> gasInputHandler;
+    private final IInputHandler<@NotNull ChemicalStack> gasInputHandler;
 
     private ItemStack recipeItem = ItemStack.EMPTY;
     private ItemStack recipeExtra = ItemStack.EMPTY;
-    private GasStack recipeGas = GasStack.EMPTY;
+    private ChemicalStack recipeGas = ChemicalStack.EMPTY;
     @Nullable
     private ItemStack output;
 
 
     public ChemixerCachedRecipe(ChemixerRecipe recipe, BooleanSupplier recheckAllErrors, IInputHandler<@NotNull ItemStack> itemInputHandler,
-                                IInputHandler<@NotNull ItemStack> extraInputHandler, IInputHandler<@NotNull GasStack> gasInputHandler,
+                                IInputHandler<@NotNull ItemStack> extraInputHandler, IInputHandler<@NotNull ChemicalStack> gasInputHandler,
                                 IOutputHandler<@NotNull ItemStack> outputHandler) {
         super(recipe, recheckAllErrors);
         this.itemInputHandler = Objects.requireNonNull(itemInputHandler, "Item input handler cannot be null.");
@@ -78,7 +77,7 @@ public class ChemixerCachedRecipe extends CachedRecipe<ChemixerRecipe> {
         if (item.isEmpty()) {
             return false;
         }
-        GasStack gas = gasInputHandler.getInput();
+        ChemicalStack gas = gasInputHandler.getInput();
         if (gas.isEmpty()) {
             return false;
         }

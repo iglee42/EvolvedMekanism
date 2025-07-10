@@ -4,10 +4,12 @@ import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
+import mekanism.common.capabilities.Capabilities;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
-import net.minecraftforge.eventbus.api.IEventBus;
+import mekanism.common.tile.base.TileEntityMekanism;
+import net.neoforged.bus.api.IEventBus;
 
 public class EMGenTileEntityTypes {
 
@@ -23,7 +25,12 @@ public class EMGenTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> CREATIVE_SOLAR_PANEL = registerTieredSolarPanel(EMGenBlocks.CREATIVE_SOLAR_GENERATOR, AdvancedSolarPanelTier.CREATIVE);
 
     public static TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> registerTieredSolarPanel(BlockRegistryObject<?,?> block, AdvancedSolarPanelTier tier) {
-        return TILE_ENTITY_TYPES.register(block, (pos,state)->new TileEntityTieredAdvancedSolarGenerator(block,pos, state, tier));
+        return TILE_ENTITY_TYPES.mekBuilder(block, (pos,state)->new TileEntityTieredAdvancedSolarGenerator(block,pos, state, tier))
+                .clientTicker(TileEntityMekanism::tickClient)
+                .serverTicker(TileEntityMekanism::tickServer)
+                .withSimple(Capabilities.CONFIG_CARD)
+                .withSimple(Capabilities.EVAPORATION_SOLAR)
+                .build();
     }
 
     public static void register(IEventBus bus) {

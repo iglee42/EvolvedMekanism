@@ -1,25 +1,22 @@
 package fr.iglee42.evolvedmekanism.tiles.machine;
 
-import java.util.List;
-
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.interfaces.SolidificationCachedRecipe;
+import fr.iglee42.evolvedmekanism.jei.JEIRecipeTypes;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
+import fr.iglee42.evolvedmekanism.recipes.vanilla_input.SingleItemBiFluidRecipeInput;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.IContentsListener;
 import mekanism.api.RelativeSide;
 import mekanism.api.Upgrade;
-import mekanism.api.math.FloatingLong;
-import mekanism.api.recipes.PressurizedReactionRecipe;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.api.recipes.cache.CachedRecipe.OperationTracker.RecipeError;
-import mekanism.api.recipes.cache.PressurizedReactionCachedRecipe;
 import mekanism.api.recipes.inputs.IInputHandler;
 import mekanism.api.recipes.inputs.InputHelper;
 import mekanism.api.recipes.outputs.IOutputHandler;
 import mekanism.api.recipes.outputs.OutputHelper;
-import mekanism.common.capabilities.energy.PRCEnergyContainer;
+import mekanism.client.recipe_viewer.type.IRecipeViewerRecipeType;
 import mekanism.common.capabilities.fluid.BasicFluidTank;
 import mekanism.common.capabilities.holder.energy.EnergyContainerHelper;
 import mekanism.common.capabilities.holder.energy.IEnergyContainerHolder;
@@ -27,7 +24,6 @@ import mekanism.common.capabilities.holder.fluid.FluidTankHelper;
 import mekanism.common.capabilities.holder.fluid.IFluidTankHolder;
 import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;
 import mekanism.common.capabilities.holder.slot.InventorySlotHelper;
-import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerChemicalTankWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerFluidTankWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerIInventorySlotWrapper;
 import mekanism.common.integration.computer.annotation.ComputerMethod;
@@ -39,22 +35,19 @@ import mekanism.common.inventory.slot.OutputInventorySlot;
 import mekanism.common.inventory.warning.WarningTracker.WarningType;
 import mekanism.common.lib.transmitter.TransmissionType;
 import mekanism.common.recipe.IMekanismRecipeTypeProvider;
-import mekanism.common.recipe.MekanismRecipeType;
-import mekanism.common.registries.MekanismBlocks;
-import mekanism.common.tile.component.TileComponentConfig;
 import mekanism.common.tile.component.TileComponentEjector;
 import mekanism.common.tile.component.config.ConfigInfo;
 import mekanism.common.tile.component.config.DataType;
-import mekanism.common.tile.component.config.slot.ChemicalSlotInfo;
 import mekanism.common.tile.component.config.slot.FluidSlotInfo;
 import mekanism.common.tile.prefab.TileEntityProgressMachine;
-import mekanism.common.util.MekanismUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class TileEntitySolidifier extends TileEntityProgressMachine<SolidificationRecipe> implements
         EMInputRecipeCache.ItemFluidFluidRecipeLookupHandler<SolidificationRecipe> {
@@ -82,7 +75,7 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
                                                                                         "getExtraInputFluidFilledPercentage"}, docPlaceholder = "fluid extra input")
     public BasicFluidTank inputFluidExtraTank;
 
-    private FloatingLong recipeEnergyRequired = FloatingLong.ZERO;
+    private long recipeEnergyRequired = 0;
     private final IOutputHandler<@NotNull ItemStack> outputHandler;
     private final IInputHandler<@NotNull ItemStack> itemInputHandler;
     private final IInputHandler<@NotNull FluidStack> fluidInputHandler;
@@ -98,7 +91,6 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
 
     public TileEntitySolidifier(BlockPos pos, BlockState state) {
         super(EMBlocks.SOLIDIFIER, pos, state, TRACKED_ERROR_TYPES, BASE_DURATION);
-        configComponent = new TileComponentConfig(this, TransmissionType.ITEM, TransmissionType.ENERGY, TransmissionType.FLUID);
         configComponent.setupItemIOConfig(inputSlot, outputSlot, energySlot);
         ConfigInfo fluidConfig = configComponent.getConfig(TransmissionType.FLUID);
         if (fluidConfig != null) {
@@ -121,27 +113,28 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
 
     @NotNull
     @Override
-    protected IFluidTankHolder getInitialFluidTanks(IContentsListener listener, IContentsListener recipeCacheListener) {
-        FluidTankHelper builder = FluidTankHelper.forSideWithConfig(this::getDirection, this::getConfig);
+    protected IFluidTankHolder getInitialFluidTanks(IContentsListener listener, IContentsListener recipeCacheListener, IContentsListener recipeCacheUnpauseListener) {
+        FluidTankHelper builder = FluidTankHelper.forSideWithConfig(this);
         builder.addTank(inputFluidTank = BasicFluidTank.input(10_000, fluid -> containsRecipeBAC(inputSlot.getStack(), fluid, inputFluidExtraTank.getFluid()),
               this::containsRecipeB, recipeCacheListener));
         builder.addTank(inputFluidExtraTank = BasicFluidTank.input(10_000, fluid -> containsRecipeCAB(inputSlot.getStack(), inputFluidTank.getFluid(), fluid),
               this::containsRecipeC, recipeCacheListener));
         return builder.build();
     }
+    
 
     @NotNull
     @Override
-    protected IEnergyContainerHolder getInitialEnergyContainers(IContentsListener listener, IContentsListener recipeCacheListener) {
-        EnergyContainerHelper builder = EnergyContainerHelper.forSideWithConfig(this::getDirection, this::getConfig);
+    protected IEnergyContainerHolder getInitialEnergyContainers(IContentsListener listener, IContentsListener recipeCacheListener, IContentsListener recipeCacheUnpauseListener) {
+        EnergyContainerHelper builder = EnergyContainerHelper.forSideWithConfig(this);
         builder.addContainer(energyContainer = SolidifierEnergyContainer.input(this, listener));
         return builder.build();
     }
 
     @NotNull
     @Override
-    protected IInventorySlotHolder getInitialInventory(IContentsListener listener, IContentsListener recipeCacheListener) {
-        InventorySlotHelper builder = InventorySlotHelper.forSideWithConfig(this::getDirection, this::getConfig);
+    protected IInventorySlotHolder getInitialInventory(IContentsListener listener, IContentsListener recipeCacheListener, IContentsListener recipeCacheUnpauseListener) {
+        InventorySlotHelper builder = InventorySlotHelper.forSideWithConfig(this);
         builder.addSlot(inputSlot = InputInventorySlot.at(item -> containsRecipeABC(item, inputFluidTank.getFluid(), inputFluidExtraTank.getFluid()), this::containsRecipeA,
                     recipeCacheListener, 54, 35))
               .tracksWarnings(slot -> slot.warning(WarningType.NO_MATCHING_RECIPE, getWarningCheck(NOT_ENOUGH_ITEM_INPUT_ERROR)));
@@ -157,7 +150,7 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
         int recipeDuration;
         if (cachedRecipe == null) {
             recipeDuration = BASE_DURATION;
-            recipeEnergyRequired = FloatingLong.ZERO;
+            recipeEnergyRequired = 0;
         } else {
             SolidificationRecipe recipe = cachedRecipe.getRecipe();
             recipeDuration = recipe.getDuration();
@@ -173,19 +166,20 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
     }
 
     @Override
-    protected void onUpdateServer() {
-        super.onUpdateServer();
+    protected boolean onUpdateServer() {
+        boolean send = super.onUpdateServer();
         energySlot.fillContainerOrConvert();
         recipeCacheLookupMonitor.updateAndProcess();
+        return send;
     }
 
-    public FloatingLong getRecipeEnergyRequired() {
+    public long getRecipeEnergyRequired() {
         return recipeEnergyRequired;
     }
 
     @NotNull
     @Override
-    public IMekanismRecipeTypeProvider<SolidificationRecipe, EMInputRecipeCache.ItemFluidFluid<SolidificationRecipe>> getRecipeType() {
+    public IMekanismRecipeTypeProvider<SingleItemBiFluidRecipeInput,SolidificationRecipe, EMInputRecipeCache.ItemFluidFluid<SolidificationRecipe>> getRecipeType() {
         return EMRecipeType.SOLIDIFICATION;
     }
 
@@ -200,7 +194,7 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
     public CachedRecipe<SolidificationRecipe> createNewCachedRecipe(@NotNull SolidificationRecipe recipe, int cacheIndex) {
         return new SolidificationCachedRecipe(recipe, recheckAllRecipeErrors, itemInputHandler, fluidInputHandler, fluidExtraInputHandler, outputHandler)
               .setErrorsChanged(this::onErrorsChanged)
-              .setCanHolderFunction(() -> MekanismUtils.canFunction(this))
+              .setCanHolderFunction(this::canFunction)
               .setActive(this::setActive)
               .setEnergyRequirements(energyContainer::getEnergyPerTick, energyContainer)
               .setRequiredTicks(this::getTicksRequired)
@@ -214,8 +208,14 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
 
     //Methods relating to IComputerTile
     @ComputerMethod(methodDescription = ComputerConstants.DESCRIPTION_GET_ENERGY_USAGE)
-    FloatingLong getEnergyUsage() {
-        return getActive() ? energyContainer.getEnergyPerTick() : FloatingLong.ZERO;
+    long getEnergyUsage() {
+        return getActive() ? energyContainer.getEnergyPerTick() : 0;
     }
     //End methods IComputerTile
+
+
+    @Override
+    public @Nullable IRecipeViewerRecipeType<SolidificationRecipe> recipeViewerType() {
+        return JEIRecipeTypes.SOLIDIFICATION;
+    }
 }

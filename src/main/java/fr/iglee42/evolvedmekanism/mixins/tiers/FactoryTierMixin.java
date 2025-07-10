@@ -10,7 +10,9 @@ import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,6 +23,7 @@ public class FactoryTierMixin implements InitializableEnum {
     @Final
     @Mutable
     private static FactoryTier[] $VALUES;
+
 
     @Invoker("<init>")
     public static FactoryTier evolvedmekanism$initInvoker(String internalName, int internalId,BaseTier tier, int process){

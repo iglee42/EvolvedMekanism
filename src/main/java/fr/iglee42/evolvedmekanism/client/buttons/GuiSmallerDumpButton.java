@@ -12,6 +12,7 @@ import mekanism.common.util.MekanismUtils.ResourceType;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 
 public class GuiSmallerDumpButton<TILE extends BlockEntity & IHasDumpButton> extends GuiTexturedElement {
@@ -21,7 +22,7 @@ public class GuiSmallerDumpButton<TILE extends BlockEntity & IHasDumpButton> ext
     public GuiSmallerDumpButton(IGuiWrapper gui, TILE tile, int x, int y) {
         super(EvolvedMekanism.getResource(ResourceType.GUI, "dump.png"), gui, x, y, 21, 8);
         this.tile = tile;
-        this.clickSound = SoundEvents.UI_BUTTON_CLICK;
+        this.clickSound = SoundEvents.UI_BUTTON_CLICK::value;
     }
 
     @Override
@@ -32,6 +33,6 @@ public class GuiSmallerDumpButton<TILE extends BlockEntity & IHasDumpButton> ext
 
     @Override
     public void onClick(double mouseX, double mouseY, int button) {
-        Mekanism.packetHandler().sendToServer(new PacketGuiInteract(GuiInteraction.DUMP_BUTTON, tile));
+        PacketDistributor.sendToServer(new PacketGuiInteract(GuiInteraction.DUMP_BUTTON, tile));
     }
 }

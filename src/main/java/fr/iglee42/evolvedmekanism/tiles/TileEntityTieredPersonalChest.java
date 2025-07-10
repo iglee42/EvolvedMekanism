@@ -1,10 +1,8 @@
 package fr.iglee42.evolvedmekanism.tiles;
 
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
-import mekanism.api.providers.IBlockProvider;
-import mekanism.common.registries.MekanismBlocks;
-import mekanism.common.tile.TileEntityPersonalStorage;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -12,6 +10,8 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.ChestLidController;
 import net.minecraft.world.level.block.entity.LidBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,7 +21,7 @@ public class TileEntityTieredPersonalChest extends TileEntityTieredPersonalStora
 
     private final ChestLidController chestLidController = new ChestLidController();
 
-    public TileEntityTieredPersonalChest(IBlockProvider blockProvider, BlockPos pos, BlockState state, PersonalStorageTier tier) {
+    public TileEntityTieredPersonalChest(Holder<Block> blockProvider, BlockPos pos, BlockState state, PersonalStorageTier tier) {
         super(blockProvider, pos, state, tier);
     }
 
@@ -50,7 +50,7 @@ public class TileEntityTieredPersonalChest extends TileEntityTieredPersonalStora
 
     @Override
     public boolean triggerEvent(int id, int type) {
-        if (id == 1) {
+        if (id == ChestBlock.EVENT_SET_OPEN_COUNT) {
             this.chestLidController.shouldBeOpen(type > 0);
             return true;
         }

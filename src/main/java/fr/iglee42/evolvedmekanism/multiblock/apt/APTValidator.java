@@ -1,6 +1,8 @@
 package fr.iglee42.evolvedmekanism.multiblock.apt;
 
 import java.util.EnumSet;
+import java.util.LinkedHashSet;
+import java.util.SequencedSet;
 import java.util.Set;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
@@ -104,15 +106,15 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
 
     @Override
     public FormationProtocol.FormationResult postcheck(APTMultiblockData structure, Long2ObjectMap<ChunkAccess> chunkMap) {
-        Set<BlockPos> elements = new ObjectOpenHashSet<>();
+        SequencedSet<BlockPos> elements = new LinkedHashSet<>();
         for (BlockPos pos : structure.internalLocations) {
             BlockEntity tile = WorldUtils.getTileEntity(world, chunkMap, pos);
             if (tile instanceof TileEntitySuperchargingElement) {
                 elements.add(pos);
             }
         }
-
-        structure.superchargingElements = FormationProtocol.explore(elements.iterator().next(), coord ->
+        if (!elements.isEmpty())
+            structure.superchargingElements = FormationProtocol.explore(world, chunkMap, elements.getFirst(), null, (level, chunks, start, n, coord) ->
                 coord.subtract(cuboid.getMinPos()).getY() == 1 && WorldUtils.getTileEntity(TileEntitySuperchargingElement.class, world, chunkMap, coord) != null);
 
         if (elements.size() > structure.superchargingElements) {

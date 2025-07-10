@@ -1,11 +1,12 @@
 package fr.iglee42.evolvedmekanism.utils;
 
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.LoadingModList;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.loading.LoadingModList;
 
 public enum ModsCompats {
 

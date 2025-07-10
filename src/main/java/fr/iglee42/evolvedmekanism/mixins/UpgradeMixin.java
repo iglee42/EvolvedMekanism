@@ -8,6 +8,7 @@ import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.Upgrade;
 import mekanism.api.text.APILang;
 import mekanism.api.text.EnumColor;
+import mekanism.api.text.ILangEntry;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
 import org.spongepowered.asm.mixin.*;
@@ -26,11 +27,8 @@ public class UpgradeMixin {
     @Mutable
     private static Upgrade[] $VALUES;
 
-    @Mutable
-    @Shadow @Final private static Upgrade[] UPGRADES;
-
     @Invoker("<init>")
-    public static Upgrade evolvedmekanism$initInvoker(String internalName, int internalId, String name, APILang langKey, APILang descLangKey, int maxStack, EnumColor color){
+    public static Upgrade evolvedmekanism$initInvoker(String internalName, int internalId, String name, ILangEntry langKey, ILangEntry descLangKey, int maxStack, EnumColor color){
         throw new AssertionError();
     }
 
@@ -39,11 +37,10 @@ public class UpgradeMixin {
         EMUpgrades.RADIOACTIVE_UPGRADE = evolvedmekanism$addVariant("RADIOACTIVE", "radioactive", EvolvedMekanismLang.UPGRADE_RADIOACTIVE,EvolvedMekanismLang.UPGRADE_RADIOACTIVE_DESCRIPTION,1, EnumColor.DARK_GREEN);
         EMUpgrades.SOLAR_UPGRADE = evolvedmekanism$addVariant("SOLAR", "solar", EvolvedMekanismLang.UPGRADE_SOLAR,EvolvedMekanismLang.UPGRADE_SOLAR_DESCRIPTION,4, EnumColor.YELLOW);
 
-        UPGRADES = $VALUES;
     }
 
     @Unique
-    private static Upgrade evolvedmekanism$addVariant(String internalName, String name, APILang langKey, APILang descLangKey, int maxStack, EnumColor color) {
+    private static Upgrade evolvedmekanism$addVariant(String internalName, String name, ILangEntry langKey, ILangEntry descLangKey, int maxStack, EnumColor color) {
         ArrayList<Upgrade> variants = new ArrayList<>(Arrays.asList($VALUES));
         Upgrade casing = evolvedmekanism$initInvoker(internalName,
                 variants.get(variants.size() - 1).ordinal() + 1,

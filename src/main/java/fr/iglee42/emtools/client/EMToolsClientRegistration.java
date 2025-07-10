@@ -1,28 +1,31 @@
 package fr.iglee42.emtools.client;
 
-import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import fr.iglee42.emtools.registries.EMToolsItems;
-import mekanism.api.providers.IItemProvider;
-import mekanism.client.ClientRegistration;
 import mekanism.client.ClientRegistrationUtil;
-import mekanism.client.model.baked.ExtensionBakedModel;
-import mekanism.client.render.lib.QuadTransformation;
-import mekanism.common.inventory.container.tile.MekanismTileContainer;
-import mekanism.generators.client.gui.GuiSolarGenerator;
+import mekanism.client.render.RenderPropertiesProvider;
+import mekanism.tools.client.render.GlowArmor;
+import mekanism.tools.client.render.item.RenderMekanismShieldItem;
 import mekanism.tools.common.MekanismTools;
 import mekanism.tools.common.registries.ToolsItems;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.Model;
 import net.minecraft.client.renderer.item.ItemPropertyFunction;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraftforge.client.event.*;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.registries.RegisterEvent;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
+import org.jetbrains.annotations.NotNull;
 
 public class EMToolsClientRegistration {
 
@@ -34,8 +37,8 @@ public class EMToolsClientRegistration {
 
     }
 
-    private static void addShieldPropertyOverrides(ResourceLocation override, ItemPropertyFunction propertyGetter, IItemProvider... shields) {
-        for (IItemProvider shield : shields) {
+    private static void addShieldPropertyOverrides(ResourceLocation override, ItemPropertyFunction propertyGetter, Holder<Item>... shields) {
+        for (Holder<Item> shield : shields) {
             ClientRegistrationUtil.setPropertyOverride(shield, override, propertyGetter);
         }
     }
@@ -62,11 +65,8 @@ public class EMToolsClientRegistration {
     @SubscribeEvent
     public void registerItemColorHandlers(RegisterColorHandlersEvent.Item event) {
     }
-
     @SubscribeEvent
-    public void onStitch(TextureStitchEvent.Post event) {
-        if (!event.getAtlas().location().equals(TextureAtlas.LOCATION_BLOCKS)) {
-            return;
-        }
+    public void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        event.registerItem(new RenderPropertiesProvider.MekRenderProperties(RenderMekanismShieldItem.RENDERER), EMToolsItems.BETTER_GOLD_SHIELD, EMToolsItems.PLASLITHERITE_SHIELD);
     }
 }

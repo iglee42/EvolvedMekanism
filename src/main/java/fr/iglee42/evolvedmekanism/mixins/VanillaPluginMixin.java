@@ -4,9 +4,11 @@ import fr.iglee42.evolvedmekanism.crafting.PersonalBarrelUpgrading;
 import fr.iglee42.evolvedmekanism.crafting.PersonalChestUpgrading;
 import fr.iglee42.evolvedmekanism.jei.PersonalBarrelUpgradeRecipeMaker;
 import fr.iglee42.evolvedmekanism.jei.PersonalChestUpgradeRecipeMaker;
+import mezz.jei.api.helpers.IJeiHelpers;
 import mezz.jei.api.helpers.IStackHelper;
 import mezz.jei.library.plugins.vanilla.VanillaPlugin;
 import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -22,7 +24,7 @@ public class VanillaPluginMixin {
 
 
     @Inject(method = "replaceSpecialCraftingRecipes", at = @At(value = "INVOKE", target = "Ljava/util/Map;put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",shift = At.Shift.AFTER),locals = LocalCapture.CAPTURE_FAILSOFT)
-    private static void evolvedmekansim$registerUpgrades(List<CraftingRecipe> unhandledCraftingRecipes, IStackHelper stackHelper, CallbackInfoReturnable<List<CraftingRecipe>> cir, Map<Class<? extends CraftingRecipe>, Supplier<List<CraftingRecipe>>> replacers){
+    private static void evolvedmekansim$registerUpgrades(List<RecipeHolder<CraftingRecipe>> unhandledCraftingRecipes, IJeiHelpers jeiHelpers, CallbackInfoReturnable<List<RecipeHolder<CraftingRecipe>>> cir, Map<Class<? extends CraftingRecipe>, Supplier<List<RecipeHolder<CraftingRecipe>>>> replacers){
         replacers.put(PersonalChestUpgrading.class, PersonalChestUpgradeRecipeMaker::createRecipes);
         replacers.put(PersonalBarrelUpgrading.class, PersonalBarrelUpgradeRecipeMaker::createRecipes);
     }

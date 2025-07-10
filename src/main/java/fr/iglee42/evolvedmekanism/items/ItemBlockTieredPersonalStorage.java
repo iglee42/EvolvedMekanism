@@ -8,14 +8,11 @@ import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import mekanism.api.inventory.IInventorySlot;
 import mekanism.api.text.EnumColor;
-import mekanism.common.MekanismLang;
 import mekanism.common.item.block.ItemBlockTooltip;
 import mekanism.common.item.interfaces.IDroppableContents;
 import mekanism.common.item.interfaces.IGuiItem;
+import mekanism.common.lib.security.ItemSecurityUtils;
 import mekanism.common.registration.impl.ContainerTypeRegistryObject;
-import mekanism.common.tier.InductionProviderTier;
-import mekanism.common.util.SecurityUtils;
-import mekanism.common.util.text.EnergyDisplay;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.Stats;
@@ -30,9 +27,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.util.FakePlayer;
+import net.neoforged.neoforge.common.util.FakePlayer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -44,7 +40,7 @@ public class ItemBlockTieredPersonalStorage<BLOCK extends BlockTieredPersonalSto
     private final PersonalStorageTier tier;
 
     public ItemBlockTieredPersonalStorage(BLOCK block, ResourceLocation openStat, PersonalStorageTier tier) {
-        super(block);
+        super(block,new Properties());
         this.openStat = openStat;
         this.tier = tier;
     }
@@ -52,7 +48,7 @@ public class ItemBlockTieredPersonalStorage<BLOCK extends BlockTieredPersonalSto
     @NotNull
     @Override
     public InteractionResultHolder<ItemStack> use(@NotNull Level world, @NotNull Player player, @NotNull InteractionHand hand) {
-        return SecurityUtils.get().claimOrOpenGui(world, player, hand, (p, h, s) -> {
+        return ItemSecurityUtils.get().claimOrOpenGui(world, player, hand, (p, h, s) -> {
             if (!world.isClientSide) {
                 TieredPersonalStorageManager.getInventoryFor(s);
             }
@@ -111,9 +107,10 @@ public class ItemBlockTieredPersonalStorage<BLOCK extends BlockTieredPersonalSto
         return tier;
     }
 
+
     @Override
-    protected void addStats(@NotNull ItemStack stack, Level world, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
-        super.addStats(stack, world, tooltip, flag);
+    protected void addStats(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltip, @NotNull TooltipFlag flag) {
+        super.addStats(stack, context, tooltip, flag);
         PersonalStorageTier tier = getTier();
 
         tooltip.add(EvolvedMekanismLang.TIERED_STORAGE_CAPACITY.translateColored(tier.getBaseTier().getColor(), EnumColor.GRAY, tier.columns * tier.rows + " stacks"));

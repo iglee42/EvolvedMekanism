@@ -5,6 +5,7 @@ import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.igleelib.api.utils.ModsUtils;
 import mekanism.api.tier.BaseTier;
+import mekanism.common.tier.FactoryTier;
 import net.minecraft.world.level.material.MapColor;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
@@ -43,6 +44,7 @@ public class BaseTierMixin implements InitializableEnum {
     @Override
     public void evolvedmekanism$initNewValues() {
         if (EMBaseTier.OVERCLOCKED != null) return;
+        System.out.println("Init Base Tiers");
         EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 221, 0},MapColor.COLOR_LIGHT_GREEN);
         EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{252, 158, 250},MapColor.COLOR_PURPLE);
         EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);

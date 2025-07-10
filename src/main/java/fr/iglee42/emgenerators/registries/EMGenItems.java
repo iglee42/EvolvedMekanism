@@ -15,7 +15,7 @@ import mekanism.common.tier.QIODriveTier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.neoforged.bus.api.IEventBus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -28,7 +28,7 @@ public class EMGenItems {
 
 
     private static ItemRegistryObject<Item> registerCircuit(BaseTier tier) {
-        return ITEMS.register(tier.getLowerName() + "_control_circuit", properties -> new Item(properties) {
+        return ITEMS.registerItem(tier.getLowerName() + "_control_circuit", properties -> new Item(properties) {
             @NotNull
             @Override
             public Component getName(@NotNull ItemStack stack) {
@@ -38,11 +38,11 @@ public class EMGenItems {
     }
 
     private static ItemRegistryObject<ItemTierInstaller> registerInstaller(@Nullable BaseTier fromTier, @NotNull BaseTier toTier) {
-        return ITEMS.register(toTier.getLowerName() + "_tier_installer", properties -> new ItemTierInstaller(fromTier, toTier, properties));
+        return ITEMS.registerItem(toTier.getLowerName() + "_tier_installer", properties -> new ItemTierInstaller(fromTier, toTier, properties));
     }
 
     private static ItemRegistryObject<ItemAlloy> registerAlloy(AlloyTier tier) {
-        return ITEMS.register("alloy_" + tier.getName(), properties -> new ItemAlloy(tier, properties) {
+        return ITEMS.registerItem("alloy_" + tier.getName(), properties -> new ItemAlloy(tier, properties) {
             @NotNull
             @Override
             public Component getName(@NotNull ItemStack stack) {
@@ -59,11 +59,11 @@ public class EMGenItems {
     }
 
     private static ItemRegistryObject<ItemQIODrive> registerQIODrive(QIODriveTier tier) {
-        return ITEMS.register("qio_drive_" + tier.name().toLowerCase(Locale.ROOT), properties -> new ItemQIODrive(tier, properties));
+        return ITEMS.registerItem("qio_drive_" + tier.name().toLowerCase(Locale.ROOT), properties -> new ItemQIODrive(tier, properties));
     }
 
     private static ItemRegistryObject<ItemUpgrade> registerUpgrade(Upgrade type) {
-        return ITEMS.register("upgrade_" + type.getRawName(), properties -> new ItemUpgrade(type, properties));
+        return ITEMS.registerItem("upgrade_" + type.getSerializedName(), properties -> new ItemUpgrade(type, properties));
     }
 
     public static void register(IEventBus modEventBus) {

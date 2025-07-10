@@ -28,19 +28,21 @@ public enum EvolvedMekanismLang implements ILangEntry {
     APT_PORT_MODE("apt", "port_mode"),
     APT_INVALID_SUPERCHARGING("apt", "invalid_supercharging"),
 
-    TOOLTIP_NO_CONSUMED("tooltip","not_consumed")
+    TOOLTIP_NO_CONSUMED("tooltip","not_consumed"),
+
+    ALLOYING("factory","alloying"),
+
+    DESCRIPTION_ALLOYER("description","alloyer"),
+    DESCRIPTION_MELTER("description","thermalizer"),
+    DESCRIPTION_SOLIDIFIER("description","solidification_chamber"),
+
+    UPGRADE_RADIOACTIVE("upgrade","radioactive"),
+    UPGRADE_SOLAR("upgrade","solar"),
+    UPGRADE_RADIOACTIVE_DESCRIPTION("upgrade","radioactive.description"),
+    UPGRADE_SOLAR_DESCRIPTION("upgrade","solar.description"),
 
     ;
 
-    // <type>.mekanism.<path>
-    public static MekanismLang ALLOYING; // type : factory | path : alloying
-    public static MekanismLang DESCRIPTION_ALLOYER; // type : description | path : alloyer
-    public static MekanismLang DESCRIPTION_MELTER; // type : description | path : thermalizer
-    public static MekanismLang DESCRIPTION_SOLIDIFIER; // type : description | path : solidification_chamber
-    public static APILang UPGRADE_RADIOACTIVE; // type : upgrade | path : radioactive
-    public static APILang UPGRADE_SOLAR; // type : upgrade | path : solar
-    public static APILang UPGRADE_RADIOACTIVE_DESCRIPTION; // type : upgrade | path : radioactive.description
-    public static APILang UPGRADE_SOLAR_DESCRIPTION; // type : upgrade | path : solar.description
 
 
     private final String key;

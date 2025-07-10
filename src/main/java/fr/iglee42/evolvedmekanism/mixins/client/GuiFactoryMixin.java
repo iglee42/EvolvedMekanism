@@ -1,11 +1,8 @@
 package fr.iglee42.evolvedmekanism.mixins.client;
 
 import fr.iglee42.evolvedmekanism.client.buttons.GuiSmallerDumpButton;
-import fr.iglee42.evolvedmekanism.jei.EMJEI;
-import fr.iglee42.evolvedmekanism.registries.EMFactoryType;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import mekanism.api.recipes.cache.CachedRecipe;
-import mekanism.client.gui.element.GuiDumpButton;
 import mekanism.client.gui.element.GuiElement;
 import mekanism.client.gui.element.bar.GuiChemicalBar;
 import mekanism.client.gui.element.bar.GuiVerticalPowerBar;
@@ -14,26 +11,22 @@ import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.tab.GuiEnergyTab;
 import mekanism.client.gui.element.tab.GuiSortingTab;
 import mekanism.client.gui.machine.GuiFactory;
-import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.common.inventory.container.slot.ContainerSlotType;
 import mekanism.common.inventory.container.tile.MekanismTileContainer;
 import mekanism.common.inventory.warning.ISupportsWarning;
 import mekanism.common.inventory.warning.WarningTracker;
 import mekanism.common.tile.factory.TileEntityFactory;
-import mekanism.common.tile.factory.TileEntityItemStackGasToItemStackFactory;
-import mekanism.common.tile.factory.TileEntityMetallurgicInfuserFactory;
+import mekanism.common.tile.factory.TileEntityItemStackChemicalToItemStackFactory;
 import mekanism.common.tile.factory.TileEntitySawingFactory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -41,7 +34,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Mixin(value = GuiFactory.class,remap = false)
 public abstract class GuiFactoryMixin {
 
-    @Shadow protected abstract GuiProgress addProgress(GuiProgress progressBar);
+    //@Shadow protected abstract GuiProgress addProgress(GuiProgress progressBar);
 
     @Unique
     private TileEntityFactory<?> evolvedMekanism$be;
@@ -83,12 +76,8 @@ public abstract class GuiFactoryMixin {
                 int endInventory = (imageWidth / 2 + inventorySize / 2) - 10;
                 extraSlotX.set(endInventory + 4);
                 int extraBarOffset = 5;
-                if (evolvedMekanism$be instanceof TileEntityMetallurgicInfuserFactory factory) {
-                    secondaryBar = evolvedMekanism$addElement(gui,new GuiChemicalBar<>(gui, GuiChemicalBar.getProvider(factory.getInfusionTank(), evolvedMekanism$be.getInfusionTanks(null)),
-                            extraSlotX.get() + extraBarOffset, gui.inventoryLabelY + 9, 4, 52, false));
-                    evolvedMekanism$addElement(gui,new GuiSmallerDumpButton<>(gui, factory, extraSlotX.get() - 2, gui.inventoryLabelY));
-                } else if (evolvedMekanism$be instanceof TileEntityItemStackGasToItemStackFactory factory) {
-                    secondaryBar = evolvedMekanism$addElement(gui,new GuiChemicalBar<>(gui, GuiChemicalBar.getProvider(factory.getGasTank(), evolvedMekanism$be.getGasTanks(null)),
+             if (evolvedMekanism$be instanceof TileEntityItemStackChemicalToItemStackFactory factory) {
+                    secondaryBar = evolvedMekanism$addElement(gui,new GuiChemicalBar(gui, GuiChemicalBar.getProvider(factory.getChemicalTank(), evolvedMekanism$be.getChemicalTanks(null)),
                             extraSlotX.get() + extraBarOffset, gui.inventoryLabelY + 9, 4, 52, false));
                     evolvedMekanism$addElement(gui,new GuiSmallerDumpButton<>(gui, factory, extraSlotX.get() - 2, gui.inventoryLabelY));
                 }
@@ -102,7 +91,9 @@ public abstract class GuiFactoryMixin {
             int baseXMult = 19;
             for (int i = 0; i < evolvedMekanism$be.tier.processes; i++) {
                 int cacheIndex = i;
-                addProgress(new GuiProgress(() -> evolvedMekanism$be.getScaledProgress(1, cacheIndex), ProgressType.DOWN, gui, 4 + baseX + (i * baseXMult), 33))
+                evolvedMekanism$addElement(gui,new GuiProgress(() -> evolvedMekanism$be.getScaledProgress(1, cacheIndex), ProgressType.DOWN, gui, 4 + baseX + (i * baseXMult), 33))
+                        .recipeViewerCategory(evolvedMekanism$be)
+                        //Only can happen if recipes change because inputs are sanitized in the factory based on the output
                         .warning(WarningTracker.WarningType.INPUT_DOESNT_PRODUCE_OUTPUT, evolvedMekanism$be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.INPUT_DOESNT_PRODUCE_OUTPUT, cacheIndex));
             }
             ci.cancel();
@@ -117,14 +108,14 @@ public abstract class GuiFactoryMixin {
         return element;
     }
 
-    @Inject(method = "addProgress", at = @At("HEAD"), cancellable = true)
+    /*@Inject(method = "addProgress", at = @At("HEAD"), cancellable = true)
     private void evolvedmekanism$fixProgressBar(GuiProgress progressBar, CallbackInfoReturnable<GuiProgress> cir) {
         Object obj = this;
         GuiFactory gui = (GuiFactory) obj;
         if (evolvedMekanism$be.getFactoryType().equals(EMFactoryType.ALLOYING)){
             cir.setReturnValue(evolvedMekanism$addElement(gui,progressBar.jeiCategories(EMJEI.ALLOYING)));
         }
-    }
+    }*/
 
 
 }

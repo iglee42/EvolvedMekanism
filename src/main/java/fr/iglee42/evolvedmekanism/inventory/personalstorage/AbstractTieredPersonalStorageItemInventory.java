@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.inventory.personalstorage;
 
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import mekanism.api.annotations.NothingNullByDefault;
+import mekanism.api.functions.ConstantPredicates;
 import mekanism.api.inventory.IInventorySlot;
 import mekanism.api.inventory.IMekanismInventory;
 import mekanism.common.inventory.slot.BasicInventorySlot;
@@ -19,7 +20,7 @@ public abstract class AbstractTieredPersonalStorageItemInventory implements IMek
     protected final PersonalStorageTier tier;
 
     public AbstractTieredPersonalStorageItemInventory(PersonalStorageTier tier) {
-        slots = Util.make(new ArrayList<>(), lst -> TieredPersonalStorageManager.createSlots(lst::add, BasicInventorySlot.alwaysTrueBi, this,tier));
+        slots = Util.make(new ArrayList<>(), lst -> TieredPersonalStorageManager.createSlots(lst::add, ConstantPredicates.alwaysTrueBi(), this,tier));
         this.tier = tier;
     }
 

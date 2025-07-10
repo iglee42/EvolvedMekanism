@@ -2,13 +2,12 @@ package fr.iglee42.evolvedmekanism.registries;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.loot.PersonalTieredStorageContentsLootFunction;
-import net.minecraft.core.registries.Registries;
+import mekanism.common.registration.MekanismDeferredHolder;
+import mekanism.common.registration.impl.LootFunctionDeferredRegister;
 import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
 public class EMLootFunctions {
-    public static final DeferredRegister<LootItemFunctionType> REGISTER = DeferredRegister.create(Registries.LOOT_FUNCTION_TYPE, EvolvedMekanism.MODID);
+    public static final LootFunctionDeferredRegister REGISTER = new LootFunctionDeferredRegister(EvolvedMekanism.MODID);
 
-    public static final RegistryObject<LootItemFunctionType> TIERED_PERSONAL_STORAGE_LOOT_FUNC = REGISTER.register("tiered_personal_storage_contents", ()->new LootItemFunctionType(new PersonalTieredStorageContentsLootFunction.PersonalStorageLootFunctionSerializer()));
+    public static final MekanismDeferredHolder<LootItemFunctionType<?>,LootItemFunctionType<PersonalTieredStorageContentsLootFunction>> TIERED_PERSONAL_STORAGE_LOOT_FUNC = REGISTER.registerBasic("tiered_personal_storage_contents", ()->PersonalTieredStorageContentsLootFunction.INSTANCE);
 }

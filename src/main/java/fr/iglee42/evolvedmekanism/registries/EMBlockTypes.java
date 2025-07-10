@@ -1,10 +1,15 @@
 package fr.iglee42.evolvedmekanism.registries;
 
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.Table;
+import fr.iglee42.evolvedmekanism.EMFactoryBuilder;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
+import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
+import fr.iglee42.evolvedmekanism.tiers.cable.*;
 import fr.iglee42.evolvedmekanism.tiers.storage.*;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
@@ -14,16 +19,17 @@ import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import mekanism.api.Upgrade;
+import mekanism.api.text.ILangEntry;
+import mekanism.api.tier.ITier;
 import mekanism.common.MekanismLang;
 import mekanism.common.block.attribute.*;
 import mekanism.common.block.attribute.Attributes.AttributeRedstone;
 import mekanism.common.block.attribute.Attributes.AttributeSecurity;
 import mekanism.common.config.MekanismConfig;
-import mekanism.common.content.blocktype.BlockShapes;
-import mekanism.common.content.blocktype.BlockTypeTile;
+import mekanism.common.content.blocktype.*;
 import mekanism.common.content.blocktype.BlockTypeTile.BlockTileBuilder;
-import mekanism.common.content.blocktype.Machine;
 import mekanism.common.content.blocktype.Machine.MachineBuilder;
+import mekanism.common.lib.transmitter.TransmissionType;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.registries.MekanismContainerTypes;
@@ -35,21 +41,26 @@ import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.multiblock.TileEntitySPSPort;
 import mekanism.common.tile.multiblock.TileEntitySuperheatingElement;
+import mekanism.common.tile.transmitter.*;
+import mekanism.common.util.EnumUtils;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import java.util.EnumSet;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Supplier;
 
 public class EMBlockTypes {
+
+
+    private static final Table<FactoryTier, FactoryType, Factory<?>> FACTORIES = HashBasedTable.create();
 
     public static final Machine.FactoryMachine<TileEntityAlloyer> ALLOYER = MachineBuilder
             .createFactoryMachine(() -> EMTileEntityTypes.ALLOYER, EvolvedMekanismLang.DESCRIPTION_ALLOYER, EMFactoryType.ALLOYING)
             .withGui(() -> EMContainerTypes.ALLOYER)
             .withSound(MekanismSounds.COMBINER)
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
-            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING)
             .withComputerSupport("alloyer")
+            .withSideConfig(TransmissionType.ITEM, TransmissionType.ENERGY)
             .build();
 
     public static final Machine<TileEntityChemixer> CHEMIXER = MachineBuilder
@@ -57,17 +68,19 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.CHEMIXER)
             .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
-            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING,EMUpgrades.RADIOACTIVE_UPGRADE))
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING,EMUpgrades.RADIOACTIVE_UPGRADE)
             .withComputerSupport("chemixer")
+            .withSideConfig(TransmissionType.ITEM,TransmissionType.ENERGY,TransmissionType.CHEMICAL)
             .build();
 
     public static final Machine<TileEntityMelter> MELTER = MachineBuilder
             .createMachine(() -> EMTileEntityTypes.MELTER, EvolvedMekanismLang.DESCRIPTION_MELTER)
             .withGui(() -> EMContainerTypes.MELTER)
             .withSound(MekanismSounds.CHEMICAL_OXIDIZER)
-            .withEnergyConfig(MekanismConfig.usage.oxidationChamber, MekanismConfig.storage.oxidationChamber)
-            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .withEnergyConfig(MekanismConfig.usage.chemicalOxidizer, MekanismConfig.storage.chemicalOxidizer)
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING)
             .withComputerSupport("melter")
+            .withSideConfig(TransmissionType.ITEM,TransmissionType.FLUID,TransmissionType.HEAT)
             .build();
 
     public static final Machine<TileEntitySolidifier> SOLIDIFIER = MachineBuilder
@@ -75,8 +88,9 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.SOLIDIFIER)
             .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
             .withEnergyConfig(MekanismConfig.usage.pressurizedReactionBase, MekanismConfig.storage.pressurizedReactionBase)
-            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING)
             .withComputerSupport("solidifier")
+            .withSideConfig(TransmissionType.ITEM,TransmissionType.FLUID,TransmissionType.ENERGY)
             .build();
 
     // APT Casing
@@ -160,6 +174,54 @@ public class EMBlockTypes {
     public static final BlockTypeTile<TileEntityTieredPersonalChest> MULTIVERSAL_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.MULTIVERSAL_PERSONAL_CHEST,PersonalStorageTier.MULTIVERSAL,()->EMBlocks.CREATIVE_PERSONAL_CHEST);
     public static final BlockTypeTile<TileEntityTieredPersonalChest> CREATIVE_PERSONAL_CHEST = createPersonalChest(()-> EMTileEntityTypes.CREATIVE_PERSONAL_CHEST,PersonalStorageTier.CREATIVE,null);
 
+    //Transmitter
+    public static final BlockTypeTile<TileEntityUniversalCable> OVERCLOCKED_UNIVERSAL_CABLE = createCable(EMCableTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_UNIVERSAL_CABLE);
+    public static final BlockTypeTile<TileEntityUniversalCable> QUANTUM_UNIVERSAL_CABLE = createCable(EMCableTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_UNIVERSAL_CABLE);
+    public static final BlockTypeTile<TileEntityUniversalCable> DENSE_UNIVERSAL_CABLE = createCable(EMCableTier.DENSE, () -> EMTileEntityTypes.DENSE_UNIVERSAL_CABLE);
+    public static final BlockTypeTile<TileEntityUniversalCable> MULTIVERSAL_UNIVERSAL_CABLE = createCable(EMCableTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_UNIVERSAL_CABLE);
+    public static final BlockTypeTile<TileEntityUniversalCable> CREATIVE_UNIVERSAL_CABLE = createCable(EMCableTier.CREATIVE, () -> EMTileEntityTypes.CREATIVE_UNIVERSAL_CABLE);
+
+    public static final BlockTypeTile<TileEntityMechanicalPipe> OVERCLOCKED_MECHANICAL_PIPE = createPipe(EMPipeTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_MECHANICAL_PIPE);
+    public static final BlockTypeTile<TileEntityMechanicalPipe> QUANTUM_MECHANICAL_PIPE = createPipe(EMPipeTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_MECHANICAL_PIPE);
+    public static final BlockTypeTile<TileEntityMechanicalPipe> DENSE_MECHANICAL_PIPE = createPipe(EMPipeTier.DENSE, () -> EMTileEntityTypes.DENSE_MECHANICAL_PIPE);
+    public static final BlockTypeTile<TileEntityMechanicalPipe> MULTIVERSAL_MECHANICAL_PIPE = createPipe(EMPipeTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_MECHANICAL_PIPE);
+    public static final BlockTypeTile<TileEntityMechanicalPipe> CREATIVE_MECHANICAL_PIPE = createPipe(EMPipeTier.CREATIVE, () -> EMTileEntityTypes.CREATIVE_MECHANICAL_PIPE);
+
+    public static final BlockTypeTile<TileEntityPressurizedTube> OVERCLOCKED_PRESSURIZED_TUBE = createTube(EMTubeTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_PRESSURIZED_TUBE);
+    public static final BlockTypeTile<TileEntityPressurizedTube> QUANTUM_PRESSURIZED_TUBE = createTube(EMTubeTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_PRESSURIZED_TUBE);
+    public static final BlockTypeTile<TileEntityPressurizedTube> DENSE_PRESSURIZED_TUBE = createTube(EMTubeTier.DENSE, () -> EMTileEntityTypes.DENSE_PRESSURIZED_TUBE);
+    public static final BlockTypeTile<TileEntityPressurizedTube> MULTIVERSAL_PRESSURIZED_TUBE = createTube(EMTubeTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_PRESSURIZED_TUBE);
+    public static final BlockTypeTile<TileEntityPressurizedTube> CREATIVE_PRESSURIZED_TUBE = createTube(EMTubeTier.CREATIVE, () -> EMTileEntityTypes.CREATIVE_PRESSURIZED_TUBE);
+
+    public static final BlockTypeTile<TileEntityLogisticalTransporter> OVERCLOCKED_LOGISTICAL_TRANSPORTER = createTransporter(EMTransporterTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_LOGISTICAL_TRANSPORTER);
+    public static final BlockTypeTile<TileEntityLogisticalTransporter> QUANTUM_LOGISTICAL_TRANSPORTER = createTransporter(EMTransporterTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_LOGISTICAL_TRANSPORTER);
+    public static final BlockTypeTile<TileEntityLogisticalTransporter> DENSE_LOGISTICAL_TRANSPORTER = createTransporter(EMTransporterTier.DENSE, () -> EMTileEntityTypes.DENSE_LOGISTICAL_TRANSPORTER);
+    public static final BlockTypeTile<TileEntityLogisticalTransporter> MULTIVERSAL_LOGISTICAL_TRANSPORTER = createTransporter(EMTransporterTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_LOGISTICAL_TRANSPORTER);
+    public static final BlockTypeTile<TileEntityLogisticalTransporter> CREATIVE_LOGISTICAL_TRANSPORTER = createTransporter(EMTransporterTier.CREATIVE, () -> EMTileEntityTypes.CREATIVE_LOGISTICAL_TRANSPORTER);
+
+    public static final BlockTypeTile<TileEntityThermodynamicConductor> OVERCLOCKED_THERMODYNAMIC_CONDUCTOR = createConductor(EMConductorTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_THERMODYNAMIC_CONDUCTOR);
+    public static final BlockTypeTile<TileEntityThermodynamicConductor> QUANTUM_THERMODYNAMIC_CONDUCTOR = createConductor(EMConductorTier.QUANTUM, () -> EMTileEntityTypes.QUANTUM_THERMODYNAMIC_CONDUCTOR);
+    public static final BlockTypeTile<TileEntityThermodynamicConductor> DENSE_THERMODYNAMIC_CONDUCTOR = createConductor(EMConductorTier.DENSE, () -> EMTileEntityTypes.DENSE_THERMODYNAMIC_CONDUCTOR);
+    public static final BlockTypeTile<TileEntityThermodynamicConductor> MULTIVERSAL_THERMODYNAMIC_CONDUCTOR = createConductor(EMConductorTier.MULTIVERSAL, () -> EMTileEntityTypes.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR);
+    public static final BlockTypeTile<TileEntityThermodynamicConductor> CREATIVE_THERMODYNAMIC_CONDUCTOR = createConductor(EMConductorTier.CREATIVE, () -> EMTileEntityTypes.CREATIVE_THERMODYNAMIC_CONDUCTOR);
+
+    static {
+        for (FactoryTier tier :  Arrays.asList(EMFactoryTier.OVERCLOCKED,EMFactoryTier.QUANTUM,EMFactoryTier.DENSE,EMFactoryTier.MULTIVERSAL,EMFactoryTier.CREATIVE)) {
+            for (FactoryType type : EnumUtils.FACTORY_TYPES) {
+                FACTORIES.put(tier, type, Factory.FactoryBuilder.createFactory(() -> EMTileEntityTypes.getFactoryTile(tier, type), type, tier).build());
+            }
+        }
+        List<FactoryTier> allTiers = new ArrayList<>();
+        allTiers.addAll(Arrays.stream(EnumUtils.FACTORY_TIERS).toList());
+        allTiers.addAll( Arrays.asList(EMFactoryTier.OVERCLOCKED,EMFactoryTier.QUANTUM,EMFactoryTier.DENSE,EMFactoryTier.MULTIVERSAL,EMFactoryTier.CREATIVE));
+        for (FactoryTier tier : allTiers) {
+            FACTORIES.put(tier, EMFactoryType.ALLOYING, EMFactoryBuilder.createFactory(() -> EMTileEntityTypes.getFactoryTile(tier, EMFactoryType.ALLOYING), EMFactoryType.ALLOYING, tier).build());
+        }
+    }
+
+    public static Factory<?> getFactory(FactoryTier tier, FactoryType type) {
+        return FACTORIES.get(tier, type);
+    }
 
     private static BlockTypeTile<TileEntityTieredPersonalBarrel> createPersonalBarrel(Supplier<TileEntityTypeRegistryObject<TileEntityTieredPersonalBarrel>> teType, PersonalStorageTier tier,Supplier<BlockRegistryObject<?, ?>> upgradeBlock){
         return BlockTileBuilder
@@ -179,6 +241,7 @@ public class EMBlockTypes {
                 .withComputerSupport("personalChest")
                 .build();
     }
+
 
     private static <TILE extends TileEntityInductionCell> BlockTypeTile<TILE> createInductionCell(InductionCellTier tier, Supplier<TileEntityTypeRegistryObject<TILE>> tile) {
         return BlockTileBuilder.createBlock(tile, MekanismLang.DESCRIPTION_INDUCTION_CELL)
@@ -208,6 +271,7 @@ public class EMBlockTypes {
                 .withGui(() -> MekanismContainerTypes.ENERGY_CUBE)
                 .withEnergyConfig(tier::getMaxEnergy)
                 .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock), new AttributeStateFacing(BlockStateProperties.FACING))
+                .withSideConfig(TransmissionType.ENERGY, TransmissionType.ITEM)
                 .without(AttributeParticleFX.class, AttributeStateActive.class, AttributeUpgradeSupport.class)
                 .withComputerSupport(tier, "EnergyCube")
                 .build();
@@ -228,8 +292,35 @@ public class EMBlockTypes {
                 .withGui(() -> MekanismContainerTypes.CHEMICAL_TANK)
                 .withCustomShape(BlockShapes.CHEMICAL_TANK)
                 .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
+                .withSideConfig(TransmissionType.CHEMICAL, TransmissionType.ITEM)
                 .without(AttributeParticleFX.class, AttributeStateActive.class, AttributeUpgradeSupport.class)
                 .withComputerSupport(tier, "ChemicalTank")
+                .build();
+    }
+
+    private static BlockTypeTile<TileEntityUniversalCable> createCable(CableTier tier, Supplier<TileEntityTypeRegistryObject<TileEntityUniversalCable>> tile) {
+        return createTransmitter(tier, tile, MekanismLang.DESCRIPTION_CABLE);
+    }
+
+    private static BlockTypeTile<TileEntityMechanicalPipe> createPipe(PipeTier tier, Supplier<TileEntityTypeRegistryObject<TileEntityMechanicalPipe>> tile) {
+        return createTransmitter(tier, tile, MekanismLang.DESCRIPTION_PIPE);
+    }
+
+    private static BlockTypeTile<TileEntityPressurizedTube> createTube(TubeTier tier, Supplier<TileEntityTypeRegistryObject<TileEntityPressurizedTube>> tile) {
+        return createTransmitter(tier, tile, MekanismLang.DESCRIPTION_TUBE);
+    }
+
+    private static BlockTypeTile<TileEntityLogisticalTransporter> createTransporter(TransporterTier tier, Supplier<TileEntityTypeRegistryObject<TileEntityLogisticalTransporter>> tile) {
+        return createTransmitter(tier, tile, MekanismLang.DESCRIPTION_TRANSPORTER);
+    }
+
+    private static BlockTypeTile<TileEntityThermodynamicConductor> createConductor(ConductorTier tier, Supplier<TileEntityTypeRegistryObject<TileEntityThermodynamicConductor>> tile) {
+        return createTransmitter(tier, tile, MekanismLang.DESCRIPTION_CONDUCTOR);
+    }
+
+    private static <TILE extends TileEntityTransmitter> BlockTypeTile<TILE> createTransmitter(ITier tier, Supplier<TileEntityTypeRegistryObject<TILE>> tile, ILangEntry description) {
+        return BlockTileBuilder.createBlock(tile, description)
+                .with(new AttributeTier<>(tier))
                 .build();
     }
 }

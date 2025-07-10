@@ -1,10 +1,8 @@
 package fr.iglee42.evolvedmekanism.mixins.tiles;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
-import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import mekanism.api.IContentsListener;
 import mekanism.api.inventory.IInventorySlot;
-import mekanism.api.providers.IBlockProvider;
 import mekanism.api.recipes.MekanismRecipe;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.api.recipes.inputs.IInputHandler;
@@ -16,11 +14,12 @@ import mekanism.common.inventory.slot.FactoryInputInventorySlot;
 import mekanism.common.inventory.slot.OutputInventorySlot;
 import mekanism.common.inventory.warning.WarningTracker;
 import mekanism.common.recipe.IMekanismRecipeTypeProvider;
-import mekanism.common.tier.FactoryTier;
 import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.factory.TileEntityItemToItemFactory;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -35,15 +34,16 @@ import java.util.List;
 import java.util.Set;
 
 @Mixin(value = TileEntityItemToItemFactory.class,remap = false)
-public class TileEntityItemToItemFactoryMixin<RECIPE extends MekanismRecipe> extends TileEntityFactory<RECIPE> {
+public class TileEntityItemToItemFactoryMixin<RECIPE extends MekanismRecipe<?>> extends TileEntityFactory<RECIPE> {
 
     @Shadow protected IInputHandler<@NotNull ItemStack>[] inputHandlers;
 
     @Shadow protected IOutputHandler<@NotNull ItemStack>[] outputHandlers;
 
-    protected TileEntityItemToItemFactoryMixin(IBlockProvider blockProvider, BlockPos pos, BlockState state, List<CachedRecipe.OperationTracker.RecipeError> errorTypes, Set<CachedRecipe.OperationTracker.RecipeError> globalErrorTypes) {
+    protected TileEntityItemToItemFactoryMixin(Holder<Block> blockProvider, BlockPos pos, BlockState state, List<CachedRecipe.OperationTracker.RecipeError> errorTypes, Set<CachedRecipe.OperationTracker.RecipeError> globalErrorTypes) {
         super(blockProvider, pos, state, errorTypes, globalErrorTypes);
     }
+
 
     @Inject(method = "addSlots",at = @At("HEAD"), cancellable = true)
     private void evolvedmekanism$moveSlot(InventorySlotHelper builder, IContentsListener listener, IContentsListener updateSortingListener, CallbackInfo ci){
@@ -87,13 +87,18 @@ public class TileEntityItemToItemFactoryMixin<RECIPE extends MekanismRecipe> ext
         return 0;
     }
 
+    @Override
+    public boolean isItemValidForSlot(@NotNull ItemStack stack) {
+        return false;
+    }
+
     @Unique
     public boolean isValidInputItem(@NotNull ItemStack stack) {
         return false;
     }
 
     @Unique
-    public @NotNull IMekanismRecipeTypeProvider<RECIPE, ?> getRecipeType() {
+    public @NotNull IMekanismRecipeTypeProvider<?,RECIPE, ?> getRecipeType() {
         return null;
     }
 

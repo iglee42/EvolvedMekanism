@@ -7,7 +7,7 @@ import mekanism.client.render.MekanismRenderer.FluidTextureType;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.BlockPos;
-import net.minecraftforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.FluidStack;
 
 @NothingNullByDefault
 public class FluidRenderData extends CustomRenderData {
@@ -45,11 +45,11 @@ public class FluidRenderData extends CustomRenderData {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), fluidType.getFluid(), fluidType.getTag());
+        return Objects.hash(super.hashCode(), fluidType.getFluid(), fluidType.getComponents().hashCode());
     }
 
     @Override
     public boolean equals(Object data) {
-        return super.equals(data) && data instanceof FluidRenderData other && fluidType.isFluidEqual(other.fluidType);
+        return super.equals(data) && data instanceof FluidRenderData other && FluidStack.isSameFluid(fluidType,other.fluidType);
     }
 }

@@ -5,40 +5,58 @@ import fr.iglee42.evolvedmekanism.client.gui.*;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderAPT;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.MultipleCustomRenderData;
-import fr.iglee42.evolvedmekanism.registries.EMFluids;
-import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
+import fr.iglee42.evolvedmekanism.registries.EMFluids;
+import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.BaseTier;
 import mekanism.client.ClientRegistrationUtil;
 import mekanism.client.render.MekanismRenderer;
+import mekanism.client.render.RenderPropertiesProvider;
+import mekanism.client.render.armor.*;
 import mekanism.client.render.item.TransmitterTypeDecorator;
+import mekanism.client.render.item.block.RenderEnergyCubeItem;
+import mekanism.client.render.item.block.RenderFluidTankItem;
+import mekanism.client.render.item.gear.*;
 import mekanism.client.render.tileentity.RenderBin;
 import mekanism.client.render.tileentity.RenderEnergyCube;
 import mekanism.client.render.tileentity.RenderFluidTank;
 import mekanism.client.render.transmitter.*;
 import mekanism.common.block.attribute.Attribute;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
+import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismFluids;
+import mekanism.common.registries.MekanismItems;
 import mekanism.common.tile.transmitter.TileEntityLogisticalTransporter;
 import mekanism.common.util.WorldUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.TextureAtlas;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.*;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.registries.RegisterEvent;
+import net.minecraft.world.level.material.Fluid;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.*;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
 
-@Mod.EventBusSubscriber(modid = EvolvedMekanism.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = EvolvedMekanism.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class ClientRegistration {
 
     @SubscribeEvent
     public static void init(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            //Set fluids to a translucent render layer
+            for (Holder<Fluid> fluid : MekanismFluids.FLUIDS.getFluidEntries()) {
+                ItemBlockRenderTypes.setRenderLayer(fluid.value(), RenderType.translucent());
+            }
+        });
     }
 
     @SubscribeEvent
@@ -46,7 +64,7 @@ public class ClientRegistration {
     }
 
     @SubscribeEvent
-    public static void registerOverlays(RegisterGuiOverlaysEvent event) {
+    public static void registerOverlays(RegisterGuiLayersEvent event) {
     }
 
     @SubscribeEvent
@@ -87,17 +105,15 @@ public class ClientRegistration {
 
 
     @SubscribeEvent(priority = EventPriority.LOW)
-    public static void registerContainers(RegisterEvent event) {
-        event.register(Registries.MENU, helper -> {
-            ClientRegistrationUtil.registerScreen(EMContainerTypes.TIERED_PERSONAL_STORAGE_ITEM, GuiTieredPersonalStorageItem::new);
-            ClientRegistrationUtil.registerScreen(EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK, GuiTieredPersonalStorageTile::new);
-            ClientRegistrationUtil.registerScreen(EMContainerTypes.ALLOYER, GuiAlloyer::new);
-            ClientRegistrationUtil.registerScreen(EMContainerTypes.CHEMIXER, GuiChemixer::new);
-            ClientRegistrationUtil.registerScreen(EMContainerTypes.APT, GuiAPT::new);
-            ClientRegistrationUtil.registerScreen(EMContainerTypes.MELTER, GuiMelter::new);
-            ClientRegistrationUtil.registerScreen(EMContainerTypes.SOLIDIFIER, GuiSolidifier::new);
+    public static void registerContainers(RegisterMenuScreensEvent event) {
+            ClientRegistrationUtil.registerScreen(event,EMContainerTypes.TIERED_PERSONAL_STORAGE_ITEM, GuiTieredPersonalStorageItem::new);
+            ClientRegistrationUtil.registerScreen(event,EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK, GuiTieredPersonalStorageTile::new);
+            ClientRegistrationUtil.registerScreen(event,EMContainerTypes.ALLOYER, GuiAlloyer::new);
+            ClientRegistrationUtil.registerScreen(event,EMContainerTypes.CHEMIXER, GuiChemixer::new);
+            ClientRegistrationUtil.registerScreen(event,EMContainerTypes.APT, GuiAPT::new);
+            ClientRegistrationUtil.registerScreen(event,EMContainerTypes.MELTER, GuiMelter::new);
+            ClientRegistrationUtil.registerScreen(event,EMContainerTypes.SOLIDIFIER, GuiSolidifier::new);
 
-        });
     }
 
 
@@ -107,7 +123,7 @@ public class ClientRegistration {
     public static void registerBlockColorHandlers(RegisterColorHandlersEvent.Block event) {
         ClientRegistrationUtil.registerBlockColorHandler(event, (state, world, pos, tintIndex) -> {
                   if (tintIndex == 1) {
-                      BaseTier tier = Attribute.getBaseTier(state.getBlock());
+                      BaseTier tier = Attribute.getBaseTier(state.getBlockHolder());
                       if (tier != null) {
                           return MekanismRenderer.getColorARGB(tier, 1);
                       }
@@ -151,11 +167,24 @@ public class ClientRegistration {
     }
 
     @SubscribeEvent
-    public static void onStitch(TextureStitchEvent.Post event) {
+    public static void onStitch(TextureAtlasStitchedEvent event) {
         if (!event.getAtlas().location().equals(TextureAtlas.LOCATION_BLOCKS)) {
             return;
         }
         CustomModelRenderer.resetCachedModels();
         MultipleCustomRenderData.clearCaches();
     }
+
+    @SubscribeEvent
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+
+        ClientRegistrationUtil.registerItemExtensions(event, new RenderPropertiesProvider.MekRenderProperties(RenderEnergyCubeItem.RENDERER), EMBlocks.OVERCLOCKED_ENERGY_CUBE,
+                EMBlocks.QUANTUM_ENERGY_CUBE, EMBlocks.DENSE_ENERGY_CUBE, EMBlocks.MULTIVERSAL_ENERGY_CUBE);
+        ClientRegistrationUtil.registerItemExtensions(event, new RenderPropertiesProvider.MekRenderProperties(RenderFluidTankItem.RENDERER), EMBlocks.OVERCLOCKED_FLUID_TANK,
+                EMBlocks.QUANTUM_FLUID_TANK, EMBlocks.DENSE_FLUID_TANK, EMBlocks.MULTIVERSAL_FLUID_TANK);
+
+        ClientRegistrationUtil.registerBlockExtensions(event, EMBlocks.BLOCKS);
+        ClientRegistrationUtil.registerFluidExtensions(event, EMFluids.FLUIDS);
+    }
+
 }

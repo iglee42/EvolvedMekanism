@@ -6,6 +6,7 @@ import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.registries.EMBlockTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMFactoryType;
+import mekanism.api.text.ILangEntry;
 import mekanism.common.MekanismLang;
 import mekanism.common.content.blocktype.FactoryType;
 import mekanism.common.content.blocktype.Machine;
@@ -28,12 +29,12 @@ public class FactoryTypeMixin implements InitializableEnum {
     private static FactoryType[] $VALUES;
 
     @Invoker("<init>")
-    public static FactoryType evolvedmekanism$initInvoker(String internalName, int internalId, String registryNameComponent, MekanismLang langEntry, Supplier<Machine.FactoryMachine<?>> baseMachine, Supplier<BlockRegistryObject<?, ?>> baseBlock){
+    public static FactoryType evolvedmekanism$initInvoker(String internalName, int internalId, String registryNameComponent, ILangEntry langEntry, Supplier<Machine.FactoryMachine<?>> baseMachine, Supplier<BlockRegistryObject<?, ?>> baseBlock){
         throw new AssertionError();
     }
 
     @Unique
-    private static FactoryType evolvedmekanism$addVariant(String internalName, String registryNameComponent, MekanismLang langEntry, Supplier<Machine.FactoryMachine<?>> baseMachine, Supplier<BlockRegistryObject<?, ?>> baseBlock) {
+    private static FactoryType evolvedmekanism$addVariant(String internalName, String registryNameComponent, ILangEntry langEntry, Supplier<Machine.FactoryMachine<?>> baseMachine, Supplier<BlockRegistryObject<?, ?>> baseBlock) {
         ArrayList<FactoryType> variants = new ArrayList<>(Arrays.asList($VALUES));
         FactoryType casing = evolvedmekanism$initInvoker(internalName,
                 variants.get(variants.size() - 1).ordinal() + 1,
@@ -45,6 +46,7 @@ public class FactoryTypeMixin implements InitializableEnum {
 
     @Override
     public void evolvedmekanism$initNewValues() {
+        System.out.println("Init Factory");
         if (EMFactoryType.ALLOYING != null) return;
         EMFactoryType.ALLOYING = evolvedmekanism$addVariant("ALLOYING", "alloying", EvolvedMekanismLang.ALLOYING,()-> EMBlockTypes.ALLOYER,()-> EMBlocks.ALLOYER);
     }

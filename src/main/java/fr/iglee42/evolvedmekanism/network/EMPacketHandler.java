@@ -1,23 +1,24 @@
 package fr.iglee42.evolvedmekanism.network;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import mekanism.common.lib.Version;
 import mekanism.common.network.BasePacketHandler;
-import net.minecraftforge.network.simple.SimpleChannel;
+import net.neoforged.bus.api.IEventBus;
 
 public class EMPacketHandler extends BasePacketHandler {
 
-    private final SimpleChannel netHandler = createChannel(EvolvedMekanism.rl(EvolvedMekanism.MODID), EvolvedMekanism.instance.versionNumber);
+    public EMPacketHandler(IEventBus modEventBus) {
+        super(modEventBus, EvolvedMekanism.instance.versionNumber);
+    }
+
 
     @Override
-    protected SimpleChannel getChannel() {
-        return netHandler;
+    protected void registerClientToServer(PacketRegistrar registrar) {
+
     }
 
     @Override
-    public void initialize() {
-        //Client to server messages
-
-        //Server to client messages
+    protected void registerServerToClient(PacketRegistrar registrar) {
 
     }
 }

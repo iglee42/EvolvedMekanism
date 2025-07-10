@@ -4,6 +4,7 @@ import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import mekanism.api.providers.IBlockProvider;
 import mekanism.common.registries.MekanismBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Vec3i;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -12,12 +13,13 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BarrelBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class TileEntityTieredPersonalBarrel extends TileEntityTieredPersonalStorage {
 
-    public TileEntityTieredPersonalBarrel(IBlockProvider blockProvider, BlockPos pos, BlockState state, PersonalStorageTier tier) {
+    public TileEntityTieredPersonalBarrel(Holder<Block> blockProvider, BlockPos pos, BlockState state, PersonalStorageTier tier) {
         super(blockProvider, pos, state, tier);
     }
 

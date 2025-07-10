@@ -4,14 +4,13 @@ import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.Action;
 import mekanism.api.AutomationType;
-import mekanism.api.NBTConstants;
+import mekanism.api.SerializationConstants;
+import mekanism.api.chemical.ChemicalStack;
+import mekanism.api.chemical.IChemicalTank;
 import mekanism.api.chemical.attribute.ChemicalAttributeValidator;
-import mekanism.api.chemical.gas.Gas;
-import mekanism.api.chemical.gas.GasStack;
-import mekanism.api.chemical.gas.IGasTank;
 import mekanism.api.energy.IEnergyContainer;
-import mekanism.api.recipes.ItemStackGasToItemStackRecipe;
-import mekanism.common.capabilities.chemical.multiblock.MultiblockChemicalTankBuilder;
+import mekanism.api.recipes.ItemStackChemicalToItemStackRecipe;
+import mekanism.common.capabilities.chemical.VariableCapacityChemicalTank;
 import mekanism.common.capabilities.energy.BasicEnergyContainer;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerChemicalTankWrapper;
@@ -25,15 +24,17 @@ import mekanism.common.lib.multiblock.IValveHandler;
 import mekanism.common.lib.multiblock.MultiblockData;
 import mekanism.common.util.MekanismUtils;
 import mekanism.common.util.NBTUtils;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 
 public class APTMultiblockData extends MultiblockData implements IValveHandler{
 
     @ContainerSync
     @WrappingComputerMethod(wrapper = ComputerChemicalTankWrapper.class, methodNames = {"getInput", "getInputCapacity", "getInputNeeded", "getInputFilledPercentage"}, docPlaceholder = "input tank")
-    public IGasTank inputTank;
+    public IChemicalTank inputTank;
 
     @WrappingComputerMethod(wrapper = SpecialComputerMethodWrapper.ComputerIInventorySlotWrapper.class, methodNames = "getInputSlot", docPlaceholder = "input slot")
     InputInventorySlot inputSlot;
@@ -54,13 +55,13 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
     @ContainerSync
     public IEnergyContainer energyContainer;
 
-    public ItemStackGasToItemStackRecipe currentRecipe;
+    public RecipeHolder<ItemStackChemicalToItemStackRecipe> currentRecipe;
 
     public float prevGasScale;
 
     public APTMultiblockData(TileEntityAPTCasing tile) {
         super(tile);
-        gasTanks.add(inputTank = MultiblockChemicalTankBuilder.GAS.input(this, EMConfig.general.aptInputStorage::getOrDefault, this::hasRecipeWith,
+        chemicalTanks.add(inputTank = VariableCapacityChemicalTank.input(this, EMConfig.general.aptInputStorage::getOrDefault, this::hasRecipeWith,
               ChemicalAttributeValidator.ALWAYS_ALLOW, createSaveAndComparator()));
         inventorySlots.add(inputSlot = InputInventorySlot.at(item->hasRecipeForInputs(item,inputTank.getStack()),this::hasRecipeWith,createSaveAndComparator(), 28, 40));
         inventorySlots.add(outputSlot = OutputInventorySlot.at(createSaveAndComparator(), 132, 40));
@@ -68,16 +69,17 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
     }
 
     private boolean hasRecipeWith(ItemStack item) {
-        return getWorld().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().anyMatch(r-> r.getItemInput().testType(item));
+        return getLevel().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().anyMatch(r-> r.value().getItemInput().testType(item));
     }
 
-    private boolean hasRecipeWith(Gas gas) {
-        return getWorld().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().anyMatch(r-> r.getChemicalInput().testType(gas));
+    private boolean hasRecipeWith(ChemicalStack gas) {
+        return getLevel().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().anyMatch(r-> r
+                .value().getChemicalInput().testType(gas));
     }
 
 
-    private boolean hasRecipeForInputs(ItemStack stack,GasStack gas){
-        return hasRecipeWith(stack) && getWorld().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().anyMatch(r-> r.getChemicalInput().testType(gas));
+    private boolean hasRecipeForInputs(ItemStack stack,ChemicalStack gas){
+        return hasRecipeWith(stack) && getLevel().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().anyMatch(r-> r.value().getChemicalInput().testType(gas));
     }
 
     @Override
@@ -87,14 +89,14 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
         if (world.isClientSide) return false;
 
         if (currentRecipe == null){
-            world.getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().filter(r->r.test(inputSlot.getStack(),inputTank.getStack())).findFirst().ifPresent(r->{
+            world.getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().filter(r->r.value().test(inputSlot.getStack(),inputTank.getStack())).findFirst().ifPresent(r->{
                 currentRecipe = r;
                 markDirty();
-                progress = (int) ((EMConfig.general.aptDefaultDuration.getOrDefault() * (r.getChemicalInput().getNeededAmount(inputTank.getStack()) / 100)) / (superchargingElements  + 1));
+                progress = (int) ((EMConfig.general.aptDefaultDuration.getOrDefault() * (r.value().getChemicalInput().getNeededAmount(inputTank.getStack()) / 100)) / (superchargingElements  + 1));
                 defaultRecipeProgress = progress;
             });
         } else {
-            if (!currentRecipe.test(inputSlot.getStack(),inputTank.getStack())){
+            if (!currentRecipe.value().test(inputSlot.getStack(),inputTank.getStack())){
                 currentRecipe = null;
                 progress = 0;
                 defaultRecipeProgress = -1;
@@ -105,9 +107,9 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
                 extractEnergy(0,EMConfig.general.aptEnergyConsumption.getOrDefault(),null,Action.EXECUTE);
                 progress--;
                 if (progress == 0){
-                    extractItem(0,Math.toIntExact(currentRecipe.getItemInput().getNeededAmount(inputSlot.getStack())),null,Action.EXECUTE);
-                    inputTank.extract(currentRecipe.getChemicalInput().getNeededAmount(inputTank.getStack()),Action.EXECUTE,AutomationType.INTERNAL);
-                    outputSlot.insertItem(currentRecipe.getOutput(inputSlot.getStack(),inputTank.getStack()),Action.EXECUTE,AutomationType.INTERNAL);
+                    extractItem(0,Math.toIntExact(currentRecipe.value().getItemInput().getNeededAmount(inputSlot.getStack())),null,Action.EXECUTE);
+                    inputTank.extract(currentRecipe.value().getChemicalInput().getNeededAmount(inputTank.getStack()),Action.EXECUTE,AutomationType.INTERNAL);
+                    outputSlot.insertItem(currentRecipe.value().getOutput(inputSlot.getStack(),inputTank.getStack()),Action.EXECUTE,AutomationType.INTERNAL);
                     currentRecipe = null;
                     defaultRecipeProgress = -1;
                 }
@@ -129,26 +131,26 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
     }
 
     private boolean canProcess() {
-        return getEnergy(0).greaterOrEqual(EMConfig.general.aptEnergyConsumption.getOrDefault()) && (outputSlot.isEmpty() || outputSlot.insertItem(currentRecipe.getOutput(inputSlot.getStack(), inputTank.getStack()), Action.SIMULATE, AutomationType.INTERNAL).isEmpty());
+        return getEnergy(0) >= EMConfig.general.aptEnergyConsumption.getOrDefault() && (outputSlot.isEmpty() || outputSlot.insertItem(currentRecipe.value().getOutput(inputSlot.getStack(), inputTank.getStack()), Action.SIMULATE, AutomationType.INTERNAL).isEmpty());
     }
 
     @Override
-    public void writeUpdateTag(CompoundTag tag) {
-        super.writeUpdateTag(tag);
-        tag.putInt(NBTConstants.PROGRESS, progress);
+    public void writeUpdateTag(CompoundTag tag, HolderLookup.Provider provider) {
+        super.writeUpdateTag(tag,provider);
+        tag.putInt(SerializationConstants.PROGRESS, progress);
         tag.putInt("defaultRecipeProgress", defaultRecipeProgress);
-        tag.putFloat(NBTConstants.SCALE, prevGasScale);
-        tag.put(NBTConstants.GAS_STORED, inputTank.getStack().write(new CompoundTag()));
+        tag.putFloat(SerializationConstants.SCALE, prevGasScale);
+        tag.put(SerializationConstants.CHEMICAL, inputTank.getStack().saveOptional(provider));
 
     }
 
     @Override
-    public void readUpdateTag(CompoundTag tag) {
-        super.readUpdateTag(tag);
-        NBTUtils.setFloatIfPresent(tag, NBTConstants.SCALE, scale -> prevGasScale = scale);
-        NBTUtils.setIntIfPresent(tag,NBTConstants.PROGRESS, pg -> progress = pg);
+    public void readUpdateTag(CompoundTag tag, HolderLookup.Provider provider) {
+        super.readUpdateTag(tag,provider);
+        NBTUtils.setFloatIfPresent(tag, SerializationConstants.SCALE, scale -> prevGasScale = scale);
+        NBTUtils.setIntIfPresent(tag,SerializationConstants.PROGRESS, pg -> progress = pg);
         NBTUtils.setIntIfPresent(tag,"defaultRecipeProgress", pg -> defaultRecipeProgress = pg);
-        NBTUtils.setGasStackIfPresent(tag, NBTConstants.GAS_STORED, value -> inputTank.setStack(value));
+        NBTUtils.setChemicalStackIfPresent(provider,tag, SerializationConstants.CHEMICAL, value -> inputTank.setStack(value));
     }
 
     @Override

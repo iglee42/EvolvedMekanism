@@ -12,8 +12,10 @@ import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;
 import mekanism.common.capabilities.holder.slot.InventorySlotHelper;
 import mekanism.common.tile.TileEntityPersonalStorage;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,7 +25,7 @@ public abstract class TileEntityTieredPersonalStorage extends TileEntityPersonal
 
     private final PersonalStorageTier tier;
 
-    protected TileEntityTieredPersonalStorage(IBlockProvider blockProvider, BlockPos pos, BlockState state, PersonalStorageTier tier) {
+    protected TileEntityTieredPersonalStorage(Holder<Block> blockProvider, BlockPos pos, BlockState state, PersonalStorageTier tier) {
         super(blockProvider, pos, state);
         this.tier = tier;
     }

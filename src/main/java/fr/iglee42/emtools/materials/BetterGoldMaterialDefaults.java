@@ -3,9 +3,8 @@ package fr.iglee42.emtools.materials;
 import fr.iglee42.emtools.registries.EMToolsTags;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMTags;
-import mekanism.common.tags.MekanismTags;
-import mekanism.tools.common.ToolsTags;
 import mekanism.tools.common.material.BaseMekanismMaterial;
+import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
@@ -13,9 +12,8 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-public class BetterGoldMaterialDefaults extends BaseMekanismMaterial {
+public class BetterGoldMaterialDefaults implements BaseMekanismMaterial {
 
     @Override
     public int getShieldDurability() {
@@ -48,17 +46,22 @@ public class BetterGoldMaterialDefaults extends BaseMekanismMaterial {
     }
 
     @Override
-    public int getLevel() {
-        return 3;
+    public TagKey<Block> getIncorrectBlocksForDrops() {
+        return EMToolsTags.Blocks.INCORRECT_FOR_NEEDS_BETTER_GOLD_TOOL;
     }
 
     @Override
-    public int getCommonEnchantability() {
+    public int getEnchantmentValue() {
         return 16;
     }
 
     @Override
-    public float getToughness() {
+    public Ingredient getRepairIngredient() {
+        return Ingredient.of(EMTags.Items.INGOTS_BETTER_GOLD);
+    }
+
+    @Override
+    public float toughness() {
         return 2;
     }
 
@@ -69,23 +72,19 @@ public class BetterGoldMaterialDefaults extends BaseMekanismMaterial {
             case LEGGINGS -> 300;
             case CHESTPLATE -> 320;
             case HELMET -> 220;
+            default -> 0;
         };
     }
 
     @Override
-    public int getDefenseForType(@NotNull ArmorItem.Type armorType) {
+    public int getDefense(@NotNull ArmorItem.Type armorType) {
         return switch (armorType) {
             case BOOTS -> 3;
             case LEGGINGS -> 6;
             case CHESTPLATE -> 8;
             case HELMET -> 3;
+            default -> 0;
         };
-    }
-
-    @NotNull
-    @Override
-    public String getConfigCommentName() {
-        return "Better Gold";
     }
 
     @NotNull
@@ -94,31 +93,13 @@ public class BetterGoldMaterialDefaults extends BaseMekanismMaterial {
         return "better_gold";
     }
 
-    @Nullable
     @Override
-    public TagKey<Block> getTag() {
-        return EMToolsTags.Blocks.NEEDS_BETTER_GOLD_TOOL;
-    }
-
-    @NotNull
-    @Override
-    public SoundEvent getEquipSound() {
-        return SoundEvents.ARMOR_EQUIP_GOLD;
-    }
-
-    @NotNull
-    @Override
-    public Ingredient getCommonRepairMaterial() {
-        return Ingredient.of(EMTags.Items.INGOTS_BETTER_GOLD);
-    }
-
-    @Override
-    public float getKnockbackResistance() {
+    public float knockbackResistance() {
         return 0;
     }
 
     @Override
-    public String getName() {
-        return EvolvedMekanism.MODID + ":" + getRegistryPrefix();
+    public Holder<SoundEvent> equipSound() {
+        return SoundEvents.ARMOR_EQUIP_GOLD;
     }
 }

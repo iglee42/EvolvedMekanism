@@ -1,38 +1,16 @@
 package fr.iglee42.evolvedmekanism.registries;
 
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Table;
-import java.util.EnumMap;
-import java.util.HashMap;
-import java.util.Map;
-
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
-import mekanism.api.chemical.ChemicalTags;
-import mekanism.api.chemical.gas.Gas;
-import mekanism.api.chemical.infuse.InfuseType;
-import mekanism.api.chemical.slurry.Slurry;
-import mekanism.common.Mekanism;
-import mekanism.common.resource.BlockResourceInfo;
-import mekanism.common.resource.IResource;
-import mekanism.common.resource.PrimaryResource;
-import mekanism.common.resource.ResourceType;
-import mekanism.common.resource.ore.OreType;
-import mekanism.common.tags.TagUtils;
-import mekanism.common.util.EnumUtils;
-import net.minecraft.core.registries.Registries;
+import mekanism.api.MekanismAPI;
+import mekanism.api.chemical.Chemical;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class EMTags {
 
@@ -44,9 +22,6 @@ public class EMTags {
         Blocks.init();
         Fluids.init();
         Gases.init();
-        InfuseTypes.init();
-        Slurries.init();
-        TileEntityTypes.init();
     }
 
     private EMTags() {
@@ -98,10 +73,10 @@ public class EMTags {
         public static final TagKey<Item> CIRCUITS_QUANTUM = forgeTag("circuits/quantum");
 
         private static TagKey<Item> forgeTag(String name) {
-            return ItemTags.create(new ResourceLocation("forge", name));
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", name));
         }
         private static TagKey<Item> mekTag(String name) {
-            return ItemTags.create(new ResourceLocation("mekanism", name));
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("mekanism", name));
         }
 
         private static TagKey<Item> tag(String name) {
@@ -133,11 +108,11 @@ public class EMTags {
 
 
         private static TagKey<Block> forgeTag(String name) {
-            return BlockTags.create(new ResourceLocation("forge", name));
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath("forge", name));
         }
 
         private static TagKey<Block> mekTag(String name) {
-            return BlockTags.create(new ResourceLocation("mekanism", name));
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath("mekanism", name));
         }
 
         private static TagKey<Block> tag(String name) {
@@ -155,7 +130,7 @@ public class EMTags {
         }
 
         private static TagKey<Fluid> forgeTag(String name) {
-            return FluidTags.create(new ResourceLocation("forge", name));
+            return FluidTags.create(ResourceLocation.fromNamespaceAndPath("forge", name));
         }
     }
 
@@ -166,60 +141,14 @@ public class EMTags {
 
         private Gases() {
         }
+        public static final TagKey<Chemical> BETTER_GOLD = tag("better_gold");
+        public static final TagKey<Chemical> PLASLITHERITE = tag("plaslitherite");
+        public static final TagKey<Chemical> URANIUM = tag("uranium");
 
 
-        private static TagKey<Gas> tag(String name) {
-            return ChemicalTags.GAS.tag(EvolvedMekanism.rl(name));
-        }
-    }
 
-    public static class InfuseTypes {
-
-        private static void init() {
-        }
-
-        private InfuseTypes() {
-        }
-
-        public static final TagKey<InfuseType> BETTER_GOLD = tag("better_gold");
-        public static final TagKey<InfuseType> PLASLITHERITE = tag("plaslitherite");
-        public static final TagKey<InfuseType> URANIUM = tag("uranium");
-
-
-        private static TagKey<InfuseType> tag(String name) {
-            return ChemicalTags.INFUSE_TYPE.tag(EvolvedMekanism.rl(name));
-        }
-    }
-
-    public static class Slurries {
-
-        private static void init() {
-        }
-
-        private Slurries() {
-        }
-
-        private static TagKey<Slurry> tag(String name) {
-            return ChemicalTags.SLURRY.tag(Mekanism.rl(name));
-        }
-    }
-
-
-    public static class TileEntityTypes {
-
-        private static void init() {
-        }
-
-        private TileEntityTypes() {
-        }
-
-
-        private static TagKey<BlockEntityType<?>> tag(String name) {
-            return TagUtils.createKey(ForgeRegistries.BLOCK_ENTITY_TYPES, EvolvedMekanism.rl(name));
-        }
-
-        private static TagKey<BlockEntityType<?>> forgeTag(String name) {
-            return TagUtils.createKey(ForgeRegistries.BLOCK_ENTITY_TYPES, new ResourceLocation("forge", name));
+        private static TagKey<Chemical> tag(String name) {
+            return TagKey.create(MekanismAPI.CHEMICAL_REGISTRY_NAME,EvolvedMekanism.rl(name));
         }
     }
 }
