@@ -17,13 +17,33 @@ public class PlaslitheriteMaterialDefaults implements BaseMekanismMaterial {
 
     @Override
     public int getShieldDurability() {
-        return 448;
+        return 3360;
     }
 
     @Override
     public float getAxeDamage() {
-        return 7;
+        return 18;
     }
+
+    @Override
+    public float getSwordDamage() {
+        return 16;
+    }
+    @Override
+    public float getPickaxeDamage() {
+        return 12;
+    }
+
+    @Override
+    public float getShovelDamage() {
+        return 12.5f;
+    }
+
+    @Override
+    public float getHoeDamage() {
+        return 2;
+    }
+
 
     @Override
     public float getAxeAtkSpeed() {
@@ -32,7 +52,7 @@ public class PlaslitheriteMaterialDefaults implements BaseMekanismMaterial {
 
     @Override
     public int getUses() {
-        return 500;
+        return 16384;
     }
 
     @Override
@@ -42,7 +62,7 @@ public class PlaslitheriteMaterialDefaults implements BaseMekanismMaterial {
 
     @Override
     public float getAttackDamageBonus() {
-        return 3;
+        return 2;
     }
 
     @Override
@@ -62,16 +82,16 @@ public class PlaslitheriteMaterialDefaults implements BaseMekanismMaterial {
 
     @Override
     public float toughness() {
-        return 2;
+        return 5;
     }
 
     @Override
     public int getDurabilityForType(@NotNull ArmorItem.Type armorType) {
         return switch (armorType) {
-            case BOOTS -> 260;
-            case LEGGINGS -> 300;
-            case CHESTPLATE -> 320;
-            case HELMET -> 220;
+            case BOOTS -> 3300;
+            case LEGGINGS -> 4500;
+            case CHESTPLATE -> 4800;
+            case HELMET -> 3900;
             default -> 0;
         };
     }
@@ -79,10 +99,10 @@ public class PlaslitheriteMaterialDefaults implements BaseMekanismMaterial {
     @Override
     public int getDefense(@NotNull ArmorItem.Type armorType) {
         return switch (armorType) {
-            case BOOTS -> 3;
-            case LEGGINGS -> 6;
-            case CHESTPLATE -> 8;
-            case HELMET -> 3;
+            case BOOTS -> 9;
+            case LEGGINGS -> 12;
+            case CHESTPLATE -> 14;
+            case HELMET -> 10;
             default -> 0;
         };
     }
@@ -95,7 +115,7 @@ public class PlaslitheriteMaterialDefaults implements BaseMekanismMaterial {
 
     @Override
     public float knockbackResistance() {
-        return 0;
+        return 0.25f;
     }
 
     @Override
