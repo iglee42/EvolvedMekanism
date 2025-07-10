@@ -46,7 +46,7 @@ public class EMFluids {
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_GOLD = registerMolten("gold",0xFFFDF55F);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_HEPATIZON = registerMolten("hepatizon",0xFF5F486A);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_INVAR = registerMolten("invar",0xFFA3B1A8);
-    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_IRON = registerMolten("iron",0xFFFDF55F);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_IRON = registerMolten("iron",0xFFD8AF93);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_KNIGHTSLIME = registerMolten("knightslime",0xFFF9B0F7);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_LEAD = registerMolten("lead",0xFF8CA7A3);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_LUMIUM = registerMolten("lumium",0xFFFFF1AA);
