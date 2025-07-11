@@ -5,8 +5,10 @@ import fr.iglee42.evolvedmekanism.client.gui.*;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderAPT;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.MultipleCustomRenderData;
+import fr.iglee42.evolvedmekanism.particles.RisingBubbleParticle;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
+import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import mekanism.api.text.EnumColor;
@@ -57,6 +59,12 @@ public class ClientRegistration {
                 ItemBlockRenderTypes.setRenderLayer(fluid.value(), RenderType.translucent());
             }
         });
+    }
+
+    @SubscribeEvent
+    public static void registerParticles(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(EMParticleTypes.RISING_BUBBLE.get(),
+                RisingBubbleParticle.Factory::new);
     }
 
     @SubscribeEvent

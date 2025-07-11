@@ -82,6 +82,7 @@ public class EvolvedMekanism {
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         EMModules.MODULES.register(modEventBus);
         EMFluids.FLUIDS.register(modEventBus);
+        EMParticleTypes.PARTICLES.register(modEventBus);
         if (ModsCompats.MEKANISMTOOLS.isLoaded())EMToolsArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
 
         registerCompats(modEventBus);
