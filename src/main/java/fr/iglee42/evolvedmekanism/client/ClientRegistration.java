@@ -5,10 +5,8 @@ import fr.iglee42.evolvedmekanism.client.gui.*;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderAPT;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.MultipleCustomRenderData;
-import fr.iglee42.evolvedmekanism.registries.EMFluids;
-import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
-import fr.iglee42.evolvedmekanism.registries.EMBlocks;
-import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
+import fr.iglee42.evolvedmekanism.particles.RisingBubbleParticle;
+import fr.iglee42.evolvedmekanism.registries.*;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.BaseTier;
 import mekanism.client.ClientRegistrationUtil;
@@ -23,6 +21,7 @@ import mekanism.common.item.block.machine.ItemBlockFluidTank;
 import mekanism.common.registries.MekanismFluids;
 import mekanism.common.tile.transmitter.TileEntityLogisticalTransporter;
 import mekanism.common.util.WorldUtils;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
@@ -39,6 +38,12 @@ public class ClientRegistration {
 
     @SubscribeEvent
     public static void init(FMLClientSetupEvent event) {
+    }
+
+    @SubscribeEvent
+    public static void registerParticles(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(EMParticleTypes.RISING_BUBBLE.get(),
+                RisingBubbleParticle.Factory::new);
     }
 
     @SubscribeEvent

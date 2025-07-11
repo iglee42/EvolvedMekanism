@@ -61,7 +61,7 @@ public class MultipleCustomRenderData {
         int glow = data.calculateGlowLight(LightTexture.FULL_SKY);
         matrix.pushPose();
         matrix.translate(data.location.getX() - rendererPos.getX(), data.location.getY() - rendererPos.getY(), data.location.getZ() - rendererPos.getZ());
-        MekanismRenderer.renderObject(object, matrix, buffer, data.getColorARGB(scale), glow, overlay, getCustomFaceDisplay(camera, data, object), camera, data.location);
+        MekanismRenderer.renderObject(object, matrix, buffer, data.getColorARGB(scale), 0xF000F0, overlay, getCustomFaceDisplay(camera, data, object), camera, data.location);
         matrix.popPose();
     }
 

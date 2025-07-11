@@ -101,6 +101,7 @@ public class EvolvedMekanism {
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         EMModules.MODULES.createAndRegister(modEventBus);
         EMFluids.FLUIDS.register(modEventBus);
+        EMParticleTypes.PARTICLES.register(modEventBus);
 
         registerCompats();
 
