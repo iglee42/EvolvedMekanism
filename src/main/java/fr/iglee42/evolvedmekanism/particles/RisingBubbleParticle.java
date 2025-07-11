@@ -42,7 +42,7 @@ public class RisingBubbleParticle extends TextureSheetParticle {
         return 240;
     }
 
-    public static class Factory implements ParticleProvider<ColoredRisingBubleOptions> {
+    public static class Factory implements ParticleProvider<ColoredRisingBubbleOptions> {
         private final SpriteSet sprites;
 
         public Factory(SpriteSet sprites) {
@@ -50,7 +50,7 @@ public class RisingBubbleParticle extends TextureSheetParticle {
         }
 
         @Override
-        public Particle createParticle(ColoredRisingBubleOptions type, ClientLevel level,
+        public Particle createParticle(ColoredRisingBubbleOptions type, ClientLevel level,
                                        double x, double y, double z,
                                        double vx, double vy, double vz) {
             RisingBubbleParticle particle = new RisingBubbleParticle(level, x, y, z, vx, vy, vz,type.red(),type.green(),type.blue());

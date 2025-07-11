@@ -1,5 +1,6 @@
 package fr.iglee42.evolvedmekanism.jei;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -183,14 +184,18 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registry) {
+        List<FluidStack> fluidsToRemove = new ArrayList<>();
+        List<ItemStack> itemsToRemove = new ArrayList<>();
         EMFluids.FLUIDS.getAllFluids().forEach(ro->{
             boolean hasMelting = EMRecipeType.MELTING.getRecipes(null).stream().anyMatch(r->r.getOutput(ItemStack.EMPTY).getRawFluid().equals(ro.getFluid()));
             boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.getInputFluid().test(new FluidStack(ro.getFluid(), (int) r.getInputFluid().getNeededAmount(new FluidStack(ro.getFluid(),1)))));
             if (!hasMelting && !hasSolidifying){
-                registry.getJeiHelpers().getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, List.of(ro.getFluidStack(1000)));
-                registry.getJeiHelpers().getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, List.of(ro.getFluid().getBucket().getDefaultInstance()));
+                fluidsToRemove.add(ro.getFluidStack(1000));
+                itemsToRemove.add(ro.getFluid().getBucket().getDefaultInstance());
             }
         });
+        registry.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK,fluidsToRemove);
+        registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK,itemsToRemove);
         RecipeRegistryHelper.register(registry, ALLOYING, EMRecipeType.ALLOYING);
         RecipeRegistryHelper.register(registry, CHEMIXING, EMRecipeType.CHEMIXING);
         RecipeRegistryHelper.register(registry, APT, EMRecipeType.APT);

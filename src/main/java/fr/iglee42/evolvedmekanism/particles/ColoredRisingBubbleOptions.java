@@ -11,36 +11,36 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import java.util.Locale;
 
-public class ColoredRisingBubleOptions implements
+public class ColoredRisingBubbleOptions implements
         ParticleOptions {
 
-    public static final Deserializer<ColoredRisingBubleOptions> DESERIALIZER = new Deserializer<>() {
+    public static final Deserializer<ColoredRisingBubbleOptions> DESERIALIZER = new Deserializer<>() {
         @Override
-        public ColoredRisingBubleOptions fromCommand(ParticleType<ColoredRisingBubleOptions> type, StringReader reader) throws CommandSyntaxException {
+        public ColoredRisingBubbleOptions fromCommand(ParticleType<ColoredRisingBubbleOptions> type, StringReader reader) throws CommandSyntaxException {
             reader.expect(' ');
             float r = reader.readFloat();
             reader.expect(' ');
             float g = reader.readFloat();
             reader.expect(' ');
             float b = reader.readFloat();
-            return new ColoredRisingBubleOptions(r, g, b);
+            return new ColoredRisingBubbleOptions(r, g, b);
         }
 
         @Override
-        public ColoredRisingBubleOptions fromNetwork(ParticleType<ColoredRisingBubleOptions> type, FriendlyByteBuf buf) {
-            return new ColoredRisingBubleOptions(buf.readFloat(), buf.readFloat(), buf.readFloat());
+        public ColoredRisingBubbleOptions fromNetwork(ParticleType<ColoredRisingBubbleOptions> type, FriendlyByteBuf buf) {
+            return new ColoredRisingBubbleOptions(buf.readFloat(), buf.readFloat(), buf.readFloat());
         }
     };
 
-    public static final Codec<ColoredRisingBubleOptions> CODEC = RecordCodecBuilder.create(instance -> instance.group(
+    public static final Codec<ColoredRisingBubbleOptions> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.FLOAT.fieldOf("r").forGetter(p -> p.r),
             Codec.FLOAT.fieldOf("g").forGetter(p -> p.g),
             Codec.FLOAT.fieldOf("b").forGetter(p -> p.b)
-    ).apply(instance, ColoredRisingBubleOptions::new));
+    ).apply(instance, ColoredRisingBubbleOptions::new));
 
     private final float r, g, b;
 
-    public ColoredRisingBubleOptions(float r, float g, float b) {
+    public ColoredRisingBubbleOptions(float r, float g, float b) {
         this.r = r;
         this.g = g;
         this.b = b;

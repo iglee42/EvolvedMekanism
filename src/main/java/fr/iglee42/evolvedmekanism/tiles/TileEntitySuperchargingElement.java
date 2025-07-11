@@ -2,22 +2,13 @@ package fr.iglee42.evolvedmekanism.tiles;
 
 import java.awt.*;
 import java.util.Random;
-import java.util.UUID;
 
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
-import fr.iglee42.evolvedmekanism.particles.ColoredRisingBubleOptions;
+import fr.iglee42.evolvedmekanism.particles.ColoredRisingBubbleOptions;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
-import fr.iglee42.evolvedmekanism.registries.EMParticleTypes;
 import mekanism.api.chemical.ChemicalStack;
-import mekanism.client.render.MekanismRenderer;
-import mekanism.common.content.boiler.BoilerMultiblockData;
-import mekanism.common.registries.MekanismBlocks;
-import mekanism.common.registries.MekanismRecipeSerializers;
 import mekanism.common.tile.prefab.TileEntityInternalMultiblock;
-import net.minecraft.client.particle.BubbleParticle;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
@@ -53,7 +44,7 @@ public class TileEntitySuperchargingElement extends TileEntityInternalMultiblock
                 double x = getTilePos().getX();
                 double y = getTilePos().getY()  + 1;
                 double z = getTilePos().getZ();
-                if (level.random.nextFloat() > 0.5)level.addAlwaysVisibleParticle(new ColoredRisingBubleOptions(chemicalColor.getRed() / 255f,chemicalColor.getGreen() /255f,chemicalColor.getBlue()/255f), x + (new Random().nextFloat()), y /*+ 3.25d*/, z + (new Random().nextFloat()), (double)0.0F, (double)0.1, (double)0.0F);
+                if (level.random.nextFloat() > 0.5)level.addAlwaysVisibleParticle(new ColoredRisingBubbleOptions(chemicalColor.getRed() / 255f,chemicalColor.getGreen() /255f,chemicalColor.getBlue()/255f), x + (new Random().nextFloat()), y /*+ 3.25d*/, z + (new Random().nextFloat()), (double)0.0F, (double)0.1, (double)0.0F);
 
 
             }
