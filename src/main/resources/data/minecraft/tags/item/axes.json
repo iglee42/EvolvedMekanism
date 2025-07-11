@@ -1,7 +1,16 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_axe",
-        "evolvedmekanism:plaslitherite_axe",
-        "evolvedmekanism:refined_redstone_axe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_axe",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_axe",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_axe",
+      "required": false
+    }
+  ]
 }

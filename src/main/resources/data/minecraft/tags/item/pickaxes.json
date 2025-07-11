@@ -1,7 +1,16 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_pickaxe",
-        "evolvedmekanism:plaslitherite_pickaxe",
-        "evolvedmekanism:refined_redstone_pickaxe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_pickaxe",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_pickaxe",
+      "required": false
+    }
+  ]
 }

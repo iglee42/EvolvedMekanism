@@ -1,14 +1,14 @@
 {
   "type": "mekanism:ore",
   "config": {
-    "oreVeinType": {
+    "ore_type": {
       "type": "lead",
       "index": 0
     },
     "targets": [
       {
         "state": {
-          "Name": "evolvedmekanism:aether_lead_ore"
+          "Name": "evolvedmekanism:holystone_lead_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

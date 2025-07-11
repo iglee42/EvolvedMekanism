@@ -1,7 +1,16 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_chestplate",
-        "evolvedmekanism:plaslitherite_chestplate",
-        "evolvedmekanism:refined_redstone_chestplate"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_chestplate",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_chestplate",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_chestplate",
+      "required": false
+    }
+  ]
 }

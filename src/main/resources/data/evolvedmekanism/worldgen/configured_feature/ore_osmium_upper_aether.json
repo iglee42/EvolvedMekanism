@@ -1,14 +1,14 @@
 {
   "type": "mekanism:ore",
   "config": {
-    "oreVeinType": {
+    "ore_type": {
       "type": "osmium",
       "index": 0
     },
     "targets": [
       {
         "state": {
-          "Name": "evolvedmekanism:aether_osmium_ore"
+          "Name": "evolvedmekanism:holystone_osmium_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

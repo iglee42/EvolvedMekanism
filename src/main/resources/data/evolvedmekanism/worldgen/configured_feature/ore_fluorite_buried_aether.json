@@ -1,14 +1,14 @@
 {
   "type": "mekanism:ore",
   "config": {
-    "oreVeinType": {
+    "ore_type": {
       "type": "fluorite",
       "index": 1
     },
     "targets": [
       {
         "state": {
-          "Name": "evolvedmekanism:aether_fluorite_ore"
+          "Name": "evolvedmekanism:holystone_fluorite_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

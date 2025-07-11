@@ -4,13 +4,12 @@ import java.awt.*;
 import java.util.Random;
 
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
-import fr.iglee42.evolvedmekanism.particles.ColoredRisingBubleOptions;
+import fr.iglee42.evolvedmekanism.particles.ColoredRisingBubbleOptions;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.common.tile.prefab.TileEntityInternalMultiblock;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +27,7 @@ public class TileEntitySuperchargingElement extends TileEntityInternalMultiblock
     protected boolean onUpdateServer() {
         boolean send = super.onUpdateServer();
         setActive(getMultiblock() != null && getMultiblock().isFormed() && getMultiblock() instanceof APTMultiblockData data && data.getScaledProgress() > 0);
-        if (!(getMultiblock() instanceof APTMultiblockData data)) return;
+        if (!(getMultiblock() instanceof APTMultiblockData data)) return send;
         ChemicalStack stack = data.inputTank.getStack();
         chemicalColor = new Color(stack.getChemicalTint());
         if (!chemicalColor.equals(oChemicalColor)) {
@@ -47,7 +46,7 @@ public class TileEntitySuperchargingElement extends TileEntityInternalMultiblock
                 double x = getBlockPos().getX();
                 double y = getBlockPos().getY()  + 1;
                 double z = getBlockPos().getZ();
-                if (level.random.nextFloat() > 0.5)level.addAlwaysVisibleParticle(new ColoredRisingBubleOptions(chemicalColor.getRed() / 255f,chemicalColor.getGreen() /255f,chemicalColor.getBlue()/255f), x + (new Random().nextFloat()), y /*+ 3.25d*/, z + (new Random().nextFloat()), (double)0.0F, (double)0.1, (double)0.0F);
+                if (level.random.nextFloat() > 0.5)level.addAlwaysVisibleParticle(new ColoredRisingBubbleOptions(chemicalColor.getRed() / 255f,chemicalColor.getGreen() /255f,chemicalColor.getBlue()/255f), x + (new Random().nextFloat()), y /*+ 3.25d*/, z + (new Random().nextFloat()), (double)0.0F, (double)0.1, (double)0.0F);
 
 
             }

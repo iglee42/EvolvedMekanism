@@ -47,7 +47,6 @@ public class TileEntityAPTPort extends TileEntityAPTCasing {
     @NotNull
     @Override
     protected IEnergyContainerHolder getInitialEnergyContainers(IContentsListener listener) {
-        if (level == null) return side-> Collections.emptyList();
         return side -> getMultiblock().getEnergyContainers(side);
     }
 

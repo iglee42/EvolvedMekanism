@@ -1,6 +1,16 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_shield",
-        "evolvedmekanism:plaslitherite_shield"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_shield",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_shield",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_shield",
+      "required": false
+    }
+  ]
 }

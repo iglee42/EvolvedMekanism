@@ -67,6 +67,6 @@ public class EMToolsClientRegistration {
     }
     @SubscribeEvent
     public void registerClientExtensions(RegisterClientExtensionsEvent event) {
-        event.registerItem(new RenderPropertiesProvider.MekRenderProperties(RenderMekanismShieldItem.RENDERER), EMToolsItems.BETTER_GOLD_SHIELD, EMToolsItems.PLASLITHERITE_SHIELD);
+        event.registerItem(new RenderPropertiesProvider.MekRenderProperties(RenderMekanismShieldItem.RENDERER), EMToolsItems.BETTER_GOLD_SHIELD, EMToolsItems.PLASLITHERITE_SHIELD,EMToolsItems.REFINED_REDSTONE_SHIELD);
     }
 }

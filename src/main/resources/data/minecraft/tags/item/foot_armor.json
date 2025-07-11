@@ -1,7 +1,16 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_boots",
-        "evolvedmekanism:plaslitherite_boots",
-        "evolvedmekanism:refined_redstone_boots"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_boots",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_boots",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_boots",
+      "required": false
+    }
+  ]
 }

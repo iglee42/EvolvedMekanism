@@ -2,6 +2,7 @@ package fr.iglee42.emtools.config;
 
 import fr.iglee42.emtools.materials.BetterGoldMaterialDefaults;
 import fr.iglee42.emtools.materials.PlaslitheriteMaterialDefaults;
+import fr.iglee42.emtools.materials.RefinedRedstoneMaterialDefaults;
 import fr.iglee42.evolvedmekanism.config.EMConfigHelper;
 import mekanism.common.config.BaseMekanismConfig;
 import mekanism.tools.common.config.ToolsConfigTranslations;
@@ -18,6 +19,7 @@ public class EMToolsMaterialConfig extends BaseMekanismConfig {
 
     public final MaterialCreator betterGold;
     public final MaterialCreator plaslitherite;
+    public final MaterialCreator refinedRedstone;
 
 
 
@@ -27,6 +29,7 @@ public class EMToolsMaterialConfig extends BaseMekanismConfig {
         ToolsConfigTranslations.STARTUP_MATERIALS.applyToBuilder(builder).push("materials");
         betterGold = new MaterialCreator(this, builder, new BetterGoldMaterialDefaults());
         plaslitherite = new MaterialCreator(this, builder, new PlaslitheriteMaterialDefaults());
+        refinedRedstone = new MaterialCreator(this, builder, new RefinedRedstoneMaterialDefaults());
         builder.pop();
         configSpec = builder.build();
     }

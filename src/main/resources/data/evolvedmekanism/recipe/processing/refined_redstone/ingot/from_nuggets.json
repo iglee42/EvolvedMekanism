@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shaped",
     "key": {
         "#": {
-            "tag": "forge:nuggets/refined_redstone"
+            "tag": "c:nuggets/refined_redstone"
         },
         "P": {
             "item": "evolvedmekanism:nugget_refined_redstone"
@@ -14,6 +14,6 @@
         "###"
     ],
     "result": {
-        "item": "evolvedmekanism:ingot_refined_redstone"
+        "id": "evolvedmekanism:ingot_refined_redstone"
     }
 }

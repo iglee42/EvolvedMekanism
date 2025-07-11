@@ -2,11 +2,11 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "tag": "forge:ingots/refined_redstone"
+            "tag": "c:ingots/refined_redstone"
         }
     ],
     "result": {
         "count": 9,
-        "item": "evolvedmekanism:nugget_refined_redstone"
+        "id": "evolvedmekanism:nugget_refined_redstone"
     }
 }

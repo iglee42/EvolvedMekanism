@@ -27,8 +27,8 @@ public class EMMobEquipmentHelper {
           EvolvedMekanismToolsConfig.tools.betterGoldSpawnRate);
     private static final GearType PLASLITHERITE = new GearType(EMToolsItems.PLASLITHERITE_SWORD, EMToolsItems.PLASLITHERITE_SHOVEL, EMToolsItems.PLASLITHERITE_HELMET,
           EMToolsItems.PLASLITHERITE_CHESTPLATE, EMToolsItems.PLASLITHERITE_LEGGINGS, EMToolsItems.PLASLITHERITE_BOOTS, EvolvedMekanismToolsConfig.tools.plaslitheriteSpawnRate);
-    private static final GearType REFINED_REDSTONE = new GearType(EMToolsItems.REFINED_REDSTONE_SWORD, EMToolsItems.PLASLITHERITE_SHOVEL, EMToolsItems.PLASLITHERITE_HELMET,
-            EMToolsItems.PLASLITHERITE_CHESTPLATE, EMToolsItems.PLASLITHERITE_LEGGINGS, EMToolsItems.PLASLITHERITE_BOOTS, EvolvedMekanismToolsConfig.tools.plaslitheriteSpawnRate);
+    private static final GearType REFINED_REDSTONE = new GearType(EMToolsItems.REFINED_REDSTONE_SWORD, EMToolsItems.REFINED_REDSTONE_SHOVEL, EMToolsItems.REFINED_REDSTONE_HELMET,
+            EMToolsItems.REFINED_REDSTONE_CHESTPLATE, EMToolsItems.REFINED_REDSTONE_LEGGINGS, EMToolsItems.REFINED_REDSTONE_BOOTS, EvolvedMekanismToolsConfig.tools.refinedRedstoneSpawnRate);
 
     private static boolean isZombie(LivingEntity entity) {
         //Ignore the specific subclasses that can't spawn with armor in vanilla

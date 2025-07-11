@@ -1,14 +1,14 @@
 {
   "type": "mekanism:ore",
   "config": {
-    "oreVeinType": {
+    "ore_type": {
       "type": "uranium",
       "index": 1
     },
     "targets": [
       {
         "state": {
-          "Name": "evolvedmekanism:aether_uranium_ore"
+          "Name": "evolvedmekanism:holystone_uranium_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

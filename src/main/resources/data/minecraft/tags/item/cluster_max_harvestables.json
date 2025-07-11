@@ -1,10 +1,28 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_pickaxe",
-        "evolvedmekanism:better_gold_paxel",
-        "evolvedmekanism:plaslitherite_pickaxe",
-        "evolvedmekanism:plaslitherite_paxel",
-        "evolvedmekanism:refined_redstone_pickaxe",
-        "evolvedmekanism:refined_redstone_paxel"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_pickaxe",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:better_gold_paxel",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_paxel",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_pickaxe",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_paxel",
+      "required": false
+    }
+  ]
 }

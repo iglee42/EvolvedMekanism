@@ -1,7 +1,16 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_helmet",
-        "evolvedmekanism:plaslitherite_helmet",
-        "evolvedmekanism:refined_redstone_helmet"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_helmet",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_helmet",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_helmet",
+      "required": false
+    }
+  ]
 }

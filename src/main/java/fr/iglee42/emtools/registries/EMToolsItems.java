@@ -42,17 +42,17 @@ public class EMToolsItems {
     public static final ItemRegistryObject<ItemMekanismArmor> PLASLITHERITE_BOOTS = registerArmor(EMToolsArmorMaterials.PLASLITHERITE, EvolvedMekanismToolsConfig.materials.plaslitherite, ArmorItem.Type.BOOTS);
     public static final ItemRegistryObject<ItemMekanismShield> PLASLITHERITE_SHIELD = registerShield(EvolvedMekanismToolsConfig.materials.plaslitherite);
 
-    public static final ItemRegistryObject<ItemMekanismPickaxe> REFINED_REDSTONE_PICKAXE = registerPickaxe(EMToolsConfig.tools.refinedRedstone);
-    public static final ItemRegistryObject<ItemMekanismAxe> REFINED_REDSTONE_AXE = registerAxe(EMToolsConfig.tools.refinedRedstone);
-    public static final ItemRegistryObject<ItemMekanismShovel> REFINED_REDSTONE_SHOVEL = registerShovel(EMToolsConfig.tools.refinedRedstone);
-    public static final ItemRegistryObject<ItemMekanismHoe> REFINED_REDSTONE_HOE = registerHoe(EMToolsConfig.tools.refinedRedstone);
-    public static final ItemRegistryObject<ItemMekanismSword> REFINED_REDSTONE_SWORD = registerSword(EMToolsConfig.tools.refinedRedstone);
-    public static final ItemRegistryObject<ItemMekanismPaxel> REFINED_REDSTONE_PAXEL = registerPaxel(EMToolsConfig.tools.refinedRedstone);
-    public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_HELMET = registerArmor(EMToolsConfig.tools.refinedRedstone, ArmorItem.Type.HELMET);
-    public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_CHESTPLATE = registerArmor(EMToolsConfig.tools.refinedRedstone, ArmorItem.Type.CHESTPLATE);
-    public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_LEGGINGS = registerArmor(EMToolsConfig.tools.refinedRedstone, ArmorItem.Type.LEGGINGS);
-    public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_BOOTS = registerArmor(EMToolsConfig.tools.refinedRedstone, ArmorItem.Type.BOOTS);
-    public static final ItemRegistryObject<ItemMekanismShield> REFINED_REDSTONE_SHIELD = registerShield(EMToolsConfig.tools.refinedRedstone);
+    public static final ItemRegistryObject<ItemMekanismPickaxe> REFINED_REDSTONE_PICKAXE = registerPickaxe(EvolvedMekanismToolsConfig.materials.refinedRedstone);
+    public static final ItemRegistryObject<ItemMekanismAxe> REFINED_REDSTONE_AXE = registerAxe(EvolvedMekanismToolsConfig.materials.refinedRedstone);
+    public static final ItemRegistryObject<ItemMekanismShovel> REFINED_REDSTONE_SHOVEL = registerShovel(EvolvedMekanismToolsConfig.materials.refinedRedstone);
+    public static final ItemRegistryObject<ItemMekanismHoe> REFINED_REDSTONE_HOE = registerHoe(EvolvedMekanismToolsConfig.materials.refinedRedstone);
+    public static final ItemRegistryObject<ItemMekanismSword> REFINED_REDSTONE_SWORD = registerSword(EvolvedMekanismToolsConfig.materials.refinedRedstone);
+    public static final ItemRegistryObject<ItemMekanismPaxel> REFINED_REDSTONE_PAXEL = registerPaxel(EvolvedMekanismToolsConfig.materials.refinedRedstone);
+    public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_HELMET = registerArmor(EMToolsArmorMaterials.REFINED_REDSTONE, EvolvedMekanismToolsConfig.materials.refinedRedstone, ArmorItem.Type.HELMET);
+    public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_CHESTPLATE = registerArmor(EMToolsArmorMaterials.REFINED_REDSTONE, EvolvedMekanismToolsConfig.materials.refinedRedstone, ArmorItem.Type.CHESTPLATE);
+    public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_LEGGINGS = registerArmor(EMToolsArmorMaterials.REFINED_REDSTONE, EvolvedMekanismToolsConfig.materials.refinedRedstone, ArmorItem.Type.LEGGINGS);
+    public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_BOOTS = registerArmor(EMToolsArmorMaterials.REFINED_REDSTONE, EvolvedMekanismToolsConfig.materials.refinedRedstone, ArmorItem.Type.BOOTS);
+    public static final ItemRegistryObject<ItemMekanismShield> REFINED_REDSTONE_SHIELD = registerShield(EvolvedMekanismToolsConfig.materials.refinedRedstone);
 
 
     private static ItemRegistryObject<ItemMekanismShield> registerShield(MaterialCreator material) {

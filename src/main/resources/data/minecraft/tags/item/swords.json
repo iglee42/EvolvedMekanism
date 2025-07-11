@@ -1,7 +1,16 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_sword",
-        "evolvedmekanism:plaslitherite_sword",
-        "evolvedmekanism:refined_redstone_sword"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_sword",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_sword",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_sword",
+      "required": false
+    }
+  ]
 }

@@ -1,7 +1,16 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_shovel",
-        "evolvedmekanism:plaslitherite_shovel",
-        "evolvedmekanism:refined_redstone_shovel"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_shovel",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:plaslitherite_shovel",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:refined_redstone_shovel",
+      "required": false
+    }
+  ]
 }
