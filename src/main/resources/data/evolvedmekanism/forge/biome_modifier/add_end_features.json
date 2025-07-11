@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": [
+    "evolvedmekanism:ore_fluorite_buried_end",
+    "evolvedmekanism:ore_fluorite_normal_end",
+    "evolvedmekanism:ore_lead_normal_end",
+    "evolvedmekanism:ore_osmium_middle_end",
+    "evolvedmekanism:ore_osmium_small_end",
+    "evolvedmekanism:ore_osmium_upper_end",
+    "evolvedmekanism:ore_tin_large_end",
+    "evolvedmekanism:ore_tin_small_end",
+    "evolvedmekanism:ore_uranium_buried_end",
+    "evolvedmekanism:ore_uranium_small_end"
+  ],
+  "step": "underground_ores"
+}

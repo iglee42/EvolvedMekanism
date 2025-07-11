@@ -1,0 +1,29 @@
+{
+  "type": "mekanism:ore",
+  "config": {
+    "oreVeinType": {
+      "type": "fluorite",
+      "index": 1
+    },
+    "targets": [
+      {
+        "state": {
+          "Name": "evolvedmekanism:depthrock_fluorite_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "undergarden:depthrock_ore_replaceables"
+        }
+      },
+      {
+        "state": {
+          "Name": "evolvedmekanism:shiverstone_fluorite_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "undergarden:shiverstone_ore_replaceables"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:ore",
+  "config": {
+    "oreVeinType": {
+      "type": "uranium",
+      "index": 0
+    },
+    "targets": [
+      {
+        "state": {
+          "Name": "evolvedmekanism:aether_uranium_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "aether:holystone_ore_replaceables"
+        }
+      }
+    ]
+  }
+}

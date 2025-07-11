@@ -1,0 +1,29 @@
+{
+  "type": "mekanism:ore",
+  "config": {
+    "oreVeinType": {
+      "type": "lead",
+      "index": 0
+    },
+    "targets": [
+      {
+        "state": {
+          "Name": "evolvedmekanism:depthrock_lead_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "undergarden:depthrock_ore_replaceables"
+        }
+      },
+      {
+        "state": {
+          "Name": "evolvedmekanism:shiverstone_lead_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "undergarden:shiverstone_ore_replaceables"
+        }
+      }
+    ]
+  }
+}

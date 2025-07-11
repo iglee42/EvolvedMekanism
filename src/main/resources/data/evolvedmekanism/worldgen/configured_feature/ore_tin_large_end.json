@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:ore",
+  "config": {
+    "oreVeinType": {
+      "type": "tin",
+      "index": 1
+    },
+    "targets": [
+      {
+        "state": {
+          "Name": "evolvedmekanism:end_stone_tin_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:end_stone_ore_replaceables"
+        }
+      }
+    ]
+  }
+}
