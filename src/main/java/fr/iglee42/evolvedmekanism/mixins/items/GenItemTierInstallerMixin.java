@@ -26,7 +26,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-@Mixin(value = ItemTierInstaller.class,remap = false)
+@Mixin(value = ItemTierInstaller.class)
 public class GenItemTierInstallerMixin {
 
     @Inject(method = "useOn",at = @At(value = "INVOKE", target = "Ljava/util/Set;isEmpty()Z",shift = At.Shift.BEFORE),cancellable = true,locals = LocalCapture.CAPTURE_FAILSOFT)
