@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_pickaxe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_pickaxe",
+      "required": false
+    }
+  ]
 }

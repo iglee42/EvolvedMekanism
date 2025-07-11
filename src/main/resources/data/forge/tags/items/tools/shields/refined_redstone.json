@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:refined_redstone_shield"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:refined_redstone_shield",
+      "required": false
+    }
+  ]
 }

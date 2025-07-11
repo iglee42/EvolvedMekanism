@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:plaslitherite_shovel"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:plaslitherite_shovel",
+      "required": false
+    }
+  ]
 }

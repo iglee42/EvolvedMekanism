@@ -1,7 +1,16 @@
 {
-    "values": [
-        "#forge:tools/paxels/better_gold",
-        "#forge:tools/paxels/plaslitherite",
-        "#forge:tools/paxels/refined_redstone"
-    ]
+  "values": [
+    {
+      "id": "#forge:tools/paxels/better_gold",
+      "required": false
+    },
+    {
+      "id": "#forge:tools/paxels/plaslitherite",
+      "required": false
+    },
+    {
+      "id": "#forge:tools/paxels/refined_redstone",
+      "required": false
+    }
+  ]
 }

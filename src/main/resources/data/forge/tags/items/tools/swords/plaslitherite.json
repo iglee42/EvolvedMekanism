@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:plaslitherite_sword"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:plaslitherite_sword",
+      "required": false
+    }
+  ]
 }

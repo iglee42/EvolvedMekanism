@@ -1,6 +1,12 @@
 {
-    "values": [
-        "#forge:armors/chestplates/better_gold",
-        "#forge:armors/chestplates/plaslitherite"
-    ]
+  "values": [
+    {
+      "id": "#forge:armors/chestplates/better_gold",
+      "required": false
+    },
+    {
+      "id": "#forge:armors/chestplates/plaslitherite",
+      "required": false
+    }
+  ]
 }

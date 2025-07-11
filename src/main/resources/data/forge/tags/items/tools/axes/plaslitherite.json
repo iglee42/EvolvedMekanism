@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:plaslitherite_axe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:plaslitherite_axe",
+      "required": false
+    }
+  ]
 }

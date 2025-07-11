@@ -1,6 +1,12 @@
 {
-    "values": [
-        "#forge:armors/leggings/better_gold",
-        "#forge:armors/leggings/plaslitherite"
-    ]
+  "values": [
+    {
+      "id": "#forge:armors/leggings/better_gold",
+      "required": false
+    },
+    {
+      "id": "#forge:armors/leggings/plaslitherite",
+      "required": false
+    }
+  ]
 }

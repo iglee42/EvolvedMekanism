@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:plaslitherite_pickaxe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:plaslitherite_pickaxe",
+      "required": false
+    }
+  ]
 }

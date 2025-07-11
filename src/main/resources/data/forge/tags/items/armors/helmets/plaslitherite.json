@@ -1,1 +1,8 @@
-{"values":["evolvedmekanism:plaslitherite_helmet"]}
+{
+  "values": [
+    {
+      "id": "evolvedmekanism:plaslitherite_helmet",
+      "required": false
+    }
+  ]
+}

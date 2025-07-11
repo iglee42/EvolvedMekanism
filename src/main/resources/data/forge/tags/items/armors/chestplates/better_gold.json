@@ -1,1 +1,8 @@
-{"values":["evolvedmekanism:better_gold_chestplate"]}
+{
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_chestplate",
+      "required": false
+    }
+  ]
+}

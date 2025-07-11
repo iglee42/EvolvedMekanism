@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_sword"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_sword",
+      "required": false
+    }
+  ]
 }

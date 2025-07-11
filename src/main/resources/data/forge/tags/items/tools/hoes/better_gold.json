@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_hoe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_hoe",
+      "required": false
+    }
+  ]
 }

@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:plaslitherite_paxel"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:plaslitherite_paxel",
+      "required": false
+    }
+  ]
 }

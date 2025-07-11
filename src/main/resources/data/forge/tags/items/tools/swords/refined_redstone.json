@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:refined_redstone_sword"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:refined_redstone_sword",
+      "required": false
+    }
+  ]
 }

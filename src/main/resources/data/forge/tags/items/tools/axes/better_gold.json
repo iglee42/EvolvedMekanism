@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:better_gold_axe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_axe",
+      "required": false
+    }
+  ]
 }

@@ -1,7 +1,16 @@
 {
-    "values": [
-        "#forge:tools/shields/better_gold",
-        "#forge:tools/shields/plaslitherite",
-        "#forge:tools/shields/refined_redstone"
-    ]
+  "values": [
+    {
+      "id": "#forge:tools/shields/better_gold",
+      "required": false
+    },
+    {
+      "id": "#forge:tools/shields/plaslitherite",
+      "required": false
+    },
+    {
+      "id": "#forge:tools/shields/refined_redstone",
+      "required": false
+    }
+  ]
 }

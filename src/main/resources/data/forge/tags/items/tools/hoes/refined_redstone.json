@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:refined_redstone_hoe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:refined_redstone_hoe",
+      "required": false
+    }
+  ]
 }

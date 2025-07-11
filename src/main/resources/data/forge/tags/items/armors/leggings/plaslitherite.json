@@ -1,1 +1,8 @@
-{"values":["evolvedmekanism:plaslitherite_leggings"]}
+{
+  "values": [
+    {
+      "id": "evolvedmekanism:plaslitherite_leggings",
+      "required": false
+    }
+  ]
+}

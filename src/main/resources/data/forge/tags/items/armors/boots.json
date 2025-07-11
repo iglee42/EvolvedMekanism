@@ -1,6 +1,12 @@
 {
-    "values": [
-        "#forge:armors/boots/better_gold",
-        "#forge:armors/boots/plaslitherite"
-    ]
+  "values": [
+    {
+      "id": "#forge:armors/boots/better_gold",
+      "required": false
+    },
+    {
+      "id": "#forge:armors/boots/plaslitherite",
+      "required": false
+    }
+  ]
 }

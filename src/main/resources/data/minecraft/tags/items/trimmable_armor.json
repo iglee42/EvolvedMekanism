@@ -1,16 +1,16 @@
 {
     "values": [
-        "evolvedmekanism:better_gold_helmet",
-        "evolvedmekanism:better_gold_chestplate",
-        "evolvedmekanism:better_gold_leggings",
-        "evolvedmekanism:better_gold_boots",
-        "evolvedmekanism:plaslitherite_helmet",
-        "evolvedmekanism:plaslitherite_chestplate",
-        "evolvedmekanism:plaslitherite_leggings",
-        "evolvedmekanism:plaslitherite_boots",
-        "evolvedmekanism:refined_redstone_helmet",
-        "evolvedmekanism:refined_redstone_chestplate",
-        "evolvedmekanism:refined_redstone_leggings",
-        "evolvedmekanism:refined_redstone_boots"
+        { "id": "evolvedmekanism:better_gold_helmet", "required": false },
+        { "id": "evolvedmekanism:better_gold_chestplate", "required": false },
+        { "id": "evolvedmekanism:better_gold_leggings", "required": false },
+        { "id": "evolvedmekanism:better_gold_boots", "required": false },
+        { "id": "evolvedmekanism:plaslitherite_helmet", "required": false },
+        { "id": "evolvedmekanism:plaslitherite_chestplate", "required": false },
+        { "id": "evolvedmekanism:plaslitherite_leggings", "required": false },
+        { "id": "evolvedmekanism:plaslitherite_boots", "required": false },
+        { "id": "evolvedmekanism:refined_redstone_helmet", "required": false },
+        { "id": "evolvedmekanism:refined_redstone_chestplate", "required": false },
+        { "id": "evolvedmekanism:refined_redstone_leggings", "required": false },
+        { "id": "evolvedmekanism:refined_redstone_boots", "required": false }
     ]
 }

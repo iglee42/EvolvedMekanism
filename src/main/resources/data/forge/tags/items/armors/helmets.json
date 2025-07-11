@@ -1,6 +1,12 @@
 {
-    "values": [
-        "#forge:armors/helmets/better_gold",
-        "#forge:armors/helmets/plaslitherite"
-    ]
+  "values": [
+    {
+      "id": "#forge:armors/helmets/better_gold",
+      "required": false
+    },
+    {
+      "id": "#forge:armors/helmets/plaslitherite",
+      "required": false
+    }
+  ]
 }

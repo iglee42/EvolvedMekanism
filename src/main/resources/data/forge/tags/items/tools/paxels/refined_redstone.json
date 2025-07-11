@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:refined_redstone_paxel"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:refined_redstone_paxel",
+      "required": false
+    }
+  ]
 }

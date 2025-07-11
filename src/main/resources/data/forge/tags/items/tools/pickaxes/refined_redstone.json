@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:refined_redstone_pickaxe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:refined_redstone_pickaxe",
+      "required": false
+    }
+  ]
 }

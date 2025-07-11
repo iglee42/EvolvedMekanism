@@ -1,1 +1,8 @@
-{"values":["evolvedmekanism:plaslitherite_chestplate"]}
+{
+  "values": [
+    {
+      "id": "evolvedmekanism:plaslitherite_chestplate",
+      "required": false
+    }
+  ]
+}

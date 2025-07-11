@@ -1,1 +1,8 @@
-{"values":["evolvedmekanism:better_gold_leggings"]}
+{
+  "values": [
+    {
+      "id": "evolvedmekanism:better_gold_leggings",
+      "required": false
+    }
+  ]
+}

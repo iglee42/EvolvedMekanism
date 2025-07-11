@@ -1,5 +1,8 @@
 {
-    "values": [
-        "evolvedmekanism:plaslitherite_hoe"
-    ]
+  "values": [
+    {
+      "id": "evolvedmekanism:plaslitherite_hoe",
+      "required": false
+    }
+  ]
 }
