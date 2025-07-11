@@ -1,8 +1,6 @@
 package fr.iglee42.evolvedmekanism.jei;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.impl.BasicItemStackToFluidRecipe;
@@ -42,7 +40,6 @@ import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
-import java.util.Collection;
 
 @JeiPlugin
 public class EMJEI implements IModPlugin {
@@ -98,14 +95,18 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registry) {
+        List<FluidStack> fluidsToRemove = new ArrayList<>();
+        List<ItemStack> itemsToRemove = new ArrayList<>();
         EMFluids.FLUIDS.getFluidEntries().forEach(ro->{
             boolean hasMelting = EMRecipeType.MELTING.getRecipes(null).stream().anyMatch(r->r.value().getOutput(ItemStack.EMPTY).getFluid().equals(ro.get()));
             boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.value().getInputFluid().test(new FluidStack(ro.get(), (int) r.value().getInputFluid().getNeededAmount(new FluidStack(ro.get(),1)))));
             if (!hasMelting && !hasSolidifying){
-                registry.getJeiHelpers().getIngredientManager().removeIngredientsAtRuntime(NeoForgeTypes.FLUID_STACK, List.of(new FluidStack(ro.get(),1000)));
-                registry.getJeiHelpers().getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, List.of(ro.get().getBucket().getDefaultInstance()));
+                fluidsToRemove.add(new FluidStack(ro.get(),1000));
+                itemsToRemove.add(ro.get().getBucket().getDefaultInstance());
             }
         });
+        registry.getIngredientManager().removeIngredientsAtRuntime(NeoForgeTypes.FLUID_STACK,fluidsToRemove);
+        registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK,itemsToRemove);
         RecipeRegistryHelper.register(registry, JEIRecipeTypes.ALLOYING, EMRecipeType.ALLOYING);
         RecipeRegistryHelper.register(registry, JEIRecipeTypes.CHEMIXING, EMRecipeType.CHEMIXING);
         RecipeRegistryHelper.register(registry, JEIRecipeTypes.APT, EMRecipeType.APT);

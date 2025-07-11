@@ -2,7 +2,7 @@
   "type": "mekanism:mek_data",
   "key": {
     "#": {
-      "tag": "mekanism:crystals/uranium"
+      "tag": "c:crystals/uranium"
     },
     "I": {
       "tag": "c:ingots/lead"

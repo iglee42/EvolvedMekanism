@@ -3,16 +3,16 @@
   "category": "equipment",
   "key": {
     "A": {
-      "item": "evolvedmekanism:better_gold_axe"
+      "item": "evolvedmekanism:refined_redstone_axe"
     },
     "P": {
-      "item": "evolvedmekanism:better_gold_pickaxe"
+      "item": "evolvedmekanism:refined_redstone_pickaxe"
     },
     "R": {
       "tag": "c:rods/wooden"
     },
     "S": {
-      "item": "evolvedmekanism:better_gold_shovel"
+      "item": "evolvedmekanism:refined_redstone_shovel"
     }
   },
   "pattern": [
@@ -21,7 +21,7 @@
     " R "
   ],
   "result": {
-    "id": "evolvedmekanism:better_gold_paxel"
+    "id": "evolvedmekanism:refined_redstone_paxel"
   },
   "neoforge:conditions": [
     {
