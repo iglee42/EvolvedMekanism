@@ -1,12 +1,12 @@
 {
     "values": [
-        "#c:storage_blocks/alloys/advanced",
-        "#c:storage_blocks/alloys/elite",
-        "#c:storage_blocks/alloys/ultimate",
-        "#c:storage_blocks/alloys/overclocked",
-        "#c:storage_blocks/alloys/quantum",
-        "#c:storage_blocks/alloys/dense",
-        "#c:storage_blocks/alloys/multiversal",
+        "#c:storage_blocks/alloys/infused",
+        "#c:storage_blocks/alloys/reinforced",
+        "#c:storage_blocks/alloys/atomic",
+        "#c:storage_blocks/alloys/hypercharged",
+        "#c:storage_blocks/alloys/subatomic",
+        "#c:storage_blocks/alloys/singular",
+        "#c:storage_blocks/alloys/exoversal",
         "#c:storage_blocks/alloys/creative"
     ]
 }

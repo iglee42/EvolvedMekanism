@@ -5,7 +5,7 @@
       "tag": "c:storage_blocks/alloys/singular"
     },
     "I": {
-      "tag": "c:pellets/plutonium"
+      "tag": "c:ingots/refined_redstone"
     },
     "X": {
       "item": "mekanism:superheating_element"
