@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#aether:is_aether",
+  "features": [
+    "evolvedmekanism:ore_fluorite_buried_aether",
+    "evolvedmekanism:ore_fluorite_normal_aether",
+    "evolvedmekanism:ore_lead_normal_aether",
+    "evolvedmekanism:ore_osmium_middle_aether",
+    "evolvedmekanism:ore_osmium_small_aether",
+    "evolvedmekanism:ore_osmium_upper_aether",
+    "evolvedmekanism:ore_tin_large_aether",
+    "evolvedmekanism:ore_tin_small_aether",
+    "evolvedmekanism:ore_uranium_buried_aether",
+    "evolvedmekanism:ore_uranium_small_aether"
+  ],
+  "step": "underground_ores"
+}

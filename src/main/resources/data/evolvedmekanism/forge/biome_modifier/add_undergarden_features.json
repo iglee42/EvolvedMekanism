@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#undergarden:is_undergarden",
+  "features": [
+    "evolvedmekanism:ore_fluorite_buried_undergarden",
+    "evolvedmekanism:ore_fluorite_normal_undergarden",
+    "evolvedmekanism:ore_lead_normal_undergarden",
+    "evolvedmekanism:ore_osmium_middle_undergarden",
+    "evolvedmekanism:ore_osmium_small_undergarden",
+    "evolvedmekanism:ore_osmium_upper_undergarden",
+    "evolvedmekanism:ore_tin_large_undergarden",
+    "evolvedmekanism:ore_tin_small_undergarden",
+    "evolvedmekanism:ore_uranium_buried_undergarden",
+    "evolvedmekanism:ore_uranium_small_undergarden"
+  ],
+  "step": "underground_ores"
+}

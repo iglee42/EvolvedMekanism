@@ -1,0 +1,20 @@
+{
+  "type": "mekanism:ore",
+  "config": {
+    "oreVeinType": {
+      "type": "fluorite",
+      "index": 1
+    },
+    "targets": [
+      {
+        "state": {
+          "Name": "evolvedmekanism:end_stone_fluorite_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:end_stone_ore_replaceables"
+        }
+      }
+    ]
+  }
+}

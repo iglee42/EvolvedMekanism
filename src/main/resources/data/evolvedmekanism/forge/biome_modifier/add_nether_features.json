@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": [
+    "evolvedmekanism:ore_fluorite_buried_nether",
+    "evolvedmekanism:ore_fluorite_normal_nether",
+    "evolvedmekanism:ore_lead_normal_nether",
+    "evolvedmekanism:ore_osmium_middle_nether",
+    "evolvedmekanism:ore_osmium_small_nether",
+    "evolvedmekanism:ore_osmium_upper_nether",
+    "evolvedmekanism:ore_tin_large_nether",
+    "evolvedmekanism:ore_tin_small_nether",
+    "evolvedmekanism:ore_uranium_buried_nether",
+    "evolvedmekanism:ore_uranium_small_nether"
+  ],
+  "step": "underground_ores"
+}
