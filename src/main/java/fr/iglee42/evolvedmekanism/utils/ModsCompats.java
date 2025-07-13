@@ -12,7 +12,9 @@ public enum ModsCompats {
     MEKANISMGENERATORS("tiles.TileEntitySolarGeneratorMixin",
             "tiles.TileEntityAdvancedSolarGeneratorMixin","items.GenItemTierInstallerMixin"),
 
-    MEKANISMTOOLS("client.ShieldTexturesMixin","client.ToolsRenderMekanismShieldItemMixin");
+    MEKANISMTOOLS("client.ShieldTexturesMixin","client.ToolsRenderMekanismShieldItemMixin"),
+
+    JEI_MEKANISM_MULTIBLOCKS();
     private final String[] mixinClasses;
 
     ModsCompats(String... mixinClasses) {

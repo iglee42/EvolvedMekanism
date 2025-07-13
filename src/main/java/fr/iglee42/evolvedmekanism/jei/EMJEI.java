@@ -10,6 +10,7 @@ import fr.iglee42.evolvedmekanism.jei.categories.APTRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.AlloyerRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.ChemixerRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.SolidificationRecipeCategory;
+import fr.iglee42.evolvedmekanism.jei.jeimb.APTCategory;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
@@ -17,6 +18,8 @@ import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
+import fr.iglee42.evolvedmekanism.utils.ModsCompats;
+import giselle.jei_mekanism_multiblocks.client.jei.category.MatrixCategory;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.chemical.IChemicalHandler;
 import mekanism.api.energy.IStrictEnergyHandler;
@@ -30,6 +33,8 @@ import mekanism.client.jei.RecipeRegistryHelper;
 import mekanism.client.jei.machine.ItemStackToFluidRecipeCategory;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
+import mekanism.common.item.block.ItemBlockInductionCell;
+import mekanism.common.item.block.ItemBlockInductionProvider;
 import mekanism.common.util.RegistryUtils;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -48,6 +53,7 @@ import mezz.jei.api.registration.ISubtypeRegistration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
@@ -63,6 +69,7 @@ public class EMJEI implements IModPlugin {
     public static final MekanismJEIRecipeType<ItemStackToFluidRecipe> MELTING = new MekanismJEIRecipeType<>(EMBlocks.MELTER, ItemStackToFluidRecipe.class);
     public static final MekanismJEIRecipeType<SolidificationRecipe> SOLIDIFICATION = new MekanismJEIRecipeType<>(EMBlocks.SOLIDIFIER, SolidificationRecipe.class);
 
+    private APTCategory aptCategory;
 
     private static final IIngredientSubtypeInterpreter<ItemStack> MEKANISM_NBT_INTERPRETER = (stack, context) -> {
         if (context == UidContext.Ingredient && stack.hasTag()) {
@@ -175,6 +182,9 @@ public class EMJEI implements IModPlugin {
         registry.addRecipeCategories(new ItemStackToFluidRecipeCategory(guiHelper, MELTING,EMBlocks.MELTER,false));
         registry.addRecipeCategories(new SolidificationRecipeCategory(guiHelper, SOLIDIFICATION));
 
+        if (ModsCompats.JEI_MEKANISM_MULTIBLOCKS.isLoaded()) {
+            registry.addRecipeCategories(this.aptCategory = new APTCategory(guiHelper));
+        }
     }
 
     @Override
@@ -202,6 +212,9 @@ public class EMJEI implements IModPlugin {
         RecipeRegistryHelper.register(registry, MELTING, EMRecipeType.MELTING);
         RecipeRegistryHelper.register(registry, SOLIDIFICATION, EMRecipeType.SOLIDIFICATION);
 
+        if (ModsCompats.JEI_MEKANISM_MULTIBLOCKS.isLoaded()) {
+            registry.addRecipes(this.aptCategory.getRecipeType(), Arrays.asList(new APTCategory.APTWidget()));
+        }
     }
 
     @Override
@@ -212,6 +225,15 @@ public class EMJEI implements IModPlugin {
         CatalystRegistryHelper.register(registry, EMBlocks.MELTER);
         CatalystRegistryHelper.register(registry, EMBlocks.SOLIDIFIER);
 
+        if (ModsCompats.JEI_MEKANISM_MULTIBLOCKS.isLoaded()) {
+            this.aptCategory.registerRecipeCatalysts(registry);
+
+            for (var category : giselle.jei_mekanism_multiblocks.client.jei.JeiPlugin.instance().getCategories()) {
+                if (category instanceof MatrixCategory) {
+                    registry.addRecipeCatalysts(category.getRecipeType(), EMBlocks.BLOCKS.getAllBlocks().stream().filter(b -> b.asItem() instanceof ItemBlockInductionCell || b.asItem() instanceof ItemBlockInductionProvider).toArray(ItemLike[]::new));
+                }
+            }
+        }
     }
 
     @Override

@@ -730,5 +730,7 @@
     "item.evolvedmekanism.refined_redstone_shield.yellow": "Yellow Refined Redstone Shield",
     "item.evolvedmekanism.refined_redstone_shovel": "Refined Redstone Shovel",
     "item.evolvedmekanism.refined_redstone_sword": "Refined Redstone Sword",
-    "apt.evolvedmekanism.invalid_supercharging": "Couldn't form, invalid Supercharging Element arrangement."
+    "apt.evolvedmekanism.invalid_supercharging": "Couldn't form, invalid Supercharging Element arrangement.",
+    "text.jei_mekanism_multiblocks.result.evolvedmekanism.supercharging_elements": "Supercharging Elements: %s",
+    "text.jei_mekanism_multiblocks.result.evolvedmekanism.processing_speed": "Processing Speed"
 }
