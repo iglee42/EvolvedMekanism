@@ -2,7 +2,6 @@ package fr.iglee42.evolvedmekanism.mixins;
 
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
-import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.registries.EMBlockTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMFactoryType;
@@ -21,7 +20,7 @@ import java.util.Arrays;
 import java.util.function.Supplier;
 
 @Mixin(value = FactoryType.class,remap = false)
-public class FactoryTypeMixin implements InitializableEnum {
+public class FactoryTypeMixin {
     @Shadow
     @Final
     @Mutable
@@ -30,6 +29,11 @@ public class FactoryTypeMixin implements InitializableEnum {
     @Invoker("<init>")
     public static FactoryType evolvedmekanism$initInvoker(String internalName, int internalId, String registryNameComponent, MekanismLang langEntry, Supplier<Machine.FactoryMachine<?>> baseMachine, Supplier<BlockRegistryObject<?, ?>> baseBlock){
         throw new AssertionError();
+    }
+
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$clinit(CallbackInfo ci) {
+        EMFactoryType.ALLOYING = evolvedmekanism$addVariant("ALLOYING", "alloying", EvolvedMekanismLang.ALLOYING,()-> EMBlockTypes.ALLOYER,()-> EMBlocks.ALLOYER);
     }
 
     @Unique
@@ -41,11 +45,5 @@ public class FactoryTypeMixin implements InitializableEnum {
         variants.add(casing);
         FactoryTypeMixin.$VALUES = variants.toArray(new FactoryType[0]);
         return casing;
-    }
-
-    @Override
-    public void evolvedmekanism$initNewValues() {
-        if (EMFactoryType.ALLOYING != null) return;
-        EMFactoryType.ALLOYING = evolvedmekanism$addVariant("ALLOYING", "alloying", EvolvedMekanismLang.ALLOYING,()-> EMBlockTypes.ALLOYER,()-> EMBlocks.ALLOYER);
     }
 }

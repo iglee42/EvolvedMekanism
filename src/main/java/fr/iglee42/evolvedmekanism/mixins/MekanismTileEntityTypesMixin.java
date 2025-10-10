@@ -28,7 +28,7 @@ public class MekanismTileEntityTypesMixin {
 
     @Inject(method = "<clinit>",at = @At(value = "INVOKE", shift = At.Shift.BEFORE, target = "Lcom/google/common/collect/Table;put(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",ordinal = 0), locals = LocalCapture.CAPTURE_FAILSOFT)
     private static void evolveddraconic$addNewFactories(CallbackInfo ci, FactoryTier[] var0, int var1, int var2, FactoryTier tier){
-        FACTORIES.put(tier, EMFactoryType.ALLOYING, EMTileEntityTypes.TILE_ENTITY_TYPES.register(MekanismBlocks.getFactory(tier, EMFactoryType.ALLOYING), (pos, state) -> new TileEntityAlloyingFactory(MekanismBlocks.getFactory(tier, EMFactoryType.ALLOYING), pos, state)));
+        //FACTORIES.put(tier, EMFactoryType.ALLOYING, EMTileEntityTypes.TILE_ENTITY_TYPES.register(MekanismBlocks.getFactory(tier, EMFactoryType.ALLOYING), (pos, state) -> new TileEntityAlloyingFactory(MekanismBlocks.getFactory(tier, EMFactoryType.ALLOYING), pos, state)));
     }
 
 }

@@ -30,8 +30,9 @@ public class PipeTierMixin implements InitializableEnum {
     @Unique
     private static PipeTier evolvedmekanism$addVariant(String internalName, BaseTier tier, int storage,int pull) {
         ArrayList<PipeTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
         PipeTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 tier,storage,pull);
         variants.add(casing);
         PipeTierMixin.$VALUES = variants.toArray(new PipeTier[0]);
@@ -40,6 +41,15 @@ public class PipeTierMixin implements InitializableEnum {
 
     @Override
     public void evolvedmekanism$initNewValues() {
+        if (EMPipeTier.OVERCLOCKED != null) return;
+        EMPipeTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_024_000,256_000);
+        EMPipeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,8_192_000,2_048_000);
+        EMPipeTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,65_536_000,16_384_000);
+        EMPipeTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,524_288_000,131_072_000);
+        EMPipeTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Integer.MAX_VALUE,Integer.MAX_VALUE);
+    }
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMPipeTier.OVERCLOCKED != null) return;
         EMPipeTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_024_000,256_000);
         EMPipeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,8_192_000,2_048_000);

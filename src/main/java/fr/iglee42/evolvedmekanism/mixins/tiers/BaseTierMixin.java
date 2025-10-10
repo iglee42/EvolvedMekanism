@@ -1,10 +1,13 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers;
 
 
+import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
+import fr.iglee42.evolvedmekanism.tiers.storage.EMQIODriveTier;
 import fr.iglee42.igleelib.api.utils.ModsUtils;
 import mekanism.api.tier.BaseTier;
+import mekanism.common.tier.QIODriveTier;
 import net.minecraft.world.level.material.MapColor;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
@@ -30,8 +33,9 @@ public class BaseTierMixin implements InitializableEnum {
     @Unique
     private static BaseTier evolvedmekanism$addVariant(String internalName, int[] rgb,MapColor mapColor) {
         ArrayList<BaseTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
         BaseTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 ModsUtils.getUpperName(internalName.toLowerCase(),"_"),
                 rgb,
                 mapColor);
@@ -43,6 +47,16 @@ public class BaseTierMixin implements InitializableEnum {
     @Override
     public void evolvedmekanism$initNewValues() {
         if (EMBaseTier.OVERCLOCKED != null) return;
+        EvolvedMekanism.logger.info("Init Base with Interface");
+        EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 221, 0},MapColor.COLOR_LIGHT_GREEN);
+        EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{252, 158, 250},MapColor.COLOR_PURPLE);
+        EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);
+        EMBaseTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", new int[]{90, 87, 90},MapColor.COLOR_BLACK);
+    }
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
+        if (EMBaseTier.OVERCLOCKED != null)return;
+        EvolvedMekanism.logger.info("Init Base with Inject");
         EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 221, 0},MapColor.COLOR_LIGHT_GREEN);
         EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{252, 158, 250},MapColor.COLOR_PURPLE);
         EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);

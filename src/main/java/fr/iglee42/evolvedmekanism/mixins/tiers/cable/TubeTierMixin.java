@@ -4,7 +4,9 @@ package fr.iglee42.evolvedmekanism.mixins.tiers.cable;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.cable.EMTubeTier;
+import fr.iglee42.evolvedmekanism.tiers.storage.EMInductionCellTier;
 import mekanism.api.tier.BaseTier;
+import mekanism.common.tier.InductionCellTier;
 import mekanism.common.tier.TubeTier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
@@ -30,8 +32,9 @@ public class TubeTierMixin implements InitializableEnum {
     @Unique
     private static TubeTier evolvedmekanism$addVariant(String internalName, BaseTier tier, long storage,long pull) {
         ArrayList<TubeTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
         TubeTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 tier,storage,pull);
         variants.add(casing);
         TubeTierMixin.$VALUES = variants.toArray(new TubeTier[0]);
@@ -40,6 +43,15 @@ public class TubeTierMixin implements InitializableEnum {
 
     @Override
     public void evolvedmekanism$initNewValues() {
+        if (EMTubeTier.OVERCLOCKED != null)return;
+        EMTubeTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 8_192_000,2_048_000);
+        EMTubeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,65_536_000,16_384_000);
+        EMTubeTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,524_288_000,131_072_000);
+        EMTubeTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,4_194_304_000L,1_048_576_000);
+        EMTubeTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Long.MAX_VALUE,Long.MAX_VALUE);
+    }
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMTubeTier.OVERCLOCKED != null)return;
         EMTubeTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 8_192_000,2_048_000);
         EMTubeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,65_536_000,16_384_000);

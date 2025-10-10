@@ -30,8 +30,9 @@ public class AlloyTierMixin implements InitializableEnum {
     @Unique
     private static AlloyTier evolvedmekanism$addVariant(String internalName, BaseTier baseTier) {
         ArrayList<AlloyTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
         AlloyTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 internalName.toLowerCase(),
                 baseTier);
         variants.add(casing);
@@ -41,6 +42,16 @@ public class AlloyTierMixin implements InitializableEnum {
 
     @Override
     public void evolvedmekanism$initNewValues() {
+        if (EMAlloyTier.HYPERCHARGED != null)return;
+        EMAlloyTier.HYPERCHARGED = evolvedmekanism$addVariant("HYPERCHARGED", EMBaseTier.OVERCLOCKED);
+        EMAlloyTier.SUBATOMIC = evolvedmekanism$addVariant("SUBATOMIC", EMBaseTier.QUANTUM);
+        EMAlloyTier.SINGULAR = evolvedmekanism$addVariant("SINGULAR", EMBaseTier.DENSE);
+        EMAlloyTier.EXOVERSAL = evolvedmekanism$addVariant("EXOVERSAL", EMBaseTier.MULTIVERSAL);
+        EMAlloyTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE);
+    }
+
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMAlloyTier.HYPERCHARGED != null)return;
         EMAlloyTier.HYPERCHARGED = evolvedmekanism$addVariant("HYPERCHARGED", EMBaseTier.OVERCLOCKED);
         EMAlloyTier.SUBATOMIC = evolvedmekanism$addVariant("SUBATOMIC", EMBaseTier.QUANTUM);

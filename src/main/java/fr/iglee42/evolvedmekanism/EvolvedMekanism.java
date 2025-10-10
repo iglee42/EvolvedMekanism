@@ -83,7 +83,6 @@ public class EvolvedMekanism {
     public EvolvedMekanism() {
         instance = this;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        initEnums();
 
         EMConfig.registerConfigs(FMLJavaModLoadingContext.get());
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) EMToolsConfig.registerConfigs(FMLJavaModLoadingContext.get());
@@ -91,19 +90,21 @@ public class EvolvedMekanism {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
 
-        EMBlocks.BLOCKS.register(modEventBus);
-        EMItems.ITEMS.register(modEventBus);
+        //EMBlocks.BLOCKS.register(modEventBus);
+        //EMItems.ITEMS.register(modEventBus);
         EMCreativeTabs.CREATIVE_TABS.register(modEventBus);
-        EMTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+        //EMTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
         EMInfuseTypes.INFUSE_TYPES.register(modEventBus);
-        EMContainerTypes.CONTAINER_TYPES.register(modEventBus);
+        //EMContainerTypes.CONTAINER_TYPES.register(modEventBus);
         EMLootFunctions.REGISTER.register(modEventBus);
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
-        EMModules.MODULES.createAndRegister(modEventBus);
-        EMFluids.FLUIDS.register(modEventBus);
+        //EMModules.MODULES.createAndRegister(modEventBus);
+        //EMFluids.FLUIDS.register(modEventBus);
         EMParticleTypes.PARTICLES.register(modEventBus);
 
         registerCompats();
+
+        //initEnums();
 
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(this::serverStopped);
@@ -145,7 +146,8 @@ public class EvolvedMekanism {
         ((InitializableEnum)(Object)AlloyTier.INFUSED).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)FactoryTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)QIODriveTier.BASE).evolvedmekanism$initNewValues();
-        ((InitializableEnum)(Object)FactoryType.COMBINING).evolvedmekanism$initNewValues();
+        FactoryType ignoredFType = FactoryType.COMBINING;
+        //((InitializableEnum)(Object)FactoryType.COMBINING).evolvedmekanism$initNewValues();
 
         ((InitializableEnum)(Object)CableTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)ConductorTier.BASIC).evolvedmekanism$initNewValues();
@@ -154,13 +156,15 @@ public class EvolvedMekanism {
         ((InitializableEnum)(Object)TransporterTier.BASIC).evolvedmekanism$initNewValues();
 
         ((InitializableEnum)(Object)BinTier.BASIC).evolvedmekanism$initNewValues();
-        ((InitializableEnum)(Object)InductionCellTier.BASIC).evolvedmekanism$initNewValues();
-        ((InitializableEnum)(Object)InductionProviderTier.BASIC).evolvedmekanism$initNewValues();
+        InductionCellTier ignoredIDT = InductionCellTier.BASIC;
+        InductionProviderTier ignoredIPT = InductionProviderTier.BASIC;
+        //((InitializableEnum)(Object)InductionCellTier.BASIC).evolvedmekanism$initNewValues();
+        //((InitializableEnum)(Object)InductionProviderTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)EnergyCubeTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)ChemicalTankTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)FluidTankTier.BASIC).evolvedmekanism$initNewValues();
 
-        if (ModsCompats.MEKANISMTOOLS.isLoaded())((InitializableEnum)(Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
+        //if (ModsCompats.MEKANISMTOOLS.isLoaded())((InitializableEnum)(Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
 
     }
 

@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers.storage;
 
 
+import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMFluidTankTier;
@@ -30,8 +31,9 @@ public class FluidTankTierMixin implements InitializableEnum {
     @Unique
     private static FluidTankTier evolvedmekanism$addVariant(String internalName, BaseTier tier, int max,int out) {
         ArrayList<FluidTankTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
         FluidTankTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 tier,max,out);
         variants.add(casing);
         FluidTankTierMixin.$VALUES = variants.toArray(new FluidTankTier[0]);
@@ -41,6 +43,17 @@ public class FluidTankTierMixin implements InitializableEnum {
     @Override
     public void evolvedmekanism$initNewValues() {
         if (EMFluidTankTier.OVERCLOCKED != null) return;
+        EvolvedMekanism.logger.info("Init Tanks with Interface");
+        EMFluidTankTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 512_000,256_000);
+        EMFluidTankTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,1_024_000,1_024_000);
+        EMFluidTankTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,2_048_000,4_096_000);
+        EMFluidTankTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,4_096_000,16_384_000);
+    }
+
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
+        if (EMFluidTankTier.OVERCLOCKED != null) return;
+        EvolvedMekanism.logger.info("Init Tanks with Inject {}",EMBaseTier.OVERCLOCKED);
         EMFluidTankTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 512_000,256_000);
         EMFluidTankTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,1_024_000,1_024_000);
         EMFluidTankTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,2_048_000,4_096_000);

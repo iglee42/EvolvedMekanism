@@ -33,8 +33,9 @@ public class QIODriveTierMixin implements InitializableEnum {
     @Unique
     private static QIODriveTier evolvedmekanism$addVariant(String internalName, BaseTier tier, long max,int out) {
         ArrayList<QIODriveTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
         QIODriveTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 tier,max,out);
         variants.add(casing);
         QIODriveTierMixin.$VALUES = variants.toArray(new QIODriveTier[0]);
@@ -43,6 +44,16 @@ public class QIODriveTierMixin implements InitializableEnum {
 
     @Override
     public void evolvedmekanism$initNewValues() {
+        if (EMQIODriveTier.BOOSTED != null)return;
+        EMQIODriveTier.BOOSTED = evolvedmekanism$addVariant("BOOSTED", EMBaseTier.OVERCLOCKED, 32_000_000_000L,16_384);
+        EMQIODriveTier.SINGULARITY = evolvedmekanism$addVariant("SINGULARITY",  EMBaseTier.QUANTUM,64_000_000_000L,32_768);
+        EMQIODriveTier.HYPRA_SOLIDIFIED = evolvedmekanism$addVariant("HYPRA_SOLIDIFIED", EMBaseTier.DENSE,128_000_000_000L,65_536);
+        EMQIODriveTier.BLACK_HOLE = evolvedmekanism$addVariant("BLACK_HOLE", EMBaseTier.MULTIVERSAL,256_000_000_000L,131_072);
+        EMQIODriveTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Long.MAX_VALUE,Integer.MAX_VALUE);
+    }
+
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMQIODriveTier.BOOSTED != null)return;
         EMQIODriveTier.BOOSTED = evolvedmekanism$addVariant("BOOSTED", EMBaseTier.OVERCLOCKED, 32_000_000_000L,16_384);
         EMQIODriveTier.SINGULARITY = evolvedmekanism$addVariant("SINGULARITY",  EMBaseTier.QUANTUM,64_000_000_000L,32_768);

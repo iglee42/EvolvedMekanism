@@ -6,6 +6,7 @@ import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMInductionProviderTier;
 import mekanism.api.math.FloatingLong;
 import mekanism.api.tier.BaseTier;
+import mekanism.common.tier.InductionCellTier;
 import mekanism.common.tier.InductionProviderTier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
@@ -31,8 +32,10 @@ public class InductionProviderTierMixin implements InitializableEnum {
     @Unique
     private static InductionProviderTier evolvedmekanism$addVariant(String internalName, BaseTier tier, long storage) {
         ArrayList<InductionProviderTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
+
         InductionProviderTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 tier,FloatingLong.create(storage));
         variants.add(casing);
         InductionProviderTierMixin.$VALUES = variants.toArray(new InductionProviderTier[0]);
@@ -41,8 +44,10 @@ public class InductionProviderTierMixin implements InitializableEnum {
     @Unique
     private static InductionProviderTier evolvedmekanism$addVariant(String internalName, BaseTier tier, FloatingLong storage) {
         ArrayList<InductionProviderTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
+
         InductionProviderTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 tier,storage);
         variants.add(casing);
         InductionProviderTierMixin.$VALUES = variants.toArray(new InductionProviderTier[0]);
@@ -51,6 +56,15 @@ public class InductionProviderTierMixin implements InitializableEnum {
 
     @Override
     public void evolvedmekanism$initNewValues() {
+        if (EMInductionProviderTier.OVERCLOCKED != null) return;
+        EMInductionProviderTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_048_576_000L);
+        EMInductionProviderTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,8_388_608_000L);
+        EMInductionProviderTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,67_108_864_000L);
+        EMInductionProviderTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,536_870_912_000L);
+        EMInductionProviderTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,FloatingLong.MAX_VALUE);
+    }
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMInductionProviderTier.OVERCLOCKED != null) return;
         EMInductionProviderTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_048_576_000L);
         EMInductionProviderTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,8_388_608_000L);

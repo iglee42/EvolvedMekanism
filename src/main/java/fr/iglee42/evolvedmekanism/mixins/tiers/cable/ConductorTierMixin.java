@@ -32,8 +32,9 @@ public class ConductorTierMixin implements InitializableEnum {
     @Unique
     private static ConductorTier evolvedmekanism$addVariant(String internalName, BaseTier tier, double conduction) {
         ArrayList<ConductorTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
         ConductorTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 tier,5, HeatAPI.DEFAULT_HEAT_CAPACITY,conduction,Color.rgbad(0.2, 0.2, 0.2, 1));
         variants.add(casing);
         ConductorTierMixin.$VALUES = variants.toArray(new ConductorTier[0]);
@@ -42,6 +43,15 @@ public class ConductorTierMixin implements InitializableEnum {
 
     @Override
     public void evolvedmekanism$initNewValues() {
+        if (EMConductorTier.OVERCLOCKED != null)return;
+        EMConductorTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 8_192_000);
+        EMConductorTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,65_536_000);
+        EMConductorTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,524_288_000);
+        EMConductorTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,4_194_304_000L);
+        EMConductorTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Double.MAX_VALUE);
+    }
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMConductorTier.OVERCLOCKED != null)return;
         EMConductorTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 8_192_000);
         EMConductorTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,65_536_000);

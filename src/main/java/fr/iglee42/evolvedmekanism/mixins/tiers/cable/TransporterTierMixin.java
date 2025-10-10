@@ -30,8 +30,9 @@ public class TransporterTierMixin implements InitializableEnum {
     @Unique
     private static TransporterTier evolvedmekanism$addVariant(String internalName, BaseTier tier, int pull,int s) {
         ArrayList<TransporterTier> variants = new ArrayList<>(Arrays.asList($VALUES));
+        int ordinal = variants.isEmpty() ? 0 : variants.get(variants.size() - 1).ordinal() + 1;
         TransporterTier casing = evolvedmekanism$initInvoker(internalName,
-                variants.get(variants.size() - 1).ordinal() + 1,
+                ordinal,
                 tier,pull,s);
         variants.add(casing);
         TransporterTierMixin.$VALUES = variants.toArray(new TransporterTier[0]);
@@ -40,6 +41,15 @@ public class TransporterTierMixin implements InitializableEnum {
 
     @Override
     public void evolvedmekanism$initNewValues() {
+        if (EMTransporterTier.OVERCLOCKED != null)return;
+        EMTransporterTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 128,75);
+        EMTransporterTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,256,100);
+        EMTransporterTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,512,150);
+        EMTransporterTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,1024,200);
+        EMTransporterTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Integer.MAX_VALUE,Integer.MAX_VALUE);
+    }
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMTransporterTier.OVERCLOCKED != null)return;
         EMTransporterTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 128,75);
         EMTransporterTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,256,100);

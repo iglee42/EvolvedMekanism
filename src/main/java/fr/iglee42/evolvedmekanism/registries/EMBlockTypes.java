@@ -49,7 +49,7 @@ public class EMBlockTypes {
             .withSound(MekanismSounds.COMBINER)
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
             .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
-            .withComputerSupport("alloyer")
+            //.withComputerSupport("alloyer")
             .build();
 
     public static final Machine<TileEntityChemixer> CHEMIXER = MachineBuilder
@@ -199,7 +199,7 @@ public class EMBlockTypes {
         return MachineBuilder.createMachine(tile, MekanismLang.DESCRIPTION_BIN)
                 .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
                 .without(AttributeParticleFX.class, AttributeSecurity.class, AttributeUpgradeSupport.class, AttributeRedstone.class)
-                .withComputerSupport(tier, "Bin")
+                .withComputerSupport("Bin")
                 .build();
     }
 
@@ -209,7 +209,7 @@ public class EMBlockTypes {
                 .withEnergyConfig(tier::getMaxEnergy)
                 .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock), new AttributeStateFacing(BlockStateProperties.FACING))
                 .without(AttributeParticleFX.class, AttributeStateActive.class, AttributeUpgradeSupport.class)
-                .withComputerSupport(tier, "EnergyCube")
+                .withComputerSupport("EnergyCube")
                 .build();
     }
 
@@ -219,7 +219,7 @@ public class EMBlockTypes {
                 .withCustomShape(BlockShapes.FLUID_TANK)
                 .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
                 .without(AttributeParticleFX.class, AttributeStateFacing.class, AttributeRedstone.class, AttributeUpgradeSupport.class)
-                .withComputerSupport(tier, "FluidTank")
+                .withComputerSupport("FluidTank")
                 .build();
     }
 
@@ -229,7 +229,7 @@ public class EMBlockTypes {
                 .withCustomShape(BlockShapes.CHEMICAL_TANK)
                 .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
                 .without(AttributeParticleFX.class, AttributeStateActive.class, AttributeUpgradeSupport.class)
-                .withComputerSupport(tier, "ChemicalTank")
+                .withComputerSupport("ChemicalTank")
                 .build();
     }
 }
