@@ -18,7 +18,9 @@ import mekanism.client.gui.element.gauge.GuiGauge;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.slot.GuiSlot;
 import mekanism.client.gui.element.slot.SlotType;
+import mekanism.client.jei.BaseRecipeCategory;
 import mekanism.client.jei.MekanismJEI;
+import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.common.inventory.container.slot.SlotOverlay;
 import mekanism.common.tile.component.config.DataType;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -29,7 +31,6 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
-import mezz.jei.api.recipe.RecipeType;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -42,7 +43,7 @@ public class SolidificationRecipeCategory extends BaseRecipeCategory<Solidificat
     private final GuiSlot inputItem;
     private final GuiSlot outputItem;
 
-    public SolidificationRecipeCategory(IGuiHelper helper, RecipeType<SolidificationRecipe> recipeType) {
+    public SolidificationRecipeCategory(IGuiHelper helper, MekanismJEIRecipeType<SolidificationRecipe> recipeType) {
         super(helper, recipeType, EMBlocks.SOLIDIFIER, 3, 10, 170, 60);
         //Note: This previously had a lang key for a shorter string. Though ideally especially due to translations
         // we will eventually instead just make the text scale

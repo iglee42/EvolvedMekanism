@@ -122,7 +122,7 @@ public abstract class GuiFactoryMixin {
         Object obj = this;
         GuiFactory gui = (GuiFactory) obj;
         if (evolvedMekanism$be.getFactoryType().equals(EMFactoryType.ALLOYING)){
-            cir.setReturnValue(evolvedMekanism$addElement(gui,progressBar/*.jeiCategories(EMJEI.ALLOYING)*/));
+            cir.setReturnValue(evolvedMekanism$addElement(gui,progressBar.jeiCategories(EMJEI.ALLOYING)));
         }
     }
 

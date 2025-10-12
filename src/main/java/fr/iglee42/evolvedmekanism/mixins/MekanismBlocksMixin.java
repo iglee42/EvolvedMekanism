@@ -27,10 +27,10 @@ public class MekanismBlocksMixin {
 
     @Inject(method = "registerTieredBlock(Lmekanism/api/tier/ITier;Ljava/lang/String;Ljava/util/function/Supplier;Ljava/util/function/Function;)Lmekanism/common/registration/impl/BlockRegistryObject;",at = @At(value = "RETURN",shift = At.Shift.BEFORE), cancellable = true)
     private static <BLOCK extends Block, ITEM extends BlockItem> void evolveddraconic$changeModid(ITier tier, String suffix, Supplier<? extends BLOCK> blockSupplier, Function<BLOCK, ITEM> itemCreator, CallbackInfoReturnable<BlockRegistryObject<BLOCK, ITEM>> cir){
-        //if ((EvolvedMekanism.isEvolvedMekanismTier(tier.getBaseTier()) &&
-        //        (!tier.getBaseTier().equals(BaseTier.CREATIVE) || !suffix.equals("_bin") && !suffix.equals("_energy_cube") && !suffix.equals("_fluid_tank") && !suffix.equals("_chemical_tank"))) || suffix.contains("alloying")){
-        //    cir.setReturnValue(BLOCKS.register(tier.getBaseTier().getLowerName() + suffix, blockSupplier, itemCreator));
-        //}
+        if ((EvolvedMekanism.isEvolvedMekanismTier(tier.getBaseTier()) &&
+                (!tier.getBaseTier().equals(BaseTier.CREATIVE) || !suffix.equals("_bin") && !suffix.equals("_energy_cube") && !suffix.equals("_fluid_tank") && !suffix.equals("_chemical_tank"))) ){
+            cir.setReturnValue(EMBlocks.BLOCKS.register(tier.getBaseTier().getLowerName() + suffix, blockSupplier, itemCreator));
+        }
     }
 
 }

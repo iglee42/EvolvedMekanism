@@ -47,4 +47,14 @@ public class FactoryTierMixin implements InitializableEnum {
         EMFactoryTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,17);
         EMFactoryTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,19);
     }
+
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
+        if (EMFactoryTier.OVERCLOCKED != null)return;
+        EMFactoryTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED,11);
+        EMFactoryTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,13);
+        EMFactoryTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,15);
+        EMFactoryTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", EMBaseTier.MULTIVERSAL,17);
+        EMFactoryTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,19);
+    }
 }

@@ -11,14 +11,15 @@ import mekanism.client.gui.element.gauge.GuiGauge;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.slot.GuiSlot;
 import mekanism.client.gui.element.slot.SlotType;
+import mekanism.client.jei.BaseRecipeCategory;
 import mekanism.client.jei.MekanismJEI;
+import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.common.inventory.container.slot.SlotOverlay;
 import mekanism.common.tile.component.config.DataType;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
-import mezz.jei.api.recipe.RecipeType;
 import org.jetbrains.annotations.NotNull;
 
 public class ChemixerRecipeCategory extends BaseRecipeCategory<ChemixerRecipe> {
@@ -28,7 +29,7 @@ public class ChemixerRecipeCategory extends BaseRecipeCategory<ChemixerRecipe> {
     private final GuiSlot extra;
     private final GuiSlot output;
 
-    public ChemixerRecipeCategory(IGuiHelper helper, RecipeType<ChemixerRecipe> recipeType) {
+    public ChemixerRecipeCategory(IGuiHelper helper, MekanismJEIRecipeType<ChemixerRecipe> recipeType) {
         super(helper, recipeType, EMBlocks.CHEMIXER, 28, 13, 144, 60);
         addElement(new GuiUpArrow(this, 68, 38));
         input = addSlot(SlotType.INPUT, 64, 17);
