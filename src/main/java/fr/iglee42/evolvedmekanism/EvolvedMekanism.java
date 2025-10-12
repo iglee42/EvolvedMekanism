@@ -90,16 +90,16 @@ public class EvolvedMekanism {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
 
-        //EMBlocks.BLOCKS.register(modEventBus);
-        //EMItems.ITEMS.register(modEventBus);
+        EMBlocks.BLOCKS.register(modEventBus);
+        EMItems.ITEMS.register(modEventBus);
         EMCreativeTabs.CREATIVE_TABS.register(modEventBus);
-        //EMTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+        EMTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
         EMInfuseTypes.INFUSE_TYPES.register(modEventBus);
-        //EMContainerTypes.CONTAINER_TYPES.register(modEventBus);
+        EMContainerTypes.CONTAINER_TYPES.register(modEventBus);
         EMLootFunctions.REGISTER.register(modEventBus);
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
-        //EMModules.MODULES.createAndRegister(modEventBus);
-        //EMFluids.FLUIDS.register(modEventBus);
+        EMModules.MODULES.register(modEventBus);
+        EMFluids.FLUIDS.register(modEventBus);
         EMParticleTypes.PARTICLES.register(modEventBus);
 
         registerCompats();
@@ -129,6 +129,7 @@ public class EvolvedMekanism {
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) {
             EMToolsItems.register(modEventBus);
             modEventBus.register(new EMToolsClientRegistration());
+            if (ModsCompats.MEKANISMTOOLS.isLoaded())((InitializableEnum)(Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
         }
     }
 
@@ -163,8 +164,6 @@ public class EvolvedMekanism {
         ((InitializableEnum)(Object)EnergyCubeTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)ChemicalTankTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)FluidTankTier.BASIC).evolvedmekanism$initNewValues();
-
-        //if (ModsCompats.MEKANISMTOOLS.isLoaded())((InitializableEnum)(Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
 
     }
 
