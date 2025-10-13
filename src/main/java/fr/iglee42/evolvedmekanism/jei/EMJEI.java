@@ -117,6 +117,10 @@ public class EMJEI implements IModPlugin {
                 itemsToRemove.add(new ItemStack(b.get()));
             }
         });
+        EMItems.ITEMS.getEntries().stream().filter(i->i.getId().getPath().startsWith("mold_")).forEach(m->{
+            boolean used = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.value().getInputSolid().getRepresentations().stream().anyMatch(s->s.getItem().equals(m.get())));
+            if (!used) itemsToRemove.add(new ItemStack(m.get()));
+        });
         registry.getIngredientManager().removeIngredientsAtRuntime(NeoForgeTypes.FLUID_STACK,fluidsToRemove);
         registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK,itemsToRemove);
         RecipeRegistryHelper.register(registry, JEIRecipeTypes.ALLOYING, EMRecipeType.ALLOYING);
