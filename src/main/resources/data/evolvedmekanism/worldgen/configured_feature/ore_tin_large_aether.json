@@ -8,11 +8,11 @@
     "targets": [
       {
         "state": {
-          "Name": "evolvedmekanism:aether_tin_ore"
+          "Name": "evolvedmekanism:holystone_tin_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
-          "tag": "aether:holystone_ore_replaceables"
+          "tag": "aether:holystone"
         }
       }
     ]
