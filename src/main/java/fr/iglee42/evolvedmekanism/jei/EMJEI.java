@@ -28,6 +28,7 @@ import mekanism.client.jei.CatalystRegistryHelper;
 import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.client.jei.RecipeRegistryHelper;
 import mekanism.client.jei.machine.ItemStackToFluidRecipeCategory;
+import mekanism.common.block.BlockOre;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
 import mekanism.common.util.RegistryUtils;
@@ -52,6 +53,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
@@ -192,6 +194,15 @@ public class EMJEI implements IModPlugin {
             if (!hasMelting && !hasSolidifying){
                 fluidsToRemove.add(ro.getFluidStack(1000));
                 itemsToRemove.add(ro.getFluid().getBucket().getDefaultInstance());
+            }
+        });
+        EMBlocks.BLOCKS.getAllBlocks().stream().filter(b->b.getBlock() instanceof BlockOre).forEach(b->{
+            String stone = b.getId().getPath().split("_")[0].toLowerCase();
+            if (stone.equals("holystone") && !ModList.get().isLoaded("aether")) {
+                itemsToRemove.add(new ItemStack(b.get()));
+            }
+            if ((stone.equals("depthrock") || stone.equals("shiverstone")) && !ModList.get().isLoaded("undergarden")) {
+                itemsToRemove.add(new ItemStack(b.get()));
             }
         });
         registry.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK,fluidsToRemove);
