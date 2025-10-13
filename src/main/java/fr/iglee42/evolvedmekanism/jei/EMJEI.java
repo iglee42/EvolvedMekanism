@@ -36,6 +36,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
@@ -102,7 +103,7 @@ public class EMJEI implements IModPlugin {
             boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.value().getInputFluid().test(new FluidStack(ro.get(), (int) r.value().getInputFluid().getNeededAmount(new FluidStack(ro.get(),1)))));
             if (!hasMelting && !hasSolidifying){
                 fluidsToRemove.add(new FluidStack(ro.get(),1000));
-                itemsToRemove.add(ro.get().getBucket().getDefaultInstance());
+                if (ro.get() instanceof BaseFlowingFluid.Source) itemsToRemove.add(ro.get().getBucket().getDefaultInstance());
             }
         });
         registry.getIngredientManager().removeIngredientsAtRuntime(NeoForgeTypes.FLUID_STACK,fluidsToRemove);
