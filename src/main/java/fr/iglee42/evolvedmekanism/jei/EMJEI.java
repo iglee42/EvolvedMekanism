@@ -197,13 +197,17 @@ public class EMJEI implements IModPlugin {
             }
         });
         EMBlocks.BLOCKS.getAllBlocks().stream().filter(b->b.getBlock() instanceof BlockOre).forEach(b->{
-            String stone = b.getId().getPath().split("_")[0].toLowerCase();
+            String stone = b.getRegistryName().getPath().split("_")[0].toLowerCase();
             if (stone.equals("holystone") && !ModList.get().isLoaded("aether")) {
-                itemsToRemove.add(new ItemStack(b.get()));
+                itemsToRemove.add(new ItemStack(b.getBlock()));
             }
             if ((stone.equals("depthrock") || stone.equals("shiverstone")) && !ModList.get().isLoaded("undergarden")) {
-                itemsToRemove.add(new ItemStack(b.get()));
+                itemsToRemove.add(new ItemStack(b.getBlock()));
             }
+        });
+        EMItems.ITEMS.getAllItems().stream().filter(i->i.getRegistryName().getPath().startsWith("mold_")).forEach(m->{
+            boolean used = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.getInputSolid().getRepresentations().stream().anyMatch(s->s.getItem().equals(m.asItem())));
+            if (!used) itemsToRemove.add(new ItemStack(m.asItem()));
         });
         registry.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK,fluidsToRemove);
         registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK,itemsToRemove);
