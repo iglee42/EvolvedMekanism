@@ -28,7 +28,6 @@
     "client.ShieldTexturesMixin",
     "client.TransmitterTypeDecoratorMixin",
     "containers.FactoryContainerMixin",
-    "items.GenItemTierInstallerMixin",
     "tiers.AlloyTierMixin",
     "tiers.BaseTierMixin",
     "tiers.FactoryTierMixin",

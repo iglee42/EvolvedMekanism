@@ -5,14 +5,18 @@ import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.api.IEvaporationSolar;
 import mekanism.api.RelativeSide;
 import mekanism.common.tile.interfaces.IBoundingBlock;
+import mekanism.common.upgrade.IUpgradeData;
 import mekanism.generators.common.config.MekanismGeneratorsConfig;
 import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGenerator
         implements IBoundingBlock, IEvaporationSolar {
@@ -162,4 +166,17 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
         }
     }
 
+    @Override
+    public @Nullable IUpgradeData getUpgradeData(HolderLookup.Provider provider) {
+        return new IUpgradeData() {
+            @Override
+            public int hashCode() {
+                return super.hashCode();
+            }
+        };
+    }
+
+    @Override
+    public void parseUpgradeData(HolderLookup.Provider provider, @NotNull IUpgradeData data) {
+    }
 }

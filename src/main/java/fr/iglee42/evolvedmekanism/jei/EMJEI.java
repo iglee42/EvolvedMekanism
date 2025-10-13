@@ -37,6 +37,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -101,8 +102,8 @@ public class EMJEI implements IModPlugin {
         List<FluidStack> fluidsToRemove = new ArrayList<>();
         List<ItemStack> itemsToRemove = new ArrayList<>();
         EMFluids.FLUIDS.getFluidEntries().forEach(ro->{
-            boolean hasMelting = EMRecipeType.MELTING.getRecipes(null).stream().anyMatch(r->r.value().getOutput(ItemStack.EMPTY).getFluid().equals(ro.get()));
-            boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.value().getInputFluid().test(new FluidStack(ro.get(), (int) r.value().getInputFluid().getNeededAmount(new FluidStack(ro.get(),1)))));
+            boolean hasMelting = EMRecipeType.MELTING.getRecipes((Level) null).stream().anyMatch(r->r.value().getOutput(ItemStack.EMPTY).getFluid().equals(ro.get()));
+            boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes((Level) null).stream().anyMatch(r->r.value().getInputFluid().test(new FluidStack(ro.get(), (int) r.value().getInputFluid().getNeededAmount(new FluidStack(ro.get(),1)))));
             if (!hasMelting && !hasSolidifying){
                 fluidsToRemove.add(new FluidStack(ro.get(),1000));
                 if (ro.get() instanceof BaseFlowingFluid.Source) itemsToRemove.add(ro.get().getBucket().getDefaultInstance());
@@ -118,7 +119,7 @@ public class EMJEI implements IModPlugin {
             }
         });
         EMItems.ITEMS.getEntries().stream().filter(i->i.getId().getPath().startsWith("mold_")).forEach(m->{
-            boolean used = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.value().getInputSolid().getRepresentations().stream().anyMatch(s->s.getItem().equals(m.get())));
+            boolean used = EMRecipeType.SOLIDIFICATION.getRecipes((Level) null).stream().anyMatch(r->r.value().getInputSolid().getRepresentations().stream().anyMatch(s->s.getItem().equals(m.get())));
             if (!used) itemsToRemove.add(new ItemStack(m.get()));
         });
         registry.getIngredientManager().removeIngredientsAtRuntime(NeoForgeTypes.FLUID_STACK,fluidsToRemove);
