@@ -47,7 +47,6 @@ public class BaseTierMixin implements InitializableEnum {
     @Override
     public void evolvedmekanism$initNewValues() {
         if (EMBaseTier.OVERCLOCKED != null) return;
-        EvolvedMekanism.logger.info("Init Base with Interface");
         EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 221, 0},MapColor.COLOR_LIGHT_GREEN);
         EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{252, 158, 250},MapColor.COLOR_PURPLE);
         EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);
@@ -56,7 +55,6 @@ public class BaseTierMixin implements InitializableEnum {
     @Inject(method = "<clinit>",at = @At("TAIL"))
     private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMBaseTier.OVERCLOCKED != null)return;
-        EvolvedMekanism.logger.info("Init Base with Inject");
         EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 221, 0},MapColor.COLOR_LIGHT_GREEN);
         EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{252, 158, 250},MapColor.COLOR_PURPLE);
         EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);

@@ -275,9 +275,6 @@ public class EMBlocks {
     }
 
     private static <BLOCK extends Block, ITEM extends BlockItem> BlockRegistryObject<BLOCK, ITEM> registerTieredBlock(ITier tier, String suffix, Supplier<? extends BLOCK> blockSupplier, Function<BLOCK, ITEM> itemCreator) {
-        EvolvedMekanism.logger.info(tier.toString());
-        EvolvedMekanism.logger.info(String.valueOf(tier.getBaseTier()));
-        EvolvedMekanism.logger.info(tier.getClass().getName());
         return BLOCKS.register(tier.getBaseTier().getLowerName() + suffix, blockSupplier, itemCreator);
     }
     private static BlockRegistryObject<Block, BlockItem> registerAlloyBlock(AlloyTier tier) {

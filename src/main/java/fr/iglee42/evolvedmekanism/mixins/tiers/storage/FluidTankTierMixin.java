@@ -43,7 +43,6 @@ public class FluidTankTierMixin implements InitializableEnum {
     @Override
     public void evolvedmekanism$initNewValues() {
         if (EMFluidTankTier.OVERCLOCKED != null) return;
-        EvolvedMekanism.logger.info("Init Tanks with Interface");
         EMFluidTankTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 512_000,256_000);
         EMFluidTankTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,1_024_000,1_024_000);
         EMFluidTankTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,2_048_000,4_096_000);
@@ -53,7 +52,6 @@ public class FluidTankTierMixin implements InitializableEnum {
     @Inject(method = "<clinit>",at = @At("TAIL"))
     private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMFluidTankTier.OVERCLOCKED != null) return;
-        EvolvedMekanism.logger.info("Init Tanks with Inject {}",EMBaseTier.OVERCLOCKED);
         EMFluidTankTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 512_000,256_000);
         EMFluidTankTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,1_024_000,1_024_000);
         EMFluidTankTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,2_048_000,4_096_000);

@@ -50,7 +50,6 @@ public abstract class InductionCellTierMixin implements InitializableEnum {
                 ordinal,
                 tier,storage);
         variants.add(casing);
-        variants.forEach(t-> EvolvedMekanism.logger.debug(String.valueOf(t)));
         InductionCellTierMixin.$VALUES = variants.toArray(new InductionCellTier[0]);
         return casing;
     }

@@ -45,7 +45,6 @@ public class EnergyCubeTierMixin implements InitializableEnum {
     @Override
     public void evolvedmekanism$initNewValues() {
         if (EMEnergyCubeTier.OVERCLOCKED != null) return;
-        EvolvedMekanism.logger.info("Init Cubes with Interface");
         EMEnergyCubeTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_024_000_000L,1_024_000);
         EMEnergyCubeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,4_096_000_000L,4_096_000);
         EMEnergyCubeTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,16_384_000_000L,16_384_000);
@@ -56,7 +55,6 @@ public class EnergyCubeTierMixin implements InitializableEnum {
     private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
         if (EMEnergyCubeTier.OVERCLOCKED != null) return;
         BaseTier ignored = BaseTier.BASIC;
-        EvolvedMekanism.logger.info("Init Cubes with Inject {}",EMBaseTier.OVERCLOCKED);
         EMEnergyCubeTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", EMBaseTier.OVERCLOCKED, 1_024_000_000L,1_024_000);
         EMEnergyCubeTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM",  EMBaseTier.QUANTUM,4_096_000_000L,4_096_000);
         EMEnergyCubeTier.DENSE = evolvedmekanism$addVariant("DENSE", EMBaseTier.DENSE,16_384_000_000L,16_384_000);
