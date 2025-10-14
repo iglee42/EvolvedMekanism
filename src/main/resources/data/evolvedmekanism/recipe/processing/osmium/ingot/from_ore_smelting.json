@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.6,
+  "ingredient": [
+    {
+      "item": "evolvedmekanism:netherrack_osmium_ore"
+    },
+    {
+      "item": "evolvedmekanism:end_stone_osmium_ore"
+    },
+    {
+      "item": "evolvedmekanism:depthrock_osmium_ore"
+    },
+    {
+      "item": "evolvedmekanism:shiverstone_osmium_ore"
+    },
+    {
+      "item": "evolvedmekanism:holystone_osmium_ore"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mekanism:ingot_osmium"
+  }
+}
