@@ -134,7 +134,7 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
-        //CatalystRegistryHelper.register(registry, MekanismJEI.genericRecipeType(JEIRecipeTypes.ALLOYING), Arrays.asList(EMBlocks.ALLOYER));
+        CatalystRegistryHelper.register(registry, MekanismJEI.genericRecipeType(JEIRecipeTypes.ALLOYING), Arrays.asList(EMBlocks.ALLOYER));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.CHEMIXING),Arrays.asList(EMBlocks.CHEMIXER));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.APT),Arrays.asList(EMBlocks.APT_CASING,EMBlocks.APT_PORT,EMBlocks.SUPERCHARGING_ELEMENT));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.MELTING),Arrays.asList(EMBlocks.MELTER));
