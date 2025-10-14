@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "evolvedmekanism:alloys/creative"
+        },
+        "C": {
+            "tag": "c:circuits/creative"
+        },
+        "P": {
+            "item": "evolvedmekanism:multiversal_bin"
+        },
+        "_": {
+            "tag": "mekanism:stone_crafting_materials"
+        }
+    },
+    "pattern": [
+        "_C_",
+        "APA",
+        "___"
+    ],
+    "result": {
+        "id": "mekanism:creative_bin"
+    }
+}
