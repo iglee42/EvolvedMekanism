@@ -2,7 +2,7 @@
     "type": "evolvedmekanism:melting",
     "input": {
         "ingredient": {
-            "tag": "forge:ingots/lapis"
+            "tag": "forge:gems/lapis"
         }
     },
     "output": {
@@ -14,7 +14,7 @@
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:ingots/lapis"
+                "tag": "forge:gems/lapis"
             }
         }
     ]

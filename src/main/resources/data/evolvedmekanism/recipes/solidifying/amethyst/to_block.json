@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_amethyst",
-        "amount": 1296
+        "amount": 576
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 1296
+        "amount": 576
     },
     "output": {
         "tag": "forge:storage_blocks/amethyst"

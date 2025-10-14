@@ -1,13 +1,13 @@
 {
     "type": "evolvedmekanism:solidifying",
-    "duration": 60,
+    "duration": 1215,
     "itemInput": {
         "ingredient": {
-            "item": "evolvedmekanism:mold_ingot"
+            "item": "evolvedmekanism:mold_dust"
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_amethyst",
+        "fluid": "evolvedmekanism:molten_glowstone",
         "amount": 144
     },
     "extraInput": {
@@ -15,14 +15,14 @@
         "amount": 144
     },
     "output": {
-        "tag": "forge:ingots/amethyst"
+        "tag": "forge:dusts/glowstone"
     },
     "conditions": [
         {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:ingots/amethyst"
+                "tag": "forge:dusts/glowstone"
             }
         }
     ]

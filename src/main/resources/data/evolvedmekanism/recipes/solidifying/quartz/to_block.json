@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_quartz",
-        "amount": 2916
+        "amount": 576
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 2916
+        "amount": 576
     },
     "output": {
         "tag": "forge:storage_blocks/quartz"

@@ -2,7 +2,7 @@
     "type": "evolvedmekanism:melting",
     "input": {
         "ingredient": {
-            "tag": "forge:ingots/amethyst"
+            "tag": "forge:gems/amethyst"
         }
     },
     "output": {
@@ -14,7 +14,7 @@
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:ingots/amethyst"
+                "tag": "forge:gems/amethyst"
             }
         }
     ]

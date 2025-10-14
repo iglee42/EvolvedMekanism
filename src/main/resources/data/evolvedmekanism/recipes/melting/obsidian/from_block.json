@@ -2,19 +2,19 @@
     "type": "evolvedmekanism:melting",
     "input": {
         "ingredient": {
-            "tag": "forge:storage_blocks/obsidian"
+            "tag": "forge:obsidian"
         }
     },
     "output": {
         "fluid": "evolvedmekanism:molten_obsidian",
-        "amount": 1296
+        "amount": 576
     },
     "conditions": [
         {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:storage_blocks/obsidian"
+                "tag": "forge:obsidian"
             }
         }
     ]

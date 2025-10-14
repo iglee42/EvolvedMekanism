@@ -3,11 +3,11 @@
     "duration": 60,
     "itemInput": {
         "ingredient": {
-            "item": "evolvedmekanism:mold_ingot"
+            "item": "evolvedmekanism:mold_gem"
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_lapis",
+        "fluid": "evolvedmekanism:molten_amethyst",
         "amount": 144
     },
     "extraInput": {
@@ -15,14 +15,14 @@
         "amount": 144
     },
     "output": {
-        "tag": "forge:ingots/lapis"
+        "tag": "forge:gems/amethyst"
     },
     "conditions": [
         {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:ingots/lapis"
+                "tag": "forge:gems/amethyst"
             }
         }
     ]
