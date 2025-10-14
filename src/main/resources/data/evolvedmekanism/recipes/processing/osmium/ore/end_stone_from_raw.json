@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:combining",
+  "extraInput": {
+    "amount": 1,
+    "ingredient": {
+      "item": "minecraft:end_stone"
+    }
+  },
+  "mainInput": {
+    "amount": 8,
+    "ingredient": {
+      "tag": "forge:raw_materials/osmium"
+    }
+  },
+  "output": {
+    "count": 1,
+    "item": "evolvedmekanism:end_stone_osmium_ore"
+  }
+}

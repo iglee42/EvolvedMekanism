@@ -1,0 +1,25 @@
+{
+  "type": "mekanism:combining",
+  "extraInput": {
+    "amount": 1,
+    "ingredient": {
+      "item": "undergarden:shiverstone"
+    }
+  },
+  "mainInput": {
+    "amount": 8,
+    "ingredient": {
+      "tag": "forge:raw_materials/osmium"
+    }
+  },
+  "output": {
+    "count": 1,
+    "item": "evolvedmekanism:shiverstone_osmium_ore"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "undergarden"
+    }
+  ]
+}
