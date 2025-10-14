@@ -2,10 +2,10 @@
   "type": "evolvedmekanism:solidifying",
   "duration": 60,
   "item_input": {
-    "item": "evolvedmekanism:mold_ingot"
+    "item": "evolvedmekanism:mold_gem"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_amethyst",
+    "fluid": "evolvedmekanism:molten_lapis",
     "amount": 144
   },
   "extra_input": {
@@ -13,14 +13,14 @@
     "amount": 144
   },
   "output": {
-    "tag": "c:ingots/amethyst"
+    "tag": "c:gems/lapis"
   },
   "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {
         "type": "neoforge:tag_empty",
-        "tag": "c:ingots/amethyst"
+        "tag": "c:gems/lapis"
       }
     }
   ]

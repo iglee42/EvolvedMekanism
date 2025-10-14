@@ -1,18 +1,18 @@
 {
   "type": "evolvedmekanism:melting",
   "input": {
-    "tag": "c:storage_blocks/obsidian"
+    "tag": "c:obsidians/normal"
   },
   "output": {
     "id": "evolvedmekanism:molten_obsidian",
-    "amount": 1296
+    "amount": 576
   },
   "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {
         "type": "neoforge:tag_empty",
-        "tag": "c:storage_blocks/obsidian"
+        "tag": "c:obsidians/normal"
       }
     }
   ]

@@ -1,10 +1,10 @@
 {
   "type": "evolvedmekanism:melting",
   "input": {
-    "tag": "c:ingots/lapis"
+    "tag": "c:gems/amethyst"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lapis",
+    "id": "evolvedmekanism:molten_amethyst",
     "amount": 144
   },
   "neoforge:conditions": [
@@ -12,7 +12,7 @@
       "type": "neoforge:not",
       "value": {
         "type": "neoforge:tag_empty",
-        "tag": "c:ingots/lapis"
+        "tag": "c:gems/amethyst"
       }
     }
   ]
