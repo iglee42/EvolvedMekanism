@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:combining",
+  "extra_input": {
+    "count": 1,
+    "item": "minecraft:end_stone"
+  },
+  "main_input": {
+    "count": 8,
+    "tag": "c:raw_materials/uranium"
+  },
+  "output": {
+    "count": 1,
+    "id": "evolvedmekanism:end_stone_uranium_ore"
+  }
+}
