@@ -223,7 +223,7 @@ public class EMJEI implements IModPlugin {
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
         CatalystRegistryHelper.register(registry, EMBlocks.ALLOYER);
         CatalystRegistryHelper.register(registry, EMBlocks.CHEMIXER);
-        CatalystRegistryHelper.register(registry,APT, EMBlocks.APT_CASING,EMBlocks.APT_PORT);
+        CatalystRegistryHelper.register(registry,APT, EMBlocks.APT_CASING,EMBlocks.APT_PORT,EMBlocks.SUPERCHARGING_ELEMENT);
         CatalystRegistryHelper.register(registry, EMBlocks.MELTER);
         CatalystRegistryHelper.register(registry, EMBlocks.SOLIDIFIER);
 
