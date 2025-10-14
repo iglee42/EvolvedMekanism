@@ -2,7 +2,7 @@
   "type": "mekanism:mek_data",
   "key": {
     "#": {
-      "item": "minecraft:nether_star"
+      "tag": "c:alloys/creative"
     },
     "I": {
       "tag": "c:ingots/lead"
