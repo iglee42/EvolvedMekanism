@@ -1,0 +1,15 @@
+{
+  "type": "evolvedmekanism:apt",
+  "chemicalInput": {
+    "amount": 100,
+    "gas": "mekanism:spent_nuclear_waste"
+  },
+  "itemInput": {
+    "ingredient": {
+      "tag": "forge:dusts/gold"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:dust_better_gold"
+  }
+}

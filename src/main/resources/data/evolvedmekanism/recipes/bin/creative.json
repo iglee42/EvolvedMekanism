@@ -11,7 +11,7 @@
             "item": "evolvedmekanism:multiversal_bin"
         },
         "_": {
-            "tag": "mekanism:stone_crafting_materials"
+            "tag": "forge:cobblestone/normal"
         }
     },
     "pattern": [
