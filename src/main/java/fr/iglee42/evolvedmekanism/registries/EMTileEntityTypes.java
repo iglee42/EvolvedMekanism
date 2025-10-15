@@ -16,12 +16,16 @@ import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
+import mekanism.api.functions.ConstantPredicates;
+import mekanism.common.Mekanism;
 import mekanism.common.block.BlockEnergyCube;
 import mekanism.common.block.basic.BlockBin;
 import mekanism.common.block.basic.BlockFluidTank;
 import mekanism.common.block.prefab.BlockFactoryMachine;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.content.blocktype.FactoryType;
+import mekanism.common.integration.computer.ComputerCapabilityHelper;
+import mekanism.common.integration.energy.EnergyCompatUtils;
 import mekanism.common.item.block.ItemBlockChemicalTank;
 import mekanism.common.item.block.machine.ItemBlockFactory;
 import mekanism.common.registration.impl.BlockRegistryObject;
@@ -34,6 +38,7 @@ import mekanism.common.tile.TileEntityBin;
 import mekanism.common.tile.TileEntityChemicalTank;
 import mekanism.common.tile.TileEntityEnergyCube;
 import mekanism.common.tile.TileEntityFluidTank;
+import mekanism.common.tile.base.CapabilityTileEntity;
 import mekanism.common.tile.base.TileEntityMekanism;
 import mekanism.common.tile.factory.*;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
@@ -102,35 +107,35 @@ public class EMTileEntityTypes {
 
 
     //Logistic Transporters
-    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> OVERCLOCKED_LOGISTICAL_TRANSPORTER = TILE_ENTITY_TYPES.builder(EMBlocks.OVERCLOCKED_LOGISTICAL_TRANSPORTER, (pos, state) -> new TileEntityLogisticalTransporter(EMBlocks.OVERCLOCKED_LOGISTICAL_TRANSPORTER, pos, state)).clientTicker(TileEntityLogisticalTransporterBase::tickClient).serverTicker(TileEntityTransmitter::tickServer).build();
-    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> QUANTUM_LOGISTICAL_TRANSPORTER = TILE_ENTITY_TYPES.builder(EMBlocks.QUANTUM_LOGISTICAL_TRANSPORTER, (pos, state) -> new TileEntityLogisticalTransporter(EMBlocks.QUANTUM_LOGISTICAL_TRANSPORTER, pos, state)).clientTicker(TileEntityLogisticalTransporterBase::tickClient).serverTicker(TileEntityTransmitter::tickServer).build();
-    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> DENSE_LOGISTICAL_TRANSPORTER = TILE_ENTITY_TYPES.builder(EMBlocks.DENSE_LOGISTICAL_TRANSPORTER, (pos, state) -> new TileEntityLogisticalTransporter(EMBlocks.DENSE_LOGISTICAL_TRANSPORTER, pos, state)).clientTicker(TileEntityLogisticalTransporterBase::tickClient).serverTicker(TileEntityTransmitter::tickServer).build();
-    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> MULTIVERSAL_LOGISTICAL_TRANSPORTER = TILE_ENTITY_TYPES.builder(EMBlocks.MULTIVERSAL_LOGISTICAL_TRANSPORTER, (pos, state) -> new TileEntityLogisticalTransporter(EMBlocks.MULTIVERSAL_LOGISTICAL_TRANSPORTER, pos, state)).clientTicker(TileEntityLogisticalTransporterBase::tickClient).serverTicker(TileEntityTransmitter::tickServer).build();
-    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> CREATIVE_LOGISTICAL_TRANSPORTER = TILE_ENTITY_TYPES.builder(EMBlocks.CREATIVE_LOGISTICAL_TRANSPORTER, (pos, state) -> new TileEntityLogisticalTransporter(EMBlocks.CREATIVE_LOGISTICAL_TRANSPORTER, pos, state)).clientTicker(TileEntityLogisticalTransporterBase::tickClient).serverTicker(TileEntityTransmitter::tickServer).build();
+    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> OVERCLOCKED_LOGISTICAL_TRANSPORTER = registerTransporter(EMBlocks.OVERCLOCKED_LOGISTICAL_TRANSPORTER, TileEntityLogisticalTransporter::new);
+    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> QUANTUM_LOGISTICAL_TRANSPORTER = registerTransporter(EMBlocks.QUANTUM_LOGISTICAL_TRANSPORTER, TileEntityLogisticalTransporter::new);
+    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> DENSE_LOGISTICAL_TRANSPORTER = registerTransporter(EMBlocks.DENSE_LOGISTICAL_TRANSPORTER, TileEntityLogisticalTransporter::new);
+    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> MULTIVERSAL_LOGISTICAL_TRANSPORTER = registerTransporter(EMBlocks.MULTIVERSAL_LOGISTICAL_TRANSPORTER, TileEntityLogisticalTransporter::new);
+    public static final TileEntityTypeRegistryObject<TileEntityLogisticalTransporter> CREATIVE_LOGISTICAL_TRANSPORTER = registerTransporter(EMBlocks.CREATIVE_LOGISTICAL_TRANSPORTER, TileEntityLogisticalTransporter::new);
     //Mechanical Pipes
-    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> OVERCLOCKED_MECHANICAL_PIPE = registerTransmitter(EMBlocks.OVERCLOCKED_MECHANICAL_PIPE, (pos, state) -> new TileEntityMechanicalPipe(EMBlocks.OVERCLOCKED_MECHANICAL_PIPE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> QUANTUM_MECHANICAL_PIPE = registerTransmitter(EMBlocks.QUANTUM_MECHANICAL_PIPE, (pos, state) -> new TileEntityMechanicalPipe(EMBlocks.QUANTUM_MECHANICAL_PIPE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> DENSE_MECHANICAL_PIPE = registerTransmitter(EMBlocks.DENSE_MECHANICAL_PIPE, (pos, state) -> new TileEntityMechanicalPipe(EMBlocks.DENSE_MECHANICAL_PIPE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> MULTIVERSAL_MECHANICAL_PIPE = registerTransmitter(EMBlocks.MULTIVERSAL_MECHANICAL_PIPE, (pos, state) -> new TileEntityMechanicalPipe(EMBlocks.MULTIVERSAL_MECHANICAL_PIPE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> CREATIVE_MECHANICAL_PIPE = registerTransmitter(EMBlocks.CREATIVE_MECHANICAL_PIPE, (pos, state) -> new TileEntityMechanicalPipe(EMBlocks.CREATIVE_MECHANICAL_PIPE, pos, state));
+    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> OVERCLOCKED_MECHANICAL_PIPE = registerPipe(EMBlocks.OVERCLOCKED_MECHANICAL_PIPE);
+    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> QUANTUM_MECHANICAL_PIPE = registerPipe(EMBlocks.QUANTUM_MECHANICAL_PIPE);
+    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> DENSE_MECHANICAL_PIPE = registerPipe(EMBlocks.DENSE_MECHANICAL_PIPE);
+    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> MULTIVERSAL_MECHANICAL_PIPE = registerPipe(EMBlocks.MULTIVERSAL_MECHANICAL_PIPE);
+    public static final TileEntityTypeRegistryObject<TileEntityMechanicalPipe> CREATIVE_MECHANICAL_PIPE = registerPipe(EMBlocks.CREATIVE_MECHANICAL_PIPE);
     //Pressurized Tubes
-    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> OVERCLOCKED_PRESSURIZED_TUBE = registerTransmitter(EMBlocks.OVERCLOCKED_PRESSURIZED_TUBE, (pos, state) -> new TileEntityPressurizedTube(EMBlocks.OVERCLOCKED_PRESSURIZED_TUBE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> QUANTUM_PRESSURIZED_TUBE = registerTransmitter(EMBlocks.QUANTUM_PRESSURIZED_TUBE, (pos, state) -> new TileEntityPressurizedTube(EMBlocks.QUANTUM_PRESSURIZED_TUBE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> DENSE_PRESSURIZED_TUBE = registerTransmitter(EMBlocks.DENSE_PRESSURIZED_TUBE, (pos, state) -> new TileEntityPressurizedTube(EMBlocks.DENSE_PRESSURIZED_TUBE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> MULTIVERSAL_PRESSURIZED_TUBE = registerTransmitter(EMBlocks.MULTIVERSAL_PRESSURIZED_TUBE, (pos, state) -> new TileEntityPressurizedTube(EMBlocks.MULTIVERSAL_PRESSURIZED_TUBE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> CREATIVE_PRESSURIZED_TUBE = registerTransmitter(EMBlocks.CREATIVE_PRESSURIZED_TUBE, (pos, state) -> new TileEntityPressurizedTube(EMBlocks.CREATIVE_PRESSURIZED_TUBE, pos, state));
+    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> OVERCLOCKED_PRESSURIZED_TUBE = registerTube(EMBlocks.OVERCLOCKED_PRESSURIZED_TUBE);
+    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> QUANTUM_PRESSURIZED_TUBE = registerTube(EMBlocks.QUANTUM_PRESSURIZED_TUBE);
+    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> DENSE_PRESSURIZED_TUBE = registerTube(EMBlocks.DENSE_PRESSURIZED_TUBE);
+    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> MULTIVERSAL_PRESSURIZED_TUBE = registerTube(EMBlocks.MULTIVERSAL_PRESSURIZED_TUBE);
+    public static final TileEntityTypeRegistryObject<TileEntityPressurizedTube> CREATIVE_PRESSURIZED_TUBE = registerTube(EMBlocks.CREATIVE_PRESSURIZED_TUBE);
     //Thermodynamic Conductors
-    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> OVERCLOCKED_THERMODYNAMIC_CONDUCTOR = registerTransmitter(EMBlocks.OVERCLOCKED_THERMODYNAMIC_CONDUCTOR, (pos, state) -> new TileEntityThermodynamicConductor(EMBlocks.OVERCLOCKED_THERMODYNAMIC_CONDUCTOR, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> QUANTUM_THERMODYNAMIC_CONDUCTOR = registerTransmitter(EMBlocks.QUANTUM_THERMODYNAMIC_CONDUCTOR, (pos, state) -> new TileEntityThermodynamicConductor(EMBlocks.QUANTUM_THERMODYNAMIC_CONDUCTOR, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> DENSE_THERMODYNAMIC_CONDUCTOR = registerTransmitter(EMBlocks.DENSE_THERMODYNAMIC_CONDUCTOR, (pos, state) -> new TileEntityThermodynamicConductor(EMBlocks.DENSE_THERMODYNAMIC_CONDUCTOR, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> MULTIVERSAL_THERMODYNAMIC_CONDUCTOR = registerTransmitter(EMBlocks.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR, (pos, state) -> new TileEntityThermodynamicConductor(EMBlocks.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> CREATIVE_THERMODYNAMIC_CONDUCTOR = registerTransmitter(EMBlocks.CREATIVE_THERMODYNAMIC_CONDUCTOR, (pos, state) -> new TileEntityThermodynamicConductor(EMBlocks.CREATIVE_THERMODYNAMIC_CONDUCTOR, pos, state));
+    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> OVERCLOCKED_THERMODYNAMIC_CONDUCTOR = registerConductor(EMBlocks.OVERCLOCKED_THERMODYNAMIC_CONDUCTOR);
+    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> QUANTUM_THERMODYNAMIC_CONDUCTOR = registerConductor(EMBlocks.QUANTUM_THERMODYNAMIC_CONDUCTOR);
+    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> DENSE_THERMODYNAMIC_CONDUCTOR = registerConductor(EMBlocks.DENSE_THERMODYNAMIC_CONDUCTOR);
+    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> MULTIVERSAL_THERMODYNAMIC_CONDUCTOR = registerConductor(EMBlocks.MULTIVERSAL_THERMODYNAMIC_CONDUCTOR);
+    public static final TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> CREATIVE_THERMODYNAMIC_CONDUCTOR = registerConductor(EMBlocks.CREATIVE_THERMODYNAMIC_CONDUCTOR);
     //Universal Cables
-    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> OVERCLOCKED_UNIVERSAL_CABLE = registerTransmitter(EMBlocks.OVERCLOCKED_UNIVERSAL_CABLE, (pos, state) -> new TileEntityUniversalCable(EMBlocks.OVERCLOCKED_UNIVERSAL_CABLE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> QUANTUM_UNIVERSAL_CABLE = registerTransmitter(EMBlocks.QUANTUM_UNIVERSAL_CABLE, (pos, state) -> new TileEntityUniversalCable(EMBlocks.QUANTUM_UNIVERSAL_CABLE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> DENSE_UNIVERSAL_CABLE = registerTransmitter(EMBlocks.DENSE_UNIVERSAL_CABLE, (pos, state) -> new TileEntityUniversalCable(EMBlocks.DENSE_UNIVERSAL_CABLE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> MULTIVERSAL_UNIVERSAL_CABLE = registerTransmitter(EMBlocks.MULTIVERSAL_UNIVERSAL_CABLE, (pos, state) -> new TileEntityUniversalCable(EMBlocks.MULTIVERSAL_UNIVERSAL_CABLE, pos, state));
-    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> CREATIVE_UNIVERSAL_CABLE = registerTransmitter(EMBlocks.CREATIVE_UNIVERSAL_CABLE, (pos, state) -> new TileEntityUniversalCable(EMBlocks.CREATIVE_UNIVERSAL_CABLE, pos, state));
+    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> OVERCLOCKED_UNIVERSAL_CABLE = registerCable(EMBlocks.OVERCLOCKED_UNIVERSAL_CABLE);
+    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> QUANTUM_UNIVERSAL_CABLE = registerCable(EMBlocks.QUANTUM_UNIVERSAL_CABLE);
+    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> DENSE_UNIVERSAL_CABLE = registerCable(EMBlocks.DENSE_UNIVERSAL_CABLE);
+    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> MULTIVERSAL_UNIVERSAL_CABLE = registerCable(EMBlocks.MULTIVERSAL_UNIVERSAL_CABLE);
+    public static final TileEntityTypeRegistryObject<TileEntityUniversalCable> CREATIVE_UNIVERSAL_CABLE = registerCable(EMBlocks.CREATIVE_UNIVERSAL_CABLE);
 
     //Tiered Tiles
     //Energy Cubes
@@ -239,12 +244,55 @@ public class EMTileEntityTypes {
             .build();
 
 
-    private static <BE extends TileEntityTransmitter> TileEntityTypeRegistryObject<BE> registerTransmitter(BlockRegistryObject<?, ?> block,
-                                                                                                           BlockEntityType.BlockEntitySupplier<? extends BE> factory) {
-        //Note: There is no data fixer type as forge does not currently have a way exposing data fixers to mods yet
-        return TILE_ENTITY_TYPES.<BE>builder(block, factory).serverTicker(TileEntityTransmitter::tickServer).build();
+    private static <BE extends TileEntityLogisticalTransporterBase> TileEntityTypeRegistryObject<BE> registerTransporter(DeferredHolder<Block, ?> block, BlockEntityFactory<BE> factory) {
+        return transporterBuilder(block, factory).build();
     }
 
+    private static <BE extends TileEntityLogisticalTransporterBase> TileEntityTypeDeferredRegister.BlockEntityTypeBuilder<BE> transporterBuilder(DeferredHolder<Block, ?> block, BlockEntityFactory<BE> factory) {
+        return transmitterBuilder(block, factory)
+                .clientTicker(TileEntityLogisticalTransporterBase::tickClient)
+                .with(Capabilities.ITEM.block(), CapabilityTileEntity.ITEM_HANDLER_PROVIDER);
+    }
+
+    private static TileEntityTypeRegistryObject<TileEntityMechanicalPipe> registerPipe(DeferredHolder<Block, ?> block) {
+        TileEntityTypeDeferredRegister.BlockEntityTypeBuilder<TileEntityMechanicalPipe> builder = transmitterBuilder(block, TileEntityMechanicalPipe::new)
+                .with(Capabilities.FLUID.block(), CapabilityTileEntity.FLUID_HANDLER_PROVIDER);
+        if (Mekanism.hooks.computerCompatEnabled()) {
+            ComputerCapabilityHelper.addComputerCapabilities(builder, ConstantPredicates.ALWAYS_TRUE);
+        }
+        return builder.build();
+    }
+
+    private static TileEntityTypeRegistryObject<TileEntityPressurizedTube> registerTube(DeferredHolder<Block, ?> block) {
+        TileEntityTypeDeferredRegister.BlockEntityTypeBuilder<TileEntityPressurizedTube> builder = transmitterBuilder(block, TileEntityPressurizedTube::new)
+                .with(Capabilities.CHEMICAL.block(), CapabilityTileEntity.CHEMICAL_HANDLER_PROVIDER);
+        if (Mekanism.hooks.computerCompatEnabled()) {
+            ComputerCapabilityHelper.addComputerCapabilities(builder, ConstantPredicates.ALWAYS_TRUE);
+        }
+        return builder.build();
+    }
+
+    private static TileEntityTypeRegistryObject<TileEntityThermodynamicConductor> registerConductor(DeferredHolder<Block, ?> block) {
+        return transmitterBuilder(block, TileEntityThermodynamicConductor::new)
+                .with(Capabilities.HEAT, CapabilityTileEntity.HEAT_HANDLER_PROVIDER)
+                .build();
+    }
+
+    private static TileEntityTypeRegistryObject<TileEntityUniversalCable> registerCable(DeferredHolder<Block, ?> block) {
+        TileEntityTypeDeferredRegister.BlockEntityTypeBuilder<TileEntityUniversalCable> builder = transmitterBuilder(block, TileEntityUniversalCable::new);
+        EnergyCompatUtils.addBlockCapabilities(builder);
+        if (Mekanism.hooks.computerCompatEnabled()) {
+            ComputerCapabilityHelper.addComputerCapabilities(builder, ConstantPredicates.ALWAYS_TRUE);
+        }
+        return builder.build();
+    }
+
+    private static <BE extends TileEntityTransmitter> TileEntityTypeDeferredRegister.BlockEntityTypeBuilder<BE> transmitterBuilder(DeferredHolder<Block, ?> block, BlockEntityFactory<BE> factory) {
+        return TILE_ENTITY_TYPES.builder(block, (pos, state) -> factory.create(block, pos, state))
+                .serverTicker(TileEntityTransmitter::tickServer)
+                .withSimple(Capabilities.ALLOY_INTERACTION)
+                .with(Capabilities.CONFIGURABLE, TileEntityTransmitter.CONFIGURABLE_PROVIDER);
+    }
     private static <BE extends TileEntityTieredPersonalStorage> TileEntityTypeRegistryObject<BE> registerTieredStorage(BlockRegistryObject<?, ?> block, PersonalStorageTier tier,
                                                                                                                        BlockEntitySupplier<BE> factory){
         return TILE_ENTITY_TYPES.mekBuilder(block,(pos,state)->factory.create(block,pos,state,tier)).serverTicker(TileEntityMekanism::tickServer).clientTicker(TileEntityMekanism::tickClient).build();
