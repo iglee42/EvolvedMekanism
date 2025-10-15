@@ -1,0 +1,19 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:plates/refined_redstone"
+  },
+  "output": {
+    "id": "evolvedmekanism:molten_refined_redstone",
+    "amount": 144
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:plates/refined_redstone"
+      }
+    }
+  ]
+}
