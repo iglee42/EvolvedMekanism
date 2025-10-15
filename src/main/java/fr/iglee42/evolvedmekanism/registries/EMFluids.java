@@ -60,6 +60,7 @@ public class EMFluids {
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_QUEENS_SLIME = registerMolten("queens_slime",0xFF38994D);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_REFINED_GLOWSTONE = registerMolten("refined_glowstone",0xFFFFF4AC);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_REFINED_OBSIDIAN = registerMolten("refined_obsidian",0xFF9B82BA);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_REFINED_REDSTONE = registerMolten("refined_redstone",0xFF95121F);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_ROSE_GOLD = registerMolten("rose_gold",0xFFFC7C63);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_SIGNALUM = registerMolten("signalum",0xFFFB6114);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_SILICON_BRONZE = registerMolten("silicon_bronze",0xFF736C6F);
