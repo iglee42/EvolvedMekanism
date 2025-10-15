@@ -31,12 +31,15 @@ import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter;
 import mezz.jei.api.neoforge.NeoForgeTypes;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.*;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
@@ -134,12 +137,12 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
-        CatalystRegistryHelper.register(registry, MekanismJEI.genericRecipeType(JEIRecipeTypes.ALLOYING), Arrays.asList(EMBlocks.ALLOYER));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.CHEMIXING),Arrays.asList(EMBlocks.CHEMIXER));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.APT),Arrays.asList(EMBlocks.APT_CASING,EMBlocks.APT_PORT,EMBlocks.SUPERCHARGING_ELEMENT));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.MELTING),Arrays.asList(EMBlocks.MELTER));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.SOLIDIFICATION),Arrays.asList(EMBlocks.SOLIDIFIER));
-
+        List<ItemLike> alloying = BuiltInRegistries.BLOCK.holders().filter(h->h.getKey().location().getNamespace().equals(EvolvedMekanism.MODID) && (h.getKey().location().getPath().contains("alloyer") || h.getKey().location().getPath().contains("alloying"))).map(Holder.Reference::value).map(ItemLike.class::cast).toList();
+        alloying.forEach(i->registry.addRecipeCatalyst(i,MekanismJEI.genericRecipeType(JEIRecipeTypes.ALLOYING)));
     }
 
     @Override
