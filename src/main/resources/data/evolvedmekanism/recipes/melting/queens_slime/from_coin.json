@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_queens_slime",
-        "amount": 48
+        "amount": 30
     },
     "conditions": [
         {

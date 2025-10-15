@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_stratus",
-        "amount": 576
+        "amount": 360
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 576
+        "amount": 360
     },
     "output": {
         "tag": "forge:gears/stratus"

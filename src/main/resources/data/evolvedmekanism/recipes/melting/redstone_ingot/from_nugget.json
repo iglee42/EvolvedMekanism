@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_redstone_ingot",
-        "amount": 16
+        "amount": 10
     },
     "conditions": [
         {

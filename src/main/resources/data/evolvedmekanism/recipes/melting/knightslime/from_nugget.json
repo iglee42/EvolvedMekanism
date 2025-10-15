@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_knightslime",
-        "amount": 16
+        "amount": 10
     },
     "conditions": [
         {

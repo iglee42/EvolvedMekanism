@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_quartz",
-        "amount": 324
+        "amount": 90
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 324
+        "amount": 90
     },
     "output": {
         "tag": "forge:gems/quartz"

@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_bronze",
-        "amount": 48
+        "amount": 30
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 48
+        "amount": 30
     },
     "output": {
         "tag": "forge:coins/bronze"

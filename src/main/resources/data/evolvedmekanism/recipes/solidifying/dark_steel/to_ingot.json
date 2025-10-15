@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_dark_steel",
-        "amount": 144
+        "amount": 90
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 144
+        "amount": 90
     },
     "output": {
         "tag": "forge:ingots/dark_steel"

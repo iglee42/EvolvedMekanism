@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_pink_slime",
-        "amount": 72
+        "amount": 45
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 72
+        "amount": 45
     },
     "output": {
         "tag": "forge:rods/pink_slime"

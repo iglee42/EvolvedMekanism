@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_silicon_bronze",
-        "amount": 576
+        "amount": 360
     },
     "conditions": [
         {

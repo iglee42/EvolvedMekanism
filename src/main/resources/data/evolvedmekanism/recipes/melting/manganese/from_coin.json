@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_manganese",
-        "amount": 48
+        "amount": 30
     },
     "conditions": [
         {

@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_tainted_gold",
-        "amount": 16
+        "amount": 10
     },
     "conditions": [
         {

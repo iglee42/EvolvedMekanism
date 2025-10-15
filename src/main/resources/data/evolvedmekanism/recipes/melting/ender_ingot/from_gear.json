@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_ender_ingot",
-        "amount": 576
+        "amount": 360
     },
     "conditions": [
         {

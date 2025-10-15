@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_copper_alloy",
-        "amount": 144
+        "amount": 90
     },
     "conditions": [
         {

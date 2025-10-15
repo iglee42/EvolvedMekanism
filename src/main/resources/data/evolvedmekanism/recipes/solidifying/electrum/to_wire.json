@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_electrum",
-        "amount": 72
+        "amount": 45
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 72
+        "amount": 45
     },
     "output": {
         "tag": "forge:wires/electrum"

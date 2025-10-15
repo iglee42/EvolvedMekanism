@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_nether_star",
-        "amount": 16
+        "amount": 10
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 16
+        "amount": 10
     },
     "output": {
         "tag": "forge:nuggets/nether_star"

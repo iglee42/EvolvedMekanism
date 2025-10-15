@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_chorium",
-        "amount": 576
+        "amount": 360
     },
     "conditions": [
         {

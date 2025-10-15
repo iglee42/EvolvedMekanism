@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_osmium",
-        "amount": 16
+        "amount": 10
     },
     "conditions": [
         {

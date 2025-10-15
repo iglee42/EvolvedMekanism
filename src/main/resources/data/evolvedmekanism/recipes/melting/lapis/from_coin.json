@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_lapis",
-        "amount": 48
+        "amount": 30
     },
     "conditions": [
         {

@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_lapis",
-        "amount": 1296
+        "amount": 810
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 1296
+        "amount": 810
     },
     "output": {
         "tag": "forge:storage_blocks/lapis"

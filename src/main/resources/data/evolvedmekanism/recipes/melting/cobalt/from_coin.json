@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_cobalt",
-        "amount": 48
+        "amount": 30
     },
     "conditions": [
         {

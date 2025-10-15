@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_refined_redstone",
-        "amount": 576
+        "amount": 360
     },
     "conditions": [
         {

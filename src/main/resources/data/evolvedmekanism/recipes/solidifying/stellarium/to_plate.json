@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_stellarium",
-        "amount": 144
+        "amount": 90
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 144
+        "amount": 90
     },
     "output": {
         "tag": "forge:plates/stellarium"

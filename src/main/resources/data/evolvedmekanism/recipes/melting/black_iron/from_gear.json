@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_black_iron",
-        "amount": 576
+        "amount": 360
     },
     "conditions": [
         {

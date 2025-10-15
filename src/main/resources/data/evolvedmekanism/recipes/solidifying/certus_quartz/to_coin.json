@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_certus_quartz",
-        "amount": 108
+        "amount": 30
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 108
+        "amount": 30
     },
     "output": {
         "tag": "forge:coins/certus_quartz"

@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_silicon_bronze",
-        "amount": 72
+        "amount": 45
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 72
+        "amount": 45
     },
     "output": {
         "tag": "forge:rods/silicon_bronze"

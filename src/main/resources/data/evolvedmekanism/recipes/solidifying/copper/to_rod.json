@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_copper",
-        "amount": 72
+        "amount": 45
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 72
+        "amount": 45
     },
     "output": {
         "tag": "forge:rods/copper"

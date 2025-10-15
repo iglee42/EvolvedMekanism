@@ -7,7 +7,7 @@
     },
     "output": {
         "fluid": "evolvedmekanism:molten_compressed_iron",
-        "amount": 72
+        "amount": 45
     },
     "conditions": [
         {

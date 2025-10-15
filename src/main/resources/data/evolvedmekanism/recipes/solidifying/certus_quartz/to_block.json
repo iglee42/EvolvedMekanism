@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "fluid": "evolvedmekanism:molten_certus_quartz",
-        "amount": 2916
+        "amount": 360
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 2916
+        "amount": 360
     },
     "output": {
         "tag": "forge:storage_blocks/certus_quartz"
