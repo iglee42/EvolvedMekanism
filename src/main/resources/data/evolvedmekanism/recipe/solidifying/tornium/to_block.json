@@ -6,11 +6,11 @@
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_tornium",
-    "amount": 1296
+    "amount": 810
   },
   "extra_input": {
     "fluid": "mekanism:oxygen",
-    "amount": 1296
+    "amount": 810
   },
   "output": {
     "tag": "c:storage_blocks/tornium"

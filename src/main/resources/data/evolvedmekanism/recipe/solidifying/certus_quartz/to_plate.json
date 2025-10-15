@@ -6,11 +6,11 @@
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_certus_quartz",
-    "amount": 324
+    "amount": 90
   },
   "extra_input": {
     "fluid": "mekanism:oxygen",
-    "amount": 324
+    "amount": 90
   },
   "output": {
     "tag": "c:plates/certus_quartz"

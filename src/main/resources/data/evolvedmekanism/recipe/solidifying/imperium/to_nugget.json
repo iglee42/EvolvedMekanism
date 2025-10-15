@@ -6,11 +6,11 @@
   },
   "fluid_input": {
     "fluid": "evolvedmekanism:molten_imperium",
-    "amount": 16
+    "amount": 10
   },
   "extra_input": {
     "fluid": "mekanism:oxygen",
-    "amount": 16
+    "amount": 10
   },
   "output": {
     "tag": "c:nuggets/imperium"
