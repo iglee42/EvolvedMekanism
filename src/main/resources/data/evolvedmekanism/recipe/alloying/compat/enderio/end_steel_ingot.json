@@ -7,7 +7,7 @@
     "tag": "c:end_stones"
   },
   "main_input": {
-    "tag": "c:obsidian"
+    "tag": "c:obsidians"
   },
   "output": {
     "id": "enderio:end_steel_ingot"
