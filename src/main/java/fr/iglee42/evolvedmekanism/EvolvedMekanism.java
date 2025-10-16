@@ -16,6 +16,8 @@ import mekanism.tools.client.ShieldTextures;
 import mekanism.tools.common.MekanismTools;
 import mekanism.tools.common.MobEquipmentHelper;
 import net.minecraft.network.chat.Component;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -123,13 +125,15 @@ public class EvolvedMekanism {
            EMGenTileEntityTypes.register(modEventBus);
            EMGenContainerTypes.register(modEventBus);
            EMGenBlockTypes.register();
-           modEventBus.register(new EMGenClientRegistration());
+           if (FMLEnvironment.dist == Dist.CLIENT) modEventBus.register(new EMGenClientRegistration());
         }
 
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) {
             EMToolsItems.register(modEventBus);
-            modEventBus.register(new EMToolsClientRegistration());
-            if (ModsCompats.MEKANISMTOOLS.isLoaded())((InitializableEnum)(Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
+            if (FMLEnvironment.dist == Dist.CLIENT) {
+                modEventBus.register(new EMToolsClientRegistration());
+                ((InitializableEnum) (Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
+            }
         }
     }
 
