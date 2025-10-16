@@ -37,11 +37,15 @@ import mekanism.tools.client.ShieldTextures;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.event.lifecycle.InterModEnqueueEvent;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStoppedEvent;
 import org.slf4j.Logger;
@@ -109,12 +113,12 @@ public class EvolvedMekanism {
            EMGenTileEntityTypes.register(modEventBus);
            EMGenContainerTypes.register(modEventBus);
            EMGenBlockTypes.register();
-           modEventBus.register(new EMGenClientRegistration());
+           if (FMLEnvironment.dist == Dist.CLIENT) modEventBus.register(new EMGenClientRegistration());
         }
 
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) {
             EMToolsItems.register(modEventBus);
-            modEventBus.register(new EMToolsClientRegistration());
+            if (FMLEnvironment.dist == Dist.CLIENT) modEventBus.register(new EMToolsClientRegistration());
         }
     }
 
