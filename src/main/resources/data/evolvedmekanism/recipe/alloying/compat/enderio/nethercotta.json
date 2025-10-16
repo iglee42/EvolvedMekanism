@@ -1,7 +1,7 @@
 {
   "type": "evolvedmekanism:alloying",
   "extra_input": {
-    "tag": "c:ingots/nether_brick"
+    "tag": "c:bricks/nether"
   },
   "second_extra_input": {
     "amount": 4,
