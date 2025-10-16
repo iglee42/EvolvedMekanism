@@ -106,7 +106,7 @@ public class EvolvedMekanism {
 
         registerCompats();
 
-        //initEnums();
+        initEnums();
 
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(this::serverStopped);
