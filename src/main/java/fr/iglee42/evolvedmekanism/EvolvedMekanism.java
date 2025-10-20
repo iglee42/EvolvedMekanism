@@ -92,6 +92,8 @@ public class EvolvedMekanism {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
 
+        initEnums();
+
         EMBlocks.BLOCKS.register(modEventBus);
         EMItems.ITEMS.register(modEventBus);
         EMCreativeTabs.CREATIVE_TABS.register(modEventBus);
@@ -105,8 +107,6 @@ public class EvolvedMekanism {
         EMParticleTypes.PARTICLES.register(modEventBus);
 
         registerCompats();
-
-        initEnums();
 
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(this::serverStopped);
