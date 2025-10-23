@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SGS",
+    "CPC",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:ingots/steel"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "C": {
+      "item": "mekanism:ultimate_control_circuit"
+    },
+    "P": {
+      "item": "evolvedmekanism:elite_personal_barrel"
+    }
+  },
+  "result": {
+    "item": "evolvedmekanism:ultimate_personal_barrel"
+  },
+  "group": "jei.personal_upgrade.barrel"
+}

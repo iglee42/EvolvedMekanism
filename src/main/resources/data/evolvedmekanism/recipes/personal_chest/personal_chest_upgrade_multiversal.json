@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SGS",
+    "CPC",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:ingots/steel"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "C": {
+      "item": "evolvedmekanism:multiversal_control_circuit"
+    },
+    "P": {
+      "item": "evolvedmekanism:dense_personal_chest"
+    }
+  },
+  "result": {
+    "item": "evolvedmekanism:multiversal_personal_chest"
+  },
+  "group": "jei.personal_upgrade.chest"
+}
+
