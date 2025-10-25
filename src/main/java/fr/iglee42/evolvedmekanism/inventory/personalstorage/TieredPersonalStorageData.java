@@ -4,7 +4,9 @@ import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import mekanism.api.NBTConstants;
 import mekanism.api.annotations.NothingNullByDefault;
+import mekanism.api.inventory.IInventorySlot;
 import mekanism.common.lib.MekanismSavedData;
+import mekanism.common.lib.inventory.personalstorage.PersonalStorageItemInventory;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -12,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -22,6 +25,19 @@ class TieredPersonalStorageData extends MekanismSavedData {
     TieredPersonalStorageItemInventory getOrAddInventory(UUID id,PersonalStorageTier tier) {
         return inventoriesById.computeIfAbsent(id, unused->createInventory(tier));
     }
+
+    TieredPersonalStorageItemInventory addInventory(UUID id, List<IInventorySlot> contents,PersonalStorageTier tier) {
+        return inventoriesById.computeIfAbsent(id, unused -> {
+            TieredPersonalStorageItemInventory inventory = createInventory(tier);
+            List<IInventorySlot> inventorySlots = inventory.getInventorySlots(null);
+            for (int i = 0, slots = contents.size(); i < slots; i++) {
+                inventorySlots.get(i).deserializeNBT(contents.get(i).serializeNBT());
+            }
+            setDirty();
+            return inventory;
+        });
+    }
+
 
     void removeInventory(UUID id) {
         if (this.inventoriesById.remove(id) != null) {

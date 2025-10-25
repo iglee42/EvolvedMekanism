@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "forge:circuits/quantum"
+        },
+        "C": {
+            "tag": "forge:glass/silica"
+        },
+        "P": {
+            "item": "evolvedmekanism:overclocked_personal_barrel"
+        },
+        "_": {
+            "tag": "forge:ingots/steel"
+        }
+    },
+    "pattern": [
+        "_C_",
+        "APA",
+        "___"
+    ],
+    "result": {
+        "item": "evolvedmekanism:quantum_personal_barrel"
+    }
+}

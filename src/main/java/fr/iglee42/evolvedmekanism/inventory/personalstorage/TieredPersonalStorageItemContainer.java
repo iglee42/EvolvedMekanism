@@ -28,7 +28,7 @@ public class TieredPersonalStorageItemContainer extends MekanismItemContainer {
         super(EMContainerTypes.TIERED_PERSONAL_STORAGE_ITEM, id, inv, hand, stack);
         //We have to initialize this before actually adding the slots
         ItemBlockTieredPersonalStorage<?> item = (ItemBlockTieredPersonalStorage<?>) stack.getItem();
-        itemInventory = !isRemote ? TieredPersonalStorageManager.getInventoryFor(stack) : new ClientSideTieredPersonalStorageInventory(item.getTier());
+        itemInventory = !isRemote ? TieredPersonalStorageManager.getInventoryFor(stack).orElseThrow(()->new IllegalStateException("Inventory not available")) : new ClientSideTieredPersonalStorageInventory(item.getTier());
         super.addSlotsAndOpen();
     }
 

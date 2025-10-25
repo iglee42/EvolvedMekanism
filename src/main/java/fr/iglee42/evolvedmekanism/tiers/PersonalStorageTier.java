@@ -32,4 +32,8 @@ public enum PersonalStorageTier implements ITier {
     public BaseTier getBaseTier() {
         return baseTier;
     }
+
+    public int getSlotCount(){
+        return columns * rows;
+    }
 }

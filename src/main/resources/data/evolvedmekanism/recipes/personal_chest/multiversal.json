@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "forge:circuits/multiversal"
+        },
+        "C": {
+            "tag": "forge:glass/silica"
+        },
+        "P": {
+            "item": "evolvedmekanism:dense_personal_chest"
+        },
+        "_": {
+            "tag": "forge:ingots/steel"
+        }
+    },
+    "pattern": [
+        "_C_",
+        "APA",
+        "___"
+    ],
+    "result": {
+        "item": "evolvedmekanism:multiversal_personal_chest"
+    }
+}
