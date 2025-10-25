@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "c:circuits/advanced"
+        },
+        "C": {
+            "tag": "c:glass_blocks/cheap"
+        },
+        "P": {
+            "item": "mekanism:personal_chest"
+        },
+        "_": {
+            "tag": "c:ingots/steel"
+        }
+    },
+    "pattern": [
+        "_C_",
+        "APA",
+        "___"
+    ],
+    "result": {
+        "id": "evolvedmekanism:advanced_personal_chest"
+    }
+}

@@ -5,8 +5,6 @@ import com.mojang.datafixers.util.Function7;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
-import fr.iglee42.evolvedmekanism.crafting.PersonalBarrelUpgrading;
-import fr.iglee42.evolvedmekanism.crafting.PersonalChestUpgrading;
 import fr.iglee42.evolvedmekanism.impl.*;
 import fr.iglee42.evolvedmekanism.utils.EMSerializationConstants;
 import mekanism.api.SerializationConstants;
@@ -19,8 +17,6 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
-import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -32,8 +28,8 @@ public class EMRecipeSerializers {
 
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(Registries.RECIPE_SERIALIZER, EvolvedMekanism.MODID);
 
-    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<PersonalChestUpgrading>> PERSONAL_CHEST_UPGRADING = RECIPE_SERIALIZERS.register("personal_chest_upgrade",()->new SimpleCraftingRecipeSerializer<>(PersonalChestUpgrading::new));
-    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<PersonalBarrelUpgrading>> PERSONAL_BARREL_UPGRADING = RECIPE_SERIALIZERS.register("personal_barrel_upgrade",()->new SimpleCraftingRecipeSerializer<>(PersonalBarrelUpgrading::new));
+   // public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<PersonalChestUpgrading>> PERSONAL_CHEST_UPGRADING = RECIPE_SERIALIZERS.register("personal_chest_upgrade",()->new SimpleCraftingRecipeSerializer<>(PersonalChestUpgrading::new));
+   // public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<PersonalBarrelUpgrading>> PERSONAL_BARREL_UPGRADING = RECIPE_SERIALIZERS.register("personal_barrel_upgrade",()->new SimpleCraftingRecipeSerializer<>(PersonalBarrelUpgrading::new));
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<BasicAlloyerRecipe>> ALLOYER = RECIPE_SERIALIZERS.register("alloying", () -> alloyer(BasicAlloyerRecipe::new));
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<BasicChemixerRecipe>> CHEMIXER = RECIPE_SERIALIZERS.register("chemixing", () -> chemixer(BasicChemixerRecipe::new));
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<BasicAPTRecipe>> APT = RECIPE_SERIALIZERS.register("apt", ()->MekanismRecipeSerializer.itemChemicalToItem(BasicAPTRecipe::new));

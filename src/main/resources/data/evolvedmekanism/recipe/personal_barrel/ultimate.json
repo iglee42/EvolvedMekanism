@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "c:circuits/ultimate"
+        },
+        "C": {
+            "tag": "c:glass_blocks/cheap"
+        },
+        "P": {
+            "item": "evolvedmekanism:elite_personal_barrel"
+        },
+        "_": {
+            "tag": "c:ingots/steel"
+        }
+    },
+    "pattern": [
+        "_C_",
+        "APA",
+        "___"
+    ],
+    "result": {
+        "id": "evolvedmekanism:ultimate_personal_barrel"
+    }
+}

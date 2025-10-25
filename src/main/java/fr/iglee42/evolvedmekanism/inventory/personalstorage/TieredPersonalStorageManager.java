@@ -33,7 +33,7 @@ public class TieredPersonalStorageManager {
         if (EffectiveSide.get().isClient()) {
             return Optional.empty();
         }
-        return Optional.of(STORAGE_BY_PLAYER_UUID.computeIfAbsent(playerUUID, uuid -> MekanismSavedData.createSavedData(TieredPersonalStorageData::new, "personal_storage" + File.separator + uuid)));
+        return Optional.of(STORAGE_BY_PLAYER_UUID.computeIfAbsent(playerUUID, uuid -> MekanismSavedData.createSavedData(TieredPersonalStorageData::new, "tiered_personal_storage" + File.separator + uuid)));
     }
 
     /**
@@ -88,7 +88,7 @@ public class TieredPersonalStorageManager {
 
     public static boolean createInventoryFor(PersonalStorageTier tier,HolderLookup.Provider provider, ItemStack stack, List<IInventorySlot> contents) {
         UUID owner = IItemSecurityUtils.INSTANCE.getOwnerUUID(stack);
-        if (owner == null || contents.size() != 54) {
+        if (owner == null || contents.size() != tier.getSlotCount()) {
             //No owner or wrong number of slots, something went wrong
             return false;
         }
@@ -145,7 +145,7 @@ public class TieredPersonalStorageManager {
         STORAGE_BY_PLAYER_UUID.clear();
     }
 
-    public static void createSlots(Consumer<IInventorySlot> slotConsumer, BiPredicate<@NotNull ItemStack, @NotNull AutomationType> canInteract, IContentsListener listener, PersonalStorageTier tier) {
+    public static void createSlots(Consumer<IInventorySlot> slotConsumer, BiPredicate<@NotNull ItemStack, @NotNull AutomationType> canInteract, @Nullable IContentsListener listener, PersonalStorageTier tier) {
         for (int slotY = 0; slotY < tier.rows; slotY++) {
             for (int slotX = 0; slotX < tier.columns; slotX++) {
                 slotConsumer.accept(BasicInventorySlot.at(canInteract, canInteract, listener, 8 + slotX * 18, 18 + slotY * 18));

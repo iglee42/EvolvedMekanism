@@ -1,0 +1,25 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "c:circuits/overclocked"
+        },
+        "C": {
+            "tag": "c:glass_blocks/cheap"
+        },
+        "P": {
+            "item": "evolvedmekanism:ultimate_personal_barrel"
+        },
+        "_": {
+            "tag": "c:ingots/steel"
+        }
+    },
+    "pattern": [
+        "_C_",
+        "APA",
+        "___"
+    ],
+    "result": {
+        "id": "evolvedmekanism:overclocked_personal_barrel"
+    }
+}
