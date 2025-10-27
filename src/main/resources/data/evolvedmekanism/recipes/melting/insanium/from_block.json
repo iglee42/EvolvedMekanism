@@ -2,7 +2,7 @@
     "type": "evolvedmekanism:melting",
     "input": {
         "ingredient": {
-            "tag": "forge:storage_blocks/insanium"
+            "tag": "forge:storage_blocks/insanium_ingot"
         }
     },
     "output": {
@@ -14,7 +14,7 @@
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:storage_blocks/insanium"
+                "tag": "forge:storage_blocks/insanium_ingot"
             }
         }
     ]

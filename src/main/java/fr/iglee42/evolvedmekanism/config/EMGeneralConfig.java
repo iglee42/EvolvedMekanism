@@ -1,13 +1,13 @@
 package fr.iglee42.evolvedmekanism.config;
 
-import mekanism.api.math.FloatingLong;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
+import mekanism.api.math.FloatingLong;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.config.BaseMekanismConfig;
-import mekanism.common.config.value.CachedFloatingLongValue;
 import mekanism.common.config.value.CachedConfigValue;
 import mekanism.common.config.value.CachedEnumValue;
+import mekanism.common.config.value.CachedFloatingLongValue;
 import mekanism.common.config.value.CachedIntValue;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.config.ModConfig.Type;
@@ -29,6 +29,8 @@ public class EMGeneralConfig extends BaseMekanismConfig {
     public final CachedConfigValue<BaseTier> maxInstallerTier;
 
     EMGeneralConfig() {
+
+        ((InitializableEnum)(Object)BaseTier.BASIC).evolvedmekanism$initNewValues();
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
         builder.comment("General Config. This config is synced from server to client.").push("general");
         builder.comment("Items Settings").push(ITEMS_CATEGORY);

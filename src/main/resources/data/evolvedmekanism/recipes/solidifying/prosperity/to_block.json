@@ -15,14 +15,14 @@
         "amount": 810
     },
     "output": {
-        "tag": "forge:storage_blocks/prosperity"
+        "tag": "forge:storage_blocks/prosperity_ingot"
     },
     "conditions": [
         {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:storage_blocks/prosperity"
+                "tag": "forge:storage_blocks/prosperity_ingot"
             }
         }
     ]

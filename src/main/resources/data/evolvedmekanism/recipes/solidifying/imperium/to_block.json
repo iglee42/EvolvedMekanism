@@ -15,14 +15,14 @@
         "amount": 810
     },
     "output": {
-        "tag": "forge:storage_blocks/imperium"
+        "tag": "forge:storage_blocks/imperium_ingot"
     },
     "conditions": [
         {
             "type": "forge:not",
             "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:storage_blocks/imperium"
+                "tag": "forge:storage_blocks/imperium_ingot"
             }
         }
     ]
