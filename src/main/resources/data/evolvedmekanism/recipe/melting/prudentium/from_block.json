@@ -1,7 +1,7 @@
 {
   "type": "evolvedmekanism:melting",
   "input": {
-    "tag": "c:storage_blocks/prudentium"
+    "tag": "c:storage_blocks/prudentium_ingot"
   },
   "output": {
     "id": "evolvedmekanism:molten_prudentium",
@@ -12,7 +12,7 @@
       "type": "neoforge:not",
       "value": {
         "type": "neoforge:tag_empty",
-        "tag": "c:storage_blocks/prudentium"
+        "tag": "c:storage_blocks/prudentium_ingot"
       }
     }
   ]

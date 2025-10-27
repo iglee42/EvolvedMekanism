@@ -13,14 +13,14 @@
     "amount": 810
   },
   "output": {
-    "tag": "c:storage_blocks/insanium"
+    "tag": "c:storage_blocks/insanium_ingot"
   },
   "neoforge:conditions": [
     {
       "type": "neoforge:not",
       "value": {
         "type": "neoforge:tag_empty",
-        "tag": "c:storage_blocks/insanium"
+        "tag": "c:storage_blocks/insanium_ingot"
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "type": "evolvedmekanism:melting",
   "input": {
-    "tag": "c:storage_blocks/insanium"
+    "tag": "c:storage_blocks/insanium_ingot"
   },
   "output": {
     "id": "evolvedmekanism:molten_insanium",
@@ -12,7 +12,7 @@
       "type": "neoforge:not",
       "value": {
         "type": "neoforge:tag_empty",
-        "tag": "c:storage_blocks/insanium"
+        "tag": "c:storage_blocks/insanium_ingot"
       }
     }
   ]
