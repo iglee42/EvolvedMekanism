@@ -24,6 +24,8 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_CREATIVE_SOLAR_GENERATOR("description", "creative_solar_generator"),
     DESCRIPTION_SUPERCHARGING_ELEMENT("description", "supercharging_element"),
 
+    DESCRIPTION_MAX_TIER_INSTALLER("description", "max_tier_installer"),
+
     APT("apt", "apt"),
     APT_PORT_MODE("apt", "port_mode"),
     APT_INVALID_SUPERCHARGING("apt", "invalid_supercharging"),

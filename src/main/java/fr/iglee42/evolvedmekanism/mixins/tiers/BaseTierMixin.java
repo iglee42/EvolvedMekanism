@@ -60,4 +60,13 @@ public class BaseTierMixin implements InitializableEnum {
         EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);
         EMBaseTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", new int[]{90, 87, 90},MapColor.COLOR_BLACK);
     }
+
+    @Inject(method = "<clinit>", at =@At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
+        if (EMBaseTier.OVERCLOCKED != null) return;
+        EMBaseTier.OVERCLOCKED = evolvedmekanism$addVariant("OVERCLOCKED", new int[]{0, 221, 0},MapColor.COLOR_LIGHT_GREEN);
+        EMBaseTier.QUANTUM = evolvedmekanism$addVariant("QUANTUM", new int[]{252, 158, 250},MapColor.COLOR_PURPLE);
+        EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);
+        EMBaseTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", new int[]{90, 87, 90},MapColor.COLOR_BLACK);
+    }
 }

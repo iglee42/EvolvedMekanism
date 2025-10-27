@@ -272,6 +272,7 @@
     "item.evolvedmekanism.quantum_tier_installer": "Installeur de niveau quantique",
     "item.evolvedmekanism.dense_tier_installer": "Installeur de niveau dense",
     "item.evolvedmekanism.multiversal_tier_installer": "Installeur de niveau multiversel",
+    "item.evolvedmekanism.max_tier_installer": "Installeur de niveau maximum",
     "item.evolvedmekanism.enriched_uranium": "Uranium Enrichi",
     "item.evolvedmekanism.enriched_better_gold": "Or am\u00e9lior\u00e9 Enrichi",
     "item.evolvedmekanism.enriched_plaslitherite": "Plaslitherite Enrichi",
@@ -730,5 +731,6 @@
     "item.evolvedmekanism.refined_redstone_shield.yellow": "Bouclier en poudre de redstone raffin\u00e9e jaune",
     "item.evolvedmekanism.refined_redstone_shovel": "Pelle en poudre de redstone raffin\u00e9e",
     "item.evolvedmekanism.refined_redstone_sword": "\u00c9p\u00e9e en poudre de redstone raffin\u00e9e",
-    "apt.evolvedmekanism.invalid_supercharging": "Formation impossible: Arrangement des \u00e9l\u00e9ments de surcharge invalide."
+    "apt.evolvedmekanism.invalid_supercharging": "Formation impossible: Arrangement des \u00e9l\u00e9ments de surcharge invalide.",
+    "description.evolvedmekanism.max_tier_installer": "Am\u00e9liore n'importe quelle machine compatible directement au tier %s."
 }

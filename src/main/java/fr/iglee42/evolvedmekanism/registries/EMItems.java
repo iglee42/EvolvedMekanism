@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.registries;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.items.ItemMaxTierInstaller;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMQIODriveTier;
@@ -52,6 +53,7 @@ public class EMItems {
     public static final ItemRegistryObject<ItemTierInstaller> DENSE_TIER_INSTALLER = registerInstaller(EMBaseTier.QUANTUM,EMBaseTier.DENSE);
     public static final ItemRegistryObject<ItemTierInstaller> MULTIVERSAL_TIER_INSTALLER = registerInstaller(EMBaseTier.DENSE,EMBaseTier.MULTIVERSAL);
     public static final ItemRegistryObject<ItemTierInstaller> CREATIVE_TIER_INSTALLER = registerInstaller(EMBaseTier.MULTIVERSAL,BaseTier.CREATIVE);
+    public static final ItemRegistryObject<ItemMaxTierInstaller> MAX_TIER_INSTALLER = ITEMS.registerItem("max_tier_installer", ItemMaxTierInstaller::new);
 
     public static final ItemRegistryObject<Item> BETTER_GOLD_INGOT = registerResource(ResourceType.INGOT, EMResources.BETTER_GOLD);
     public static final ItemRegistryObject<Item> PLASLITHERITE_INGOT = registerUnburnableResource(ResourceType.INGOT, EMResources.PLASLITHERITE);
