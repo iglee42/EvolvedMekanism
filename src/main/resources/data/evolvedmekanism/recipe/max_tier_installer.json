@@ -1,0 +1,37 @@
+{
+  "type": "mekanism:mek_data",
+  "key": {
+    "1": {
+      "item": "mekanism:basic_tier_installer"
+    },
+    "2": {
+      "item": "mekanism:advanced_tier_installer"
+    },
+    "3": {
+      "item": "mekanism:elite_tier_installer"
+    },
+    "4": {
+      "item": "mekanism:ultimate_tier_installer"
+    },
+    "5": {
+      "item": "evolvedmekanism:overclocked_tier_installer"
+    },
+    "6": {
+      "item": "evolvedmekanism:quantum_tier_installer"
+    },
+    "7": {
+      "item": "evolvedmekanism:dense_tier_installer"
+    },
+    "8": {
+      "item": "evolvedmekanism:multiversal_tier_installer"
+    }
+  },
+  "pattern": [
+    "123",
+    "4 5",
+    "678"
+  ],
+  "result": {
+    "id": "evolvedmekanism:max_tier_installer"
+  }
+}
