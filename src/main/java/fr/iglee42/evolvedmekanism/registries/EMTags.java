@@ -35,21 +35,21 @@ public class EMTags {
         private Items() {
         }
 
-        public static final TagKey<Item> STORAGE_BLOCKS_BETTER_GOLD = forgeTag("storage_blocks/better_gold");
-        public static final TagKey<Item> STORAGE_BLOCKS_PLASLITHERITE = forgeTag("storage_blocks/plaslitherite");
-        public static final TagKey<Item> STORAGE_BLOCKS_REFINED_REDSTONE = forgeTag("storage_blocks/refined_redstone");
+        public static final TagKey<Item> STORAGE_BLOCKS_BETTER_GOLD = commonTag("storage_blocks/better_gold");
+        public static final TagKey<Item> STORAGE_BLOCKS_PLASLITHERITE = commonTag("storage_blocks/plaslitherite");
+        public static final TagKey<Item> STORAGE_BLOCKS_REFINED_REDSTONE = commonTag("storage_blocks/refined_redstone");
 
-        public static final TagKey<Item> INGOTS_BETTER_GOLD = forgeTag("ingots/better_gold");
-        public static final TagKey<Item> INGOTS_PLASLITHERITE = forgeTag("ingots/plaslitherite");
-        public static final TagKey<Item> INGOTS_REFINED_REDSTONE = forgeTag("ingots/refined_redstone");
+        public static final TagKey<Item> INGOTS_BETTER_GOLD = commonTag("ingots/better_gold");
+        public static final TagKey<Item> INGOTS_PLASLITHERITE = commonTag("ingots/plaslitherite");
+        public static final TagKey<Item> INGOTS_REFINED_REDSTONE = commonTag("ingots/refined_redstone");
 
-        public static final TagKey<Item> NUGGETS_BETTER_GOLD = forgeTag("nuggets/better_gold");
-        public static final TagKey<Item> NUGGETS_PLASLITHERITE = forgeTag("nuggets/plaslitherite");
-        public static final TagKey<Item> NUGGETS_REFINED_REDSTONE = forgeTag("nuggets/refined_redstone");
+        public static final TagKey<Item> NUGGETS_BETTER_GOLD = commonTag("nuggets/better_gold");
+        public static final TagKey<Item> NUGGETS_PLASLITHERITE = commonTag("nuggets/plaslitherite");
+        public static final TagKey<Item> NUGGETS_REFINED_REDSTONE = commonTag("nuggets/refined_redstone");
 
 
-        public static final TagKey<Item> DUSTS_BETTER_GOLD = forgeTag("dusts/better_gold");
-        public static final TagKey<Item> DUSTS_PLASLITHERITE = forgeTag("dusts/plaslitherite");
+        public static final TagKey<Item> DUSTS_BETTER_GOLD = commonTag("dusts/better_gold");
+        public static final TagKey<Item> DUSTS_PLASLITHERITE = commonTag("dusts/plaslitherite");
 
         public static final TagKey<Item> ALLOYS = tag("alloys");
         public static final TagKey<Item> ALLOYS_CREATIVE = tag("alloys/creative");
@@ -58,25 +58,25 @@ public class EMTags {
         public static final TagKey<Item> ALLOYS_SINGULAR = tag("alloys/singular");
         public static final TagKey<Item> ALLOYS_SUBATOMIC = tag("alloys/subatomic");
 
-        public static final TagKey<Item> ALLOYS_CREATIVE_FORGE = forgeTag("alloys/creative");
-        public static final TagKey<Item> ALLOYS_DENSE = forgeTag("alloys/dense");
-        public static final TagKey<Item> ALLOYS_MULTIVERSAL = forgeTag("alloys/multiversal");
-        public static final TagKey<Item> ALLOYS_OVERCLOCKED = forgeTag("alloys/overclocked");
-        public static final TagKey<Item> ALLOYS_QUANTUM = forgeTag("alloys/quantum");
+        public static final TagKey<Item> ALLOYS_CREATIVE_FORGE = commonTag("alloys/creative");
+        public static final TagKey<Item> ALLOYS_DENSE = commonTag("alloys/dense");
+        public static final TagKey<Item> ALLOYS_MULTIVERSAL = commonTag("alloys/multiversal");
+        public static final TagKey<Item> ALLOYS_OVERCLOCKED = commonTag("alloys/overclocked");
+        public static final TagKey<Item> ALLOYS_QUANTUM = commonTag("alloys/quantum");
         
         public static final TagKey<Item> ENRICHED = tag("enriched");
         public static final TagKey<Item> ENRICHED_BETTER_GOLD = tag("enriched/better_gold");
         public static final TagKey<Item> ENRICHED_PLASLITHERITE = tag("enriched/plaslitherite");
         public static final TagKey<Item> ENRICHED_URANIUM = tag("enriched/uranium");
 
-        public static final TagKey<Item> CIRCUITS_CREATIVE_FORGE = forgeTag("circuits/creative");
-        public static final TagKey<Item> CIRCUITS_DENSE = forgeTag("circuits/dense");
-        public static final TagKey<Item> CIRCUITS_MULTIVERSAL = forgeTag("circuits/multiversal");
-        public static final TagKey<Item> CIRCUITS_OVERCLOCKED = forgeTag("circuits/overclocked");
-        public static final TagKey<Item> CIRCUITS_QUANTUM = forgeTag("circuits/quantum");
+        public static final TagKey<Item> CIRCUITS_CREATIVE_FORGE = commonTag("circuits/creative");
+        public static final TagKey<Item> CIRCUITS_DENSE = commonTag("circuits/dense");
+        public static final TagKey<Item> CIRCUITS_MULTIVERSAL = commonTag("circuits/multiversal");
+        public static final TagKey<Item> CIRCUITS_OVERCLOCKED = commonTag("circuits/overclocked");
+        public static final TagKey<Item> CIRCUITS_QUANTUM = commonTag("circuits/quantum");
 
-        private static TagKey<Item> forgeTag(String name) {
-            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", name));
+        private static TagKey<Item> commonTag(String name) {
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
         }
         private static TagKey<Item> mekTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath("mekanism", name));
@@ -95,24 +95,24 @@ public class EMTags {
         private Blocks() {
         }
 
-        public static final TagKey<Block> STORAGE_BLOCKS_BETTER_GOLD = forgeTag("storage_blocks/better_gold");
-        public static final TagKey<Block> STORAGE_BLOCKS_PLASLITHERITE = forgeTag("storage_blocks/plaslitherite");
-        public static final TagKey<Block> STORAGE_BLOCKS_REFINED_REDSTONE = forgeTag("storage_blocks/refined_redstone");
+        public static final TagKey<Block> STORAGE_BLOCKS_BETTER_GOLD = commonTag("storage_blocks/better_gold");
+        public static final TagKey<Block> STORAGE_BLOCKS_PLASLITHERITE = commonTag("storage_blocks/plaslitherite");
+        public static final TagKey<Block> STORAGE_BLOCKS_REFINED_REDSTONE = commonTag("storage_blocks/refined_redstone");
 
-        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS = forgeTag("storage_blocks/alloys");
-        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_INFUSED = forgeTag("storage_blocks/alloys/infused");
-        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_REINFORCED = forgeTag("storage_blocks/alloys/reinforced");
-        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_ATOMIC = forgeTag("storage_blocks/alloys/atomic");
-        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_HYPERCHARGED = forgeTag("storage_blocks/alloys/hypercharged");
-        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_SUBATOMIC = forgeTag("storage_blocks/alloys/subatomic");
-        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_SINGULAR = forgeTag("storage_blocks/alloys/singular");
-        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_EXOVERSAL = forgeTag("storage_blocks/alloys/exoversal");
-        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_CREATIVE = forgeTag("storage_blocks/alloys/creative");
+        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS = commonTag("storage_blocks/alloys");
+        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_INFUSED = commonTag("storage_blocks/alloys/infused");
+        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_REINFORCED = commonTag("storage_blocks/alloys/reinforced");
+        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_ATOMIC = commonTag("storage_blocks/alloys/atomic");
+        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_HYPERCHARGED = commonTag("storage_blocks/alloys/hypercharged");
+        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_SUBATOMIC = commonTag("storage_blocks/alloys/subatomic");
+        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_SINGULAR = commonTag("storage_blocks/alloys/singular");
+        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_EXOVERSAL = commonTag("storage_blocks/alloys/exoversal");
+        public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_CREATIVE = commonTag("storage_blocks/alloys/creative");
 
 
 
-        private static TagKey<Block> forgeTag(String name) {
-            return BlockTags.create(ResourceLocation.fromNamespaceAndPath("forge", name));
+        private static TagKey<Block> commonTag(String name) {
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
         }
 
         private static TagKey<Block> mekTag(String name) {
@@ -133,8 +133,8 @@ public class EMTags {
         private Fluids() {
         }
 
-        private static TagKey<Fluid> forgeTag(String name) {
-            return FluidTags.create(ResourceLocation.fromNamespaceAndPath("forge", name));
+        private static TagKey<Fluid> commonTag(String name) {
+            return FluidTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
         }
     }
 
