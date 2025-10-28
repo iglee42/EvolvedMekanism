@@ -12,6 +12,7 @@ buildscript {
 plugins {
     id 'eclipse'
     id 'idea'
+    id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
 }
 
@@ -221,6 +222,23 @@ tasks.named('jar', Jar).configure {
 
     // This is the preferred method to reobfuscate your jar file
     finalizedBy 'reobfJar'
+}
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = 'https://maven.iglee.fr/releases'
+            credentials {
+                username = System.getenv().get("MAVEN_REPO_USERNAME")
+                password = System.getenv().get("MAVEN_REPO_PASSWORD")
+            }
+        }
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {
