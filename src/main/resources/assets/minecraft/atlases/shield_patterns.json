@@ -2,15 +2,15 @@
     "sources": [
         {
             "type": "minecraft:single",
-            "resource": "evolvedmekanism:entity/shield/better_gold"
+            "resource": "mekanismtools:entity/shield/better_gold"
         },
         {
             "type": "minecraft:single",
-            "resource": "evolvedmekanism:entity/shield/plaslitherite"
+            "resource": "mekanismtools:entity/shield/plaslitherite"
         },
         {
             "type": "minecraft:single",
-            "resource": "evolvedmekanism:entity/shield/refined_redstone"
+            "resource": "mekanismtools:entity/shield/refined_redstone"
         }
     ]
 }

@@ -8,6 +8,9 @@ import mekanism.api.tier.BaseTier;
 import mekanism.tools.client.ShieldTextures;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +36,14 @@ public class ShieldTexturesMixin implements InitializableEnum {
         variants.add(casing);
         ShieldTexturesMixin.$VALUES = variants.toArray(new ShieldTextures[0]);
         return casing;
+    }
+
+    @Inject(method = "<clinit>",at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
+        if (EMShieldTextures.BETTER_GOLD != null) return;
+        EMShieldTextures.BETTER_GOLD = evolvedmekanism$addVariant("BETTER_GOLD");
+        EMShieldTextures.PLASLITHERITE = evolvedmekanism$addVariant("PLASLITHERITE");
+        EMShieldTextures.REFINED_REDSTONE = evolvedmekanism$addVariant("REFINED_REDSTONE");
     }
 
     @Override
