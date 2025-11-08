@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -59,4 +60,13 @@ public class BaseTierMixin implements InitializableEnum {
         EMBaseTier.DENSE = evolvedmekanism$addVariant("DENSE", new int[]{253, 245, 95},MapColor.GOLD);
         EMBaseTier.MULTIVERSAL = evolvedmekanism$addVariant("MULTIVERSAL", new int[]{90, 87, 90},MapColor.COLOR_BLACK);
     }
+
+    @Inject(method = "getTier",at = @At("HEAD"),cancellable = true)
+    private static void evolvedmekanism$getNewTier(int tier, CallbackInfoReturnable<BaseTier> cir){
+        if (tier == 5) cir.setReturnValue(EMBaseTier.OVERCLOCKED);
+        if (tier == 6) cir.setReturnValue(EMBaseTier.QUANTUM);
+        if (tier == 7) cir.setReturnValue(EMBaseTier.DENSE);
+        if (tier == 8) cir.setReturnValue(EMBaseTier.MULTIVERSAL);
+    }
+
 }
