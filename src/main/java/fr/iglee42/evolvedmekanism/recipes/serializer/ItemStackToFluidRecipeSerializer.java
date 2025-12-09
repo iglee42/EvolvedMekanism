@@ -43,7 +43,7 @@ public class ItemStackToFluidRecipeSerializer<RECIPE extends ItemStackToFluidRec
     public RECIPE fromNetwork(@NotNull ResourceLocation recipeId, @NotNull FriendlyByteBuf buffer) {
         try {
             ItemStackIngredient inputIngredient = IngredientCreatorAccess.item().read(buffer);
-            FluidStack output = buffer.readFluidStack();
+            FluidStack output = FluidStack.readFromPacket(buffer);
             return this.factory.create(recipeId, inputIngredient, output);
         } catch (Exception e) {
             Mekanism.logger.error("Error reading itemstack to fluidstack recipe from packet.", e);
