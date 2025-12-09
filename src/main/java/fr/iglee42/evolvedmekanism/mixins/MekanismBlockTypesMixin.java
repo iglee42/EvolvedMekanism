@@ -12,6 +12,7 @@ import mekanism.common.registries.MekanismBlockTypes;
 import mekanism.common.registries.MekanismContainerTypes;
 import mekanism.common.tier.*;
 import mekanism.common.tile.TileEntityBin;
+import mekanism.common.lib.transmitter.TransmissionType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
@@ -42,6 +43,7 @@ public class MekanismBlockTypesMixin {
                     .withGui(() -> MekanismContainerTypes.ENERGY_CUBE)
                     .withEnergyConfig(tier::getMaxEnergy)
                     .with(new AttributeTier<>(tier), new AttributeUpgradeable(()->EMBlocks.OVERCLOCKED_ENERGY_CUBE), new AttributeStateFacing(BlockStateProperties.FACING))
+                    .withSideConfig(TransmissionType.ENERGY, TransmissionType.ITEM)
                     .without(AttributeParticleFX.class, AttributeStateActive.class, AttributeUpgradeSupport.class)
                     .withComputerSupport(tier, "EnergyCube")
                     .build());
@@ -55,6 +57,7 @@ public class MekanismBlockTypesMixin {
                     .withGui(() -> MekanismContainerTypes.CHEMICAL_TANK)
                     .withCustomShape(BlockShapes.CHEMICAL_TANK)
                     .with(new AttributeTier<>(tier), new AttributeUpgradeable(()->EMBlocks.OVERCLOCKED_CHEMICAL_TANK))
+                    .withSideConfig(TransmissionType.CHEMICAL, TransmissionType.ITEM)
                     .without(AttributeParticleFX.class, AttributeStateActive.class, AttributeUpgradeSupport.class)
                     .withComputerSupport(tier, "ChemicalTank")
                     .build());
