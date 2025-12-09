@@ -45,22 +45,9 @@ public class BlockTieredPersonalStorage<TILE extends TileEntityTieredPersonalSto
     @Override
     public void setPlacedBy(@NotNull Level world, @NotNull BlockPos pos, @NotNull BlockState state, @Nullable LivingEntity placer, @NotNull ItemStack stack) {
         super.setPlacedBy(world, pos, state, placer, stack);
-        if (!world.isClientSide) {
-            TieredPersonalStorageManager.getInventoryIfPresent(stack).ifPresent(storageItemInventory -> {
-                TileEntityTieredPersonalStorage tile = WorldUtils.getTileEntity(TileEntityTieredPersonalStorage.class, world, pos);
-                if (tile == null) {
-                    return;
-                }
-                List<IInventorySlot> inventorySlots = storageItemInventory.getInventorySlots(null);
-                for (int i = 0; i < inventorySlots.size(); i++) {
-                    IInventorySlot itemSlot = inventorySlots.get(i);
-                    tile.setStackInSlot(i, itemSlot.getStack().copy());
-                }
-                if (stack.getCount() == 1 && (!(placer instanceof Player player) || !player.getAbilities().instabuild)) {
-                    //itemstack will be deleted, remove the stored inventory
-                    TieredPersonalStorageManager.deleteInventory(stack);
-                }
-            });
+        if (!world.isClientSide && stack.getCount() == 1 && (!(placer instanceof Player player) || !player.getAbilities().instabuild)) {
+            //itemstack will be deleted, remove the stored inventory
+            TieredPersonalStorageManager.deleteInventory(stack);
         }
     }
 

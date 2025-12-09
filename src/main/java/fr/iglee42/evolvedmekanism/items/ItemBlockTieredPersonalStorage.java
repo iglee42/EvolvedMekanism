@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.items;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonalStorage;
+import fr.iglee42.evolvedmekanism.inventory.personalstorage.AbstractTieredPersonalStorageItemInventory;
 import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageItemContainer;
 import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageManager;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
@@ -11,6 +12,8 @@ import mekanism.api.text.EnumColor;
 import mekanism.common.item.block.ItemBlockTooltip;
 import mekanism.common.item.interfaces.IDroppableContents;
 import mekanism.common.item.interfaces.IGuiItem;
+import mekanism.common.lib.inventory.personalstorage.AbstractPersonalStorageItemInventory;
+import mekanism.common.lib.inventory.personalstorage.PersonalStorageManager;
 import mekanism.common.lib.security.ItemSecurityUtils;
 import mekanism.common.registration.impl.ContainerTypeRegistryObject;
 import net.minecraft.network.chat.Component;
@@ -85,13 +88,12 @@ public class ItemBlockTieredPersonalStorage<BLOCK extends BlockTieredPersonalSto
         super.onDestroyed(item, damageSource);
         if (!item.level().isClientSide) {
             ItemStack stack = item.getItem();
-            TieredPersonalStorageManager.getInventoryIfPresent(stack).ifPresent(inventory -> {
-                if (inventory.isInventoryEmpty()) {
-                    //If the inventory was actually empty we can prune the data from the storage manager
-                    // (if it isn't empty we want to persist it so that server admins can recover their items)
-                    TieredPersonalStorageManager.deleteInventory(stack);
-                }
-            });
+            AbstractTieredPersonalStorageItemInventory inventory = TieredPersonalStorageManager.getInventoryIfPresent(stack).orElse(null);
+            if (inventory != null && inventory.isInventoryEmpty()) {
+                //If the inventory was actually empty we can prune the data from the storage manager
+                // (if it isn't empty we want to persist it so that server admins can recover their items)
+                TieredPersonalStorageManager.deleteInventory(stack);
+            }
         }
     }
 
