@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+import com.mojang.logging.LogUtils;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
@@ -40,7 +41,7 @@ public class EMMixinConfig implements IMixinConfigPlugin{
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        EvolvedMekanism.logger.debug("Mixin {} -> {}", mixinClassName, targetClassName);
+        LogUtils.getLogger().debug("Mixin {} -> {}", mixinClassName, targetClassName);
         return !ModsCompats.getAllMixinsClasses().contains(mixinClassName) || Arrays.stream(ModsCompats.values())
                 .filter(m -> m.getMixinClasses().contains(mixinClassName))
                 .allMatch(ModsCompats::isLoaded);
