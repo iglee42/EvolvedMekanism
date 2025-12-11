@@ -36,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ItemMaxTierInstaller extends Item {
 
@@ -118,16 +119,29 @@ public class ItemMaxTierInstaller extends Item {
         AttributeUpgradeable upgradeableBlock = Attribute.get(block, AttributeUpgradeable.class);
         if (upgradeableBlock != null) {
             BaseTier baseTier = Attribute.getBaseTier(block);
+            BaseTier maxTier = EMConfig.general.maxInstallerTier.getOrDefault();
+
+            if (Objects.equals(baseTier, maxTier)) {
+                return InteractionResult.PASS;
+            }
+
+            if (baseTier == null) {
+                baseTier = BaseTier.BASIC;
+            }
+
             BaseTier toTier = baseTier;
             BlockState upgradeState = upgradeableBlock.upgradeResult(state, toTier);
-            ;
-            while (toTier != EMConfig.general.maxInstallerTier.getOrDefault()) {
-                if (Attribute.get(upgradeState.getBlock(), AttributeUpgradeable.class) == null) {
+            while (toTier != maxTier) {
+                AttributeUpgradeable nextUpgradeable = Attribute.get(upgradeState.getBlock(), AttributeUpgradeable.class);
+                if (nextUpgradeable == null) {
                     break;
                 }
-                upgradeableBlock = Attribute.get(upgradeState.getBlock(), AttributeUpgradeable.class);
+                upgradeableBlock = nextUpgradeable;
                 upgradeState = upgradeableBlock.upgradeResult(upgradeState, toTier);
                 toTier = Attribute.getBaseTier(upgradeState.getBlock());
+                if (toTier == null) {
+                    break;
+                }
             }
 
             if (state == upgradeState) {
