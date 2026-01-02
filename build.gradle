@@ -178,9 +178,9 @@ dependencies {
 
     // If you want to test/use Mekanism & its modules during `runClient` invocation, use the following
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}")// core
-    compileOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:additions")// Mekanism: Additions
-    compileOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:generators")// Mekanism: Generators
-    compileOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")// Mekanism: Tools
+    implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:additions")// Mekanism: Additions
+    implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:generators")// Mekanism: Generators
+    implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")// Mekanism: Tools
 
     runtimeOnly fg.deobf("curse.maven:ctm-267602:5983309")
 

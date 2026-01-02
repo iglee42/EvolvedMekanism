@@ -130,6 +130,46 @@
         "evolvedmekanism:holystone_uranium_ore",
         "evolvedmekanism:netherrack_uranium_ore",
         "evolvedmekanism:shiverstone_uranium_ore",
-        "evolvedmekanism:supercharging_element"
+        "evolvedmekanism:supercharging_element",
+        "evolvedmekanism:block_alloy_infused",
+        "evolvedmekanism:block_alloy_reinforced",
+        "evolvedmekanism:block_alloy_atomic",
+        "evolvedmekanism:block_alloy_hypercharged",
+        "evolvedmekanism:block_alloy_subatomic",
+        "evolvedmekanism:block_alloy_singular",
+        "evolvedmekanism:block_alloy_exoversal",
+        "evolvedmekanism:block_alloy_creative",
+        {
+            "id": "evolvedmekanism:advanced_solar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:elite_solar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:ultimate_solar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:overclocked_solar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:quantum_solar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:dense_solar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:multiversal_solar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:creative_solar_generator",
+            "required": false
+        }
     ]
 }
