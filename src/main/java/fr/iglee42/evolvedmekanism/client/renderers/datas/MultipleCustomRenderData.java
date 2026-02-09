@@ -51,7 +51,7 @@ public class MultipleCustomRenderData {
                 return model;
             });
 
-            if (multiblock instanceof APTMultiblockData apt)gasModel = gasModel.bounds(gasModel.minX, gasModel.minY,gasModel.minZ,gasModel.maxX,(apt.height() - 2) * apt.prevGasScale,gasModel.maxZ);
+            if (multiblock instanceof APTMultiblockData apt)gasModel = gasModel.bounds(gasModel.minX, gasModel.minY,gasModel.minZ,gasModel.maxX,(apt.height() - 2) * apt.prevGasScale - 0.001f,gasModel.maxZ);
 
             renderObject(camera,data,rendererPos,gasModel,matrix,buffer,overlay,scale);
         });
