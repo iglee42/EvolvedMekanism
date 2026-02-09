@@ -52,8 +52,9 @@ public class QIODriveTierMixin implements InitializableEnum {
         EMQIODriveTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Long.MAX_VALUE,Integer.MAX_VALUE);
     }
 
-    @Inject(method = "<clinit>",at = @At("TAIL"))
+    @Inject(method = "<clinit>", at =@At("TAIL"))
     private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
+        if (EMBaseTier.OVERCLOCKED == null) ((InitializableEnum) (Object)BaseTier.BASIC).evolvedmekanism$initNewValues();
         if (EMQIODriveTier.BOOSTED != null)return;
         EMQIODriveTier.BOOSTED = evolvedmekanism$addVariant("BOOSTED", EMBaseTier.OVERCLOCKED, 32_000_000_000L,16_384);
         EMQIODriveTier.SINGULARITY = evolvedmekanism$addVariant("SINGULARITY",  EMBaseTier.QUANTUM,64_000_000_000L,32_768);
