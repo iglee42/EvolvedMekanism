@@ -87,7 +87,7 @@ public class TileEntityItemToItemFactoryMixin<RECIPE extends MekanismRecipe<?>> 
         return 0;
     }
 
-    @Override
+    @Unique
     public boolean isItemValidForSlot(@NotNull ItemStack stack) {
         return false;
     }

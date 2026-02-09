@@ -99,7 +99,7 @@ public class TileEntitySawingFactoryMixin extends TileEntityFactory<SawmillRecip
         return 0;
     }
 
-    @Override
+    @Unique
     public boolean isItemValidForSlot(@NotNull ItemStack stack) {
         return false;
     }
