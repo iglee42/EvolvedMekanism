@@ -1,0 +1,5 @@
+{
+  "type": "mekanism:enriching",
+  "input": { "ingredient": { "tag": "forge:dusts/noctis" } },
+  "output": { "item": "evolvedmekanism:noctis_rozuli" }
+}

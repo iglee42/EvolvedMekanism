@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "I": {
+            "tag": "forge:gems/noctis_rozuli"
+        }
+    },
+    "pattern": [
+        "III",
+        "I I"
+    ],
+    "result": {
+        "item": "evolvedmekanism:noctis_rozuli_helmet"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

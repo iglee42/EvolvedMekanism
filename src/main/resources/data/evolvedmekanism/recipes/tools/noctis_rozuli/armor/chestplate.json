@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "I": {
+            "tag": "forge:gems/noctis_rozuli"
+        }
+    },
+    "pattern": [
+        "I I",
+        "III",
+        "III"
+    ],
+    "result": {
+        "item": "evolvedmekanism:noctis_rozuli_chestplate"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "mekanismtools"
+        }
+    ]
+}

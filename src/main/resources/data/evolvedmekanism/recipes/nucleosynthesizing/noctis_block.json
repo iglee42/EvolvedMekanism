@@ -1,0 +1,7 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "duration": 500,
+  "gasInput": { "amount": 2, "gas": "mekanism:antimatter" },
+  "itemInput": { "ingredient": { "item": "minecraft:pink_wool" } },
+  "output": { "item": "evolvedmekanism:block_noctis_lazuli" }
+}

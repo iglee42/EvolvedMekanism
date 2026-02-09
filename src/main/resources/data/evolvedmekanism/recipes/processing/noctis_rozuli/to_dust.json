@@ -1,0 +1,5 @@
+{
+  "type": "mekanism:crushing",
+  "input": { "ingredient": { "tag": "forge:gems/noctis" } },
+  "output": { "item": "evolvedmekanism:dust_noctis_rozuli" }
+}

@@ -170,6 +170,9 @@
         {
             "id": "evolvedmekanism:creative_solar_generator",
             "required": false
-        }
+        },
+        "evolvedmekanism:block_noctis_rozuli",
+        "evolvedmekanism:noctis_rozuli_ore",
+        "evolvedmekanism:deepslate_noctis_rozuli_ore"
     ]
 }

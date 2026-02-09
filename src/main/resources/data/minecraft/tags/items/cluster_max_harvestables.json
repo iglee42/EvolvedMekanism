@@ -5,6 +5,8 @@
         { "id": "evolvedmekanism:plaslitherite_pickaxe", "required": false },
         { "id": "evolvedmekanism:plaslitherite_paxel", "required": false },
         { "id": "evolvedmekanism:refined_redstone_pickaxe", "required": false },
-        { "id": "evolvedmekanism:refined_redstone_paxel", "required": false }
+        { "id": "evolvedmekanism:refined_redstone_paxel", "required": false },
+        { "id": "evolvedmekanism:noctis_rozuli_pickaxe", "required": false },
+        { "id": "evolvedmekanism:noctis_rozuli_paxel", "required": false }
     ]
 }
