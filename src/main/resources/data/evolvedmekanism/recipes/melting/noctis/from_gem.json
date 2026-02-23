@@ -1,0 +1,21 @@
+{
+    "type": "evolvedmekanism:melting",
+    "input": {
+        "ingredient": {
+            "tag": "forge:gems/noctis"
+        }
+    },
+    "output": {
+        "fluid": "evolvedmekanism:molten_noctis",
+        "amount": 90
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:gems/noctis"
+            }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 30,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_rod"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_noctis",
+        "amount": 45
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 45
+    },
+    "output": {
+        "tag": "forge:rods/noctis"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:rods/noctis"
+            }
+        }
+    ]
+}

@@ -7,6 +7,14 @@
     {
       "id": "#forge:armors/chestplates/plaslitherite",
       "required": false
+    },
+    {
+      "id": "#forge:armors/chestplates/refined_redstone",
+      "required": false
+    },
+    {
+      "id": "#forge:armors/chestplates/noctis_rozuli",
+      "required": false
     }
   ]
 }

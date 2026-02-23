@@ -11,6 +11,10 @@
         {
             "type": "minecraft:single",
             "resource": "evolvedmekanism:entity/shield/refined_redstone"
+        },
+        {
+            "type": "minecraft:single",
+            "resource": "evolvedmekanism:entity/shield/noctis_rozuli"
         }
     ]
 }

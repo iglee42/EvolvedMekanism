@@ -1,0 +1,29 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 6,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_nugget"
+        }
+    },
+    "fluidInput": {
+        "fluid": "evolvedmekanism:molten_noctis",
+        "amount": 10
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 10
+    },
+    "output": {
+        "tag": "forge:nuggets/noctis"
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/noctis"
+            }
+        }
+    ]
+}

@@ -7,6 +7,14 @@
     {
       "id": "#forge:armors/leggings/plaslitherite",
       "required": false
+    },
+    {
+      "id": "#forge:armors/leggings/refined_redstone",
+      "required": false
+    },
+    {
+      "id": "#forge:armors/leggings/noctis_rozuli",
+      "required": false
     }
   ]
 }

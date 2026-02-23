@@ -171,6 +171,42 @@
             "id": "evolvedmekanism:creative_solar_generator",
             "required": false
         },
+        {
+            "id": "evolvedmekanism:advanced_lunar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:advanced_lunar_generator2",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:elite_lunar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:ultimate_lunar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:overclocked_lunar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:quantum_lunar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:dense_lunar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:multiversal_lunar_generator",
+            "required": false
+        },
+        {
+            "id": "evolvedmekanism:creative_lunar_generator",
+            "required": false
+        },
         "evolvedmekanism:block_noctis_rozuli",
         "evolvedmekanism:noctis_rozuli_ore",
         "evolvedmekanism:deepslate_noctis_rozuli_ore"

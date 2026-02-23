@@ -7,6 +7,14 @@
     {
       "id": "#forge:armors/helmets/plaslitherite",
       "required": false
+    },
+    {
+      "id": "#forge:armors/helmets/refined_redstone",
+      "required": false
+    },
+    {
+      "id": "#forge:armors/helmets/noctis_rozuli",
+      "required": false
     }
   ]
 }

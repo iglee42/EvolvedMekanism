@@ -1,0 +1,26 @@
+{
+    "type": "evolvedmekanism:solidifying",
+    "duration": 540,
+    "itemInput": {
+        "ingredient": {
+            "item": "evolvedmekanism:mold_storage_block"
+        }
+    },
+    "fluidInput": {
+        "amount": 810
+    },
+    "extraInput": {
+        "fluid": "mekanism:oxygen",
+        "amount": 810
+    },
+    "output": {
+    },
+    "conditions": [
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+            }
+        }
+    ]
+}

@@ -7,6 +7,14 @@
     {
       "id": "#forge:armors/boots/plaslitherite",
       "required": false
+    },
+    {
+      "id": "#forge:armors/boots/refined_redstone",
+      "required": false
+    },
+    {
+      "id": "#forge:armors/boots/noctis_rozuli",
+      "required": false
     }
   ]
 }
