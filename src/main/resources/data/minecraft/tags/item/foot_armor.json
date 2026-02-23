@@ -11,6 +11,10 @@
     {
       "id": "evolvedmekanism:refined_redstone_boots",
       "required": false
+    },
+    {
+      "id": "evolvedmekanism:noctis_rozuli_boots",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "values": [
+    { "id": "evolvedmekanism:better_gold_helmet", "required": false },
+    { "id": "evolvedmekanism:better_gold_chestplate", "required": false },
+    { "id": "evolvedmekanism:better_gold_leggings", "required": false },
+    { "id": "evolvedmekanism:better_gold_boots", "required": false },
+    { "id": "evolvedmekanism:plaslitherite_helmet", "required": false },
+    { "id": "evolvedmekanism:plaslitherite_chestplate", "required": false },
+    { "id": "evolvedmekanism:plaslitherite_leggings", "required": false },
+    { "id": "evolvedmekanism:plaslitherite_boots", "required": false },
+    { "id": "evolvedmekanism:refined_redstone_helmet", "required": false },
+    { "id": "evolvedmekanism:refined_redstone_chestplate", "required": false },
+    { "id": "evolvedmekanism:refined_redstone_leggings", "required": false },
+    { "id": "evolvedmekanism:refined_redstone_boots", "required": false },
+    { "id": "evolvedmekanism:noctis_rozuli_helmet", "required": false },
+    { "id": "evolvedmekanism:noctis_rozuli_chestplate", "required": false },
+    { "id": "evolvedmekanism:noctis_rozuli_leggings", "required": false },
+    { "id": "evolvedmekanism:noctis_rozuli_boots", "required": false }
+  ]
+}

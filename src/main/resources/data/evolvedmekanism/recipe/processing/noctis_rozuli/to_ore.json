@@ -1,0 +1,13 @@
+{
+  "type": "mekanism:combining",
+  "extra_input": {
+    "tag": "c:cobblestone"
+  },
+  "main_input": {
+    "count": 27,
+    "tag": "c:dusts/noctis_rozuli"
+  },
+  "output": {
+    "id": "evolvedmekanism:noctis_rozuli_ore"
+  }
+}

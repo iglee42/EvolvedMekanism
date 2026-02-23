@@ -1,0 +1,31 @@
+{
+    "type": "mekanism:mek_data",
+    "key": {
+        "A": {
+            "tag": "mekanism:alloys/infused"
+        },
+        "C": {
+            "tag": "c:circuits/advanced"
+        },
+        "I": {
+            "tag": "c:ingots/osmium"
+        },
+        "P": {
+            "item": "evolvedmekanism:advanced_lunar_generator"
+        }
+    },
+    "pattern": [
+        "ACA",
+        "IPI",
+        "ACA"
+    ],
+    "result": {
+        "id": "evolvedmekanism:advanced_lunar_generator"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "mekanismgenerators"
+        }
+    ]
+}

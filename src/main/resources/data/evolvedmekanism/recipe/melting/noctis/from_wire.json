@@ -1,0 +1,19 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "tag": "c:wires/noctis_rozuli"
+  },
+  "output": {
+    "id": "evolvedmekanism:molten_noctis",
+    "amount": 45
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/noctis_rozuli"
+      }
+    }
+  ]
+}

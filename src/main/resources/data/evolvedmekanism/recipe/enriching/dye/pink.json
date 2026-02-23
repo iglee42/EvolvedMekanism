@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "item": "evolvedmekanism:noctis_rozuli"
+  },
+  "output": {
+    "id": "minecraft:pink_dye",
+    "count": 2
+  }
+}

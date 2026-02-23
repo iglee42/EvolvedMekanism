@@ -11,6 +11,10 @@
     {
       "id": "evolvedmekanism:refined_redstone_shovel",
       "required": false
+    },
+    {
+      "id": "evolvedmekanism:noctis_rozuli_shovel",
+      "required": false
     }
   ]
 }

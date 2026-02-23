@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:pigment_extracting",
+  "input": {
+    "item": "evolvedmekanism:noctis_rozuli"
+  },
+  "output": {
+    "amount": 768,
+    "pigment": "mekanism:pink"
+  }
+}

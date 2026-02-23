@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:storage_blocks/noctis_rozuli"
+        }
+    ],
+    "result": {
+        "count": 9,
+        "id": "evolvedmekanism:noctis_rozuli"
+    }
+}

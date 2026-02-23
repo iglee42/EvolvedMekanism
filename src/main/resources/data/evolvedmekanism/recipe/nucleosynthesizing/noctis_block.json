@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "duration": 500,
+  "chemical_input": {
+    "amount": 2,
+    "chemical": "mekanism:antimatter"
+  },
+  "item_input": {
+    "item": "minecraft:pink_wool"
+  },
+  "output": {
+    "id": "evolvedmekanism:block_noctis_rozuli"
+  },
+  "per_tick_usage": false
+}

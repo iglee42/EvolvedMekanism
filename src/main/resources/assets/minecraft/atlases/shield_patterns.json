@@ -8,9 +8,13 @@
             "type": "minecraft:single",
             "resource": "mekanismtools:entity/shield/plaslitherite"
         },
-        {
-            "type": "minecraft:single",
-            "resource": "mekanismtools:entity/shield/refined_redstone"
-        }
-    ]
+    {
+      "type": "minecraft:single",
+      "resource": "mekanismtools:entity/shield/refined_redstone"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "mekanismtools:entity/shield/noctis_rozuli"
+    }
+  ]
 }

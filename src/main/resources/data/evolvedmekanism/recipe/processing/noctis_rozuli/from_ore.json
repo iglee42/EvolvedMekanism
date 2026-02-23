@@ -1,0 +1,10 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "tag": "c:ores/noctis_rozuli"
+  },
+  "output": {
+    "id": "evolvedmekanism:noctis_rozuli",
+    "count": 12
+  }
+}

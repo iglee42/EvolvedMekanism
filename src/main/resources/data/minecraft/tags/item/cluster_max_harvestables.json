@@ -23,6 +23,14 @@
     {
       "id": "evolvedmekanism:refined_redstone_paxel",
       "required": false
+    },
+    {
+      "id": "evolvedmekanism:noctis_rozuli_pickaxe",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:noctis_rozuli_paxel",
+      "required": false
     }
   ]
 }

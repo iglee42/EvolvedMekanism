@@ -1,0 +1,27 @@
+{
+  "type": "evolvedmekanism:solidifying",
+  "duration": 30,
+  "item_input": {
+    "item": "evolvedmekanism:mold_wire"
+  },
+  "fluid_input": {
+    "fluid": "evolvedmekanism:molten_noctis",
+    "amount": 45
+  },
+  "extra_input": {
+    "fluid": "mekanism:oxygen",
+    "amount": 45
+  },
+  "output": {
+    "tag": "c:wires/noctis_rozuli"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/noctis_rozuli"
+      }
+    }
+  ]
+}

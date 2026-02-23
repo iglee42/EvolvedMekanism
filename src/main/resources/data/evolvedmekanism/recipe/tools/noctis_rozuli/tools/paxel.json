@@ -1,0 +1,32 @@
+{
+  "type": "mekanismtools:paxel",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "evolvedmekanism:noctis_rozuli_axe"
+    },
+    "P": {
+      "item": "evolvedmekanism:noctis_rozuli_pickaxe"
+    },
+    "R": {
+      "tag": "c:rods/wooden"
+    },
+    "S": {
+      "item": "evolvedmekanism:noctis_rozuli_shovel"
+    }
+  },
+  "pattern": [
+    "APS",
+    " R ",
+    " R "
+  ],
+  "result": {
+    "id": "evolvedmekanism:noctis_rozuli_paxel"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ]
+}

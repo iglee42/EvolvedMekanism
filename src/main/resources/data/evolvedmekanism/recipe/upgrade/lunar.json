@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "tag": "c:dusts/noctis_rozuli"
+        },
+        "A": {
+            "tag": "evolvedmekanism:alloys/singular"
+        },
+        "G": {
+            "tag": "c:glass_blocks/cheap"
+        }
+    },
+    "pattern": [
+        " G ",
+        "A#A",
+        " G "
+    ],
+    "result": {
+        "id": "evolvedmekanism:upgrade_lunar"
+    },
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "mekanismgenerators"
+        }
+    ]
+}

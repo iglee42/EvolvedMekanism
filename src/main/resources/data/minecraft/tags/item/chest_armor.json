@@ -11,6 +11,10 @@
     {
       "id": "evolvedmekanism:refined_redstone_chestplate",
       "required": false
+    },
+    {
+      "id": "evolvedmekanism:noctis_rozuli_chestplate",
+      "required": false
     }
   ]
 }

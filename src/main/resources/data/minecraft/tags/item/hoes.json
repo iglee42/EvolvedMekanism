@@ -11,6 +11,10 @@
     {
       "id": "evolvedmekanism:refined_redstone_hoe",
       "required": false
+    },
+    {
+      "id": "evolvedmekanism:noctis_rozuli_hoe",
+      "required": false
     }
   ]
 }

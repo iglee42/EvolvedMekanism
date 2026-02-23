@@ -1,0 +1,13 @@
+{
+  "type": "mekanism:combining",
+  "extra_input": {
+    "tag": "c:cobblestone/deepslate"
+  },
+  "main_input": {
+    "count": 27,
+    "tag": "c:dusts/noctis_rozuli"
+  },
+  "output": {
+    "id": "evolvedmekanism:deepslate_noctis_rozuli_ore"
+  }
+}
