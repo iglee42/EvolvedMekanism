@@ -1,0 +1,16 @@
+{
+    "type": "mekanism:dissolution",
+    "chemical_input": {
+        "amount": 1,
+        "chemical": "evolvedmekanism:nitrogen"
+    },
+    "item_input": {
+        "count": 1,
+        "tag": "c:gems/noctis_rozuli"
+    },
+    "output": {
+        "amount": 1000,
+        "id": "evolvedmekanism:cryonoctis"
+    },
+    "per_tick_usage": true
+}

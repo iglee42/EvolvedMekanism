@@ -1,0 +1,19 @@
+{
+    "type": "mekanism:rotary",
+    "chemical_input": {
+        "amount": 1,
+        "chemical": "evolvedmekanism:cryonoctis"
+    },
+    "chemical_output": {
+        "amount": 1,
+        "id": "evolvedmekanism:cryonoctis"
+    },
+    "fluid_input": {
+        "amount": 1,
+        "tag": "c:cryonoctis"
+    },
+    "fluid_output": {
+        "amount": 1,
+        "id": "evolvedmekanism:cryonoctis"
+    }
+}
