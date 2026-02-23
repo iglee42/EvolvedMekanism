@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "item": "mekanism:hdpe_sheet"
+        },
+        "A": {
+            "tag": "mekanism:alloys/reinforced"
+        },
+        "C": {
+            "tag": "forge:circuits/elite"
+        },
+        "I": {
+            "tag": "forge:gems/noctis_rozuli"
+        },
+        "X": {
+            "item": "mekanism:steel_casing"
+        }
+    },
+    "pattern": [
+        "A#A",
+        "CXC",
+        "III"
+    ],
+    "result": {
+        "item": "evolvedmekanism:lunar_neutron_activator"
+    }
+}
