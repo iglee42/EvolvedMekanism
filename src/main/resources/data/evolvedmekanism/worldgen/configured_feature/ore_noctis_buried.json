@@ -1,5 +1,5 @@
 {
-  "type": "mekanism:ore",
+  "type": "evolvedmekanism:ore",
   "config": {
     "ore_type": {
       "type": "noctis",

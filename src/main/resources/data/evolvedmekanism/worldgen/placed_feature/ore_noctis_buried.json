@@ -2,7 +2,7 @@
   "feature": "evolvedmekanism:ore_noctis_buried",
   "placement": [
     {
-      "type": "mekanism:disableable",
+      "type": "evolvedmekanism:disableable",
       "ore_type": {
         "type": "noctis",
         "index": 1
@@ -12,7 +12,7 @@
     {
       "type": "minecraft:count",
       "count": {
-        "type": "mekanism:configurable_constant",
+        "type": "evolvedmekanism:configurable_constant",
         "ore_type": {
           "type": "noctis",
           "index": 1
@@ -25,7 +25,7 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "mekanism:configurable",
+        "type": "evolvedmekanism:configurable",
         "ore_type": {
           "type": "noctis",
           "index": 1
