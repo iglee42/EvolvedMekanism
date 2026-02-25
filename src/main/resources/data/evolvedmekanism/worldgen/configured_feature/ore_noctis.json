@@ -1,8 +1,10 @@
 {
-  "type": "minecraft:ore",
+  "type": "mekanism:ore",
   "config": {
-    "discard_chance_on_air_exposure": 0.0,
-    "size": 7,
+    "ore_type": {
+      "type": "noctis",
+      "index": 0
+    },
     "targets": [
       {
         "state": {
@@ -11,15 +13,6 @@
         "target": {
           "predicate_type": "minecraft:tag_match",
           "tag": "minecraft:stone_ore_replaceables"
-        }
-      },
-      {
-        "state": {
-          "Name": "evolvedmekanism:deepslate_noctis_rozuli_ore"
-        },
-        "target": {
-          "predicate_type": "minecraft:tag_match",
-          "tag": "minecraft:deepslate_ore_replaceables"
         }
       }
     ]

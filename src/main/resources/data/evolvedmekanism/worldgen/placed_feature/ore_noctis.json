@@ -2,8 +2,22 @@
   "feature": "evolvedmekanism:ore_noctis",
   "placement": [
     {
+      "type": "mekanism:disableable",
+      "ore_type": {
+        "type": "noctis",
+        "index": 0
+      },
+      "retro_gen": false
+    },
+    {
       "type": "minecraft:count",
-      "count": 2
+      "count": {
+        "type": "mekanism:configurable_constant",
+        "ore_type": {
+          "type": "noctis",
+          "index": 0
+        }
+      }
     },
     {
       "type": "minecraft:in_square"
@@ -11,12 +25,10 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:trapezoid",
-        "max_inclusive": {
-          "absolute": 32
-        },
-        "min_inclusive": {
-          "absolute": -32
+        "type": "mekanism:configurable",
+        "ore_type": {
+          "type": "noctis",
+          "index": 0
         }
       }
     },

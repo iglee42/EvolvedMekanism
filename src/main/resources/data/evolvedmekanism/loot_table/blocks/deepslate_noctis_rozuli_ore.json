@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "evolvedmekanism:noctis_ore"
+              "name": "evolvedmekanism:deepslate_noctis_rozuli_ore"
             },
             {
               "type": "minecraft:item",
@@ -55,5 +55,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "evolvedmekanism:blocks/noctis_ore"
+  "random_sequence": "evolvedmekanism:blocks/deepslate_noctis_rozuli_ore"
 }
