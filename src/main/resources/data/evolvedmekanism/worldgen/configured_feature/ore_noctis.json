@@ -1,12 +1,14 @@
 {
-  "type": "minecraft:ore",
+  "type": "evolvedmekanism:ore",
   "config": {
-    "discard_chance_on_air_exposure": 0.0,
-    "size": 7,
+    "oreVeinType": {
+      "type": "noctis_rozuli",
+      "index": 0
+    },
     "targets": [
       {
         "state": {
-          "Name": "evolvedmekanism:noctis_ore"
+          "Name": "evolvedmekanism:noctis_rozuli_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
@@ -15,7 +17,7 @@
       },
       {
         "state": {
-          "Name": "evolvedmekanism:deepslate_noctis_ore"
+          "Name": "evolvedmekanism:deepslate_noctis_rozuli_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
