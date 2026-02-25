@@ -7,7 +7,7 @@ import net.minecraft.Util;
 import java.util.EnumMap;
 import java.util.Map;
 
-public class EMAttachmedSideConfig {
+public class EMAttachedSideConfig {
     public static final AttachedSideConfig CHEMIXER_MACHINE = Util.make(() -> {
         Map<TransmissionType, AttachedSideConfig.LightConfigInfo> configInfo = new EnumMap<>(TransmissionType.class);
         configInfo.put(TransmissionType.ITEM, AttachedSideConfig.LightConfigInfo.EXTRA_MACHINE);
