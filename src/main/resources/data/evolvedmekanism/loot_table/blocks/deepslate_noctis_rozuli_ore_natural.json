@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [],
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "minecraft:blocks/deepslate_lapis_ore",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "evolvedmekanism:deepslate_noctis_rozuli_ore_natural",
+                  "properties": {
+                    "uncovered": "false"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "evolvedmekanism:blocks/deepslate_noctis_rozuli_ore"
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "evolvedmekanism:blocks/deepslate_noctis_rozuli_ore_natural"
+}

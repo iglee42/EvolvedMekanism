@@ -26,6 +26,7 @@ public class EMToolsArmorMaterials {
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BETTER_GOLD = ARMOR_MATERIALS.register("better_gold", name -> createMaterial(name, EvolvedMekanismToolsConfig.materials.betterGold));
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> PLASLITHERITE = ARMOR_MATERIALS.register("plaslitherite", name -> createMaterial(name, EvolvedMekanismToolsConfig.materials.plaslitherite));
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> REFINED_REDSTONE = ARMOR_MATERIALS.register("refined_redstone", name -> createMaterial(name, EvolvedMekanismToolsConfig.materials.refinedRedstone));
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> NOCTIS_ROZULI = ARMOR_MATERIALS.register("noctis_rozuli", name -> createMaterial(name, EvolvedMekanismToolsConfig.materials.noctisRozuli));
 
     private static ArmorMaterial createMaterial(ResourceLocation name, BaseMekanismMaterial material) {
         EnumMap<ArmorItem.Type, Integer> defense = new EnumMap<>(ArmorItem.Type.class);

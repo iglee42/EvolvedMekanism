@@ -2,17 +2,26 @@
   "type": "evolvedmekanism:ore",
   "config": {
     "ore_type": {
-      "type": "noctis",
+      "type": "noctis_rozuli",
       "index": 1
     },
     "targets": [
       {
         "state": {
-          "Name": "evolvedmekanism:noctis_rozuli_ore"
+          "Name": "evolvedmekanism:noctis_rozuli_ore_natural"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
           "tag": "minecraft:stone_ore_replaceables"
+        }
+      },
+      {
+        "state": {
+          "Name": "evolvedmekanism:deepslate_noctis_rozuli_ore_natural"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:deepslate_ore_replaceables"
         }
       }
     ]

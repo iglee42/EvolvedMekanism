@@ -157,6 +157,9 @@ public class EMFluids {
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_LAPIS = registerMolten("lapis",0xFF13408B);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_GLOWSTONE = registerMolten("glowstone",0xFFE5AC44);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_DEBRIS = registerMolten("debris",0xFF5C332B);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_NOCTIS = registerMolten("noctis",0xFFE44194);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> NITROGEN = FLUIDS.registerLiquidChemical(EMChemicalConstants.NITROGEN);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> CRYONOCTIS = FLUIDS.registerLiquidChemical(EMChemicalConstants.CRYONOCTIS);
 
 
     private static FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> registerMolten(String name,int color){

@@ -54,6 +54,18 @@ public class EMToolsItems {
     public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_BOOTS = registerArmor(EMToolsArmorMaterials.REFINED_REDSTONE, EvolvedMekanismToolsConfig.materials.refinedRedstone, ArmorItem.Type.BOOTS);
     public static final ItemRegistryObject<ItemMekanismShield> REFINED_REDSTONE_SHIELD = registerShield(EvolvedMekanismToolsConfig.materials.refinedRedstone);
 
+    public static final ItemRegistryObject<ItemMekanismPickaxe> NOCTIS_ROZULI_PICKAXE = registerPickaxe(EvolvedMekanismToolsConfig.materials.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismAxe> NOCTIS_ROZULI_AXE = registerAxe(EvolvedMekanismToolsConfig.materials.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismShovel> NOCTIS_ROZULI_SHOVEL = registerShovel(EvolvedMekanismToolsConfig.materials.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismHoe> NOCTIS_ROZULI_HOE = registerHoe(EvolvedMekanismToolsConfig.materials.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismSword> NOCTIS_ROZULI_SWORD = registerSword(EvolvedMekanismToolsConfig.materials.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismPaxel> NOCTIS_ROZULI_PAXEL = registerPaxel(EvolvedMekanismToolsConfig.materials.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismArmor> NOCTIS_ROZULI_HELMET = registerArmor(EMToolsArmorMaterials.NOCTIS_ROZULI, EvolvedMekanismToolsConfig.materials.noctisRozuli, ArmorItem.Type.HELMET);
+    public static final ItemRegistryObject<ItemMekanismArmor> NOCTIS_ROZULI_CHESTPLATE = registerArmor(EMToolsArmorMaterials.NOCTIS_ROZULI, EvolvedMekanismToolsConfig.materials.noctisRozuli, ArmorItem.Type.CHESTPLATE);
+    public static final ItemRegistryObject<ItemMekanismArmor> NOCTIS_ROZULI_LEGGINGS = registerArmor(EMToolsArmorMaterials.NOCTIS_ROZULI, EvolvedMekanismToolsConfig.materials.noctisRozuli, ArmorItem.Type.LEGGINGS);
+    public static final ItemRegistryObject<ItemMekanismArmor> NOCTIS_ROZULI_BOOTS = registerArmor(EMToolsArmorMaterials.NOCTIS_ROZULI, EvolvedMekanismToolsConfig.materials.noctisRozuli, ArmorItem.Type.BOOTS);
+    public static final ItemRegistryObject<ItemMekanismShield> NOCTIS_ROZULI_SHIELD = registerShield(EvolvedMekanismToolsConfig.materials.noctisRozuli);
+
 
     private static ItemRegistryObject<ItemMekanismShield> registerShield(MaterialCreator material) {
         return register(ItemMekanismShield::new, "_shield", material);

@@ -4,7 +4,7 @@
     {
       "type": "evolvedmekanism:disableable",
       "ore_type": {
-        "type": "noctis",
+        "type": "noctis_rozuli",
         "index": 0
       },
       "retro_gen": false
@@ -14,7 +14,7 @@
       "count": {
         "type": "evolvedmekanism:configurable_constant",
         "ore_type": {
-          "type": "noctis",
+          "type": "noctis_rozuli",
           "index": 0
         }
       }
@@ -27,7 +27,7 @@
       "height": {
         "type": "evolvedmekanism:configurable",
         "ore_type": {
-          "type": "noctis",
+          "type": "noctis_rozuli",
           "index": 0
         }
       }

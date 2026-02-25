@@ -44,6 +44,7 @@ public class ShieldTexturesMixin implements InitializableEnum {
         EMShieldTextures.BETTER_GOLD = evolvedmekanism$addVariant("BETTER_GOLD");
         EMShieldTextures.PLASLITHERITE = evolvedmekanism$addVariant("PLASLITHERITE");
         EMShieldTextures.REFINED_REDSTONE = evolvedmekanism$addVariant("REFINED_REDSTONE");
+        EMShieldTextures.NOCTIS_ROZULI = evolvedmekanism$addVariant("NOCTIS_ROZULI");
     }
 
     @Override
@@ -52,5 +53,6 @@ public class ShieldTexturesMixin implements InitializableEnum {
         EMShieldTextures.BETTER_GOLD = evolvedmekanism$addVariant("BETTER_GOLD");
         EMShieldTextures.PLASLITHERITE = evolvedmekanism$addVariant("PLASLITHERITE");
         EMShieldTextures.REFINED_REDSTONE = evolvedmekanism$addVariant("REFINED_REDSTONE");
+        EMShieldTextures.NOCTIS_ROZULI = evolvedmekanism$addVariant("NOCTIS_ROZULI");
     }
 }

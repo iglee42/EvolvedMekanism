@@ -1,12 +1,14 @@
 package fr.iglee42.emtools.config;
 
 import fr.iglee42.emtools.materials.BetterGoldMaterialDefaults;
+import fr.iglee42.emtools.materials.NoctisRozuliMaterialDefaults;
 import fr.iglee42.emtools.materials.PlaslitheriteMaterialDefaults;
 import fr.iglee42.emtools.materials.RefinedRedstoneMaterialDefaults;
 import fr.iglee42.evolvedmekanism.config.EMConfigHelper;
 import mekanism.common.config.BaseMekanismConfig;
 import mekanism.tools.common.config.ToolsConfigTranslations;
 import mekanism.tools.common.material.MaterialCreator;
+import mekanism.tools.common.material.impl.LapisLazuliMaterialDefaults;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
@@ -20,6 +22,7 @@ public class EMToolsMaterialConfig extends BaseMekanismConfig {
     public final MaterialCreator betterGold;
     public final MaterialCreator plaslitherite;
     public final MaterialCreator refinedRedstone;
+    public final MaterialCreator noctisRozuli;
 
 
 
@@ -30,6 +33,7 @@ public class EMToolsMaterialConfig extends BaseMekanismConfig {
         betterGold = new MaterialCreator(this, builder, new BetterGoldMaterialDefaults());
         plaslitherite = new MaterialCreator(this, builder, new PlaslitheriteMaterialDefaults());
         refinedRedstone = new MaterialCreator(this, builder, new RefinedRedstoneMaterialDefaults());
+        noctisRozuli = new MaterialCreator(this, builder, new NoctisRozuliMaterialDefaults());
         builder.pop();
         configSpec = builder.build();
     }

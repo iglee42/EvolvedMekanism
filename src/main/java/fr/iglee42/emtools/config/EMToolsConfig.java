@@ -17,6 +17,7 @@ public class EMToolsConfig extends BaseMekanismConfig {
     public final ArmorSpawnChanceConfig betterGoldSpawnRate;
     public final ArmorSpawnChanceConfig plaslitheriteSpawnRate;
     public final ArmorSpawnChanceConfig refinedRedstoneSpawnRate;
+    public final ArmorSpawnChanceConfig noctisRozuliSpawnRate;
 
     EMToolsConfig() {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
@@ -25,6 +26,7 @@ public class EMToolsConfig extends BaseMekanismConfig {
         betterGoldSpawnRate = new ArmorSpawnChanceConfig(this, builder, MekanismToolsConfig.materials.bronze);
         plaslitheriteSpawnRate = new ArmorSpawnChanceConfig(this, builder, MekanismToolsConfig.materials.lapisLazuli);
         refinedRedstoneSpawnRate = new ArmorSpawnChanceConfig(this, builder, MekanismToolsConfig.materials.lapisLazuli);
+        noctisRozuliSpawnRate = new ArmorSpawnChanceConfig(this, builder, MekanismToolsConfig.materials.lapisLazuli);
         builder.pop();
 
         configSpec = builder.build();

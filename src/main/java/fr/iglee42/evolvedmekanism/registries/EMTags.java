@@ -38,10 +38,12 @@ public class EMTags {
         public static final TagKey<Item> STORAGE_BLOCKS_BETTER_GOLD = commonTag("storage_blocks/better_gold");
         public static final TagKey<Item> STORAGE_BLOCKS_PLASLITHERITE = commonTag("storage_blocks/plaslitherite");
         public static final TagKey<Item> STORAGE_BLOCKS_REFINED_REDSTONE = commonTag("storage_blocks/refined_redstone");
+        public static final TagKey<Item> STORAGE_BLOCKS_NOCTIS_ROZULI = commonTag("storage_blocks/noctis_rozuli");
 
         public static final TagKey<Item> INGOTS_BETTER_GOLD = commonTag("ingots/better_gold");
         public static final TagKey<Item> INGOTS_PLASLITHERITE = commonTag("ingots/plaslitherite");
         public static final TagKey<Item> INGOTS_REFINED_REDSTONE = commonTag("ingots/refined_redstone");
+        public static final TagKey<Item> GEMS_NOCTIS_ROZULI = commonTag("gems/noctis_rozuli");
 
         public static final TagKey<Item> NUGGETS_BETTER_GOLD = commonTag("nuggets/better_gold");
         public static final TagKey<Item> NUGGETS_PLASLITHERITE = commonTag("nuggets/plaslitherite");
@@ -50,6 +52,7 @@ public class EMTags {
 
         public static final TagKey<Item> DUSTS_BETTER_GOLD = commonTag("dusts/better_gold");
         public static final TagKey<Item> DUSTS_PLASLITHERITE = commonTag("dusts/plaslitherite");
+        public static final TagKey<Item> DUSTS_NOCTIS_ROZULI = commonTag("dusts/noctis_rozuli");
 
         public static final TagKey<Item> ALLOYS = tag("alloys");
         public static final TagKey<Item> ALLOYS_CREATIVE = tag("alloys/creative");

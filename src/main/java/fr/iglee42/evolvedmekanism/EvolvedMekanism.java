@@ -77,6 +77,7 @@ public class EvolvedMekanism {
         modEventBus.addListener(this::enqueueIMC);
 
         EMBlocks.BLOCKS.register(modEventBus);
+        EMBlocks.BLOCKS_NO_ITEMS.register(modEventBus);
         EMItems.ITEMS.register(modEventBus);
         EMCreativeTabs.CREATIVE_TABS.register(modEventBus);
         EMTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
@@ -87,6 +88,10 @@ public class EvolvedMekanism {
         EMModules.MODULES.register(modEventBus);
         EMFluids.FLUIDS.register(modEventBus);
         EMParticleTypes.PARTICLES.register(modEventBus);
+        EMHeightProviderTypes.HEIGHT_PROVIDER_TYPES.register(modEventBus);
+        EMIntProviderTypes.INT_PROVIDER_TYPES.register(modEventBus);
+        EMPlacementModifiers.PLACEMENT_MODIFIERS.register(modEventBus);
+        EMFeatures.FEATURES.register(modEventBus);
         if (ModsCompats.MEKANISMTOOLS.isLoaded())EMToolsArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
 
         registerCompats(modEventBus);

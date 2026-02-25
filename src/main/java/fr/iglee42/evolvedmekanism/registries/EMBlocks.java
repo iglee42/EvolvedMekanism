@@ -3,9 +3,7 @@ package fr.iglee42.evolvedmekanism.registries;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
-import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonnalBarrel;
-import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonnalChest;
-import fr.iglee42.evolvedmekanism.blocks.EMBlockResource;
+import fr.iglee42.evolvedmekanism.blocks.*;
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.items.EMItemBlockResource;
@@ -25,6 +23,7 @@ import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import fr.iglee42.evolvedmekanism.utils.EMAttachmedSideConfig;
+import fr.iglee42.evolvedmekanism.utils.EMOreBlockType;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.attachments.component.AttachedEjector;
@@ -93,12 +92,11 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -106,8 +104,10 @@ import java.util.function.Supplier;
 
 public class EMBlocks {
     public static final BlockDeferredRegister BLOCKS = new BlockDeferredRegister(EvolvedMekanism.MODID);
+    public static final DeferredRegister<Block> BLOCKS_NO_ITEMS = DeferredRegister.createBlocks(EvolvedMekanism.MODID);
 
     private static final Table<FactoryTier, FactoryType, BlockRegistryObject<BlockFactory<?>, ItemBlockFactory>> FACTORIES = HashBasedTable.create();
+    public static final Map<EMOreType, EMOreBlockType> ORES = new LinkedHashMap<>();
 
     static {
         // factories
@@ -125,6 +125,20 @@ public class EMBlocks {
         for (OreType ore : EnumUtils.ORE_TYPES) {
             registerOre(ore);
         }
+
+        EMOreType ore = EMOreType.NOCTIS_ROZULI;
+        String name = ore.getResource().getRegistrySuffix() + "_ore";
+        BlockRegistryObject<EMBlockOre, ItemBlockTooltip<EMBlockOre>> stoneOre = registerBlock(name, () -> new EMBlockOre(ore));
+        BlockRegistryObject<EMBlockOre, ItemBlockTooltip<EMBlockOre>> deepslateOre = BLOCKS.register("deepslate_" + name,
+                () -> new EMBlockOre(ore, BlockBehaviour.Properties.ofLegacyCopy(stoneOre.value()).mapColor(MapColor.DEEPSLATE)
+                        .strength(4.5F, 3).sound(SoundType.DEEPSLATE)), ItemBlockTooltip::new);
+        BLOCKS_NO_ITEMS.register(name+"_natural", () -> new BlockNoctisRozuliOre(ore));
+        BLOCKS_NO_ITEMS.register("deepslate_" + name + "_natural",
+                () -> new BlockNoctisRozuliOre(ore, BlockBehaviour.Properties.ofLegacyCopy(stoneOre.value()).mapColor(MapColor.DEEPSLATE)
+                        .strength(4.5F, 3).sound(SoundType.DEEPSLATE)));
+
+
+        ORES.put(ore,new EMOreBlockType(stoneOre, deepslateOre));
     }
     public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTCasing>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTCasing>>> APT_CASING = registerBlock("apt_casing", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_CASING, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
     public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTPort>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTPort>>> APT_PORT = registerBlock("apt_port", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_PORT, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
@@ -201,6 +215,7 @@ public class EMBlocks {
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> PLASLITHERITE_BLOCK = registerResourceBlock(EMBlockResourceInfo.PLASLITHERITE);
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> REFINED_REDSTONE_BLOCK = registerResourceBlock(EMBlockResourceInfo.REFINED_REDSTONE);
+    public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> NOCTIS_ROZULI_BLOCK = registerResourceBlock(EMBlockResourceInfo.NOCTIS_ROZULI);
 
     public static final BlockRegistryObject<Block,BlockItem> INFUSED_ALLOY_BLOCK = registerAlloyBlock(AlloyTier.INFUSED);
     public static final BlockRegistryObject<Block,BlockItem> REINFORCED_ALLOY_BLOCK = registerAlloyBlock(AlloyTier.REINFORCED);
@@ -303,6 +318,15 @@ public class EMBlocks {
                 () -> new BlockOre(ore, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).strength(1.5F, 6.0F).sound(SoundType.BASALT).requiresCorrectToolForDrops()));
         BlockRegistryObject<BlockOre, ItemBlockTooltip<BlockOre>> undergarden2 = registerBlock("shiverstone_" + name,
                 () -> new BlockOre(ore, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.GLOW_LICHEN).strength(3.5F, 12F).sound(SoundType.NETHER_BRICKS).requiresCorrectToolForDrops().friction(0.98F)));
+    }
+
+    private static EMOreBlockType registerOre(EMOreType ore) {
+        String name = ore.getResource().getRegistrySuffix() + "_ore";
+        BlockRegistryObject<EMBlockOre, ItemBlockTooltip<EMBlockOre>> stoneOre = registerBlock(name, () -> new EMBlockOre(ore));
+        BlockRegistryObject<EMBlockOre, ItemBlockTooltip<EMBlockOre>> deepslateOre = BLOCKS.register("deepslate_" + name,
+                () -> new EMBlockOre(ore, BlockBehaviour.Properties.ofLegacyCopy(stoneOre.value()).mapColor(MapColor.DEEPSLATE)
+                        .strength(4.5F, 3).sound(SoundType.DEEPSLATE)), ItemBlockTooltip::new);
+        return new EMOreBlockType(stoneOre, deepslateOre);
     }
 
     private static <BLOCK extends Block & IHasDescription> BlockRegistryObject<BLOCK, ItemBlockTooltip<BLOCK>> registerBlock(String name,

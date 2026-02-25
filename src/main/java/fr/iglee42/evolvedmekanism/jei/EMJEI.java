@@ -104,7 +104,7 @@ public class EMJEI implements IModPlugin {
     public void registerRecipes(IRecipeRegistration registry) {
         List<FluidStack> fluidsToRemove = new ArrayList<>();
         List<ItemStack> itemsToRemove = new ArrayList<>();
-        EMFluids.FLUIDS.getFluidEntries().forEach(ro->{
+        EMFluids.FLUIDS.getFluidEntries().stream().filter(ro->ro.getId().getPath().startsWith("molten_")).forEach(ro->{
             boolean hasMelting = EMRecipeType.MELTING.getRecipes((Level) null).stream().anyMatch(r->r.value().getOutput(ItemStack.EMPTY).getFluid().equals(ro.get()));
             boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes((Level) null).stream().anyMatch(r->r.value().getInputFluid().test(new FluidStack(ro.get(), (int) r.value().getInputFluid().getNeededAmount(new FluidStack(ro.get(),1)))));
             if (!hasMelting && !hasSolidifying){
