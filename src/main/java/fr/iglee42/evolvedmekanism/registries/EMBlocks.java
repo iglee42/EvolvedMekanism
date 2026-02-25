@@ -13,6 +13,7 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
+import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
@@ -55,6 +56,7 @@ import mekanism.common.recipe.MekanismRecipeType;
 import mekanism.common.recipe.lookup.cache.InputRecipeCache;
 import mekanism.common.registration.impl.BlockDeferredRegister;
 import mekanism.common.registration.impl.BlockRegistryObject;
+import mekanism.common.registries.MekanismBlockTypes;
 import mekanism.common.registries.MekanismDataComponents;
 import mekanism.common.resource.BlockResourceInfo;
 import mekanism.common.resource.ore.OreType;
@@ -65,6 +67,7 @@ import mekanism.common.tile.TileEntityEnergyCube;
 import mekanism.common.tile.TileEntityFluidTank;
 import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.machine.TileEntityMetallurgicInfuser;
+import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.prefab.TileEntityAdvancedElectricMachine;
@@ -199,6 +202,24 @@ public class EMBlocks {
                             .addEnergy()
                             .build()
                     ));
+
+    public static final BlockRegistryObject<BlockTileModel<TileEntityLunarNeutronActivator, Machine<TileEntityLunarNeutronActivator>>, ItemBlockTooltip<BlockTileModel<TileEntityLunarNeutronActivator, Machine<TileEntityLunarNeutronActivator>>>> LUNAR_NEUTRON_ACTIVATOR =
+            BLOCKS.register("lunar_neutron_activator", () -> new BlockTileModel<>(EMBlockTypes.LUNAR_NEUTRON_ACTIVATOR, properties -> properties.mapColor(MapColor.COLOR_PINK)),
+                    (block, properties) -> new ItemBlockTooltip<>(block, true, properties
+                            .component(MekanismDataComponents.EJECTOR, AttachedEjector.DEFAULT)
+                            .component(MekanismDataComponents.SIDE_CONFIG, AttachedSideConfig.SNA)
+                    )
+            ).forItemHolder(holder -> holder
+                    .addAttachmentOnlyContainers(ContainerType.CHEMICAL, () -> ChemicalTanksBuilder.builder()
+                            .addBasic(TileEntitySolarNeutronActivator.MAX_GAS, MekanismRecipeType.ACTIVATING, InputRecipeCache.SingleChemical::containsInput)
+                            .addBasic(TileEntitySolarNeutronActivator.MAX_GAS)
+                            .build()
+                    ).addAttachmentOnlyContainers(ContainerType.ITEM, () -> ItemSlotsBuilder.builder()
+                            .addChemicalFillSlot(0)
+                            .addChemicalDrainSlot(1)
+                            .build()
+                    )
+            );
 
 
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);

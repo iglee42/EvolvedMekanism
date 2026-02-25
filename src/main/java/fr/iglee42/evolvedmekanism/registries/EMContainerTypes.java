@@ -5,6 +5,7 @@ import fr.iglee42.evolvedmekanism.containers.TieredPersonalStorageContainer;
 import fr.iglee42.evolvedmekanism.inventory.personalstorage.TieredPersonalStorageItemContainer;
 import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
+import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
@@ -20,6 +21,7 @@ import mekanism.common.registration.impl.ContainerTypeRegistryObject;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.tile.TileEntityPersonalStorage;
 import mekanism.common.tile.machine.TileEntityEnrichmentChamber;
+import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntitySPSCasing;
 
 public class EMContainerTypes {
@@ -33,5 +35,6 @@ public class EMContainerTypes {
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityAPTCasing>> APT = CONTAINER_TYPES.custom(EMBlocks.APT_CASING, TileEntityAPTCasing.class).offset(0, 16).build();
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityMelter>> MELTER = CONTAINER_TYPES.register(EMBlocks.MELTER, TileEntityMelter.class);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntitySolidifier>> SOLIDIFIER = CONTAINER_TYPES.register(EMBlocks.SOLIDIFIER, TileEntitySolidifier.class);
+    public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityLunarNeutronActivator>> LUNAR_NEUTRON_ACTIVATOR = CONTAINER_TYPES.register(EMBlocks.LUNAR_NEUTRON_ACTIVATOR, TileEntityLunarNeutronActivator.class);
 
 }

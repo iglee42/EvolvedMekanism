@@ -14,6 +14,7 @@ import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.BaseTier;
 import mekanism.client.ClientRegistrationUtil;
+import mekanism.client.gui.machine.GuiSolarNeutronActivator;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.RenderPropertiesProvider;
 import mekanism.client.render.armor.*;
@@ -28,6 +29,7 @@ import mekanism.client.render.transmitter.*;
 import mekanism.common.block.attribute.Attribute;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
 import mekanism.common.registries.MekanismBlocks;
+import mekanism.common.registries.MekanismContainerTypes;
 import mekanism.common.registries.MekanismFluids;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.tile.transmitter.TileEntityLogisticalTransporter;
@@ -121,6 +123,7 @@ public class ClientRegistration {
             ClientRegistrationUtil.registerScreen(event,EMContainerTypes.APT, GuiAPT::new);
             ClientRegistrationUtil.registerScreen(event,EMContainerTypes.MELTER, GuiMelter::new);
             ClientRegistrationUtil.registerScreen(event,EMContainerTypes.SOLIDIFIER, GuiSolidifier::new);
+            ClientRegistrationUtil.registerScreen(event, EMContainerTypes.LUNAR_NEUTRON_ACTIVATOR, GuiLunarNeutronActivator::new);
 
     }
 

@@ -23,6 +23,7 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_MULTIVERSAL_SOLAR_GENERATOR("description", "multiversal_solar_generator"),
     DESCRIPTION_CREATIVE_SOLAR_GENERATOR("description", "creative_solar_generator"),
     DESCRIPTION_SUPERCHARGING_ELEMENT("description", "supercharging_element"),
+    DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR("description", "lunar_neutron_activator"),
 
     DESCRIPTION_MAX_TIER_INSTALLER("description", "max_tier_installer"),
 

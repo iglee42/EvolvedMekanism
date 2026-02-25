@@ -14,11 +14,13 @@ import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.recipes.ItemStackChemicalToItemStackRecipe;
 import mekanism.api.recipes.ItemStackToFluidRecipe;
+import mekanism.api.recipes.MekanismRecipeTypes;
 import mekanism.client.recipe_viewer.jei.CatalystRegistryHelper;
 import mekanism.client.recipe_viewer.jei.MekanismJEI;
 import mekanism.client.recipe_viewer.jei.MekanismSubtypeInterpreter;
 import mekanism.client.recipe_viewer.jei.RecipeRegistryHelper;
 import mekanism.client.recipe_viewer.type.RVRecipeTypeWrapper;
+import mekanism.client.recipe_viewer.type.RecipeViewerRecipeType;
 import mekanism.common.block.BlockOre;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.registries.MekanismBlocks;
@@ -137,6 +139,7 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
+        CatalystRegistryHelper.register(registry, MekanismJEI.genericRecipeType(RecipeViewerRecipeType.ACTIVATING),Arrays.asList(EMBlocks.LUNAR_NEUTRON_ACTIVATOR));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.CHEMIXING),Arrays.asList(EMBlocks.CHEMIXER));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.APT),Arrays.asList(EMBlocks.APT_CASING,EMBlocks.APT_PORT,EMBlocks.SUPERCHARGING_ELEMENT));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(JEIRecipeTypes.MELTING),Arrays.asList(EMBlocks.MELTER));

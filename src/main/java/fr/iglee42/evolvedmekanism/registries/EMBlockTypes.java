@@ -11,6 +11,7 @@ import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiers.cable.*;
 import fr.iglee42.evolvedmekanism.tiers.storage.*;
+import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
@@ -37,6 +38,7 @@ import mekanism.common.registries.MekanismSounds;
 import mekanism.common.registries.MekanismTileEntityTypes;
 import mekanism.common.tier.*;
 import mekanism.common.tile.*;
+import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.multiblock.TileEntitySPSPort;
@@ -114,6 +116,18 @@ public class EMBlockTypes {
             .createBlock(() -> EMTileEntityTypes.SUPERCHARGING_ELEMENT, EvolvedMekanismLang.DESCRIPTION_SUPERCHARGING_ELEMENT)
             .with(Attributes.ACTIVE_LIGHT)
             .internalMultiblock()
+            .build();
+
+    public static final Machine<TileEntityLunarNeutronActivator> LUNAR_NEUTRON_ACTIVATOR = MachineBuilder
+            .createMachine(() -> EMTileEntityTypes.LUNAR_NEUTRON_ACTIVATOR, EvolvedMekanismLang.DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR)
+            .withGui(() -> EMContainerTypes.LUNAR_NEUTRON_ACTIVATOR)
+            .without(AttributeParticleFX.class, AttributeUpgradeSupport.class)
+            .withCustomShape(BlockShapes.SOLAR_NEUTRON_ACTIVATOR)
+            .with(AttributeCustomSelectionBox.JSON)
+            .withSideConfig(TransmissionType.CHEMICAL, TransmissionType.ITEM)
+            .with(AttributeHasBounding.ABOVE_ONLY)
+            .withComputerSupport("lunarNeutronActivator")
+            .replace(Attributes.ACTIVE)
             .build();
 
     // Induction Cells
