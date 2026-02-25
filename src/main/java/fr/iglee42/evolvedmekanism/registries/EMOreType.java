@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 public enum EMOreType implements StringRepresentable {
     NOCTIS_ROZULI(EMResources.NOCTIS_ROZULI, 2, 8,
           new BaseOreConfig("normal", 2, 0, 7, HeightShape.TRAPEZOID, OreAnchor.absolute(-32), OreAnchor.absolute(32)),
-          new BaseOreConfig("buried", 4, 1, 7, HeightShape.TRAPEZOID, OreAnchor.aboveBottom(0), OreAnchor.absolute(64))
+          new BaseOreConfig("buried", 4, 0.5f, 7, HeightShape.TRAPEZOID, OreAnchor.aboveBottom(0), OreAnchor.absolute(64))
     );
 
     public static Codec<EMOreType> CODEC = StringRepresentable.fromEnum(EMOreType::values);
