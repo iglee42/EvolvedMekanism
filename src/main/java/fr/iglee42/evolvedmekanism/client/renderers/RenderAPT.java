@@ -45,18 +45,6 @@ public class RenderAPT extends MultiblockTileEntityRenderer<APTMultiblockData, T
                     .location(Objects.requireNonNull(multiblock.renderLocation).offset(1,0,1)).dimensions(5,scaleY,5).build()
             );
             renderData.setCustomFunc(middleData, model->model.bounds(model.minX,model.minY,model.minZ+0.001f,model.maxX,model.maxY,model.maxZ+0.001f));
-            // WEST MID
-           /* String westMid = renderData.add("westMid",CustomRenderData.Builder.create(multiblock.inputTank.getStack())
-                    .location(Objects.requireNonNull(multiblock.renderLocation).offset(1,0,1)).dimensions(5,scaleY,1).build()
-            , Direction.EAST);
-            renderData.setCustomFunc(westMid, model->model.bounds(model.minX,model.minY,model.minZ,model.maxX + 0.03f,model.maxY,model.maxZ));
-
-            // EAST MID
-            String eastMid = renderData.add("eastMid",CustomRenderData.Builder.create(multiblock.inputTank.getStack())
-                            .location(Objects.requireNonNull(multiblock.renderLocation).offset(5,0,1)).dimensions(5,scaleY,1).build()
-                    , Direction.WEST);
-            renderData.setCustomFunc(eastMid, model->model.bounds(model.minX - 0.03f,model.minY,model.minZ,model.maxX + 0.03f,model.maxY,model.maxZ));*/
-
             renderData.renderAllDatas(getCamera(),pos,matrix,buffer.get(),overlayLight,0.75f,multiblock);
         }
     }
