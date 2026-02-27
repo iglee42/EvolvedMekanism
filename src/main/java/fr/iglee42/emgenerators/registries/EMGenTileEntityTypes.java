@@ -1,6 +1,7 @@
 package fr.iglee42.emgenerators.registries;
 
 import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
+import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
@@ -9,6 +10,8 @@ import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.tile.base.TileEntityMekanism;
+import mekanism.generators.common.registries.GeneratorsBlocks;
+import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.neoforged.bus.api.IEventBus;
 
 public class EMGenTileEntityTypes {
@@ -23,6 +26,12 @@ public class EMGenTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> DENSE_SOLAR_PANEL = registerTieredSolarPanel(EMGenBlocks.DENSE_SOLAR_GENERATOR, AdvancedSolarPanelTier.DENSE);
     public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> MULTIVERSAL_SOLAR_PANEL = registerTieredSolarPanel(EMGenBlocks.MULTIVERSAL_SOLAR_GENERATOR, AdvancedSolarPanelTier.MULTIVERSAL);
     public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> CREATIVE_SOLAR_PANEL = registerTieredSolarPanel(EMGenBlocks.CREATIVE_SOLAR_GENERATOR, AdvancedSolarPanelTier.CREATIVE);
+
+    public static final TileEntityTypeRegistryObject<TileEntityLunarGenerator> LUNAR_GENERATOR = TILE_ENTITY_TYPES.mekBuilder(EMGenBlocks.LUNAR_GENERATOR, TileEntityLunarGenerator::new)
+            .clientTicker(TileEntityMekanism::tickClient)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.CONFIG_CARD)
+            .build();
 
     public static TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> registerTieredSolarPanel(BlockRegistryObject<?,?> block, AdvancedSolarPanelTier tier) {
         return TILE_ENTITY_TYPES.mekBuilder(block, (pos,state)->new TileEntityTieredAdvancedSolarGenerator(block,pos, state, tier))

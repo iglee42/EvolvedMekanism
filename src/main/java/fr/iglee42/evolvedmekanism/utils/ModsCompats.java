@@ -10,7 +10,7 @@ import java.util.List;
 
 public enum ModsCompats {
 
-    MEKANISMGENERATORS("tiles.TileEntitySolarGeneratorMixin",
+    MEKANISMGENERATORS("tiles.TileEntitySolarGeneratorMixin","tiles.TileEntitySolarGeneratorAccessor",
             "tiles.TileEntityAdvancedSolarGeneratorMixin"),
 
     MEKANISMTOOLS("client.ShieldTexturesMixin","client.ToolsRenderMekanismShieldItemMixin");

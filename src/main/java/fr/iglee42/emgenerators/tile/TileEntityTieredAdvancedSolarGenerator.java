@@ -73,7 +73,7 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
     @Override
     protected boolean checkCanSeeSun() {
         if (solarCheck == null) {
-            // Note: We assume if solarCheck is null then solarChecks will be filled with
+            // Note: We assume if lunarCheck is null then solarChecks will be filled with
             // null, and if it isn't
             // then it won't be as they get initialized at the same time
             return false;
@@ -97,7 +97,7 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
     @Override
     public long getProduction() {
         if (level == null || solarCheck == null) {
-            // Note: We assume if solarCheck is null then solarChecks will be filled with
+            // Note: We assume if lunarCheck is null then solarChecks will be filled with
             // null, and if it isn't
             // then it won't be as they get initialized at the same time
             return 0;

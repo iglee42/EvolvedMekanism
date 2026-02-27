@@ -4,24 +4,27 @@ import java.util.EnumSet;
 import java.util.function.Supplier;
 
 import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
+import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
+import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.api.Upgrade;
 import mekanism.api.text.ILangEntry;
-import mekanism.common.block.attribute.AttributeHasBounding;
-import mekanism.common.block.attribute.AttributeTier;
-import mekanism.common.block.attribute.AttributeUpgradeable;
-import mekanism.common.block.attribute.Attributes;
+import mekanism.common.block.attribute.*;
 import mekanism.common.block.prefab.BlockBase;
 import mekanism.common.content.blocktype.BlockTypeTile;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
+import mekanism.generators.common.GeneratorsLang;
 import mekanism.generators.common.config.MekanismGeneratorsConfig;
 import mekanism.generators.common.content.blocktype.BlockShapes;
 import mekanism.generators.common.content.blocktype.Generator;
 import mekanism.generators.common.content.blocktype.Generator.GeneratorBuilder;
+import mekanism.generators.common.registries.GeneratorsContainerTypes;
 import mekanism.generators.common.registries.GeneratorsSounds;
+import mekanism.generators.common.registries.GeneratorsTileEntityTypes;
+import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -51,6 +54,16 @@ public class EMGenBlockTypes {
     public static final Generator<TileEntityTieredAdvancedSolarGenerator> CREATIVE_SOLAR_GENERATOR =
             createTieredSolarGenerator(AdvancedSolarPanelTier.CREATIVE, () -> EMGenTileEntityTypes.CREATIVE_SOLAR_PANEL, EvolvedMekanismLang.DESCRIPTION_CREATIVE_SOLAR_GENERATOR, ()->null);
 
+    public static final Generator<TileEntityLunarGenerator> LUNAR_GENERATOR = GeneratorBuilder
+            .createGenerator(() -> EMGenTileEntityTypes.LUNAR_GENERATOR, EvolvedMekanismLang.DESCRIPTION_LUNAR_GENERATOR)
+            .withGui(() -> EMGenContainerTypes.LUNAR_GENERATOR)
+            .withEnergyConfig(MekanismGeneratorsConfig.storageConfig.solarGenerator)
+            .withCustomShape(BlockShapes.SOLAR_GENERATOR)
+            .withSound(GeneratorsSounds.SOLAR_GENERATOR)
+            .withSupportedUpgrades(Upgrade.MUFFLING,EMUpgrades.LUNAR_UPGRADE)
+            .withComputerSupport("lunarGenerator")
+            .replace(Attributes.ACTIVE)
+            .build();
 
     public static Generator<TileEntityTieredAdvancedSolarGenerator> createTieredSolarGenerator(
             AdvancedSolarPanelTier tier,

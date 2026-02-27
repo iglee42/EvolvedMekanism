@@ -25,6 +25,8 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_SUPERCHARGING_ELEMENT("description", "supercharging_element"),
     DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR("description", "lunar_neutron_activator"),
 
+    DESCRIPTION_LUNAR_GENERATOR("description", "lunar_generator"),
+
     DESCRIPTION_MAX_TIER_INSTALLER("description", "max_tier_installer"),
 
     APT("apt", "apt"),
@@ -41,8 +43,10 @@ public enum EvolvedMekanismLang implements ILangEntry {
 
     UPGRADE_RADIOACTIVE("upgrade","radioactive"),
     UPGRADE_SOLAR("upgrade","solar"),
+    UPGRADE_LUNAR("upgrade","lunar"),
     UPGRADE_RADIOACTIVE_DESCRIPTION("upgrade","radioactive.description"),
     UPGRADE_SOLAR_DESCRIPTION("upgrade","solar.description"),
+    UPGRADE_LUNAR_DESCRIPTION("upgrade","lunar.description"),
 
     ;
 

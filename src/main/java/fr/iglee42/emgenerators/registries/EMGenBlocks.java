@@ -1,18 +1,23 @@
 package fr.iglee42.emgenerators.registries;
 
 import fr.iglee42.emgenerators.items.ItemBlockTieredSolarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
+import mekanism.common.attachments.containers.ContainerType;
+import mekanism.common.attachments.containers.item.ItemSlotsBuilder;
 import mekanism.common.block.prefab.BlockTile.BlockTileModel;
 import mekanism.common.inventory.container.tile.MekanismTileContainer;
+import mekanism.common.item.block.ItemBlockTooltip;
 import mekanism.common.registration.impl.BlockDeferredRegister;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.ContainerTypeRegistryObject;
 import mekanism.generators.common.content.blocktype.Generator;
 import mekanism.generators.common.registries.GeneratorsBlockTypes;
 import mekanism.generators.common.tile.TileEntityAdvancedSolarGenerator;
+import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -31,6 +36,10 @@ public class EMGenBlocks {
             MULTIVERSAL_SOLAR_GENERATOR = registerTieredSolarGenerator("multiversal_solar_generator", EMGenBlockTypes.MULTIVERSAL_SOLAR_GENERATOR),
             CREATIVE_SOLAR_GENERATOR = registerTieredSolarGenerator("creative_solar_generator", EMGenBlockTypes.CREATIVE_SOLAR_GENERATOR);
 
+
+    public static final BlockRegistryObject<BlockTileModel<TileEntityLunarGenerator, Generator<TileEntityLunarGenerator>>, ItemBlockTooltip<BlockTileModel<TileEntityLunarGenerator, Generator<TileEntityLunarGenerator>>>> LUNAR_GENERATOR =
+            BLOCKS.registerDetails("lunar_generator", () -> new BlockTileModel<>(EMGenBlockTypes.LUNAR_GENERATOR, properties -> properties.mapColor(MapColor.COLOR_PINK)))
+                    .forItemHolder(holder -> holder.addAttachmentOnlyContainers(ContainerType.ITEM, () -> ItemSlotsBuilder.builder().addEnergy().build()));
 
     private static BlockRegistryObject<BlockTileModel<TileEntityTieredAdvancedSolarGenerator, Generator<TileEntityTieredAdvancedSolarGenerator>>, ItemBlockTieredSolarGenerator> registerTieredSolarGenerator(String name, Generator<TileEntityTieredAdvancedSolarGenerator> type) {
         return BLOCKS.register(name,

@@ -1,5 +1,6 @@
 package fr.iglee42.evolvedmekanism.blocks;
 
+import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMOreType;
 import mekanism.api.text.ILangEntry;
 import mekanism.common.Mekanism;
@@ -39,7 +40,7 @@ public class EMBlockOre extends Block implements IHasDescription {
     @NotNull
     public String getDescriptionTranslationKey() {
         if (descriptionTranslationKey == null) {
-            descriptionTranslationKey = Util.makeDescriptionId("description", Mekanism.rl(ore.getResource().getRegistrySuffix() + "_ore"));
+            descriptionTranslationKey = Util.makeDescriptionId("description", EvolvedMekanism.rl(ore.getResource().getRegistrySuffix() + "_ore"));
         }
         return descriptionTranslationKey;
     }

@@ -178,7 +178,6 @@ public class TileEntityLunarNeutronActivator extends TileEntityRecipeMachine<Che
 
     @ComputerMethod
     boolean canSeeSun() {
-
         return level != null && level.dimensionType().hasSkyLight() && level.canSeeSky(worldPosition.above()) && level.isNight();
     }
 

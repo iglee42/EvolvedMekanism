@@ -24,7 +24,9 @@ import java.util.Locale;
 public class EMGenItems {
     public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(EvolvedMekanism.MODID);
 
+    public static final ItemRegistryObject<Item> LUNAR_PANEL = ITEMS.register("lunar_panel");
     public static final ItemRegistryObject<ItemUpgrade> SOLAR_UPGRADE = registerUpgrade(EMUpgrades.SOLAR_UPGRADE);
+    public static final ItemRegistryObject<ItemUpgrade> LUNAR_UPGRADE = registerUpgrade(EMUpgrades.LUNAR_UPGRADE);
 
 
     private static ItemRegistryObject<Item> registerCircuit(BaseTier tier) {
