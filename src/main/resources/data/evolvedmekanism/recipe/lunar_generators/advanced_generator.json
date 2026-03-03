@@ -11,7 +11,7 @@
             "tag": "c:ingots/osmium"
         },
         "P": {
-            "item": "evolvedmekanism:advanced_lunar_generator"
+            "item": "evolvedmekanism:basic_advanced_lunar_generator"
         }
     },
     "pattern": [

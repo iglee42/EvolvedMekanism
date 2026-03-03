@@ -5,22 +5,19 @@
             "tag": "mekanism:alloys/infused"
         },
         "C": {
-            "tag": "c:circuits/advanced"
-        },
-        "I": {
-            "tag": "c:ingots/osmium"
+            "tag": "c:gems/noctis_rozuli"
         },
         "P": {
             "item": "evolvedmekanism:lunar_generator"
         }
     },
     "pattern": [
-        "ACA",
-        "IPI",
-        "ACA"
+        "PAP",
+        "PAP",
+        "CCC"
     ],
     "result": {
-        "id": "evolvedmekanism:advanced_lunar_generator2"
+        "id": "evolvedmekanism:basic_advanced_lunar_generator"
     },
     "neoforge:conditions": [
         {

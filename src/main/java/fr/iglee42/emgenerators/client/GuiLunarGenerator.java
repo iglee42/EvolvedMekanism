@@ -3,6 +3,7 @@ package fr.iglee42.emgenerators.client;
 import java.util.List;
 
 import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import mekanism.client.SpecialColors;
 import mekanism.client.gui.GuiMekanismTile;
 import mekanism.client.gui.element.GuiInnerScreen;
@@ -16,7 +17,6 @@ import mekanism.common.util.text.EnergyDisplay;
 import mekanism.generators.client.gui.element.GuiStateTexture;
 import mekanism.generators.common.GeneratorsLang;
 import mekanism.generators.common.MekanismGenerators;
-import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;

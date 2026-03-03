@@ -3,8 +3,10 @@ package fr.iglee42.emgenerators.registries;
 import java.util.EnumSet;
 import java.util.function.Supplier;
 
+import fr.iglee42.emgenerators.tiers.AdvancedLunarPanelTier;
 import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
 import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
@@ -65,6 +67,32 @@ public class EMGenBlockTypes {
             .replace(Attributes.ACTIVE)
             .build();
 
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> BASIC_ADVANCED_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.ADVANCED, () -> EMGenTileEntityTypes.BASIC_ADVANCED_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_BASIC_ADVANCED_LUNAR_GENERATOR, () -> EMGenBlocks.BASIC_ADVANCED_LUNAR_GENERATOR);
+
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> ADVANCED_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.ADVANCED, () -> EMGenTileEntityTypes.ADVANCED_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_ADVANCED_LUNAR_GENERATOR, () -> EMGenBlocks.ELITE_LUNAR_GENERATOR);
+
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> ELITE_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.ELITE, () -> EMGenTileEntityTypes.ELITE_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_ELITE_LUNAR_GENERATOR, () -> EMGenBlocks.ULTIMATE_LUNAR_GENERATOR);
+
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> ULTIMATE_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.ULTIMATE, () -> EMGenTileEntityTypes.ULTIMATE_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_ULTIMATE_LUNAR_GENERATOR, () -> EMGenBlocks.OVERCLOCKED_LUNAR_GENERATOR);
+
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> OVERCLOCKED_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.OVERCLOCKED, () -> EMGenTileEntityTypes.OVERCLOCKED_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_OVERCLOCKED_LUNAR_GENERATOR, () -> EMGenBlocks.QUANTUM_LUNAR_GENERATOR);
+
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> QUANTUM_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.QUANTUM, () -> EMGenTileEntityTypes.QUANTUM_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_QUANTUM_LUNAR_GENERATOR, () -> EMGenBlocks.DENSE_LUNAR_GENERATOR);
+
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> DENSE_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.DENSE, () -> EMGenTileEntityTypes.DENSE_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_DENSE_LUNAR_GENERATOR, () -> EMGenBlocks.MULTIVERSAL_LUNAR_GENERATOR);
+
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> MULTIVERSAL_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.MULTIVERSAL, () -> EMGenTileEntityTypes.MULTIVERSAL_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_MULTIVERSAL_LUNAR_GENERATOR, ()->null);
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> CREATIVE_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.CREATIVE, () -> EMGenTileEntityTypes.CREATIVE_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_CREATIVE_LUNAR_GENERATOR, ()->null);
+
     public static Generator<TileEntityTieredAdvancedSolarGenerator> createTieredSolarGenerator(
             AdvancedSolarPanelTier tier,
             Supplier<TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator>> tileEntityRegistrar,
@@ -97,6 +125,44 @@ public class EMGenBlockTypes {
                     }
                 })
                 .withComputerSupport("advancedSolarGenerator")
+                .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
+                .replace(Attributes.ACTIVE)
+                .build();
+    }
+
+
+    public static Generator<TileEntityTieredAdvancedLunarGenerator> createTieredLunarGenerator(
+            AdvancedLunarPanelTier tier,
+            Supplier<TileEntityTypeRegistryObject<TileEntityTieredAdvancedLunarGenerator>> tileEntityRegistrar,
+            ILangEntry description,
+            Supplier<BlockRegistryObject<?,?>> upgradeBlock
+    ) {
+        return GeneratorBuilder
+                .createGenerator(tileEntityRegistrar, description)
+                .withGui(() -> EMGenContainerTypes.TIERED_ADVANCED_LUNAR_GENERATOR)
+                .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.advancedSolarGenerator.get() * tier.getMultiplier())
+                .withCustomShape(BlockShapes.ADVANCED_SOLAR_GENERATOR)
+                .withSound(GeneratorsSounds.SOLAR_GENERATOR)
+                .withSupportedUpgrades(Upgrade.MUFFLING, EMUpgrades.LUNAR_UPGRADE)
+                .withBounding(new AttributeHasBounding.HandleBoundingBlock() {
+                    @Override
+                    public <DATA> boolean handle(Level level, BlockPos pos, BlockState state, DATA data, AttributeHasBounding.TriBooleanFunction<Level, BlockPos, DATA> consumer) {
+                        BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
+                        if (!consumer.accept(level, mutable, data)) {
+                            return false;
+                        }
+                        for (int x = -1; x <= 1; x++) {
+                            for (int z = -1; z <= 1; z++) {
+                                mutable.setWithOffset(pos, x, 2, z);
+                                if (!consumer.accept(level, mutable, data)) {
+                                    return false;
+                                }
+                            }
+                        }
+                        return true;
+                    }
+                })
+                .withComputerSupport("advancedLunarGenerator")
                 .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
                 .replace(Attributes.ACTIVE)
                 .build();

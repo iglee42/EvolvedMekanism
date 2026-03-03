@@ -1,13 +1,12 @@
 package fr.iglee42.emgenerators.tile;
 
-import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
+import fr.iglee42.emgenerators.tiers.AdvancedLunarPanelTier;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.api.IEvaporationSolar;
 import mekanism.api.RelativeSide;
 import mekanism.common.tile.interfaces.IBoundingBlock;
 import mekanism.common.upgrade.IUpgradeData;
 import mekanism.generators.common.config.MekanismGeneratorsConfig;
-import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -18,20 +17,20 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGenerator
+public class TileEntityTieredAdvancedLunarGenerator extends TileEntityLunarGenerator
         implements IBoundingBlock, IEvaporationSolar {
 
-    private final AdvancedSolarPanelTier tier;
-    private final SolarCheck[] solarChecks = new SolarCheck[8];
+    private final AdvancedLunarPanelTier tier;
+    private final LunarCheck[] lunarChecks = new LunarCheck[8];
 
-    public TileEntityTieredAdvancedSolarGenerator(Holder<Block> blockProvider, BlockPos pos, BlockState state, AdvancedSolarPanelTier tier) {
+    public TileEntityTieredAdvancedLunarGenerator(Holder<Block> blockProvider, BlockPos pos, BlockState state, AdvancedLunarPanelTier tier) {
         super(blockProvider, pos, state,
                 ()->MekanismGeneratorsConfig.generators.advancedSolarGeneration.get() * tier.getMultiplier());
         this.tier = tier;
     }
 
     
-    public AdvancedSolarPanelTier getTier() {
+    public AdvancedLunarPanelTier getTier() {
         return tier;
     }
 
@@ -43,7 +42,7 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
 
     @Override
     protected long getConfiguredMax() {
-        int modifier = 1 + (upgradeComponent != null ? upgradeComponent.getUpgrades(EMUpgrades.SOLAR_UPGRADE) : 0);
+        int modifier = 1 + (upgradeComponent != null ? upgradeComponent.getUpgrades(EMUpgrades.LUNAR_UPGRADE) : 0);
         return MekanismGeneratorsConfig.generators.advancedSolarGeneration.get() * tier.getMultiplier() * modifier;
     }
 
@@ -53,26 +52,27 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
             return;
         }
         BlockPos topPos = worldPosition.above(2);
-        solarCheck = new AdvancedSolarCheck(level, topPos);
-        float totalPeak = solarCheck.getPeakMultiplier();
-        for (int i = 0; i < solarChecks.length; i++) {
+        lunarCheck = new AdvancedLunarCheck(level, topPos);
+        float totalPeak = lunarCheck.getPeakMultiplier();
+        for (int i = 0; i < lunarChecks.length; i++) {
             if (i < 3) {
-                solarChecks[i] = new AdvancedSolarCheck(level, topPos.offset(-1, 0, i - 1));
+                lunarChecks[i] = new AdvancedLunarCheck(level, topPos.offset(-1, 0, i - 1));
             } else if (i == 3) {
-                solarChecks[i] = new AdvancedSolarCheck(level, topPos.offset(0, 0, -1));
+                lunarChecks[i] = new AdvancedLunarCheck(level, topPos.offset(0, 0, -1));
             } else if (i == 4) {
-                solarChecks[i] = new AdvancedSolarCheck(level, topPos.offset(0, 0, 1));
+                lunarChecks[i] = new AdvancedLunarCheck(level, topPos.offset(0, 0, 1));
             } else {
-                solarChecks[i] = new AdvancedSolarCheck(level, topPos.offset(1, 0, i - 6));
+                lunarChecks[i] = new AdvancedLunarCheck(level, topPos.offset(1, 0, i - 6));
             }
-            totalPeak += solarChecks[i].getPeakMultiplier();
+            totalPeak += lunarChecks[i].getPeakMultiplier();
         }
-        updateMaxOutputRaw((long) (getConfiguredMax() *(totalPeak / 9) * (1 + (upgradeComponent != null ? upgradeComponent.getUpgrades(EMUpgrades.SOLAR_UPGRADE) : 0))));
+        updateMaxOutputRaw((long) (getConfiguredMax() *(totalPeak / 9) * (1 + (upgradeComponent != null ? upgradeComponent.getUpgrades(EMUpgrades.LUNAR_UPGRADE) : 0))));
     }
 
+
     @Override
-    protected boolean checkCanSeeSun() {
-        if (solarCheck == null) {
+    protected boolean checkCanSeeMoon() {
+        if (lunarCheck == null) {
             // Note: We assume if lunarCheck is null then solarChecks will be filled with
             // null, and if it isn't
             // then it won't be as they get initialized at the same time
@@ -80,11 +80,11 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
         }
         // Allow attempting to recheck each position, and mark that we can see the sun
         // if at least one position can
-        solarCheck.recheckCanSeeSun();
-        byte count = solarCheck.canSeeSun() ? (byte) 1 : 0;
-        for (SolarCheck check : solarChecks) {
-            check.recheckCanSeeSun();
-            if (check.canSeeSun()) {
+        lunarCheck.recheckCanSeeMoon();
+        byte count = lunarCheck.canSeeMoon() ? (byte) 1 : 0;
+        for (LunarCheck check : lunarChecks) {
+            check.recheckCanSeeMoon();
+            if (check.canSeeMoon()) {
                 count++;
             }
         }
@@ -96,7 +96,7 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
 
     @Override
     public long getProduction() {
-        if (level == null || solarCheck == null) {
+        if (level == null || lunarCheck == null) {
             // Note: We assume if lunarCheck is null then solarChecks will be filled with
             // null, and if it isn't
             // then it won't be as they get initialized at the same time
@@ -106,22 +106,22 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
         // Calculate the generation multiplier of all the solar panels together
         // any part that can't see the sun will contribute zero to the multiplier,
         // and then we take the average across all to see how much to multiply by
-        float generationMultiplier = solarCheck.getGenerationMultiplier();
-        for (SolarCheck check : solarChecks) {
+        float generationMultiplier = lunarCheck.getGenerationMultiplier();
+        for (LunarCheck check : lunarChecks) {
             generationMultiplier += check.getGenerationMultiplier();
         }
-        generationMultiplier /= solarChecks.length + 1;
+        generationMultiplier /= lunarChecks.length + 1;
         // Production is a function of the peak possible output in this biome and sun's
         // current brightness
         return (long) (getConfiguredMax() * (brightness * generationMultiplier));
     }
 
-    private static class AdvancedSolarCheck extends SolarCheck {
+    private static class AdvancedLunarCheck extends LunarCheck {
 
         private final int recheckFrequency;
-        private long lastCheckedSun;
+        private long lastCheckedMoon;
 
-        public AdvancedSolarCheck(Level world, BlockPos pos) {
+        public AdvancedLunarCheck(Level world, BlockPos pos) {
             super(world, pos);
             // Recheck between every 10-30 ticks, to not end up checking each position each
             // tick
@@ -129,38 +129,38 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
         }
 
         @Override
-        public void recheckCanSeeSun() {
-            if (!world.dimensionType().hasSkyLight() || world.getSkyDarken() >= 4) {
+        public void recheckCanSeeMoon() {
+            if (!world.dimensionType().hasSkyLight() || !world.isNight()) {
                 // Inline of most of WorldUtils#canSeeSun so that we can exit early if it is not
                 // day or there is no skylight
                 // We start with the basic dimension checks and always run those, as they are
                 // simple and quick checks, and
                 // we want to be able to stop quickly when it gets too dark
-                canSeeSun = false;
+                canSeeMoon = false;
                 return;
             }
             long time = world.getGameTime();
-            if (time < lastCheckedSun + recheckFrequency) {
+            if (time < lastCheckedMoon + recheckFrequency) {
                 // If we have checked for blocks above the solar panel in the past
                 // recheckFrequency
                 // number of ticks, skip checking for now for performance reasons
                 return;
             }
             // otherwise, mark that we checked and actually check
-            lastCheckedSun = time;
+            lastCheckedMoon = time;
             if (world.getFluidState(pos).isEmpty()) {
                 // If the top isn't fluid logged we can just quickly check if the top can see
                 // the sun
-                canSeeSun = world.canSeeSky(pos);
+                canSeeMoon = world.dimensionType().hasSkyLight() && world.canSeeSky(pos.above()) && world.isNight();
             } else {
                 BlockPos above = pos.above();
-                if (world.canSeeSky(above)) {
+                if ( world.dimensionType().hasSkyLight() && world.canSeeSky(above) && world.isNight()) {
                     // If the spot above can see the sun, check to make sure we can see through the
                     // block there
                     BlockState state = world.getBlockState(above);
-                    canSeeSun = !state.liquid() && state.getLightBlock(world, above) <= 0;
+                    canSeeMoon = !state.liquid() && state.getLightBlock(world, above) <= 0;
                 } else {
-                    canSeeSun = false;
+                    canSeeMoon = false;
                 }
             }
         }

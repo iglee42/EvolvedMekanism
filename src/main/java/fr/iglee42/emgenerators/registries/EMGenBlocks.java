@@ -1,7 +1,9 @@
 package fr.iglee42.emgenerators.registries;
 
+import fr.iglee42.emgenerators.items.ItemBlockTieredLunarGenerator;
 import fr.iglee42.emgenerators.items.ItemBlockTieredSolarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
@@ -41,10 +43,28 @@ public class EMGenBlocks {
             BLOCKS.registerDetails("lunar_generator", () -> new BlockTileModel<>(EMGenBlockTypes.LUNAR_GENERATOR, properties -> properties.mapColor(MapColor.COLOR_PINK)))
                     .forItemHolder(holder -> holder.addAttachmentOnlyContainers(ContainerType.ITEM, () -> ItemSlotsBuilder.builder().addEnergy().build()));
 
+    public static final BlockRegistryObject<BlockTileModel<TileEntityTieredAdvancedLunarGenerator, Generator<TileEntityTieredAdvancedLunarGenerator>>, ItemBlockTieredLunarGenerator>
+            BASIC_ADVANCED_LUNAR_GENERATOR = registerTieredLunarGenerator("basic_advanced_lunar_generator", EMGenBlockTypes.BASIC_ADVANCED_LUNAR_GENERATOR),
+            ADVANCED_LUNAR_GENERATOR = registerTieredLunarGenerator("advanced_lunar_generator", EMGenBlockTypes.ADVANCED_LUNAR_GENERATOR),
+            ELITE_LUNAR_GENERATOR = registerTieredLunarGenerator("elite_lunar_generator", EMGenBlockTypes.ELITE_LUNAR_GENERATOR),
+            ULTIMATE_LUNAR_GENERATOR = registerTieredLunarGenerator("ultimate_lunar_generator", EMGenBlockTypes.ULTIMATE_LUNAR_GENERATOR),
+            OVERCLOCKED_LUNAR_GENERATOR = registerTieredLunarGenerator("overclocked_lunar_generator", EMGenBlockTypes.OVERCLOCKED_LUNAR_GENERATOR),
+            QUANTUM_LUNAR_GENERATOR = registerTieredLunarGenerator("quantum_lunar_generator", EMGenBlockTypes.QUANTUM_LUNAR_GENERATOR),
+            DENSE_LUNAR_GENERATOR = registerTieredLunarGenerator("dense_lunar_generator", EMGenBlockTypes.DENSE_LUNAR_GENERATOR),
+            MULTIVERSAL_LUNAR_GENERATOR = registerTieredLunarGenerator("multiversal_lunar_generator", EMGenBlockTypes.MULTIVERSAL_LUNAR_GENERATOR),
+            CREATIVE_LUNAR_GENERATOR = registerTieredLunarGenerator("creative_lunar_generator", EMGenBlockTypes.CREATIVE_LUNAR_GENERATOR);    
+    
     private static BlockRegistryObject<BlockTileModel<TileEntityTieredAdvancedSolarGenerator, Generator<TileEntityTieredAdvancedSolarGenerator>>, ItemBlockTieredSolarGenerator> registerTieredSolarGenerator(String name, Generator<TileEntityTieredAdvancedSolarGenerator> type) {
         return BLOCKS.register(name,
                 () -> new BlockTileModel<>(type, props -> props.mapColor(MapColor.COLOR_BLUE)),
                 ItemBlockTieredSolarGenerator::new
+        );
+    }
+
+    private static BlockRegistryObject<BlockTileModel<TileEntityTieredAdvancedLunarGenerator, Generator<TileEntityTieredAdvancedLunarGenerator>>, ItemBlockTieredLunarGenerator> registerTieredLunarGenerator(String name, Generator<TileEntityTieredAdvancedLunarGenerator> type) {
+        return BLOCKS.register(name,
+                () -> new BlockTileModel<>(type, props -> props.mapColor(MapColor.COLOR_PINK)),
+                ItemBlockTieredLunarGenerator::new
         );
     }
 
