@@ -1,9 +1,9 @@
 {
   "textures": {
-    "0": "evolvedmekanism:block/models/lunar_generators/advanced_lunar_generator",
+    "0": "evolvedmekanism:block/models/lunar_generators/basic_advanced_lunar_generator",
     "1": "mekanism:block/models/ports",
     "2": "mekanism:block/models/ports_led",
-    "particle": "evolvedmekanism:block/models/lunar_generators/advanced_lunar_generator"
+    "particle": "evolvedmekanism:block/models/lunar_generators/basic_advanced_lunar_generator"
   },
   "render_type": "minecraft:cutout",
   "elements": [

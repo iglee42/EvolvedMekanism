@@ -24,16 +24,16 @@
               "source": "block_entity"
             }
           ],
-          "name": "evolvedmekanism:advanced_lunar_generator2"
+          "name": "evolvedmekanism:basic_advanced_lunar_generator"
         }
       ],
       "name": "main",
       "rolls": 1.0
     }
   ],
-  "random_sequence": "evolvedmekanism:blocks/advanced_lunar_generator2",
+  "random_sequence": "evolvedmekanism:blocks/basic_advanced_lunar_generator",
   "neoforge:conditions": [{
     "type": "neoforge:item_exists",
-    "item": "evolvedmekanism:advanced_lunar_generator2"
+    "item": "evolvedmekanism:basic_advanced_lunar_generator"
   }]
 }

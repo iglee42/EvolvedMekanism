@@ -52,6 +52,7 @@
     "tiles.TileEntityItemToItemFactoryMixin",
     "tiles.TileEntityPersonalStorageMixin",
     "tiles.TileEntitySawingFactoryMixin",
+    "tiles.TileEntitySolarGeneratorAccessor",
     "tiles.TileEntitySolarGeneratorMixin",
     "tiles.cables.TileEntityLogisticalTransporterMixin",
     "tiles.cables.TileEntityMechanicalPipeMixin",

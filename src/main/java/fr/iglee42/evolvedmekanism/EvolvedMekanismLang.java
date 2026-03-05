@@ -24,6 +24,17 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_CREATIVE_SOLAR_GENERATOR("description", "creative_solar_generator"),
     DESCRIPTION_SUPERCHARGING_ELEMENT("description", "supercharging_element"),
     DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR("description", "lunar_neutron_activator"),
+    DESCRIPTION_BASIC_ADVANCED_LUNAR_GENERATOR("description", "basic_advanced_lunar_generator"),
+    DESCRIPTION_ADVANCED_LUNAR_GENERATOR("description", "advanced_lunar_generator"),
+    DESCRIPTION_ELITE_LUNAR_GENERATOR("description", "elite_lunar_generator"),
+    DESCRIPTION_ULTIMATE_LUNAR_GENERATOR("description", "ultimate_lunar_generator"),
+    DESCRIPTION_OVERCLOCKED_LUNAR_GENERATOR("description", "overclocked_lunar_generator"),
+    DESCRIPTION_QUANTUM_LUNAR_GENERATOR("description", "quantum_lunar_generator"),
+    DESCRIPTION_DENSE_LUNAR_GENERATOR("description", "dense_lunar_generator"),
+    DESCRIPTION_MULTIVERSAL_LUNAR_GENERATOR("description", "multiversal_lunar_generator"),
+    DESCRIPTION_CREATIVE_LUNAR_GENERATOR("description", "creative_lunar_generator"),
+
+    DESCRIPTION_LUNAR_GENERATOR("description", "lunar_generator"),
 
     DESCRIPTION_MAX_TIER_INSTALLER("description", "max_tier_installer"),
 
@@ -41,8 +52,10 @@ public enum EvolvedMekanismLang implements ILangEntry {
 
     UPGRADE_RADIOACTIVE("upgrade","radioactive"),
     UPGRADE_SOLAR("upgrade","solar"),
+    UPGRADE_LUNAR("upgrade","lunar"),
     UPGRADE_RADIOACTIVE_DESCRIPTION("upgrade","radioactive.description"),
     UPGRADE_SOLAR_DESCRIPTION("upgrade","solar.description"),
+    UPGRADE_LUNAR_DESCRIPTION("upgrade","lunar.description"),
 
     ;
 

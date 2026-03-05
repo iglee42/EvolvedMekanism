@@ -21,6 +21,8 @@ public class UpgradeUtilsMixin {
         if (upgrade.equals(EMUpgrades.RADIOACTIVE_UPGRADE)) cir.setReturnValue(new ItemStack(EMItems.RADIOACTIVE_UPGRADE.get(),count));
         if (upgrade.equals(EMUpgrades.SOLAR_UPGRADE) && ModsCompats.MEKANISMGENERATORS.isLoaded()) cir.setReturnValue(new ItemStack(EMGenItems.SOLAR_UPGRADE.get(),count));
         else if (upgrade.equals(EMUpgrades.SOLAR_UPGRADE)) cir.setReturnValue(ItemStack.EMPTY);
+        if (upgrade.equals(EMUpgrades.LUNAR_UPGRADE) && ModsCompats.MEKANISMGENERATORS.isLoaded()) cir.setReturnValue(new ItemStack(EMGenItems.LUNAR_UPGRADE.get(),count));
+        else if (upgrade.equals(EMUpgrades.LUNAR_UPGRADE)) cir.setReturnValue(ItemStack.EMPTY);
     }
 
 }

@@ -2,6 +2,8 @@ package fr.iglee42.emgenerators.client;
 
 import fr.iglee42.emgenerators.registries.EMGenBlocks;
 import fr.iglee42.emgenerators.registries.EMGenContainerTypes;
+import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import mekanism.api.gear.IModuleHelper;
 import mekanism.client.ClientRegistration;
@@ -45,6 +47,16 @@ public class EMGenClientRegistration {
         ClientRegistration.addCustomModel(EMGenBlocks.DENSE_SOLAR_GENERATOR, this::translatedSolarModels);
         ClientRegistration.addCustomModel(EMGenBlocks.MULTIVERSAL_SOLAR_GENERATOR, this::translatedSolarModels);
         ClientRegistration.addCustomModel(EMGenBlocks.CREATIVE_SOLAR_GENERATOR, this::translatedSolarModels);
+
+        ClientRegistration.addCustomModel(EMGenBlocks.BASIC_ADVANCED_LUNAR_GENERATOR, this::translatedSolarModels);
+        ClientRegistration.addCustomModel(EMGenBlocks.ADVANCED_LUNAR_GENERATOR, this::translatedSolarModels);
+        ClientRegistration.addCustomModel(EMGenBlocks.ELITE_LUNAR_GENERATOR, this::translatedSolarModels);
+        ClientRegistration.addCustomModel(EMGenBlocks.ULTIMATE_LUNAR_GENERATOR, this::translatedSolarModels);
+        ClientRegistration.addCustomModel(EMGenBlocks.OVERCLOCKED_LUNAR_GENERATOR, this::translatedSolarModels);
+        ClientRegistration.addCustomModel(EMGenBlocks.QUANTUM_LUNAR_GENERATOR, this::translatedSolarModels);
+        ClientRegistration.addCustomModel(EMGenBlocks.DENSE_LUNAR_GENERATOR, this::translatedSolarModels);
+        ClientRegistration.addCustomModel(EMGenBlocks.MULTIVERSAL_LUNAR_GENERATOR, this::translatedSolarModels);
+        ClientRegistration.addCustomModel(EMGenBlocks.CREATIVE_LUNAR_GENERATOR, this::translatedSolarModels);
     }
 
     private BakedModel translatedSolarModels(BakedModel original, ModelEvent.ModifyBakingResult event){
@@ -68,6 +80,8 @@ public class EMGenClientRegistration {
     @SubscribeEvent(priority = EventPriority.LOW)
     public void registerContainers(RegisterMenuScreensEvent event) {
             ClientRegistrationUtil.registerScreen(event,EMGenContainerTypes.TIERED_ADVANCED_SOLAR_GENERATOR, (MekanismTileContainer<TileEntityTieredAdvancedSolarGenerator> container, Inventory inv, Component title) -> new GuiSolarGenerator<>(container, inv, title));
+            ClientRegistrationUtil.registerScreen(event,EMGenContainerTypes.LUNAR_GENERATOR, (MekanismTileContainer<TileEntityLunarGenerator> container, Inventory inv, Component title) -> new GuiLunarGenerator<>(container, inv, title));
+            ClientRegistrationUtil.registerScreen(event,EMGenContainerTypes.TIERED_ADVANCED_LUNAR_GENERATOR, (MekanismTileContainer<TileEntityTieredAdvancedLunarGenerator> container, Inventory inv, Component title) -> new GuiLunarGenerator<>(container, inv, title));
     }
 
     @SubscribeEvent

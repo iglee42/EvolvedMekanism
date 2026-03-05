@@ -1,5 +1,6 @@
 package fr.iglee42.evolvedmekanism.mixins.tiles;
 
+import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.common.tile.base.TileEntityMekanism;
 import mekanism.generators.common.tile.TileEntitySolarGenerator;
@@ -11,12 +12,20 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(value = TileEntitySolarGenerator.class,remap = false)
 public class TileEntitySolarGeneratorMixin extends TileEntityMekanism {
 
     public TileEntitySolarGeneratorMixin(Holder<Block> blockProvider, BlockPos pos, BlockState state) {
         super(blockProvider, pos, state);
+    }
+
+    @Inject(method = "onUpdateServer",at = @At(value = "INVOKE", target = "Lmekanism/common/inventory/slot/EnergyInventorySlot;drainContainer()V",shift = At.Shift.AFTER),locals = LocalCapture.CAPTURE_FAILSOFT, cancellable = true)
+    private void evolvedmekanism$stopIfLunar(CallbackInfoReturnable<Boolean> cir, boolean sendUpdatePacket){
+        if ((Object)this instanceof TileEntityLunarGenerator){
+            cir.setReturnValue(sendUpdatePacket);
+        }
     }
 
     @Inject(method = "getConfiguredMax",at = @At("RETURN"),cancellable = true)
