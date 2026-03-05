@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "evolvedmekanism:block/ores/end_stone_osmium_ore"
+        "all": "evolvedmekanism:block/ores/end_stone/end_stone_osmium_ore"
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "evolvedmekanism:block/ores/holystone_lead_ore"
+        "all": "evolvedmekanism:block/ores/holystone/holystone_lead_ore"
     }
 }

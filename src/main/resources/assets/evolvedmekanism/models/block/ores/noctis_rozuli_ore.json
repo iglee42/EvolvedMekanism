@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "evolvedmekanism:block/ores/noctis_rozuli_ore"
+        "all": "evolvedmekanism:block/ores/stone/noctis_rozuli_ore"
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "evolvedmekanism:block/ores/netherrack_fluorite_ore"
+        "all": "evolvedmekanism:block/ores/netherrack/netherrack_fluorite_ore"
     }
 }

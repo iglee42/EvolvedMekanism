@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "evolvedmekanism:block/ores/depthrock/depthrock_emerald_ore"
+    }
+}

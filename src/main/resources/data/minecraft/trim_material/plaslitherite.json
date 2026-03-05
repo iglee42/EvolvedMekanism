@@ -1,0 +1,9 @@
+{
+  "asset_name": "plaslitherite",
+  "description": {
+    "color": "#5C6263",
+    "translate": "trim_material.minecraft.plaslitherite"
+  },
+  "ingredient": "evolvedmekanism:ingot_plaslitherite",
+  "item_model_index": 1.0
+}

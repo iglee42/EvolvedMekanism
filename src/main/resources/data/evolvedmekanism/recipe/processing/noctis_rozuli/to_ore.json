@@ -1,7 +1,7 @@
 {
   "type": "mekanism:combining",
   "extra_input": {
-    "tag": "c:cobblestone"
+    "tag": "c:cobblestones/normal"
   },
   "main_input": {
     "count": 27,

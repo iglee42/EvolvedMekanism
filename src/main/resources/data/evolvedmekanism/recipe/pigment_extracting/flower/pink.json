@@ -5,6 +5,6 @@
   },
   "output": {
     "amount": 768,
-    "pigment": "mekanism:pink"
+    "id": "mekanism:pink"
   }
 }
