@@ -806,8 +806,13 @@
     "description.evolvedmekanism.multiversal_lunar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons de la lune, avec peu de pertes, pour produire de l'\u00e9nergie.",
     "description.evolvedmekanism.creative_lunar_generator": "Un G\u00e9n\u00e9rateur qui absorbe directement les rayons de la lune, avec peu de pertes, pour produire de l'\u00e9nergie.",
     "description.evolvedmekanism.noctis_rozuli_ore": "On raconte que cela ne peut \u00eatre extrait que lorsque le ciel se couvre et que la lumi\u00e8re de la lune guide le chemin.",
-    "upgrade.mekanism.lunar": "Lunaire",
-    "upgrade.mekanism.lunar.description": "Augmente la production lunaire des g\u00e9n\u00e9rateurs.",
+    "upgrade.evolvedmekanism.lunar": "Lunaire",
+    "upgrade.evolvedmekanism.lunar.description": "Augmente la production lunaire des g\u00e9n\u00e9rateurs.",
     "item.evolvedmekanism.noctis_rozuli_shovel": "Pelle en noctis_rozuli",
-    "item.evolvedmekanism.noctis_rozuli_sword": "\u00c9p\u00e9e en noctis_rozuli"
+    "item.evolvedmekanism.noctis_rozuli_sword": "\u00c9p\u00e9e en noctis_rozuli",
+    "trim_material.evolvedmekanism.better_gold": "Or am\u00e9lior\u00e9",
+    "trim_material.evolvedmekanism.plaslitherite": "Plaslitherite",
+    "trim_material.evolvedmekanism.refined_redstone": "Poudre de redstone raffin\u00e9e",
+    "trim_material.evolvedmekanism.noctis_rozuli": "Noctis rozuli",
+    "description.evolvedmekanism.lunar_neutron_activator": "Une machine qui dirige le rayonnement neutronique de la lune dans son r\u00e9servoir interne, ce qui permet la cr\u00e9ation lente de divers isotopes."
 }

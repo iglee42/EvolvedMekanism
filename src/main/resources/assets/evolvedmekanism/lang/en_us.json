@@ -768,7 +768,7 @@
     "item.evolvedmekanism.multiversal_lunar_panel": "Multiversal Lunar Panel",
     "item.evolvedmekanism.creative_lunar_panel": "Creative Lunar Panel",
     "item.evolvedmekanism.upgrade_lunar": "Lunar Upgrade",
-    "description.evolvedmekanism.lunar_generator": "A generator that uses the power of the sun to produce energy.",
+    "description.evolvedmekanism.lunar_generator": "A generator that uses the power of the moon to produce energy.",
     "description.evolvedmekanism.basic_advanced_lunar_generator": "An advanced generator that directly absorbs the moon's rays with little loss to produce energy.",
     "description.evolvedmekanism.advanced_lunar_generator": "An advanced generator that directly absorbs the moon's rays with little loss to produce energy.",
     "description.evolvedmekanism.elite_lunar_generator": "An elite generator that directly absorbs the moon's rays with little loss to produce energy.",
@@ -779,6 +779,7 @@
     "description.evolvedmekanism.multiversal_lunar_generator": "A multiversal generator that directly absorbs the moon's rays with little loss to produce energy.",
     "description.evolvedmekanism.creative_lunar_generator": "A creative generator that directly absorbs the moon's rays with little loss to produce energy.",
     "description.evolvedmekanism.noctis_rozuli_ore": "Some whisper that it can only be harvested when darkness falls and the moon's light guides the way.",
+    "description.evolvedmekanism.lunar_neutron_activator": "A machine that directs the neutron radiation of the moon into its internal reservoir, allowing for the slow creation of various isotopes.",
     "upgrade.evolvedmekanism.lunar": "Lunar",
     "upgrade.evolvedmekanism.lunar.description": "Increases lunar production of generators.",
     "block.evolvedmekanism.molten_noctis": "Molten Noctis",
@@ -809,5 +810,9 @@
     "item.evolvedmekanism.noctis_rozuli_shield.white": "White Noctis Rozuli Shield",
     "item.evolvedmekanism.noctis_rozuli_shield.yellow": "Yellow Noctis Rozuli Shield",
     "item.evolvedmekanism.noctis_rozuli_shovel": "Noctis Rozuli Shovel",
-    "item.evolvedmekanism.noctis_rozuli_sword": "Noctis Rozuli Sword"
+    "item.evolvedmekanism.noctis_rozuli_sword": "Noctis Rozuli Sword",
+    "trim_material.evolvedmekanism.noctis_rozuli": "Noctis Rozuli",
+    "trim_material.evolvedmekanism.better_gold": "Better Gold",
+    "trim_material.evolvedmekanism.plaslitherite": "Plaslitherite",
+    "trim_material.evolvedmekanism.refined_redstone": "Refined Redstone"
 }

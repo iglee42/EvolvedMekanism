@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "evolvedmekanism:ingot_better_gold", "required": false },
+    { "id": "evolvedmekanism:ingot_plaslitherite", "required": false },
+    { "id": "evolvedmekanism:ingot_refined_redstone", "required": false },
+    { "id": "evolvedmekanism:noctis_rozuli", "required": false }
+  ]
+}

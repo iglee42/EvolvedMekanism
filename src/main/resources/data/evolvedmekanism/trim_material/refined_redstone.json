@@ -1,0 +1,9 @@
+{
+  "asset_name": "refined_redstone",
+  "description": {
+    "color": "#96121F",
+    "translate": "trim_material.evolvedmekanism.refined_redstone"
+  },
+  "ingredient": "evolvedmekanism:ingot_refined_redstone",
+  "item_model_index": 0.4
+}

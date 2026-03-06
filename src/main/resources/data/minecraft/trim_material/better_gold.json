@@ -1,9 +1,0 @@
-{
-  "asset_name": "better_gold",
-  "description": {
-    "color": "#FDF147",
-    "translate": "trim_material.minecraft.better_gold"
-  },
-  "ingredient": "evolvedmekanism:ingot_better_gold",
-  "item_model_index": 1.0
-}

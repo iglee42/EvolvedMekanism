@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "evolvedmekanism:block/ores/depthrock/depthrock_redstone_ore"
-    }
-}
