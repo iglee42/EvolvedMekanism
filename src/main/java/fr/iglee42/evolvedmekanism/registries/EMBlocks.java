@@ -191,7 +191,7 @@ public class EMBlocks {
             BLOCKS.register("solidification_chamber", () -> new BlockTileModel<>(EMBlockTypes.SOLIDIFIER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())),
                     (block, properties) -> new ItemBlockTooltip<>(block, true, properties
                             .component(MekanismDataComponents.EJECTOR, AttachedEjector.DEFAULT)
-                            .component(MekanismDataComponents.SIDE_CONFIG, EMAttachedSideConfig.MELTER_MACHINE)
+                            .component(MekanismDataComponents.SIDE_CONFIG, EMAttachedSideConfig.SOLIDIFICATION_MACHINE)
                     )).forItemHolder(holder -> holder
                     .addAttachmentOnlyContainers(ContainerType.FLUID, () -> FluidTanksBuilder.builder()
                             .addBasic(10_000,EMRecipeType.SOLIDIFICATION, EMInputRecipeCache.ItemFluidFluid::containsInputC)

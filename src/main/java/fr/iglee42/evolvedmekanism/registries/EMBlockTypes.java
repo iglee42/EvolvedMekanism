@@ -92,7 +92,7 @@ public class EMBlockTypes {
             .withEnergyConfig(MekanismConfig.usage.pressurizedReactionBase, MekanismConfig.storage.pressurizedReactionBase)
             .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING)
             .withComputerSupport("solidifier")
-            .withSideConfig(TransmissionType.ITEM,TransmissionType.FLUID,TransmissionType.ENERGY)
+            .withSideConfig(TransmissionType.FLUID,TransmissionType.ITEM,TransmissionType.ENERGY)
             .build();
 
     // APT Casing

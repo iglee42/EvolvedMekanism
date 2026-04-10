@@ -96,8 +96,6 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
         if (fluidConfig != null) {
             fluidConfig.addSlotInfo(DataType.INPUT_1, new FluidSlotInfo(true, false, inputFluidExtraTank));
             fluidConfig.addSlotInfo(DataType.INPUT_2, new FluidSlotInfo(true, false, inputFluidTank));
-            fluidConfig.setDataType(DataType.INPUT_1, RelativeSide.LEFT);
-            fluidConfig.setDataType(DataType.INPUT_2, RelativeSide.RIGHT);
             fluidConfig.setCanEject(false);
         }
         configComponent.setupInputConfig(TransmissionType.ENERGY, energyContainer);
