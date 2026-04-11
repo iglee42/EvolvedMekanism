@@ -49,6 +49,7 @@ neoForge {
 
         server {
             server()
+            gameDirectory = project.file('server-run')
             programArgument '--nogui'
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
@@ -127,6 +128,8 @@ dependencies {
     implementation "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:additions"// Mekanism: Additions
     implementation "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:generators"// Mekanism: Generators
     implementation "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:tools"// Mekanism: Tools
+
+    runtimeOnly "curse.maven:projecte-226410:6611984"
 
     runtimeOnly "curse.maven:ctm-267602:5587515"
 
