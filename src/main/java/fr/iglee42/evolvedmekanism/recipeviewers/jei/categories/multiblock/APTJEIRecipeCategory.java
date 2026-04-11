@@ -1,4 +1,4 @@
-package fr.iglee42.evolvedmekanism.jei.categories;
+package fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.multiblock;
 
 import com.mojang.serialization.Codec;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
@@ -32,14 +32,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class APTRecipeCategory extends BaseRecipeCategory<RecipeHolder<ItemStackChemicalToItemStackRecipe>> {
+public class APTJEIRecipeCategory extends BaseRecipeCategory<RecipeHolder<ItemStackChemicalToItemStackRecipe>> {
 
     private final GuiGauge<?> inputGas;
     private final GuiSlot input;
     private final GuiSlot output;
     private final GuiCustomDynamicHorizontalRateBar bar;
 
-    public APTRecipeCategory(IGuiHelper helper, RVRecipeTypeWrapper<?,ItemStackChemicalToItemStackRecipe,?> recipeType) {
+    public APTJEIRecipeCategory(IGuiHelper helper, RVRecipeTypeWrapper<?,ItemStackChemicalToItemStackRecipe,?> recipeType) {
         super(helper, MekanismJEI.holderRecipeType(recipeType), EvolvedMekanismLang.APT.translate(),createIcon(helper, recipeType), recipeType.xOffset(), recipeType.yOffset(), recipeType.width(), recipeType.height());
         inputGas = addElement(GuiChemicalGauge.getDummy(GaugeType.STANDARD, this, 6, 17));
         input = addSlot(SlotType.INPUT, 27, 40);

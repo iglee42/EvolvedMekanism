@@ -1,4 +1,4 @@
-package fr.iglee42.evolvedmekanism.jei.categories;
+package fr.iglee42.evolvedmekanism.recipeviewers.jei.categories;
 
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import mekanism.client.gui.element.GuiUpArrow;
@@ -22,14 +22,14 @@ import org.jetbrains.annotations.NotNull;
 
 import static mekanism.client.recipe_viewer.RecipeViewerUtils.FULL_BAR;
 
-public class ChemixerRecipeCategory extends HolderRecipeCategory<ChemixerRecipe> {
+public class ChemixerJEIRecipeCategory extends HolderRecipeCategory<ChemixerRecipe> {
 
     private final GuiSlot input;
     private final GuiGauge<?> inputGas;
     private final GuiSlot extra;
     private final GuiSlot output;
 
-    public ChemixerRecipeCategory(IGuiHelper helper, RVRecipeTypeWrapper<?,ChemixerRecipe,?> recipeType) {
+    public ChemixerJEIRecipeCategory(IGuiHelper helper, RVRecipeTypeWrapper<?,ChemixerRecipe,?> recipeType) {
         super(helper, recipeType);
         addElement(new GuiUpArrow(this, 68, 38));
         input = addSlot(SlotType.INPUT, 64, 17);

@@ -2,13 +2,12 @@ package fr.iglee42.evolvedmekanism.tiles.machine;
 
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.interfaces.SolidificationCachedRecipe;
-import fr.iglee42.evolvedmekanism.jei.JEIRecipeTypes;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.recipes.vanilla_input.SingleItemBiFluidRecipeInput;
+import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.IContentsListener;
-import mekanism.api.RelativeSide;
 import mekanism.api.Upgrade;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.api.recipes.cache.CachedRecipe.OperationTracker.RecipeError;
@@ -214,6 +213,6 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
 
     @Override
     public @Nullable IRecipeViewerRecipeType<SolidificationRecipe> recipeViewerType() {
-        return JEIRecipeTypes.SOLIDIFICATION;
+        return EMRecipeViewersTypes.SOLIDIFICATION;
     }
 }

@@ -1,7 +1,6 @@
 package fr.iglee42.evolvedmekanism.tiles.machine;
 
-import fr.iglee42.evolvedmekanism.jei.JEIRecipeTypes;
-import fr.iglee42.evolvedmekanism.recipes.vanilla_input.TriItemRecipeInput;
+import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.IContentsListener;
@@ -49,7 +48,6 @@ import mekanism.common.tile.component.config.ConfigInfo;
 import mekanism.common.tile.component.config.DataType;
 import mekanism.common.tile.component.config.slot.InventorySlotInfo;
 import mekanism.common.tile.prefab.TileEntityProgressMachine;
-import mekanism.common.util.MekanismUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -211,6 +209,6 @@ public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluid
 
     @Override
     public @Nullable IRecipeViewerRecipeType<ItemStackToFluidRecipe> recipeViewerType() {
-        return JEIRecipeTypes.MELTING;
+        return EMRecipeViewersTypes.MELTING;
     }
 }

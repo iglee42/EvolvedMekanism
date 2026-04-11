@@ -57,6 +57,7 @@ import mekanism.common.recipe.lookup.cache.InputRecipeCache;
 import mekanism.common.registration.impl.BlockDeferredRegister;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registries.MekanismBlockTypes;
+import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismDataComponents;
 import mekanism.common.resource.BlockResourceInfo;
 import mekanism.common.resource.ore.OreType;
@@ -548,7 +549,14 @@ public class EMBlocks {
         });
     }
     public static BlockRegistryObject<BlockFactory<?>, ItemBlockFactory> getFactory(@NotNull FactoryTier tier, @NotNull FactoryType type) {
-        return FACTORIES.get(tier, type);
+        BlockRegistryObject<BlockFactory<?>, ItemBlockFactory> factory = FACTORIES.get(tier, type);
+        if (factory == null) {
+            factory = MekanismBlocks.getFactory(tier, type);
+        }
+        if (factory == null){
+            EvolvedMekanism.logger.error("Failed to find factory block for tier {} and type {}, returning null", tier, type);
+        }
+        return factory;
     }
 
 }

@@ -2,9 +2,9 @@ package fr.iglee42.evolvedmekanism.tiles.machine;
 
 import fr.iglee42.evolvedmekanism.interfaces.ChemixerCachedRecipe;
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
-import fr.iglee42.evolvedmekanism.jei.JEIRecipeTypes;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.vanilla_input.BiItemChemicalRecipeInput;
+import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
@@ -190,6 +190,6 @@ public class TileEntityChemixer extends TileEntityProgressMachine<ChemixerRecipe
 
     @Override
     public @Nullable IRecipeViewerRecipeType<ChemixerRecipe> recipeViewerType() {
-        return JEIRecipeTypes.CHEMIXING;
+        return EMRecipeViewersTypes.CHEMIXING;
     }
 }

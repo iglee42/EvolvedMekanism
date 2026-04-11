@@ -1,4 +1,4 @@
-package fr.iglee42.evolvedmekanism.jei.categories;
+package fr.iglee42.evolvedmekanism.recipeviewers.jei.categories;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 
 import static mekanism.client.recipe_viewer.RecipeViewerUtils.FULL_BAR;
 
-public class SolidificationRecipeCategory extends HolderRecipeCategory<SolidificationRecipe> {
+public class SolidificationJEIRecipeCategory extends HolderRecipeCategory<SolidificationRecipe> {
 
 
     private final GuiGauge<?> inputExtraFluid;
@@ -32,7 +32,7 @@ public class SolidificationRecipeCategory extends HolderRecipeCategory<Solidific
     private final GuiSlot inputItem;
     private final GuiSlot outputItem;
 
-    public SolidificationRecipeCategory(IGuiHelper helper, RVRecipeTypeWrapper<?,SolidificationRecipe,?> recipeType) {
+    public SolidificationJEIRecipeCategory(IGuiHelper helper, RVRecipeTypeWrapper<?,SolidificationRecipe,?> recipeType) {
         super(helper, recipeType);
         //Note: This previously had a lang key for a shorter string. Though ideally especially due to translations
         // we will eventually instead just make the text scale
