@@ -1,20 +1,12 @@
 package fr.iglee42.evolvedmekanism.jei;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.jei.categories.APTRecipeCategory;
-import fr.iglee42.evolvedmekanism.jei.categories.AlloyerRecipeCategory;
-import fr.iglee42.evolvedmekanism.jei.categories.ChemixerRecipeCategory;
-import fr.iglee42.evolvedmekanism.jei.categories.SolidificationRecipeCategory;
-import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
-import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
-import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
-import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.chemical.ChemicalStack;
@@ -23,14 +15,12 @@ import mekanism.api.energy.IStrictEnergyHandler;
 import mekanism.api.math.FloatingLong;
 import mekanism.api.providers.IItemProvider;
 import mekanism.api.recipes.ItemStackGasToItemStackRecipe;
-import mekanism.api.recipes.ItemStackToFluidRecipe;
 import mekanism.client.jei.CatalystRegistryHelper;
 import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.client.jei.RecipeRegistryHelper;
 import mekanism.client.jei.machine.ItemStackToFluidRecipeCategory;
 import mekanism.common.block.BlockOre;
 import mekanism.common.capabilities.Capabilities;
-import mekanism.common.item.block.machine.ItemBlockFluidTank;
 import mekanism.common.util.RegistryUtils;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -47,7 +37,6 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.IRecipeTransferRegistration;
 import mezz.jei.api.registration.ISubtypeRegistration;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidStack;
@@ -59,12 +48,7 @@ import org.jetbrains.annotations.NotNull;
 @JeiPlugin
 public class EMJEI implements IModPlugin {
 
-    public static final MekanismJEIRecipeType<AlloyerRecipe> ALLOYING = new MekanismJEIRecipeType<>(EMBlocks.ALLOYER, AlloyerRecipe.class);
-    public static final MekanismJEIRecipeType<ChemixerRecipe> CHEMIXING = new MekanismJEIRecipeType<>(EMBlocks.CHEMIXER, ChemixerRecipe.class);
     public static final MekanismJEIRecipeType<ItemStackGasToItemStackRecipe> APT = new MekanismJEIRecipeType<>(EMItems.BETTER_GOLD_INGOT, ItemStackGasToItemStackRecipe.class);
-    public static final MekanismJEIRecipeType<ItemStackToFluidRecipe> MELTING = new MekanismJEIRecipeType<>(EMBlocks.MELTER, ItemStackToFluidRecipe.class);
-    public static final MekanismJEIRecipeType<SolidificationRecipe> SOLIDIFICATION = new MekanismJEIRecipeType<>(EMBlocks.SOLIDIFIER, SolidificationRecipe.class);
-
 
     private static final IIngredientSubtypeInterpreter<ItemStack> MEKANISM_NBT_INTERPRETER = (stack, context) -> {
         if (context == UidContext.Ingredient && stack.hasTag()) {
@@ -171,12 +155,7 @@ public class EMJEI implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
         IGuiHelper guiHelper = registry.getJeiHelpers().getGuiHelper();
-        registry.addRecipeCategories(new AlloyerRecipeCategory(guiHelper, ALLOYING));
-        registry.addRecipeCategories(new ChemixerRecipeCategory(guiHelper, CHEMIXING));
         registry.addRecipeCategories(new APTRecipeCategory(guiHelper, APT));
-        registry.addRecipeCategories(new ItemStackToFluidRecipeCategory(guiHelper, MELTING,EMBlocks.MELTER,false));
-        registry.addRecipeCategories(new SolidificationRecipeCategory(guiHelper, SOLIDIFICATION));
-
     }
 
     @Override
@@ -186,49 +165,18 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registry) {
-        List<FluidStack> fluidsToRemove = new ArrayList<>();
         List<ItemStack> itemsToRemove = new ArrayList<>();
-        EMFluids.FLUIDS.getAllFluids().forEach(ro->{
-            boolean hasMelting = EMRecipeType.MELTING.getRecipes(null).stream().anyMatch(r->r.getOutput(ItemStack.EMPTY).getRawFluid().equals(ro.getFluid()));
-            boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.getInputFluid().test(new FluidStack(ro.getFluid(), (int) r.getInputFluid().getNeededAmount(new FluidStack(ro.getFluid(),1)))));
-            if (!hasMelting && !hasSolidifying){
-                fluidsToRemove.add(ro.getFluidStack(1000));
-                itemsToRemove.add(ro.getFluid().getBucket().getDefaultInstance());
-            }
-        });
         EMBlocks.BLOCKS.getAllBlocks().stream().filter(b->b.getBlock() instanceof BlockOre).forEach(b->{
-            String stone = b.getRegistryName().getPath().split("_")[0].toLowerCase();
-            if (stone.equals("holystone") && !ModList.get().isLoaded("aether")) {
-                itemsToRemove.add(new ItemStack(b.getBlock()));
-            }
-            if ((stone.equals("depthrock") || stone.equals("shiverstone")) && !ModList.get().isLoaded("undergarden")) {
-                itemsToRemove.add(new ItemStack(b.getBlock()));
-            }
         });
-        EMItems.ITEMS.getAllItems().stream().filter(i->i.getRegistryName().getPath().startsWith("mold_")).forEach(m->{
-            boolean used = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.getInputSolid().getRepresentations().stream().anyMatch(s->s.getItem().equals(m.asItem())));
-            if (!used) itemsToRemove.add(new ItemStack(m.asItem()));
-        });
-        registry.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK,fluidsToRemove);
         registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK,itemsToRemove);
-        RecipeRegistryHelper.register(registry, ALLOYING, EMRecipeType.ALLOYING);
-        RecipeRegistryHelper.register(registry, CHEMIXING, EMRecipeType.CHEMIXING);
         RecipeRegistryHelper.register(registry, APT, EMRecipeType.APT);
-        RecipeRegistryHelper.register(registry, MELTING, EMRecipeType.MELTING);
-        RecipeRegistryHelper.register(registry, SOLIDIFICATION, EMRecipeType.SOLIDIFICATION);
-
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
-        CatalystRegistryHelper.register(registry, EMBlocks.ALLOYER);
-        CatalystRegistryHelper.register(registry, EMBlocks.CHEMIXER);
         CatalystRegistryHelper.register(registry,APT, EMBlocks.APT_CASING,EMBlocks.APT_PORT,EMBlocks.SUPERCHARGING_ELEMENT);
-        CatalystRegistryHelper.register(registry, EMBlocks.MELTER);
-        CatalystRegistryHelper.register(registry, EMBlocks.SOLIDIFIER);
 
     }
-
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registry) {
 

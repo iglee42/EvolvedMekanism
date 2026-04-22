@@ -1,12 +1,8 @@
 package fr.iglee42.evolvedmekanism.mixins;
 
-import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import mekanism.api.text.APILang;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,14 +17,6 @@ public class APILangMixin {
     @Invoker("<init>")
     public static APILang evolvedmekanism$initInvoker(String internalName, int internalId, String type, String path){
         throw new AssertionError();
-    }
-
-    @Inject(method = "<clinit>",at = @At("TAIL"))
-    private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EvolvedMekanismLang.UPGRADE_RADIOACTIVE = evolvedmekanism$addVariant("UPGRADE_RADIOACTIVE", "upgrade","radioactive");
-        EvolvedMekanismLang.UPGRADE_RADIOACTIVE_DESCRIPTION = evolvedmekanism$addVariant("UPGRADE_RADIOACTIVE_DESCRIPTION", "upgrade","radioactive.description");
-        EvolvedMekanismLang.UPGRADE_SOLAR = evolvedmekanism$addVariant("UPGRADE_SOLAR", "upgrade","solar");
-        EvolvedMekanismLang.UPGRADE_SOLAR_DESCRIPTION = evolvedmekanism$addVariant("UPGRADE_SOLAR_DESCRIPTION", "upgrade","solar.description");
     }
 
     @Unique

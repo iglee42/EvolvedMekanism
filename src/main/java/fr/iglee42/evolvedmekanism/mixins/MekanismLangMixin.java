@@ -1,12 +1,8 @@
 package fr.iglee42.evolvedmekanism.mixins;
 
-import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import mekanism.common.MekanismLang;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,14 +17,6 @@ public class MekanismLangMixin {
     @Invoker("<init>")
     public static MekanismLang evolvedmekanism$initInvoker(String internalName, int internalId, String type, String path){
         throw new AssertionError();
-    }
-
-    @Inject(method = "<clinit>",at = @At("TAIL"))
-    private static void evolvedmekanism$clinit(CallbackInfo ci) {
-        EvolvedMekanismLang.ALLOYING = evolvedmekanism$addVariant("ALLOYING", "factory","alloying");
-        EvolvedMekanismLang.DESCRIPTION_ALLOYER = evolvedmekanism$addVariant("DESCRIPTION_ALLOYER", "description","alloyer");
-        EvolvedMekanismLang.DESCRIPTION_MELTER = evolvedmekanism$addVariant("DESCRIPTION_MELTER", "description","thermalizer");
-        EvolvedMekanismLang.DESCRIPTION_SOLIDIFIER = evolvedmekanism$addVariant("DESCRIPTION_SOLIDIFIER", "description","solidification_chamber");
     }
 
     @Unique

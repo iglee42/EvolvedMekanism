@@ -17,7 +17,6 @@ public class EMCreativeTabs {
                 .displayItems((displayParameters, output) -> {
                     CreativeTabDeferredRegister.addToDisplay(EMItems.ITEMS, output);
                     CreativeTabDeferredRegister.addToDisplay(EMBlocks.BLOCKS, output);
-                    CreativeTabDeferredRegister.addToDisplay(EMFluids.FLUIDS, output);
                 })
     );
 

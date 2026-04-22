@@ -1,27 +1,19 @@
 package fr.iglee42.evolvedmekanism.mixins;
 
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
-import fr.iglee42.evolvedmekanism.registries.EMFactoryType;
 import mekanism.api.recipes.MekanismRecipe;
 import mekanism.api.recipes.ingredients.InputIngredient;
-import mekanism.common.content.blocktype.BlockShapes;
-import mekanism.common.content.blocktype.FactoryType;
 import mekanism.common.recipe.MekanismRecipeType;
 import mekanism.common.recipe.lookup.cache.AbstractInputRecipeCache;
 import mekanism.common.recipe.lookup.cache.TripleInputRecipeCache;
 import mekanism.common.recipe.lookup.cache.type.IInputCache;
-import mekanism.common.tier.FactoryTier;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.util.TriPredicate;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 import java.util.Set;

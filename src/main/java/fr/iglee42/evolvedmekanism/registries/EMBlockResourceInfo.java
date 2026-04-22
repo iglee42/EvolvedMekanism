@@ -12,7 +12,6 @@ public enum EMBlockResourceInfo implements IResource {
     PLASLITHERITE("plaslitherite", 25, 2_400, MapColor.SNOW, NoteBlockInstrument.BASEDRUM, -1, 0, false,false,PushReaction.NORMAL),
     REFINED_REDSTONE("refined_redstone", 5, 6, MapColor.COLOR_RED, NoteBlockInstrument.BASEDRUM, -1, 15);
 
-    ;
     private final String registrySuffix;
     private final MapColor mapColor;
     private final PushReaction pushReaction;

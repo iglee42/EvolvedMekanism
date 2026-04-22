@@ -1,39 +1,21 @@
 package fr.iglee42.evolvedmekanism.registries;
 
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Table;
-import java.util.EnumMap;
-import java.util.HashMap;
-import java.util.Map;
-
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import mekanism.api.chemical.ChemicalTags;
 import mekanism.api.chemical.gas.Gas;
 import mekanism.api.chemical.infuse.InfuseType;
 import mekanism.api.chemical.slurry.Slurry;
 import mekanism.common.Mekanism;
-import mekanism.common.resource.BlockResourceInfo;
-import mekanism.common.resource.IResource;
-import mekanism.common.resource.PrimaryResource;
-import mekanism.common.resource.ResourceType;
-import mekanism.common.resource.ore.OreType;
-import mekanism.common.tags.TagUtils;
-import mekanism.common.util.EnumUtils;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.registries.ForgeRegistries;
 
+@SuppressWarnings("ALL")
 public class EMTags {
 
     /**
@@ -49,15 +31,9 @@ public class EMTags {
         TileEntityTypes.init();
     }
 
-    private EMTags() {
-    }
-
     public static class Items {
 
         private static void init() {
-        }
-
-        private Items() {
         }
 
         public static final TagKey<Item> STORAGE_BLOCKS_BETTER_GOLD = forgeTag("storage_blocks/better_gold");
@@ -71,7 +47,6 @@ public class EMTags {
         public static final TagKey<Item> NUGGETS_BETTER_GOLD = forgeTag("nuggets/better_gold");
         public static final TagKey<Item> NUGGETS_PLASLITHERITE = forgeTag("nuggets/plaslitherite");
         public static final TagKey<Item> NUGGETS_REFINED_REDSTONE = forgeTag("nuggets/refined_redstone");
-
 
         public static final TagKey<Item> DUSTS_BETTER_GOLD = forgeTag("dusts/better_gold");
         public static final TagKey<Item> DUSTS_PLASLITHERITE = forgeTag("dusts/plaslitherite");
@@ -117,9 +92,6 @@ public class EMTags {
         private static void init() {
         }
 
-        private Blocks() {
-        }
-
         public static final TagKey<Block> STORAGE_BLOCKS_BETTER_GOLD = forgeTag("storage_blocks/better_gold");
         public static final TagKey<Block> STORAGE_BLOCKS_PLASLITHERITE = forgeTag("storage_blocks/plaslitherite");
         public static final TagKey<Block> STORAGE_BLOCKS_REFINED_REDSTONE = forgeTag("storage_blocks/refined_redstone");
@@ -140,10 +112,6 @@ public class EMTags {
             return BlockTags.create(new ResourceLocation("forge", name));
         }
 
-        private static TagKey<Block> mekTag(String name) {
-            return BlockTags.create(new ResourceLocation("mekanism", name));
-        }
-
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(EvolvedMekanism.rl(name));
         }
@@ -153,9 +121,6 @@ public class EMTags {
     public static class Fluids {
 
         private static void init() {
-        }
-
-        private Fluids() {
         }
 
         private static TagKey<Fluid> forgeTag(String name) {
@@ -168,10 +133,6 @@ public class EMTags {
         private static void init() {
         }
 
-        private Gases() {
-        }
-
-
         private static TagKey<Gas> tag(String name) {
             return ChemicalTags.GAS.tag(EvolvedMekanism.rl(name));
         }
@@ -180,9 +141,6 @@ public class EMTags {
     public static class InfuseTypes {
 
         private static void init() {
-        }
-
-        private InfuseTypes() {
         }
 
         public static final TagKey<InfuseType> BETTER_GOLD = tag("better_gold");
@@ -200,9 +158,6 @@ public class EMTags {
         private static void init() {
         }
 
-        private Slurries() {
-        }
-
         private static TagKey<Slurry> tag(String name) {
             return ChemicalTags.SLURRY.tag(Mekanism.rl(name));
         }
@@ -212,18 +167,6 @@ public class EMTags {
     public static class TileEntityTypes {
 
         private static void init() {
-        }
-
-        private TileEntityTypes() {
-        }
-
-
-        private static TagKey<BlockEntityType<?>> tag(String name) {
-            return TagUtils.createKey(ForgeRegistries.BLOCK_ENTITY_TYPES, EvolvedMekanism.rl(name));
-        }
-
-        private static TagKey<BlockEntityType<?>> forgeTag(String name) {
-            return TagUtils.createKey(ForgeRegistries.BLOCK_ENTITY_TYPES, new ResourceLocation("forge", name));
         }
     }
 }

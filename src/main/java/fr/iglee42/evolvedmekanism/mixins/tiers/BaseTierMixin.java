@@ -1,13 +1,10 @@
 package fr.iglee42.evolvedmekanism.mixins.tiers;
 
 
-import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
-import fr.iglee42.evolvedmekanism.tiers.storage.EMQIODriveTier;
 import fr.iglee42.igleelib.api.utils.ModsUtils;
 import mekanism.api.tier.BaseTier;
-import mekanism.common.tier.QIODriveTier;
 import net.minecraft.world.level.material.MapColor;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
