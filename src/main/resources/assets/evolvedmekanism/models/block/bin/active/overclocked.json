@@ -1,8 +1,0 @@
-{
-    "parent": "mekanism:block/bin/active/basic",
-    "textures": {
-        "led": "evolvedmekanism:block/bin/overclocked_led",
-        "side": "evolvedmekanism:block/bin/overclocked_side",
-        "back": "evolvedmekanism:block/bin/overclocked_back"
-    }
-}
