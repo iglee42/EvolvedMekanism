@@ -3,13 +3,9 @@ package fr.iglee42.evolvedmekanism.mixins;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
-import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
-import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.Upgrade;
 import mekanism.api.text.APILang;
 import mekanism.api.text.EnumColor;
-import mekanism.api.tier.AlloyTier;
-import mekanism.api.tier.BaseTier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;

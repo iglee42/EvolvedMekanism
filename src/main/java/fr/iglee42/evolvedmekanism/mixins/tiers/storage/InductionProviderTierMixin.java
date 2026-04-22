@@ -6,7 +6,6 @@ import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMInductionProviderTier;
 import mekanism.api.math.FloatingLong;
 import mekanism.api.tier.BaseTier;
-import mekanism.common.tier.InductionCellTier;
 import mekanism.common.tier.InductionProviderTier;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;

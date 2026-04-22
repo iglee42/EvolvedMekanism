@@ -1,23 +1,9 @@
 package fr.iglee42.evolvedmekanism;
 
-import fr.iglee42.emgenerators.client.EMGenClientRegistration;
-import fr.iglee42.emgenerators.registries.*;
-import fr.iglee42.emtools.client.EMToolsClientRegistration;
-import fr.iglee42.emtools.config.EMToolsConfig;
-import fr.iglee42.emtools.registries.EMToolsItems;
-import fr.iglee42.emtools.registries.EMToolsTags;
-import fr.iglee42.emtools.utils.EMMobEquipmentHelper;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.registries.*;
-import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import mekanism.api.text.EnumColor;
-import mekanism.common.tags.MekanismTags;
-import mekanism.tools.client.ShieldTextures;
-import mekanism.tools.common.MekanismTools;
-import mekanism.tools.common.MobEquipmentHelper;
 import net.minecraft.network.chat.Component;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -30,7 +16,6 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTValidator;
 import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
-import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.api.MekanismIMC;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
@@ -66,6 +51,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+@SuppressWarnings("ALL")
 @Mod(EvolvedMekanism.MODID)
 public class EvolvedMekanism {
 
@@ -87,7 +73,6 @@ public class EvolvedMekanism {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         EMConfig.registerConfigs(FMLJavaModLoadingContext.get());
-        if (ModsCompats.MEKANISMTOOLS.isLoaded()) EMToolsConfig.registerConfigs(FMLJavaModLoadingContext.get());
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
@@ -106,35 +91,11 @@ public class EvolvedMekanism {
         EMFluids.FLUIDS.register(modEventBus);
         EMParticleTypes.PARTICLES.register(modEventBus);
 
-        registerCompats();
-
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(this::serverStopped);
 
-        if (ModsCompats.MEKANISMTOOLS.isLoaded()) MinecraftForge.EVENT_BUS.addListener(EMMobEquipmentHelper::onLivingSpecialSpawn);
-
         versionNumber = new Version(ModLoadingContext.get().getActiveContainer());
         packetHandler = new EMPacketHandler();
-    }
-
-    private void registerCompats() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        if (ModsCompats.MEKANISMGENERATORS.isLoaded()) {
-           EMGenItems.register(modEventBus);
-           EMGenBlocks.register(modEventBus);
-           EMGenTileEntityTypes.register(modEventBus);
-           EMGenContainerTypes.register(modEventBus);
-           EMGenBlockTypes.register();
-           if (FMLEnvironment.dist == Dist.CLIENT) modEventBus.register(new EMGenClientRegistration());
-        }
-
-        if (ModsCompats.MEKANISMTOOLS.isLoaded()) {
-            EMToolsItems.register(modEventBus);
-            if (FMLEnvironment.dist == Dist.CLIENT) {
-                modEventBus.register(new EMToolsClientRegistration());
-                ((InitializableEnum) (Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
-            }
-        }
     }
 
     private void serverStopped(ServerStoppedEvent event) {
@@ -175,7 +136,6 @@ public class EvolvedMekanism {
         packetHandler.initialize();
         event.enqueueWork(() -> {
             EMTags.init();
-            if (ModsCompats.MEKANISMTOOLS.isLoaded()) EMToolsTags.init();
             BuildCommand.register("apt", EvolvedMekanismLang.APT, new EMBuilders.APTBuilder());
         });
     }
