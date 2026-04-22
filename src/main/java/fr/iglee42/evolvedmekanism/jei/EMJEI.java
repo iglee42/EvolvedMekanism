@@ -6,6 +6,10 @@ import java.util.Optional;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.jei.categories.APTRecipeCategory;
+import fr.iglee42.evolvedmekanism.jei.categories.AlloyerRecipeCategory;
+import fr.iglee42.evolvedmekanism.jei.categories.ChemixerRecipeCategory;
+import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
@@ -18,14 +22,12 @@ import mekanism.api.recipes.ItemStackGasToItemStackRecipe;
 import mekanism.client.jei.CatalystRegistryHelper;
 import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.client.jei.RecipeRegistryHelper;
-import mekanism.client.jei.machine.ItemStackToFluidRecipeCategory;
 import mekanism.common.block.BlockOre;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.util.RegistryUtils;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.forge.ForgeTypes;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.ingredients.subtypes.IIngredientSubtypeInterpreter;
 import mezz.jei.api.ingredients.subtypes.UidContext;
@@ -42,12 +44,12 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
-import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
 public class EMJEI implements IModPlugin {
-
+    public static final MekanismJEIRecipeType<AlloyerRecipe> ALLOYING = new MekanismJEIRecipeType<>(EMBlocks.APT_CASING, AlloyerRecipe.class);
+    public static final MekanismJEIRecipeType<ChemixerRecipe> CHEMIXING = new MekanismJEIRecipeType<>(EMBlocks.APT_PORT, ChemixerRecipe.class);
     public static final MekanismJEIRecipeType<ItemStackGasToItemStackRecipe> APT = new MekanismJEIRecipeType<>(EMItems.BETTER_GOLD_INGOT, ItemStackGasToItemStackRecipe.class);
 
     private static final IIngredientSubtypeInterpreter<ItemStack> MEKANISM_NBT_INTERPRETER = (stack, context) -> {
@@ -151,10 +153,11 @@ public class EMJEI implements IModPlugin {
     public void registerIngredients(IModIngredientRegistration registry) {
     }
 
-
     @Override
     public void registerCategories(IRecipeCategoryRegistration registry) {
         IGuiHelper guiHelper = registry.getJeiHelpers().getGuiHelper();
+        registry.addRecipeCategories(new AlloyerRecipeCategory(guiHelper, ALLOYING));
+        registry.addRecipeCategories(new ChemixerRecipeCategory(guiHelper, CHEMIXING));
         registry.addRecipeCategories(new APTRecipeCategory(guiHelper, APT));
     }
 
@@ -165,10 +168,8 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registry) {
-        List<ItemStack> itemsToRemove = new ArrayList<>();
         EMBlocks.BLOCKS.getAllBlocks().stream().filter(b->b.getBlock() instanceof BlockOre).forEach(b->{
         });
-        registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK,itemsToRemove);
         RecipeRegistryHelper.register(registry, APT, EMRecipeType.APT);
     }
 
