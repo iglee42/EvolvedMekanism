@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:injecting",
+  "chemicalInput": {
+    "amount": 1,
+    "gas": "mekanism:lithium"
+  },
+  "itemInput": {
+    "amount": 2,
+    "ingredient": {
+      "tag": "forge:ingots/netherite"
+    }
+  },
+  "output": {
+    "count": 2,
+    "item": "evolvedmekanism:ingot_nethrilith"
+  }
+}

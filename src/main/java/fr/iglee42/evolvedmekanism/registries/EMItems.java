@@ -34,6 +34,7 @@ public class EMItems {
     public static final ItemRegistryObject<Item> CREATIVE_CONTROL_CIRCUIT = registerCircuit(BaseTier.CREATIVE);
 
     public static final ItemRegistryObject<Item> BETTER_GOLD_INGOT = registerResource(ResourceType.INGOT, EMResources.BETTER_GOLD);
+    public static final ItemRegistryObject<Item> NETHRILITH_INGOT = registerResource(ResourceType.INGOT, EMResources.NETHRILITH);
     public static final ItemRegistryObject<Item> PLASLITHERITE_INGOT = registerUnburnableResource(ResourceType.INGOT, EMResources.PLASLITHERITE);
     public static final ItemRegistryObject<Item> REFINED_REDSTONE_INGOT = registerUnburnableResource(ResourceType.INGOT, EMResources.REFINED_REDSTONE);
 
@@ -47,7 +48,6 @@ public class EMItems {
 
     public static final ItemRegistryObject<Item> BETTER_GOLD_DUST = registerResource(ResourceType.DUST, EMResources.BETTER_GOLD);
     public static final ItemRegistryObject<Item> PLASLITHERITE_DUST = registerUnburnableResource(ResourceType.DUST, EMResources.PLASLITHERITE);
-
 
 
     private static ItemRegistryObject<Item> registerCircuit(BaseTier tier) {
