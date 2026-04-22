@@ -2,7 +2,6 @@ package fr.iglee42.evolvedmekanism.blocks;
 
 import fr.iglee42.evolvedmekanism.registries.EMBlockResourceInfo;
 import mekanism.common.block.BlockMekanism;
-import mekanism.common.resource.BlockResourceInfo;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockBehaviour;

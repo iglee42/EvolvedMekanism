@@ -1,22 +1,15 @@
 package fr.iglee42.evolvedmekanism.client.renderers;
 
-import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.blaze3d.vertex.VertexFormat;
 import fr.iglee42.evolvedmekanism.client.EMRenderTypes;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.CustomRenderData;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.MultipleCustomRenderData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import mekanism.api.annotations.NothingNullByDefault;
-import mekanism.client.render.data.FluidRenderData;
-import mekanism.client.render.data.RenderData;
 import mekanism.client.render.tileentity.MultiblockTileEntityRenderer;
-import mekanism.common.registries.MekanismFluids;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

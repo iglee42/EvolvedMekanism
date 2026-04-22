@@ -12,7 +12,6 @@ import fr.iglee42.evolvedmekanism.client.renderers.datas.CustomChemicalRenderDat
 import fr.iglee42.evolvedmekanism.client.renderers.datas.CustomChemicalRenderData.InfusionRenderData;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.CustomChemicalRenderData.PigmentRenderData;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.CustomChemicalRenderData.SlurryRenderData;
-import fr.iglee42.evolvedmekanism.client.renderers.datas.FluidRenderData;
 import mekanism.common.lib.multiblock.MultiblockData;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.BlockPos;
@@ -39,10 +38,6 @@ public abstract class CustomRenderData {
     public abstract boolean isGaseous();
 
     public abstract int getColorARGB(float scale);
-
-    public int calculateGlowLight(int light) {
-        return light;
-    }
 
     @Override
     public int hashCode() {
@@ -75,13 +70,6 @@ public abstract class CustomRenderData {
                 throw new IllegalArgumentException("Chemical may not be empty");
             }
             return new Builder<>(chemical.getType(), FluidStack.EMPTY);
-        }
-
-        public static Builder<FluidRenderData> create(FluidStack fluid) {
-            if (fluid.isEmpty()) {
-                throw new IllegalArgumentException("Fluid may not be empty");
-            }
-            return new Builder<>(null, fluid);
         }
 
         public Builder<DATA_TYPE> location(BlockPos renderLocation) {

@@ -19,10 +19,6 @@ public class GuiCustomDynamicHorizontalRateBar extends GuiBar<IBarInfoHandler> {
 
     private ColorFunction colorFunction;
 
-    public GuiCustomDynamicHorizontalRateBar(IGuiWrapper gui, IBarInfoHandler handler, int x, int y, int width) {
-        this(gui, handler, x, y, width, ColorFunction.HEAT);
-    }
-
     public GuiCustomDynamicHorizontalRateBar(IGuiWrapper gui, IBarInfoHandler handler, int x, int y, int width, ColorFunction colorFunction) {
         super(RATE_BAR, gui, handler, x, y, width, texHeight, true);
         this.colorFunction = colorFunction;

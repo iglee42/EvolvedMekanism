@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.function.Function;
 
+@SuppressWarnings("unused")
 @Mixin(MekanismRecipeType.class)
 public abstract class MekanismRecipeTypeMixin {
 

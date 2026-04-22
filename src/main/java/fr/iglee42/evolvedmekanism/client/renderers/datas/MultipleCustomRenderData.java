@@ -10,7 +10,6 @@ import mekanism.client.render.ModelRenderer;
 import mekanism.client.render.RenderResizableCuboid.FaceDisplay;
 import mekanism.common.lib.multiblock.MultiblockData;
 import net.minecraft.client.Camera;
-import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.phys.Vec3;
@@ -27,10 +26,6 @@ public class MultipleCustomRenderData {
     private final Map<String, Function<MekanismRenderer.Model3D, MekanismRenderer.Model3D>> customFunc = new Object2ObjectOpenHashMap<>();
 
     public MultipleCustomRenderData() {
-    }
-
-    public Map<String, CustomRenderData> getDatas() {
-        return datas;
     }
 
     public String add(String id,CustomRenderData data,Direction... ignoredFaces){
@@ -58,7 +53,6 @@ public class MultipleCustomRenderData {
     }
 
     private void renderObject(Camera camera, CustomRenderData data, BlockPos rendererPos, MekanismRenderer.Model3D object, @NotNull PoseStack matrix, VertexConsumer buffer, int overlay, float scale) {
-        int glow = data.calculateGlowLight(LightTexture.FULL_SKY);
         matrix.pushPose();
         matrix.translate(data.location.getX() - rendererPos.getX(), data.location.getY() - rendererPos.getY(), data.location.getZ() - rendererPos.getZ());
         MekanismRenderer.renderObject(object, matrix, buffer, data.getColorARGB(scale), 0xF000F0, overlay, getCustomFaceDisplay(camera, data, object), camera, data.location);

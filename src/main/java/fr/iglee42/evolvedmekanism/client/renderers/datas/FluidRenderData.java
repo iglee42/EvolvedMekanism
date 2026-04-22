@@ -24,18 +24,9 @@ public class FluidRenderData extends CustomRenderData {
         return MekanismUtils.lighterThanAirGas(fluidType);
     }
 
-    public int getColorARGB() {
-        return MekanismRenderer.getColorARGB(fluidType);
-    }
-
     @Override
     public int getColorARGB(float scale) {
         return MekanismRenderer.getColorARGB(fluidType, scale);
-    }
-
-    @Override
-    public int calculateGlowLight(int light) {
-        return MekanismRenderer.calculateGlowLight(light, fluidType);
     }
 
     @Override
