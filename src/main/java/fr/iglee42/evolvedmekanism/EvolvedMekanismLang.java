@@ -1,9 +1,8 @@
 package fr.iglee42.evolvedmekanism;
 
-import mekanism.api.text.APILang;
 import mekanism.api.text.ILangEntry;
-import mekanism.common.MekanismLang;
 import net.minecraft.Util;
+import org.jetbrains.annotations.NotNull;
 
 public enum EvolvedMekanismLang implements ILangEntry {
 
@@ -24,15 +23,15 @@ public enum EvolvedMekanismLang implements ILangEntry {
 
     private final String key;
 
-    private EvolvedMekanismLang(String type, String path) {
+    EvolvedMekanismLang(String type, String path) {
         this(Util.makeDescriptionId(type, EvolvedMekanism.rl(path)));
     }
 
-    private EvolvedMekanismLang(String key) {
+    EvolvedMekanismLang(String key) {
         this.key = key;
     }
 
-    public String getTranslationKey() {
+    public @NotNull String getTranslationKey() {
         return this.key;
     }
 }

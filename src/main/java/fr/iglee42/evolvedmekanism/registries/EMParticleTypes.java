@@ -7,6 +7,7 @@ import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.Registries;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 public class EMParticleTypes {
     public static final DeferredRegister<ParticleType<?>> PARTICLES =
@@ -15,7 +16,7 @@ public class EMParticleTypes {
     public static final RegistryObject<ParticleType<ColoredRisingBubbleOptions>> RISING_BUBBLE =
         PARTICLES.register("rising_bubble", ()-> new ParticleType<>(false, ColoredRisingBubbleOptions.DESERIALIZER) {
             @Override
-            public Codec<ColoredRisingBubbleOptions> codec() {
+            public @NotNull Codec<ColoredRisingBubbleOptions> codec() {
                 return ColoredRisingBubbleOptions.CODEC;
             }
         });

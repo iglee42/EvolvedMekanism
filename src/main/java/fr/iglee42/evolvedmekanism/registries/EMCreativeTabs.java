@@ -10,6 +10,7 @@ public class EMCreativeTabs {
 
     public static final CreativeTabDeferredRegister CREATIVE_TABS = new CreativeTabDeferredRegister(EvolvedMekanism.MODID);
 
+    @SuppressWarnings("unused")
     public static final CreativeTabRegistryObject EVOLVED_MEKANISM = CREATIVE_TABS.registerMain(EvolvedMekanismLang.MEKANISM_EVOLVED, EMItems.EXOVERSAL_ALLOY, builder ->
           builder.withSearchBar(70)//Allow our tabs to be searchable for convenience purposes
                   .withBackgroundLocation(EvolvedMekanism.rl("textures/gui/creative_tab.png"))

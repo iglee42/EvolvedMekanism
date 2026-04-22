@@ -3,7 +3,6 @@ package fr.iglee42.evolvedmekanism.recipes;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.BiPredicate;
 import mekanism.api.annotations.NothingNullByDefault;
 import mekanism.api.recipes.MekanismRecipe;
 import mekanism.api.recipes.ingredients.ItemStackIngredient;
@@ -12,7 +11,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.util.TriPredicate;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -79,27 +77,8 @@ public abstract class AlloyerRecipe extends MekanismRecipe implements TriPredica
         return tertiaryExtraInput;
     }
 
-    /**
-     * Gets a new output based on the given inputs.
-     *
-     * @param input Specific input.
-     * @param extra Specific secondary input.
-     * @param secondExtra Specific tertiary input.
-     *
-     * @return New output.
-     *
-     * @apiNote While Mekanism does not currently make use of the inputs, it is important to support it and pass the proper value in case any addons define input based
-     * outputs where things like NBT may be different.
-     * @implNote The passed in inputs should <strong>NOT</strong> be modified.
-     */
-    @Contract(value = "_, _, _ -> new", pure = true)
-    public ItemStack getOutput(@NotNull ItemStack input, @NotNull ItemStack extra, @NotNull ItemStack secondExtra) {
-        return output.copy();
-    }
-
-    @NotNull
     @Override
-    public ItemStack getResultItem(@NotNull RegistryAccess registryAccess) {
+    public ItemStack getResultItem(RegistryAccess registryAccess) {
         return output.copy();
     }
 

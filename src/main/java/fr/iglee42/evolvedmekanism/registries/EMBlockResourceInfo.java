@@ -71,6 +71,7 @@ public enum EMBlockResourceInfo implements IResource {
         return burnsInFire;
     }
 
+    @SuppressWarnings("unused")
     public MapColor getMapColor() {
         return mapColor;
     }

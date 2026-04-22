@@ -5,6 +5,7 @@ import mekanism.api.chemical.infuse.InfuseType;
 import mekanism.common.registration.impl.InfuseTypeDeferredRegister;
 import mekanism.common.registration.impl.InfuseTypeRegistryObject;
 
+@SuppressWarnings("unused")
 public class EMInfuseTypes {
 
     public static final InfuseTypeDeferredRegister INFUSE_TYPES = new InfuseTypeDeferredRegister(EvolvedMekanism.MODID);

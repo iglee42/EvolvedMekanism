@@ -103,11 +103,6 @@ public class EvolvedMekanism {
         return rl(type.getPrefix() + name);
     }
 
-    public static boolean isEvolvedMekanismTier(BaseTier tier) {
-        return tier.equals(EMBaseTier.OVERCLOCKED) || tier.equals(EMBaseTier.QUANTUM) || tier.equals(EMBaseTier.DENSE)
-                || tier.equals(EMBaseTier.MULTIVERSAL) || tier.equals(BaseTier.CREATIVE);
-    }
-
     public static ItemRegistryObject<Item> getCircuitByTier(BaseTier tier) {
         if (tier.equals(BaseTier.BASIC))
             return MekanismItems.BASIC_CONTROL_CIRCUIT;

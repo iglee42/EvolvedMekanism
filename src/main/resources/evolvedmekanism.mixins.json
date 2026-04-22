@@ -4,19 +4,10 @@
   "package": "fr.iglee42.evolvedmekanism.mixins",
   "compatibilityLevel": "JAVA_17",
   "refmap": "evolvedmekanism.refmap.json",
-  "plugin": "fr.iglee42.evolvedmekanism.utils.EMMixinConfig",
   "mixins": [
-    "APILangMixin",
-    "MekanismBlocksMixin",
-    "MekanismLangMixin",
     "MekanismRecipeTypeMixin",
-    "TripleInputRecipeCacheMixin",
-    "client.TransmitterTypeDecoratorMixin",
-    "recipes.ItemRecipeDataInvoker",
     "tiers.AlloyTierMixin",
-    "tiers.BaseTierMixin",
-    "tiles.TileEntityItemToItemFactoryMixin",
-    "tiles.TileEntityMekanismMixin"
+    "tiers.BaseTierMixin"
   ],
   "injectors": {
     "defaultRequire": 1
