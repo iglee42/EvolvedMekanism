@@ -6,6 +6,7 @@
 > This mod is designed for players who want to experience the core mechanics of APT without the complexity of the full EvolvedMekanism mod, while still enjoying a streamlined resource and alloy system.
 
 ## ✨ Features
+- Added Nethrilith Ingot for creating Plaslitherite.
 
 - Removed everything except:
   - APT

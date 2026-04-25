@@ -1,0 +1,18 @@
+{
+  "type": "mekanism:combining",
+  "extraInput": {
+    "amount": 3,
+    "ingredient": {
+      "item": "mekanism:hdpe_pellet"
+    }
+  },
+  "mainInput": {
+    "amount": 1,
+    "ingredient": {
+      "item": "evolvedmekanism:ingot_nethrilith"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:ingot_plaslitherite"
+  }
+}

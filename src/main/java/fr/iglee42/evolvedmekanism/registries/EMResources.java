@@ -6,7 +6,7 @@ public enum EMResources implements IResource {
     BETTER_GOLD("better_gold"),
     PLASLITHERITE("plaslitherite"),
     REFINED_REDSTONE("refined_redstone"),
-    ;
+    NETHRILITH("nethrilith");
 
     private final String registrySuffix;
 
