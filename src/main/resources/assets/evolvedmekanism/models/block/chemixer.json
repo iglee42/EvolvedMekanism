@@ -1,0 +1,12 @@
+{
+    "parent": "mekanism:block/machine",
+    "textures": {
+        "sides": "evolvedmekanism:block/chemixer/side",
+        "front": "evolvedmekanism:block/chemixer/front",
+        "west": "evolvedmekanism:block/chemixer/side",
+        "east": "evolvedmekanism:block/chemixer/side",
+        "south": "evolvedmekanism:block/chemixer/back",
+        "up": "evolvedmekanism:block/chemixer/top",
+        "down": "evolvedmekanism:block/chemixer/bottom"
+    }
+}

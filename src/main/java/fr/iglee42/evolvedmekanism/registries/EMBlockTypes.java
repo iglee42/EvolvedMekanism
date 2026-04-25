@@ -4,12 +4,38 @@ import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import mekanism.api.Upgrade;
+import mekanism.common.MekanismLang;
 import mekanism.common.block.attribute.*;
+import mekanism.common.config.MekanismConfig;
 import mekanism.common.content.blocktype.BlockTypeTile;
 import mekanism.common.content.blocktype.BlockTypeTile.BlockTileBuilder;
+import mekanism.common.content.blocktype.Machine;
+import mekanism.common.content.blocktype.Machine.MachineBuilder;
 import mekanism.common.registries.MekanismSounds;
 
+import java.util.EnumSet;
+
 public class EMBlockTypes {
+
+    public static final Machine.FactoryMachine<TileEntityAlloyer> ALLOYER = MachineBuilder
+            .createFactoryMachine(() -> EMTileEntityTypes.ALLOYER, EvolvedMekanismLang.DESCRIPTION_ALLOYER, EMFactoryType.ALLOYING)
+            .withGui(() -> EMContainerTypes.ALLOYER)
+            .withSound(MekanismSounds.COMBINER)
+            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .build();
+
+    public static final Machine<TileEntityChemixer> CHEMIXER = MachineBuilder
+            .createMachine(() -> EMTileEntityTypes.CHEMIXER, MekanismLang.DESCRIPTION_PRESSURIZED_REACTION_CHAMBER)
+            .withGui(() -> EMContainerTypes.CHEMIXER)
+            .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
+            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .withComputerSupport("chemixer")
+            .build();
 
     // APT Casing
     public static final BlockTypeTile<TileEntityAPTCasing> APT_CASING = BlockTileBuilder

@@ -1,7 +1,7 @@
 package fr.iglee42.evolvedmekanism.jei.categories;
 
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
-import fr.iglee42.evolvedmekanism.registries.EMItems;
+import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import mekanism.client.gui.element.GuiUpArrow;
 import mekanism.client.gui.element.bar.GuiVerticalPowerBar;
 import mekanism.client.gui.element.gauge.GaugeType;
@@ -29,7 +29,7 @@ public class ChemixerRecipeCategory extends BaseRecipeCategory<ChemixerRecipe> {
     private final GuiSlot output;
 
     public ChemixerRecipeCategory(IGuiHelper helper, MekanismJEIRecipeType<ChemixerRecipe> recipeType) {
-        super(helper, recipeType, EMItems.BETTER_GOLD_NUGGET, 28, 13, 144, 60);
+        super(helper, recipeType, EMBlocks.CHEMIXER, 28, 13, 144, 60);
         addElement(new GuiUpArrow(this, 68, 38));
         input = addSlot(SlotType.INPUT, 64, 17);
         inputGas = addElement(GuiGasGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT), this, 28, 13));

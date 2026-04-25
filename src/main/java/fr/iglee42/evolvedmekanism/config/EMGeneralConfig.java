@@ -15,7 +15,6 @@ import net.minecraftforge.fml.config.ModConfig.Type;
 public class EMGeneralConfig extends BaseMekanismConfig {
 
     private static final String APT_CATEGORY = "apt";
-    private static final String ITEMS_CATEGORY = "items";
 
     private final ForgeConfigSpec configSpec;
 
@@ -25,19 +24,10 @@ public class EMGeneralConfig extends BaseMekanismConfig {
     public final CachedFloatingLongValue aptEnergyStorage;
     public final CachedFloatingLongValue aptEnergyConsumption;
 
-    //OTHER
-    public final CachedConfigValue<BaseTier> maxInstallerTier;
-
     EMGeneralConfig() {
 
-        ((InitializableEnum)(Object)BaseTier.BASIC).evolvedmekanism$initNewValues();
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
         builder.comment("General Config. This config is synced from server to client.").push("general");
-        builder.comment("Items Settings").push(ITEMS_CATEGORY);
-        maxInstallerTier = CachedEnumValue.wrap(this,builder.comment("Defines the machine tier up to which the maximum tier installer should go")
-                .defineEnum("maxInstallerTier", EMBaseTier.MULTIVERSAL,
-                        BaseTier.BASIC,BaseTier.ADVANCED,BaseTier.ELITE,BaseTier.ULTIMATE,BaseTier.CREATIVE,EMBaseTier.OVERCLOCKED,EMBaseTier.QUANTUM,EMBaseTier.DENSE,EMBaseTier.MULTIVERSAL));
-        builder.pop();
         builder.comment("APT Settings").push(APT_CATEGORY);
         aptInputStorage = CachedIntValue.wrap(this, builder.comment("How much gas (in mB) can the input tank hold.")
                 .defineInRange("inputPerAntimatter", 5_000, 1, Integer.MAX_VALUE));

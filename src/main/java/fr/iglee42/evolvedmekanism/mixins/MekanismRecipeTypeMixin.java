@@ -1,5 +1,8 @@
 package fr.iglee42.evolvedmekanism.mixins;
 
+import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
+import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.recipes.MekanismRecipe;
 import mekanism.api.recipes.chemical.ItemStackChemicalToItemStackRecipe;
@@ -14,8 +17,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.function.Function;
-
-@SuppressWarnings("unused")
+//adds new recipe types
 @Mixin(MekanismRecipeType.class)
 public abstract class MekanismRecipeTypeMixin {
 
@@ -26,8 +28,9 @@ public abstract class MekanismRecipeTypeMixin {
 
     @Inject(method = "<clinit>", at= @At("TAIL"))
     private static void evolvedmekanism$initEmRecipe(CallbackInfo ci){
+        EMRecipeType.ALLOYING = register("alloying", recipeType -> new EMInputRecipeCache.TripleItem<>(recipeType, AlloyerRecipe::getMainInput, AlloyerRecipe::getExtraInput, AlloyerRecipe::getTertiaryExtraInput));
+        EMRecipeType.CHEMIXING = register("chemixing", recipeType -> new EMInputRecipeCache.ItemItemChemical<>(recipeType, ChemixerRecipe::getInputMain, ChemixerRecipe::getInputExtra, ChemixerRecipe::getInputGas));
         EMRecipeType.APT = register("apt", recipeType -> new InputRecipeCache.ItemChemical<>(recipeType, ItemStackChemicalToItemStackRecipe::getItemInput,
                 ItemStackChemicalToItemStackRecipe::getChemicalInput));
     }
-
 }

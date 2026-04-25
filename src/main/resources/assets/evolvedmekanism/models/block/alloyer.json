@@ -1,0 +1,12 @@
+{
+    "parent": "mekanism:block/machine",
+    "textures": {
+        "sides": "evolvedmekanism:block/alloyer/side",
+        "front": "evolvedmekanism:block/alloyer/front",
+        "west": "evolvedmekanism:block/alloyer/side",
+        "east": "evolvedmekanism:block/alloyer/side",
+        "south": "evolvedmekanism:block/alloyer/back",
+        "up": "evolvedmekanism:block/alloyer/top",
+        "down": "evolvedmekanism:block/alloyer/bottom"
+    }
+}
