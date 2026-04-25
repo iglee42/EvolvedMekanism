@@ -10,9 +10,11 @@
     "MekanismLangMixin",
     "MekanismRecipeTypeMixin",
     "MekanismTileEntityTypesMixin",
+    "client.GuiFactoryMixin",
     "tiers.AlloyTierMixin",
     "tiers.BaseTierMixin",
-    "tiles.TileEntityMekanismMixin"
+    "tiles.TileEntityMekanismMixin",
+    "tiles.TileEntityItemToItemFactoryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -12,6 +12,8 @@
   - Netherrack and End Stone Uranium Ore
   - Alloys and Alloy Blocks
   - Circuits
+  - Alloyer
+  - Chemixer
 
 ## 📜 Original Mod Author
 > [Original Mod](https://www.curseforge.com/minecraft/mc-mods/evolved-mekanism)

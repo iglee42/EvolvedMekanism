@@ -7,4 +7,4 @@ import net.minecraftforge.common.util.TriPredicate;
 
 public interface TripleItemRecipeLookupHandler<RECIPE extends MekanismRecipe & TriPredicate<ItemStack, ItemStack,ItemStack>> extends
         ITripleRecipeLookupHandler<ItemStack, ItemStack,ItemStack, RECIPE, EMInputRecipeCache.TripleItem<RECIPE>> {
-    }
+}

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.function.Supplier;
 //New Factory type ALLOYING
+@SuppressWarnings("unused")
 @Mixin(value = FactoryType.class,remap = false)
 public class FactoryTypeMixin {
     @Shadow

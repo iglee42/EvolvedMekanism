@@ -74,11 +74,29 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
         }
     }
 
+    @Override
+    protected void addSlots(InventorySlotHelper builder, IContentsListener listener, IContentsListener updateSortingListener) {
+        super.addSlots(builder, listener, updateSortingListener);
+        int imageWidth = 176 +(38 *( tier.ordinal() - FactoryTier.ULTIMATE.ordinal() + 1)) + 9;
+        int inventorySize = 9 * 20;
+        int endInventory = (imageWidth / 2 + inventorySize / 2) - 10;
+        int extraSlotX = tier.ordinal() > FactoryTier.ULTIMATE.ordinal() ? endInventory + 4 : 7;
+        int extraSlotY = tier.ordinal() > FactoryTier.ULTIMATE.ordinal() ? 143 : 57;
+        builder.addSlot(extraSlot = LimitedInputInventorySlot.at((tier.ordinal() + 1) * 64,this::containsRecipeB, markAllMonitorsChanged(listener), extraSlotX, extraSlotY));
+        builder.addSlot(secondExtraSlot = LimitedInputInventorySlot.at((tier.ordinal() + 1) * 64, this::containsRecipeC, markAllMonitorsChanged(listener), extraSlotX, extraSlotY - 22));
+        extraSlot.setSlotType(ContainerSlotType.EXTRA);
+        secondExtraSlot.setSlotType(ContainerSlotType.EXTRA);
+    }
 
     @Nullable
     @Override
     protected LimitedInputInventorySlot getExtraSlot() {
         return extraSlot;
+    }
+
+    @SuppressWarnings("unused")
+    public LimitedInputInventorySlot getSecondExtraSlot() {
+        return secondExtraSlot;
     }
 
     @Override
@@ -100,12 +118,12 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
         return false;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     protected AlloyerRecipe findRecipe(int process, @NotNull ItemStack fallbackInput, @NotNull IInventorySlot outputSlot, @Nullable IInventorySlot secondaryOutputSlot) {
         ItemStack extra = extraSlot.getStack();
         ItemStack secondExtra = secondExtraSlot.getStack();
         ItemStack output = outputSlot.getStack();
-        //noinspection unchecked
         return ((EMInputRecipeCache.IFindRecipes<ItemStack, ItemStackIngredient,ItemStack,ItemStackIngredient,ItemStack,ItemStackIngredient,AlloyerRecipe, ItemInputCache<AlloyerRecipe>,ItemInputCache<AlloyerRecipe>,ItemInputCache<AlloyerRecipe>>)getRecipeType().getInputCache()).findTypeBasedRecipe(level, fallbackInput, extra, secondExtra,
                 recipe -> InventoryUtils.areItemsStackable(recipe.getOutput(fallbackInput, extra,secondExtra), output));
     }

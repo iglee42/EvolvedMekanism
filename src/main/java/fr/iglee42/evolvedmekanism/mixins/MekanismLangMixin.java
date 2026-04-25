@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+@SuppressWarnings("unused")
 @Mixin(value = MekanismLang.class,remap = false)
 public class MekanismLangMixin {
     @Shadow

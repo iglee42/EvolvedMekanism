@@ -90,7 +90,7 @@ public class TileEntityAlloyer extends TileEntityProgressMachine<AlloyerRecipe> 
         outputHandler = OutputHelper.getOutputHandler(outputSlot, RecipeError.NOT_ENOUGH_OUTPUT_SPACE);
     }
 
-    private static ConfigInfo setupItemIOExtraConfig(TileComponentConfig config,IInventorySlot inputSlot, IInventorySlot outputSlot, IInventorySlot extraSlot, IInventorySlot secondaryExtraSlot, IInventorySlot energySlot) {
+    private static void setupItemIOExtraConfig(TileComponentConfig config, IInventorySlot inputSlot, IInventorySlot outputSlot, IInventorySlot extraSlot, IInventorySlot secondaryExtraSlot, IInventorySlot energySlot) {
         ConfigInfo itemConfig = config.getConfig(TransmissionType.ITEM);
         if (itemConfig != null) {
             itemConfig.addSlotInfo(DataType.INPUT, new InventorySlotInfo(true, false, inputSlot));
@@ -101,7 +101,6 @@ public class TileEntityAlloyer extends TileEntityProgressMachine<AlloyerRecipe> 
             //Set default config directions
             itemConfig.setDefaults();
         }
-        return itemConfig;
     }
 
     @NotNull
@@ -127,7 +126,7 @@ public class TileEntityAlloyer extends TileEntityProgressMachine<AlloyerRecipe> 
         ).tracksWarnings(slot -> slot.warning(WarningType.NO_MATCHING_RECIPE, getWarningCheck(RecipeError.NOT_ENOUGH_SECONDARY_INPUT)));
         builder.addSlot(outputSlot = OutputInventorySlot.at(listener, 116, 35))
                 .tracksWarnings(slot -> slot.warning(WarningType.NO_SPACE_IN_OUTPUT, getWarningCheck(RecipeError.NOT_ENOUGH_OUTPUT_SPACE)));
-        builder.addSlot(energySlot = EnergyInventorySlot.fillOrConvert(energyContainer, this::getLevel, listener, 39, 35));
+        builder.addSlot(energySlot = EnergyInventorySlot.fillOrConvert(energyContainer, this::getLevel, listener, 20, 35));
         extraInputSlot.setSlotType(ContainerSlotType.EXTRA);
         secondExtraInputSlot.setSlotType(ContainerSlotType.EXTRA);
         return builder.build();
@@ -182,6 +181,7 @@ public class TileEntityAlloyer extends TileEntityProgressMachine<AlloyerRecipe> 
     }
 
     //Methods relating to IComputerTile
+    @SuppressWarnings("unused")
     @ComputerMethod(methodDescription = ComputerConstants.DESCRIPTION_GET_ENERGY_USAGE)
     FloatingLong getEnergyUsage() {
         return getActive() ? energyContainer.getEnergyPerTick() : FloatingLong.ZERO;

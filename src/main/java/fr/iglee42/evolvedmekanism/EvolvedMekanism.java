@@ -4,9 +4,6 @@ import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.registries.*;
 import mekanism.api.text.EnumColor;
 import net.minecraft.network.chat.Component;
-import org.slf4j.Logger;
-
-import com.mojang.logging.LogUtils;
 
 import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.multiblock.EMBuilders;
@@ -33,12 +30,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("unused")
 @Mod(EvolvedMekanism.MODID)
 public class EvolvedMekanism {
 
     public static final String MODID = "evolvedmekanism";
-    public static final Logger logger = LogUtils.getLogger();
     public static final String MOD_NAME = "EvolvedMekanism";
 
     public static EvolvedMekanism instance;
@@ -50,6 +46,7 @@ public class EvolvedMekanism {
     public static final MultiblockManager<APTMultiblockData> aptManager = new MultiblockManager<>("apt", APTCache::new,
             APTValidator::new);
 
+    @SuppressWarnings("removal")
     public EvolvedMekanism() {
         instance = this;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -80,6 +77,7 @@ public class EvolvedMekanism {
         return instance.packetHandler;
     }
 
+    @SuppressWarnings("DataFlowIssue")
     private void initEnums() {
         MekanismLang ignoredLType = MekanismLang.MEKANISM;
         ((InitializableEnum)(Object)BaseTier.BASIC).evolvedmekanism$initNewValues();
@@ -100,6 +98,11 @@ public class EvolvedMekanism {
 
     public static ResourceLocation getResource(MekanismUtils.ResourceType type, String name) {
         return rl(type.getPrefix() + name);
+    }
+
+    public static boolean isEvolvedMekanismTier(BaseTier tier) {
+        return tier.equals(EMBaseTier.OVERCLOCKED) || tier.equals(EMBaseTier.QUANTUM) || tier.equals(EMBaseTier.DENSE)
+                || tier.equals(EMBaseTier.MULTIVERSAL) || tier.equals(BaseTier.CREATIVE);
     }
 
     public static ItemRegistryObject<Item> getCircuitByTier(BaseTier tier) {
