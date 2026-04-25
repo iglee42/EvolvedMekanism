@@ -1,7 +1,7 @@
 package fr.iglee42.evolvedmekanism.jei.categories;
 
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
-import fr.iglee42.evolvedmekanism.registries.EMItems;
+import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import mekanism.client.gui.element.GuiUpArrow;
 import mekanism.client.gui.element.bar.GuiVerticalPowerBar;
 import mekanism.client.gui.element.progress.ProgressType;
@@ -24,7 +24,7 @@ public class AlloyerRecipeCategory extends BaseRecipeCategory<AlloyerRecipe> {
     private final GuiSlot output;
 
     public AlloyerRecipeCategory(IGuiHelper helper, MekanismJEIRecipeType<AlloyerRecipe> recipeType) {
-        super(helper, recipeType, EMItems.BETTER_GOLD_DUST, 28, 16, 144, 54);
+        super(helper, recipeType, EMBlocks.ALLOYER, 28, 16, 144, 54);
         addElement(new GuiUpArrow(this, 68, 38));
         input = addSlot(SlotType.INPUT, 64, 17);
         extra = addSlot(SlotType.EXTRA, 55, 53);

@@ -84,7 +84,6 @@ public class EvolvedMekanism {
         MekanismLang ignoredLType = MekanismLang.MEKANISM;
         ((InitializableEnum)(Object)BaseTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)AlloyTier.INFUSED).evolvedmekanism$initNewValues();
-
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

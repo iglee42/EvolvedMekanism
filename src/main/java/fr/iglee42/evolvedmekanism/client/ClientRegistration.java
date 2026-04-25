@@ -7,7 +7,6 @@ import fr.iglee42.evolvedmekanism.client.renderers.datas.MultipleCustomRenderDat
 import fr.iglee42.evolvedmekanism.particles.RisingBubbleParticle;
 import fr.iglee42.evolvedmekanism.registries.*;
 import mekanism.client.ClientRegistrationUtil;
-import mekanism.client.render.transmitter.*;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.core.registries.Registries;
 import net.minecraftforge.api.distmarker.Dist;
@@ -15,13 +14,15 @@ import net.minecraftforge.client.event.*;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.RegisterEvent;
-    /**
-    Never remove this file. The APT will no longer have a GUI.
-    **/
-@SuppressWarnings("unused")
+
 @Mod.EventBusSubscriber(modid = EvolvedMekanism.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientRegistration {
+
+    @SubscribeEvent
+    public static void init(FMLClientSetupEvent event) {
+    }
 
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event) {
@@ -33,14 +34,18 @@ public class ClientRegistration {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         //Register entity rendering handlers
 
-        //Register TileEntityRenderers
         event.registerBlockEntityRenderer(EMTileEntityTypes.APT_CASING.get(), RenderAPT::new);
         event.registerBlockEntityRenderer(EMTileEntityTypes.APT_PORT.get(), RenderAPT::new);
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerContainers(RegisterEvent event) {
-        event.register(Registries.MENU, helper -> ClientRegistrationUtil.registerScreen(EMContainerTypes.APT, GuiAPT::new));
+        event.register(Registries.MENU, helper -> {
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.ALLOYER, GuiAlloyer::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.CHEMIXER, GuiChemixer::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.APT, GuiAPT::new);
+
+        });
     }
 
     @SubscribeEvent

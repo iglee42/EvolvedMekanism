@@ -12,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.util.TriPredicate;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 @NothingNullByDefault
@@ -47,6 +48,11 @@ public abstract class ChemixerRecipe extends MekanismRecipe implements TriPredic
     @Override
     public boolean test(ItemStack solid, ItemStack extra, GasStack gas) {
         return this.inputMain.test(solid) && this.inputExtra.test(extra) && this.inputGas.test(gas);
+    }
+
+    @Contract(value = "_, _, _ -> new", pure = true)
+    public ItemStack getOutput(@NotNull ItemStack input, @NotNull ItemStack extra, @NotNull GasStack gas) {
+        return outputItem.copy();
     }
 
     @Override
