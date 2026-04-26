@@ -10,13 +10,11 @@ import mekanism.api.recipes.ingredients.ItemStackIngredient;
 import mekanism.common.recipe.MekanismRecipeType;
 import mekanism.common.recipe.lookup.ITripleRecipeLookupHandler;
 import mekanism.common.recipe.lookup.cache.DoubleInputRecipeCache;
-import mekanism.common.recipe.lookup.cache.InputRecipeCache;
 import mekanism.common.recipe.lookup.cache.TripleInputRecipeCache;
 import mekanism.common.recipe.lookup.cache.type.ChemicalInputCache;
 import mekanism.common.recipe.lookup.cache.type.FluidInputCache;
 import mekanism.common.recipe.lookup.cache.type.IInputCache;
 import mekanism.common.recipe.lookup.cache.type.ItemInputCache;
-import mekanism.common.util.ChemicalUtil;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.util.TriPredicate;
@@ -29,13 +27,28 @@ import java.util.function.Supplier;
 
 public class EMInputRecipeCache {
     public static class TripleItem<RECIPE extends MekanismRecipe & TriPredicate<ItemStack,ItemStack, ItemStack>>
-            extends TripleSameInputRecipeCache<ItemStack, ItemStackIngredient, RECIPE, ItemInputCache<RECIPE>> {
+            extends TripleSameInputRecipeCache<ItemStack, ItemStackIngredient, RECIPE, ItemInputCache<RECIPE>>
+            implements IFindRecipes<ItemStack, ItemStackIngredient, ItemStack, ItemStackIngredient, ItemStack, ItemStackIngredient, RECIPE, ItemInputCache<RECIPE>, ItemInputCache<RECIPE>, ItemInputCache<RECIPE>> {
+
 
         public TripleItem(MekanismRecipeType<RECIPE, ?> recipeType, Function<RECIPE, ItemStackIngredient> inputAExtractor,
                           Function<RECIPE, ItemStackIngredient> inputBExtractor, Function<RECIPE, ItemStackIngredient> inputCExtractor) {
             super(recipeType, inputAExtractor, inputBExtractor,inputCExtractor, ItemInputCache::new);
         }
 
+        @Nullable
+        @Override
+        public RECIPE findTypeBasedRecipe(@Nullable Level world, ItemStack inputA, ItemStack inputB, ItemStack inputC, Predicate<RECIPE> matchCriteria) {
+            if (world == null) {
+                return null;
+            }
+            // Use the cache's own lookup implementation (inherited from TripleInputRecipeCache)
+            RECIPE recipe = findFirstRecipe(world, inputA, inputB, inputC);
+            if (recipe == null) {
+                return null;
+            }
+            return (matchCriteria == null || matchCriteria.test(recipe)) ? recipe : null;
+        }
 
     }
     /**

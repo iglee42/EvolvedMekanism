@@ -2,6 +2,8 @@ package fr.iglee42.evolvedmekanism.tiles.factory;
 
 import java.util.List;
 import java.util.Set;
+import java.lang.reflect.Method;
+import java.util.function.Predicate;
 
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.interfaces.IGetEnergySlot;
@@ -17,7 +19,6 @@ import mekanism.api.math.MathUtils;
 import mekanism.api.providers.IBlockProvider;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.api.recipes.cache.CachedRecipe.OperationTracker.RecipeError;
-import mekanism.api.recipes.ingredients.ItemStackIngredient;
 import mekanism.api.recipes.inputs.IInputHandler;
 import mekanism.api.recipes.inputs.InputHelper;
 import mekanism.common.Mekanism;
@@ -27,7 +28,6 @@ import mekanism.common.integration.computer.annotation.WrappingComputerMethod;
 import mekanism.common.inventory.container.slot.ContainerSlotType;
 import mekanism.common.lib.transmitter.TransmissionType;
 import mekanism.common.recipe.IMekanismRecipeTypeProvider;
-import mekanism.common.recipe.lookup.cache.type.ItemInputCache;
 import mekanism.common.tier.FactoryTier;
 import mekanism.common.tile.component.config.ConfigInfo;
 import mekanism.common.tile.component.config.DataType;
@@ -118,14 +118,36 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
         return false;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     protected AlloyerRecipe findRecipe(int process, @NotNull ItemStack fallbackInput, @NotNull IInventorySlot outputSlot, @Nullable IInventorySlot secondaryOutputSlot) {
         ItemStack extra = extraSlot.getStack();
         ItemStack secondExtra = secondExtraSlot.getStack();
         ItemStack output = outputSlot.getStack();
-        return ((EMInputRecipeCache.IFindRecipes<ItemStack, ItemStackIngredient,ItemStack,ItemStackIngredient,ItemStack,ItemStackIngredient,AlloyerRecipe, ItemInputCache<AlloyerRecipe>,ItemInputCache<AlloyerRecipe>,ItemInputCache<AlloyerRecipe>>)getRecipeType().getInputCache()).findTypeBasedRecipe(level, fallbackInput, extra, secondExtra,
-                recipe -> InventoryUtils.areItemsStackable(recipe.getOutput(fallbackInput, extra,secondExtra), output));
+
+        Object cache = getRecipeType().getInputCache();
+        Predicate<AlloyerRecipe> match = recipe -> InventoryUtils.areItemsStackable(recipe.getOutput(fallbackInput, extra, secondExtra), output);
+
+        // Try calling the lookup method directly if the runtime cache exposes it
+        try {
+            Method direct = cache.getClass().getMethod("findTypeBasedRecipe", net.minecraft.world.level.Level.class, ItemStack.class, ItemStack.class, ItemStack.class, java.util.function.Predicate.class);
+            Object result = direct.invoke(cache, level, fallbackInput, extra, secondExtra, match);
+            return (AlloyerRecipe) result;
+        } catch (NoSuchMethodException ignored) {
+            // try alternative method name used by some versions
+            try {
+                Method alt = cache.getClass().getMethod("findFirstRecipe", net.minecraft.world.level.Level.class, ItemStack.class, ItemStack.class, ItemStack.class);
+                Object res = alt.invoke(cache, level, fallbackInput, extra, secondExtra);
+                if (res instanceof AlloyerRecipe r && match.test(r)) {
+                    return r;
+                }
+            } catch (Exception e) {
+                Mekanism.logger.warn("Unexpected recipe cache type {} when finding alloying recipe", cache == null ? "null" : cache.getClass(), e);
+            }
+        } catch (Exception e) {
+            Mekanism.logger.warn("Failed to invoke recipe lookup on cache {}", cache == null ? "null" : cache.getClass(), e);
+        }
+
+        return null;
     }
 
 
