@@ -1,0 +1,12 @@
+{
+    "type": "mekanism:infusion_conversion",
+    "input": {
+        "ingredient": {
+            "tag": "forge:dusts/better_gold"
+        }
+    },
+    "output": {
+        "amount": 10,
+        "infuse_type": "evolvedmekanism:better_gold"
+    }
+}
