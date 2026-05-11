@@ -64,7 +64,13 @@ public class EMItems {
             @NotNull
             @Override
             public Component getName(@NotNull ItemStack stack) {
-                return TextComponentUtil.build(tier.getBaseTier().getColor(), super.getName(stack));
+                // Some AlloyTiers may not have a BaseTier (null). Avoid NPE by falling back to the
+                // default name when base tier is not present.
+                BaseTier base = tier.getBaseTier();
+                if (base == null) {
+                    return super.getName(stack);
+                }
+                return TextComponentUtil.build(base.getColor(), super.getName(stack));
             }
         });
     }

@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+@SuppressWarnings("unused")
 @Mixin(value = AlloyTier.class,remap = false)
 public class AlloyTierMixin implements InitializableEnum {
     @Shadow
@@ -52,7 +53,11 @@ public class AlloyTierMixin implements InitializableEnum {
 
     @Inject(method = "<clinit>",at = @At("TAIL"))
     private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
-        if (EMAlloyTier.HYPERCHARGED != null)return;
+        // If the base tiers haven't been initialized yet (from BaseTierMixin), don't add
+        // alloy variants here. They will be initialized later via the InitializableEnum
+        // invocation in EvolvedMekanism.initEnums(), which ensures BaseTier values
+        // are present before creating AlloyTier variants.
+        if (EMAlloyTier.HYPERCHARGED != null || EMBaseTier.OVERCLOCKED == null) return;
         EMAlloyTier.HYPERCHARGED = evolvedmekanism$addVariant("HYPERCHARGED", EMBaseTier.OVERCLOCKED);
         EMAlloyTier.SUBATOMIC = evolvedmekanism$addVariant("SUBATOMIC", EMBaseTier.QUANTUM);
         EMAlloyTier.SINGULAR = evolvedmekanism$addVariant("SINGULAR", EMBaseTier.DENSE);
