@@ -8,6 +8,7 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiles.*;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.factory.TileEntityAlloyingFactory;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
@@ -38,6 +39,7 @@ import mekanism.common.tile.TileEntityFluidTank;
 import mekanism.common.tile.base.CapabilityTileEntity;
 import mekanism.common.tile.base.TileEntityMekanism;
 import mekanism.common.tile.factory.*;
+import mekanism.common.tile.laser.TileEntityLaserTractorBeam;
 import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
@@ -244,6 +246,12 @@ public class EMTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityLunarNeutronActivator> LUNAR_NEUTRON_ACTIVATOR = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.LUNAR_NEUTRON_ACTIVATOR, TileEntityLunarNeutronActivator::new)
             .serverTicker(TileEntityMekanism::tickServer)
             .withSimple(Capabilities.CONFIG_CARD)
+            .build();
+
+    public static final TileEntityTypeRegistryObject<TileEntityLaserDisenchanter> LASER_DISENCHANTER = TILE_ENTITY_TYPES
+            .mekBuilder(EMBlocks.LASER_DISENCHANTER, TileEntityLaserDisenchanter::new)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.LASER_RECEPTOR)
             .build();
 
     private static <BE extends TileEntityLogisticalTransporterBase> TileEntityTypeRegistryObject<BE> registerTransporter(DeferredHolder<Block, ?> block, BlockEntityFactory<BE> factory) {
