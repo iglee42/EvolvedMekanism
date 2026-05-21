@@ -184,7 +184,7 @@ public class EMBlocks {
                     ).addAttachmentOnlyContainers(ContainerType.ITEM, () -> ItemSlotsBuilder.builder()
                             .addInput(EMRecipeType.MELTING, InputRecipeCache.SingleItem::containsInput)
                             .addFluidDrainSlot(0)
-                            .addEnergy()
+                            .addOutput()
                             .build()
                     )
             );
@@ -200,6 +200,7 @@ public class EMBlocks {
                             .build()
                     ).addAttachmentOnlyContainers(ContainerType.ITEM, () -> ItemSlotsBuilder.builder()
                             .addInput(EMRecipeType.SOLIDIFICATION, EMInputRecipeCache.ItemFluidFluid::containsInputA)
+                            .addOutput()
                             .addEnergy()
                             .build()
                     ));
