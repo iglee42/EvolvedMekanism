@@ -35,6 +35,7 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_CREATIVE_LUNAR_GENERATOR("description", "creative_lunar_generator"),
 
     DESCRIPTION_LUNAR_GENERATOR("description", "lunar_generator"),
+    DESCRIPTION_LASER_DISENCHANTER("description", "laser_disenchanter"),
 
     DESCRIPTION_MAX_TIER_INSTALLER("description", "max_tier_installer"),
 

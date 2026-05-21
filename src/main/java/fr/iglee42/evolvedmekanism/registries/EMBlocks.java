@@ -17,6 +17,7 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
@@ -51,6 +52,7 @@ import mekanism.common.content.blocktype.*;
 import mekanism.common.item.block.*;
 import mekanism.common.item.block.machine.ItemBlockFactory;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
+import mekanism.common.item.block.machine.ItemBlockLaserTractorBeam;
 import mekanism.common.item.block.transmitter.*;
 import mekanism.common.recipe.MekanismRecipeType;
 import mekanism.common.recipe.lookup.cache.InputRecipeCache;
@@ -67,6 +69,7 @@ import mekanism.common.tile.TileEntityChemicalTank;
 import mekanism.common.tile.TileEntityEnergyCube;
 import mekanism.common.tile.TileEntityFluidTank;
 import mekanism.common.tile.factory.TileEntityFactory;
+import mekanism.common.tile.laser.TileEntityLaserTractorBeam;
 import mekanism.common.tile.machine.TileEntityMetallurgicInfuser;
 import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
@@ -223,6 +226,19 @@ public class EMBlocks {
                     )
             );
 
+
+    public static final BlockRegistryObject<BlockTileModel<TileEntityLaserDisenchanter, BlockTypeTile<TileEntityLaserDisenchanter>>, ItemBlockLaserTractorBeam> LASER_DISENCHANTER =
+            BLOCKS.register("laser_disenchanter", () -> new BlockTileModel<>(EMBlockTypes.LASER_DISENCHANTER,
+                    properties -> properties.mapColor(MapColor.COLOR_GRAY)), ItemBlockLaserTractorBeam::new
+            ).forItemHolder(holder -> holder.addAttachmentOnlyContainers(ContainerType.ITEM,() ->
+                    ItemSlotsBuilder.builder()
+                            .addOutput(2 * 6)
+                            .addChemicalDrainSlot(0)
+                            .addChemicalFillSlot(0)
+                            .build()).addAttachmentOnlyContainers(ContainerType.CHEMICAL, () ->
+                    ChemicalTanksBuilder.builder()
+                            .addBasic(TileEntityLaserDisenchanter.MAX_GAS,stack->stack.is(EMChemicals.CRYONOCTIS))
+                            .build()));
 
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> PLASLITHERITE_BLOCK = registerResourceBlock(EMBlockResourceInfo.PLASLITHERITE);
