@@ -1,5 +1,11 @@
 {
     "values": [
+        "evolvedmekanism:alloyer",
+        "evolvedmekanism:chemixer",
+        "mekanism:basic_alloying_factory",
+        "mekanism:advanced_alloying_factory",
+        "mekanism:elite_alloying_factory",
+        "mekanism:ultimate_alloying_factory",
         "evolvedmekanism:block_better_gold",
         "evolvedmekanism:block_plaslitherite",
         "evolvedmekanism:block_refined_redstone",
@@ -16,5 +22,6 @@
         "evolvedmekanism:block_alloy_singular",
         "evolvedmekanism:block_alloy_exoversal",
         "evolvedmekanism:block_alloy_creative"
+
     ]
 }
