@@ -15,6 +15,7 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
@@ -38,11 +39,8 @@ import mekanism.common.registries.MekanismSounds;
 import mekanism.common.registries.MekanismTileEntityTypes;
 import mekanism.common.tier.*;
 import mekanism.common.tile.*;
-import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
-import mekanism.common.tile.multiblock.TileEntitySPSPort;
-import mekanism.common.tile.multiblock.TileEntitySuperheatingElement;
 import mekanism.common.tile.transmitter.*;
 import mekanism.common.util.EnumUtils;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -128,6 +126,15 @@ public class EMBlockTypes {
             .with(AttributeHasBounding.ABOVE_ONLY)
             .withComputerSupport("lunarNeutronActivator")
             .replace(Attributes.ACTIVE)
+            .build();
+
+    public static final BlockTypeTile<TileEntityLaserDisenchanter> LASER_DISENCHANTER = BlockTileBuilder
+            .createBlock(() -> EMTileEntityTypes.LASER_DISENCHANTER, EvolvedMekanismLang.DESCRIPTION_LASER_DISENCHANTER)
+            .withGui(() -> EMContainerTypes.LASER_DISENCHANTER)
+            .withEnergyConfig(MekanismConfig.storage.laserTractorBeam)
+            .with(new AttributeStateFacing(BlockStateProperties.FACING, AttributeStateFacing.FacePlacementType.SELECTED_FACE), Attributes.COMPARATOR, Attributes.SECURITY, Attributes.INVENTORY)
+            .withCustomShape(BlockShapes.LASER_AMPLIFIER)
+            .withComputerSupport("laserDisenchanter")
             .build();
 
     // Induction Cells
