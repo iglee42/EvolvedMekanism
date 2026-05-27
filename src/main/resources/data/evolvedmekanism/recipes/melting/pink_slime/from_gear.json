@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_pink_slime",
+        "tag": "forge:molten_pink_slime",
         "amount": 360
     },
     "conditions": [

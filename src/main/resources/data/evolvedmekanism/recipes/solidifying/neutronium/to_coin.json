@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_neutronium",
+        "tag": "forge:molten_neutronium",
         "amount": 30
     },
     "extraInput": {

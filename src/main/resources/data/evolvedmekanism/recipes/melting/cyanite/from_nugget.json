@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_cyanite",
+        "tag": "forge:molten_cyanite",
         "amount": 10
     },
     "conditions": [

@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_tertium",
+        "tag": "forge:molten_tertium",
         "amount": 90
     },
     "extraInput": {

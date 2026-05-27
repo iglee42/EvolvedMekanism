@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_neptunium",
+        "tag": "forge:molten_neptunium",
         "amount": 90
     },
     "conditions": [

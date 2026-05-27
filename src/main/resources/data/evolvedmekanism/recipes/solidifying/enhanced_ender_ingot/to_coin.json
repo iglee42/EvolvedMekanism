@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_enhanced_ender_ingot",
+        "tag": "forge:molten_enhanced_ender_ingot",
         "amount": 30
     },
     "extraInput": {

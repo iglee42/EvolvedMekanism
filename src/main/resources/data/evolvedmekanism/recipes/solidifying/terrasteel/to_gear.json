@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_terrasteel",
+        "tag": "forge:molten_terrasteel",
         "amount": 360
     },
     "extraInput": {

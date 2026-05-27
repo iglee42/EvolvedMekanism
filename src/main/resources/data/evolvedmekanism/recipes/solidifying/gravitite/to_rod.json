@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_gravitite",
+        "tag": "forge:molten_gravitite",
         "amount": 45
     },
     "extraInput": {

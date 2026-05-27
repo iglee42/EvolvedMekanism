@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_diamond",
+        "tag": "forge:molten_diamond",
         "amount": 360
     },
     "conditions": [

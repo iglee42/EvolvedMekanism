@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_insanium",
+        "tag": "forge:molten_insanium",
         "amount": 10
     },
     "extraInput": {

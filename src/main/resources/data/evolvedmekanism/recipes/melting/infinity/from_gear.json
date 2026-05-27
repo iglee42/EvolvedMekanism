@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_infinity",
+        "tag": "forge:molten_infinity",
         "amount": 360
     },
     "conditions": [

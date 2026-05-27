@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_radium",
+        "tag": "forge:molten_radium",
         "amount": 90
     },
     "conditions": [

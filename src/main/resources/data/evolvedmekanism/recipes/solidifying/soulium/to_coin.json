@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_soulium",
+        "tag": "forge:molten_soulium",
         "amount": 30
     },
     "extraInput": {

@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_boron",
+        "tag": "forge:molten_boron",
         "amount": 10
     },
     "extraInput": {

@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_infinity",
+        "tag": "forge:molten_infinity",
         "amount": 90
     },
     "extraInput": {

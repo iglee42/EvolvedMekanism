@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_knightslime",
+        "tag": "forge:molten_knightslime",
         "amount": 10
     },
     "extraInput": {

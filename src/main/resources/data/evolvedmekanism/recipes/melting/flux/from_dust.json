@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_flux",
+        "tag": "forge:molten_flux",
         "amount": 90
     },
     "conditions": [

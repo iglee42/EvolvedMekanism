@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_brass",
+        "tag": "forge:molten_brass",
         "amount": 45
     },
     "extraInput": {

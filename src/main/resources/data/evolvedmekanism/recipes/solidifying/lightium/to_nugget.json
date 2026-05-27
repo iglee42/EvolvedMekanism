@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_lightium",
+        "tag": "forge:molten_lightium",
         "amount": 10
     },
     "extraInput": {

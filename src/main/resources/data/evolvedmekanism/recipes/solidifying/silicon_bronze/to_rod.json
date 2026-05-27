@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_silicon_bronze",
+        "tag": "forge:molten_silicon_bronze",
         "amount": 45
     },
     "extraInput": {

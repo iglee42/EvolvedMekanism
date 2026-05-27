@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_debris",
+        "tag": "forge:molten_debris",
         "amount": 90
     },
     "conditions": [

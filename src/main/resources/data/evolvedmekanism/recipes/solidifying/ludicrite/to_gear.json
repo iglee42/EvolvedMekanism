@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_ludicrite",
+        "tag": "forge:molten_ludicrite",
         "amount": 360
     },
     "extraInput": {

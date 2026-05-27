@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_blaze",
+        "tag": "forge:molten_blaze",
         "amount": 45
     },
     "extraInput": {

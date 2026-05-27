@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_conductive_alloy",
+        "tag": "forge:molten_conductive_alloy",
         "amount": 810
     },
     "extraInput": {

@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_elementium",
+        "tag": "forge:molten_elementium",
         "amount": 810
     },
     "extraInput": {

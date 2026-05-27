@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_cobalt",
+        "tag": "forge:molten_cobalt",
         "amount": 30
     },
     "extraInput": {

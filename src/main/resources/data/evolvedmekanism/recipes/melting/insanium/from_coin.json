@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_insanium",
+        "tag": "forge:molten_insanium",
         "amount": 30
     },
     "conditions": [

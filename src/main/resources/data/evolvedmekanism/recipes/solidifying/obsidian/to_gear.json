@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_obsidian",
+        "tag": "forge:molten_obsidian",
         "amount": 360
     },
     "extraInput": {

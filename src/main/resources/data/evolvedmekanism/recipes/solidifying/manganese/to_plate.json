@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_manganese",
+        "tag": "forge:molten_manganese",
         "amount": 90
     },
     "extraInput": {

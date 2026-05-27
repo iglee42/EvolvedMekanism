@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_enderium",
+        "tag": "forge:molten_enderium",
         "amount": 10
     },
     "extraInput": {

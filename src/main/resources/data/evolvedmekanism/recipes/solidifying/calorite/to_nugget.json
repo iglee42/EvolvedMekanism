@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_calorite",
+        "tag": "forge:molten_calorite",
         "amount": 10
     },
     "extraInput": {

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_pulsating_alloy",
+        "tag": "forge:molten_pulsating_alloy",
         "amount": 10
     },
     "conditions": [

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_manyullyn",
+        "tag": "forge:molten_manyullyn",
         "amount": 30
     },
     "conditions": [

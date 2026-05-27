@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_saturlyte",
+        "tag": "forge:molten_saturlyte",
         "amount": 30
     },
     "conditions": [

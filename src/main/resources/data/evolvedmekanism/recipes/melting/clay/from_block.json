@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_clay",
+        "tag": "forge:molten_clay",
         "amount": 360
     },
     "conditions": [

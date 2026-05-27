@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_coal",
+        "tag": "forge:molten_coal",
         "amount": 360
     },
     "conditions": [

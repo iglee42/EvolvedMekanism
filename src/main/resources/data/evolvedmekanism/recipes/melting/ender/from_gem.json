@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_ender",
+        "tag": "forge:molten_ender",
         "amount": 90
     },
     "conditions": [

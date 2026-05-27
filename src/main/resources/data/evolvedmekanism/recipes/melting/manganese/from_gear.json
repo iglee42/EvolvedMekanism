@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_manganese",
+        "tag": "forge:molten_manganese",
         "amount": 360
     },
     "conditions": [

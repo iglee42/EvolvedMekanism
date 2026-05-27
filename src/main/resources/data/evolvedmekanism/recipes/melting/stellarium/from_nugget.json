@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_stellarium",
+        "tag": "forge:molten_stellarium",
         "amount": 10
     },
     "conditions": [

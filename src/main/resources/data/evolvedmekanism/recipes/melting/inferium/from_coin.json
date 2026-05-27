@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_inferium",
+        "tag": "forge:molten_inferium",
         "amount": 30
     },
     "conditions": [

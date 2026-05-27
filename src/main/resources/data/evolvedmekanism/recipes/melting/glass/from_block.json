@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_glass",
+        "tag": "forge:molten_glass",
         "amount": 1000
     },
     "conditions": [

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_amethyst",
+        "tag": "forge:molten_amethyst",
         "amount": 30
     },
     "conditions": [

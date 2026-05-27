@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_aluminum",
+        "tag": "forge:molten_aluminum",
         "amount": 45
     },
     "conditions": [

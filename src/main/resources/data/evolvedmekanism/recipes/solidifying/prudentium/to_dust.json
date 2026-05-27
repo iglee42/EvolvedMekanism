@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_prudentium",
+        "tag": "forge:molten_prudentium",
         "amount": 90
     },
     "extraInput": {

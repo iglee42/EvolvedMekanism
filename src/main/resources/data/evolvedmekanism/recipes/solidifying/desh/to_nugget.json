@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_desh",
+        "tag": "forge:molten_desh",
         "amount": 10
     },
     "extraInput": {

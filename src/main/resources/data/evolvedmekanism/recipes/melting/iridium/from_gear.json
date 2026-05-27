@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_iridium",
+        "tag": "forge:molten_iridium",
         "amount": 360
     },
     "conditions": [

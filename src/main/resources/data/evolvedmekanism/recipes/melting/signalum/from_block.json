@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_signalum",
+        "tag": "forge:molten_signalum",
         "amount": 810
     },
     "conditions": [

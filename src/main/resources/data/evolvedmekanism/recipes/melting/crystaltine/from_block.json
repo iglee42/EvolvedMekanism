@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_crystaltine",
+        "tag": "forge:molten_crystaltine",
         "amount": 810
     },
     "conditions": [

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_soulsteel",
+        "tag": "forge:molten_soulsteel",
         "amount": 360
     },
     "conditions": [

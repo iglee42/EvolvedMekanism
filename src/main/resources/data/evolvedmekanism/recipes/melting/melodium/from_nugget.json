@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_melodium",
+        "tag": "forge:molten_melodium",
         "amount": 10
     },
     "conditions": [

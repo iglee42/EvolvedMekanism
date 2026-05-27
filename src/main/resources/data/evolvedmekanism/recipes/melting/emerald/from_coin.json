@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_emerald",
+        "tag": "forge:molten_emerald",
         "amount": 30
     },
     "conditions": [

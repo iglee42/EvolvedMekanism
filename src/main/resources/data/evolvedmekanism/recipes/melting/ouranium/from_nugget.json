@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_ouranium",
+        "tag": "forge:molten_ouranium",
         "amount": 10
     },
     "conditions": [

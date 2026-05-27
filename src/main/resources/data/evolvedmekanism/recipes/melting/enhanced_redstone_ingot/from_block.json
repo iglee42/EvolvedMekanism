@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_enhanced_redstone_ingot",
+        "tag": "forge:molten_enhanced_redstone_ingot",
         "amount": 810
     },
     "conditions": [

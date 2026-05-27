@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_uranium",
+        "tag": "forge:molten_uranium",
         "amount": 10
     },
     "extraInput": {

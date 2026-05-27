@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_magnesium",
+        "tag": "forge:molten_magnesium",
         "amount": 360
     },
     "conditions": [

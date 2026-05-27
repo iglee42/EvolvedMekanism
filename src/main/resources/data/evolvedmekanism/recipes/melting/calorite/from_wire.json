@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_calorite",
+        "tag": "forge:molten_calorite",
         "amount": 45
     },
     "conditions": [

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_thorium",
+        "tag": "forge:molten_thorium",
         "amount": 30
     },
     "conditions": [

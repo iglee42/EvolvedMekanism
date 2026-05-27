@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_invar",
+        "tag": "forge:molten_invar",
         "amount": 90
     },
     "extraInput": {

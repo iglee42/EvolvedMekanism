@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_plutonium",
+        "tag": "forge:molten_plutonium",
         "amount": 90
     },
     "extraInput": {

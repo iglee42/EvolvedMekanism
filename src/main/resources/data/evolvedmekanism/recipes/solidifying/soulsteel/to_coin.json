@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_soulsteel",
+        "tag": "forge:molten_soulsteel",
         "amount": 30
     },
     "extraInput": {

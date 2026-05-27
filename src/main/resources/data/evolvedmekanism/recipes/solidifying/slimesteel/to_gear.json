@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_slimesteel",
+        "tag": "forge:molten_slimesteel",
         "amount": 360
     },
     "extraInput": {

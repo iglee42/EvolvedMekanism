@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_slimesteel",
+        "tag": "forge:molten_slimesteel",
         "amount": 45
     },
     "conditions": [

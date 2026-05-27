@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_zanite",
+        "tag": "forge:molten_zanite",
         "amount": 90
     },
     "conditions": [

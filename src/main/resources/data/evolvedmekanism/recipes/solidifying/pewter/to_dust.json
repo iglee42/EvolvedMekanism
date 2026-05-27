@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_pewter",
+        "tag": "forge:molten_pewter",
         "amount": 90
     },
     "extraInput": {

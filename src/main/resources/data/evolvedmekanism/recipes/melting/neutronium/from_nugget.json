@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_neutronium",
+        "tag": "forge:molten_neutronium",
         "amount": 10
     },
     "conditions": [

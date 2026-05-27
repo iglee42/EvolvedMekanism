@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_soularium",
+        "tag": "forge:molten_soularium",
         "amount": 10
     },
     "extraInput": {

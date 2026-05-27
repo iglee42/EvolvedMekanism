@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_certus_quartz",
+        "tag": "forge:molten_certus_quartz",
         "amount": 360
     },
     "conditions": [

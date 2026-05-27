@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_copper",
+        "tag": "forge:molten_copper",
         "amount": 360
     },
     "conditions": [

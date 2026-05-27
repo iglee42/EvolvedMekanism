@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_emerald",
+        "tag": "forge:molten_emerald",
         "amount": 90
     },
     "extraInput": {

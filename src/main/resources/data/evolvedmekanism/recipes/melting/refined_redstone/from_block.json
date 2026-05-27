@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_refined_redstone",
+        "tag": "forge:molten_refined_redstone",
         "amount": 810
     },
     "conditions": [

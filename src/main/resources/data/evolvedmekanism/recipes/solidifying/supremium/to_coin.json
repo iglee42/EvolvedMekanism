@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_supremium",
+        "tag": "forge:molten_supremium",
         "amount": 30
     },
     "extraInput": {

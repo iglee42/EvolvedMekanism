@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_energetic_alloy",
+        "tag": "forge:molten_energetic_alloy",
         "amount": 10
     },
     "conditions": [

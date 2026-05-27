@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_juperium",
+        "tag": "forge:molten_juperium",
         "amount": 30
     },
     "extraInput": {

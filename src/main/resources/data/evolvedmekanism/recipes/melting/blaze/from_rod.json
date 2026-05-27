@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_blaze",
+        "tag": "forge:molten_blaze",
         "amount": 90
     },
     "conditions": [

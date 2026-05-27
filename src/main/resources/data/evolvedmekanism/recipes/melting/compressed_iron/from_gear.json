@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_compressed_iron",
+        "tag": "forge:molten_compressed_iron",
         "amount": 360
     },
     "conditions": [

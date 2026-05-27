@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_better_gold",
+        "tag": "forge:molten_better_gold",
         "amount": 10
     },
     "conditions": [

@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_blutonium",
+        "tag": "forge:molten_blutonium",
         "amount": 360
     },
     "extraInput": {

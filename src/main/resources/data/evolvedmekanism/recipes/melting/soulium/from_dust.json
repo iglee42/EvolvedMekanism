@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_soulium",
+        "tag": "forge:molten_soulium",
         "amount": 90
     },
     "conditions": [

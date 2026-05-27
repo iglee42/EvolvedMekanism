@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_lapis",
+        "tag": "forge:molten_lapis",
         "amount": 810
     },
     "extraInput": {

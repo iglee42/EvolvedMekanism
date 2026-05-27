@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_tin",
+        "tag": "forge:molten_tin",
         "amount": 360
     },
     "extraInput": {

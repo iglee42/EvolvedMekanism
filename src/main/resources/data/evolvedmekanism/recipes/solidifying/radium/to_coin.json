@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_radium",
+        "tag": "forge:molten_radium",
         "amount": 30
     },
     "extraInput": {

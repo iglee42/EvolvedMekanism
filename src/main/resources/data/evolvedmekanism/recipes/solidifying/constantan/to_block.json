@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_constantan",
+        "tag": "forge:molten_constantan",
         "amount": 810
     },
     "extraInput": {

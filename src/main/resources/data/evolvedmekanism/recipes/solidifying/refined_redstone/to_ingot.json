@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_refined_redstone",
+        "tag": "forge:molten_refined_redstone",
         "amount": 90
     },
     "extraInput": {

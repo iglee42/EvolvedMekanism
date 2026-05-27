@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_titanium",
+        "tag": "forge:molten_titanium",
         "amount": 360
     },
     "conditions": [

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_hepatizon",
+        "tag": "forge:molten_hepatizon",
         "amount": 360
     },
     "conditions": [

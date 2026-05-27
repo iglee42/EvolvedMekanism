@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_saturlyte",
+        "tag": "forge:molten_saturlyte",
         "amount": 360
     },
     "extraInput": {

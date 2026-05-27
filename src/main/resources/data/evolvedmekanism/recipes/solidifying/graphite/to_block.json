@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_graphite",
+        "tag": "forge:molten_graphite",
         "amount": 810
     },
     "extraInput": {

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_prismalium",
+        "tag": "forge:molten_prismalium",
         "amount": 90
     },
     "conditions": [

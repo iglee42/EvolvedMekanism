@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_stellarium",
+        "tag": "forge:molten_stellarium",
         "amount": 810
     },
     "extraInput": {

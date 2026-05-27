@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_aluminum",
+        "tag": "forge:molten_aluminum",
         "amount": 810
     },
     "extraInput": {

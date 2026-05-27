@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_nickel",
+        "tag": "forge:molten_nickel",
         "amount": 30
     },
     "extraInput": {

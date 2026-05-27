@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_awakened_supremium",
+        "tag": "forge:molten_awakened_supremium",
         "amount": 45
     },
     "conditions": [

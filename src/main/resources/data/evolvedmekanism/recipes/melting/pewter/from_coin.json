@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_pewter",
+        "tag": "forge:molten_pewter",
         "amount": 30
     },
     "conditions": [

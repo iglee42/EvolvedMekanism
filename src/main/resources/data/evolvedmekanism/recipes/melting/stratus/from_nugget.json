@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_stratus",
+        "tag": "forge:molten_stratus",
         "amount": 10
     },
     "conditions": [

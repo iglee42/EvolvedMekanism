@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_lapis",
+        "tag": "forge:molten_lapis",
         "amount": 10
     },
     "conditions": [

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_gravitite",
+        "tag": "forge:molten_gravitite",
         "amount": 10
     },
     "conditions": [

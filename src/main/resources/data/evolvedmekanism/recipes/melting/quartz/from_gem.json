@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_quartz",
+        "tag": "forge:molten_quartz",
         "amount": 90
     },
     "conditions": [

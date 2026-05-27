@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_iesnium",
+        "tag": "forge:molten_iesnium",
         "amount": 45
     },
     "conditions": [

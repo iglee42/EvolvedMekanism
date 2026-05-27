@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_ambrosium",
+        "tag": "forge:molten_ambrosium",
         "amount": 10
     },
     "extraInput": {

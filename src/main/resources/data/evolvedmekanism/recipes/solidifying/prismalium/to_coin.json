@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_prismalium",
+        "tag": "forge:molten_prismalium",
         "amount": 30
     },
     "extraInput": {

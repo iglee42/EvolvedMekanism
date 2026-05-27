@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_diamond",
+        "tag": "forge:molten_diamond",
         "amount": 30
     },
     "extraInput": {

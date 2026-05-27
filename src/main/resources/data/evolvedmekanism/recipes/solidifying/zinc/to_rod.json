@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_zinc",
+        "tag": "forge:molten_zinc",
         "amount": 45
     },
     "extraInput": {

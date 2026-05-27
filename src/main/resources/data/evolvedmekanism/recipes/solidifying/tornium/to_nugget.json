@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_tornium",
+        "tag": "forge:molten_tornium",
         "amount": 10
     },
     "extraInput": {

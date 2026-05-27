@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_brass",
+        "tag": "forge:molten_brass",
         "amount": 10
     },
     "conditions": [

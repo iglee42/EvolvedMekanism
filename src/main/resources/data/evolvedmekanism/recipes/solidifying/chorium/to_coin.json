@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_chorium",
+        "tag": "forge:molten_chorium",
         "amount": 30
     },
     "extraInput": {

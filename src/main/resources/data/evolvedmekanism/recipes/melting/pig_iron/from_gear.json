@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_pig_iron",
+        "tag": "forge:molten_pig_iron",
         "amount": 360
     },
     "conditions": [

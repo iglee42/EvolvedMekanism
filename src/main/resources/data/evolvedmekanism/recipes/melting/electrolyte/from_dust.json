@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_electrolyte",
+        "tag": "forge:molten_electrolyte",
         "amount": 90
     },
     "conditions": [

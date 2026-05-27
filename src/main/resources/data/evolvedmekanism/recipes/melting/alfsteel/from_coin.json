@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_alfsteel",
+        "tag": "forge:molten_alfsteel",
         "amount": 30
     },
     "conditions": [

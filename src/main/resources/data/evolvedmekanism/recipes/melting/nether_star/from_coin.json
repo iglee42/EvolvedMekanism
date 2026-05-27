@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_nether_star",
+        "tag": "forge:molten_nether_star",
         "amount": 30
     },
     "conditions": [

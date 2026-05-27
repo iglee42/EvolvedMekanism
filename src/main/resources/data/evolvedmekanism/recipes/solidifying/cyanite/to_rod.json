@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_cyanite",
+        "tag": "forge:molten_cyanite",
         "amount": 45
     },
     "extraInput": {

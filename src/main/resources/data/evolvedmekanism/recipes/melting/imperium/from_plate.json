@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_imperium",
+        "tag": "forge:molten_imperium",
         "amount": 90
     },
     "conditions": [

@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_pink_slime",
+        "tag": "forge:molten_pink_slime",
         "amount": 30
     },
     "extraInput": {

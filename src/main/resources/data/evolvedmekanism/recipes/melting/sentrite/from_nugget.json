@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_sentrite",
+        "tag": "forge:molten_sentrite",
         "amount": 10
     },
     "conditions": [

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_the_ultimate",
+        "tag": "forge:molten_the_ultimate",
         "amount": 10
     },
     "conditions": [

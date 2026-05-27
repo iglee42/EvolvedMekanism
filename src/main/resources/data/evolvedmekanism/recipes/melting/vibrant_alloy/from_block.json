@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_vibrant_alloy",
+        "tag": "forge:molten_vibrant_alloy",
         "amount": 810
     },
     "conditions": [

@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_copper_alloy",
+        "tag": "forge:molten_copper_alloy",
         "amount": 360
     },
     "extraInput": {

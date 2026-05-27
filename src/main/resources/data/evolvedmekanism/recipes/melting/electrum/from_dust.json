@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_electrum",
+        "tag": "forge:molten_electrum",
         "amount": 90
     },
     "conditions": [

@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_oratchalcum",
+        "tag": "forge:molten_oratchalcum",
         "amount": 90
     },
     "extraInput": {

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_terrasteel",
+        "tag": "forge:molten_terrasteel",
         "amount": 45
     },
     "conditions": [

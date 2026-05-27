@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_awakened_draconium",
+        "tag": "forge:molten_awakened_draconium",
         "amount": 360
     },
     "conditions": [

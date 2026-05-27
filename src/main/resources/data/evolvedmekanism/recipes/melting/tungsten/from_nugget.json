@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_tungsten",
+        "tag": "forge:molten_tungsten",
         "amount": 10
     },
     "conditions": [

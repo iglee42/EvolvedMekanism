@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_chorium",
+        "tag": "forge:molten_chorium",
         "amount": 810
     },
     "conditions": [

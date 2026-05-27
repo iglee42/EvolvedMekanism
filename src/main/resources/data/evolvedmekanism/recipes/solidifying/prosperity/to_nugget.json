@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_prosperity",
+        "tag": "forge:molten_prosperity",
         "amount": 10
     },
     "extraInput": {

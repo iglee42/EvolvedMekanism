@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_constantan",
+        "tag": "forge:molten_constantan",
         "amount": 10
     },
     "conditions": [

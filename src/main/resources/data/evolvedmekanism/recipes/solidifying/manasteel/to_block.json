@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_manasteel",
+        "tag": "forge:molten_manasteel",
         "amount": 810
     },
     "extraInput": {

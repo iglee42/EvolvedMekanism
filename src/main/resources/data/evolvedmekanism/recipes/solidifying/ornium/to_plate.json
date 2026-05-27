@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_ornium",
+        "tag": "forge:molten_ornium",
         "amount": 90
     },
     "extraInput": {

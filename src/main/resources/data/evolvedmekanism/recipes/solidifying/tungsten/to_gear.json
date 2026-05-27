@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_tungsten",
+        "tag": "forge:molten_tungsten",
         "amount": 360
     },
     "extraInput": {

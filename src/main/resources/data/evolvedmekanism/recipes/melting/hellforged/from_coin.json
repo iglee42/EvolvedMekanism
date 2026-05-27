@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_hellforged",
+        "tag": "forge:molten_hellforged",
         "amount": 30
     },
     "conditions": [

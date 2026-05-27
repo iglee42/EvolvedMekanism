@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_lead",
+        "tag": "forge:molten_lead",
         "amount": 10
     },
     "conditions": [

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_ender_ingot",
+        "tag": "forge:molten_ender_ingot",
         "amount": 810
     },
     "conditions": [

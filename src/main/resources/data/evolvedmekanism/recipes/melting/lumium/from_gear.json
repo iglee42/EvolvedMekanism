@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_lumium",
+        "tag": "forge:molten_lumium",
         "amount": 360
     },
     "conditions": [

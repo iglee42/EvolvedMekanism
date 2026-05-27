@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_steel",
+        "tag": "forge:molten_steel",
         "amount": 360
     },
     "extraInput": {

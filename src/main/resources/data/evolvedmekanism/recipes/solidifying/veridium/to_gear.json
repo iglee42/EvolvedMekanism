@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_veridium",
+        "tag": "forge:molten_veridium",
         "amount": 360
     },
     "extraInput": {

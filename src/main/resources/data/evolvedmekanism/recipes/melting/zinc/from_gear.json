@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_zinc",
+        "tag": "forge:molten_zinc",
         "amount": 360
     },
     "conditions": [

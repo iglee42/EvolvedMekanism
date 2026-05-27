@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_infused_iron",
+        "tag": "forge:molten_infused_iron",
         "amount": 360
     },
     "conditions": [

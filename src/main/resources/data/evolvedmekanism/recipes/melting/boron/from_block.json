@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_boron",
+        "tag": "forge:molten_boron",
         "amount": 810
     },
     "conditions": [

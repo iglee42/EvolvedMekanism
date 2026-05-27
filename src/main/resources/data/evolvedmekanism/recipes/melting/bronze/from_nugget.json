@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_bronze",
+        "tag": "forge:molten_bronze",
         "amount": 10
     },
     "conditions": [

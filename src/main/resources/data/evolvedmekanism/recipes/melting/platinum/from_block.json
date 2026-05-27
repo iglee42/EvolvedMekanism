@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_platinum",
+        "tag": "forge:molten_platinum",
         "amount": 810
     },
     "conditions": [

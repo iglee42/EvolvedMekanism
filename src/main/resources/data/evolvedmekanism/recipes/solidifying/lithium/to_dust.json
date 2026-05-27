@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_lithium",
+        "tag": "forge:molten_lithium",
         "amount": 90
     },
     "extraInput": {

@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_dark_steel",
+        "tag": "forge:molten_dark_steel",
         "amount": 90
     },
     "conditions": [

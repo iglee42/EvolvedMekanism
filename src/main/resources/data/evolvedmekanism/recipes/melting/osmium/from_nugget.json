@@ -6,7 +6,7 @@
         }
     },
     "output": {
-        "fluid": "evolvedmekanism:molten_osmium",
+        "tag": "forge:molten_osmium",
         "amount": 10
     },
     "conditions": [

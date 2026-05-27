@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "fluid": "evolvedmekanism:molten_plaslitherite",
+        "tag": "forge:molten_plaslitherite",
         "amount": 30
     },
     "extraInput": {
