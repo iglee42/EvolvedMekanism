@@ -6,11 +6,11 @@
   },
   "fluid_input": {
     "tag": "c:molten_obsidian",
-    "amount": 810
+    "amount": 1000
   },
   "extra_input": {
     "fluid": "mekanism:oxygen",
-    "amount": 810
+    "amount": 1000
   },
   "output": {
     "tag": "c:obsidians/normal"

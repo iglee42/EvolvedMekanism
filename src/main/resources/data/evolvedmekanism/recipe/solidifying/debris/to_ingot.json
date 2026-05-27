@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "c:molten_obsidian",
+    "tag": "c:molten_debris",
     "amount": 90
   },
   "extra_input": {
@@ -13,15 +13,6 @@
     "amount": 90
   },
   "output": {
-    "tag": "c:ingots/obsidian"
-  },
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:not",
-      "value": {
-        "type": "neoforge:tag_empty",
-        "tag": "c:ingots/obsidian"
-      }
-    }
-  ]
+    "item": "minecraft:netherite_scrap"
+  }
 }

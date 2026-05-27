@@ -1,19 +1,10 @@
 {
   "type": "evolvedmekanism:melting",
   "input": {
-    "tag": "c:ores/netherite_scrap"
+    "item": "minecraft:ancient_debris"
   },
   "output": {
     "tag": "c:molten_debris",
-    "amount": 810
-  },
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:not",
-      "value": {
-        "type": "neoforge:tag_empty",
-        "tag": "c:ores/netherite_scrap"
-      }
-    }
-  ]
+    "amount": 90
+  }
 }
