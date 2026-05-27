@@ -2,20 +2,11 @@
     "type": "evolvedmekanism:melting",
     "input": {
         "ingredient": {
-        "item": "minecraft:netherite_scrap"
+            "item": "minecraft:netherite_scrap"
         }
     },
     "output": {
         "tag": "forge:molten_debris",
         "amount": 90
-    },
-    "conditions": [
-        {
-            "type": "forge:not",
-            "value": {
-                "type": "forge:tag_empty",
-                "tag": "forge:ores/netherite_scrap"
-            }
-        }
-    ]
+    }
 }

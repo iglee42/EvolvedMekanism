@@ -7,7 +7,7 @@
         }
     },
     "fluidInput": {
-        "tag": "forge:molten_obsidian",
+        "tag": "forge:molten_debris",
         "amount": 90
     },
     "extraInput": {
@@ -15,15 +15,6 @@
         "amount": 90
     },
     "output": {
-        "tag": "forge:ingots/obsidian"
-    },
-    "conditions": [
-        {
-            "type": "forge:not",
-            "value": {
-                "type": "forge:tag_empty",
-                "tag": "forge:ingots/obsidian"
-            }
-        }
-    ]
+        "item": "minecraft:netherite_scrap"
+    }
 }

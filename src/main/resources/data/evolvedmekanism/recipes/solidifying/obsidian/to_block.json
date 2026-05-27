@@ -8,11 +8,11 @@
     },
     "fluidInput": {
         "tag": "forge:molten_obsidian",
-        "amount": 810
+        "amount": 1000
     },
     "extraInput": {
         "fluid": "mekanism:oxygen",
-        "amount": 810
+        "amount": 1000
     },
     "output": {
         "tag": "forge:obsidian"
