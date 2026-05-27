@@ -8,12 +8,10 @@ import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.Comparison;
 import dev.emi.emi.api.stack.EmiRegistryAdapter;
 import dev.emi.emi.api.stack.EmiStack;
+import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.categories.APTEMIRecipeCategory;
-import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.APTEMIRecipe;
-import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.AlloyerEMIRecipe;
-import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.ChemixerEMIRecipe;
-import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.SolidificationEMIRecipe;
+import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.*;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
@@ -210,8 +208,8 @@ public class EMEmi implements EmiPlugin {
         addCategoryAndRecipes(registry, EMRecipeViewersTypes.SOLIDIFICATION, SolidificationEMIRecipe::new);
 
         MekanismEmiRecipeCategory melting = addCategory(registry,EMRecipeViewersTypes.MELTING);
-        for (RecipeHolder<ItemStackToFluidRecipe> recipe : EMRecipeType.MELTING.getRecipes()){
-            registry.addRecipe(new ItemStackToFluidEmiRecipe(melting, recipe.id(),recipe.value(), 100));
+        for (RecipeHolder<MeltingRecipe> recipe : EMRecipeType.MELTING.getRecipes()){
+            registry.addRecipe(new MeltingEmiRecipe(melting, recipe));
         }
 
         APTEMIRecipeCategory aptCategory = APTEMIRecipeCategory.create(EMRecipeViewersTypes.APT);

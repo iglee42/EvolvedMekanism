@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 
 import java.util.List;
 
+import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import mekanism.api.recipes.ItemStackToFluidRecipe;
 import mekanism.client.gui.element.gauge.GaugeType;
 import mekanism.client.gui.element.gauge.GuiFluidGauge;
@@ -25,12 +26,12 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.neoforged.neoforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
-public class ItemStackToFluidJEIRecipeCategory extends HolderRecipeCategory<ItemStackToFluidRecipe> {
+public class MeltingJEIRecipeCategory extends HolderRecipeCategory<MeltingRecipe> {
 
     private final GuiGauge<?> outputTank;
     private final GuiSlot input;
 
-    public ItemStackToFluidJEIRecipeCategory(IGuiHelper helper, RVRecipeTypeWrapper<?, ItemStackToFluidRecipe,?> recipeType, boolean isConversion) {
+    public MeltingJEIRecipeCategory(IGuiHelper helper, RVRecipeTypeWrapper<?, MeltingRecipe,?> recipeType, boolean isConversion) {
         super(helper, recipeType);
         input = addSlot(SlotType.INPUT, 26, 36);
         outputTank = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.OUTPUT), this, 131, 13));
@@ -38,7 +39,7 @@ public class ItemStackToFluidJEIRecipeCategory extends HolderRecipeCategory<Item
     }
 
     @Override
-    public void setRecipe(@NotNull IRecipeLayoutBuilder builder, RecipeHolder<ItemStackToFluidRecipe> recipe, @NotNull IFocusGroup focusGroup) {
+    public void setRecipe(@NotNull IRecipeLayoutBuilder builder, RecipeHolder<MeltingRecipe> recipe, @NotNull IFocusGroup focusGroup) {
         initItem(builder, RecipeIngredientRole.INPUT, input, recipe.value().getInput().getRepresentations());
         List<FluidStack> outputDefinition = recipe.value().getOutputDefinition();
         initFluid(builder, RecipeIngredientRole.OUTPUT, outputTank, outputDefinition);
@@ -48,7 +49,7 @@ public class ItemStackToFluidJEIRecipeCategory extends HolderRecipeCategory<Item
 
     @NotNull
     @Override
-    public Codec<RecipeHolder<ItemStackToFluidRecipe>> getCodec(@NotNull ICodecHelper codecHelper, @NotNull IRecipeManager recipeManager) {
+    public Codec<RecipeHolder<MeltingRecipe>> getCodec(@NotNull ICodecHelper codecHelper, @NotNull IRecipeManager recipeManager) {
         return codecHelper.getRecipeHolderCodec();
     }
 }

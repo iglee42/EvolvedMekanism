@@ -1,11 +1,10 @@
 package fr.iglee42.evolvedmekanism.recipeviewers.jei;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
-import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.*;
 import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.AlloyerJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.ChemixerJEIRecipeCategory;
-import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.ItemStackToFluidJEIRecipeCategory;
+import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.MeltingJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.SolidificationJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.multiblock.APTJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
@@ -74,7 +73,7 @@ public class EMJEI implements IModPlugin {
             registry.addRecipeCategories(new AlloyerJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.ALLOYING));
             registry.addRecipeCategories(new ChemixerJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.CHEMIXING));
             registry.addRecipeCategories(new APTJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.APT));
-            registry.addRecipeCategories(new ItemStackToFluidJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.MELTING, false));
+            registry.addRecipeCategories(new MeltingJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.MELTING, false));
             registry.addRecipeCategories(new SolidificationJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.SOLIDIFICATION));
         }
     }

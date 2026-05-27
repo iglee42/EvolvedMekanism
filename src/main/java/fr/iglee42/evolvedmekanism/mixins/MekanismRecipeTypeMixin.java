@@ -3,6 +3,7 @@ package fr.iglee42.evolvedmekanism.mixins;
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.recipes.vanilla_input.TriItemRecipeInput;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
@@ -42,7 +43,7 @@ public abstract class MekanismRecipeTypeMixin {
         EMRecipeType.CHEMIXING = register(Mekanism.rl("chemixing"), recipeType -> new EMInputRecipeCache.ItemItemChemical<>(recipeType, ChemixerRecipe::getInputMain, ChemixerRecipe::getInputExtra, ChemixerRecipe::getInputGas));
         EMRecipeType.APT = register(Mekanism.rl("apt"), recipeType -> new InputRecipeCache.ItemChemical<>(recipeType, ItemStackChemicalToItemStackRecipe::getItemInput,
                 ItemStackChemicalToItemStackRecipe::getChemicalInput));
-        EMRecipeType.MELTING = register(Mekanism.rl("melting"), recipeType -> new InputRecipeCache.SingleItem<>(recipeType, ItemStackToFluidRecipe::getInput));
+        EMRecipeType.MELTING = register(Mekanism.rl("melting"), recipeType -> new InputRecipeCache.SingleItem<>(recipeType, MeltingRecipe::getInput));
         EMRecipeType.SOLIDIFICATION =register(Mekanism.rl("solidification"), recipeType -> new EMInputRecipeCache.ItemFluidFluid<>(recipeType, SolidificationRecipe::getInputSolid,
                 SolidificationRecipe::getInputFluid, SolidificationRecipe::getFluidInputExtra));
     }

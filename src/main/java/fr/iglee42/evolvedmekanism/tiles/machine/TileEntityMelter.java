@@ -1,5 +1,7 @@
 package fr.iglee42.evolvedmekanism.tiles.machine;
 
+import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
+import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
@@ -60,7 +62,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluidRecipe> implements ItemRecipeLookupHandler<ItemStackToFluidRecipe> {
+public class TileEntityMelter extends TileEntityProgressMachine<MeltingRecipe> implements ItemRecipeLookupHandler<MeltingRecipe> {
 
     private static final List<RecipeError> TRACKED_ERROR_TYPES = List.of(
           RecipeError.NOT_ENOUGH_INPUT,
@@ -158,20 +160,20 @@ public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluid
 
     @NotNull
     @Override
-    public IMekanismRecipeTypeProvider<SingleRecipeInput,ItemStackToFluidRecipe, SingleItem<ItemStackToFluidRecipe>> getRecipeType() {
+    public IMekanismRecipeTypeProvider<SingleRecipeInput, MeltingRecipe, SingleItem<MeltingRecipe>> getRecipeType() {
         return EMRecipeType.MELTING;
     }
 
     @Nullable
     @Override
-    public ItemStackToFluidRecipe getRecipe(int cacheIndex) {
+    public MeltingRecipe getRecipe(int cacheIndex) {
         return findFirstRecipe(inputHandler);
     }
 
     @NotNull
     @Override
-    public CachedRecipe<ItemStackToFluidRecipe> createNewCachedRecipe(@NotNull ItemStackToFluidRecipe recipe, int cacheIndex) {
-        return OneInputCachedRecipe.itemToFluid(recipe, recheckAllRecipeErrors, inputHandler, outputHandler)
+    public CachedRecipe<MeltingRecipe> createNewCachedRecipe(@NotNull MeltingRecipe recipe, int cacheIndex) {
+        return EMInputRecipeCache.itemToFluid(recipe, recheckAllRecipeErrors, inputHandler, outputHandler)
               .setErrorsChanged(this::onErrorsChanged)
               .setCanHolderFunction(() -> this.canFunction() && hasMachineEnoughHeat())
               .setActive(this::setActive)
@@ -208,7 +210,7 @@ public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluid
     }
 
     @Override
-    public @Nullable IRecipeViewerRecipeType<ItemStackToFluidRecipe> recipeViewerType() {
+    public @Nullable IRecipeViewerRecipeType<MeltingRecipe> recipeViewerType() {
         return EMRecipeViewersTypes.MELTING;
     }
 }

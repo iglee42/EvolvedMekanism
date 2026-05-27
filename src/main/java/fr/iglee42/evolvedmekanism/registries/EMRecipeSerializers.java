@@ -6,6 +6,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.impl.*;
+import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.utils.EMSerializationConstants;
 import mekanism.api.SerializationConstants;
 import mekanism.api.recipes.ingredients.ChemicalStackIngredient;
@@ -53,13 +54,13 @@ public class EMRecipeSerializers {
     }
 
 
-    public static <RECIPE extends BasicItemStackToFluidRecipe> MekanismRecipeSerializer<RECIPE> itemToFluid(BiFunction<ItemStackIngredient, FluidStack, RECIPE> factory) {
+    public static <RECIPE extends MeltingRecipe> MekanismRecipeSerializer<RECIPE> itemToFluid(BiFunction<ItemStackIngredient, FluidStackIngredient, RECIPE> factory) {
         return new MekanismRecipeSerializer<>(RecordCodecBuilder.mapCodec(instance -> instance.group(
-                ItemStackIngredient.CODEC.fieldOf(SerializationConstants.INPUT).forGetter(BasicItemStackToFluidRecipe::getInput),
-                FluidStack.CODEC.fieldOf(SerializationConstants.OUTPUT).forGetter(BasicItemStackToFluidRecipe::getOutputRaw)
+                ItemStackIngredient.CODEC.fieldOf(SerializationConstants.INPUT).forGetter(MeltingRecipe::getInput),
+                FluidStackIngredient.CODEC.fieldOf(SerializationConstants.OUTPUT).forGetter(MeltingRecipe::getOutputRaw)
         ).apply(instance, factory)), StreamCodec.composite(
-                ItemStackIngredient.STREAM_CODEC, BasicItemStackToFluidRecipe::getInput,
-                FluidStack.STREAM_CODEC, BasicItemStackToFluidRecipe::getOutputRaw,
+                ItemStackIngredient.STREAM_CODEC, MeltingRecipe::getInput,
+                FluidStackIngredient.STREAM_CODEC, MeltingRecipe::getOutputRaw,
                 factory
         ));
     }
