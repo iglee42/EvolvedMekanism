@@ -4,7 +4,7 @@
     "tag": "c:dusts/gold"
   },
   "output": {
-    "id": "evolvedmekanism:molten_gold",
+    "tag": "neoforge:molten_gold",
     "amount": 90
   },
   "neoforge:conditions": [

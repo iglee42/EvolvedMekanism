@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/lightium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lightium",
+    "tag": "neoforge:molten_lightium",
     "amount": 810
   },
   "neoforge:conditions": [

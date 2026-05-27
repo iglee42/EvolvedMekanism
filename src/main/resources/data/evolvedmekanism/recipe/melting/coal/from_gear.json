@@ -4,7 +4,7 @@
     "tag": "c:gears/coal"
   },
   "output": {
-    "id": "evolvedmekanism:molten_coal",
+    "tag": "neoforge:molten_coal",
     "amount": 360
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/ouranium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ouranium",
+    "tag": "neoforge:molten_ouranium",
     "amount": 810
   },
   "neoforge:conditions": [

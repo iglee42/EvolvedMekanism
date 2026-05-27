@@ -4,7 +4,7 @@
     "tag": "c:gears/hellforged"
   },
   "output": {
-    "id": "evolvedmekanism:molten_hellforged",
+    "tag": "neoforge:molten_hellforged",
     "amount": 360
   },
   "neoforge:conditions": [

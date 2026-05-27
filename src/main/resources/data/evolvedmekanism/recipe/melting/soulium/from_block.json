@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/soulium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_soulium",
+    "tag": "neoforge:molten_soulium",
     "amount": 810
   },
   "neoforge:conditions": [

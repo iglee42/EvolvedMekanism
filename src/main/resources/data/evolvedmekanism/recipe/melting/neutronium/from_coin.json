@@ -4,7 +4,7 @@
     "tag": "c:coins/neutronium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_neutronium",
+    "tag": "neoforge:molten_neutronium",
     "amount": 30
   },
   "neoforge:conditions": [

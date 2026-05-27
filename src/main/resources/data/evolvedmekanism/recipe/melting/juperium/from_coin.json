@@ -4,7 +4,7 @@
     "tag": "c:coins/juperium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_juperium",
+    "tag": "neoforge:molten_juperium",
     "amount": 30
   },
   "neoforge:conditions": [

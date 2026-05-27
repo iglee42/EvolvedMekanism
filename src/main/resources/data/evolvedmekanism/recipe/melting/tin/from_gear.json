@@ -4,7 +4,7 @@
     "tag": "c:gears/tin"
   },
   "output": {
-    "id": "evolvedmekanism:molten_tin",
+    "tag": "neoforge:molten_tin",
     "amount": 360
   },
   "neoforge:conditions": [

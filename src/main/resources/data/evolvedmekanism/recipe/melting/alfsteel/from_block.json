@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/alfsteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_alfsteel",
+    "tag": "neoforge:molten_alfsteel",
     "amount": 810
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:dusts/ludicrite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ludicrite",
+    "tag": "neoforge:molten_ludicrite",
     "amount": 90
   },
   "neoforge:conditions": [

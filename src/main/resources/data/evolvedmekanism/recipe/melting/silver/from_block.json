@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/silver"
   },
   "output": {
-    "id": "evolvedmekanism:molten_silver",
+    "tag": "neoforge:molten_silver",
     "amount": 810
   },
   "neoforge:conditions": [

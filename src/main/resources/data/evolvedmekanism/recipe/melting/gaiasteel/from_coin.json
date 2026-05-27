@@ -4,7 +4,7 @@
     "tag": "c:coins/gaiasteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_gaiasteel",
+    "tag": "neoforge:molten_gaiasteel",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/juperium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_juperium",
+    "tag": "neoforge:molten_juperium",
     "amount": 810
   },
   "neoforge:conditions": [

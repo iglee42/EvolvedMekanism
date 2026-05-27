@@ -4,7 +4,7 @@
     "tag": "c:nuggets/draconium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_draconium",
+    "tag": "neoforge:molten_draconium",
     "amount": 10
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:plates/manyullyn"
   },
   "output": {
-    "id": "evolvedmekanism:molten_manyullyn",
+    "tag": "neoforge:molten_manyullyn",
     "amount": 90
   },
   "neoforge:conditions": [

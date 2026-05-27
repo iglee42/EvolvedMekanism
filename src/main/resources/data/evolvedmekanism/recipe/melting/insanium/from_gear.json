@@ -4,7 +4,7 @@
     "tag": "c:gears/insanium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_insanium",
+    "tag": "neoforge:molten_insanium",
     "amount": 360
   },
   "neoforge:conditions": [

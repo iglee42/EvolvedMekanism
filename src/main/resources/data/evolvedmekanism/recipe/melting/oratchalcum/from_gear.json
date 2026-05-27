@@ -4,7 +4,7 @@
     "tag": "c:gears/oratchalcum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_oratchalcum",
+    "tag": "neoforge:molten_oratchalcum",
     "amount": 360
   },
   "neoforge:conditions": [

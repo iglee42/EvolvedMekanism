@@ -4,7 +4,7 @@
     "tag": "c:nuggets/infinity"
   },
   "output": {
-    "id": "evolvedmekanism:molten_infinity",
+    "tag": "neoforge:molten_infinity",
     "amount": 10
   },
   "neoforge:conditions": [

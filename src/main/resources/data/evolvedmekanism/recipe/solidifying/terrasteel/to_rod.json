@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_terrasteel",
+    "tag": "neoforge:molten_terrasteel",
     "amount": 45
   },
   "extra_input": {

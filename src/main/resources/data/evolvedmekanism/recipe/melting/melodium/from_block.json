@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/melodium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_melodium",
+    "tag": "neoforge:molten_melodium",
     "amount": 810
   },
   "neoforge:conditions": [

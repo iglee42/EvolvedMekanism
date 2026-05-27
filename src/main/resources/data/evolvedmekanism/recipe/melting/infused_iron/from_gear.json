@@ -4,7 +4,7 @@
     "tag": "c:gears/infused_iron"
   },
   "output": {
-    "id": "evolvedmekanism:molten_infused_iron",
+    "tag": "neoforge:molten_infused_iron",
     "amount": 360
   },
   "neoforge:conditions": [

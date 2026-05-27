@@ -4,7 +4,7 @@
     "tag": "c:plates/imperium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_imperium",
+    "tag": "neoforge:molten_imperium",
     "amount": 90
   },
   "neoforge:conditions": [

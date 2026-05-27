@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/iesnium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_iesnium",
+    "tag": "neoforge:molten_iesnium",
     "amount": 810
   },
   "neoforge:conditions": [

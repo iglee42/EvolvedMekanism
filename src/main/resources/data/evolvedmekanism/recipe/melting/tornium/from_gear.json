@@ -4,7 +4,7 @@
     "tag": "c:gears/tornium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_tornium",
+    "tag": "neoforge:molten_tornium",
     "amount": 360
   },
   "neoforge:conditions": [

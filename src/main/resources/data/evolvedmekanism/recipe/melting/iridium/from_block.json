@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/iridium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_iridium",
+    "tag": "neoforge:molten_iridium",
     "amount": 810
   },
   "neoforge:conditions": [

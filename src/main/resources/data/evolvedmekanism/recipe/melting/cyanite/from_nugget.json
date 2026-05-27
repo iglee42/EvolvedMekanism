@@ -4,7 +4,7 @@
     "tag": "c:nuggets/cyanite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_cyanite",
+    "tag": "neoforge:molten_cyanite",
     "amount": 10
   },
   "neoforge:conditions": [

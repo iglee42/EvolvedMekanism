@@ -4,7 +4,7 @@
     "tag": "c:nuggets/prosperity"
   },
   "output": {
-    "id": "evolvedmekanism:molten_prosperity",
+    "tag": "neoforge:molten_prosperity",
     "amount": 10
   },
   "neoforge:conditions": [

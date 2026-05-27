@@ -4,7 +4,7 @@
     "tag": "c:dusts/pulsating_alloy"
   },
   "output": {
-    "id": "evolvedmekanism:molten_pulsating_alloy",
+    "tag": "neoforge:molten_pulsating_alloy",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/magnesium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_magnesium",
+    "tag": "neoforge:molten_magnesium",
     "amount": 810
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:wires/radium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_radium",
+    "tag": "neoforge:molten_radium",
     "amount": 45
   },
   "neoforge:conditions": [

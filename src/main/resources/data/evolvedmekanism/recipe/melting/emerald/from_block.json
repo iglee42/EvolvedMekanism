@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/emerald"
   },
   "output": {
-    "id": "evolvedmekanism:molten_emerald",
+    "tag": "neoforge:molten_emerald",
     "amount": 810
   },
   "neoforge:conditions": [

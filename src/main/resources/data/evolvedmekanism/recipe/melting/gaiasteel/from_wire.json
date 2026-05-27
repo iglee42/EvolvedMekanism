@@ -4,7 +4,7 @@
     "tag": "c:wires/gaiasteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_gaiasteel",
+    "tag": "neoforge:molten_gaiasteel",
     "amount": 45
   },
   "neoforge:conditions": [

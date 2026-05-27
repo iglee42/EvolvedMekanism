@@ -4,7 +4,7 @@
     "tag": "c:dusts/magnesium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_magnesium",
+    "tag": "neoforge:molten_magnesium",
     "amount": 90
   },
   "neoforge:conditions": [

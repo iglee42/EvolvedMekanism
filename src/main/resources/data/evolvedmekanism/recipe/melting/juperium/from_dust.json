@@ -4,7 +4,7 @@
     "tag": "c:dusts/juperium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_juperium",
+    "tag": "neoforge:molten_juperium",
     "amount": 90
   },
   "neoforge:conditions": [

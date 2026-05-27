@@ -4,7 +4,7 @@
     "tag": "c:gears/uranium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_uranium",
+    "tag": "neoforge:molten_uranium",
     "amount": 360
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:rods/prudentium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_prudentium",
+    "tag": "neoforge:molten_prudentium",
     "amount": 45
   },
   "neoforge:conditions": [

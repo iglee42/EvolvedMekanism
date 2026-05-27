@@ -4,7 +4,7 @@
     "tag": "c:wires/zinc"
   },
   "output": {
-    "id": "evolvedmekanism:molten_zinc",
+    "tag": "neoforge:molten_zinc",
     "amount": 45
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:ingots/saturlyte"
   },
   "output": {
-    "id": "evolvedmekanism:molten_saturlyte",
+    "tag": "neoforge:molten_saturlyte",
     "amount": 90
   },
   "neoforge:conditions": [

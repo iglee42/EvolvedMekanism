@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/tin"
   },
   "output": {
-    "id": "evolvedmekanism:molten_tin",
+    "tag": "neoforge:molten_tin",
     "amount": 810
   },
   "neoforge:conditions": [

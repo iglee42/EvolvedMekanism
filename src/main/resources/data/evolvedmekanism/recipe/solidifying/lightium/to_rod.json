@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_lightium",
+    "tag": "neoforge:molten_lightium",
     "amount": 45
   },
   "extra_input": {

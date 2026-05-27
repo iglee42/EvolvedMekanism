@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_dust"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_redstone_ingot",
+    "tag": "neoforge:molten_redstone_ingot",
     "amount": 90
   },
   "extra_input": {

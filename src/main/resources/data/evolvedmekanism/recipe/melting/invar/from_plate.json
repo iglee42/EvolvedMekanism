@@ -4,7 +4,7 @@
     "tag": "c:plates/invar"
   },
   "output": {
-    "id": "evolvedmekanism:molten_invar",
+    "tag": "neoforge:molten_invar",
     "amount": 90
   },
   "neoforge:conditions": [

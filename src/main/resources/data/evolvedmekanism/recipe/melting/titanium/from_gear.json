@@ -4,7 +4,7 @@
     "tag": "c:gears/titanium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_titanium",
+    "tag": "neoforge:molten_titanium",
     "amount": 360
   },
   "neoforge:conditions": [

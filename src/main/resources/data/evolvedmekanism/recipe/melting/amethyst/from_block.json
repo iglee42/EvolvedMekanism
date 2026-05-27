@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/amethyst"
   },
   "output": {
-    "id": "evolvedmekanism:molten_amethyst",
+    "tag": "neoforge:molten_amethyst",
     "amount": 360
   },
   "neoforge:conditions": [

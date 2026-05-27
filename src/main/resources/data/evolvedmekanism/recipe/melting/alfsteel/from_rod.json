@@ -4,7 +4,7 @@
     "tag": "c:rods/alfsteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_alfsteel",
+    "tag": "neoforge:molten_alfsteel",
     "amount": 45
   },
   "neoforge:conditions": [

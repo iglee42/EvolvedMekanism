@@ -4,7 +4,7 @@
     "tag": "c:coins/manasteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_manasteel",
+    "tag": "neoforge:molten_manasteel",
     "amount": 30
   },
   "neoforge:conditions": [

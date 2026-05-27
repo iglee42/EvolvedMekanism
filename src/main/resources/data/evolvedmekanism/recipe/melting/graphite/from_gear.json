@@ -4,7 +4,7 @@
     "tag": "c:gears/graphite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_graphite",
+    "tag": "neoforge:molten_graphite",
     "amount": 360
   },
   "neoforge:conditions": [

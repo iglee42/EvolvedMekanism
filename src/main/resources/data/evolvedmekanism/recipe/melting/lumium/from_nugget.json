@@ -4,7 +4,7 @@
     "tag": "c:nuggets/lumium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lumium",
+    "tag": "neoforge:molten_lumium",
     "amount": 10
   },
   "neoforge:conditions": [

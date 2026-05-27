@@ -4,7 +4,7 @@
     "tag": "c:wires/obsidian"
   },
   "output": {
-    "id": "evolvedmekanism:molten_obsidian",
+    "tag": "neoforge:molten_obsidian",
     "amount": 45
   },
   "neoforge:conditions": [

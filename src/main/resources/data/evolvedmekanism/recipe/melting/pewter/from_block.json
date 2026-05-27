@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/pewter"
   },
   "output": {
-    "id": "evolvedmekanism:molten_pewter",
+    "tag": "neoforge:molten_pewter",
     "amount": 810
   },
   "neoforge:conditions": [

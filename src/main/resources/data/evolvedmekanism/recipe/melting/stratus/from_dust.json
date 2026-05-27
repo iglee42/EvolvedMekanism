@@ -4,7 +4,7 @@
     "tag": "c:dusts/stratus"
   },
   "output": {
-    "id": "evolvedmekanism:molten_stratus",
+    "tag": "neoforge:molten_stratus",
     "amount": 90
   },
   "neoforge:conditions": [

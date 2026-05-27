@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/neptunium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_neptunium",
+    "tag": "neoforge:molten_neptunium",
     "amount": 810
   },
   "neoforge:conditions": [

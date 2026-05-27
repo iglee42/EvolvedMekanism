@@ -4,7 +4,7 @@
     "tag": "c:rods/vibrant_alloy"
   },
   "output": {
-    "id": "evolvedmekanism:molten_vibrant_alloy",
+    "tag": "neoforge:molten_vibrant_alloy",
     "amount": 45
   },
   "neoforge:conditions": [

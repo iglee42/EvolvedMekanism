@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_emerald",
+    "tag": "neoforge:molten_emerald",
     "amount": 810
   },
   "extra_input": {

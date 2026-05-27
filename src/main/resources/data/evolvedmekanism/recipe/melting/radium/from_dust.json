@@ -4,7 +4,7 @@
     "tag": "c:dusts/radium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_radium",
+    "tag": "neoforge:molten_radium",
     "amount": 90
   },
   "neoforge:conditions": [

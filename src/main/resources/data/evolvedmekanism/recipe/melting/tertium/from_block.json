@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/tertium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_tertium",
+    "tag": "neoforge:molten_tertium",
     "amount": 810
   },
   "neoforge:conditions": [

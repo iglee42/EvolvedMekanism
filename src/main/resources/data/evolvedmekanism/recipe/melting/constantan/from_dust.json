@@ -4,7 +4,7 @@
     "tag": "c:dusts/constantan"
   },
   "output": {
-    "id": "evolvedmekanism:molten_constantan",
+    "tag": "neoforge:molten_constantan",
     "amount": 90
   },
   "neoforge:conditions": [

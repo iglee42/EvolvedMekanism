@@ -4,7 +4,7 @@
     "tag": "c:wires/lead"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lead",
+    "tag": "neoforge:molten_lead",
     "amount": 45
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/cobalt"
   },
   "output": {
-    "id": "evolvedmekanism:molten_cobalt",
+    "tag": "neoforge:molten_cobalt",
     "amount": 30
   },
   "neoforge:conditions": [

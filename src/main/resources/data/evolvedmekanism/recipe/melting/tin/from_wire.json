@@ -4,7 +4,7 @@
     "tag": "c:wires/tin"
   },
   "output": {
-    "id": "evolvedmekanism:molten_tin",
+    "tag": "neoforge:molten_tin",
     "amount": 45
   },
   "neoforge:conditions": [

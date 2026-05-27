@@ -4,7 +4,7 @@
     "tag": "c:wires/compressed_iron"
   },
   "output": {
-    "id": "evolvedmekanism:molten_compressed_iron",
+    "tag": "neoforge:molten_compressed_iron",
     "amount": 45
   },
   "neoforge:conditions": [

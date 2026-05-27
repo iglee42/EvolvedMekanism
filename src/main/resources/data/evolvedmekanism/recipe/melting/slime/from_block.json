@@ -4,7 +4,7 @@
     "item": "minecraft:slime_block"
   },
   "output": {
-    "id": "evolvedmekanism:molten_slime",
+    "tag": "neoforge:molten_slime",
     "amount": 810
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:dusts/titanium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_titanium",
+    "tag": "neoforge:molten_titanium",
     "amount": 90
   },
   "neoforge:conditions": [

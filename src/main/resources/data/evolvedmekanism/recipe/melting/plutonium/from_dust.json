@@ -4,7 +4,7 @@
     "tag": "c:dusts/plutonium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_plutonium",
+    "tag": "neoforge:molten_plutonium",
     "amount": 90
   },
   "neoforge:conditions": [

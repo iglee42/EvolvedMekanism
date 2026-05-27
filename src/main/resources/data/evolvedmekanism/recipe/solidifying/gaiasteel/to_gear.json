@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_gaiasteel",
+    "tag": "neoforge:molten_gaiasteel",
     "amount": 360
   },
   "extra_input": {

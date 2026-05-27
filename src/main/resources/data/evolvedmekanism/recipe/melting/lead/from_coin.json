@@ -4,7 +4,7 @@
     "tag": "c:coins/lead"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lead",
+    "tag": "neoforge:molten_lead",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:dusts/lightium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lightium",
+    "tag": "neoforge:molten_lightium",
     "amount": 90
   },
   "neoforge:conditions": [

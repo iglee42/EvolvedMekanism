@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/ambrosium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ambrosium",
+    "tag": "neoforge:molten_ambrosium",
     "amount": 810
   },
   "neoforge:conditions": [

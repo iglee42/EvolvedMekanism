@@ -4,7 +4,7 @@
     "tag": "c:rods/redstone"
   },
   "output": {
-    "id": "evolvedmekanism:molten_redstone",
+    "tag": "neoforge:molten_redstone",
     "amount": 45
   },
   "neoforge:conditions": [

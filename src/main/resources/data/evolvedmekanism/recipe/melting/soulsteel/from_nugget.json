@@ -4,7 +4,7 @@
     "tag": "c:nuggets/soulsteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_soulsteel",
+    "tag": "neoforge:molten_soulsteel",
     "amount": 10
   },
   "neoforge:conditions": [

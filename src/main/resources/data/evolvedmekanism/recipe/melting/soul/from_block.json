@@ -4,7 +4,7 @@
     "tag": "minecraft:soul_fire_base_blocks"
   },
   "output": {
-    "id": "evolvedmekanism:molten_soul",
+    "tag": "neoforge:molten_soul",
     "amount": 1000
   },
   "neoforge:conditions": [

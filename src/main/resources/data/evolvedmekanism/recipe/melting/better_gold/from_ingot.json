@@ -4,7 +4,7 @@
     "tag": "c:ingots/better_gold"
   },
   "output": {
-    "id": "evolvedmekanism:molten_better_gold",
+    "tag": "neoforge:molten_better_gold",
     "amount": 90
   },
   "neoforge:conditions": [

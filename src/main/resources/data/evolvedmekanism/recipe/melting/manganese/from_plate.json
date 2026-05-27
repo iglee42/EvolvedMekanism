@@ -4,7 +4,7 @@
     "tag": "c:plates/manganese"
   },
   "output": {
-    "id": "evolvedmekanism:molten_manganese",
+    "tag": "neoforge:molten_manganese",
     "amount": 90
   },
   "neoforge:conditions": [

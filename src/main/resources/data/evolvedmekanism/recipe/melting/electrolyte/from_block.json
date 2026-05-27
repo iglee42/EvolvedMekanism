@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/electrolyte"
   },
   "output": {
-    "id": "evolvedmekanism:molten_electrolyte",
+    "tag": "neoforge:molten_electrolyte",
     "amount": 810
   },
   "neoforge:conditions": [

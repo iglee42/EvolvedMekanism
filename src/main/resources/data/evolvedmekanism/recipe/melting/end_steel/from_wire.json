@@ -4,7 +4,7 @@
     "tag": "c:wires/end_steel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_end_steel",
+    "tag": "neoforge:molten_end_steel",
     "amount": 45
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:rods/terrasteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_terrasteel",
+    "tag": "neoforge:molten_terrasteel",
     "amount": 45
   },
   "neoforge:conditions": [

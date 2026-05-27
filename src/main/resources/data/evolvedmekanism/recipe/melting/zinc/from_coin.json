@@ -4,7 +4,7 @@
     "tag": "c:coins/zinc"
   },
   "output": {
-    "id": "evolvedmekanism:molten_zinc",
+    "tag": "neoforge:molten_zinc",
     "amount": 30
   },
   "neoforge:conditions": [

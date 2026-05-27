@@ -4,7 +4,7 @@
     "tag": "c:coins/radium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_radium",
+    "tag": "neoforge:molten_radium",
     "amount": 30
   },
   "neoforge:conditions": [

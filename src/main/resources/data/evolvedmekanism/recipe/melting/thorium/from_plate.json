@@ -4,7 +4,7 @@
     "tag": "c:plates/thorium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_thorium",
+    "tag": "neoforge:molten_thorium",
     "amount": 90
   },
   "neoforge:conditions": [

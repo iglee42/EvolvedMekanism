@@ -4,7 +4,7 @@
     "tag": "c:wires/ostrum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ostrum",
+    "tag": "neoforge:molten_ostrum",
     "amount": 45
   },
   "neoforge:conditions": [

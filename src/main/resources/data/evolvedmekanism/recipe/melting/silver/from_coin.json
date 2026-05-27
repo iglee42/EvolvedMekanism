@@ -4,7 +4,7 @@
     "tag": "c:coins/silver"
   },
   "output": {
-    "id": "evolvedmekanism:molten_silver",
+    "tag": "neoforge:molten_silver",
     "amount": 30
   },
   "neoforge:conditions": [

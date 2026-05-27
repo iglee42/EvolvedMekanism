@@ -4,7 +4,7 @@
     "tag": "c:nuggets/neptunium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_neptunium",
+    "tag": "neoforge:molten_neptunium",
     "amount": 10
   },
   "neoforge:conditions": [

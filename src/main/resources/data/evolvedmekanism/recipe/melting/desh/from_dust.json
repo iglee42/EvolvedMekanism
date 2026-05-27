@@ -4,7 +4,7 @@
     "tag": "c:dusts/desh"
   },
   "output": {
-    "id": "evolvedmekanism:molten_desh",
+    "tag": "neoforge:molten_desh",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:dusts/veridium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_veridium",
+    "tag": "neoforge:molten_veridium",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/lead"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lead",
+    "tag": "neoforge:molten_lead",
     "amount": 10
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/nickel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_nickel",
+    "tag": "neoforge:molten_nickel",
     "amount": 10
   },
   "neoforge:conditions": [

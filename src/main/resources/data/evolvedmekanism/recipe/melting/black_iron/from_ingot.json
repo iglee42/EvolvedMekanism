@@ -4,7 +4,7 @@
     "tag": "c:ingots/black_iron"
   },
   "output": {
-    "id": "evolvedmekanism:molten_black_iron",
+    "tag": "neoforge:molten_black_iron",
     "amount": 90
   },
   "neoforge:conditions": [

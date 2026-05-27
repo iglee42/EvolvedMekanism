@@ -4,7 +4,7 @@
     "tag": "c:ingots/skyjade"
   },
   "output": {
-    "id": "evolvedmekanism:molten_skyjade",
+    "tag": "neoforge:molten_skyjade",
     "amount": 90
   },
   "neoforge:conditions": [

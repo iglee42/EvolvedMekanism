@@ -4,7 +4,7 @@
     "tag": "c:nuggets/flux"
   },
   "output": {
-    "id": "evolvedmekanism:molten_flux",
+    "tag": "neoforge:molten_flux",
     "amount": 10
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/lead"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lead",
+    "tag": "neoforge:molten_lead",
     "amount": 810
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/plaslitherite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_plaslitherite",
+    "tag": "neoforge:molten_plaslitherite",
     "amount": 10
   },
   "neoforge:conditions": [

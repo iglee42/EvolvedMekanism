@@ -4,7 +4,7 @@
     "tag": "c:gears/lithium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lithium",
+    "tag": "neoforge:molten_lithium",
     "amount": 360
   },
   "neoforge:conditions": [

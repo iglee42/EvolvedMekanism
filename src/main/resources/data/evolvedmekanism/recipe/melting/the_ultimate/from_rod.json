@@ -4,7 +4,7 @@
     "tag": "c:rods/the_ultimate"
   },
   "output": {
-    "id": "evolvedmekanism:molten_the_ultimate",
+    "tag": "neoforge:molten_the_ultimate",
     "amount": 45
   },
   "neoforge:conditions": [

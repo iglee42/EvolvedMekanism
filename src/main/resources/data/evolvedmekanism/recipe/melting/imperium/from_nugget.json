@@ -4,7 +4,7 @@
     "tag": "c:nuggets/imperium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_imperium",
+    "tag": "neoforge:molten_imperium",
     "amount": 10
   },
   "neoforge:conditions": [

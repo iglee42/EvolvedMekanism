@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/aluminum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_aluminum",
+    "tag": "neoforge:molten_aluminum",
     "amount": 810
   },
   "neoforge:conditions": [

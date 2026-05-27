@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_vibrant_alloy",
+    "tag": "neoforge:molten_vibrant_alloy",
     "amount": 45
   },
   "extra_input": {

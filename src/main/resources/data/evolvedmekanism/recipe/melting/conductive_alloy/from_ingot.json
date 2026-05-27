@@ -4,7 +4,7 @@
     "tag": "c:ingots/conductive_alloy"
   },
   "output": {
-    "id": "evolvedmekanism:molten_conductive_alloy",
+    "tag": "neoforge:molten_conductive_alloy",
     "amount": 90
   },
   "neoforge:conditions": [

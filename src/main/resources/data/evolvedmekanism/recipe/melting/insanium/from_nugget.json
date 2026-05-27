@@ -4,7 +4,7 @@
     "tag": "c:nuggets/insanium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_insanium",
+    "tag": "neoforge:molten_insanium",
     "amount": 10
   },
   "neoforge:conditions": [

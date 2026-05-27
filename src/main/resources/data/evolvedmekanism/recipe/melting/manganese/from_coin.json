@@ -4,7 +4,7 @@
     "tag": "c:coins/manganese"
   },
   "output": {
-    "id": "evolvedmekanism:molten_manganese",
+    "tag": "neoforge:molten_manganese",
     "amount": 30
   },
   "neoforge:conditions": [

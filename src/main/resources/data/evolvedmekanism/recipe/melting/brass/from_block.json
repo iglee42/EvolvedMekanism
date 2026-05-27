@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/brass"
   },
   "output": {
-    "id": "evolvedmekanism:molten_brass",
+    "tag": "neoforge:molten_brass",
     "amount": 810
   },
   "neoforge:conditions": [

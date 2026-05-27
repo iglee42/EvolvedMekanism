@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/copper"
   },
   "output": {
-    "id": "evolvedmekanism:molten_copper",
+    "tag": "neoforge:molten_copper",
     "amount": 810
   },
   "neoforge:conditions": [

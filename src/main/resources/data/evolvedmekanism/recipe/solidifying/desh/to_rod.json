@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_desh",
+    "tag": "neoforge:molten_desh",
     "amount": 45
   },
   "extra_input": {

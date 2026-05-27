@@ -4,7 +4,7 @@
     "tag": "c:nuggets/radium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_radium",
+    "tag": "neoforge:molten_radium",
     "amount": 10
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_manyullyn",
+    "tag": "neoforge:molten_manyullyn",
     "amount": 10
   },
   "extra_input": {

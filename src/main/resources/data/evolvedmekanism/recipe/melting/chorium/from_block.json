@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/chorium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_chorium",
+    "tag": "neoforge:molten_chorium",
     "amount": 810
   },
   "neoforge:conditions": [

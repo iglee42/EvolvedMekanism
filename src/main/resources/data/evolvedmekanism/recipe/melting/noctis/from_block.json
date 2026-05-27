@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/noctis_rozuli"
   },
   "output": {
-    "id": "evolvedmekanism:molten_noctis",
+    "tag": "neoforge:molten_noctis",
     "amount": 810
   },
   "neoforge:conditions": [

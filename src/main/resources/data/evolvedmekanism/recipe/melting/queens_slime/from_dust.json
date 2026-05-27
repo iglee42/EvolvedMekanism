@@ -4,7 +4,7 @@
     "tag": "c:dusts/queens_slime"
   },
   "output": {
-    "id": "evolvedmekanism:molten_queens_slime",
+    "tag": "neoforge:molten_queens_slime",
     "amount": 90
   },
   "neoforge:conditions": [

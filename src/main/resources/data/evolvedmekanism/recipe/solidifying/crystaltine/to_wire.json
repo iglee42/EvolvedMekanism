@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_wire"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_crystaltine",
+    "tag": "neoforge:molten_crystaltine",
     "amount": 45
   },
   "extra_input": {

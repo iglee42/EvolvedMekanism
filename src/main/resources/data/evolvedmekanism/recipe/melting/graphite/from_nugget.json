@@ -4,7 +4,7 @@
     "tag": "c:nuggets/graphite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_graphite",
+    "tag": "neoforge:molten_graphite",
     "amount": 10
   },
   "neoforge:conditions": [

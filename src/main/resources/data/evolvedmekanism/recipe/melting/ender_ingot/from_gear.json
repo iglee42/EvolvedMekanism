@@ -4,7 +4,7 @@
     "tag": "c:gears/ender_ingot"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ender_ingot",
+    "tag": "neoforge:molten_ender_ingot",
     "amount": 360
   },
   "neoforge:conditions": [

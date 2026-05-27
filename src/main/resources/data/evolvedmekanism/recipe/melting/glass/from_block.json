@@ -4,7 +4,7 @@
     "tag": "c:glass"
   },
   "output": {
-    "id": "evolvedmekanism:molten_glass",
+    "tag": "neoforge:molten_glass",
     "amount": 1000
   },
   "neoforge:conditions": [

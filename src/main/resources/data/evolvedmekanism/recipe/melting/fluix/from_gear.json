@@ -4,7 +4,7 @@
     "tag": "c:gears/fluix"
   },
   "output": {
-    "id": "evolvedmekanism:molten_fluix",
+    "tag": "neoforge:molten_fluix",
     "amount": 360
   },
   "neoforge:conditions": [

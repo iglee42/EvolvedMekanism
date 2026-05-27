@@ -4,7 +4,7 @@
     "tag": "c:coins/copper_alloy"
   },
   "output": {
-    "id": "evolvedmekanism:molten_copper_alloy",
+    "tag": "neoforge:molten_copper_alloy",
     "amount": 30
   },
   "neoforge:conditions": [

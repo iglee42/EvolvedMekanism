@@ -4,7 +4,7 @@
     "tag": "c:nuggets/veridium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_veridium",
+    "tag": "neoforge:molten_veridium",
     "amount": 10
   },
   "neoforge:conditions": [

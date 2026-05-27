@@ -4,7 +4,7 @@
     "tag": "c:nuggets/bronze"
   },
   "output": {
-    "id": "evolvedmekanism:molten_bronze",
+    "tag": "neoforge:molten_bronze",
     "amount": 10
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:dusts/aluminum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_aluminum",
+    "tag": "neoforge:molten_aluminum",
     "amount": 90
   },
   "neoforge:conditions": [

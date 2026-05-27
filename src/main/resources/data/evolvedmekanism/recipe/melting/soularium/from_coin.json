@@ -4,7 +4,7 @@
     "tag": "c:coins/soularium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_soularium",
+    "tag": "neoforge:molten_soularium",
     "amount": 30
   },
   "neoforge:conditions": [

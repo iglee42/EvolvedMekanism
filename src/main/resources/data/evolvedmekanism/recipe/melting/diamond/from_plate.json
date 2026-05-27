@@ -4,7 +4,7 @@
     "tag": "c:plates/diamond"
   },
   "output": {
-    "id": "evolvedmekanism:molten_diamond",
+    "tag": "neoforge:molten_diamond",
     "amount": 90
   },
   "neoforge:conditions": [

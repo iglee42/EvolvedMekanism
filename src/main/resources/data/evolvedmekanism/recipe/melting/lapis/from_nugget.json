@@ -4,7 +4,7 @@
     "tag": "c:nuggets/lapis"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lapis",
+    "tag": "neoforge:molten_lapis",
     "amount": 10
   },
   "neoforge:conditions": [

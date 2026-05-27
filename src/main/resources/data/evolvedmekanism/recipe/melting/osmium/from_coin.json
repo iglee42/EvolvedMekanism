@@ -4,7 +4,7 @@
     "tag": "c:coins/osmium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_osmium",
+    "tag": "neoforge:molten_osmium",
     "amount": 30
   },
   "neoforge:conditions": [

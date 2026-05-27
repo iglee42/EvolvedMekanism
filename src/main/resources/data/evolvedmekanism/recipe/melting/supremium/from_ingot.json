@@ -4,7 +4,7 @@
     "tag": "c:ingots/supremium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_supremium",
+    "tag": "neoforge:molten_supremium",
     "amount": 90
   },
   "neoforge:conditions": [

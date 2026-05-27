@@ -4,7 +4,7 @@
     "tag": "c:plates/prismalium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_prismalium",
+    "tag": "neoforge:molten_prismalium",
     "amount": 90
   },
   "neoforge:conditions": [

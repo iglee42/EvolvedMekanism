@@ -4,7 +4,7 @@
     "tag": "c:coins/silicon_bronze"
   },
   "output": {
-    "id": "evolvedmekanism:molten_silicon_bronze",
+    "tag": "neoforge:molten_silicon_bronze",
     "amount": 30
   },
   "neoforge:conditions": [

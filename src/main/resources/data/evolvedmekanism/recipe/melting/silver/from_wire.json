@@ -4,7 +4,7 @@
     "tag": "c:wires/silver"
   },
   "output": {
-    "id": "evolvedmekanism:molten_silver",
+    "tag": "neoforge:molten_silver",
     "amount": 45
   },
   "neoforge:conditions": [

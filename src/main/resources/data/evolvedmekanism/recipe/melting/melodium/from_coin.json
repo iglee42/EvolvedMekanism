@@ -4,7 +4,7 @@
     "tag": "c:coins/melodium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_melodium",
+    "tag": "neoforge:molten_melodium",
     "amount": 30
   },
   "neoforge:conditions": [

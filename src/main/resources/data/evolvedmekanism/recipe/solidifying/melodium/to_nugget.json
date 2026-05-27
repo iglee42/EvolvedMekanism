@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_melodium",
+    "tag": "neoforge:molten_melodium",
     "amount": 10
   },
   "extra_input": {

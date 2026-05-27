@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_saturlyte",
+    "tag": "neoforge:molten_saturlyte",
     "amount": 10
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/desh"
   },
   "output": {
-    "id": "evolvedmekanism:molten_desh",
+    "tag": "neoforge:molten_desh",
     "amount": 810
   },
   "neoforge:conditions": [

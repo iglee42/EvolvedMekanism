@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/osmium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_osmium",
+    "tag": "neoforge:molten_osmium",
     "amount": 810
   },
   "neoforge:conditions": [

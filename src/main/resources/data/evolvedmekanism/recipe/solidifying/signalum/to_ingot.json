@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_signalum",
+    "tag": "neoforge:molten_signalum",
     "amount": 90
   },
   "extra_input": {

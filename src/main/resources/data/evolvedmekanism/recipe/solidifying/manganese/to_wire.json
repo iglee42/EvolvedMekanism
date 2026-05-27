@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_wire"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_manganese",
+    "tag": "neoforge:molten_manganese",
     "amount": 45
   },
   "extra_input": {

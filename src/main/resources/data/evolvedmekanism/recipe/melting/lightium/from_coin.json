@@ -4,7 +4,7 @@
     "tag": "c:coins/lightium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lightium",
+    "tag": "neoforge:molten_lightium",
     "amount": 30
   },
   "neoforge:conditions": [

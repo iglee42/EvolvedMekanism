@@ -4,7 +4,7 @@
     "tag": "c:coins/tungsten"
   },
   "output": {
-    "id": "evolvedmekanism:molten_tungsten",
+    "tag": "neoforge:molten_tungsten",
     "amount": 30
   },
   "neoforge:conditions": [

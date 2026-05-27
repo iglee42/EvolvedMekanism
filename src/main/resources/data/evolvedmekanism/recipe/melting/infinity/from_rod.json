@@ -4,7 +4,7 @@
     "tag": "c:rods/infinity"
   },
   "output": {
-    "id": "evolvedmekanism:molten_infinity",
+    "tag": "neoforge:molten_infinity",
     "amount": 45
   },
   "neoforge:conditions": [

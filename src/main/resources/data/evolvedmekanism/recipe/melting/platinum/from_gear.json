@@ -4,7 +4,7 @@
     "tag": "c:gears/platinum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_platinum",
+    "tag": "neoforge:molten_platinum",
     "amount": 360
   },
   "neoforge:conditions": [

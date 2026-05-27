@@ -4,7 +4,7 @@
     "tag": "c:wires/platinum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_platinum",
+    "tag": "neoforge:molten_platinum",
     "amount": 45
   },
   "neoforge:conditions": [

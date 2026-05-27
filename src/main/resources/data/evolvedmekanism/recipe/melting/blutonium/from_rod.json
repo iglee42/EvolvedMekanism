@@ -4,7 +4,7 @@
     "tag": "c:rods/blutonium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_blutonium",
+    "tag": "neoforge:molten_blutonium",
     "amount": 45
   },
   "neoforge:conditions": [

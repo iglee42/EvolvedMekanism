@@ -4,7 +4,7 @@
     "tag": "c:ingots/manasteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_manasteel",
+    "tag": "neoforge:molten_manasteel",
     "amount": 90
   },
   "neoforge:conditions": [

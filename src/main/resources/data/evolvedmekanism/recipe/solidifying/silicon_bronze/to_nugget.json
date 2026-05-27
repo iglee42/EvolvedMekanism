@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_silicon_bronze",
+    "tag": "neoforge:molten_silicon_bronze",
     "amount": 10
   },
   "extra_input": {

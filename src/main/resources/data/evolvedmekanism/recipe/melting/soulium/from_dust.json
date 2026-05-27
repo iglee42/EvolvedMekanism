@@ -4,7 +4,7 @@
     "tag": "c:dusts/soulium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_soulium",
+    "tag": "neoforge:molten_soulium",
     "amount": 90
   },
   "neoforge:conditions": [

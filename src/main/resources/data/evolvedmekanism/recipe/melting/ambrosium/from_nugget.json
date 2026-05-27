@@ -4,7 +4,7 @@
     "tag": "c:nuggets/ambrosium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ambrosium",
+    "tag": "neoforge:molten_ambrosium",
     "amount": 10
   },
   "neoforge:conditions": [

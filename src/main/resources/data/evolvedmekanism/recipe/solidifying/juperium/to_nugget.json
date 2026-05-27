@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_juperium",
+    "tag": "neoforge:molten_juperium",
     "amount": 10
   },
   "extra_input": {

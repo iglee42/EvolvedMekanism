@@ -4,7 +4,7 @@
     "tag": "c:rods/flux"
   },
   "output": {
-    "id": "evolvedmekanism:molten_flux",
+    "tag": "neoforge:molten_flux",
     "amount": 45
   },
   "neoforge:conditions": [

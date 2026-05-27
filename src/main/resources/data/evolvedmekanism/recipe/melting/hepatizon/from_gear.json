@@ -4,7 +4,7 @@
     "tag": "c:gears/hepatizon"
   },
   "output": {
-    "id": "evolvedmekanism:molten_hepatizon",
+    "tag": "neoforge:molten_hepatizon",
     "amount": 360
   },
   "neoforge:conditions": [

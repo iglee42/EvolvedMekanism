@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_stratus",
+    "tag": "neoforge:molten_stratus",
     "amount": 360
   },
   "extra_input": {

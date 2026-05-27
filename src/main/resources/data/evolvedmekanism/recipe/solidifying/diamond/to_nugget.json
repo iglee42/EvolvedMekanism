@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_diamond",
+    "tag": "neoforge:molten_diamond",
     "amount": 10
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:plates/zanite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_zanite",
+    "tag": "neoforge:molten_zanite",
     "amount": 90
   },
   "neoforge:conditions": [

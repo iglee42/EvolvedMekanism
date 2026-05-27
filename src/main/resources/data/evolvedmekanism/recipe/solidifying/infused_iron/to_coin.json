@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_infused_iron",
+    "tag": "neoforge:molten_infused_iron",
     "amount": 30
   },
   "extra_input": {

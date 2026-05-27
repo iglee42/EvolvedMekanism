@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_rose_gold",
+    "tag": "neoforge:molten_rose_gold",
     "amount": 90
   },
   "extra_input": {

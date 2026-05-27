@@ -4,7 +4,7 @@
     "tag": "c:wires/emerald"
   },
   "output": {
-    "id": "evolvedmekanism:molten_emerald",
+    "tag": "neoforge:molten_emerald",
     "amount": 45
   },
   "neoforge:conditions": [

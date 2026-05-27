@@ -4,7 +4,7 @@
     "tag": "c:dusts/iridium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_iridium",
+    "tag": "neoforge:molten_iridium",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:gears/ostrum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ostrum",
+    "tag": "neoforge:molten_ostrum",
     "amount": 360
   },
   "neoforge:conditions": [

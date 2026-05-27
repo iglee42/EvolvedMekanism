@@ -4,7 +4,7 @@
     "tag": "c:wires/brass"
   },
   "output": {
-    "id": "evolvedmekanism:molten_brass",
+    "tag": "neoforge:molten_brass",
     "amount": 45
   },
   "neoforge:conditions": [

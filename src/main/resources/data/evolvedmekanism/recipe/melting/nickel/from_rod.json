@@ -4,7 +4,7 @@
     "tag": "c:rods/nickel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_nickel",
+    "tag": "neoforge:molten_nickel",
     "amount": 45
   },
   "neoforge:conditions": [

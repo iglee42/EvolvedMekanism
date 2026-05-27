@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/terrasteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_terrasteel",
+    "tag": "neoforge:molten_terrasteel",
     "amount": 810
   },
   "neoforge:conditions": [

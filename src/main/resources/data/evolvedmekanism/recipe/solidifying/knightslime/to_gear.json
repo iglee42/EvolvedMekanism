@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_knightslime",
+    "tag": "neoforge:molten_knightslime",
     "amount": 360
   },
   "extra_input": {

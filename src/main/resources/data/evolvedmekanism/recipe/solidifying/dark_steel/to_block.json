@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_dark_steel",
+    "tag": "neoforge:molten_dark_steel",
     "amount": 810
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:coins/aluminum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_aluminum",
+    "tag": "neoforge:molten_aluminum",
     "amount": 30
   },
   "neoforge:conditions": [

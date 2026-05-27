@@ -4,7 +4,7 @@
     "tag": "c:coins/elementium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_elementium",
+    "tag": "neoforge:molten_elementium",
     "amount": 30
   },
   "neoforge:conditions": [

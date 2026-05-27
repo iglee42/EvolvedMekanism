@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/calorite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_calorite",
+    "tag": "neoforge:molten_calorite",
     "amount": 810
   },
   "neoforge:conditions": [

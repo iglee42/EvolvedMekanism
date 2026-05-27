@@ -4,7 +4,7 @@
     "tag": "c:coins/hepatizon"
   },
   "output": {
-    "id": "evolvedmekanism:molten_hepatizon",
+    "tag": "neoforge:molten_hepatizon",
     "amount": 30
   },
   "neoforge:conditions": [

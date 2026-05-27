@@ -4,7 +4,7 @@
     "tag": "c:nuggets/signalum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_signalum",
+    "tag": "neoforge:molten_signalum",
     "amount": 10
   },
   "neoforge:conditions": [

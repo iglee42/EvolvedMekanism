@@ -4,7 +4,7 @@
     "tag": "c:coins/oratchalcum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_oratchalcum",
+    "tag": "neoforge:molten_oratchalcum",
     "amount": 30
   },
   "neoforge:conditions": [

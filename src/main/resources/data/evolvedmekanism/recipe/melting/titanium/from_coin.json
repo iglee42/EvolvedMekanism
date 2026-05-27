@@ -4,7 +4,7 @@
     "tag": "c:coins/titanium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_titanium",
+    "tag": "neoforge:molten_titanium",
     "amount": 30
   },
   "neoforge:conditions": [

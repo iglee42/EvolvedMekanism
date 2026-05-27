@@ -4,7 +4,7 @@
     "tag": "c:nuggets/amethyst"
   },
   "output": {
-    "id": "evolvedmekanism:molten_amethyst",
+    "tag": "neoforge:molten_amethyst",
     "amount": 10
   },
   "neoforge:conditions": [

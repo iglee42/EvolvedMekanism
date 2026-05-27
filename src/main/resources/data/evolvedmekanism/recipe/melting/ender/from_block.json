@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/ender_pearl"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ender",
+    "tag": "neoforge:molten_ender",
     "amount": 360
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_platinum",
+    "tag": "neoforge:molten_platinum",
     "amount": 45
   },
   "extra_input": {

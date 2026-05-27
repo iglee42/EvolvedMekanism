@@ -4,7 +4,7 @@
     "tag": "c:dusts/platinum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_platinum",
+    "tag": "neoforge:molten_platinum",
     "amount": 90
   },
   "neoforge:conditions": [

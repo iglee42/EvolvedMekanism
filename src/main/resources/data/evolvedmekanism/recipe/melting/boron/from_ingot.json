@@ -4,7 +4,7 @@
     "tag": "c:ingots/boron"
   },
   "output": {
-    "id": "evolvedmekanism:molten_boron",
+    "tag": "neoforge:molten_boron",
     "amount": 90
   },
   "neoforge:conditions": [

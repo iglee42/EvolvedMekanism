@@ -4,7 +4,7 @@
     "tag": "c:wires/refined_glowstone"
   },
   "output": {
-    "id": "evolvedmekanism:molten_refined_glowstone",
+    "tag": "neoforge:molten_refined_glowstone",
     "amount": 45
   },
   "neoforge:conditions": [

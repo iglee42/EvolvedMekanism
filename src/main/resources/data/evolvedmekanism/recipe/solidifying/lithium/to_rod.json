@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_lithium",
+    "tag": "neoforge:molten_lithium",
     "amount": 45
   },
   "extra_input": {

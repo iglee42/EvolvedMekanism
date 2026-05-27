@@ -4,7 +4,7 @@
     "tag": "c:dusts/uranium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_uranium",
+    "tag": "neoforge:molten_uranium",
     "amount": 90
   },
   "neoforge:conditions": [

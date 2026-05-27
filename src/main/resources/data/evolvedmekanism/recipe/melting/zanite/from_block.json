@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/zanite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_zanite",
+    "tag": "neoforge:molten_zanite",
     "amount": 810
   },
   "neoforge:conditions": [

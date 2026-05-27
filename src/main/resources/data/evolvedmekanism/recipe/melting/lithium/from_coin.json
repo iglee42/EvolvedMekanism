@@ -4,7 +4,7 @@
     "tag": "c:coins/lithium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lithium",
+    "tag": "neoforge:molten_lithium",
     "amount": 30
   },
   "neoforge:conditions": [

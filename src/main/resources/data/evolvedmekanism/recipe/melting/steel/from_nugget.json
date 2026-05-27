@@ -4,7 +4,7 @@
     "tag": "c:nuggets/steel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_steel",
+    "tag": "neoforge:molten_steel",
     "amount": 10
   },
   "neoforge:conditions": [

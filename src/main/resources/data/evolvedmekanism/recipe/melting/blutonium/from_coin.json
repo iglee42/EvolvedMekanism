@@ -4,7 +4,7 @@
     "tag": "c:coins/blutonium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_blutonium",
+    "tag": "neoforge:molten_blutonium",
     "amount": 30
   },
   "neoforge:conditions": [

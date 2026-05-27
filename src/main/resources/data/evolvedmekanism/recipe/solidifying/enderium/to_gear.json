@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_enderium",
+    "tag": "neoforge:molten_enderium",
     "amount": 360
   },
   "extra_input": {

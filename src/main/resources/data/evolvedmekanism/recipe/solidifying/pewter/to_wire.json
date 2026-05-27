@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_wire"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_pewter",
+    "tag": "neoforge:molten_pewter",
     "amount": 45
   },
   "extra_input": {

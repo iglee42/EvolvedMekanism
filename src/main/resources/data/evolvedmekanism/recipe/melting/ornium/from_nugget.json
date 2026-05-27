@@ -4,7 +4,7 @@
     "tag": "c:nuggets/ornium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ornium",
+    "tag": "neoforge:molten_ornium",
     "amount": 10
   },
   "neoforge:conditions": [

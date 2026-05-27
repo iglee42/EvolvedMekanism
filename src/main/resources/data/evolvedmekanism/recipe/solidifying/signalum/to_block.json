@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_signalum",
+    "tag": "neoforge:molten_signalum",
     "amount": 810
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/hellforged"
   },
   "output": {
-    "id": "evolvedmekanism:molten_hellforged",
+    "tag": "neoforge:molten_hellforged",
     "amount": 10
   },
   "neoforge:conditions": [

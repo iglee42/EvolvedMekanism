@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_wire"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_oratchalcum",
+    "tag": "neoforge:molten_oratchalcum",
     "amount": 45
   },
   "extra_input": {

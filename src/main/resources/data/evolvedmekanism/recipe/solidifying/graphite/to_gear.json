@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_graphite",
+    "tag": "neoforge:molten_graphite",
     "amount": 360
   },
   "extra_input": {

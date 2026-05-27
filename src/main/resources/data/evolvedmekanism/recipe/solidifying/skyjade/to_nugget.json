@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_skyjade",
+    "tag": "neoforge:molten_skyjade",
     "amount": 10
   },
   "extra_input": {

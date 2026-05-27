@@ -4,7 +4,7 @@
     "tag": "c:gears/infinity"
   },
   "output": {
-    "id": "evolvedmekanism:molten_infinity",
+    "tag": "neoforge:molten_infinity",
     "amount": 360
   },
   "neoforge:conditions": [

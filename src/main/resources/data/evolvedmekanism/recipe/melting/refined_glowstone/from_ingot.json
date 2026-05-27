@@ -4,7 +4,7 @@
     "tag": "c:ingots/refined_glowstone"
   },
   "output": {
-    "id": "evolvedmekanism:molten_refined_glowstone",
+    "tag": "neoforge:molten_refined_glowstone",
     "amount": 90
   },
   "neoforge:conditions": [

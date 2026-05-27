@@ -4,7 +4,7 @@
     "tag": "c:gears/stellarium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_stellarium",
+    "tag": "neoforge:molten_stellarium",
     "amount": 360
   },
   "neoforge:conditions": [

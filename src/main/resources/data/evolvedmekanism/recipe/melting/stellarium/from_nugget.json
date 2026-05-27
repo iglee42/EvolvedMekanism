@@ -4,7 +4,7 @@
     "tag": "c:nuggets/stellarium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_stellarium",
+    "tag": "neoforge:molten_stellarium",
     "amount": 10
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/redstone"
   },
   "output": {
-    "id": "evolvedmekanism:molten_redstone",
+    "tag": "neoforge:molten_redstone",
     "amount": 30
   },
   "neoforge:conditions": [

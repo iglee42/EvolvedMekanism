@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_radium",
+    "tag": "neoforge:molten_radium",
     "amount": 810
   },
   "extra_input": {

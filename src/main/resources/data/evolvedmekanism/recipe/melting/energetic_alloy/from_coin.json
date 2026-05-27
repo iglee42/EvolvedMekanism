@@ -4,7 +4,7 @@
     "tag": "c:coins/energetic_alloy"
   },
   "output": {
-    "id": "evolvedmekanism:molten_energetic_alloy",
+    "tag": "neoforge:molten_energetic_alloy",
     "amount": 30
   },
   "neoforge:conditions": [

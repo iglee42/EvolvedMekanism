@@ -4,7 +4,7 @@
     "tag": "c:coins/ambrosium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ambrosium",
+    "tag": "neoforge:molten_ambrosium",
     "amount": 30
   },
   "neoforge:conditions": [

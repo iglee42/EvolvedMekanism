@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/redstone"
   },
   "output": {
-    "id": "evolvedmekanism:molten_redstone",
+    "tag": "neoforge:molten_redstone",
     "amount": 810
   },
   "neoforge:conditions": [

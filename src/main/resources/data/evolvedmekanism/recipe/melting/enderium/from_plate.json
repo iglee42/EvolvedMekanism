@@ -4,7 +4,7 @@
     "tag": "c:plates/enderium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_enderium",
+    "tag": "neoforge:molten_enderium",
     "amount": 90
   },
   "neoforge:conditions": [

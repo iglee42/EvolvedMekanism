@@ -4,7 +4,7 @@
     "tag": "c:rods/blaze"
   },
   "output": {
-    "id": "evolvedmekanism:molten_blaze",
+    "tag": "neoforge:molten_blaze",
     "amount": 90
   },
   "neoforge:conditions": [

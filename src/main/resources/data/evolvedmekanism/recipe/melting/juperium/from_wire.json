@@ -4,7 +4,7 @@
     "tag": "c:wires/juperium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_juperium",
+    "tag": "neoforge:molten_juperium",
     "amount": 45
   },
   "neoforge:conditions": [

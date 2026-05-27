@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_zanite",
+    "tag": "neoforge:molten_zanite",
     "amount": 10
   },
   "extra_input": {

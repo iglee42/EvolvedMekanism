@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/prismalium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_prismalium",
+    "tag": "neoforge:molten_prismalium",
     "amount": 810
   },
   "neoforge:conditions": [

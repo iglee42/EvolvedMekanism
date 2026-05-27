@@ -4,7 +4,7 @@
     "tag": "c:wires/tungsten"
   },
   "output": {
-    "id": "evolvedmekanism:molten_tungsten",
+    "tag": "neoforge:molten_tungsten",
     "amount": 45
   },
   "neoforge:conditions": [

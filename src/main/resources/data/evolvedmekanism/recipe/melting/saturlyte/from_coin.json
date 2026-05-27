@@ -4,7 +4,7 @@
     "tag": "c:coins/saturlyte"
   },
   "output": {
-    "id": "evolvedmekanism:molten_saturlyte",
+    "tag": "neoforge:molten_saturlyte",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/soulsteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_soulsteel",
+    "tag": "neoforge:molten_soulsteel",
     "amount": 810
   },
   "neoforge:conditions": [

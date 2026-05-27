@@ -4,7 +4,7 @@
     "tag": "c:rods/plutonium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_plutonium",
+    "tag": "neoforge:molten_plutonium",
     "amount": 45
   },
   "neoforge:conditions": [

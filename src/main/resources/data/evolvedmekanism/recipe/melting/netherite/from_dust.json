@@ -4,7 +4,7 @@
     "tag": "c:dusts/netherite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_netherite",
+    "tag": "neoforge:molten_netherite",
     "amount": 90
   },
   "neoforge:conditions": [

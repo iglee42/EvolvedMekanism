@@ -4,7 +4,7 @@
     "tag": "c:nuggets/ouranium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ouranium",
+    "tag": "neoforge:molten_ouranium",
     "amount": 10
   },
   "neoforge:conditions": [

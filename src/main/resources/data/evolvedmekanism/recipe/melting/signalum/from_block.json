@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/signalum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_signalum",
+    "tag": "neoforge:molten_signalum",
     "amount": 810
   },
   "neoforge:conditions": [

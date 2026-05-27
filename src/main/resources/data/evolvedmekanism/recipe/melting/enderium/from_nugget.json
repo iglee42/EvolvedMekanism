@@ -4,7 +4,7 @@
     "tag": "c:nuggets/enderium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_enderium",
+    "tag": "neoforge:molten_enderium",
     "amount": 10
   },
   "neoforge:conditions": [

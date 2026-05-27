@@ -4,7 +4,7 @@
     "tag": "c:rods/skyjade"
   },
   "output": {
-    "id": "evolvedmekanism:molten_skyjade",
+    "tag": "neoforge:molten_skyjade",
     "amount": 45
   },
   "neoforge:conditions": [

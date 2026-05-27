@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_ouranium",
+    "tag": "neoforge:molten_ouranium",
     "amount": 10
   },
   "extra_input": {

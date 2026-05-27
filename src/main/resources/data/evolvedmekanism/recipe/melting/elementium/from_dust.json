@@ -4,7 +4,7 @@
     "tag": "c:dusts/elementium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_elementium",
+    "tag": "neoforge:molten_elementium",
     "amount": 90
   },
   "neoforge:conditions": [

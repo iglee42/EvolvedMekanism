@@ -4,7 +4,7 @@
     "tag": "c:ingots/hellforged"
   },
   "output": {
-    "id": "evolvedmekanism:molten_hellforged",
+    "tag": "neoforge:molten_hellforged",
     "amount": 90
   },
   "neoforge:conditions": [

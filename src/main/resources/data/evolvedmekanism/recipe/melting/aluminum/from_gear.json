@@ -4,7 +4,7 @@
     "tag": "c:gears/aluminum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_aluminum",
+    "tag": "neoforge:molten_aluminum",
     "amount": 360
   },
   "neoforge:conditions": [

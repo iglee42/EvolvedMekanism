@@ -4,7 +4,7 @@
     "tag": "c:ingots/knightslime"
   },
   "output": {
-    "id": "evolvedmekanism:molten_knightslime",
+    "tag": "neoforge:molten_knightslime",
     "amount": 90
   },
   "neoforge:conditions": [

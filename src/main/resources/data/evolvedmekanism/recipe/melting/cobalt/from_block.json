@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/cobalt"
   },
   "output": {
-    "id": "evolvedmekanism:molten_cobalt",
+    "tag": "neoforge:molten_cobalt",
     "amount": 810
   },
   "neoforge:conditions": [

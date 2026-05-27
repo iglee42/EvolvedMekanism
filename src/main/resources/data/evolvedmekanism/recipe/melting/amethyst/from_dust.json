@@ -4,7 +4,7 @@
     "tag": "c:dusts/amethyst"
   },
   "output": {
-    "id": "evolvedmekanism:molten_amethyst",
+    "tag": "neoforge:molten_amethyst",
     "amount": 90
   },
   "neoforge:conditions": [

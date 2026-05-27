@@ -4,7 +4,7 @@
     "tag": "c:rods/noctis_rozuli"
   },
   "output": {
-    "id": "evolvedmekanism:molten_noctis",
+    "tag": "neoforge:molten_noctis",
     "amount": 45
   },
   "neoforge:conditions": [

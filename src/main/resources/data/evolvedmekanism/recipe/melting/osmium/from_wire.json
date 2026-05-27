@@ -4,7 +4,7 @@
     "tag": "c:wires/osmium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_osmium",
+    "tag": "neoforge:molten_osmium",
     "amount": 45
   },
   "neoforge:conditions": [

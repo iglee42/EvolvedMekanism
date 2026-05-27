@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/ornium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_ornium",
+    "tag": "neoforge:molten_ornium",
     "amount": 810
   },
   "neoforge:conditions": [

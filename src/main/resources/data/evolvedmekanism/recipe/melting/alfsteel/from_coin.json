@@ -4,7 +4,7 @@
     "tag": "c:coins/alfsteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_alfsteel",
+    "tag": "neoforge:molten_alfsteel",
     "amount": 30
   },
   "neoforge:conditions": [

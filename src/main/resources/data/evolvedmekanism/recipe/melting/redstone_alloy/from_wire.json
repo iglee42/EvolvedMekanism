@@ -4,7 +4,7 @@
     "tag": "c:wires/redstone_alloy"
   },
   "output": {
-    "id": "evolvedmekanism:molten_redstone_alloy",
+    "tag": "neoforge:molten_redstone_alloy",
     "amount": 45
   },
   "neoforge:conditions": [

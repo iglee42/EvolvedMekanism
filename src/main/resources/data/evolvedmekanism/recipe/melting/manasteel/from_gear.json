@@ -4,7 +4,7 @@
     "tag": "c:gears/manasteel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_manasteel",
+    "tag": "neoforge:molten_manasteel",
     "amount": 360
   },
   "neoforge:conditions": [

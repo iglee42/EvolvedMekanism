@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/coal"
   },
   "output": {
-    "id": "evolvedmekanism:molten_coal",
+    "tag": "neoforge:molten_coal",
     "amount": 810
   },
   "neoforge:conditions": [

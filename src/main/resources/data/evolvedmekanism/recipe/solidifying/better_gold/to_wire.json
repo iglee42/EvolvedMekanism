@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_wire"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_better_gold",
+    "tag": "neoforge:molten_better_gold",
     "amount": 45
   },
   "extra_input": {

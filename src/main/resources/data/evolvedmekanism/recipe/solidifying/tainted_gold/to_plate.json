@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_plate"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_tainted_gold",
+    "tag": "neoforge:molten_tainted_gold",
     "amount": 90
   },
   "extra_input": {

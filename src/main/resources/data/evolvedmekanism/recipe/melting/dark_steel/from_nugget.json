@@ -4,7 +4,7 @@
     "tag": "c:nuggets/dark_steel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_dark_steel",
+    "tag": "neoforge:molten_dark_steel",
     "amount": 10
   },
   "neoforge:conditions": [

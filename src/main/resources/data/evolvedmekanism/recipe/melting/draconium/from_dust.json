@@ -4,7 +4,7 @@
     "tag": "c:dusts/draconium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_draconium",
+    "tag": "neoforge:molten_draconium",
     "amount": 90
   },
   "neoforge:conditions": [

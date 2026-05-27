@@ -4,7 +4,7 @@
     "tag": "c:ingots/lithium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lithium",
+    "tag": "neoforge:molten_lithium",
     "amount": 90
   },
   "neoforge:conditions": [

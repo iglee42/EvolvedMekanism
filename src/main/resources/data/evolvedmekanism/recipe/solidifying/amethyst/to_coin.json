@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_amethyst",
+    "tag": "neoforge:molten_amethyst",
     "amount": 30
   },
   "extra_input": {

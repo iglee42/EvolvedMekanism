@@ -4,7 +4,7 @@
     "tag": "c:plates/sentrite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_sentrite",
+    "tag": "neoforge:molten_sentrite",
     "amount": 90
   },
   "neoforge:conditions": [

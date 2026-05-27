@@ -4,7 +4,7 @@
     "tag": "c:ingots/electrum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_electrum",
+    "tag": "neoforge:molten_electrum",
     "amount": 90
   },
   "neoforge:conditions": [

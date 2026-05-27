@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_plate"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_nickel",
+    "tag": "neoforge:molten_nickel",
     "amount": 90
   },
   "extra_input": {

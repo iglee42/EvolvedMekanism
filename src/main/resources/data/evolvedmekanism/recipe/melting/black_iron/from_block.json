@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/black_iron"
   },
   "output": {
-    "id": "evolvedmekanism:molten_black_iron",
+    "tag": "neoforge:molten_black_iron",
     "amount": 810
   },
   "neoforge:conditions": [

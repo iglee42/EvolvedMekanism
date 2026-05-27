@@ -4,7 +4,7 @@
     "tag": "c:plates/gravitite"
   },
   "output": {
-    "id": "evolvedmekanism:molten_gravitite",
+    "tag": "neoforge:molten_gravitite",
     "amount": 90
   },
   "neoforge:conditions": [

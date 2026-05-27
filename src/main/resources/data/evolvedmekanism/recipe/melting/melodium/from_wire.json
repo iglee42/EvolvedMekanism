@@ -4,7 +4,7 @@
     "tag": "c:wires/melodium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_melodium",
+    "tag": "neoforge:molten_melodium",
     "amount": 45
   },
   "neoforge:conditions": [

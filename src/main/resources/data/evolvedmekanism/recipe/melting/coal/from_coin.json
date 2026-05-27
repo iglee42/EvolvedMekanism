@@ -4,7 +4,7 @@
     "tag": "c:coins/coal"
   },
   "output": {
-    "id": "evolvedmekanism:molten_coal",
+    "tag": "neoforge:molten_coal",
     "amount": 30
   },
   "neoforge:conditions": [

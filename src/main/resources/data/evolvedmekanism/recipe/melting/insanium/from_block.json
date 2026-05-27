@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/insanium_ingot"
   },
   "output": {
-    "id": "evolvedmekanism:molten_insanium",
+    "tag": "neoforge:molten_insanium",
     "amount": 810
   },
   "neoforge:conditions": [

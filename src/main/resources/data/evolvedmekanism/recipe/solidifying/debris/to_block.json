@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_debris",
+    "tag": "neoforge:molten_debris",
     "amount": 810
   },
   "extra_input": {

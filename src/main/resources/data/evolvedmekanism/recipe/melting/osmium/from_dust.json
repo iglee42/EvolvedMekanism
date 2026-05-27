@@ -4,7 +4,7 @@
     "tag": "c:dusts/osmium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_osmium",
+    "tag": "neoforge:molten_osmium",
     "amount": 90
   },
   "neoforge:conditions": [

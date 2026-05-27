@@ -4,7 +4,7 @@
     "tag": "c:gears/knightslime"
   },
   "output": {
-    "id": "evolvedmekanism:molten_knightslime",
+    "tag": "neoforge:molten_knightslime",
     "amount": 360
   },
   "neoforge:conditions": [

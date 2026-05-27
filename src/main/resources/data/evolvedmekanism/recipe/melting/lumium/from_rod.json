@@ -4,7 +4,7 @@
     "tag": "c:rods/lumium"
   },
   "output": {
-    "id": "evolvedmekanism:molten_lumium",
+    "tag": "neoforge:molten_lumium",
     "amount": 45
   },
   "neoforge:conditions": [

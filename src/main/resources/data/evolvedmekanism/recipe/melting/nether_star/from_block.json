@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/nether_star"
   },
   "output": {
-    "id": "evolvedmekanism:molten_nether_star",
+    "tag": "neoforge:molten_nether_star",
     "amount": 810
   },
   "neoforge:conditions": [

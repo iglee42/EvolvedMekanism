@@ -4,7 +4,7 @@
     "tag": "c:rods/gold"
   },
   "output": {
-    "id": "evolvedmekanism:molten_gold",
+    "tag": "neoforge:molten_gold",
     "amount": 45
   },
   "neoforge:conditions": [

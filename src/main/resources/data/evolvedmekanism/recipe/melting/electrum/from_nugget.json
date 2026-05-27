@@ -4,7 +4,7 @@
     "tag": "c:nuggets/electrum"
   },
   "output": {
-    "id": "evolvedmekanism:molten_electrum",
+    "tag": "neoforge:molten_electrum",
     "amount": 10
   },
   "neoforge:conditions": [

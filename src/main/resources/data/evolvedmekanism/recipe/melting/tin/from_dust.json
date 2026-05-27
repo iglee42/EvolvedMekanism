@@ -4,7 +4,7 @@
     "tag": "c:dusts/tin"
   },
   "output": {
-    "id": "evolvedmekanism:molten_tin",
+    "tag": "neoforge:molten_tin",
     "amount": 90
   },
   "neoforge:conditions": [

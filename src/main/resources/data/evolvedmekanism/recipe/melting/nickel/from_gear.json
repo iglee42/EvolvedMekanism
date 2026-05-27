@@ -4,7 +4,7 @@
     "tag": "c:gears/nickel"
   },
   "output": {
-    "id": "evolvedmekanism:molten_nickel",
+    "tag": "neoforge:molten_nickel",
     "amount": 360
   },
   "neoforge:conditions": [

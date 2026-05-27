@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/knightslime"
   },
   "output": {
-    "id": "evolvedmekanism:molten_knightslime",
+    "tag": "neoforge:molten_knightslime",
     "amount": 810
   },
   "neoforge:conditions": [

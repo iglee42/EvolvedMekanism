@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_brass",
+    "tag": "neoforge:molten_brass",
     "amount": 90
   },
   "extra_input": {

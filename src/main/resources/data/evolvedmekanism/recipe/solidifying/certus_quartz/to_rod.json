@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "fluid": "evolvedmekanism:molten_certus_quartz",
+    "tag": "neoforge:molten_certus_quartz",
     "amount": 45
   },
   "extra_input": {
