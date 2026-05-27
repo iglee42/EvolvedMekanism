@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/gaiasteel"
   },
   "output": {
-    "tag": "neoforge:molten_gaiasteel",
+    "tag": "c:molten_gaiasteel",
     "amount": 810
   },
   "neoforge:conditions": [

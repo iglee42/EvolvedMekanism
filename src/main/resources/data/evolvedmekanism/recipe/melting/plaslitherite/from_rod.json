@@ -4,7 +4,7 @@
     "tag": "c:rods/plaslitherite"
   },
   "output": {
-    "tag": "neoforge:molten_plaslitherite",
+    "tag": "c:molten_plaslitherite",
     "amount": 45
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/quartz"
   },
   "output": {
-    "tag": "neoforge:molten_quartz",
+    "tag": "c:molten_quartz",
     "amount": 10
   },
   "neoforge:conditions": [

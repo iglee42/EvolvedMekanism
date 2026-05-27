@@ -4,7 +4,7 @@
     "tag": "c:wires/soularium"
   },
   "output": {
-    "tag": "neoforge:molten_soularium",
+    "tag": "c:molten_soularium",
     "amount": 45
   },
   "neoforge:conditions": [

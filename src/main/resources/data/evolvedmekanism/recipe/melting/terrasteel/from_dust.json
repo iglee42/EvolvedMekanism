@@ -4,7 +4,7 @@
     "tag": "c:dusts/terrasteel"
   },
   "output": {
-    "tag": "neoforge:molten_terrasteel",
+    "tag": "c:molten_terrasteel",
     "amount": 90
   },
   "neoforge:conditions": [

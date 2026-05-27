@@ -4,7 +4,7 @@
     "tag": "c:rods/copper"
   },
   "output": {
-    "tag": "neoforge:molten_copper",
+    "tag": "c:molten_copper",
     "amount": 45
   },
   "neoforge:conditions": [

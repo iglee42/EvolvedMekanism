@@ -4,7 +4,7 @@
     "tag": "c:nuggets/manyullyn"
   },
   "output": {
-    "tag": "neoforge:molten_manyullyn",
+    "tag": "c:molten_manyullyn",
     "amount": 10
   },
   "neoforge:conditions": [

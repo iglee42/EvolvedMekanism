@@ -4,7 +4,7 @@
     "tag": "c:glass"
   },
   "output": {
-    "tag": "neoforge:molten_glass",
+    "tag": "c:molten_glass",
     "amount": 1000
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:plates/osmium"
   },
   "output": {
-    "tag": "neoforge:molten_osmium",
+    "tag": "c:molten_osmium",
     "amount": 90
   },
   "neoforge:conditions": [

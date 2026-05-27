@@ -4,7 +4,7 @@
     "tag": "c:gears/radium"
   },
   "output": {
-    "tag": "neoforge:molten_radium",
+    "tag": "c:molten_radium",
     "amount": 360
   },
   "neoforge:conditions": [

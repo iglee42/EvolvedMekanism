@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_wire"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_plaslitherite",
+    "tag": "c:molten_plaslitherite",
     "amount": 45
   },
   "extra_input": {

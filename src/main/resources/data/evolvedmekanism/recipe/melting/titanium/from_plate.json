@@ -4,7 +4,7 @@
     "tag": "c:plates/titanium"
   },
   "output": {
-    "tag": "neoforge:molten_titanium",
+    "tag": "c:molten_titanium",
     "amount": 90
   },
   "neoforge:conditions": [

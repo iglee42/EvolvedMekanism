@@ -4,7 +4,7 @@
     "tag": "c:rods/slimesteel"
   },
   "output": {
-    "tag": "neoforge:molten_slimesteel",
+    "tag": "c:molten_slimesteel",
     "amount": 45
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_ostrum",
+    "tag": "c:molten_ostrum",
     "amount": 90
   },
   "extra_input": {

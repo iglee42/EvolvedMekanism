@@ -4,7 +4,7 @@
     "tag": "c:gears/iesnium"
   },
   "output": {
-    "tag": "neoforge:molten_iesnium",
+    "tag": "c:molten_iesnium",
     "amount": 360
   },
   "neoforge:conditions": [

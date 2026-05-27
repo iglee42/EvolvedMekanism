@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_blaze",
+    "tag": "c:molten_blaze",
     "amount": 45
   },
   "extra_input": {

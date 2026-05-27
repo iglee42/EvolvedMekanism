@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_energetic_alloy",
+    "tag": "c:molten_energetic_alloy",
     "amount": 360
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/ostrum"
   },
   "output": {
-    "tag": "neoforge:molten_ostrum",
+    "tag": "c:molten_ostrum",
     "amount": 810
   },
   "neoforge:conditions": [

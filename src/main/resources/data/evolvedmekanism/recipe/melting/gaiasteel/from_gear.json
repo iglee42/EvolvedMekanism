@@ -4,7 +4,7 @@
     "tag": "c:gears/gaiasteel"
   },
   "output": {
-    "tag": "neoforge:molten_gaiasteel",
+    "tag": "c:molten_gaiasteel",
     "amount": 360
   },
   "neoforge:conditions": [

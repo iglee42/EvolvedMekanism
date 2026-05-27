@@ -4,7 +4,7 @@
     "tag": "c:rods/calorite"
   },
   "output": {
-    "tag": "neoforge:molten_calorite",
+    "tag": "c:molten_calorite",
     "amount": 45
   },
   "neoforge:conditions": [

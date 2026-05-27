@@ -4,7 +4,7 @@
     "tag": "c:wires/diamond"
   },
   "output": {
-    "tag": "neoforge:molten_diamond",
+    "tag": "c:molten_diamond",
     "amount": 45
   },
   "neoforge:conditions": [

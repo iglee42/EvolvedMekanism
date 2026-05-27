@@ -4,7 +4,7 @@
     "tag": "c:dusts/tungsten"
   },
   "output": {
-    "tag": "neoforge:molten_tungsten",
+    "tag": "c:molten_tungsten",
     "amount": 90
   },
   "neoforge:conditions": [

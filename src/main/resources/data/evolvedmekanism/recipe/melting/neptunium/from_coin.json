@@ -4,7 +4,7 @@
     "tag": "c:coins/neptunium"
   },
   "output": {
-    "tag": "neoforge:molten_neptunium",
+    "tag": "c:molten_neptunium",
     "amount": 30
   },
   "neoforge:conditions": [

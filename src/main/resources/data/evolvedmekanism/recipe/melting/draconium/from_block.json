@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/draconium"
   },
   "output": {
-    "tag": "neoforge:molten_draconium",
+    "tag": "c:molten_draconium",
     "amount": 810
   },
   "neoforge:conditions": [

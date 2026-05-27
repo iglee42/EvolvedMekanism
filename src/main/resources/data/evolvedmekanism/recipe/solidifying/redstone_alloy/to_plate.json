@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_plate"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_redstone_alloy",
+    "tag": "c:molten_redstone_alloy",
     "amount": 90
   },
   "extra_input": {

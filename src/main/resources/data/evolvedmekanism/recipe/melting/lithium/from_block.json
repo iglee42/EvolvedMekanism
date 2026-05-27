@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/lithium"
   },
   "output": {
-    "tag": "neoforge:molten_lithium",
+    "tag": "c:molten_lithium",
     "amount": 810
   },
   "neoforge:conditions": [

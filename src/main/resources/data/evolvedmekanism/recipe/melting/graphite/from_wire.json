@@ -4,7 +4,7 @@
     "tag": "c:wires/graphite"
   },
   "output": {
-    "tag": "neoforge:molten_graphite",
+    "tag": "c:molten_graphite",
     "amount": 45
   },
   "neoforge:conditions": [

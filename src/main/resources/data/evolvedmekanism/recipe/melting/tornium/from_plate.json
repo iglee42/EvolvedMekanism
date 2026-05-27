@@ -4,7 +4,7 @@
     "tag": "c:plates/tornium"
   },
   "output": {
-    "tag": "neoforge:molten_tornium",
+    "tag": "c:molten_tornium",
     "amount": 90
   },
   "neoforge:conditions": [

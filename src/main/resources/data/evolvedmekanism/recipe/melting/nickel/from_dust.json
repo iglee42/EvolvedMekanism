@@ -4,7 +4,7 @@
     "tag": "c:dusts/nickel"
   },
   "output": {
-    "tag": "neoforge:molten_nickel",
+    "tag": "c:molten_nickel",
     "amount": 90
   },
   "neoforge:conditions": [

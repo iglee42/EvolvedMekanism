@@ -4,7 +4,7 @@
     "tag": "c:gears/pink_slime"
   },
   "output": {
-    "tag": "neoforge:molten_pink_slime",
+    "tag": "c:molten_pink_slime",
     "amount": 360
   },
   "neoforge:conditions": [

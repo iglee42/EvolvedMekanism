@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_redstone_alloy",
+    "tag": "c:molten_redstone_alloy",
     "amount": 810
   },
   "extra_input": {

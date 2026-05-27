@@ -4,7 +4,7 @@
     "tag": "c:rods/manyullyn"
   },
   "output": {
-    "tag": "neoforge:molten_manyullyn",
+    "tag": "c:molten_manyullyn",
     "amount": 45
   },
   "neoforge:conditions": [

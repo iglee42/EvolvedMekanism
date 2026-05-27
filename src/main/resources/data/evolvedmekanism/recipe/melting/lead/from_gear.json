@@ -4,7 +4,7 @@
     "tag": "c:gears/lead"
   },
   "output": {
-    "tag": "neoforge:molten_lead",
+    "tag": "c:molten_lead",
     "amount": 360
   },
   "neoforge:conditions": [

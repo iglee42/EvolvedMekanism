@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/constantan"
   },
   "output": {
-    "tag": "neoforge:molten_constantan",
+    "tag": "c:molten_constantan",
     "amount": 810
   },
   "neoforge:conditions": [

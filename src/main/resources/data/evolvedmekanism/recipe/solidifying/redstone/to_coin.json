@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_redstone",
+    "tag": "c:molten_redstone",
     "amount": 30
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/blutonium"
   },
   "output": {
-    "tag": "neoforge:molten_blutonium",
+    "tag": "c:molten_blutonium",
     "amount": 810
   },
   "neoforge:conditions": [

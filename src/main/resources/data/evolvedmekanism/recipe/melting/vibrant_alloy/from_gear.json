@@ -4,7 +4,7 @@
     "tag": "c:gears/vibrant_alloy"
   },
   "output": {
-    "tag": "neoforge:molten_vibrant_alloy",
+    "tag": "c:molten_vibrant_alloy",
     "amount": 360
   },
   "neoforge:conditions": [

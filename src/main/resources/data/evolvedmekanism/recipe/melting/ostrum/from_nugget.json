@@ -4,7 +4,7 @@
     "tag": "c:nuggets/ostrum"
   },
   "output": {
-    "tag": "neoforge:molten_ostrum",
+    "tag": "c:molten_ostrum",
     "amount": 10
   },
   "neoforge:conditions": [

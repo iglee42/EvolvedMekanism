@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_copper_alloy",
+    "tag": "c:molten_copper_alloy",
     "amount": 360
   },
   "extra_input": {

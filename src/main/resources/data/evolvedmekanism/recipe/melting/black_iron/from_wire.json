@@ -4,7 +4,7 @@
     "tag": "c:wires/black_iron"
   },
   "output": {
-    "tag": "neoforge:molten_black_iron",
+    "tag": "c:molten_black_iron",
     "amount": 45
   },
   "neoforge:conditions": [

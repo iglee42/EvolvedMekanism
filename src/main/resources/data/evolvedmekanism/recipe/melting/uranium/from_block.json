@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/uranium"
   },
   "output": {
-    "tag": "neoforge:molten_uranium",
+    "tag": "c:molten_uranium",
     "amount": 810
   },
   "neoforge:conditions": [

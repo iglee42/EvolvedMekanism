@@ -4,7 +4,7 @@
     "tag": "c:gears/saturlyte"
   },
   "output": {
-    "tag": "neoforge:molten_saturlyte",
+    "tag": "c:molten_saturlyte",
     "amount": 360
   },
   "neoforge:conditions": [

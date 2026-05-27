@@ -4,7 +4,7 @@
     "tag": "c:nuggets/saturlyte"
   },
   "output": {
-    "tag": "neoforge:molten_saturlyte",
+    "tag": "c:molten_saturlyte",
     "amount": 10
   },
   "neoforge:conditions": [

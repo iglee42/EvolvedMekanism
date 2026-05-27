@@ -4,7 +4,7 @@
     "tag": "c:nuggets/lithium"
   },
   "output": {
-    "tag": "neoforge:molten_lithium",
+    "tag": "c:molten_lithium",
     "amount": 10
   },
   "neoforge:conditions": [

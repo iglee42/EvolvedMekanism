@@ -4,7 +4,7 @@
     "tag": "c:dusts/hepatizon"
   },
   "output": {
-    "tag": "neoforge:molten_hepatizon",
+    "tag": "c:molten_hepatizon",
     "amount": 90
   },
   "neoforge:conditions": [

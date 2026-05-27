@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_titanium",
+    "tag": "c:molten_titanium",
     "amount": 90
   },
   "extra_input": {

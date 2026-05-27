@@ -4,7 +4,7 @@
     "tag": "c:coins/compressed_iron"
   },
   "output": {
-    "tag": "neoforge:molten_compressed_iron",
+    "tag": "c:molten_compressed_iron",
     "amount": 30
   },
   "neoforge:conditions": [

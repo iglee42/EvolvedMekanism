@@ -4,7 +4,7 @@
     "tag": "c:gears/netherite"
   },
   "output": {
-    "tag": "neoforge:molten_netherite",
+    "tag": "c:molten_netherite",
     "amount": 360
   },
   "neoforge:conditions": [

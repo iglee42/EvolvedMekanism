@@ -4,7 +4,7 @@
     "tag": "c:dusts/diamond"
   },
   "output": {
-    "tag": "neoforge:molten_diamond",
+    "tag": "c:molten_diamond",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/inferium"
   },
   "output": {
-    "tag": "neoforge:molten_inferium",
+    "tag": "c:molten_inferium",
     "amount": 30
   },
   "neoforge:conditions": [

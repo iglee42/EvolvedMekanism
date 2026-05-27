@@ -4,7 +4,7 @@
     "tag": "c:plates/vibrant_alloy"
   },
   "output": {
-    "tag": "neoforge:molten_vibrant_alloy",
+    "tag": "c:molten_vibrant_alloy",
     "amount": 90
   },
   "neoforge:conditions": [

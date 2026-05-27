@@ -4,7 +4,7 @@
     "tag": "c:dusts/prismalium"
   },
   "output": {
-    "tag": "neoforge:molten_prismalium",
+    "tag": "c:molten_prismalium",
     "amount": 90
   },
   "neoforge:conditions": [

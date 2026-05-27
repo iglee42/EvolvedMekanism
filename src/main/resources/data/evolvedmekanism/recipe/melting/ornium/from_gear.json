@@ -4,7 +4,7 @@
     "tag": "c:gears/ornium"
   },
   "output": {
-    "tag": "neoforge:molten_ornium",
+    "tag": "c:molten_ornium",
     "amount": 360
   },
   "neoforge:conditions": [

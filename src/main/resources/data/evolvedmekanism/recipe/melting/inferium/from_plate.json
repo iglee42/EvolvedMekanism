@@ -4,7 +4,7 @@
     "tag": "c:plates/inferium"
   },
   "output": {
-    "tag": "neoforge:molten_inferium",
+    "tag": "c:molten_inferium",
     "amount": 90
   },
   "neoforge:conditions": [

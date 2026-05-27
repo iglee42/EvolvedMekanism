@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/silver"
   },
   "output": {
-    "tag": "neoforge:molten_silver",
+    "tag": "c:molten_silver",
     "amount": 810
   },
   "neoforge:conditions": [

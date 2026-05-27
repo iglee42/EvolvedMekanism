@@ -4,7 +4,7 @@
     "tag": "c:gears/steel"
   },
   "output": {
-    "tag": "neoforge:molten_steel",
+    "tag": "c:molten_steel",
     "amount": 360
   },
   "neoforge:conditions": [

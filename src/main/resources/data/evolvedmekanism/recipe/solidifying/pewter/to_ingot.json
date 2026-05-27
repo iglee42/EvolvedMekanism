@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_pewter",
+    "tag": "c:molten_pewter",
     "amount": 90
   },
   "extra_input": {

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_blutonium",
+    "tag": "c:molten_blutonium",
     "amount": 10
   },
   "extra_input": {

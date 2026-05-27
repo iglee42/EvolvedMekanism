@@ -4,7 +4,7 @@
     "tag": "c:wires/titanium"
   },
   "output": {
-    "tag": "neoforge:molten_titanium",
+    "tag": "c:molten_titanium",
     "amount": 45
   },
   "neoforge:conditions": [

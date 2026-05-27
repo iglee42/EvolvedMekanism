@@ -4,7 +4,7 @@
     "tag": "c:ingots/the_ultimate"
   },
   "output": {
-    "tag": "neoforge:molten_the_ultimate",
+    "tag": "c:molten_the_ultimate",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/magnesium"
   },
   "output": {
-    "tag": "neoforge:molten_magnesium",
+    "tag": "c:molten_magnesium",
     "amount": 10
   },
   "neoforge:conditions": [

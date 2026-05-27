@@ -4,7 +4,7 @@
     "tag": "c:dusts/manasteel"
   },
   "output": {
-    "tag": "neoforge:molten_manasteel",
+    "tag": "c:molten_manasteel",
     "amount": 90
   },
   "neoforge:conditions": [

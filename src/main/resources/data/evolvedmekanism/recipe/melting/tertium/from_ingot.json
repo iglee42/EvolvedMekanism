@@ -4,7 +4,7 @@
     "tag": "c:ingots/tertium"
   },
   "output": {
-    "tag": "neoforge:molten_tertium",
+    "tag": "c:molten_tertium",
     "amount": 90
   },
   "neoforge:conditions": [

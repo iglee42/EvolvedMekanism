@@ -4,7 +4,7 @@
     "tag": "c:gears/iridium"
   },
   "output": {
-    "tag": "neoforge:molten_iridium",
+    "tag": "c:molten_iridium",
     "amount": 360
   },
   "neoforge:conditions": [

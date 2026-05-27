@@ -4,7 +4,7 @@
     "tag": "c:coins/platinum"
   },
   "output": {
-    "tag": "neoforge:molten_platinum",
+    "tag": "c:molten_platinum",
     "amount": 30
   },
   "neoforge:conditions": [

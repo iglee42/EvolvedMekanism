@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_black_iron",
+    "tag": "c:molten_black_iron",
     "amount": 90
   },
   "extra_input": {

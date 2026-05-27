@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_plate"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_sentrite",
+    "tag": "c:molten_sentrite",
     "amount": 90
   },
   "extra_input": {

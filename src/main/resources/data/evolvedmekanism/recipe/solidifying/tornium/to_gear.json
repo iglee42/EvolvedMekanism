@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_tornium",
+    "tag": "c:molten_tornium",
     "amount": 360
   },
   "extra_input": {

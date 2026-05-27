@@ -4,7 +4,7 @@
     "tag": "c:plates/energetic_alloy"
   },
   "output": {
-    "tag": "neoforge:molten_energetic_alloy",
+    "tag": "c:molten_energetic_alloy",
     "amount": 90
   },
   "neoforge:conditions": [

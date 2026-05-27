@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/lapis"
   },
   "output": {
-    "tag": "neoforge:molten_lapis",
+    "tag": "c:molten_lapis",
     "amount": 810
   },
   "neoforge:conditions": [

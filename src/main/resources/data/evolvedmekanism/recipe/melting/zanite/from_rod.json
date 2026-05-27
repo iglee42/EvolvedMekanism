@@ -4,7 +4,7 @@
     "tag": "c:rods/zanite"
   },
   "output": {
-    "tag": "neoforge:molten_zanite",
+    "tag": "c:molten_zanite",
     "amount": 45
   },
   "neoforge:conditions": [

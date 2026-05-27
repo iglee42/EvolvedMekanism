@@ -4,7 +4,7 @@
     "tag": "c:dusts/obsidian"
   },
   "output": {
-    "tag": "neoforge:molten_obsidian",
+    "tag": "c:molten_obsidian",
     "amount": 90
   },
   "neoforge:conditions": [

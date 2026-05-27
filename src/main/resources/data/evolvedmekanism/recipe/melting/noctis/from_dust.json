@@ -4,7 +4,7 @@
     "tag": "c:dusts/noctis_rozuli"
   },
   "output": {
-    "tag": "neoforge:molten_noctis",
+    "tag": "c:molten_noctis",
     "amount": 90
   },
   "neoforge:conditions": [

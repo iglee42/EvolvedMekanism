@@ -4,7 +4,7 @@
     "tag": "c:nuggets/copper"
   },
   "output": {
-    "tag": "neoforge:molten_copper",
+    "tag": "c:molten_copper",
     "amount": 10
   },
   "neoforge:conditions": [

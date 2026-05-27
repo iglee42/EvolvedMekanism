@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/certus_quartz"
   },
   "output": {
-    "tag": "neoforge:molten_certus_quartz",
+    "tag": "c:molten_certus_quartz",
     "amount": 360
   },
   "neoforge:conditions": [

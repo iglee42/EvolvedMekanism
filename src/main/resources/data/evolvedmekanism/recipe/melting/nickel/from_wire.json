@@ -4,7 +4,7 @@
     "tag": "c:wires/nickel"
   },
   "output": {
-    "tag": "neoforge:molten_nickel",
+    "tag": "c:molten_nickel",
     "amount": 45
   },
   "neoforge:conditions": [

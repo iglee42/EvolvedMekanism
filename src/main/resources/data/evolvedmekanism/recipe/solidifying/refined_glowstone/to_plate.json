@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_plate"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_refined_glowstone",
+    "tag": "c:molten_refined_glowstone",
     "amount": 90
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:rods/soulium"
   },
   "output": {
-    "tag": "neoforge:molten_soulium",
+    "tag": "c:molten_soulium",
     "amount": 45
   },
   "neoforge:conditions": [

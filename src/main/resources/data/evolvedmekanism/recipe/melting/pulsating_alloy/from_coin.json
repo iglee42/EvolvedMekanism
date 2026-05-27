@@ -4,7 +4,7 @@
     "tag": "c:coins/pulsating_alloy"
   },
   "output": {
-    "tag": "neoforge:molten_pulsating_alloy",
+    "tag": "c:molten_pulsating_alloy",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:gears/prudentium"
   },
   "output": {
-    "tag": "neoforge:molten_prudentium",
+    "tag": "c:molten_prudentium",
     "amount": 360
   },
   "neoforge:conditions": [

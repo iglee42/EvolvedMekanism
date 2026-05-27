@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/flux"
   },
   "output": {
-    "tag": "neoforge:molten_flux",
+    "tag": "c:molten_flux",
     "amount": 810
   },
   "neoforge:conditions": [

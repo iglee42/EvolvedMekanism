@@ -4,7 +4,7 @@
     "tag": "c:nuggets/melodium"
   },
   "output": {
-    "tag": "neoforge:molten_melodium",
+    "tag": "c:molten_melodium",
     "amount": 10
   },
   "neoforge:conditions": [

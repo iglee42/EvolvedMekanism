@@ -4,7 +4,7 @@
     "tag": "c:gears/cobalt"
   },
   "output": {
-    "tag": "neoforge:molten_cobalt",
+    "tag": "c:molten_cobalt",
     "amount": 360
   },
   "neoforge:conditions": [

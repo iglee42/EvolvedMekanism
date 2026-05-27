@@ -4,7 +4,7 @@
     "tag": "c:wires/blutonium"
   },
   "output": {
-    "tag": "neoforge:molten_blutonium",
+    "tag": "c:molten_blutonium",
     "amount": 45
   },
   "neoforge:conditions": [

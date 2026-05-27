@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_plate"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_queens_slime",
+    "tag": "c:molten_queens_slime",
     "amount": 90
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:plates/pink_slime"
   },
   "output": {
-    "tag": "neoforge:molten_pink_slime",
+    "tag": "c:molten_pink_slime",
     "amount": 90
   },
   "neoforge:conditions": [

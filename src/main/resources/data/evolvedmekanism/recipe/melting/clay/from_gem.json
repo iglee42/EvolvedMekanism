@@ -4,7 +4,7 @@
     "tag": "c:clay_balls"
   },
   "output": {
-    "tag": "neoforge:molten_clay",
+    "tag": "c:molten_clay",
     "amount": 90
   },
   "neoforge:conditions": [

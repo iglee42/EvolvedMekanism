@@ -4,7 +4,7 @@
     "tag": "c:nuggets/stratus"
   },
   "output": {
-    "tag": "neoforge:molten_stratus",
+    "tag": "c:molten_stratus",
     "amount": 10
   },
   "neoforge:conditions": [

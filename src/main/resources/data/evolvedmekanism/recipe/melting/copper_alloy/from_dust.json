@@ -4,7 +4,7 @@
     "tag": "c:dusts/copper_alloy"
   },
   "output": {
-    "tag": "neoforge:molten_copper_alloy",
+    "tag": "c:molten_copper_alloy",
     "amount": 90
   },
   "neoforge:conditions": [

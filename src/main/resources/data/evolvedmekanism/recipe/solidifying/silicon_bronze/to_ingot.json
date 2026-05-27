@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_silicon_bronze",
+    "tag": "c:molten_silicon_bronze",
     "amount": 90
   },
   "extra_input": {

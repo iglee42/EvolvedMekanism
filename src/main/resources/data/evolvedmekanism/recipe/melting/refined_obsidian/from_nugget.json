@@ -4,7 +4,7 @@
     "tag": "c:nuggets/refined_obsidian"
   },
   "output": {
-    "tag": "neoforge:molten_refined_obsidian",
+    "tag": "c:molten_refined_obsidian",
     "amount": 10
   },
   "neoforge:conditions": [

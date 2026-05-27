@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/manyullyn"
   },
   "output": {
-    "tag": "neoforge:molten_manyullyn",
+    "tag": "c:molten_manyullyn",
     "amount": 810
   },
   "neoforge:conditions": [

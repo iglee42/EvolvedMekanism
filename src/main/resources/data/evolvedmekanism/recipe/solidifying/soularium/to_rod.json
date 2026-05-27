@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_soularium",
+    "tag": "c:molten_soularium",
     "amount": 45
   },
   "extra_input": {

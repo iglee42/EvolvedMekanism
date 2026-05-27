@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/crystaltine"
   },
   "output": {
-    "tag": "neoforge:molten_crystaltine",
+    "tag": "c:molten_crystaltine",
     "amount": 810
   },
   "neoforge:conditions": [

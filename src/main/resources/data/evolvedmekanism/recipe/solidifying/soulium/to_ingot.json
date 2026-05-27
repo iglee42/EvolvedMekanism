@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_soulium",
+    "tag": "c:molten_soulium",
     "amount": 90
   },
   "extra_input": {

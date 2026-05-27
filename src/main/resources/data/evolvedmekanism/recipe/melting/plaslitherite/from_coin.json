@@ -4,7 +4,7 @@
     "tag": "c:coins/plaslitherite"
   },
   "output": {
-    "tag": "neoforge:molten_plaslitherite",
+    "tag": "c:molten_plaslitherite",
     "amount": 30
   },
   "neoforge:conditions": [

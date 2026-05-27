@@ -4,7 +4,7 @@
     "tag": "c:gears/terrasteel"
   },
   "output": {
-    "tag": "neoforge:molten_terrasteel",
+    "tag": "c:molten_terrasteel",
     "amount": 360
   },
   "neoforge:conditions": [

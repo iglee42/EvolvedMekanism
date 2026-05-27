@@ -4,7 +4,7 @@
     "tag": "c:dusts/awakened_draconium"
   },
   "output": {
-    "tag": "neoforge:molten_awakened_draconium",
+    "tag": "c:molten_awakened_draconium",
     "amount": 90
   },
   "neoforge:conditions": [

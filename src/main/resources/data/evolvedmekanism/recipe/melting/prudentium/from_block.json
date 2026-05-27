@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/prudentium_ingot"
   },
   "output": {
-    "tag": "neoforge:molten_prudentium",
+    "tag": "c:molten_prudentium",
     "amount": 810
   },
   "neoforge:conditions": [

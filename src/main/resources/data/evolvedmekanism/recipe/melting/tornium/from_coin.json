@@ -4,7 +4,7 @@
     "tag": "c:coins/tornium"
   },
   "output": {
-    "tag": "neoforge:molten_tornium",
+    "tag": "c:molten_tornium",
     "amount": 30
   },
   "neoforge:conditions": [

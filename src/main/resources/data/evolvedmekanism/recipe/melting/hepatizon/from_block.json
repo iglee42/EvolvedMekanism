@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/hepatizon"
   },
   "output": {
-    "tag": "neoforge:molten_hepatizon",
+    "tag": "c:molten_hepatizon",
     "amount": 810
   },
   "neoforge:conditions": [

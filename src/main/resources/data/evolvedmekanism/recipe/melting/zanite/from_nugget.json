@@ -4,7 +4,7 @@
     "tag": "c:nuggets/zanite"
   },
   "output": {
-    "tag": "neoforge:molten_zanite",
+    "tag": "c:molten_zanite",
     "amount": 10
   },
   "neoforge:conditions": [

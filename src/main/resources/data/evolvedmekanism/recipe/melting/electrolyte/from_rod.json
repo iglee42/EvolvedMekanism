@@ -4,7 +4,7 @@
     "tag": "c:rods/electrolyte"
   },
   "output": {
-    "tag": "neoforge:molten_electrolyte",
+    "tag": "c:molten_electrolyte",
     "amount": 45
   },
   "neoforge:conditions": [

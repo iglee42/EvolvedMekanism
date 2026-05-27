@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_cobalt",
+    "tag": "c:molten_cobalt",
     "amount": 810
   },
   "extra_input": {

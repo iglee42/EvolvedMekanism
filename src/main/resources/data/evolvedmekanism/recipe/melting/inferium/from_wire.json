@@ -4,7 +4,7 @@
     "tag": "c:wires/inferium"
   },
   "output": {
-    "tag": "neoforge:molten_inferium",
+    "tag": "c:molten_inferium",
     "amount": 45
   },
   "neoforge:conditions": [

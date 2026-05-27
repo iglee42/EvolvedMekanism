@@ -4,7 +4,7 @@
     "tag": "c:ingots/boron"
   },
   "output": {
-    "tag": "neoforge:molten_boron",
+    "tag": "c:molten_boron",
     "amount": 90
   },
   "neoforge:conditions": [

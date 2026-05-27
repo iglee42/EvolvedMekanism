@@ -4,7 +4,7 @@
     "tag": "c:coins/diamond"
   },
   "output": {
-    "tag": "neoforge:molten_diamond",
+    "tag": "c:molten_diamond",
     "amount": 30
   },
   "neoforge:conditions": [

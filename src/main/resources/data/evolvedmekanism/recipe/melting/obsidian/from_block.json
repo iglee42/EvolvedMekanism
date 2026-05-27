@@ -4,7 +4,7 @@
     "tag": "c:obsidians/normal"
   },
   "output": {
-    "tag": "neoforge:molten_obsidian",
+    "tag": "c:molten_obsidian",
     "amount": 810
   },
   "neoforge:conditions": [

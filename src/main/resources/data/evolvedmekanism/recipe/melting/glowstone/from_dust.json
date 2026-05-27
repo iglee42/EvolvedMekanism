@@ -4,7 +4,7 @@
     "tag": "c:dusts/glowstone"
   },
   "output": {
-    "tag": "neoforge:molten_glowstone",
+    "tag": "c:molten_glowstone",
     "amount": 90
   },
   "neoforge:conditions": [

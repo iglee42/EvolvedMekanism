@@ -4,7 +4,7 @@
     "tag": "c:plates/veridium"
   },
   "output": {
-    "tag": "neoforge:molten_veridium",
+    "tag": "c:molten_veridium",
     "amount": 90
   },
   "neoforge:conditions": [

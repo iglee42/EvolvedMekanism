@@ -4,7 +4,7 @@
     "tag": "c:rods/prosperity"
   },
   "output": {
-    "tag": "neoforge:molten_prosperity",
+    "tag": "c:molten_prosperity",
     "amount": 45
   },
   "neoforge:conditions": [

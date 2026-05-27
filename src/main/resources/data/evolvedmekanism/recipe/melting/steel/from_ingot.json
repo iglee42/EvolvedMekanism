@@ -4,7 +4,7 @@
     "tag": "c:ingots/steel"
   },
   "output": {
-    "tag": "neoforge:molten_steel",
+    "tag": "c:molten_steel",
     "amount": 90
   },
   "neoforge:conditions": [

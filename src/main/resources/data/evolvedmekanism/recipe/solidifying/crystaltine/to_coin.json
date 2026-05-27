@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_crystaltine",
+    "tag": "c:molten_crystaltine",
     "amount": 30
   },
   "extra_input": {

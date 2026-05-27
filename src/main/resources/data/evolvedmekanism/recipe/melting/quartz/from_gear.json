@@ -4,7 +4,7 @@
     "tag": "c:gears/quartz"
   },
   "output": {
-    "tag": "neoforge:molten_quartz",
+    "tag": "c:molten_quartz",
     "amount": 360
   },
   "neoforge:conditions": [

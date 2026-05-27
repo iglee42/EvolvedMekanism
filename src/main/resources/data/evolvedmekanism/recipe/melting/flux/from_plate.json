@@ -4,7 +4,7 @@
     "tag": "c:plates/flux"
   },
   "output": {
-    "tag": "neoforge:molten_flux",
+    "tag": "c:molten_flux",
     "amount": 90
   },
   "neoforge:conditions": [

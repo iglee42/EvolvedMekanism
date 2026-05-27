@@ -4,7 +4,7 @@
     "tag": "c:coins/iridium"
   },
   "output": {
-    "tag": "neoforge:molten_iridium",
+    "tag": "c:molten_iridium",
     "amount": 30
   },
   "neoforge:conditions": [

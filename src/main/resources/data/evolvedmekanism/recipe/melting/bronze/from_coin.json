@@ -4,7 +4,7 @@
     "tag": "c:coins/bronze"
   },
   "output": {
-    "tag": "neoforge:molten_bronze",
+    "tag": "c:molten_bronze",
     "amount": 30
   },
   "neoforge:conditions": [

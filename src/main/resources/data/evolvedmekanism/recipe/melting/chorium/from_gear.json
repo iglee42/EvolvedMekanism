@@ -4,7 +4,7 @@
     "tag": "c:gears/chorium"
   },
   "output": {
-    "tag": "neoforge:molten_chorium",
+    "tag": "c:molten_chorium",
     "amount": 360
   },
   "neoforge:conditions": [

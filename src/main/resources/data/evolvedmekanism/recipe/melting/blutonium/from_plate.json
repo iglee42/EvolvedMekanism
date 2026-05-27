@@ -4,7 +4,7 @@
     "tag": "c:plates/blutonium"
   },
   "output": {
-    "tag": "neoforge:molten_blutonium",
+    "tag": "c:molten_blutonium",
     "amount": 90
   },
   "neoforge:conditions": [

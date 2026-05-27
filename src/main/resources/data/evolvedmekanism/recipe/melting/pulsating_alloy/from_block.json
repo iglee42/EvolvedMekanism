@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/pulsating_alloy"
   },
   "output": {
-    "tag": "neoforge:molten_pulsating_alloy",
+    "tag": "c:molten_pulsating_alloy",
     "amount": 810
   },
   "neoforge:conditions": [

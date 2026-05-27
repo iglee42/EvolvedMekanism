@@ -4,7 +4,7 @@
     "tag": "c:rods/netherite"
   },
   "output": {
-    "tag": "neoforge:molten_netherite",
+    "tag": "c:molten_netherite",
     "amount": 45
   },
   "neoforge:conditions": [

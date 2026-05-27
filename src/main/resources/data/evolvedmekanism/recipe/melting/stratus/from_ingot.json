@@ -4,7 +4,7 @@
     "tag": "c:ingots/stratus"
   },
   "output": {
-    "tag": "neoforge:molten_stratus",
+    "tag": "c:molten_stratus",
     "amount": 90
   },
   "neoforge:conditions": [

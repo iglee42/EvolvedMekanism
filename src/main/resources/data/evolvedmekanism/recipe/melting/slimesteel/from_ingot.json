@@ -4,7 +4,7 @@
     "tag": "c:ingots/slimesteel"
   },
   "output": {
-    "tag": "neoforge:molten_slimesteel",
+    "tag": "c:molten_slimesteel",
     "amount": 90
   },
   "neoforge:conditions": [

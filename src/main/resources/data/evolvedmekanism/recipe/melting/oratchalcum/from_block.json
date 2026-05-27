@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/oratchalcum"
   },
   "output": {
-    "tag": "neoforge:molten_oratchalcum",
+    "tag": "c:molten_oratchalcum",
     "amount": 810
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_electrolyte",
+    "tag": "c:molten_electrolyte",
     "amount": 810
   },
   "extra_input": {

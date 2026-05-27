@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_awakened_supremium",
+    "tag": "c:molten_awakened_supremium",
     "amount": 45
   },
   "extra_input": {

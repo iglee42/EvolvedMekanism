@@ -4,7 +4,7 @@
     "tag": "c:dusts/infinity"
   },
   "output": {
-    "tag": "neoforge:molten_infinity",
+    "tag": "c:molten_infinity",
     "amount": 90
   },
   "neoforge:conditions": [

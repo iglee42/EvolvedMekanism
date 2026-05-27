@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_dust"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_conductive_alloy",
+    "tag": "c:molten_conductive_alloy",
     "amount": 90
   },
   "extra_input": {

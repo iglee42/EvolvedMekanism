@@ -4,7 +4,7 @@
     "tag": "c:plates/enhanced_redstone_ingot"
   },
   "output": {
-    "tag": "neoforge:molten_enhanced_redstone_ingot",
+    "tag": "c:molten_enhanced_redstone_ingot",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:wires/uranium"
   },
   "output": {
-    "tag": "neoforge:molten_uranium",
+    "tag": "c:molten_uranium",
     "amount": 45
   },
   "neoforge:conditions": [

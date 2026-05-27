@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_desh",
+    "tag": "c:molten_desh",
     "amount": 90
   },
   "extra_input": {

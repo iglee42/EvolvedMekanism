@@ -4,7 +4,7 @@
     "tag": "c:plates/signalum"
   },
   "output": {
-    "tag": "neoforge:molten_signalum",
+    "tag": "c:molten_signalum",
     "amount": 90
   },
   "neoforge:conditions": [

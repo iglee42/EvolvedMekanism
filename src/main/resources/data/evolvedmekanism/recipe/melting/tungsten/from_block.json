@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/tungsten"
   },
   "output": {
-    "tag": "neoforge:molten_tungsten",
+    "tag": "c:molten_tungsten",
     "amount": 810
   },
   "neoforge:conditions": [

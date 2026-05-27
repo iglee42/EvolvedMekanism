@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_compressed_iron",
+    "tag": "c:molten_compressed_iron",
     "amount": 10
   },
   "extra_input": {

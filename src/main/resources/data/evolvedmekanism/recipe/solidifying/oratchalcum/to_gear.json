@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_oratchalcum",
+    "tag": "c:molten_oratchalcum",
     "amount": 360
   },
   "extra_input": {

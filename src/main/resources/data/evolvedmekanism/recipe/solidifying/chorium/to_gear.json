@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_chorium",
+    "tag": "c:molten_chorium",
     "amount": 360
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:wires/prismalium"
   },
   "output": {
-    "tag": "neoforge:molten_prismalium",
+    "tag": "c:molten_prismalium",
     "amount": 45
   },
   "neoforge:conditions": [

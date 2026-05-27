@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/dark_steel"
   },
   "output": {
-    "tag": "neoforge:molten_dark_steel",
+    "tag": "c:molten_dark_steel",
     "amount": 810
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/copper"
   },
   "output": {
-    "tag": "neoforge:molten_copper",
+    "tag": "c:molten_copper",
     "amount": 810
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_ludicrite",
+    "tag": "c:molten_ludicrite",
     "amount": 30
   },
   "extra_input": {

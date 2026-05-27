@@ -4,7 +4,7 @@
     "tag": "c:coins/nickel"
   },
   "output": {
-    "tag": "neoforge:molten_nickel",
+    "tag": "c:molten_nickel",
     "amount": 30
   },
   "neoforge:conditions": [

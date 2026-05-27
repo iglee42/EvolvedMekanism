@@ -4,7 +4,7 @@
     "tag": "c:gears/plutonium"
   },
   "output": {
-    "tag": "neoforge:molten_plutonium",
+    "tag": "c:molten_plutonium",
     "amount": 360
   },
   "neoforge:conditions": [

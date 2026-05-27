@@ -4,7 +4,7 @@
     "tag": "c:coins/iron"
   },
   "output": {
-    "tag": "neoforge:molten_iron",
+    "tag": "c:molten_iron",
     "amount": 30
   },
   "neoforge:conditions": [

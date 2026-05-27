@@ -4,7 +4,7 @@
     "tag": "c:wires/knightslime"
   },
   "output": {
-    "tag": "neoforge:molten_knightslime",
+    "tag": "c:molten_knightslime",
     "amount": 45
   },
   "neoforge:conditions": [

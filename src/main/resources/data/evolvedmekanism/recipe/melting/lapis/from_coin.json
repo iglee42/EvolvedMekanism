@@ -4,7 +4,7 @@
     "tag": "c:coins/lapis"
   },
   "output": {
-    "tag": "neoforge:molten_lapis",
+    "tag": "c:molten_lapis",
     "amount": 30
   },
   "neoforge:conditions": [

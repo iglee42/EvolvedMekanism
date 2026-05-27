@@ -4,7 +4,7 @@
     "tag": "c:rods/osmium"
   },
   "output": {
-    "tag": "neoforge:molten_osmium",
+    "tag": "c:molten_osmium",
     "amount": 45
   },
   "neoforge:conditions": [

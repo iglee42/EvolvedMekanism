@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/sentrite"
   },
   "output": {
-    "tag": "neoforge:molten_sentrite",
+    "tag": "c:molten_sentrite",
     "amount": 810
   },
   "neoforge:conditions": [

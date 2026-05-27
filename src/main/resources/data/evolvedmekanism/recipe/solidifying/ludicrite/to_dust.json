@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_dust"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_ludicrite",
+    "tag": "c:molten_ludicrite",
     "amount": 90
   },
   "extra_input": {

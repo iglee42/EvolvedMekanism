@@ -4,7 +4,7 @@
     "tag": "c:coins/constantan"
   },
   "output": {
-    "tag": "neoforge:molten_constantan",
+    "tag": "c:molten_constantan",
     "amount": 30
   },
   "neoforge:conditions": [

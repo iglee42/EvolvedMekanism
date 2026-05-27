@@ -4,7 +4,7 @@
     "tag": "c:gears/lapis"
   },
   "output": {
-    "tag": "neoforge:molten_lapis",
+    "tag": "c:molten_lapis",
     "amount": 360
   },
   "neoforge:conditions": [

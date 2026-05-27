@@ -4,7 +4,7 @@
     "tag": "c:dusts/fluix"
   },
   "output": {
-    "tag": "neoforge:molten_fluix",
+    "tag": "c:molten_fluix",
     "amount": 90
   },
   "neoforge:conditions": [

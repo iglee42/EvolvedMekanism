@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/glowstone"
   },
   "output": {
-    "tag": "neoforge:molten_glowstone",
+    "tag": "c:molten_glowstone",
     "amount": 360
   },
   "neoforge:conditions": [

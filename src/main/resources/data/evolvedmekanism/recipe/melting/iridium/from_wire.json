@@ -4,7 +4,7 @@
     "tag": "c:wires/iridium"
   },
   "output": {
-    "tag": "neoforge:molten_iridium",
+    "tag": "c:molten_iridium",
     "amount": 45
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_plate"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_soularium",
+    "tag": "c:molten_soularium",
     "amount": 90
   },
   "extra_input": {

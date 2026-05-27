@@ -4,7 +4,7 @@
     "tag": "c:rods/signalum"
   },
   "output": {
-    "tag": "neoforge:molten_signalum",
+    "tag": "c:molten_signalum",
     "amount": 45
   },
   "neoforge:conditions": [

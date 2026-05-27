@@ -4,7 +4,7 @@
     "tag": "c:wires/skyjade"
   },
   "output": {
-    "tag": "neoforge:molten_skyjade",
+    "tag": "c:molten_skyjade",
     "amount": 45
   },
   "neoforge:conditions": [

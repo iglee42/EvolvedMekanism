@@ -4,7 +4,7 @@
     "tag": "c:coins/juperium"
   },
   "output": {
-    "tag": "neoforge:molten_juperium",
+    "tag": "c:molten_juperium",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_dust"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_supremium",
+    "tag": "c:molten_supremium",
     "amount": 90
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/cyanite"
   },
   "output": {
-    "tag": "neoforge:molten_cyanite",
+    "tag": "c:molten_cyanite",
     "amount": 810
   },
   "neoforge:conditions": [

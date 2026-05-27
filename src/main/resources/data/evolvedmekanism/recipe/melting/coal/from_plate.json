@@ -4,7 +4,7 @@
     "tag": "c:plates/coal"
   },
   "output": {
-    "tag": "neoforge:molten_coal",
+    "tag": "c:molten_coal",
     "amount": 90
   },
   "neoforge:conditions": [

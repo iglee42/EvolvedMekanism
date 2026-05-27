@@ -4,7 +4,7 @@
     "tag": "c:gears/the_ultimate"
   },
   "output": {
-    "tag": "neoforge:molten_the_ultimate",
+    "tag": "c:molten_the_ultimate",
     "amount": 360
   },
   "neoforge:conditions": [

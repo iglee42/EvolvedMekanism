@@ -4,7 +4,7 @@
     "tag": "c:nuggets/soularium"
   },
   "output": {
-    "tag": "neoforge:molten_soularium",
+    "tag": "c:molten_soularium",
     "amount": 10
   },
   "neoforge:conditions": [

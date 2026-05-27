@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_wire"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_lapis",
+    "tag": "c:molten_lapis",
     "amount": 45
   },
   "extra_input": {

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_manganese",
+    "tag": "c:molten_manganese",
     "amount": 90
   },
   "extra_input": {

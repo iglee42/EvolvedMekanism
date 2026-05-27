@@ -4,7 +4,7 @@
     "tag": "c:coins/gravitite"
   },
   "output": {
-    "tag": "neoforge:molten_gravitite",
+    "tag": "c:molten_gravitite",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:rods/plutonium"
   },
   "output": {
-    "tag": "neoforge:molten_plutonium",
+    "tag": "c:molten_plutonium",
     "amount": 45
   },
   "neoforge:conditions": [

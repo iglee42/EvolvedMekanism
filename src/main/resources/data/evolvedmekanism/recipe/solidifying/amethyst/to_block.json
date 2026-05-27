@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_amethyst",
+    "tag": "c:molten_amethyst",
     "amount": 360
   },
   "extra_input": {

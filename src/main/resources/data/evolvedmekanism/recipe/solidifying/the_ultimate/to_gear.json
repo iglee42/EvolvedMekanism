@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_the_ultimate",
+    "tag": "c:molten_the_ultimate",
     "amount": 360
   },
   "extra_input": {

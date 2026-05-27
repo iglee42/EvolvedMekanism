@@ -4,7 +4,7 @@
     "tag": "c:wires/magnesium"
   },
   "output": {
-    "tag": "neoforge:molten_magnesium",
+    "tag": "c:molten_magnesium",
     "amount": 45
   },
   "neoforge:conditions": [

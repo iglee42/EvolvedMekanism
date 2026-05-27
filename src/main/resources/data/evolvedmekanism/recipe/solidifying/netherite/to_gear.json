@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_netherite",
+    "tag": "c:molten_netherite",
     "amount": 360
   },
   "extra_input": {

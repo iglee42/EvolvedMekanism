@@ -4,7 +4,7 @@
     "tag": "c:ingots/electrum"
   },
   "output": {
-    "tag": "neoforge:molten_electrum",
+    "tag": "c:molten_electrum",
     "amount": 90
   },
   "neoforge:conditions": [

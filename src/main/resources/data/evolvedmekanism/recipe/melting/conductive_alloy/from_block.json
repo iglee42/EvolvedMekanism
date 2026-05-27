@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/conductive_alloy"
   },
   "output": {
-    "tag": "neoforge:molten_conductive_alloy",
+    "tag": "c:molten_conductive_alloy",
     "amount": 810
   },
   "neoforge:conditions": [

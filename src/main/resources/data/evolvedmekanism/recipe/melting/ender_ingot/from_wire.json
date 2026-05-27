@@ -4,7 +4,7 @@
     "tag": "c:wires/ender_ingot"
   },
   "output": {
-    "tag": "neoforge:molten_ender_ingot",
+    "tag": "c:molten_ender_ingot",
     "amount": 45
   },
   "neoforge:conditions": [

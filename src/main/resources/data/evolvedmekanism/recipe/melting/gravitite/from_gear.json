@@ -4,7 +4,7 @@
     "tag": "c:gears/gravitite"
   },
   "output": {
-    "tag": "neoforge:molten_gravitite",
+    "tag": "c:molten_gravitite",
     "amount": 360
   },
   "neoforge:conditions": [

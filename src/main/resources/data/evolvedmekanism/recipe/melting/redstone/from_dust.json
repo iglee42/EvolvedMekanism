@@ -4,7 +4,7 @@
     "tag": "c:dusts/redstone"
   },
   "output": {
-    "tag": "neoforge:molten_redstone",
+    "tag": "c:molten_redstone",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:dusts/enderium"
   },
   "output": {
-    "tag": "neoforge:molten_enderium",
+    "tag": "c:molten_enderium",
     "amount": 90
   },
   "neoforge:conditions": [

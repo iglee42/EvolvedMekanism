@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_terrasteel",
+    "tag": "c:molten_terrasteel",
     "amount": 30
   },
   "extra_input": {

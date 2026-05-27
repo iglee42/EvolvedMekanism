@@ -4,7 +4,7 @@
     "tag": "c:gears/diamond"
   },
   "output": {
-    "tag": "neoforge:molten_diamond",
+    "tag": "c:molten_diamond",
     "amount": 360
   },
   "neoforge:conditions": [

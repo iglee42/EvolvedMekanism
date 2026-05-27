@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/melodium"
   },
   "output": {
-    "tag": "neoforge:molten_melodium",
+    "tag": "c:molten_melodium",
     "amount": 810
   },
   "neoforge:conditions": [

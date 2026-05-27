@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/rose_gold"
   },
   "output": {
-    "tag": "neoforge:molten_rose_gold",
+    "tag": "c:molten_rose_gold",
     "amount": 810
   },
   "neoforge:conditions": [

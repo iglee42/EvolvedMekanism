@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/boron"
   },
   "output": {
-    "tag": "neoforge:molten_boron",
+    "tag": "c:molten_boron",
     "amount": 810
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:wires/noctis_rozuli"
   },
   "output": {
-    "tag": "neoforge:molten_noctis",
+    "tag": "c:molten_noctis",
     "amount": 45
   },
   "neoforge:conditions": [

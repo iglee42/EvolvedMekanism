@@ -4,7 +4,7 @@
     "tag": "c:nuggets/manganese"
   },
   "output": {
-    "tag": "neoforge:molten_manganese",
+    "tag": "c:molten_manganese",
     "amount": 10
   },
   "neoforge:conditions": [

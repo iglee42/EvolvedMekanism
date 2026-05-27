@@ -4,7 +4,7 @@
     "tag": "c:coins/ouranium"
   },
   "output": {
-    "tag": "neoforge:molten_ouranium",
+    "tag": "c:molten_ouranium",
     "amount": 30
   },
   "neoforge:conditions": [

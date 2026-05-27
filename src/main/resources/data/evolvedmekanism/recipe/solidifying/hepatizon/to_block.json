@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_storage_block"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_hepatizon",
+    "tag": "c:molten_hepatizon",
     "amount": 810
   },
   "extra_input": {

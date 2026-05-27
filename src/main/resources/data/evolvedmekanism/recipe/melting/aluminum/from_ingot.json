@@ -4,7 +4,7 @@
     "tag": "c:ingots/aluminum"
   },
   "output": {
-    "tag": "neoforge:molten_aluminum",
+    "tag": "c:molten_aluminum",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/prismalium"
   },
   "output": {
-    "tag": "neoforge:molten_prismalium",
+    "tag": "c:molten_prismalium",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:wires/iesnium"
   },
   "output": {
-    "tag": "neoforge:molten_iesnium",
+    "tag": "c:molten_iesnium",
     "amount": 45
   },
   "neoforge:conditions": [

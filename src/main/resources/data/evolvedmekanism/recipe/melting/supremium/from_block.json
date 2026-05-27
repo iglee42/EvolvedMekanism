@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/supremium_ingot"
   },
   "output": {
-    "tag": "neoforge:molten_supremium",
+    "tag": "c:molten_supremium",
     "amount": 810
   },
   "neoforge:conditions": [

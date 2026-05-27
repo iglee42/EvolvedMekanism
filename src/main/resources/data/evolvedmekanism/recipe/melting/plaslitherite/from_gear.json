@@ -4,7 +4,7 @@
     "tag": "c:gears/plaslitherite"
   },
   "output": {
-    "tag": "neoforge:molten_plaslitherite",
+    "tag": "c:molten_plaslitherite",
     "amount": 360
   },
   "neoforge:conditions": [

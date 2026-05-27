@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/lead"
   },
   "output": {
-    "tag": "neoforge:molten_lead",
+    "tag": "c:molten_lead",
     "amount": 810
   },
   "neoforge:conditions": [

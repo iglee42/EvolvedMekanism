@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_dust"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_prismalium",
+    "tag": "c:molten_prismalium",
     "amount": 90
   },
   "extra_input": {

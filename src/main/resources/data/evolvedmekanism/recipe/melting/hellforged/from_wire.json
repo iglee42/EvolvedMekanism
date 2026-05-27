@@ -4,7 +4,7 @@
     "tag": "c:wires/hellforged"
   },
   "output": {
-    "tag": "neoforge:molten_hellforged",
+    "tag": "c:molten_hellforged",
     "amount": 45
   },
   "neoforge:conditions": [

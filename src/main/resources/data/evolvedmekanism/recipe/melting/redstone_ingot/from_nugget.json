@@ -4,7 +4,7 @@
     "tag": "c:nuggets/redstone_ingot"
   },
   "output": {
-    "tag": "neoforge:molten_redstone_ingot",
+    "tag": "c:molten_redstone_ingot",
     "amount": 10
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/plutonium"
   },
   "output": {
-    "tag": "neoforge:molten_plutonium",
+    "tag": "c:molten_plutonium",
     "amount": 30
   },
   "neoforge:conditions": [

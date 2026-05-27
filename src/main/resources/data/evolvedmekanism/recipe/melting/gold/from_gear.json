@@ -4,7 +4,7 @@
     "tag": "c:gears/gold"
   },
   "output": {
-    "tag": "neoforge:molten_gold",
+    "tag": "c:molten_gold",
     "amount": 360
   },
   "neoforge:conditions": [

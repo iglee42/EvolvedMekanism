@@ -4,7 +4,7 @@
     "item": "minecraft:clay"
   },
   "output": {
-    "tag": "neoforge:molten_clay",
+    "tag": "c:molten_clay",
     "amount": 360
   },
   "neoforge:conditions": [

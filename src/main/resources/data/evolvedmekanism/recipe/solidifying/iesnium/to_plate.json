@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_plate"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_iesnium",
+    "tag": "c:molten_iesnium",
     "amount": 90
   },
   "extra_input": {

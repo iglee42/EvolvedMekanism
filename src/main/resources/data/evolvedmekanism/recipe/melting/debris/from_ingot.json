@@ -4,7 +4,7 @@
     "item": "minecraft:netherite_scrap"
   },
   "output": {
-    "tag": "neoforge:molten_debris",
+    "tag": "c:molten_debris",
     "amount": 90
   },
   "neoforge:conditions": [

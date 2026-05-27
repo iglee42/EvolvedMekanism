@@ -4,7 +4,7 @@
     "tag": "c:coins/obsidian"
   },
   "output": {
-    "tag": "neoforge:molten_obsidian",
+    "tag": "c:molten_obsidian",
     "amount": 30
   },
   "neoforge:conditions": [

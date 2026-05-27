@@ -4,7 +4,7 @@
     "tag": "c:gears/electrum"
   },
   "output": {
-    "tag": "neoforge:molten_electrum",
+    "tag": "c:molten_electrum",
     "amount": 360
   },
   "neoforge:conditions": [

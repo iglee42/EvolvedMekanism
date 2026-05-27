@@ -4,7 +4,7 @@
     "tag": "c:rods/steel"
   },
   "output": {
-    "tag": "neoforge:molten_steel",
+    "tag": "c:molten_steel",
     "amount": 45
   },
   "neoforge:conditions": [

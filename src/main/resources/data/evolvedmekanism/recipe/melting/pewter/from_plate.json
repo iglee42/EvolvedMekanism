@@ -4,7 +4,7 @@
     "tag": "c:plates/pewter"
   },
   "output": {
-    "tag": "neoforge:molten_pewter",
+    "tag": "c:molten_pewter",
     "amount": 90
   },
   "neoforge:conditions": [

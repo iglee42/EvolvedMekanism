@@ -4,7 +4,7 @@
     "tag": "c:gems/amethyst"
   },
   "output": {
-    "tag": "neoforge:molten_amethyst",
+    "tag": "c:molten_amethyst",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/lumium"
   },
   "output": {
-    "tag": "neoforge:molten_lumium",
+    "tag": "c:molten_lumium",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_lithium",
+    "tag": "c:molten_lithium",
     "amount": 360
   },
   "extra_input": {

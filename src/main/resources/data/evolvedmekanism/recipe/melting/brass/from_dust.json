@@ -4,7 +4,7 @@
     "tag": "c:dusts/brass"
   },
   "output": {
-    "tag": "neoforge:molten_brass",
+    "tag": "c:molten_brass",
     "amount": 90
   },
   "neoforge:conditions": [

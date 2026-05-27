@@ -4,7 +4,7 @@
     "tag": "c:plates/neutronium"
   },
   "output": {
-    "tag": "neoforge:molten_neutronium",
+    "tag": "c:molten_neutronium",
     "amount": 90
   },
   "neoforge:conditions": [

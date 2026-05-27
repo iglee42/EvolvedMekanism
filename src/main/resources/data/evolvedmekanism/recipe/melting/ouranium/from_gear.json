@@ -4,7 +4,7 @@
     "tag": "c:gears/ouranium"
   },
   "output": {
-    "tag": "neoforge:molten_ouranium",
+    "tag": "c:molten_ouranium",
     "amount": 360
   },
   "neoforge:conditions": [

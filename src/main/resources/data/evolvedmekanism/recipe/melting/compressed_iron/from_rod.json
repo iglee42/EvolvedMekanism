@@ -4,7 +4,7 @@
     "tag": "c:rods/compressed_iron"
   },
   "output": {
-    "tag": "neoforge:molten_compressed_iron",
+    "tag": "c:molten_compressed_iron",
     "amount": 45
   },
   "neoforge:conditions": [

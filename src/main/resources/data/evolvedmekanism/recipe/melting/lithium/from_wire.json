@@ -4,7 +4,7 @@
     "tag": "c:wires/lithium"
   },
   "output": {
-    "tag": "neoforge:molten_lithium",
+    "tag": "c:molten_lithium",
     "amount": 45
   },
   "neoforge:conditions": [

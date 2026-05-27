@@ -4,7 +4,7 @@
     "tag": "c:nuggets/tertium"
   },
   "output": {
-    "tag": "neoforge:molten_tertium",
+    "tag": "c:molten_tertium",
     "amount": 10
   },
   "neoforge:conditions": [

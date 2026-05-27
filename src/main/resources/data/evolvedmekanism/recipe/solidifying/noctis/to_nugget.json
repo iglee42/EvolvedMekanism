@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_nugget"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_noctis",
+    "tag": "c:molten_noctis",
     "amount": 10
   },
   "extra_input": {

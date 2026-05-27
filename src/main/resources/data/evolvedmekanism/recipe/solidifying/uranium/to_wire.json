@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_wire"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_uranium",
+    "tag": "c:molten_uranium",
     "amount": 45
   },
   "extra_input": {

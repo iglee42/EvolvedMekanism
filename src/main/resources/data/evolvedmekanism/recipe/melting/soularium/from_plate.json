@@ -4,7 +4,7 @@
     "tag": "c:plates/soularium"
   },
   "output": {
-    "tag": "neoforge:molten_soularium",
+    "tag": "c:molten_soularium",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:dusts/invar"
   },
   "output": {
-    "tag": "neoforge:molten_invar",
+    "tag": "c:molten_invar",
     "amount": 90
   },
   "neoforge:conditions": [

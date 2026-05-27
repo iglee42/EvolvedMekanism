@@ -4,7 +4,7 @@
     "tag": "c:nuggets/manasteel"
   },
   "output": {
-    "tag": "neoforge:molten_manasteel",
+    "tag": "c:molten_manasteel",
     "amount": 10
   },
   "neoforge:conditions": [

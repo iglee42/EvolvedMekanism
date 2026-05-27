@@ -4,7 +4,7 @@
     "tag": "c:coins/ludicrite"
   },
   "output": {
-    "tag": "neoforge:molten_ludicrite",
+    "tag": "c:molten_ludicrite",
     "amount": 30
   },
   "neoforge:conditions": [

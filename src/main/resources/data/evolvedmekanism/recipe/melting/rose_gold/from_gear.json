@@ -4,7 +4,7 @@
     "tag": "c:gears/rose_gold"
   },
   "output": {
-    "tag": "neoforge:molten_rose_gold",
+    "tag": "c:molten_rose_gold",
     "amount": 360
   },
   "neoforge:conditions": [

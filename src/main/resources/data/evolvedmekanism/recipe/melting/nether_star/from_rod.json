@@ -4,7 +4,7 @@
     "tag": "c:rods/nether_star"
   },
   "output": {
-    "tag": "neoforge:molten_nether_star",
+    "tag": "c:molten_nether_star",
     "amount": 45
   },
   "neoforge:conditions": [

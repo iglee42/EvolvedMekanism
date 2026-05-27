@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/knightslime"
   },
   "output": {
-    "tag": "neoforge:molten_knightslime",
+    "tag": "c:molten_knightslime",
     "amount": 810
   },
   "neoforge:conditions": [

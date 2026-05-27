@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/titanium"
   },
   "output": {
-    "tag": "neoforge:molten_titanium",
+    "tag": "c:molten_titanium",
     "amount": 810
   },
   "neoforge:conditions": [

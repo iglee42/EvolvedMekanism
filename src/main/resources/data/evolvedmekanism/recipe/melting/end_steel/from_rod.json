@@ -4,7 +4,7 @@
     "tag": "c:rods/end_steel"
   },
   "output": {
-    "tag": "neoforge:molten_end_steel",
+    "tag": "c:molten_end_steel",
     "amount": 45
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/refined_obsidian"
   },
   "output": {
-    "tag": "neoforge:molten_refined_obsidian",
+    "tag": "c:molten_refined_obsidian",
     "amount": 810
   },
   "neoforge:conditions": [

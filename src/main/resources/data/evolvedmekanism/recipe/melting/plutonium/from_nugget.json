@@ -4,7 +4,7 @@
     "tag": "c:nuggets/plutonium"
   },
   "output": {
-    "tag": "neoforge:molten_plutonium",
+    "tag": "c:molten_plutonium",
     "amount": 10
   },
   "neoforge:conditions": [

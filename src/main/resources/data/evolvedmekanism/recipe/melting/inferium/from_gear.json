@@ -4,7 +4,7 @@
     "tag": "c:gears/inferium"
   },
   "output": {
-    "tag": "neoforge:molten_inferium",
+    "tag": "c:molten_inferium",
     "amount": 360
   },
   "neoforge:conditions": [

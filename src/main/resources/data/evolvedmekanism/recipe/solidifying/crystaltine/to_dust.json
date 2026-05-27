@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_dust"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_crystaltine",
+    "tag": "c:molten_crystaltine",
     "amount": 90
   },
   "extra_input": {

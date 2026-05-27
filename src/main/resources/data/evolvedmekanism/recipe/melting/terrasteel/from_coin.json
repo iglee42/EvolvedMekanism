@@ -4,7 +4,7 @@
     "tag": "c:coins/terrasteel"
   },
   "output": {
-    "tag": "neoforge:molten_terrasteel",
+    "tag": "c:molten_terrasteel",
     "amount": 30
   },
   "neoforge:conditions": [

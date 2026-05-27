@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_emerald",
+    "tag": "c:molten_emerald",
     "amount": 360
   },
   "extra_input": {

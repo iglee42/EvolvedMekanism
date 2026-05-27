@@ -4,7 +4,7 @@
     "tag": "c:coins/slimesteel"
   },
   "output": {
-    "tag": "neoforge:molten_slimesteel",
+    "tag": "c:molten_slimesteel",
     "amount": 30
   },
   "neoforge:conditions": [

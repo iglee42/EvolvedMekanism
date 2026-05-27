@@ -4,7 +4,7 @@
     "tag": "c:plates/silicon_bronze"
   },
   "output": {
-    "tag": "neoforge:molten_silicon_bronze",
+    "tag": "c:molten_silicon_bronze",
     "amount": 90
   },
   "neoforge:conditions": [

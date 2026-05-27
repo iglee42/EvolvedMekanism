@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/redstone_alloy"
   },
   "output": {
-    "tag": "neoforge:molten_redstone_alloy",
+    "tag": "c:molten_redstone_alloy",
     "amount": 810
   },
   "neoforge:conditions": [

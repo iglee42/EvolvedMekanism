@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_inferium",
+    "tag": "c:molten_inferium",
     "amount": 360
   },
   "extra_input": {

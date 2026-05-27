@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/nickel"
   },
   "output": {
-    "tag": "neoforge:molten_nickel",
+    "tag": "c:molten_nickel",
     "amount": 810
   },
   "neoforge:conditions": [

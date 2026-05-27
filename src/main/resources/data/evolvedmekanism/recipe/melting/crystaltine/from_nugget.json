@@ -4,7 +4,7 @@
     "tag": "c:nuggets/crystaltine"
   },
   "output": {
-    "tag": "neoforge:molten_crystaltine",
+    "tag": "c:molten_crystaltine",
     "amount": 10
   },
   "neoforge:conditions": [

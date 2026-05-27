@@ -4,7 +4,7 @@
     "tag": "c:wires/aluminum"
   },
   "output": {
-    "tag": "neoforge:molten_aluminum",
+    "tag": "c:molten_aluminum",
     "amount": 45
   },
   "neoforge:conditions": [

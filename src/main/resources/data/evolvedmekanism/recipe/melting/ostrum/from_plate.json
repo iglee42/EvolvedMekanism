@@ -4,7 +4,7 @@
     "tag": "c:plates/ostrum"
   },
   "output": {
-    "tag": "neoforge:molten_ostrum",
+    "tag": "c:molten_ostrum",
     "amount": 90
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_iridium",
+    "tag": "c:molten_iridium",
     "amount": 30
   },
   "extra_input": {

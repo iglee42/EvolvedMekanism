@@ -4,7 +4,7 @@
     "tag": "c:plates/draconium"
   },
   "output": {
-    "tag": "neoforge:molten_draconium",
+    "tag": "c:molten_draconium",
     "amount": 90
   },
   "neoforge:conditions": [

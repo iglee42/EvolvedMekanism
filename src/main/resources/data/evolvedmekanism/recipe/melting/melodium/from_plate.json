@@ -4,7 +4,7 @@
     "tag": "c:plates/melodium"
   },
   "output": {
-    "tag": "neoforge:molten_melodium",
+    "tag": "c:molten_melodium",
     "amount": 90
   },
   "neoforge:conditions": [

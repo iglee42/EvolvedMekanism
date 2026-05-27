@@ -4,7 +4,7 @@
     "tag": "c:ingots/gold"
   },
   "output": {
-    "tag": "neoforge:molten_gold",
+    "tag": "c:molten_gold",
     "amount": 90
   },
   "neoforge:conditions": [

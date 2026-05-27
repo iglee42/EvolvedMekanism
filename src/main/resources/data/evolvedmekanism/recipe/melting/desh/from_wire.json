@@ -4,7 +4,7 @@
     "tag": "c:wires/desh"
   },
   "output": {
-    "tag": "neoforge:molten_desh",
+    "tag": "c:molten_desh",
     "amount": 45
   },
   "neoforge:conditions": [

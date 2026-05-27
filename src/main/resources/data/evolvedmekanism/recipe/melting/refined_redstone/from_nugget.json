@@ -4,7 +4,7 @@
     "tag": "c:nuggets/refined_redstone"
   },
   "output": {
-    "tag": "neoforge:molten_refined_redstone",
+    "tag": "c:molten_refined_redstone",
     "amount": 10
   },
   "neoforge:conditions": [

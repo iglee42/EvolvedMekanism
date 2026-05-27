@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_tungsten",
+    "tag": "c:molten_tungsten",
     "amount": 360
   },
   "extra_input": {

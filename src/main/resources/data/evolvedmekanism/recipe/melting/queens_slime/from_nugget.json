@@ -4,7 +4,7 @@
     "tag": "c:nuggets/queens_slime"
   },
   "output": {
-    "tag": "neoforge:molten_queens_slime",
+    "tag": "c:molten_queens_slime",
     "amount": 10
   },
   "neoforge:conditions": [

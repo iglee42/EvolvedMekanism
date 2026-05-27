@@ -4,7 +4,7 @@
     "tag": "c:plates/copper"
   },
   "output": {
-    "tag": "neoforge:molten_copper",
+    "tag": "c:molten_copper",
     "amount": 90
   },
   "neoforge:conditions": [

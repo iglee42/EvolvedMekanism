@@ -4,7 +4,7 @@
     "tag": "c:gears/calorite"
   },
   "output": {
-    "tag": "neoforge:molten_calorite",
+    "tag": "c:molten_calorite",
     "amount": 360
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/calorite"
   },
   "output": {
-    "tag": "neoforge:molten_calorite",
+    "tag": "c:molten_calorite",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:coins/signalum"
   },
   "output": {
-    "tag": "neoforge:molten_signalum",
+    "tag": "c:molten_signalum",
     "amount": 30
   },
   "neoforge:conditions": [

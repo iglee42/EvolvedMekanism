@@ -4,7 +4,7 @@
     "tag": "c:nuggets/osmium"
   },
   "output": {
-    "tag": "neoforge:molten_osmium",
+    "tag": "c:molten_osmium",
     "amount": 10
   },
   "neoforge:conditions": [

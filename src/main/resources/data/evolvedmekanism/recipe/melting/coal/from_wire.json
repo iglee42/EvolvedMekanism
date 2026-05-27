@@ -4,7 +4,7 @@
     "tag": "c:wires/coal"
   },
   "output": {
-    "tag": "neoforge:molten_coal",
+    "tag": "c:molten_coal",
     "amount": 45
   },
   "neoforge:conditions": [

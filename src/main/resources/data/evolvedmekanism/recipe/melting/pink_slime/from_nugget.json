@@ -4,7 +4,7 @@
     "tag": "c:nuggets/pink_slime"
   },
   "output": {
-    "tag": "neoforge:molten_pink_slime",
+    "tag": "c:molten_pink_slime",
     "amount": 10
   },
   "neoforge:conditions": [

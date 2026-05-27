@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_quartz",
+    "tag": "c:molten_quartz",
     "amount": 30
   },
   "extra_input": {

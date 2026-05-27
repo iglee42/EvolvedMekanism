@@ -4,7 +4,7 @@
     "tag": "c:dusts/skyjade"
   },
   "output": {
-    "tag": "neoforge:molten_skyjade",
+    "tag": "c:molten_skyjade",
     "amount": 90
   },
   "neoforge:conditions": [

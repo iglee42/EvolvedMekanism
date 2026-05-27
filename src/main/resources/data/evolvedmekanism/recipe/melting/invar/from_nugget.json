@@ -4,7 +4,7 @@
     "tag": "c:nuggets/invar"
   },
   "output": {
-    "tag": "neoforge:molten_invar",
+    "tag": "c:molten_invar",
     "amount": 10
   },
   "neoforge:conditions": [

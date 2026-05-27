@@ -4,7 +4,7 @@
     "tag": "c:gears/infinity"
   },
   "output": {
-    "tag": "neoforge:molten_infinity",
+    "tag": "c:molten_infinity",
     "amount": 360
   },
   "neoforge:conditions": [

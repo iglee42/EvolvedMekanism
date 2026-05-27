@@ -4,7 +4,7 @@
     "tag": "c:gears/constantan"
   },
   "output": {
-    "tag": "neoforge:molten_constantan",
+    "tag": "c:molten_constantan",
     "amount": 360
   },
   "neoforge:conditions": [

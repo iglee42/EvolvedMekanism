@@ -4,7 +4,7 @@
     "tag": "c:coins/desh"
   },
   "output": {
-    "tag": "neoforge:molten_desh",
+    "tag": "c:molten_desh",
     "amount": 30
   },
   "neoforge:conditions": [

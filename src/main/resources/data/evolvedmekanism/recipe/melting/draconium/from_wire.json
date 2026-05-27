@@ -4,7 +4,7 @@
     "tag": "c:wires/draconium"
   },
   "output": {
-    "tag": "neoforge:molten_draconium",
+    "tag": "c:molten_draconium",
     "amount": 45
   },
   "neoforge:conditions": [

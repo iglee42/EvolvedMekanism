@@ -4,7 +4,7 @@
     "tag": "c:nuggets/gaiasteel"
   },
   "output": {
-    "tag": "neoforge:molten_gaiasteel",
+    "tag": "c:molten_gaiasteel",
     "amount": 10
   },
   "neoforge:conditions": [

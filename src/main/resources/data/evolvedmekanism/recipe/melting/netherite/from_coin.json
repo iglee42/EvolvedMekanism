@@ -4,7 +4,7 @@
     "tag": "c:coins/netherite"
   },
   "output": {
-    "tag": "neoforge:molten_netherite",
+    "tag": "c:molten_netherite",
     "amount": 30
   },
   "neoforge:conditions": [

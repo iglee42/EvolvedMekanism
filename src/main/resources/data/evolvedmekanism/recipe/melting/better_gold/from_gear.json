@@ -4,7 +4,7 @@
     "tag": "c:gears/better_gold"
   },
   "output": {
-    "tag": "neoforge:molten_better_gold",
+    "tag": "c:molten_better_gold",
     "amount": 360
   },
   "neoforge:conditions": [

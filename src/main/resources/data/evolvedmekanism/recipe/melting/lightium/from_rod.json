@@ -4,7 +4,7 @@
     "tag": "c:rods/lightium"
   },
   "output": {
-    "tag": "neoforge:molten_lightium",
+    "tag": "c:molten_lightium",
     "amount": 45
   },
   "neoforge:conditions": [

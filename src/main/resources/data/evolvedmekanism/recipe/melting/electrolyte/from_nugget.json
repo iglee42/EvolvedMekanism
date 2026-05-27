@@ -4,7 +4,7 @@
     "tag": "c:nuggets/electrolyte"
   },
   "output": {
-    "tag": "neoforge:molten_electrolyte",
+    "tag": "c:molten_electrolyte",
     "amount": 10
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/boron"
   },
   "output": {
-    "tag": "neoforge:molten_boron",
+    "tag": "c:molten_boron",
     "amount": 10
   },
   "neoforge:conditions": [

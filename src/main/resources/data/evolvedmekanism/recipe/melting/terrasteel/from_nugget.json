@@ -4,7 +4,7 @@
     "tag": "c:nuggets/terrasteel"
   },
   "output": {
-    "tag": "neoforge:molten_terrasteel",
+    "tag": "c:molten_terrasteel",
     "amount": 10
   },
   "neoforge:conditions": [

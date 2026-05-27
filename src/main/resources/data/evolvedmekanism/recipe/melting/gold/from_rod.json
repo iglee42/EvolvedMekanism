@@ -4,7 +4,7 @@
     "tag": "c:rods/gold"
   },
   "output": {
-    "tag": "neoforge:molten_gold",
+    "tag": "c:molten_gold",
     "amount": 45
   },
   "neoforge:conditions": [

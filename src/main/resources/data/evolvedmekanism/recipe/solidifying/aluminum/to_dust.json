@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_dust"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_aluminum",
+    "tag": "c:molten_aluminum",
     "amount": 90
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:nuggets/iron"
   },
   "output": {
-    "tag": "neoforge:molten_iron",
+    "tag": "c:molten_iron",
     "amount": 10
   },
   "neoforge:conditions": [

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_constantan",
+    "tag": "c:molten_constantan",
     "amount": 360
   },
   "extra_input": {

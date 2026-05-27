@@ -4,7 +4,7 @@
     "tag": "c:plates/cyanite"
   },
   "output": {
-    "tag": "neoforge:molten_cyanite",
+    "tag": "c:molten_cyanite",
     "amount": 90
   },
   "neoforge:conditions": [

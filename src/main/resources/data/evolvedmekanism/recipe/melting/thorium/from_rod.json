@@ -4,7 +4,7 @@
     "tag": "c:rods/thorium"
   },
   "output": {
-    "tag": "neoforge:molten_thorium",
+    "tag": "c:molten_thorium",
     "amount": 45
   },
   "neoforge:conditions": [

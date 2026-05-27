@@ -4,7 +4,7 @@
     "tag": "c:rods/neptunium"
   },
   "output": {
-    "tag": "neoforge:molten_neptunium",
+    "tag": "c:molten_neptunium",
     "amount": 45
   },
   "neoforge:conditions": [

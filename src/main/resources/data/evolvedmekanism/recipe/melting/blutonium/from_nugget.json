@@ -4,7 +4,7 @@
     "tag": "c:nuggets/blutonium"
   },
   "output": {
-    "tag": "neoforge:molten_blutonium",
+    "tag": "c:molten_blutonium",
     "amount": 10
   },
   "neoforge:conditions": [

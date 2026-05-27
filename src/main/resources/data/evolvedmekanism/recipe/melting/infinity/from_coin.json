@@ -4,7 +4,7 @@
     "tag": "c:coins/infinity"
   },
   "output": {
-    "tag": "neoforge:molten_infinity",
+    "tag": "c:molten_infinity",
     "amount": 30
   },
   "neoforge:conditions": [

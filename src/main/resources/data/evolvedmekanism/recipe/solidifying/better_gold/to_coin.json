@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_better_gold",
+    "tag": "c:molten_better_gold",
     "amount": 30
   },
   "extra_input": {

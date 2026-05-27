@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_rod"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_ornium",
+    "tag": "c:molten_ornium",
     "amount": 45
   },
   "extra_input": {

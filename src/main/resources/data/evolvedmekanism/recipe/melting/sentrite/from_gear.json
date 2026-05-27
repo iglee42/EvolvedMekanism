@@ -4,7 +4,7 @@
     "tag": "c:gears/sentrite"
   },
   "output": {
-    "tag": "neoforge:molten_sentrite",
+    "tag": "c:molten_sentrite",
     "amount": 360
   },
   "neoforge:conditions": [

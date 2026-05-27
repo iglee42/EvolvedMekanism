@@ -4,7 +4,7 @@
     "tag": "c:wires/infinity"
   },
   "output": {
-    "tag": "neoforge:molten_infinity",
+    "tag": "c:molten_infinity",
     "amount": 45
   },
   "neoforge:conditions": [

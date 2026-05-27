@@ -4,7 +4,7 @@
     "tag": "c:gems/imperium"
   },
   "output": {
-    "tag": "neoforge:molten_imperium",
+    "tag": "c:molten_imperium",
     "amount": 90
   },
   "neoforge:conditions": [

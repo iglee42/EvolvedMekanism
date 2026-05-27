@@ -4,7 +4,7 @@
     "tag": "c:ingots/platinum"
   },
   "output": {
-    "tag": "neoforge:molten_platinum",
+    "tag": "c:molten_platinum",
     "amount": 90
   },
   "neoforge:conditions": [

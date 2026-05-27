@@ -4,7 +4,7 @@
     "tag": "c:plates/radium"
   },
   "output": {
-    "tag": "neoforge:molten_radium",
+    "tag": "c:molten_radium",
     "amount": 90
   },
   "neoforge:conditions": [

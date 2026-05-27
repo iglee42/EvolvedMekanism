@@ -4,7 +4,7 @@
     "tag": "c:nuggets/knightslime"
   },
   "output": {
-    "tag": "neoforge:molten_knightslime",
+    "tag": "c:molten_knightslime",
     "amount": 10
   },
   "neoforge:conditions": [

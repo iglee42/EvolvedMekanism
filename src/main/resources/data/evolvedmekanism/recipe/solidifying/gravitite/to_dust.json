@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_dust"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_gravitite",
+    "tag": "c:molten_gravitite",
     "amount": 90
   },
   "extra_input": {

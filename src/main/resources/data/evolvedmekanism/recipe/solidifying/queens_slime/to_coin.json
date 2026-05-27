@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_queens_slime",
+    "tag": "c:molten_queens_slime",
     "amount": 30
   },
   "extra_input": {

@@ -4,7 +4,7 @@
     "tag": "c:wires/tertium"
   },
   "output": {
-    "tag": "neoforge:molten_tertium",
+    "tag": "c:molten_tertium",
     "amount": 45
   },
   "neoforge:conditions": [

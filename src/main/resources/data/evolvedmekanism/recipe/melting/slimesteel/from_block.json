@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/slimesteel"
   },
   "output": {
-    "tag": "neoforge:molten_slimesteel",
+    "tag": "c:molten_slimesteel",
     "amount": 810
   },
   "neoforge:conditions": [

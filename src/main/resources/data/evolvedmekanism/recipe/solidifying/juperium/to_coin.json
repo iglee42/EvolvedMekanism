@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_juperium",
+    "tag": "c:molten_juperium",
     "amount": 30
   },
   "extra_input": {

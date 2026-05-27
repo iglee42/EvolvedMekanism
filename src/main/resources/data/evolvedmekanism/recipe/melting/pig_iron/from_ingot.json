@@ -4,7 +4,7 @@
     "tag": "c:ingots/pig_iron"
   },
   "output": {
-    "tag": "neoforge:molten_pig_iron",
+    "tag": "c:molten_pig_iron",
     "amount": 90
   },
   "neoforge:conditions": [

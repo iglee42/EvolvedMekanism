@@ -4,7 +4,7 @@
     "tag": "c:gears/blutonium"
   },
   "output": {
-    "tag": "neoforge:molten_blutonium",
+    "tag": "c:molten_blutonium",
     "amount": 360
   },
   "neoforge:conditions": [

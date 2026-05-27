@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/thorium"
   },
   "output": {
-    "tag": "neoforge:molten_thorium",
+    "tag": "c:molten_thorium",
     "amount": 810
   },
   "neoforge:conditions": [

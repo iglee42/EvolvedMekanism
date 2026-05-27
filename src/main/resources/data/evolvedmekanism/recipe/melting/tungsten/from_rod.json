@@ -4,7 +4,7 @@
     "tag": "c:rods/tungsten"
   },
   "output": {
-    "tag": "neoforge:molten_tungsten",
+    "tag": "c:molten_tungsten",
     "amount": 45
   },
   "neoforge:conditions": [

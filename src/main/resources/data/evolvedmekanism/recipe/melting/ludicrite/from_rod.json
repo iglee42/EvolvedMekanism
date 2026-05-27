@@ -4,7 +4,7 @@
     "tag": "c:rods/ludicrite"
   },
   "output": {
-    "tag": "neoforge:molten_ludicrite",
+    "tag": "c:molten_ludicrite",
     "amount": 45
   },
   "neoforge:conditions": [

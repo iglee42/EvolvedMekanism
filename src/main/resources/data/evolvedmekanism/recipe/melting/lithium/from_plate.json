@@ -4,7 +4,7 @@
     "tag": "c:plates/lithium"
   },
   "output": {
-    "tag": "neoforge:molten_lithium",
+    "tag": "c:molten_lithium",
     "amount": 90
   },
   "neoforge:conditions": [

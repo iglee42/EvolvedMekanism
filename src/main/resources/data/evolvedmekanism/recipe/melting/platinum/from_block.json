@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/platinum"
   },
   "output": {
-    "tag": "neoforge:molten_platinum",
+    "tag": "c:molten_platinum",
     "amount": 810
   },
   "neoforge:conditions": [

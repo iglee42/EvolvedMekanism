@@ -4,7 +4,7 @@
     "tag": "c:ingots/lead"
   },
   "output": {
-    "tag": "neoforge:molten_lead",
+    "tag": "c:molten_lead",
     "amount": 90
   },
   "neoforge:conditions": [

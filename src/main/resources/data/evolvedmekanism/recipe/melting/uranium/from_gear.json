@@ -4,7 +4,7 @@
     "tag": "c:gears/uranium"
   },
   "output": {
-    "tag": "neoforge:molten_uranium",
+    "tag": "c:molten_uranium",
     "amount": 360
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/graphite"
   },
   "output": {
-    "tag": "neoforge:molten_graphite",
+    "tag": "c:molten_graphite",
     "amount": 810
   },
   "neoforge:conditions": [

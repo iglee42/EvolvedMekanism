@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/amethyst"
   },
   "output": {
-    "tag": "neoforge:molten_amethyst",
+    "tag": "c:molten_amethyst",
     "amount": 360
   },
   "neoforge:conditions": [

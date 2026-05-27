@@ -4,7 +4,7 @@
     "tag": "c:dusts/quartz"
   },
   "output": {
-    "tag": "neoforge:molten_quartz",
+    "tag": "c:molten_quartz",
     "amount": 90
   },
   "neoforge:conditions": [

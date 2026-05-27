@@ -4,7 +4,7 @@
     "tag": "c:coins/soulium"
   },
   "output": {
-    "tag": "neoforge:molten_soulium",
+    "tag": "c:molten_soulium",
     "amount": 30
   },
   "neoforge:conditions": [

@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/refined_redstone"
   },
   "output": {
-    "tag": "neoforge:molten_refined_redstone",
+    "tag": "c:molten_refined_redstone",
     "amount": 810
   },
   "neoforge:conditions": [

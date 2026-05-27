@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_gear"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_electrolyte",
+    "tag": "c:molten_electrolyte",
     "amount": 360
   },
   "extra_input": {

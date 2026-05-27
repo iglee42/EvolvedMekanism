@@ -4,7 +4,7 @@
     "tag": "c:plates/silver"
   },
   "output": {
-    "tag": "neoforge:molten_silver",
+    "tag": "c:molten_silver",
     "amount": 90
   },
   "neoforge:conditions": [

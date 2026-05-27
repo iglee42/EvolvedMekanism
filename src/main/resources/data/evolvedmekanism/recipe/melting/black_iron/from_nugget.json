@@ -4,7 +4,7 @@
     "tag": "c:nuggets/black_iron"
   },
   "output": {
-    "tag": "neoforge:molten_black_iron",
+    "tag": "c:molten_black_iron",
     "amount": 10
   },
   "neoforge:conditions": [

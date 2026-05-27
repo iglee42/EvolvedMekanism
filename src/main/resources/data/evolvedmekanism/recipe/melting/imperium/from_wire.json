@@ -4,7 +4,7 @@
     "tag": "c:wires/imperium"
   },
   "output": {
-    "tag": "neoforge:molten_imperium",
+    "tag": "c:molten_imperium",
     "amount": 45
   },
   "neoforge:conditions": [

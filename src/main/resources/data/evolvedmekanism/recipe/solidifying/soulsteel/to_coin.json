@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_soulsteel",
+    "tag": "c:molten_soulsteel",
     "amount": 30
   },
   "extra_input": {

@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_ingot"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_slimesteel",
+    "tag": "c:molten_slimesteel",
     "amount": 90
   },
   "extra_input": {

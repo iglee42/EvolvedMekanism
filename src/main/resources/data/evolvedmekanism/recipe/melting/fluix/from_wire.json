@@ -4,7 +4,7 @@
     "tag": "c:wires/fluix"
   },
   "output": {
-    "tag": "neoforge:molten_fluix",
+    "tag": "c:molten_fluix",
     "amount": 45
   },
   "neoforge:conditions": [

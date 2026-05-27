@@ -5,7 +5,7 @@
     "item": "evolvedmekanism:mold_coin"
   },
   "fluid_input": {
-    "tag": "neoforge:molten_calorite",
+    "tag": "c:molten_calorite",
     "amount": 30
   },
   "extra_input": {

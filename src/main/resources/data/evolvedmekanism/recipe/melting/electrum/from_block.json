@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/electrum"
   },
   "output": {
-    "tag": "neoforge:molten_electrum",
+    "tag": "c:molten_electrum",
     "amount": 810
   },
   "neoforge:conditions": [

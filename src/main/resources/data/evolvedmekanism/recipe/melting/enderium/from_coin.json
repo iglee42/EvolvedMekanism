@@ -4,7 +4,7 @@
     "tag": "c:coins/enderium"
   },
   "output": {
-    "tag": "neoforge:molten_enderium",
+    "tag": "c:molten_enderium",
     "amount": 30
   },
   "neoforge:conditions": [

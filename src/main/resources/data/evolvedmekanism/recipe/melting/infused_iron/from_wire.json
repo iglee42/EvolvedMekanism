@@ -4,7 +4,7 @@
     "tag": "c:wires/infused_iron"
   },
   "output": {
-    "tag": "neoforge:molten_infused_iron",
+    "tag": "c:molten_infused_iron",
     "amount": 45
   },
   "neoforge:conditions": [

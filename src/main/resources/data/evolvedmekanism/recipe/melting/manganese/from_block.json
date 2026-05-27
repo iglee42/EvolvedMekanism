@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/manganese"
   },
   "output": {
-    "tag": "neoforge:molten_manganese",
+    "tag": "c:molten_manganese",
     "amount": 810
   },
   "neoforge:conditions": [

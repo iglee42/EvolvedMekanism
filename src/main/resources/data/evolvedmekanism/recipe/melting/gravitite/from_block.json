@@ -4,7 +4,7 @@
     "tag": "c:storage_blocks/gravitite"
   },
   "output": {
-    "tag": "neoforge:molten_gravitite",
+    "tag": "c:molten_gravitite",
     "amount": 810
   },
   "neoforge:conditions": [

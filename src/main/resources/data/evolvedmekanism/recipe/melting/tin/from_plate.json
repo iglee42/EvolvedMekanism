@@ -4,7 +4,7 @@
     "tag": "c:plates/tin"
   },
   "output": {
-    "tag": "neoforge:molten_tin",
+    "tag": "c:molten_tin",
     "amount": 90
   },
   "neoforge:conditions": [

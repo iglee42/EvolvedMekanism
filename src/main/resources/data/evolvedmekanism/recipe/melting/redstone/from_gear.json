@@ -4,7 +4,7 @@
     "tag": "c:gears/redstone"
   },
   "output": {
-    "tag": "neoforge:molten_redstone",
+    "tag": "c:molten_redstone",
     "amount": 360
   },
   "neoforge:conditions": [

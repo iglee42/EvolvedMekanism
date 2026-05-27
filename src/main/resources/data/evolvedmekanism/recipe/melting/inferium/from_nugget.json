@@ -4,7 +4,7 @@
     "tag": "c:nuggets/inferium"
   },
   "output": {
-    "tag": "neoforge:molten_inferium",
+    "tag": "c:molten_inferium",
     "amount": 10
   },
   "neoforge:conditions": [

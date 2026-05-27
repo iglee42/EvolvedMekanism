@@ -4,7 +4,7 @@
     "tag": "c:nuggets/insanium"
   },
   "output": {
-    "tag": "neoforge:molten_insanium",
+    "tag": "c:molten_insanium",
     "amount": 10
   },
   "neoforge:conditions": [
