@@ -248,11 +248,11 @@ public class EMTileEntityTypes {
             .withSimple(Capabilities.CONFIG_CARD)
             .build();
 
-    public static final TileEntityTypeRegistryObject<TileEntityLaserDisenchanter> LASER_DISENCHANTER = TILE_ENTITY_TYPES
+    /*public static final TileEntityTypeRegistryObject<TileEntityLaserDisenchanter> LASER_DISENCHANTER = TILE_ENTITY_TYPES
             .mekBuilder(EMBlocks.LASER_DISENCHANTER, TileEntityLaserDisenchanter::new)
             .serverTicker(TileEntityMekanism::tickServer)
             .withSimple(Capabilities.LASER_RECEPTOR)
-            .build();
+            .build();*/
 
     private static <BE extends TileEntityLogisticalTransporterBase> TileEntityTypeRegistryObject<BE> registerTransporter(DeferredHolder<Block, ?> block, BlockEntityFactory<BE> factory) {
         return transporterBuilder(block, factory).build();

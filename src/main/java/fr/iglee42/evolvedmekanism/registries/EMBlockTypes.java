@@ -128,14 +128,14 @@ public class EMBlockTypes {
             .replace(Attributes.ACTIVE)
             .build();
 
-    public static final BlockTypeTile<TileEntityLaserDisenchanter> LASER_DISENCHANTER = BlockTileBuilder
+    /*public static final BlockTypeTile<TileEntityLaserDisenchanter> LASER_DISENCHANTER = BlockTileBuilder
             .createBlock(() -> EMTileEntityTypes.LASER_DISENCHANTER, EvolvedMekanismLang.DESCRIPTION_LASER_DISENCHANTER)
             .withGui(() -> EMContainerTypes.LASER_DISENCHANTER)
             .withEnergyConfig(MekanismConfig.storage.laserTractorBeam)
             .with(new AttributeStateFacing(BlockStateProperties.FACING, AttributeStateFacing.FacePlacementType.SELECTED_FACE), Attributes.COMPARATOR, Attributes.SECURITY, Attributes.INVENTORY)
             .withCustomShape(BlockShapes.LASER_AMPLIFIER)
             .withComputerSupport("laserDisenchanter")
-            .build();
+            .build();*/
 
     // Induction Cells
    public static final BlockTypeTile<TileEntityInductionCell> OVERCLOCKED_INDUCTION_CELL = createInductionCell(EMInductionCellTier.OVERCLOCKED, () -> EMTileEntityTypes.OVERCLOCKED_INDUCTION_CELL);

@@ -69,8 +69,8 @@ public class TileEntityLaserDisenchanter extends TileEntityLaserReceptor {
     @WrappingComputerMethod(wrapper = SpecialComputerMethodWrapper.ComputerIInventorySlotWrapper.class, methodNames = "getGasItemOutput", docPlaceholder = "gas item output slot")
     ChemicalInventorySlot gasOutputSlot;
 
-    public TileEntityLaserDisenchanter( BlockPos pos, BlockState state) {
-        super(EMBlocks.LASER_DISENCHANTER, pos, state);
+    public TileEntityLaserDisenchanter(Holder<Block> blockProvider, BlockPos pos, BlockState state) {
+        super(blockProvider, pos, state);
     }
 
     @Override
