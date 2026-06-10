@@ -2,11 +2,8 @@ package fr.iglee42.evolvedmekanism.tiles.factory;
 
 import java.util.List;
 import java.util.Set;
-import java.lang.reflect.Method;
-import java.util.function.Predicate;
 
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
-import fr.iglee42.evolvedmekanism.interfaces.IGetEnergySlot;
 import fr.iglee42.evolvedmekanism.interfaces.ThreeInputCachedRecipe;
 import fr.iglee42.evolvedmekanism.interfaces.TripleItemRecipeLookupHandler;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
@@ -35,6 +32,7 @@ import mekanism.common.tile.component.config.slot.InventorySlotInfo;
 import mekanism.common.tile.factory.TileEntityItemToItemFactory;
 import mekanism.common.upgrade.IUpgradeData;
 import mekanism.common.util.InventoryUtils;
+import mekanism.common.inventory.slot.EnergyInventorySlot;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
@@ -58,6 +56,7 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
 
     private final IInputHandler<@NotNull ItemStack> extraInputHandler;
     private final IInputHandler<@NotNull ItemStack> secondExtraInputHandler;
+    EnergyInventorySlot energySlot;
 
     @WrappingComputerMethod(wrapper = ComputerIInventorySlotWrapper.class, methodNames = "getSecondaryInput", docPlaceholder = "secondary input slot")
     LimitedInputInventorySlot extraSlot;
@@ -123,31 +122,8 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
         ItemStack extra = extraSlot.getStack();
         ItemStack secondExtra = secondExtraSlot.getStack();
         ItemStack output = outputSlot.getStack();
-
-        Object cache = getRecipeType().getInputCache();
-        Predicate<AlloyerRecipe> match = recipe -> InventoryUtils.areItemsStackable(recipe.getOutput(fallbackInput, extra, secondExtra), output);
-
-        // Try calling the lookup method directly if the runtime cache exposes it
-        try {
-            Method direct = cache.getClass().getMethod("findTypeBasedRecipe", net.minecraft.world.level.Level.class, ItemStack.class, ItemStack.class, ItemStack.class, java.util.function.Predicate.class);
-            Object result = direct.invoke(cache, level, fallbackInput, extra, secondExtra, match);
-            return (AlloyerRecipe) result;
-        } catch (NoSuchMethodException ignored) {
-            // try alternative method name used by some versions
-            try {
-                Method alt = cache.getClass().getMethod("findFirstRecipe", net.minecraft.world.level.Level.class, ItemStack.class, ItemStack.class, ItemStack.class);
-                Object res = alt.invoke(cache, level, fallbackInput, extra, secondExtra);
-                if (res instanceof AlloyerRecipe r && match.test(r)) {
-                    return r;
-                }
-            } catch (Exception e) {
-                Mekanism.logger.warn("Unexpected recipe cache type {} when finding alloying recipe", cache == null ? "null" : cache.getClass(), e);
-            }
-        } catch (Exception e) {
-            Mekanism.logger.warn("Failed to invoke recipe lookup on cache {}", cache == null ? "null" : cache.getClass(), e);
-        }
-
-        return null;
+        return getRecipeType().getInputCache().findTypeBasedRecipe(level, fallbackInput, extra, secondExtra,
+                recipe -> InventoryUtils.areItemsStackable(recipe.getOutput(fallbackInput, extra,secondExtra), output));
     }
 
 
@@ -192,6 +168,6 @@ public class TileEntityAlloyingFactory extends TileEntityItemToItemFactory<Alloy
     @NotNull
     @Override
     public AlloyerUpgradeData getUpgradeData() {
-        return new AlloyerUpgradeData(redstone, getControlType(), getEnergyContainer(), progress, ((IGetEnergySlot)this).getEnergySlot(), extraSlot,secondExtraSlot, inputSlots, outputSlots, isSorting(), getComponents());
+        return new AlloyerUpgradeData(redstone, getControlType(), getEnergyContainer(), progress, energySlot, extraSlot,secondExtraSlot, inputSlots, outputSlots, isSorting(), getComponents());
     }
 }

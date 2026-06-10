@@ -14,7 +14,8 @@
     "tiers.AlloyTierMixin",
     "tiers.BaseTierMixin",
     "tiles.TileEntityMekanismMixin",
-    "tiles.TileEntityItemToItemFactoryMixin"
+    "tiles.TileEntityItemToItemFactoryMixin",
+    "items.ItemTierInstallerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
