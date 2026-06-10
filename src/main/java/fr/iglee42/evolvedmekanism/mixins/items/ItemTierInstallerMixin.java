@@ -44,11 +44,8 @@ import java.lang.reflect.Method;
  * Remove or adapt debug output and method calls for your Mekanism version as needed.
  */
 @SuppressWarnings("unused")
-@Mixin(value = ItemTierInstaller.class, remap = false)
+@Mixin(ItemTierInstaller.class)
 public class ItemTierInstallerMixin {
-
-    // We don't need to shadow item constructor/fields here; we access the original class via reflection
-    // when necessary.
 
     @Inject(method = "useOn", at = @At("HEAD"), cancellable = true)
     private void em$onUseOn(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir) {
