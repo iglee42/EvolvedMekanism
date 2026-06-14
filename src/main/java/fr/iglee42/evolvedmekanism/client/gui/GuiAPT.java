@@ -22,6 +22,7 @@ import mekanism.common.util.text.EnergyDisplay;
 import mekanism.common.util.text.TextUtils;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
@@ -63,6 +64,10 @@ public class GuiAPT extends GuiMekanismTile<TileEntityAPTCasing, MekanismTileCon
             if (active) {
                 list.add(MekanismLang.USING.translate(EnergyDisplay.of(EMConfig.general.aptEnergyConsumption.getOrDefault())));
             }
+            float superchargerValue = multiblock.superchargingElements;
+            Component percentComp = TextUtils.getPercent(superchargerValue);
+            Component speedLine = Component.translatable(EvolvedMekanismLang.GUI_SPEED.getTranslationKey()).append(Component.literal("+")).append(percentComp);
+            list.add(speedLine);
             return list;
         }).jeiCategories(EMJEI.APT));
 

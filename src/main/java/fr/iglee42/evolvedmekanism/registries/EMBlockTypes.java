@@ -4,6 +4,7 @@ import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
+import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElementMk2;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import mekanism.api.Upgrade;
@@ -56,6 +57,12 @@ public class EMBlockTypes {
     // Supercharging Element
     public static final BlockTypeTile<TileEntitySuperchargingElement> SUPERCHARGING_ELEMENT = BlockTileBuilder
             .createBlock(() -> EMTileEntityTypes.SUPERCHARGING_ELEMENT, EvolvedMekanismLang.DESCRIPTION_SUPERCHARGING_ELEMENT)
+            .with(Attributes.ACTIVE_LIGHT)
+            .internalMultiblock()
+            .build();
+    // Supercharging Element MK2
+    public static final BlockTypeTile<TileEntitySuperchargingElementMk2> SUPERCHARGING_ELEMENT_MK2 = BlockTileBuilder
+            .createBlock(() -> EMTileEntityTypes.SUPERCHARGING_ELEMENT_MK2, EvolvedMekanismLang.DESCRIPTION_SUPERCHARGING_ELEMENT_MK2)
             .with(Attributes.ACTIVE_LIGHT)
             .internalMultiblock()
             .build();

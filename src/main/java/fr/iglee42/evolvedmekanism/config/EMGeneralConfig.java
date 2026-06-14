@@ -1,12 +1,7 @@
 package fr.iglee42.evolvedmekanism.config;
 
-import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
-import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.math.FloatingLong;
-import mekanism.api.tier.BaseTier;
 import mekanism.common.config.BaseMekanismConfig;
-import mekanism.common.config.value.CachedConfigValue;
-import mekanism.common.config.value.CachedEnumValue;
 import mekanism.common.config.value.CachedFloatingLongValue;
 import mekanism.common.config.value.CachedIntValue;
 import net.minecraftforge.common.ForgeConfigSpec;
@@ -23,6 +18,9 @@ public class EMGeneralConfig extends BaseMekanismConfig {
     public final CachedIntValue aptDefaultDuration;
     public final CachedFloatingLongValue aptEnergyStorage;
     public final CachedFloatingLongValue aptEnergyConsumption;
+    // Supercharging element percents
+    public final CachedIntValue aptMk1Percent;
+    public final CachedIntValue aptMk2Percent;
 
     EMGeneralConfig() {
 
@@ -37,6 +35,11 @@ public class EMGeneralConfig extends BaseMekanismConfig {
               "energyStorage", FloatingLong.createConst(10_000_000));
         aptEnergyConsumption = CachedFloatingLongValue.define(this, builder, "Energy needed (in Joules) per tick to process the recipe.",
               "energyPerInput", FloatingLong.createConst(100_000));
+        // Contribution per supercharging element in percent (e.g. 25 means +25%)
+        aptMk1Percent = CachedIntValue.wrap(this, builder.comment("MK1 contribution in percent (e.g. 25 equals 25% per MK1 element).")
+                .defineInRange("mk1Percent", 25, 0, 100000));
+        aptMk2Percent = CachedIntValue.wrap(this, builder.comment("MK2 contribution in percent (e.g. 250 equals 250% per MK2 element).")
+                .defineInRange("mk2Percent", 250, 0, 100000));
         builder.pop();
 
         builder.pop();

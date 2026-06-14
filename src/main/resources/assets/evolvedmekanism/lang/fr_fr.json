@@ -47,6 +47,8 @@
     "tiered_storage.evolvedmekanism.capacity":  "Capacité: %s",
     "description.evolvedmekanism.apt_casing":  "Structure renforcées à l\u0027antimatière capables de résister aux effets chimiques et thermiques intenses des réactions de transmutation.",
     "description.evolvedmekanism.apt_port":  "Un port utilisé pour le transfert d\u0027énergie et de substances dans la transmutation protomoléculaire à antimatière.",
-    "description.evolvedmekanism.supercharging_element":  "Un chargeur modulaire, quelque peu dangereux, qui est capable de charger massivement le TPA.",
-    "apt.evolvedmekanism.invalid_supercharging":  "Formation impossible: Arrangement des éléments de surcharge invalide."
+    "description.evolvedmekanism.supercharging_element":  "Un chargeur modulaire, quelque peu dangereux, qui est capable de charger massivement le TPA. Octroie +25% de vitesse de traitement par élément MK1 placé. Chaque élément s'empile de façon additive — vous pouvez placer des éléments individuels pour augmenter la vitesse ; vous n'avez pas besoin de placer les 25 en même temps.",
+    "description.evolvedmekanism.supercharging_element_mk2":  "Un chargeur amélioré, encore plus dangereux, pour le TPA. Octroie +250% de vitesse de traitement par élément MK2 placé. Chaque élément s'empile de façon additive — un seul bloc MK2 fournit déjà un grand boost ; vous n'avez pas besoin de tous les placer en même temps.",
+    "apt.evolvedmekanism.invalid_supercharging":  "Formation impossible: Arrangement des éléments de surcharge invalide.",
+    "gui.evolvedmekanism.speed": "Vitesse : "
 }

@@ -47,6 +47,8 @@
     "tiered_storage.evolvedmekanism.capacity":  "容量: %s",
     "description.evolvedmekanism.apt_casing":  "核変換反応による激しい化学的影響・熱的効果へ抵抗できる、反物質強化された筐体です。",
     "description.evolvedmekanism.apt_port":  "反物質式超分子変換装置内でのエネルギー及び物質の転送に使いられるポートです。",
-    "description.evolvedmekanism.supercharging_element":  "APTを大幅に充電できる、モジュール式でやや危険な充電装置です。",
-    "apt.evolvedmekanism.invalid_supercharging":  "形成できませんでした。超充電エレメントの配置が無効です。"
+    "description.evolvedmekanism.supercharging_element":  "APTを大幅に充電できる、モジュール式でやや危険な充電装置です。配置されたMK1要素ごとに処理速度が+25%上昇します。各要素は加算的に重ねられます — 単体の要素を置くだけで速度が増加します。25個まとめて置く必要はありません。",
+    "description.evolvedmekanism.supercharging_element_mk2":  "APT用の強化された、さらに危険な充電装置です。配置されたMK2要素ごとに処理速度が+250%上昇します。各要素は加算的に重ねられます — 単体のMK2ブロックでも大きなブーストになります。全て一度に置く必要はありません。",
+    "apt.evolvedmekanism.invalid_supercharging":  "形成できませんでした。超充電エレメントの配置が無効です。",
+    "gui.evolvedmekanism.speed": "速度: "
 }

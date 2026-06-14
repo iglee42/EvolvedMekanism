@@ -7,6 +7,7 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
+import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElementMk2;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import mekanism.api.tier.AlloyTier;
@@ -49,6 +50,7 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTCasing>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTCasing>>> APT_CASING = registerBlock("apt_casing", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_CASING, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
     public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTPort>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTPort>>> APT_PORT = registerBlock("apt_port", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_PORT, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
     public static final BlockRegistryObject<BlockTile<TileEntitySuperchargingElement, BlockTypeTile<TileEntitySuperchargingElement>>, ItemBlockTooltip<BlockTile<TileEntitySuperchargingElement, BlockTypeTile<TileEntitySuperchargingElement>>>> SUPERCHARGING_ELEMENT = registerBlock("supercharging_element", () -> new BlockTile<>(EMBlockTypes.SUPERCHARGING_ELEMENT, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)));
+    public static final BlockRegistryObject<BlockTile<TileEntitySuperchargingElementMk2, BlockTypeTile<TileEntitySuperchargingElementMk2>>, ItemBlockTooltip<BlockTile<TileEntitySuperchargingElementMk2, BlockTypeTile<TileEntitySuperchargingElementMk2>>>> SUPERCHARGING_ELEMENT_MK2 = registerBlock("supercharging_element_mk2", () -> new BlockTile<>(EMBlockTypes.SUPERCHARGING_ELEMENT_MK2, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)));
 
     public static final BlockRegistryObject<BlockTileModel<TileEntityChemixer, Machine<TileEntityChemixer>>, ItemBlockMachine> CHEMIXER = BLOCKS.register("chemixer", () -> new BlockTileModel<>(EMBlockTypes.CHEMIXER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
 

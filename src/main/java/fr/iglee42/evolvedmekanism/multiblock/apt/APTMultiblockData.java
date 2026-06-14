@@ -48,7 +48,7 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
 
     @ContainerSync
     @SyntheticComputerMethod(getter = "getSuperchargers", getterDescription = "How many superchargers this APT has")
-    public int superchargingElements;
+    public float superchargingElements;
 
 
     @ContainerSync
@@ -90,7 +90,7 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
             world.getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().filter(r->r.test(inputSlot.getStack(),inputTank.getStack())).findFirst().ifPresent(r->{
                 currentRecipe = r;
                 markDirty();
-                progress = (int) ((EMConfig.general.aptDefaultDuration.getOrDefault() * (r.getChemicalInput().getNeededAmount(inputTank.getStack()) / 100)) / (superchargingElements  + 1));
+                progress = (int) ((EMConfig.general.aptDefaultDuration.getOrDefault() * ((float) r.getChemicalInput().getNeededAmount(inputTank.getStack()) / 100)) / (superchargingElements  + 1));
                 defaultRecipeProgress = progress;
             });
         } else {

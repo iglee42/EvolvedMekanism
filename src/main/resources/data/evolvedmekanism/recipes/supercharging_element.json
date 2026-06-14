@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shaped",
     "key": {
         "A": {
-            "tag": "forge:storage_blocks/alloys/singular"
+            "tag": "forge:ingots/alloys/singular"
         },
         "I": {
             "tag": "forge:ingots/refined_redstone"

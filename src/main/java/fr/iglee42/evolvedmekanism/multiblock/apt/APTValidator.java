@@ -1,13 +1,13 @@
 package fr.iglee42.evolvedmekanism.multiblock.apt;
 
 import java.util.EnumSet;
-import java.util.Set;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.registries.EMBlockTypes;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
+import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElementMk2;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
-import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import mekanism.common.content.blocktype.BlockType;
 import mekanism.common.lib.math.voxel.VoxelCuboid;
 import mekanism.common.lib.math.voxel.VoxelCuboid.CuboidSide;
@@ -17,7 +17,6 @@ import mekanism.common.lib.multiblock.FormationProtocol.CasingType;
 import mekanism.common.lib.multiblock.FormationProtocol.StructureRequirement;
 import mekanism.common.lib.multiblock.Structure;
 import mekanism.common.lib.multiblock.StructureHelper;
-import mekanism.common.tile.multiblock.TileEntitySuperheatingElement;
 import mekanism.common.util.WorldUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -38,28 +37,6 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
             {0, 1, 2, 2, 2, 1, 0},
             {0, 0, 1, 1, 1, 0, 0}
     };
-/*    private static final byte[][] ALLOWED_TOP_BOTTOM = {
-          {0, 0, 0, 1, 1, 1, 0, 0, 0},
-          {0, 0, 1, 2, 2, 2, 1, 0, 0},
-          {0, 1, 2, 2, 2, 2, 2, 1, 0},
-          {1, 2, 2, 2, 2, 2, 2, 2, 1},
-          {1, 2, 2, 2, 2, 2, 2, 2, 1},
-          {1, 2, 2, 2, 2, 2, 2, 2, 1},
-          {0, 1, 2, 2, 2, 2, 2, 1, 0},
-          {0, 0, 1, 2, 2, 2, 1, 0, 0},
-          {0, 0, 0, 1, 1, 1, 0, 0, 0},
-    };
-    private static final byte[][] ALLOWED_LAYERS = {
-            {0, 0, 0, 1, 2, 1, 0, 0, 0},
-            {0, 0, 2, 3, 3, 3, 2, 0, 0},
-            {0, 2, 3, 3, 3, 3, 3, 2, 0},
-            {1, 3, 3, 3, 3, 3, 3, 3, 1},
-            {2, 3, 3, 3, 3, 3, 3, 3, 2},
-            {1, 3, 3, 3, 3, 3, 3, 3, 1},
-            {0, 2, 3, 3, 3, 3, 3, 2, 0},
-            {0, 0, 2, 3, 3, 3, 2, 0, 0},
-            {0, 0, 0, 1, 2, 1, 0, 0, 0},
-    };*/
 
     @Override
     protected StructureRequirement getStructureRequirement(BlockPos pos) {
@@ -92,7 +69,7 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
     protected boolean validateInner(BlockState state, Long2ObjectMap<ChunkAccess> chunkMap, BlockPos pos) {
         if (super.validateInner(state, chunkMap, pos)) return true;
         pos = pos.subtract(cuboid.getMinPos());
-        return pos.getY() == 1 && BlockType.is(state.getBlock(),EMBlockTypes.SUPERCHARGING_ELEMENT);
+        return pos.getY() == 1 && (BlockType.is(state.getBlock(),EMBlockTypes.SUPERCHARGING_ELEMENT) || BlockType.is(state.getBlock(),EMBlockTypes.SUPERCHARGING_ELEMENT_MK2));
     }
 
     @Override
@@ -104,23 +81,20 @@ public class APTValidator extends CuboidStructureValidator<APTMultiblockData> {
 
     @Override
     public FormationProtocol.FormationResult postcheck(APTMultiblockData structure, Long2ObjectMap<ChunkAccess> chunkMap) {
-        Set<BlockPos> elements = new ObjectOpenHashSet<>();
+        float total = 0f;
         for (BlockPos pos : structure.internalLocations) {
             BlockEntity tile = WorldUtils.getTileEntity(world, chunkMap, pos);
             if (tile instanceof TileEntitySuperchargingElement) {
-                if (pos.subtract(cuboid.getMinPos()).getY() != 1)  return FormationProtocol.FormationResult.fail(EvolvedMekanismLang.APT_INVALID_SUPERCHARGING);
-                elements.add(pos);
+                if (pos.subtract(cuboid.getMinPos()).getY() != 1) return FormationProtocol.FormationResult.fail(EvolvedMekanismLang.APT_INVALID_SUPERCHARGING);
+                // MK1 contribution comes from config (percent -> fraction)
+                total += EMConfig.general.aptMk1Percent.get() / 100f;
+            } else if (tile instanceof TileEntitySuperchargingElementMk2) {
+                if (pos.subtract(cuboid.getMinPos()).getY() != 1) return FormationProtocol.FormationResult.fail(EvolvedMekanismLang.APT_INVALID_SUPERCHARGING);
+                // MK2 contribution comes from config (percent -> fraction)
+                total += EMConfig.general.aptMk2Percent.get() / 100f;
             }
         }
-
-        /*if (!elements.isEmpty())
-            structure.superchargingElements = FormationProtocol.explore(elements.iterator().next(), coord ->
-                coord.subtract(cuboid.getMinPos()).getY() == 1 && WorldUtils.getTileEntity(TileEntitySuperchargingElement.class, world, chunkMap, coord) != null);
-
-        if (elements.size() > structure.superchargingElements) {
-            return FormationProtocol.FormationResult.fail(EvolvedMekanismLang.APT_INVALID_SUPERCHARGING);
-        }*/
-        structure.superchargingElements = elements.size();
+        structure.superchargingElements = total;
 
         return FormationProtocol.FormationResult.SUCCESS;
     }

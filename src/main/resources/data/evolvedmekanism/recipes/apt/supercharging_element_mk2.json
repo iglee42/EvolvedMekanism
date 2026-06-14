@@ -1,0 +1,16 @@
+{
+  "type": "evolvedmekanism:apt",
+  "chemicalInput": {
+    "amount": 250,
+    "gas": "mekanism:antimatter"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "evolvedmekanism:supercharging_element"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:supercharging_element_mk2"
+  }
+}
+

@@ -3,6 +3,7 @@ package fr.iglee42.evolvedmekanism;
 import mekanism.api.text.ILangEntry;
 import mekanism.common.MekanismLang;
 import net.minecraft.Util;
+import org.jetbrains.annotations.NotNull;
 
 public enum EvolvedMekanismLang implements ILangEntry {
 
@@ -14,12 +15,15 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_APT_PORT("description", "apt_port"),
 
     DESCRIPTION_SUPERCHARGING_ELEMENT("description", "supercharging_element"),
+    DESCRIPTION_SUPERCHARGING_ELEMENT_MK2("description", "supercharging_element_mk2"),
 
     DESCRIPTION_MAX_TIER_INSTALLER("description", "max_tier_installer"),
 
     APT("apt", "apt"),
     APT_PORT_MODE("apt", "port_mode"),
     APT_INVALID_SUPERCHARGING("apt", "invalid_supercharging"),
+
+    GUI_SPEED("gui","speed"),
 
     TOOLTIP_NO_CONSUMED("tooltip","not_consumed")
     ;
@@ -29,15 +33,15 @@ public enum EvolvedMekanismLang implements ILangEntry {
 
     private final String key;
 
-    private EvolvedMekanismLang(String type, String path) {
+    EvolvedMekanismLang(String type, String path) {
         this(Util.makeDescriptionId(type, EvolvedMekanism.rl(path)));
     }
 
-    private EvolvedMekanismLang(String key) {
+    EvolvedMekanismLang(String key) {
         this.key = key;
     }
 
-    public String getTranslationKey() {
+    public @NotNull String getTranslationKey() {
         return this.key;
     }
 }

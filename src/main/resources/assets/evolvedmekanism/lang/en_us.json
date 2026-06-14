@@ -22,7 +22,8 @@
     "block.evolvedmekanism.apt_port": "APT Port",
     "block.evolvedmekanism.end_stone_uranium_ore": "End Stone Uranium Ore",
     "block.evolvedmekanism.netherrack_uranium_ore": "Netherrack Uranium Ore",
-    "block.evolvedmekanism.supercharging_element": "Supercharging Element",
+    "block.evolvedmekanism.supercharging_element": "Supercharging Element MK1",
+    "block.evolvedmekanism.supercharging_element_mk2": "Supercharging Element MK2",
     "block.evolvedmekanism.block_refined_redstone": "Refined Redstone",
     "container.mekanism.basic_alloying_factory": "Basic Alloying Factory",
     "container.mekanism.advanced_alloying_factory": "Advanced Alloying Factory",
@@ -60,6 +61,8 @@
     "tiered_storage.evolvedmekanism.capacity": "Capacity: %s",
     "description.evolvedmekanism.apt_casing": "Reinforced antimattered casing capable of resisting intense chemical and thermal effects from transmutating reactions.",
     "description.evolvedmekanism.apt_port": "A port used for the transfer of energy and substances in the Antimatter Protomolecular Transmutator.",
-    "description.evolvedmekanism.supercharging_element": "A modular, somewhat dangerous charger that is capable of charging the APT massively.",
-    "apt.evolvedmekanism.invalid_supercharging": "Couldn't form, invalid Supercharging Element arrangement."
+    "description.evolvedmekanism.supercharging_element": "A modular, somewhat dangerous charger that is capable of charging the APT massively. Grants +25% processing speed per placed MK1 element. Each element stacks additively — you can place single elements to increase speed; you don't need to place all 25 at once.",
+    "description.evolvedmekanism.supercharging_element_mk2": "An upgraded, even more dangerous charger for the APT. Grants +250% processing speed per placed MK2 element. Each element stacks additively — single MK2 blocks already provide a large boost; you don't have to place them all at once.",
+    "apt.evolvedmekanism.invalid_supercharging": "Couldn't form, invalid Supercharging Element arrangement.",
+    "gui.evolvedmekanism.speed": "Speed: "
 }

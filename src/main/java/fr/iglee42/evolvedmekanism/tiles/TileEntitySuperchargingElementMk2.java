@@ -13,13 +13,13 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-public class TileEntitySuperchargingElement extends TileEntityInternalMultiblock {
+public class TileEntitySuperchargingElementMk2 extends TileEntityInternalMultiblock {
 
     private Color chemicalColor;
     private Color oChemicalColor;
 
-    public TileEntitySuperchargingElement(BlockPos pos, BlockState state) {
-        super(EMBlocks.SUPERCHARGING_ELEMENT, pos, state);
+    public TileEntitySuperchargingElementMk2(BlockPos pos, BlockState state) {
+        super(EMBlocks.SUPERCHARGING_ELEMENT_MK2, pos, state);
     }
 
     @Override
@@ -44,9 +44,7 @@ public class TileEntitySuperchargingElement extends TileEntityInternalMultiblock
                 double x = getTilePos().getX();
                 double y = getTilePos().getY()  + 1;
                 double z = getTilePos().getZ();
-                if (level.random.nextFloat() > 0.5)level.addAlwaysVisibleParticle(new ColoredRisingBubbleOptions(chemicalColor.getRed() / 255f,chemicalColor.getGreen() /255f,chemicalColor.getBlue()/255f), x + (new Random().nextFloat()), y /*+ 3.25d*/, z + (new Random().nextFloat()), 0.0F, 0.1, 0.0F);
-
-
+                if (level.random.nextFloat() > 0.5)level.addAlwaysVisibleParticle(new ColoredRisingBubbleOptions(chemicalColor.getRed() / 255f,chemicalColor.getGreen() /255f,chemicalColor.getBlue()/255f), x + (new Random().nextFloat()), y /*+ 3.25d*/, z + (new Random().nextFloat()), 0.0, 0.1, 0.0);
             }
         }
     }
@@ -64,3 +62,5 @@ public class TileEntitySuperchargingElement extends TileEntityInternalMultiblock
         if (tag.contains("chemicalColor")) chemicalColor = new Color(tag.getInt("chemicalColor"));
     }
 }
+
+

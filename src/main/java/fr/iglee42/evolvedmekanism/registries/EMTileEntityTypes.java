@@ -4,6 +4,7 @@ import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
+import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElementMk2;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
@@ -20,6 +21,7 @@ public class EMTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityAPTCasing> APT_CASING = TILE_ENTITY_TYPES.register(EMBlocks.APT_CASING, TileEntityAPTCasing::new);
     public static final TileEntityTypeRegistryObject<TileEntityAPTPort> APT_PORT = TILE_ENTITY_TYPES.register(EMBlocks.APT_PORT, TileEntityAPTPort::new);
     public static final TileEntityTypeRegistryObject<TileEntitySuperchargingElement> SUPERCHARGING_ELEMENT = TILE_ENTITY_TYPES.register(EMBlocks.SUPERCHARGING_ELEMENT, TileEntitySuperchargingElement::new, TileEntityMekanism::tickServer, TileEntityMekanism::tickClient);
+    public static final TileEntityTypeRegistryObject<TileEntitySuperchargingElementMk2> SUPERCHARGING_ELEMENT_MK2 = TILE_ENTITY_TYPES.register(EMBlocks.SUPERCHARGING_ELEMENT_MK2, TileEntitySuperchargingElementMk2::new, TileEntityMekanism::tickServer, TileEntityMekanism::tickClient);
 
     public static final TileEntityTypeRegistryObject<TileEntityAlloyer> ALLOYER = TILE_ENTITY_TYPES.register(EMBlocks.ALLOYER, TileEntityAlloyer::new);
     public static final TileEntityTypeRegistryObject<TileEntityChemixer> CHEMIXER = TILE_ENTITY_TYPES.register(EMBlocks.CHEMIXER, TileEntityChemixer::new);
