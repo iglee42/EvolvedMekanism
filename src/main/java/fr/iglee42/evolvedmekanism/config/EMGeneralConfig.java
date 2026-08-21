@@ -1,5 +1,7 @@
 package fr.iglee42.evolvedmekanism.config;
 
+import fr.iglee42.emgenerators.tiers.AdvancedLunarPanelTier;
+import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.tier.BaseTier;
@@ -11,10 +13,16 @@ import mekanism.common.config.value.CachedLongValue;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
+import java.util.EnumMap;
+import java.util.Locale;
+import java.util.Map;
+
 public class EMGeneralConfig extends BaseMekanismConfig {
 
     private static final String APT_CATEGORY = "apt";
     private static final String ITEMS_CATEGORY = "items";
+    private static final String ADVANCED_SOLAR_GENERATOR_CATEGORY = "advancedSolarGenerator";
+    private static final String ADVANCED_LUNAR_GENERATOR_CATEGORY = "advancedLunarGenerator";
 
     private final ModConfigSpec configSpec;
 
@@ -23,6 +31,10 @@ public class EMGeneralConfig extends BaseMekanismConfig {
     public final CachedIntValue aptDefaultDuration;
     public final CachedLongValue aptEnergyStorage;
     public final CachedLongValue aptEnergyConsumption;
+
+    //ADVANCED SOLAR/LUNAR GENERATORS
+    private final Map<AdvancedSolarPanelTier, CachedIntValue> advancedSolarGeneratorMultipliers = new EnumMap<>(AdvancedSolarPanelTier.class);
+    private final Map<AdvancedLunarPanelTier, CachedIntValue> advancedLunarGeneratorMultipliers = new EnumMap<>(AdvancedLunarPanelTier.class);
 
     //OTHER
     public final CachedConfigValue<BaseTier> maxInstallerTier;
@@ -46,8 +58,32 @@ public class EMGeneralConfig extends BaseMekanismConfig {
               "energyPerInput", 100_000L));
         builder.pop();
 
+        builder.comment("Advanced Solar Generator Settings").push(ADVANCED_SOLAR_GENERATOR_CATEGORY);
+        for (AdvancedSolarPanelTier tier : AdvancedSolarPanelTier.values()) {
+            advancedSolarGeneratorMultipliers.put(tier, CachedIntValue.wrap(this, builder
+                    .comment("Energy production multiplier for the " + tier.name() + " advanced solar generator.")
+                    .defineInRange(tier.name().toLowerCase(Locale.ROOT) + "Multiplier", tier.getDefaultMultiplier(), 1, Integer.MAX_VALUE)));
+        }
+        builder.pop();
+
+        builder.comment("Advanced Lunar Generator Settings").push(ADVANCED_LUNAR_GENERATOR_CATEGORY);
+        for (AdvancedLunarPanelTier tier : AdvancedLunarPanelTier.values()) {
+            advancedLunarGeneratorMultipliers.put(tier, CachedIntValue.wrap(this, builder
+                    .comment("Energy production multiplier for the " + tier.name() + " advanced lunar generator.")
+                    .defineInRange(tier.name().toLowerCase(Locale.ROOT) + "Multiplier", tier.getDefaultMultiplier(), 1, Integer.MAX_VALUE)));
+        }
+        builder.pop();
+
         builder.pop();
         configSpec = builder.build();
+    }
+
+    public int getAdvancedSolarGeneratorMultiplier(AdvancedSolarPanelTier tier) {
+        return advancedSolarGeneratorMultipliers.get(tier).get();
+    }
+
+    public int getAdvancedLunarGeneratorMultiplier(AdvancedLunarPanelTier tier) {
+        return advancedLunarGeneratorMultipliers.get(tier).get();
     }
 
     @Override
