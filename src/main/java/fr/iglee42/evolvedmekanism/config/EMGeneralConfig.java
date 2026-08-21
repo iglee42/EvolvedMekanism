@@ -1,5 +1,6 @@
 package fr.iglee42.evolvedmekanism.config;
 
+import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.math.FloatingLong;
@@ -12,10 +13,15 @@ import mekanism.common.config.value.CachedIntValue;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.config.ModConfig.Type;
 
+import java.util.EnumMap;
+import java.util.Locale;
+import java.util.Map;
+
 public class EMGeneralConfig extends BaseMekanismConfig {
 
     private static final String APT_CATEGORY = "apt";
     private static final String ITEMS_CATEGORY = "items";
+    private static final String ADVANCED_SOLAR_GENERATOR_CATEGORY = "advancedSolarGenerator";
 
     private final ForgeConfigSpec configSpec;
 
@@ -24,6 +30,9 @@ public class EMGeneralConfig extends BaseMekanismConfig {
     public final CachedIntValue aptDefaultDuration;
     public final CachedFloatingLongValue aptEnergyStorage;
     public final CachedFloatingLongValue aptEnergyConsumption;
+
+    //ADVANCED SOLAR GENERATORS
+    private final Map<AdvancedSolarPanelTier, CachedIntValue> advancedSolarGeneratorMultipliers = new EnumMap<>(AdvancedSolarPanelTier.class);
 
     //OTHER
     public final CachedConfigValue<BaseTier> maxInstallerTier;
@@ -49,8 +58,20 @@ public class EMGeneralConfig extends BaseMekanismConfig {
               "energyPerInput", FloatingLong.createConst(100_000));
         builder.pop();
 
+        builder.comment("Advanced Solar Generator Settings").push(ADVANCED_SOLAR_GENERATOR_CATEGORY);
+        for (AdvancedSolarPanelTier tier : AdvancedSolarPanelTier.values()) {
+            advancedSolarGeneratorMultipliers.put(tier, CachedIntValue.wrap(this, builder
+                    .comment("Energy production multiplier for the " + tier.name() + " advanced solar generator.")
+                    .defineInRange(tier.name().toLowerCase(Locale.ROOT) + "Multiplier", tier.getDefaultMultiplier(), 1, Integer.MAX_VALUE)));
+        }
+        builder.pop();
+
         builder.pop();
         configSpec = builder.build();
+    }
+
+    public int getAdvancedSolarGeneratorMultiplier(AdvancedSolarPanelTier tier) {
+        return advancedSolarGeneratorMultipliers.get(tier).get();
     }
 
     @Override
