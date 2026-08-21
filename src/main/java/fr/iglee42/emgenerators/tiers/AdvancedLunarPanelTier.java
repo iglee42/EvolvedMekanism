@@ -1,5 +1,6 @@
 package fr.iglee42.emgenerators.tiers;
 
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.api.tier.ITier;
@@ -17,12 +18,12 @@ public enum AdvancedLunarPanelTier implements ITier {
     CREATIVE(BaseTier.CREATIVE, 16),;
 
     private final BaseTier baseTier;
-    private final int multiplier;
+    private final int defaultMultiplier;
 
 
-    private AdvancedLunarPanelTier(BaseTier baseTier, int multiplier) {
+    private AdvancedLunarPanelTier(BaseTier baseTier, int defaultMultiplier) {
         this.baseTier = baseTier;
-        this.multiplier = multiplier;
+        this.defaultMultiplier = defaultMultiplier;
     }
 
 
@@ -31,8 +32,12 @@ public enum AdvancedLunarPanelTier implements ITier {
         return baseTier;
     }
 
-    public int getMultiplier() {
-        return multiplier;
+    public int getDefaultMultiplier() {
+        return defaultMultiplier;
     }
-    
+
+    public int getMultiplier() {
+        return EMConfig.general.getAdvancedLunarGeneratorMultiplier(this);
+    }
+
 }
