@@ -357,7 +357,7 @@
     "description.evolvedmekanism.apt_casing": "Structure renforc\u00e9es \u00e0 l'antimati\u00e8re capables de r\u00e9sister aux effets chimiques et thermiques intenses des r\u00e9actions de transmutation.",
     "description.evolvedmekanism.apt_port": "Un port utilis\u00e9 pour le transfert d'\u00e9nergie et de substances dans la transmutation protomol\u00e9culaire \u00e0 antimati\u00e8re.",
     "module.evolvedmekanism.air_affinity_unit": "Unit\u00e9 d'affinit\u00e9 a\u00e9rienne",
-    "description.evolvedmekanism.air_affinity_unit": "D\u00e9 le malus de minage en vol.",
+    "description.evolvedmekanism.air_affinity_unit": "D\u00e9sactive le malus de minage en vol.",
     "module.evolvedmekanism.aoe_unit": "Unit\u00e9 de zone d'effet",
     "description.evolvedmekanism.aoe_unit": "Augmente la zone d'effet des outils.",
     "module.evolvedmekanism.aqua_affinity_unit": "Unit\u00e9 d'affinit\u00e9 aquatique",
