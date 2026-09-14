@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "evolvedmekanism:better_gold_helmet"
+    },
+    {
+      "item": "evolvedmekanism:better_gold_chestplate"
+    },
+    {
+      "item": "evolvedmekanism:better_gold_leggings"
+    },
+    {
+      "item": "evolvedmekanism:better_gold_boots"
+    },
+    {
+      "item": "evolvedmekanism:better_gold_sword"
+    },
+    {
+      "item": "evolvedmekanism:better_gold_pickaxe"
+    },
+    {
+      "item": "evolvedmekanism:better_gold_axe"
+    },
+    {
+      "item": "evolvedmekanism:better_gold_shovel"
+    },
+    {
+      "item": "evolvedmekanism:better_gold_hoe"
+    },
+    {
+      "item": "evolvedmekanism:better_gold_paxel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:nugget_better_gold"
+  }
+}

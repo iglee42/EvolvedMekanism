@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:storage_blocks/alloys/singular"
+    },
+    "I": {
+      "tag": "c:ingots/refined_redstone"
+    },
+    "X": {
+      "item": "mekanism:superheating_element"
+    }
+  },
+  "pattern": [
+    "AIA",
+    "IXI",
+    "AIA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:supercharging_element"
+  }
+}

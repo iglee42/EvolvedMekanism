@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "active=false,facing=east,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate",
+      "y": 90
+    },
+    "active=false,facing=east,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate",
+      "y": 90
+    },
+    "active=false,facing=east,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate",
+      "y": 90
+    },
+    "active=false,facing=north,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate"
+    },
+    "active=false,facing=north,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate"
+    },
+    "active=false,facing=north,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate"
+    },
+    "active=false,facing=south,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate",
+      "y": 180
+    },
+    "active=false,facing=south,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate",
+      "y": 180
+    },
+    "active=false,facing=south,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate",
+      "y": 180
+    },
+    "active=false,facing=west,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate",
+      "y": 270
+    },
+    "active=false,facing=west,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate",
+      "y": 270
+    },
+    "active=false,facing=west,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/alloying/ultimate",
+      "y": 270
+    },
+    "active=true,facing=east,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate",
+      "y": 90
+    },
+    "active=true,facing=east,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate",
+      "y": 90
+    },
+    "active=true,facing=east,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate",
+      "y": 90
+    },
+    "active=true,facing=north,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate"
+    },
+    "active=true,facing=north,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate"
+    },
+    "active=true,facing=north,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate"
+    },
+    "active=true,facing=south,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate",
+      "y": 180
+    },
+    "active=true,facing=south,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate",
+      "y": 180
+    },
+    "active=true,facing=south,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate",
+      "y": 180
+    },
+    "active=true,facing=west,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate",
+      "y": 270
+    },
+    "active=true,facing=west,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate",
+      "y": 270
+    },
+    "active=true,facing=west,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/alloying/active/ultimate",
+      "y": 270
+    }
+  }
+}

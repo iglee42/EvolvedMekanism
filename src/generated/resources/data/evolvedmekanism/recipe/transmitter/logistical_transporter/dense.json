@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
+    },
+    "P": {
+      "item": "evolvedmekanism:quantum_logistical_transporter"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "PAP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "evolvedmekanism:dense_logistical_transporter"
+  }
+}

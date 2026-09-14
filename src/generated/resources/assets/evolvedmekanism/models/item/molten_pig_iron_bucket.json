@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "evolvedmekanism:molten_pig_iron",
+  "loader": "neoforge:fluid_container"
+}

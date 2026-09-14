@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "active=false,facing=east,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum",
+      "y": 90
+    },
+    "active=false,facing=east,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum",
+      "y": 90
+    },
+    "active=false,facing=east,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum",
+      "y": 90
+    },
+    "active=false,facing=north,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum"
+    },
+    "active=false,facing=north,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum"
+    },
+    "active=false,facing=north,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum"
+    },
+    "active=false,facing=south,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum",
+      "y": 180
+    },
+    "active=false,facing=south,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum",
+      "y": 180
+    },
+    "active=false,facing=south,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum",
+      "y": 180
+    },
+    "active=false,facing=west,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum",
+      "y": 270
+    },
+    "active=false,facing=west,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum",
+      "y": 270
+    },
+    "active=false,facing=west,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/purifying/quantum",
+      "y": 270
+    },
+    "active=true,facing=east,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum",
+      "y": 90
+    },
+    "active=true,facing=east,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum",
+      "y": 90
+    },
+    "active=true,facing=east,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum",
+      "y": 90
+    },
+    "active=true,facing=north,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum"
+    },
+    "active=true,facing=north,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum"
+    },
+    "active=true,facing=north,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum"
+    },
+    "active=true,facing=south,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum",
+      "y": 180
+    },
+    "active=true,facing=south,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum",
+      "y": 180
+    },
+    "active=true,facing=south,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum",
+      "y": 180
+    },
+    "active=true,facing=west,fluid_logged=empty": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum",
+      "y": 270
+    },
+    "active=true,facing=west,fluid_logged=lava": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum",
+      "y": 270
+    },
+    "active=true,facing=west,fluid_logged=water": {
+      "model": "evolvedmekanism:block/factory/purifying/active/quantum",
+      "y": 270
+    }
+  }
+}

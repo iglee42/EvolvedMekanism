@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:gems/noctis_rozuli"
+    },
+    "P": {
+      "item": "evolvedmekanism:noctis_rozuli"
+    }
+  },
+  "pattern": [
+    "###",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:block_noctis_rozuli"
+  }
+}

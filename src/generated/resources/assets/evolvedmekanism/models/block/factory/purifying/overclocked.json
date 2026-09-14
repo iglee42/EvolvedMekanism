@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "base": {
+      "parent": "mekanism:block/factory/purifying/base"
+    },
+    "front_led": {
+      "parent": "evolvedmekanism:block/factory/front_led/overclocked"
+    }
+  },
+  "item_render_order": [
+    "base",
+    "front_led"
+  ],
+  "loader": "neoforge:composite",
+  "textures": {
+    "particle": "mekanism:block/factory/purifying/purifying_factory_front"
+  }
+}

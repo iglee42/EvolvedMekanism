@@ -1,0 +1,27 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/hypercharged"
+    },
+    "C": {
+      "tag": "c:circuits/overclocked"
+    },
+    "I": {
+      "tag": "c:ingots/uranium"
+    },
+    "P": {
+      "item": "mekanism:ultimate_crushing_factory"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:overclocked_crushing_factory"
+  }
+}

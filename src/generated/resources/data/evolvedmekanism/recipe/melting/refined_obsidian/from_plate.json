@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:plates/refined_obsidian"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "count": 1,
+    "tag": "c:plates/refined_obsidian"
+  },
+  "output": {
+    "amount": 90,
+    "tag": "c:molten_refined_obsidian"
+  }
+}

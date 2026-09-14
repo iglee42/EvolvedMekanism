@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "evolvedmekanism:alloys/subatomic"
+    },
+    "P": {
+      "item": "evolvedmekanism:alloy_subatomic"
+    }
+  },
+  "pattern": [
+    "###",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:block_alloy_subatomic"
+  }
+}

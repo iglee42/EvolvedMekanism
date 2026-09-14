@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:nuggets/redstone_alloy"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:solidifying",
+  "duration": 6,
+  "extra_input": {
+    "amount": 10,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluid_input": {
+    "amount": 10,
+    "tag": "c:molten_redstone_alloy"
+  },
+  "item_input": {
+    "count": 1,
+    "item": "evolvedmekanism:mold_nugget"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:nuggets/redstone_alloy"
+  }
+}

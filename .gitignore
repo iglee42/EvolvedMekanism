@@ -126,3 +126,4 @@ run-data/
 *.mjs
 
 .eclipse/
+src/generated/resources/.cache

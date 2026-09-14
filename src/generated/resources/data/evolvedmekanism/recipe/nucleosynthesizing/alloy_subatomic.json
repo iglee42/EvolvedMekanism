@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "chemical_input": {
+    "amount": 25,
+    "chemical": "mekanism:antimatter"
+  },
+  "duration": 1000,
+  "item_input": {
+    "count": 1,
+    "tag": "evolvedmekanism:alloys/hypercharged"
+  },
+  "output": {
+    "count": 1,
+    "id": "evolvedmekanism:alloy_subatomic"
+  },
+  "per_tick_usage": false
+}

@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismgenerators"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:dusts/glowstone"
+    },
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
+    },
+    "G": {
+      "tag": "c:glass_blocks/cheap"
+    }
+  },
+  "pattern": [
+    " G ",
+    "A#A",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:upgrade_solar"
+  }
+}

@@ -1,9 +1,0 @@
-{
-  "type": "mekanism:enriching",
-  "input": {
-    "tag": "c:dusts/plaslitherite"
-  },
-  "output": {
-    "id": "evolvedmekanism:enriched_plaslitherite"
-  }
-}

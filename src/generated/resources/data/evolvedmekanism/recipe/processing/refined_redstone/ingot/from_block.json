@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/refined_redstone"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "evolvedmekanism:ingot_refined_redstone"
+  }
+}

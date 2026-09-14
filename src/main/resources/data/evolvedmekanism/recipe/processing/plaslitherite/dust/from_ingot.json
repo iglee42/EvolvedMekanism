@@ -1,9 +1,0 @@
-{
-  "type": "mekanism:crushing",
-  "input": {
-    "tag": "c:ingots/plaslitherite"
-  },
-  "output": {
-    "id": "evolvedmekanism:dust_plaslitherite"
-  }
-}

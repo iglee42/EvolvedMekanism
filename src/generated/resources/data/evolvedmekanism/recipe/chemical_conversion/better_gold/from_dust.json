@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:chemical_conversion",
+  "input": {
+    "count": 1,
+    "tag": "c:dusts/better_gold"
+  },
+  "output": {
+    "amount": 10,
+    "id": "evolvedmekanism:better_gold"
+  }
+}

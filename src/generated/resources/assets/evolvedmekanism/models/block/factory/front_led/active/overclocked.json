@@ -1,0 +1,46 @@
+{
+  "elements": [
+    {
+      "faces": {
+        "north": {
+          "cullface": "north",
+          "texture": "#led",
+          "uv": [
+            0.0,
+            0.0,
+            6.0,
+            1.0
+          ]
+        },
+        "up": {
+          "cullface": "up",
+          "rotation": 180,
+          "texture": "#led",
+          "uv": [
+            0.0,
+            0.0,
+            6.0,
+            1.0
+          ]
+        }
+      },
+      "from": [
+        4.98,
+        14.99,
+        0.01
+      ],
+      "neoforge_data": {
+        "block_light": 15,
+        "sky_light": 15
+      },
+      "to": [
+        11.02,
+        15.99,
+        1.01
+      ]
+    }
+  ],
+  "textures": {
+    "led": "evolvedmekanism:block/factory/led"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gems/pulsating_alloy"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:solidifying",
+  "duration": 60,
+  "extra_input": {
+    "amount": 90,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluid_input": {
+    "amount": 90,
+    "tag": "c:molten_pulsating_alloy"
+  },
+  "item_input": {
+    "count": 1,
+    "item": "evolvedmekanism:mold_gem"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:gems/pulsating_alloy"
+  }
+}

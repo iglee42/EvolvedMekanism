@@ -108,6 +108,7 @@ public class EvolvedMekanism {
 
         versionNumber = new Version(container);
         packetHandler = new EMPacketHandler(modEventBus);
+        modEventBus.addListener(fr.iglee42.evolvedmekanism.datagen.EMDataGenerator::gatherData);
     }
 
     private void registerCompats(IEventBus modEventBus) {
