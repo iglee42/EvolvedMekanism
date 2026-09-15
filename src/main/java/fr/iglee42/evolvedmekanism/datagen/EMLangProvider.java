@@ -1,6 +1,8 @@
 package fr.iglee42.evolvedmekanism.datagen;
 
+import fr.iglee42.emtools.registries.EMToolsTags;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.registries.EMTags;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -12,7 +14,9 @@ public class EMLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        addTags();
         add("constants.evolvedmekanism.mod_name", "Evolved Mekanism");
+        add("alias.evolvedmekanism.alloying", "Alloying");
         add("advancements.evolvedmekanism.apt.description", "This thing doesn't seem safe at all");
         add("advancements.evolvedmekanism.apt.title", "Antimatter Protomolecular Transmutation?");
         add("block.evolvedmekanism.alloyer", "Alloyer");
@@ -828,5 +832,160 @@ public class EMLangProvider extends LanguageProvider {
         add("trim_material.evolvedmekanism.better_gold", "Better Gold");
         add("trim_material.evolvedmekanism.plaslitherite", "Plaslitherite");
         add("trim_material.evolvedmekanism.refined_redstone", "Refined Redstone");
+    }
+
+    private void addTags() {
+        add(EMTags.Items.ALLOYS, "Alloys");
+        add(EMTags.Items.ALLOYS_HYPERCHARGED, "Hypercharged Alloys");
+        add(EMTags.Items.ALLOYS_SUBATOMIC, "Subatomic Alloys");
+        add(EMTags.Items.ALLOYS_SINGULAR, "Singular Alloys");
+        add(EMTags.Items.ALLOYS_EXOVERSAL, "Exoversal Alloys");
+        add(EMTags.Items.ALLOYS_CREATIVE, "Creative Alloys");
+
+        add(EMTags.Items.ENRICHED, "Enriched");
+        add(EMTags.Items.ENRICHED_BETTER_GOLD, "Enriched Better Gold");
+        add(EMTags.Items.ENRICHED_PLASLITHERITE, "Enriched Plaslitherite");
+        add(EMTags.Items.ENRICHED_URANIUM, "Enriched Uranium");
+
+        add(EMDatagenTags.item(EvolvedMekanism.MODID, "unit"), "Meka Units");
+
+        add(EMTags.Gases.BETTER_GOLD, "Better Gold");
+        add(EMTags.Gases.PLASLITHERITE, "Plaslitherite");
+        add(EMTags.Gases.URANIUM, "Uranium");
+        add(EMDatagenTags.chemical(EvolvedMekanism.MODID, "gaseous"), "Gaseous");
+        add(EMDatagenTags.chemical("mekanism", "better_gold"), "Better Gold");
+        add(EMDatagenTags.chemical("mekanism", "plaslitherite"), "Plaslitherite");
+        add(EMDatagenTags.chemical("mekanism", "uranium"), "Uranium");
+
+        add(EMDatagenTags.block(EvolvedMekanism.MODID, "needs_noctis_rozuli_tool"), "Needs Noctis Rozuli Tool");
+        add(EMToolsTags.Blocks.INCORRECT_FOR_NEEDS_BETTER_GOLD_TOOL, "Incorrect for Better Gold Tool");
+        add(EMToolsTags.Blocks.INCORRECT_FOR_PLASLITHERITE_TOOL, "Incorrect for Plaslitherite Tool");
+        add(EMToolsTags.Blocks.INCORRECT_FOR_REFINED_REDSTONE_TOOL, "Incorrect for Refined Redstone Tool");
+        add(EMToolsTags.Blocks.INCORRECT_FOR_NOCTIS_ROZULI_TOOL, "Incorrect for Noctis Rozuli Tool");
+
+        add(EMTags.Items.STORAGE_BLOCKS_BETTER_GOLD, "Better Gold Storage Blocks");
+        add(EMTags.Items.STORAGE_BLOCKS_PLASLITHERITE, "Plaslitherite Storage Blocks");
+        add(EMTags.Items.STORAGE_BLOCKS_REFINED_REDSTONE, "Refined Redstone Storage Blocks");
+        add(EMTags.Items.STORAGE_BLOCKS_NOCTIS_ROZULI, "Noctis Rozuli Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_BETTER_GOLD, "Better Gold Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_PLASLITHERITE, "Plaslitherite Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_REFINED_REDSTONE, "Refined Redstone Storage Blocks");
+        add(EMDatagenTags.cBlock("storage_blocks/noctis_rozuli"), "Noctis Rozuli Storage Blocks");
+
+        add(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS, "Alloy Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_INFUSED, "Infused Alloy Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_REINFORCED, "Reinforced Alloy Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_ATOMIC, "Atomic Alloy Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_HYPERCHARGED, "Hypercharged Alloy Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_SUBATOMIC, "Subatomic Alloy Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_SINGULAR, "Singular Alloy Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_EXOVERSAL, "Exoversal Alloy Storage Blocks");
+        add(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_CREATIVE, "Creative Alloy Storage Blocks");
+        add(EMDatagenTags.cItem("storage_blocks/alloys"), "Alloy Storage Blocks");
+        add(EMDatagenTags.cItem("storage_blocks/alloys/infused"), "Infused Alloy Storage Blocks");
+        add(EMDatagenTags.cItem("storage_blocks/alloys/reinforced"), "Reinforced Alloy Storage Blocks");
+        add(EMDatagenTags.cItem("storage_blocks/alloys/atomic"), "Atomic Alloy Storage Blocks");
+        add(EMDatagenTags.cItem("storage_blocks/alloys/hypercharged"), "Hypercharged Alloy Storage Blocks");
+        add(EMDatagenTags.cItem("storage_blocks/alloys/subatomic"), "Subatomic Alloy Storage Blocks");
+        add(EMDatagenTags.cItem("storage_blocks/alloys/singular"), "Singular Alloy Storage Blocks");
+        add(EMDatagenTags.cItem("storage_blocks/alloys/exoversal"), "Exoversal Alloy Storage Blocks");
+        add(EMDatagenTags.cItem("storage_blocks/alloys/creative"), "Creative Alloy Storage Blocks");
+
+        add(EMTags.Items.INGOTS_BETTER_GOLD, "Better Gold Ingots");
+        add(EMTags.Items.INGOTS_PLASLITHERITE, "Plaslitherite Ingots");
+        add(EMTags.Items.INGOTS_REFINED_REDSTONE, "Refined Redstone Ingots");
+        add(EMTags.Items.GEMS_NOCTIS_ROZULI, "Noctis Rozuli");
+        add(EMTags.Items.NUGGETS_BETTER_GOLD, "Better Gold Nuggets");
+        add(EMTags.Items.NUGGETS_PLASLITHERITE, "Plaslitherite Nuggets");
+        add(EMTags.Items.NUGGETS_REFINED_REDSTONE, "Refined Redstone Nuggets");
+        add(EMTags.Items.DUSTS_BETTER_GOLD, "Better Gold Dusts");
+        add(EMTags.Items.DUSTS_PLASLITHERITE, "Plaslitherite Dusts");
+        add(EMTags.Items.DUSTS_NOCTIS_ROZULI, "Noctis Rozuli Dusts");
+
+        add(EMTags.Items.ALLOYS_OVERCLOCKED, "Overclocked Alloys");
+        add(EMTags.Items.ALLOYS_QUANTUM, "Quantum Alloys");
+        add(EMTags.Items.ALLOYS_DENSE, "Dense Alloys");
+        add(EMTags.Items.ALLOYS_MULTIVERSAL, "Multiversal Alloys");
+        add(EMTags.Items.ALLOYS_CREATIVE_FORGE, "Creative Alloys");
+        add(EMTags.Items.CIRCUITS_OVERCLOCKED, "Overclocked Circuits");
+        add(EMTags.Items.CIRCUITS_QUANTUM, "Quantum Circuits");
+        add(EMTags.Items.CIRCUITS_DENSE, "Dense Circuits");
+        add(EMTags.Items.CIRCUITS_MULTIVERSAL, "Multiversal Circuits");
+        add(EMTags.Items.CIRCUITS_CREATIVE_FORGE, "Creative Circuits");
+
+        add(EMDatagenTags.cItem("ores/noctis_rozuli"), "Noctis Rozuli Ores");
+        add(EMDatagenTags.cBlock("ores/noctis_rozuli"), "Noctis Rozuli Ores");
+        add(EMDatagenTags.cItem("ores_in_ground/netherrack"), "Netherrack Ores");
+        add(EMDatagenTags.cItem("ores_in_ground/end_stone"), "End Stone Ores");
+        add(EMDatagenTags.cItem("ores_in_ground/holystone"), "Holystone Ores");
+        add(EMDatagenTags.cItem("ores_in_ground/depthrock"), "Depthrock Ores");
+        add(EMDatagenTags.cItem("ores_in_ground/shiverstone"), "Shiverstone Ores");
+        add(EMDatagenTags.cBlock("ores_in_ground/netherrack"), "Netherrack Ores");
+        add(EMDatagenTags.cBlock("ores_in_ground/end_stone"), "End Stone Ores");
+        add(EMDatagenTags.cBlock("ores_in_ground/holystone"), "Holystone Ores");
+        add(EMDatagenTags.cBlock("ores_in_ground/depthrock"), "Depthrock Ores");
+        add(EMDatagenTags.cBlock("ores_in_ground/shiverstone"), "Shiverstone Ores");
+
+        add(EMDatagenTags.cFluid("nitrogen"), "Nitrogen");
+        add(EMDatagenTags.cFluid("cryonoctis"), "Cryonoctis");
+        add(EMDatagenTags.cFluid("molten_noctis"), "Molten Noctis");
+        add(EMDatagenTags.cFluid("molten_better_gold"), "Molten Better Gold");
+        add(EMDatagenTags.cFluid("molten_plaslitherite"), "Molten Plaslitherite");
+        add(EMDatagenTags.cFluid("molten_refined_redstone"), "Molten Refined Redstone");
+        add(EMDatagenTags.cItem("buckets/nitrogen"), "Nitrogen Buckets");
+        add(EMDatagenTags.cItem("buckets/cryonoctis"), "Cryonoctis Buckets");
+        add(EMDatagenTags.cItem("buckets/molten_noctis"), "Molten Noctis Buckets");
+        add(EMDatagenTags.cItem("buckets/molten_better_gold"), "Molten Better Gold Buckets");
+        add(EMDatagenTags.cItem("buckets/molten_plaslitherite"), "Molten Plaslitherite Buckets");
+        add(EMDatagenTags.cItem("buckets/molten_refined_redstone"), "Molten Refined Redstone Buckets");
+
+        addToolTags();
+    }
+
+    private void addToolTags() {
+        add(EMToolsTags.Items.ARMORS_HELMETS_BETTER_GOLD, "Better Gold Helmets");
+        add(EMToolsTags.Items.ARMORS_HELMETS_PLASLITHERITE, "Plaslitherite Helmets");
+        add(EMToolsTags.Items.ARMORS_HELMETS_REFINED_REDSTONE, "Refined Redstone Helmets");
+        add(EMToolsTags.Items.ARMORS_HELMETS_NOCTIS_ROZULI, "Noctis Rozuli Helmets");
+        add(EMToolsTags.Items.ARMORS_CHESTPLATES_BETTER_GOLD, "Better Gold Chestplates");
+        add(EMToolsTags.Items.ARMORS_CHESTPLATES_PLASLITHERITE, "Plaslitherite Chestplates");
+        add(EMToolsTags.Items.ARMORS_CHESTPLATES_REFINED_REDSTONE, "Refined Redstone Chestplates");
+        add(EMToolsTags.Items.ARMORS_CHESTPLATES_NOCTIS_ROZULI, "Noctis Rozuli Chestplates");
+        add(EMToolsTags.Items.ARMORS_LEGGINGS_BETTER_GOLD, "Better Gold Leggings");
+        add(EMToolsTags.Items.ARMORS_LEGGINGS_PLASLITHERITE, "Plaslitherite Leggings");
+        add(EMToolsTags.Items.ARMORS_LEGGINGS_REFINED_REDSTONE, "Refined Redstone Leggings");
+        add(EMToolsTags.Items.ARMORS_LEGGINGS_NOCTIS_ROZULI, "Noctis Rozuli Leggings");
+        add(EMToolsTags.Items.ARMORS_BOOTS_BETTER_GOLD, "Better Gold Boots");
+        add(EMToolsTags.Items.ARMORS_BOOTS_PLASLITHERITE, "Plaslitherite Boots");
+        add(EMToolsTags.Items.ARMORS_BOOTS_REFINED_REDSTONE, "Refined Redstone Boots");
+        add(EMToolsTags.Items.ARMORS_BOOTS_NOCTIS_ROZULI, "Noctis Rozuli Boots");
+        add(EMToolsTags.Items.TOOLS_AXES_BETTER_GOLD, "Better Gold Axes");
+        add(EMToolsTags.Items.TOOLS_AXES_PLASLITHERITE, "Plaslitherite Axes");
+        add(EMToolsTags.Items.TOOLS_AXES_REFINED_REDSTONE, "Refined Redstone Axes");
+        add(EMToolsTags.Items.TOOLS_AXES_NOCTIS_ROZULI, "Noctis Rozuli Axes");
+        add(EMToolsTags.Items.TOOLS_PICKAXES_BETTER_GOLD, "Better Gold Pickaxes");
+        add(EMToolsTags.Items.TOOLS_PICKAXES_PLASLITHERITE, "Plaslitherite Pickaxes");
+        add(EMToolsTags.Items.TOOLS_PICKAXES_REFINED_REDSTONE, "Refined Redstone Pickaxes");
+        add(EMToolsTags.Items.TOOLS_PICKAXES_NOCTIS_ROZULI, "Noctis Rozuli Pickaxes");
+        add(EMToolsTags.Items.TOOLS_HOES_BETTER_GOLD, "Better Gold Hoes");
+        add(EMToolsTags.Items.TOOLS_HOES_PLASLITHERITE, "Plaslitherite Hoes");
+        add(EMToolsTags.Items.TOOLS_HOES_REFINED_REDSTONE, "Refined Redstone Hoes");
+        add(EMToolsTags.Items.TOOLS_HOES_NOCTIS_ROZULI, "Noctis Rozuli Hoes");
+        add(EMToolsTags.Items.TOOLS_SHOVELS_BETTER_GOLD, "Better Gold Shovels");
+        add(EMToolsTags.Items.TOOLS_SHOVELS_PLASLITHERITE, "Plaslitherite Shovels");
+        add(EMToolsTags.Items.TOOLS_SHOVELS_REFINED_REDSTONE, "Refined Redstone Shovels");
+        add(EMToolsTags.Items.TOOLS_SHOVELS_NOCTIS_ROZULI, "Noctis Rozuli Shovels");
+        add(EMToolsTags.Items.TOOLS_SWORDS_BETTER_GOLD, "Better Gold Swords");
+        add(EMToolsTags.Items.TOOLS_SWORDS_PLASLITHERITE, "Plaslitherite Swords");
+        add(EMToolsTags.Items.TOOLS_SWORDS_REFINED_REDSTONE, "Refined Redstone Swords");
+        add(EMToolsTags.Items.TOOLS_SWORDS_NOCTIS_ROZULI, "Noctis Rozuli Swords");
+        add(EMToolsTags.Items.TOOLS_PAXELS_BETTER_GOLD, "Better Gold Paxels");
+        add(EMToolsTags.Items.TOOLS_PAXELS_PLASLITHERITE, "Plaslitherite Paxels");
+        add(EMToolsTags.Items.TOOLS_PAXELS_REFINED_REDSTONE, "Refined Redstone Paxels");
+        add(EMToolsTags.Items.TOOLS_PAXELS_NOCTIS_ROZULI, "Noctis Rozuli Paxels");
+        add(EMToolsTags.Items.TOOLS_SHIELDS_BETTER_GOLD, "Better Gold Shields");
+        add(EMToolsTags.Items.TOOLS_SHIELDS_PLASLITHERITE, "Plaslitherite Shields");
+        add(EMToolsTags.Items.TOOLS_SHIELDS_REFINED_REDSTONE, "Refined Redstone Shields");
+        add(EMToolsTags.Items.TOOLS_SHIELDS_NOCTIS_ROZULI, "Noctis Rozuli Shields");
     }
 }

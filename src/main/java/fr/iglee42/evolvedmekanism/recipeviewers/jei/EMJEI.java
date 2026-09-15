@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.recipeviewers.jei;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
+import fr.iglee42.evolvedmekanism.recipeviewers.alias.EMAliasMapping;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.AlloyerJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.ChemixerJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.MeltingJEIRecipeCategory;
@@ -12,6 +13,7 @@ import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.client.recipe_viewer.jei.CatalystRegistryHelper;
+import mekanism.client.recipe_viewer.jei.JEIAliasHelper;
 import mekanism.client.recipe_viewer.jei.MekanismJEI;
 import mekanism.client.recipe_viewer.jei.MekanismSubtypeInterpreter;
 import mekanism.client.recipe_viewer.jei.RecipeRegistryHelper;
@@ -146,6 +148,11 @@ public class EMJEI implements IModPlugin {
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(EMRecipeViewersTypes.SOLIDIFICATION),Arrays.asList(EMBlocks.SOLIDIFIER));
         List<ItemLike> alloying = BuiltInRegistries.BLOCK.holders().filter(h->h.getKey().location().getNamespace().equals(EvolvedMekanism.MODID) && (h.getKey().location().getPath().contains("alloyer") || h.getKey().location().getPath().contains("alloying"))).map(Holder.Reference::value).map(ItemLike.class::cast).toList();
         alloying.forEach(i->registry.addRecipeCatalyst(i,MekanismJEI.genericRecipeType(EMRecipeViewersTypes.ALLOYING)));
+    }
+
+    @Override
+    public void registerIngredientAliases(IIngredientAliasRegistration registration) {
+        new EMAliasMapping().addAliases(new JEIAliasHelper(registration));
     }
 
     @Override

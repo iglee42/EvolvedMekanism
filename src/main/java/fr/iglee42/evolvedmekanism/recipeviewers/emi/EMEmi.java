@@ -11,6 +11,7 @@ import dev.emi.emi.api.stack.EmiStack;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
+import fr.iglee42.evolvedmekanism.recipeviewers.alias.EMAliasMapping;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.categories.APTEMIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.*;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
@@ -159,6 +160,7 @@ public class EMEmi implements EmiPlugin {
         registry.addGenericStackProvider(new EmiStackUnderMouseProvider());
         addCategories(registry);
         addWorkstations(registry, MekanismEmiRecipeCategory.create(RecipeViewerRecipeType.ACTIVATING),List.of(EMBlocks.LUNAR_NEUTRON_ACTIVATOR.get()));
+        new EMAliasMapping().addAliases(new EmiAliasHelper(registry));
 
         registerItemSubtypes(registry, EMItems.ITEMS.getEntries());
         registerItemSubtypes(registry, EMBlocks.BLOCKS.getSecondaryEntries());
