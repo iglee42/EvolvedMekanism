@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.datagen;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import mekanism.common.registries.MekanismFeatures;
 import mekanism.common.resource.ore.OreType;
@@ -14,10 +15,12 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
@@ -51,6 +54,12 @@ public class EMWorldGenProvider extends DatapackBuiltinEntriesProvider {
                 ));
             }
         }
+        List<OreConfiguration.TargetBlockState> noctisTargets = List.of(
+                OreConfiguration.target(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), EMBlocks.NOCTIS_ROZULI_ORE_NATURAL.get().defaultBlockState()),
+                OreConfiguration.target(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), EMBlocks.DEEPSLATE_NOCTIS_ROZULI_ORE_NATURAL.get().defaultBlockState())
+        );
+        context.register(configuredKey("ore_noctis"), new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(noctisTargets, 7, 0F)));
+        context.register(configuredKey("ore_noctis_buried"), new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(noctisTargets, 7, 0.5F)));
     }
 
     private static void registerDim(BootstapContext<ConfiguredFeature<?, ?>> context, String name, OreType.OreVeinType vein,
@@ -63,6 +72,7 @@ public class EMWorldGenProvider extends DatapackBuiltinEntriesProvider {
         context.register(trim("better_gold"), trimMaterial("better_gold", EMItems.BETTER_GOLD_INGOT.get(), 0.6F, 0xFDF147));
         context.register(trim("plaslitherite"), trimMaterial("plaslitherite", EMItems.PLASLITHERITE_INGOT.get(), 0.3F, 0x5C6263));
         context.register(trim("refined_redstone"), trimMaterial("refined_redstone", EMItems.REFINED_REDSTONE_INGOT.get(), 0.4F, 0x96121F));
+        context.register(trim("noctis_rozuli"), trimMaterial("noctis_rozuli", EMItems.NOCTIS_ROZULI.get(), 1.0F, 0xFA6AB2));
     }
 
     private static TrimMaterial trimMaterial(String asset, net.minecraft.world.item.Item item, float index, int color) {

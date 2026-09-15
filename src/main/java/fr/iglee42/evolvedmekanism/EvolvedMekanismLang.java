@@ -25,6 +25,7 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_SUPERCHARGING_ELEMENT("description", "supercharging_element"),
 
     DESCRIPTION_MAX_TIER_INSTALLER("description", "max_tier_installer"),
+    DESCRIPTION_NOCTIS_ROZULI_ORE("description", "noctis_rozuli_ore"),
 
     APT("apt", "apt"),
     APT_PORT_MODE("apt", "port_mode"),

@@ -1,6 +1,7 @@
 package fr.iglee42.emtools.config;
 
 import fr.iglee42.emtools.materials.BetterGoldMaterialDefaults;
+import fr.iglee42.emtools.materials.NoctisRozuliMaterialDefaults;
 import fr.iglee42.emtools.materials.PlaslitheriteMaterialDefaults;
 import fr.iglee42.emtools.materials.RefinedRedstoneMaterialDefaults;
 import fr.iglee42.evolvedmekanism.config.EMConfigHelper;
@@ -30,9 +31,11 @@ public class EMToolsConfig extends BaseMekanismConfig {
     public final ArmorSpawnChanceConfig betterGoldSpawnRate;
     public final ArmorSpawnChanceConfig plaslitheriteSpawnRate;
     public final ArmorSpawnChanceConfig refinedRedstoneSpawnRate;
+    public final ArmorSpawnChanceConfig noctisRozuliSpawnRate;
     public final MaterialCreator betterGold;
     public final MaterialCreator plaslitherite;
     public final MaterialCreator refinedRedstone;
+    public final MaterialCreator noctisRozuli;
 
 
 
@@ -44,10 +47,12 @@ public class EMToolsConfig extends BaseMekanismConfig {
         betterGoldSpawnRate = new ArmorSpawnChanceConfig(this, builder, "better_gold", "better_gold");
         plaslitheriteSpawnRate = new ArmorSpawnChanceConfig(this, builder, "plaslitherite", "plaslitherite");
         refinedRedstoneSpawnRate = new ArmorSpawnChanceConfig(this, builder, "refined_redstone", "refined_redstone");
+        noctisRozuliSpawnRate = new ArmorSpawnChanceConfig(this, builder, "noctis_rozuli", "noctis_rozuli");
         builder.pop();
         betterGold = new MaterialCreator(this, builder, new BetterGoldMaterialDefaults());
         plaslitherite = new MaterialCreator(this, builder, new PlaslitheriteMaterialDefaults());
         refinedRedstone = new MaterialCreator(this, builder, new RefinedRedstoneMaterialDefaults());
+        noctisRozuli = new MaterialCreator(this, builder, new NoctisRozuliMaterialDefaults());
         builder.pop();
         configSpec = builder.build();
     }

@@ -15,6 +15,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
@@ -38,10 +39,13 @@ public class EMItemTags extends ItemTagsProvider {
         tag(EMTags.Items.NUGGETS_REFINED_REDSTONE).add(EMItems.REFINED_REDSTONE_NUGGET.get());
         tag(EMTags.Items.DUSTS_BETTER_GOLD).add(EMItems.BETTER_GOLD_DUST.get());
         tag(EMTags.Items.DUSTS_PLASLITHERITE).add(EMItems.PLASLITHERITE_DUST.get());
+        tag(EMTags.Items.GEMS_NOCTIS_ROZULI).add(EMItems.NOCTIS_ROZULI.get());
+        tag(EMTags.Items.DUSTS_NOCTIS_ROZULI).add(EMItems.NOCTIS_ROZULI_DUST.get());
 
         copy(EMTags.Blocks.STORAGE_BLOCKS_BETTER_GOLD, EMTags.Items.STORAGE_BLOCKS_BETTER_GOLD);
         copy(EMTags.Blocks.STORAGE_BLOCKS_PLASLITHERITE, EMTags.Items.STORAGE_BLOCKS_PLASLITHERITE);
         copy(EMTags.Blocks.STORAGE_BLOCKS_REFINED_REDSTONE, EMTags.Items.STORAGE_BLOCKS_REFINED_REDSTONE);
+        copy(EMTags.Blocks.STORAGE_BLOCKS_NOCTIS_ROZULI, EMTags.Items.STORAGE_BLOCKS_NOCTIS_ROZULI);
         copy(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS, EMDatagenTags.forgeItem("storage_blocks/alloys"));
         copy(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_INFUSED, EMDatagenTags.forgeItem("storage_blocks/alloys/infused"));
         copy(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_REINFORCED, EMDatagenTags.forgeItem("storage_blocks/alloys/reinforced"));
@@ -58,7 +62,12 @@ public class EMItemTags extends ItemTagsProvider {
 
         tag(EMDatagenTags.forgeItem("ingots")).addTags(EMTags.Items.INGOTS_BETTER_GOLD, EMTags.Items.INGOTS_PLASLITHERITE, EMTags.Items.INGOTS_REFINED_REDSTONE);
         tag(EMDatagenTags.forgeItem("nuggets")).addTags(EMTags.Items.NUGGETS_BETTER_GOLD, EMTags.Items.NUGGETS_PLASLITHERITE, EMTags.Items.NUGGETS_REFINED_REDSTONE);
-        tag(EMDatagenTags.forgeItem("dusts")).addTags(EMTags.Items.DUSTS_BETTER_GOLD, EMTags.Items.DUSTS_PLASLITHERITE);
+        tag(EMDatagenTags.forgeItem("dusts")).addTags(EMTags.Items.DUSTS_BETTER_GOLD, EMTags.Items.DUSTS_PLASLITHERITE, EMTags.Items.DUSTS_NOCTIS_ROZULI);
+        tag(Tags.Items.GEMS).addTag(EMTags.Items.GEMS_NOCTIS_ROZULI);
+        tag(EMDatagenTags.forgeItem("gems/noctis")).addTag(EMTags.Items.GEMS_NOCTIS_ROZULI);
+        tag(EMDatagenTags.forgeItem("dusts/noctis")).addTag(EMTags.Items.DUSTS_NOCTIS_ROZULI);
+        tag(EMDatagenTags.forgeItem("ores/noctis")).addTag(EMTags.Items.ORES_NOCTIS_ROZULI);
+        tag(EMDatagenTags.forgeItem("storage_blocks/noctis")).addTag(EMTags.Items.STORAGE_BLOCKS_NOCTIS_ROZULI);
         tag(EMDatagenTags.forgeItem("gems/coal")).add(Items.COAL);
 
         tag(EMTags.Items.ALLOYS_HYPERCHARGED).add(EMItems.HYPERCHARGED_ALLOY.get());
@@ -97,17 +106,22 @@ public class EMItemTags extends ItemTagsProvider {
         copy(EMDatagenTags.forgeBlock("ores/osmium"), EMDatagenTags.forgeItem("ores/osmium"));
         copy(EMDatagenTags.forgeBlock("ores/tin"), EMDatagenTags.forgeItem("ores/tin"));
         copy(EMDatagenTags.forgeBlock("ores/uranium"), EMDatagenTags.forgeItem("ores/uranium"));
+        copy(EMTags.Blocks.ORES_NOCTIS_ROZULI, EMTags.Items.ORES_NOCTIS_ROZULI);
+        copy(EMDatagenTags.forgeBlock("ores/noctis"), EMDatagenTags.forgeItem("ores/noctis"));
         copy(EMDatagenTags.forgeBlock("ore_rates/dense"), EMDatagenTags.forgeItem("ore_rates/dense"));
         copy(EMDatagenTags.forgeBlock("ores_in_ground/netherrack"), EMDatagenTags.forgeItem("ores_in_ground/netherrack"));
         copy(EMDatagenTags.forgeBlock("ores_in_ground/end_stone"), EMDatagenTags.forgeItem("ores_in_ground/end_stone"));
         copy(EMDatagenTags.forgeBlock("ores_in_ground/holystone"), EMDatagenTags.forgeItem("ores_in_ground/holystone"));
         copy(EMDatagenTags.forgeBlock("ores_in_ground/depthrock"), EMDatagenTags.forgeItem("ores_in_ground/depthrock"));
         copy(EMDatagenTags.forgeBlock("ores_in_ground/shiverstone"), EMDatagenTags.forgeItem("ores_in_ground/shiverstone"));
+        copy(EMDatagenTags.forgeBlock("ores_in_ground/stone"), EMDatagenTags.forgeItem("ores_in_ground/stone"));
+        copy(EMDatagenTags.forgeBlock("ores_in_ground/deepslate"), EMDatagenTags.forgeItem("ores_in_ground/deepslate"));
         tag(EMDatagenTags.forgeItem("ore_rates/singular"))
                 .addTag(EMDatagenTags.forgeItem("ores/tin"))
                 .addTag(EMDatagenTags.forgeItem("ores/osmium"))
                 .addTag(EMDatagenTags.forgeItem("ores/uranium"))
-                .addTag(EMDatagenTags.forgeItem("ores/lead"));
+                .addTag(EMDatagenTags.forgeItem("ores/lead"))
+                .addTag(EMTags.Items.ORES_NOCTIS_ROZULI);
 
         for (Block block : ForgeRegistries.BLOCKS) {
             ResourceLocation id = ForgeRegistries.BLOCKS.getKey(block);
@@ -125,9 +139,9 @@ public class EMItemTags extends ItemTagsProvider {
                 });
 
         tag(ItemTags.BEACON_PAYMENT_ITEMS).add(EMItems.BETTER_GOLD_INGOT.get(), EMItems.PLASLITHERITE_INGOT.get(),
-                EMItems.REFINED_REDSTONE_INGOT.get());
+                EMItems.REFINED_REDSTONE_INGOT.get(), EMItems.NOCTIS_ROZULI.get());
         tag(ItemTags.TRIM_MATERIALS).add(EMItems.BETTER_GOLD_INGOT.get(), EMItems.PLASLITHERITE_INGOT.get(),
-                EMItems.REFINED_REDSTONE_INGOT.get());
+                EMItems.REFINED_REDSTONE_INGOT.get(), EMItems.NOCTIS_ROZULI.get());
 
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) {
             addToolTags();
@@ -138,53 +152,67 @@ public class EMItemTags extends ItemTagsProvider {
         tag(EMToolsTags.Items.TOOLS_PICKAXES_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_PICKAXE.get());
         tag(EMToolsTags.Items.TOOLS_PICKAXES_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_PICKAXE.get());
         tag(EMToolsTags.Items.TOOLS_PICKAXES_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_PICKAXE.get());
-        tag(ItemTags.PICKAXES).add(EMToolsItems.BETTER_GOLD_PICKAXE.get(), EMToolsItems.PLASLITHERITE_PICKAXE.get(), EMToolsItems.REFINED_REDSTONE_PICKAXE.get());
-        tag(ItemTags.AXES).add(EMToolsItems.BETTER_GOLD_AXE.get(), EMToolsItems.PLASLITHERITE_AXE.get(), EMToolsItems.REFINED_REDSTONE_AXE.get());
-        tag(ItemTags.SHOVELS).add(EMToolsItems.BETTER_GOLD_SHOVEL.get(), EMToolsItems.PLASLITHERITE_SHOVEL.get(), EMToolsItems.REFINED_REDSTONE_SHOVEL.get());
-        tag(ItemTags.HOES).add(EMToolsItems.BETTER_GOLD_HOE.get(), EMToolsItems.PLASLITHERITE_HOE.get(), EMToolsItems.REFINED_REDSTONE_HOE.get());
-        tag(ItemTags.SWORDS).add(EMToolsItems.BETTER_GOLD_SWORD.get(), EMToolsItems.PLASLITHERITE_SWORD.get(), EMToolsItems.REFINED_REDSTONE_SWORD.get());
+        tag(EMToolsTags.Items.TOOLS_PICKAXES_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_PICKAXE.get());
+        tag(ItemTags.PICKAXES).add(EMToolsItems.BETTER_GOLD_PICKAXE.get(), EMToolsItems.PLASLITHERITE_PICKAXE.get(), EMToolsItems.REFINED_REDSTONE_PICKAXE.get(), EMToolsItems.NOCTIS_ROZULI_PICKAXE.get());
+        tag(ItemTags.AXES).add(EMToolsItems.BETTER_GOLD_AXE.get(), EMToolsItems.PLASLITHERITE_AXE.get(), EMToolsItems.REFINED_REDSTONE_AXE.get(), EMToolsItems.NOCTIS_ROZULI_AXE.get());
+        tag(ItemTags.SHOVELS).add(EMToolsItems.BETTER_GOLD_SHOVEL.get(), EMToolsItems.PLASLITHERITE_SHOVEL.get(), EMToolsItems.REFINED_REDSTONE_SHOVEL.get(), EMToolsItems.NOCTIS_ROZULI_SHOVEL.get());
+        tag(ItemTags.HOES).add(EMToolsItems.BETTER_GOLD_HOE.get(), EMToolsItems.PLASLITHERITE_HOE.get(), EMToolsItems.REFINED_REDSTONE_HOE.get(), EMToolsItems.NOCTIS_ROZULI_HOE.get());
+        tag(ItemTags.SWORDS).add(EMToolsItems.BETTER_GOLD_SWORD.get(), EMToolsItems.PLASLITHERITE_SWORD.get(), EMToolsItems.REFINED_REDSTONE_SWORD.get(), EMToolsItems.NOCTIS_ROZULI_SWORD.get());
         tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(EMToolsItems.BETTER_GOLD_HELMET.get(), EMToolsItems.BETTER_GOLD_CHESTPLATE.get(),
                         EMToolsItems.BETTER_GOLD_LEGGINGS.get(), EMToolsItems.BETTER_GOLD_BOOTS.get())
                 .add(EMToolsItems.PLASLITHERITE_HELMET.get(), EMToolsItems.PLASLITHERITE_CHESTPLATE.get(),
                         EMToolsItems.PLASLITHERITE_LEGGINGS.get(), EMToolsItems.PLASLITHERITE_BOOTS.get())
                 .add(EMToolsItems.REFINED_REDSTONE_HELMET.get(), EMToolsItems.REFINED_REDSTONE_CHESTPLATE.get(),
-                        EMToolsItems.REFINED_REDSTONE_LEGGINGS.get(), EMToolsItems.REFINED_REDSTONE_BOOTS.get());
+                        EMToolsItems.REFINED_REDSTONE_LEGGINGS.get(), EMToolsItems.REFINED_REDSTONE_BOOTS.get())
+                .add(EMToolsItems.NOCTIS_ROZULI_HELMET.get(), EMToolsItems.NOCTIS_ROZULI_CHESTPLATE.get(),
+                        EMToolsItems.NOCTIS_ROZULI_LEGGINGS.get(), EMToolsItems.NOCTIS_ROZULI_BOOTS.get());
         tag(EMToolsTags.Items.ARMORS_HELMETS_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_HELMET.get());
         tag(EMToolsTags.Items.ARMORS_HELMETS_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_HELMET.get());
         tag(EMToolsTags.Items.ARMORS_HELMETS_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_HELMET.get());
+        tag(EMToolsTags.Items.ARMORS_HELMETS_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_HELMET.get());
         tag(EMToolsTags.Items.ARMORS_CHESTPLATES_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_CHESTPLATE.get());
         tag(EMToolsTags.Items.ARMORS_CHESTPLATES_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_CHESTPLATE.get());
         tag(EMToolsTags.Items.ARMORS_CHESTPLATES_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_CHESTPLATE.get());
+        tag(EMToolsTags.Items.ARMORS_CHESTPLATES_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_CHESTPLATE.get());
         tag(EMToolsTags.Items.ARMORS_LEGGINGS_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_LEGGINGS.get());
         tag(EMToolsTags.Items.ARMORS_LEGGINGS_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_LEGGINGS.get());
         tag(EMToolsTags.Items.ARMORS_LEGGINGS_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_LEGGINGS.get());
+        tag(EMToolsTags.Items.ARMORS_LEGGINGS_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_LEGGINGS.get());
         tag(EMToolsTags.Items.ARMORS_BOOTS_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_BOOTS.get());
         tag(EMToolsTags.Items.ARMORS_BOOTS_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_BOOTS.get());
         tag(EMToolsTags.Items.ARMORS_BOOTS_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_BOOTS.get());
+        tag(EMToolsTags.Items.ARMORS_BOOTS_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_BOOTS.get());
         tag(EMToolsTags.Items.TOOLS_AXES_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_AXE.get());
         tag(EMToolsTags.Items.TOOLS_AXES_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_AXE.get());
         tag(EMToolsTags.Items.TOOLS_AXES_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_AXE.get());
+        tag(EMToolsTags.Items.TOOLS_AXES_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_AXE.get());
         tag(EMToolsTags.Items.TOOLS_HOES_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_HOE.get());
         tag(EMToolsTags.Items.TOOLS_HOES_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_HOE.get());
         tag(EMToolsTags.Items.TOOLS_HOES_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_HOE.get());
+        tag(EMToolsTags.Items.TOOLS_HOES_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_HOE.get());
         tag(EMToolsTags.Items.TOOLS_SHOVELS_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_SHOVEL.get());
         tag(EMToolsTags.Items.TOOLS_SHOVELS_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_SHOVEL.get());
         tag(EMToolsTags.Items.TOOLS_SHOVELS_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_SHOVEL.get());
+        tag(EMToolsTags.Items.TOOLS_SHOVELS_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_SHOVEL.get());
         tag(EMToolsTags.Items.TOOLS_SWORDS_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_SWORD.get());
         tag(EMToolsTags.Items.TOOLS_SWORDS_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_SWORD.get());
         tag(EMToolsTags.Items.TOOLS_SWORDS_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_SWORD.get());
+        tag(EMToolsTags.Items.TOOLS_SWORDS_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_SWORD.get());
         tag(EMToolsTags.Items.TOOLS_PAXELS_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_PAXEL.get());
         tag(EMToolsTags.Items.TOOLS_PAXELS_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_PAXEL.get());
         tag(EMToolsTags.Items.TOOLS_PAXELS_REFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_PAXEL.get());
+        tag(EMToolsTags.Items.TOOLS_PAXELS_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_PAXEL.get());
         tag(EMToolsTags.Items.TOOLS_SHIELDS_BETTER_GOLD).add(EMToolsItems.BETTER_GOLD_SHIELD.get());
         tag(EMToolsTags.Items.TOOLS_SHIELDS_PLASLITHERITE).add(EMToolsItems.PLASLITHERITE_SHIELD.get());
         tag(EMToolsTags.Items.TOOLS_SHIELDSREFINED_REDSTONE).add(EMToolsItems.REFINED_REDSTONE_SHIELD.get());
-        tag(EMDatagenTags.forgeItem("tools/paxel")).add(EMToolsItems.BETTER_GOLD_PAXEL.get(), EMToolsItems.PLASLITHERITE_PAXEL.get(), EMToolsItems.REFINED_REDSTONE_PAXEL.get());
-        tag(EMDatagenTags.forgeItem("tools/shields")).add(EMToolsItems.BETTER_GOLD_SHIELD.get(), EMToolsItems.PLASLITHERITE_SHIELD.get(), EMToolsItems.REFINED_REDSTONE_SHIELD.get());
+        tag(EMToolsTags.Items.TOOLS_SHIELDS_NOCTIS_ROZULI).add(EMToolsItems.NOCTIS_ROZULI_SHIELD.get());
+        tag(EMDatagenTags.forgeItem("tools/paxel")).add(EMToolsItems.BETTER_GOLD_PAXEL.get(), EMToolsItems.PLASLITHERITE_PAXEL.get(), EMToolsItems.REFINED_REDSTONE_PAXEL.get(), EMToolsItems.NOCTIS_ROZULI_PAXEL.get());
+        tag(EMDatagenTags.forgeItem("tools/shields")).add(EMToolsItems.BETTER_GOLD_SHIELD.get(), EMToolsItems.PLASLITHERITE_SHIELD.get(), EMToolsItems.REFINED_REDSTONE_SHIELD.get(), EMToolsItems.NOCTIS_ROZULI_SHIELD.get());
         tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
                 .add(EMToolsItems.BETTER_GOLD_PICKAXE.get(), EMToolsItems.BETTER_GOLD_PAXEL.get())
                 .add(EMToolsItems.PLASLITHERITE_PICKAXE.get(), EMToolsItems.PLASLITHERITE_PAXEL.get())
-                .add(EMToolsItems.REFINED_REDSTONE_PICKAXE.get(), EMToolsItems.REFINED_REDSTONE_PAXEL.get());
+                .add(EMToolsItems.REFINED_REDSTONE_PICKAXE.get(), EMToolsItems.REFINED_REDSTONE_PAXEL.get())
+                .add(EMToolsItems.NOCTIS_ROZULI_PICKAXE.get(), EMToolsItems.NOCTIS_ROZULI_PAXEL.get());
     }
 }

@@ -1,8 +1,10 @@
 package fr.iglee42.evolvedmekanism.registries;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.blocks.BlockNoctisRozuliOre;
 import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonnalBarrel;
 import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonnalChest;
+import fr.iglee42.evolvedmekanism.blocks.EMBlockOre;
 import fr.iglee42.evolvedmekanism.blocks.EMBlockResource;
 import fr.iglee42.evolvedmekanism.items.EMItemBlockResource;
 import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
@@ -67,12 +69,16 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class EMBlocks {
     public static final BlockDeferredRegister BLOCKS = new BlockDeferredRegister(EvolvedMekanism.MODID);
+    public static final DeferredRegister<Block> BLOCKS_NO_ITEMS = DeferredRegister.create(ForgeRegistries.BLOCKS, EvolvedMekanism.MODID);
 
     public static final BlockRegistryObject<BlockFactoryMachine<TileEntityAlloyer, Machine.FactoryMachine<TileEntityAlloyer>>, ItemBlockMachine> ALLOYER = BLOCKS.register("alloyer", () -> new BlockFactoryMachine<>(EMBlockTypes.ALLOYER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
 
@@ -81,6 +87,15 @@ public class EMBlocks {
             registerOre(ore);
         }
     }
+
+    public static final BlockRegistryObject<EMBlockOre, ItemBlockTooltip<EMBlockOre>> NOCTIS_ROZULI_ORE = registerBlock("noctis_rozuli_ore", EMBlockOre::new);
+    public static final BlockRegistryObject<EMBlockOre, ItemBlockTooltip<EMBlockOre>> DEEPSLATE_NOCTIS_ROZULI_ORE = BLOCKS.register("deepslate_noctis_rozuli_ore",
+            () -> new EMBlockOre(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_LAPIS_ORE).requiresCorrectToolForDrops()), ItemBlockTooltip::new);
+    public static final RegistryObject<Block> NOCTIS_ROZULI_ORE_NATURAL = BLOCKS_NO_ITEMS.register("noctis_rozuli_ore_natural",
+            () -> new BlockNoctisRozuliOre(BlockBehaviour.Properties.copy(Blocks.LAPIS_ORE).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> DEEPSLATE_NOCTIS_ROZULI_ORE_NATURAL = BLOCKS_NO_ITEMS.register("deepslate_noctis_rozuli_ore_natural",
+            () -> new BlockNoctisRozuliOre(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_LAPIS_ORE).requiresCorrectToolForDrops()));
+
     public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTCasing>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTCasing>>> APT_CASING = registerBlock("apt_casing", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_CASING, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
     public static final BlockRegistryObject<BlockBasicMultiblock<TileEntityAPTPort>, ItemBlockTooltip<BlockBasicMultiblock<TileEntityAPTPort>>> APT_PORT = registerBlock("apt_port", () -> new BlockBasicMultiblock<>(EMBlockTypes.APT_PORT, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)), Rarity.EPIC);
     public static final BlockRegistryObject<BlockTile<TileEntitySuperchargingElement, BlockTypeTile<TileEntitySuperchargingElement>>, ItemBlockTooltip<BlockTile<TileEntitySuperchargingElement, BlockTypeTile<TileEntitySuperchargingElement>>>> SUPERCHARGING_ELEMENT = registerBlock("supercharging_element", () -> new BlockTile<>(EMBlockTypes.SUPERCHARGING_ELEMENT, properties -> properties.mapColor(MapColor.COLOR_MAGENTA)));
@@ -93,6 +108,7 @@ public class EMBlocks {
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> PLASLITHERITE_BLOCK = registerResourceBlock(EMBlockResourceInfo.PLASLITHERITE);
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> REFINED_REDSTONE_BLOCK = registerResourceBlock(EMBlockResourceInfo.REFINED_REDSTONE);
+    public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> NOCTIS_ROZULI_BLOCK = registerResourceBlock(EMBlockResourceInfo.NOCTIS_ROZULI);
 
     public static final BlockRegistryObject<Block,BlockItem> INFUSED_ALLOY_BLOCK = registerAlloyBlock(AlloyTier.INFUSED);
     public static final BlockRegistryObject<Block,BlockItem> REINFORCED_ALLOY_BLOCK = registerAlloyBlock(AlloyTier.REINFORCED);

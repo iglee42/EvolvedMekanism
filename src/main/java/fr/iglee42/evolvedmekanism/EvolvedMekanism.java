@@ -95,6 +95,7 @@ public class EvolvedMekanism {
         initEnums();
 
         EMBlocks.BLOCKS.register(modEventBus);
+        EMBlocks.BLOCKS_NO_ITEMS.register(modEventBus);
         EMItems.ITEMS.register(modEventBus);
         EMCreativeTabs.CREATIVE_TABS.register(modEventBus);
         EMTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);

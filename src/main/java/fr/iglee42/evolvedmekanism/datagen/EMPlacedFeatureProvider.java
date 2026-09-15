@@ -33,7 +33,54 @@ public class EMPlacedFeatureProvider implements DataProvider {
                 }
             }
         }
+        tasks.add(DataProvider.saveStable(cache, vanillaPlaced("ore_noctis", 2, absolute(-32), absolute(32)),
+                pathProvider.json(EvolvedMekanism.rl("ore_noctis"))));
+        tasks.add(DataProvider.saveStable(cache, vanillaPlaced("ore_noctis_buried", 4, aboveBottom(0), absolute(64)),
+                pathProvider.json(EvolvedMekanism.rl("ore_noctis_buried"))));
         return CompletableFuture.allOf(tasks.toArray(CompletableFuture[]::new));
+    }
+
+    private static JsonObject vanillaPlaced(String feature, int count, JsonObject min, JsonObject max) {
+        JsonObject countJson = new JsonObject();
+        countJson.addProperty("type", "minecraft:count");
+        countJson.addProperty("count", count);
+
+        JsonObject inSquare = new JsonObject();
+        inSquare.addProperty("type", "minecraft:in_square");
+
+        JsonObject heightType = new JsonObject();
+        heightType.addProperty("type", "minecraft:trapezoid");
+        heightType.add("min_inclusive", min);
+        heightType.add("max_inclusive", max);
+        JsonObject height = new JsonObject();
+        height.addProperty("type", "minecraft:height_range");
+        height.add("height", heightType);
+
+        JsonObject biome = new JsonObject();
+        biome.addProperty("type", "minecraft:biome");
+
+        JsonArray placement = new JsonArray();
+        placement.add(countJson);
+        placement.add(inSquare);
+        placement.add(height);
+        placement.add(biome);
+
+        JsonObject json = new JsonObject();
+        json.addProperty("feature", EvolvedMekanism.MODID + ":" + feature);
+        json.add("placement", placement);
+        return json;
+    }
+
+    private static JsonObject absolute(int y) {
+        JsonObject json = new JsonObject();
+        json.addProperty("absolute", y);
+        return json;
+    }
+
+    private static JsonObject aboveBottom(int y) {
+        JsonObject json = new JsonObject();
+        json.addProperty("above_bottom", y);
+        return json;
     }
 
     private static JsonObject placedJson(String feature, String oreType, int index) {

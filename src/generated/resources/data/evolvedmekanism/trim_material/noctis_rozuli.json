@@ -1,0 +1,9 @@
+{
+  "asset_name": "noctis_rozuli",
+  "description": {
+    "color": "#FA6AB2",
+    "translate": "trim_material.evolvedmekanism.noctis_rozuli"
+  },
+  "ingredient": "evolvedmekanism:noctis_rozuli",
+  "item_model_index": 1.0
+}

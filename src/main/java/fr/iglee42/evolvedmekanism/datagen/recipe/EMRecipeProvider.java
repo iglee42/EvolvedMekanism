@@ -276,6 +276,23 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMItems.REFINED_REDSTONE_INGOT.getItemStack()
         ).build(output, EvolvedMekanism.rl("processing/refined_redstone/ingot/from_dust"));
 
+        EMCrafting.shapeless(output, EvolvedMekanism.rl("processing/noctis_rozuli/from_block"), EMItems.NOCTIS_ROZULI, 9,
+                EMTags.Items.STORAGE_BLOCKS_NOCTIS_ROZULI, has(EMItems.NOCTIS_ROZULI));
+        EMCrafting.shaped(output, "processing/noctis_rozuli/from_gems", EMBlocks.NOCTIS_ROZULI_BLOCK, 1, new String[]{"###", "#P#", "###"},
+                EMCrafting.keys('#', EMTags.Items.GEMS_NOCTIS_ROZULI, 'P', EMItems.NOCTIS_ROZULI), has(EMItems.NOCTIS_ROZULI));
+        ItemStackToItemStackRecipeBuilder.enriching(IngredientCreatorAccess.item().from(EMTags.Items.DUSTS_NOCTIS_ROZULI), EMItems.NOCTIS_ROZULI.getItemStack())
+                .build(output, EvolvedMekanism.rl("processing/noctis_rozuli/from_dust"));
+        ItemStackToItemStackRecipeBuilder.enriching(IngredientCreatorAccess.item().from(EMTags.Items.ORES_NOCTIS_ROZULI), new ItemStack(EMItems.NOCTIS_ROZULI, 12))
+                .build(output, EvolvedMekanism.rl("processing/noctis_rozuli/from_ore"));
+        ItemStackToItemStackRecipeBuilder.crushing(IngredientCreatorAccess.item().from(EMTags.Items.GEMS_NOCTIS_ROZULI), EMItems.NOCTIS_ROZULI_DUST.getItemStack())
+                .build(output, EvolvedMekanism.rl("processing/noctis_rozuli/to_dust"));
+        CombinerRecipeBuilder.combining(IngredientCreatorAccess.item().from(EMTags.Items.DUSTS_NOCTIS_ROZULI, 27),
+                IngredientCreatorAccess.item().from(EMDatagenTags.forgeItem("cobblestone/normal")), EMCrafting.stack(EMBlocks.NOCTIS_ROZULI_ORE))
+                .build(output, EvolvedMekanism.rl("processing/noctis_rozuli/to_ore"));
+        CombinerRecipeBuilder.combining(IngredientCreatorAccess.item().from(EMTags.Items.DUSTS_NOCTIS_ROZULI, 27),
+                IngredientCreatorAccess.item().from(EMDatagenTags.forgeItem("cobblestone/deepslate")), EMCrafting.stack(EMBlocks.DEEPSLATE_NOCTIS_ROZULI_ORE))
+                .build(output, EvolvedMekanism.rl("processing/noctis_rozuli/to_deepslate_ore"));
+
         addDimOreProcessing(output, "osmium", MekanismItems.PROCESSED_RESOURCES.get(ResourceType.INGOT, PrimaryResource.OSMIUM), EMDatagenTags.forgeItem("raw_materials/osmium"));
         addDimOreProcessing(output, "tin", MekanismItems.PROCESSED_RESOURCES.get(ResourceType.INGOT, PrimaryResource.TIN), EMDatagenTags.forgeItem("raw_materials/tin"));
         addDimOreProcessing(output, "lead", MekanismItems.PROCESSED_RESOURCES.get(ResourceType.INGOT, PrimaryResource.LEAD), EMDatagenTags.forgeItem("raw_materials/lead"));
@@ -373,6 +390,10 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMToolsItems.REFINED_REDSTONE_HELMET, EMToolsItems.REFINED_REDSTONE_CHESTPLATE, EMToolsItems.REFINED_REDSTONE_LEGGINGS, EMToolsItems.REFINED_REDSTONE_BOOTS,
                 EMToolsItems.REFINED_REDSTONE_SWORD, EMToolsItems.REFINED_REDSTONE_PICKAXE, EMToolsItems.REFINED_REDSTONE_AXE, EMToolsItems.REFINED_REDSTONE_SHOVEL,
                 EMToolsItems.REFINED_REDSTONE_HOE, EMToolsItems.REFINED_REDSTONE_PAXEL, EMToolsItems.REFINED_REDSTONE_SHIELD);
+        addToolSet(output, "noctis_rozuli", EMDatagenTags.forgeItem("gems/noctis_rozuli"), null,
+                EMToolsItems.NOCTIS_ROZULI_HELMET, EMToolsItems.NOCTIS_ROZULI_CHESTPLATE, EMToolsItems.NOCTIS_ROZULI_LEGGINGS, EMToolsItems.NOCTIS_ROZULI_BOOTS,
+                EMToolsItems.NOCTIS_ROZULI_SWORD, EMToolsItems.NOCTIS_ROZULI_PICKAXE, EMToolsItems.NOCTIS_ROZULI_AXE, EMToolsItems.NOCTIS_ROZULI_SHOVEL,
+                EMToolsItems.NOCTIS_ROZULI_HOE, EMToolsItems.NOCTIS_ROZULI_PAXEL, EMToolsItems.NOCTIS_ROZULI_SHIELD);
     }
 
     private void addToolSet(Consumer<FinishedRecipe> output, String name, Object material, ItemLike nugget,
@@ -394,9 +415,11 @@ public class EMRecipeProvider extends RecipeProvider {
         EMCrafting.shaped(EMCrafting.paxel(gated), "tools/" + name + "/tools/paxel", paxel, 1, new String[]{"APS", " R ", " R "},
                 EMCrafting.keys('A', EMDatagenTags.forgeItem("tools/axes/" + name), 'P', EMDatagenTags.forgeItem("tools/pickaxes/" + name),
                         'S', EMDatagenTags.forgeItem("tools/shovels/" + name), 'R', rod), has(Items.IRON_INGOT));
-        Ingredient scrap = Ingredient.of(helmet, chest, legs, boots, sword, pickaxe, axe, shovel, hoe, paxel);
-        EMCrafting.smelting(gated, EvolvedMekanism.rl("tools/" + name + "/nugget_from_smelting"), scrap, nugget, 0.1F, 200, has(nugget));
-        EMCrafting.blasting(gated, EvolvedMekanism.rl("tools/" + name + "/nugget_from_blasting"), scrap, nugget, 0.1F, 100, has(nugget));
+        if (nugget != null) {
+            Ingredient scrap = Ingredient.of(helmet, chest, legs, boots, sword, pickaxe, axe, shovel, hoe, paxel);
+            EMCrafting.smelting(gated, EvolvedMekanism.rl("tools/" + name + "/nugget_from_smelting"), scrap, nugget, 0.1F, 200, has(nugget));
+            EMCrafting.blasting(gated, EvolvedMekanism.rl("tools/" + name + "/nugget_from_blasting"), scrap, nugget, 0.1F, 100, has(nugget));
+        }
     }
 
     private void addMiscRecipes(Consumer<FinishedRecipe> output) {
@@ -437,6 +460,11 @@ public class EMRecipeProvider extends RecipeProvider {
                 IngredientCreatorAccess.gas().from(MekanismGases.ANTIMATTER, 50),
                 EMBlocks.APT_CASING.getItemStack(), 1000
         ).build(output, EvolvedMekanism.rl("nucleosynthesizing/apt_casing"));
+        NucleosynthesizingRecipeBuilder.nucleosynthesizing(
+                IngredientCreatorAccess.item().from(Items.PINK_WOOL),
+                IngredientCreatorAccess.gas().from(MekanismGases.ANTIMATTER, 2),
+                EMBlocks.NOCTIS_ROZULI_BLOCK.getItemStack(), 500
+        ).build(output, EvolvedMekanism.rl("nucleosynthesizing/noctis_block"));
 
         addApt(output, "apt/ingot_better_gold", "forge:ingots/gold", 100, "evolvedmekanism:ingot_better_gold");
         addApt(output, "apt/dust_better_gold", "forge:dusts/gold", 100, "evolvedmekanism:dust_better_gold");

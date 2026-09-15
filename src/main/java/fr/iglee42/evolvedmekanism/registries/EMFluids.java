@@ -155,6 +155,7 @@ public class EMFluids {
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_AMBROSIUM = registerMolten("ambrosium",0xFFF1EF5F);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_ZANITE = registerMolten("zanite",0xFF7635DD);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_LAPIS = registerMolten("lapis",0xFF13408B);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_NOCTIS = registerMolten("noctis",0xFFE44194);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_GLOWSTONE = registerMolten("glowstone",0xFFE5AC44);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_DEBRIS = registerMolten("debris",0xFF5C332B);
 

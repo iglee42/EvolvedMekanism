@@ -55,6 +55,7 @@ public class EMItemModelProvider extends ItemModelProvider {
             handheldTool("better_gold");
             handheldTool("plaslitherite");
             handheldTool("refined_redstone");
+            handheldTool("noctis_rozuli");
         }
     }
 

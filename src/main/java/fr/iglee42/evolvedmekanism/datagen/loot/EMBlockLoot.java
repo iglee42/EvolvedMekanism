@@ -1,8 +1,12 @@
 package fr.iglee42.evolvedmekanism.datagen.loot;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.blocks.BlockNoctisRozuliOre;
 import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonalStorage;
+import fr.iglee42.evolvedmekanism.blocks.EMBlockOre;
 import fr.iglee42.evolvedmekanism.loot.PersonalTieredStorageContentsLootFunction;
+import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.registries.EMItems;
 import mekanism.common.block.BlockEnergyCube;
 import mekanism.common.block.BlockOre;
 import mekanism.common.block.basic.BlockBin;
@@ -11,21 +15,30 @@ import mekanism.common.block.prefab.BlockFactoryMachine.BlockFactory;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.resource.PrimaryResource;
 import mekanism.common.resource.ResourceType;
+import net.minecraft.advancements.critereon.EnchantmentPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
 import net.minecraft.world.level.storage.loot.functions.CopyNbtFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.nbt.ContextNbtProvider;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -62,7 +75,11 @@ public class EMBlockLoot extends BlockLootSubProvider {
 
     private void addBlock(Block block) {
         String path = BuiltInRegistries.BLOCK.getKey(block).getPath();
-        if (block instanceof BlockOre) {
+        if (block instanceof BlockNoctisRozuliOre) {
+            addNaturalNoctis(block, path.contains("deepslate"));
+        } else if (block instanceof EMBlockOre) {
+            addNoctisOre(block);
+        } else if (block instanceof BlockOre) {
             addDimOre(block, path);
         } else if (block instanceof BlockBin) {
             addCopy(block, false, nbt -> nbt.copy("Items", "mekData.Items"));
@@ -179,5 +196,39 @@ public class EMBlockLoot extends BlockLootSubProvider {
             return;
         }
         add(block, createOreDrop(block, drop));
+    }
+
+    private void addNoctisOre(Block block) {
+        add(block, createSilkTouchDispatchTable(block, applyExplosionDecay(block,
+                LootItem.lootTableItem(EMItems.NOCTIS_ROZULI)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 9)))
+                        .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))));
+    }
+
+    private void addNaturalNoctis(Block block, boolean deepslate) {
+        Item coveredSilk = deepslate ? Items.DEEPSLATE_LAPIS_ORE : Items.LAPIS_ORE;
+        Item uncoveredSilk = deepslate ? EMBlocks.DEEPSLATE_NOCTIS_ROZULI_ORE.asItem() : EMBlocks.NOCTIS_ROZULI_ORE.asItem();
+        add(block, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1)).add(
+                AlternativesEntry.alternatives(
+                        AlternativesEntry.alternatives(
+                                LootItem.lootTableItem(coveredSilk).when(silkTouch()),
+                                applyExplosionDecay(block, LootItem.lootTableItem(Items.LAPIS_LAZULI)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 9)))
+                                        .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))
+                        ).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                        .hasProperty(BlockNoctisRozuliOre.UNCOVERED, false))),
+                        AlternativesEntry.alternatives(
+                                LootItem.lootTableItem(uncoveredSilk).when(silkTouch()),
+                                applyExplosionDecay(block, LootItem.lootTableItem(EMItems.NOCTIS_ROZULI)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 9)))
+                                        .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))
+                )
+        )));
+    }
+
+    private static LootItemCondition.Builder silkTouch() {
+        return MatchTool.toolMatches(ItemPredicate.Builder.item()
+                .hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
     }
 }

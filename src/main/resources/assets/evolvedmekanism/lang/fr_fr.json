@@ -558,6 +558,8 @@
     "block.evolvedmekanism.shiverstone_uranium_ore": "Minerais d'uranium des frissons",
     "block.evolvedmekanism.noctis_ore": "Minerais de Noctis Rozuli",
     "block.evolvedmekanism.deepslate_noctis_ore": "Minerais de Noctis Rozuli des abîmes",
+    "block.evolvedmekanism.noctis_rozuli_ore": "Minerais de Noctis Rozuli",
+    "block.evolvedmekanism.deepslate_noctis_rozuli_ore": "Minerais de Noctis Rozuli des abîmes",
     "block.evolvedmekanism.supercharging_element": "\u00c9l\u00e9ment de surcharge",
     "item.evolvedmekanism.molten_copper_bucket": "Seau de cuivre fondu",
     "item.evolvedmekanism.molten_amethyst_bucket": "Seau d'am\u00e9thyste fondue",
@@ -802,5 +804,7 @@
     "item.evolvedmekanism.noctis_rozuli_shield.white": "Bouclier en noctis_rozuli blanc",
     "item.evolvedmekanism.noctis_rozuli_shield.yellow": "Bouclier en noctis_rozuli jaune",
     "apt.evolvedmekanism.invalid_supercharging": "Formation impossible: Arrangement des \u00e9l\u00e9ments de surcharge invalide.",
-    "description.evolvedmekanism.max_tier_installer": "Am\u00e9liore n'importe quelle machine compatible directement au tier %s."
+    "description.evolvedmekanism.max_tier_installer": "Améliore n'importe quelle machine compatible directement au tier %s.",
+    "description.evolvedmekanism.noctis_rozuli_ore": "On raconte que cela ne peut être extrait que lorsque le ciel se couvre et que la lumière de la lune guide le chemin.",
+    "trim_material.evolvedmekanism.noctis_rozuli": "Noctis rozuli"
 }

@@ -28,7 +28,20 @@ public class EMBiomeModifierProvider implements DataProvider {
         tasks.add(write(cache, "add_end_features", "#minecraft:is_end", "end"));
         tasks.add(write(cache, "add_aether_features", "#aether:is_aether", "aether"));
         tasks.add(write(cache, "add_undergarden_features", "#undergarden:is_undergarden", "undergarden"));
+        tasks.add(writeNoctis(cache));
         return CompletableFuture.allOf(tasks.toArray(CompletableFuture[]::new));
+    }
+
+    private CompletableFuture<?> writeNoctis(CachedOutput cache) {
+        JsonObject json = new JsonObject();
+        json.addProperty("type", "forge:add_features");
+        json.addProperty("biomes", "#mekanism:spawn_ores");
+        JsonArray features = new JsonArray();
+        features.add("evolvedmekanism:ore_noctis");
+        features.add("evolvedmekanism:ore_noctis_buried");
+        json.add("features", features);
+        json.addProperty("step", "underground_ores");
+        return DataProvider.saveStable(cache, json, pathProvider.json(EvolvedMekanism.rl("noctis")));
     }
 
     private CompletableFuture<?> write(CachedOutput cache, String name, String biomes, String dimension) {

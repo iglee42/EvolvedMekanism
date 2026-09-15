@@ -79,9 +79,17 @@ public class EMBlockStateProvider extends BlockStateProvider {
         cube("block/storage/better_gold", "block/block_better_gold");
         cube("block/storage/plaslitherite", "block/block_plaslitherite");
         cube("block/storage/refined_redstone", "block/block_refined_redstone");
+        cube("block/ores/noctis_rozuli_ore", "block/ores/noctis_rozuli_ore");
+        cube("block/ores/deepslate_noctis_rozuli_ore", "block/ores/deepslate_noctis_rozuli_ore");
+        cube("block/storage/noctis_rozuli", "block/block_noctis_rozuli");
         blockWithItem("block_better_gold", "block/storage/better_gold");
         blockWithItem("block_plaslitherite", "block/storage/plaslitherite");
         blockWithItem("block_refined_redstone", "block/storage/refined_redstone");
+        blockWithItem("block_noctis_rozuli", "block/storage/noctis_rozuli");
+        blockWithItem("noctis_rozuli_ore", "block/ores/noctis_rozuli_ore");
+        blockWithItem("deepslate_noctis_rozuli_ore", "block/ores/deepslate_noctis_rozuli_ore");
+        naturalOre("noctis_rozuli_ore_natural", modLoc("block/ores/noctis_rozuli_ore"), mcLoc("block/lapis_ore"));
+        naturalOre("deepslate_noctis_rozuli_ore_natural", modLoc("block/ores/deepslate_noctis_rozuli_ore"), mcLoc("block/deepslate_lapis_ore"));
         for (String alloy : List.of("infused", "reinforced", "atomic", "hypercharged", "subatomic", "singular", "exoversal", "creative")) {
             cube("block/storage/alloy_" + alloy, "block/block_alloy_" + alloy);
             blockWithItem("block_alloy_" + alloy, "block/storage/alloy_" + alloy);
@@ -111,6 +119,17 @@ public class EMBlockStateProvider extends BlockStateProvider {
         ModelFile model = models().getExistingFile(modLoc(modelPath));
         simpleBlock(block, model);
         simpleBlockItem(block, model);
+    }
+
+    private void naturalOre(String blockPath, ResourceLocation uncovered, ResourceLocation covered) {
+        Block block = block(blockPath);
+        if (block.defaultBlockState().isAir()) {
+            return;
+        }
+        BooleanProperty uncoveredProp = (BooleanProperty) block.getStateDefinition().getProperty("uncovered");
+        getVariantBuilder(block)
+                .partialState().with(uncoveredProp, true).modelForState().modelFile(new ModelFile.UncheckedModelFile(uncovered)).addModel()
+                .partialState().with(uncoveredProp, false).modelForState().modelFile(new ModelFile.UncheckedModelFile(covered)).addModel();
     }
 
     private void factory(FactoryTier tier, FactoryType type, boolean alloying) {

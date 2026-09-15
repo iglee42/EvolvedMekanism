@@ -31,6 +31,7 @@ public class EMBlockTags extends BlockTagsProvider {
         tag(EMTags.Blocks.STORAGE_BLOCKS_BETTER_GOLD).add(EMBlocks.BETTER_GOLD_BLOCK.getBlock());
         tag(EMTags.Blocks.STORAGE_BLOCKS_PLASLITHERITE).add(EMBlocks.PLASLITHERITE_BLOCK.getBlock());
         tag(EMTags.Blocks.STORAGE_BLOCKS_REFINED_REDSTONE).add(EMBlocks.REFINED_REDSTONE_BLOCK.getBlock());
+        tag(EMTags.Blocks.STORAGE_BLOCKS_NOCTIS_ROZULI).add(EMBlocks.NOCTIS_ROZULI_BLOCK.getBlock());
 
         tag(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_INFUSED).add(EMBlocks.INFUSED_ALLOY_BLOCK.getBlock());
         tag(EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_REINFORCED).add(EMBlocks.REINFORCED_ALLOY_BLOCK.getBlock());
@@ -47,7 +48,10 @@ public class EMBlockTags extends BlockTagsProvider {
                         EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_EXOVERSAL, EMTags.Blocks.STORAGE_BLOCKS_ALLOYS_CREATIVE);
         tag(EMDatagenTags.forgeBlock("storage_blocks"))
                 .addTags(EMTags.Blocks.STORAGE_BLOCKS_BETTER_GOLD, EMTags.Blocks.STORAGE_BLOCKS_PLASLITHERITE,
-                        EMTags.Blocks.STORAGE_BLOCKS_REFINED_REDSTONE, EMTags.Blocks.STORAGE_BLOCKS_ALLOYS);
+                        EMTags.Blocks.STORAGE_BLOCKS_REFINED_REDSTONE, EMTags.Blocks.STORAGE_BLOCKS_NOCTIS_ROZULI,
+                        EMTags.Blocks.STORAGE_BLOCKS_ALLOYS);
+        tag(EMDatagenTags.forgeBlock("storage_blocks/noctis")).addTag(EMTags.Blocks.STORAGE_BLOCKS_NOCTIS_ROZULI);
+        tag(EMDatagenTags.forgeBlock("ores/noctis")).addTag(EMTags.Blocks.ORES_NOCTIS_ROZULI);
         tag(EMDatagenTags.forgeBlock("storage_blocks/amethyst")).add(Blocks.AMETHYST_BLOCK);
         tag(EMDatagenTags.forgeBlock("storage_blocks/glowstone")).add(Blocks.GLOWSTONE);
         tag(EMDatagenTags.forgeBlock("storage_blocks/quartz")).add(Blocks.QUARTZ_BLOCK);
@@ -97,10 +101,15 @@ public class EMBlockTags extends BlockTagsProvider {
             tag(EMToolsTags.Blocks.NEEDS_BETTER_GOLD_TOOL);
             tag(EMToolsTags.Blocks.NEEDS_PLASLITHERITE_TOOL);
             tag(EMToolsTags.Blocks.NEEDS_REFINED_REDSTONE_TOOL);
+            tag(EMToolsTags.Blocks.NEEDS_NOCTIS_ROZULI_TOOL);
         }
     }
 
     private void classifyOre(Block block, String path) {
+        if (path.endsWith("_ore_natural")) {
+            tag(BlockTags.NEEDS_STONE_TOOL).add(block);
+            return;
+        }
         if (!path.endsWith("_ore")) {
             return;
         }
@@ -119,6 +128,10 @@ public class EMBlockTags extends BlockTagsProvider {
             tag(EMDatagenTags.forgeBlock("ores_in_ground/depthrock")).add(block);
         } else if (path.startsWith("shiverstone_")) {
             tag(EMDatagenTags.forgeBlock("ores_in_ground/shiverstone")).add(block);
+        } else if (path.startsWith("deepslate_")) {
+            tag(EMDatagenTags.forgeBlock("ores_in_ground/deepslate")).add(block);
+        } else if (resource != null && path.equals(resource + "_ore")) {
+            tag(EMDatagenTags.forgeBlock("ores_in_ground/stone")).add(block);
         }
         if (path.contains("fluorite")) {
             tag(EMDatagenTags.forgeBlock("ore_rates/dense")).add(block);

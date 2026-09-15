@@ -63,6 +63,10 @@ public class EMTags {
         public static final TagKey<Item> STORAGE_BLOCKS_BETTER_GOLD = forgeTag("storage_blocks/better_gold");
         public static final TagKey<Item> STORAGE_BLOCKS_PLASLITHERITE = forgeTag("storage_blocks/plaslitherite");
         public static final TagKey<Item> STORAGE_BLOCKS_REFINED_REDSTONE = forgeTag("storage_blocks/refined_redstone");
+        public static final TagKey<Item> STORAGE_BLOCKS_NOCTIS_ROZULI = forgeTag("storage_blocks/noctis_rozuli");
+        public static final TagKey<Item> GEMS_NOCTIS_ROZULI = forgeTag("gems/noctis_rozuli");
+        public static final TagKey<Item> DUSTS_NOCTIS_ROZULI = forgeTag("dusts/noctis_rozuli");
+        public static final TagKey<Item> ORES_NOCTIS_ROZULI = forgeTag("ores/noctis_rozuli");
 
         public static final TagKey<Item> INGOTS_BETTER_GOLD = forgeTag("ingots/better_gold");
         public static final TagKey<Item> INGOTS_PLASLITHERITE = forgeTag("ingots/plaslitherite");
@@ -123,6 +127,8 @@ public class EMTags {
         public static final TagKey<Block> STORAGE_BLOCKS_BETTER_GOLD = forgeTag("storage_blocks/better_gold");
         public static final TagKey<Block> STORAGE_BLOCKS_PLASLITHERITE = forgeTag("storage_blocks/plaslitherite");
         public static final TagKey<Block> STORAGE_BLOCKS_REFINED_REDSTONE = forgeTag("storage_blocks/refined_redstone");
+        public static final TagKey<Block> STORAGE_BLOCKS_NOCTIS_ROZULI = forgeTag("storage_blocks/noctis_rozuli");
+        public static final TagKey<Block> ORES_NOCTIS_ROZULI = forgeTag("ores/noctis_rozuli");
 
         public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS = forgeTag("storage_blocks/alloys");
         public static final TagKey<Block> STORAGE_BLOCKS_ALLOYS_INFUSED = forgeTag("storage_blocks/alloys/infused");

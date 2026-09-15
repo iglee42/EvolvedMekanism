@@ -71,6 +71,9 @@ public class EMItems {
     public static final ItemRegistryObject<Item> BETTER_GOLD_DUST = registerResource(ResourceType.DUST, EMResources.BETTER_GOLD);
     public static final ItemRegistryObject<Item> PLASLITHERITE_DUST = registerUnburnableResource(ResourceType.DUST, EMResources.PLASLITHERITE);
 
+    public static final ItemRegistryObject<Item> NOCTIS_ROZULI = ITEMS.register("noctis_rozuli");
+    public static final ItemRegistryObject<Item> NOCTIS_ROZULI_DUST = registerResource(ResourceType.DUST, EMResources.NOCTIS_ROZULI);
+
     public static final ItemRegistryObject<Item> MOLD_BLOCK = registerMold("storage_block");
     public static final ItemRegistryObject<Item> MOLD_INGOT = registerMold("ingot");
     public static final ItemRegistryObject<Item> MOLD_GEM = registerMold("gem");
