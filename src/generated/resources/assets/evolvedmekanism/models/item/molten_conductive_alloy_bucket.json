@@ -1,0 +1,5 @@
+{
+  "parent": "forge:item/bucket",
+  "fluid": "evolvedmekanism:molten_conductive_alloy",
+  "loader": "forge:fluid_container"
+}

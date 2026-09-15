@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:combining",
+  "extraInput": {
+    "ingredient": {
+      "item": "minecraft:end_stone"
+    }
+  },
+  "mainInput": {
+    "amount": 14,
+    "ingredient": {
+      "tag": "forge:dusts/fluorite"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:end_stone_fluorite_ore"
+  }
+}

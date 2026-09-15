@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "mekanism:alloys/atomic"
+    },
+    "P": {
+      "item": "mekanism:alloy_atomic"
+    }
+  },
+  "pattern": [
+    "###",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "item": "evolvedmekanism:block_alloy_atomic"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/queens_slime"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:wires/queens_slime"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_queens_slime"
+  }
+}

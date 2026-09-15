@@ -9,9 +9,11 @@ import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.jei.categories.APTRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.AlloyerRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.ChemixerRecipeCategory;
+import fr.iglee42.evolvedmekanism.jei.categories.MeltingRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.SolidificationRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMFluids;
@@ -23,11 +25,9 @@ import mekanism.api.energy.IStrictEnergyHandler;
 import mekanism.api.math.FloatingLong;
 import mekanism.api.providers.IItemProvider;
 import mekanism.api.recipes.ItemStackGasToItemStackRecipe;
-import mekanism.api.recipes.ItemStackToFluidRecipe;
 import mekanism.client.jei.CatalystRegistryHelper;
 import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.client.jei.RecipeRegistryHelper;
-import mekanism.client.jei.machine.ItemStackToFluidRecipeCategory;
 import mekanism.common.block.BlockOre;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
@@ -62,7 +62,7 @@ public class EMJEI implements IModPlugin {
     public static final MekanismJEIRecipeType<AlloyerRecipe> ALLOYING = new MekanismJEIRecipeType<>(EMBlocks.ALLOYER, AlloyerRecipe.class);
     public static final MekanismJEIRecipeType<ChemixerRecipe> CHEMIXING = new MekanismJEIRecipeType<>(EMBlocks.CHEMIXER, ChemixerRecipe.class);
     public static final MekanismJEIRecipeType<ItemStackGasToItemStackRecipe> APT = new MekanismJEIRecipeType<>(EMItems.BETTER_GOLD_INGOT, ItemStackGasToItemStackRecipe.class);
-    public static final MekanismJEIRecipeType<ItemStackToFluidRecipe> MELTING = new MekanismJEIRecipeType<>(EMBlocks.MELTER, ItemStackToFluidRecipe.class);
+    public static final MekanismJEIRecipeType<MeltingRecipe> MELTING = new MekanismJEIRecipeType<>(EMBlocks.MELTER, MeltingRecipe.class);
     public static final MekanismJEIRecipeType<SolidificationRecipe> SOLIDIFICATION = new MekanismJEIRecipeType<>(EMBlocks.SOLIDIFIER, SolidificationRecipe.class);
 
 
@@ -174,7 +174,7 @@ public class EMJEI implements IModPlugin {
         registry.addRecipeCategories(new AlloyerRecipeCategory(guiHelper, ALLOYING));
         registry.addRecipeCategories(new ChemixerRecipeCategory(guiHelper, CHEMIXING));
         registry.addRecipeCategories(new APTRecipeCategory(guiHelper, APT));
-        registry.addRecipeCategories(new ItemStackToFluidRecipeCategory(guiHelper, MELTING,EMBlocks.MELTER,false));
+        registry.addRecipeCategories(new MeltingRecipeCategory(guiHelper, MELTING));
         registry.addRecipeCategories(new SolidificationRecipeCategory(guiHelper, SOLIDIFICATION));
 
     }
@@ -189,7 +189,7 @@ public class EMJEI implements IModPlugin {
         List<FluidStack> fluidsToRemove = new ArrayList<>();
         List<ItemStack> itemsToRemove = new ArrayList<>();
         EMFluids.FLUIDS.getAllFluids().forEach(ro->{
-            boolean hasMelting = EMRecipeType.MELTING.getRecipes(null).stream().anyMatch(r->r.getOutput(ItemStack.EMPTY).getRawFluid().equals(ro.getFluid()));
+            boolean hasMelting = EMRecipeType.MELTING.getRecipes(null).stream().anyMatch(r -> r.getOutputDefinition().stream().anyMatch(s -> s.getFluid().equals(ro.getFluid())));
             boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.getInputFluid().test(new FluidStack(ro.getFluid(), (int) r.getInputFluid().getNeededAmount(new FluidStack(ro.getFluid(),1)))));
             if (!hasMelting && !hasSolidifying){
                 fluidsToRemove.add(ro.getFluidStack(1000));

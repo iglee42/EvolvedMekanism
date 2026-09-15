@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:combining",
+  "extraInput": {
+    "ingredient": {
+      "item": "minecraft:netherrack"
+    }
+  },
+  "mainInput": {
+    "amount": 8,
+    "ingredient": {
+      "tag": "forge:raw_materials/uranium"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:netherrack_uranium_ore"
+  }
+}

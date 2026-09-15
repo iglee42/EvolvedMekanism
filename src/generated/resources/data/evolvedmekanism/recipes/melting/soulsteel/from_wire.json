@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/soulsteel"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:wires/soulsteel"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_soulsteel"
+  }
+}

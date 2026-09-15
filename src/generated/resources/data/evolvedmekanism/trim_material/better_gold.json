@@ -1,0 +1,9 @@
+{
+  "asset_name": "better_gold",
+  "description": {
+    "color": "#FDF147",
+    "translate": "trim_material.evolvedmekanism.better_gold"
+  },
+  "ingredient": "evolvedmekanism:ingot_better_gold",
+  "item_model_index": 0.6
+}

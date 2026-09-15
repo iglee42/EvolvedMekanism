@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:nuggets/refined_obsidian"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:nuggets/refined_obsidian"
+    }
+  },
+  "output": {
+    "amount": 10,
+    "tag": "forge:molten_refined_obsidian"
+  }
+}

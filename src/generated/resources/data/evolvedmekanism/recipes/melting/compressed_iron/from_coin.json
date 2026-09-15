@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/compressed_iron"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:coins/compressed_iron"
+    }
+  },
+  "output": {
+    "amount": 30,
+    "tag": "forge:molten_compressed_iron"
+  }
+}

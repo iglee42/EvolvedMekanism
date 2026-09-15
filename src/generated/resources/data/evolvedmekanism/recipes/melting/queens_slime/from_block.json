@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:storage_blocks/queens_slime"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:storage_blocks/queens_slime"
+    }
+  },
+  "output": {
+    "amount": 810,
+    "tag": "forge:molten_queens_slime"
+  }
+}

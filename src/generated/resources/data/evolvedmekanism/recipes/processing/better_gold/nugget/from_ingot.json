@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/better_gold"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "evolvedmekanism:nugget_better_gold"
+  }
+}

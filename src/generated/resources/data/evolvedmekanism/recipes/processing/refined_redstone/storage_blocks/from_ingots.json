@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/refined_redstone"
+    },
+    "P": {
+      "item": "evolvedmekanism:ingot_refined_redstone"
+    }
+  },
+  "pattern": [
+    "###",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "item": "evolvedmekanism:block_refined_redstone"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:ingots/refined_redstone"
+    }
+  },
+  "pattern": [
+    "III",
+    "I I",
+    "I I"
+  ],
+  "result": {
+    "item": "evolvedmekanism:refined_redstone_leggings"
+  },
+  "show_notification": true
+}

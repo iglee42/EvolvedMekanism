@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/uranium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:ingots/uranium"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_uranium"
+  }
+}

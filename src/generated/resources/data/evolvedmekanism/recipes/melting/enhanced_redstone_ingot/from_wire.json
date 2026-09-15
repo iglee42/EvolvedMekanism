@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/enhanced_redstone_ingot"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:wires/enhanced_redstone_ingot"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_enhanced_redstone_ingot"
+  }
+}

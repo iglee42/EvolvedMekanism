@@ -108,6 +108,8 @@ public class EvolvedMekanism {
 
         registerCompats();
 
+        modEventBus.addListener(fr.iglee42.evolvedmekanism.datagen.EMDataGenerator::gatherData);
+
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(this::serverStopped);
 
@@ -181,7 +183,7 @@ public class EvolvedMekanism {
     }
 
     public static ResourceLocation rl(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MODID, path);
+        return new ResourceLocation(MODID, path);
     }
 
     public static ResourceLocation getResource(MekanismUtils.ResourceType type, String name) {

@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/redstone_alloy"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gears/redstone_alloy"
+    }
+  },
+  "output": {
+    "amount": 360,
+    "tag": "forge:molten_redstone_alloy"
+  }
+}

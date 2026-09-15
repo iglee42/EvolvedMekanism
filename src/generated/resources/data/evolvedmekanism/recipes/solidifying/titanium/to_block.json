@@ -1,0 +1,29 @@
+{
+  "type": "evolvedmekanism:solidifying",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:storage_blocks/titanium"
+      }
+    }
+  ],
+  "duration": 540,
+  "extraInput": {
+    "amount": 810,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluidInput": {
+    "amount": 810,
+    "tag": "forge:molten_titanium"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_storage_block"
+    }
+  },
+  "output": {
+    "tag": "forge:storage_blocks/titanium"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "evolvedmekanism:solidifying",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:nuggets/neptunium"
+      }
+    }
+  ],
+  "duration": 6,
+  "extraInput": {
+    "amount": 10,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluidInput": {
+    "amount": 10,
+    "tag": "forge:molten_neptunium"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_nugget"
+    }
+  },
+  "output": {
+    "tag": "forge:nuggets/neptunium"
+  }
+}

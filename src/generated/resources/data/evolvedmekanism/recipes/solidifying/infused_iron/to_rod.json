@@ -1,0 +1,29 @@
+{
+  "type": "evolvedmekanism:solidifying",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/infused_iron"
+      }
+    }
+  ],
+  "duration": 30,
+  "extraInput": {
+    "amount": 45,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluidInput": {
+    "amount": 45,
+    "tag": "forge:molten_infused_iron"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_rod"
+    }
+  },
+  "output": {
+    "tag": "forge:rods/infused_iron"
+  }
+}

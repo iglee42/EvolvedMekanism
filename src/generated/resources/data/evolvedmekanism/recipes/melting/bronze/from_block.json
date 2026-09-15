@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:storage_blocks/bronze"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:storage_blocks/bronze"
+    }
+  },
+  "output": {
+    "amount": 810,
+    "tag": "forge:molten_bronze"
+  }
+}

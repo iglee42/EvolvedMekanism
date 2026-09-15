@@ -113,11 +113,8 @@ minecraft {
         }
 
         data {
-            // example of overriding the workingDirectory set in configureEach above
             workingDirectory project.file('run-data')
-
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'mekanism', '--existing-mod', 'mekanismgenerators', '--existing-mod', 'mekanismtools'
         }
     }
 }
@@ -206,6 +203,7 @@ tasks.named('processResources', ProcessResources).configure {
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties + [project: project]
     }
+    duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.INCLUDE
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
@@ -238,6 +236,16 @@ publishing {
                 password = System.getenv().get("MAVEN_REPO_PASSWORD")
             }
         }
+    }
+}
+
+tasks.register('cleanOldGeneratedResources', Delete) {
+    delete "$projectDir/src/generated/resources"
+}
+
+tasks.configureEach { task ->
+    if (task.name == 'runData') {
+        task.dependsOn 'cleanOldGeneratedResources'
     }
 }
 

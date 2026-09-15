@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/certus_quartz"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:rods/certus_quartz"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_certus_quartz"
+  }
+}

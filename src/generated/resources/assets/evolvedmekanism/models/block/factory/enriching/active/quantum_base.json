@@ -1,0 +1,6 @@
+{
+  "parent": "mekanism:block/factory/enriching/base",
+  "textures": {
+    "front": "mekanism:block/factory/enriching/enriching_factory_front_active"
+  }
+}

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import fr.iglee42.evolvedmekanism.interfaces.MeltingCachedRecipe;
+import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlockTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
@@ -17,11 +19,8 @@ import mekanism.api.fluid.IExtendedFluidTank;
 import mekanism.api.heat.HeatAPI;
 import mekanism.api.inventory.IInventorySlot;
 import mekanism.api.math.FloatingLong;
-import mekanism.api.recipes.ItemStackToFluidRecipe;
-import mekanism.api.recipes.ItemStackToGasRecipe;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.api.recipes.cache.CachedRecipe.OperationTracker.RecipeError;
-import mekanism.api.recipes.cache.OneInputCachedRecipe;
 import mekanism.api.recipes.inputs.IInputHandler;
 import mekanism.api.recipes.inputs.InputHelper;
 import mekanism.api.recipes.outputs.IOutputHandler;
@@ -76,7 +75,7 @@ import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluidRecipe> implements ItemRecipeLookupHandler<ItemStackToFluidRecipe> {
+public class TileEntityMelter extends TileEntityProgressMachine<MeltingRecipe> implements ItemRecipeLookupHandler<MeltingRecipe> {
 
     private static final List<RecipeError> TRACKED_ERROR_TYPES = List.of(
           RecipeError.NOT_ENOUGH_INPUT,
@@ -175,20 +174,20 @@ public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluid
 
     @NotNull
     @Override
-    public IMekanismRecipeTypeProvider<ItemStackToFluidRecipe, SingleItem<ItemStackToFluidRecipe>> getRecipeType() {
+    public IMekanismRecipeTypeProvider<MeltingRecipe, SingleItem<MeltingRecipe>> getRecipeType() {
         return EMRecipeType.MELTING;
     }
 
     @Nullable
     @Override
-    public ItemStackToFluidRecipe getRecipe(int cacheIndex) {
+    public MeltingRecipe getRecipe(int cacheIndex) {
         return findFirstRecipe(inputHandler);
     }
 
     @NotNull
     @Override
-    public CachedRecipe<ItemStackToFluidRecipe> createNewCachedRecipe(@NotNull ItemStackToFluidRecipe recipe, int cacheIndex) {
-        return OneInputCachedRecipe.itemToFluid(recipe, recheckAllRecipeErrors, inputHandler, outputHandler)
+    public CachedRecipe<MeltingRecipe> createNewCachedRecipe(@NotNull MeltingRecipe recipe, int cacheIndex) {
+        return new MeltingCachedRecipe(recipe, recheckAllRecipeErrors, inputHandler, outputHandler)
               .setErrorsChanged(this::onErrorsChanged)
               .setCanHolderFunction(() -> MekanismUtils.canFunction(this) && hasMachineEnoughHeat())
               .setActive(this::setActive)

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "evolvedmekanism:alloys/exoversal"
+    },
+    "P": {
+      "item": "evolvedmekanism:alloy_exoversal"
+    }
+  },
+  "pattern": [
+    "###",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "item": "evolvedmekanism:block_alloy_exoversal"
+  },
+  "show_notification": true
+}

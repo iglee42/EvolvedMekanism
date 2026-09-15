@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "evolvedmekanism:item/tools/refined_redstone/paxel"
+  }
+}

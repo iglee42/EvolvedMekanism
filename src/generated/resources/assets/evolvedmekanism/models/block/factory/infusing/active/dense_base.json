@@ -1,0 +1,6 @@
+{
+  "parent": "mekanism:block/factory/infusing/base",
+  "textures": {
+    "front": "mekanism:block/factory/infusing/infusing_factory_front_active"
+  }
+}

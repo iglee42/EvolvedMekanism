@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/fluix"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:ingots/fluix"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_fluix"
+  }
+}

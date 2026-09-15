@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gems/awakened_draconium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gems/awakened_draconium"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_awakened_draconium"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "evolvedmekanism:solidifying",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/fluix"
+      }
+    }
+  ],
+  "duration": 20,
+  "extraInput": {
+    "amount": 30,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluidInput": {
+    "amount": 30,
+    "tag": "forge:molten_fluix"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_coin"
+    }
+  },
+  "output": {
+    "tag": "forge:coins/fluix"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/tertium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:ingots/tertium"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_tertium"
+  }
+}

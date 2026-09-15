@@ -1,0 +1,29 @@
+{
+  "type": "evolvedmekanism:solidifying",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/graphite"
+      }
+    }
+  ],
+  "duration": 60,
+  "extraInput": {
+    "amount": 90,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluidInput": {
+    "amount": 90,
+    "tag": "forge:molten_graphite"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_ingot"
+    }
+  },
+  "output": {
+    "tag": "forge:ingots/graphite"
+  }
+}

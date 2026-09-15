@@ -1,0 +1,27 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/singular"
+    },
+    "C": {
+      "tag": "forge:circuits/dense"
+    },
+    "O": {
+      "tag": "forge:ingots/osmium"
+    },
+    "P": {
+      "item": "evolvedmekanism:alloyer"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "OPO",
+    "ACA"
+  ],
+  "result": {
+    "item": "evolvedmekanism:chemixer"
+  },
+  "show_notification": true
+}
