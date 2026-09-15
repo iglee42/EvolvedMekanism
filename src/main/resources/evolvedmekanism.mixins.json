@@ -23,6 +23,7 @@
     "TripleInputRecipeCacheMixin",
     "UpgradeMixin",
     "UpgradeUtilsMixin",
+    "blocks.BlockPersonalStorageMixin",
     "blocks.BlockLogisticalTransporterMixin",
     "blocks.BlockMechanicalPipeMixin",
     "blocks.BlockPressurizedTubeMixin",
