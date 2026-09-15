@@ -22,6 +22,16 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_DENSE_SOLAR_GENERATOR("description", "dense_solar_generator"),
     DESCRIPTION_MULTIVERSAL_SOLAR_GENERATOR("description", "multiversal_solar_generator"),
     DESCRIPTION_CREATIVE_SOLAR_GENERATOR("description", "creative_solar_generator"),
+    DESCRIPTION_LUNAR_GENERATOR("description", "lunar_generator"),
+    DESCRIPTION_BASIC_ADVANCED_LUNAR_GENERATOR("description", "basic_advanced_lunar_generator"),
+    DESCRIPTION_ADVANCED_LUNAR_GENERATOR("description", "advanced_lunar_generator"),
+    DESCRIPTION_ELITE_LUNAR_GENERATOR("description", "elite_lunar_generator"),
+    DESCRIPTION_ULTIMATE_LUNAR_GENERATOR("description", "ultimate_lunar_generator"),
+    DESCRIPTION_OVERCLOCKED_LUNAR_GENERATOR("description", "overclocked_lunar_generator"),
+    DESCRIPTION_QUANTUM_LUNAR_GENERATOR("description", "quantum_lunar_generator"),
+    DESCRIPTION_DENSE_LUNAR_GENERATOR("description", "dense_lunar_generator"),
+    DESCRIPTION_MULTIVERSAL_LUNAR_GENERATOR("description", "multiversal_lunar_generator"),
+    DESCRIPTION_CREATIVE_LUNAR_GENERATOR("description", "creative_lunar_generator"),
     DESCRIPTION_SUPERCHARGING_ELEMENT("description", "supercharging_element"),
 
     DESCRIPTION_MAX_TIER_INSTALLER("description", "max_tier_installer"),
@@ -40,10 +50,13 @@ public enum EvolvedMekanismLang implements ILangEntry {
     public static MekanismLang DESCRIPTION_ALLOYER; // type : description | path : alloyer
     public static MekanismLang DESCRIPTION_MELTER; // type : description | path : thermalizer
     public static MekanismLang DESCRIPTION_SOLIDIFIER; // type : description | path : solidification_chamber
+    public static MekanismLang DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR;
     public static APILang UPGRADE_RADIOACTIVE; // type : upgrade | path : radioactive
     public static APILang UPGRADE_SOLAR; // type : upgrade | path : solar
+    public static APILang UPGRADE_LUNAR; // type : upgrade | path : lunar
     public static APILang UPGRADE_RADIOACTIVE_DESCRIPTION; // type : upgrade | path : radioactive.description
     public static APILang UPGRADE_SOLAR_DESCRIPTION; // type : upgrade | path : solar.description
+    public static APILang UPGRADE_LUNAR_DESCRIPTION; // type : upgrade | path : lunar.description
 
 
     private final String key;

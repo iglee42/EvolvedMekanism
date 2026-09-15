@@ -64,7 +64,11 @@ public class EMBlockTags extends BlockTagsProvider {
         var mineable = tag(BlockTags.MINEABLE_WITH_PICKAXE);
         for (Block block : ForgeRegistries.BLOCKS) {
             ResourceLocation id = ForgeRegistries.BLOCKS.getKey(block);
-            if (id == null || !EvolvedMekanism.MODID.equals(id.getNamespace()) || block instanceof LiquidBlock) {
+            if (id == null || !EvolvedMekanism.MODID.equals(id.getNamespace())) {
+                continue;
+            }
+            if (block instanceof LiquidBlock) {
+                tag(BlockTags.REPLACEABLE).add(block);
                 continue;
             }
             mineable.add(block);

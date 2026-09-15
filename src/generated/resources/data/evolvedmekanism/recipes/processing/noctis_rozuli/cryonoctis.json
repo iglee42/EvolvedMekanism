@@ -1,0 +1,21 @@
+{
+  "type": "mekanism:reaction",
+  "duration": 60,
+  "fluidInput": {
+    "amount": 1,
+    "tag": "forge:nitrogen"
+  },
+  "gasInput": {
+    "amount": 1,
+    "tag": "forge:nitrogen"
+  },
+  "gasOutput": {
+    "amount": 1000,
+    "gas": "evolvedmekanism:cryonoctis"
+  },
+  "itemInput": {
+    "ingredient": {
+      "tag": "forge:gems/noctis_rozuli"
+    }
+  }
+}

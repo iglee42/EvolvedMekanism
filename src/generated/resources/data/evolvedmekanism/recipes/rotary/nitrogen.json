@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "fluidInput": {
+    "amount": 1,
+    "tag": "forge:nitrogen"
+  },
+  "fluidOutput": {
+    "amount": 1,
+    "fluid": "evolvedmekanism:nitrogen"
+  },
+  "gasInput": {
+    "amount": 1,
+    "tag": "forge:nitrogen"
+  },
+  "gasOutput": {
+    "amount": 1,
+    "gas": "evolvedmekanism:nitrogen"
+  }
+}

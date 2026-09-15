@@ -1,0 +1,12 @@
+{
+  "type": "mekanism:oxidizing",
+  "input": {
+    "ingredient": {
+      "item": "minecraft:pitcher_plant"
+    }
+  },
+  "output": {
+    "amount": 250,
+    "gas": "evolvedmekanism:nitrogen"
+  }
+}

@@ -170,6 +170,9 @@ public class EMLangProvider extends LanguageProvider {
         add("block.evolvedmekanism.dense_solar_generator", "Dense Solar Generator");
         add("block.evolvedmekanism.multiversal_solar_generator", "Multiversal Solar Generator");
         add("block.evolvedmekanism.creative_solar_generator", "Creative Solar Generator");
+        add("block.evolvedmekanism.lunar_generator", "Lunar Generator");
+        add("block.evolvedmekanism.basic_advanced_lunar_generator", "Basic Advanced Lunar Generator");
+        add("block.evolvedmekanism.lunar_neutron_activator", "Lunar Neutron Activator");
         add("block.evolvedmekanism.advanced_lunar_generator", "Advanced Lunar Generator");
         add("block.evolvedmekanism.advanced_lunar_generator2", "Advanced Lunar Generator");
         add("block.evolvedmekanism.elite_lunar_generator", "Elite Lunar Generator");
@@ -313,6 +316,9 @@ public class EMLangProvider extends LanguageProvider {
         add("container.evolvedmekanism.dense_solar_generator", "Dense Solar Generator");
         add("container.evolvedmekanism.multiversal_solar_generator", "Multiversal Solar Generator");
         add("container.evolvedmekanism.creative_solar_generator", "Creative Solar Generator");
+        add("container.evolvedmekanism.lunar_generator", "Lunar Generator");
+        add("container.evolvedmekanism.basic_advanced_lunar_generator", "Basic Advanced Lunar Generator");
+        add("container.evolvedmekanism.lunar_neutron_activator", "Lunar Neutron Activator");
         add("container.evolvedmekanism.advanced_lunar_generator", "Advanced Lunar Generator");
         add("container.evolvedmekanism.advanced_lunar_generator2", "Advanced Lunar Generator");
         add("container.evolvedmekanism.elite_lunar_generator", "Elite Lunar Generator");
@@ -366,6 +372,7 @@ public class EMLangProvider extends LanguageProvider {
         add("item.evolvedmekanism.dense_lunar_panel", "Dense Lunar Panel");
         add("item.evolvedmekanism.multiversal_lunar_panel", "Multiversal Lunar Panel");
         add("item.evolvedmekanism.creative_lunar_panel", "Creative Lunar Panel");
+        add("item.evolvedmekanism.lunar_panel", "Lunar Panel");
         add("item.evolvedmekanism.upgrade_radioactive", "Radioactive Upgrade");
         add("item.evolvedmekanism.upgrade_solar", "Solar Upgrade");
         add("item.evolvedmekanism.upgrade_lunar", "Lunar Upgrade");
@@ -384,6 +391,14 @@ public class EMLangProvider extends LanguageProvider {
         add("infuse_type.evolvedmekanism.uranium", "Uranium");
         add("infuse_type.evolvedmekanism.better_gold", "Better Gold");
         add("infuse_type.evolvedmekanism.plaslitherite", "Plaslitherite");
+        add("gas.evolvedmekanism.nitrogen", "Nitrogen");
+        add("gas.evolvedmekanism.cryonoctis", "Cryonoctis");
+        add("block.evolvedmekanism.nitrogen", "Nitrogen");
+        add("block.evolvedmekanism.cryonoctis", "Cryonoctis");
+        add("item.evolvedmekanism.nitrogen_bucket", "Nitrogen Bucket");
+        add("item.evolvedmekanism.cryonoctis_bucket", "Cryonoctis Bucket");
+        add("fluid_type.evolvedmekanism.nitrogen", "Nitrogen");
+        add("fluid_type.evolvedmekanism.cryonoctis", "Cryonoctis");
         add("apt.evolvedmekanism.port_mode", "Toggled APT Port mode to: %1$s.");
         add("apt.evolvedmekanism.apt", "Antimatter Protomolecular Transmutator");
         add("tiered_storage.evolvedmekanism.capacity", "Capacity: %s");
@@ -421,6 +436,10 @@ public class EMLangProvider extends LanguageProvider {
         add("description.evolvedmekanism.dense_solar_generator", "A dense generator that directly absorbs the sun's rays with little loss to produce energy.");
         add("description.evolvedmekanism.multiversal_solar_generator", "A multiversal generator that directly absorbs the sun's rays with little loss to produce energy.");
         add("description.evolvedmekanism.creative_solar_generator", "A creative generator that directly absorbs the sun's rays with little loss to produce energy.");
+        add("description.evolvedmekanism.lunar_generator", "A generator that directly absorbs the moon's rays with little loss to produce energy.");
+        add("description.evolvedmekanism.basic_advanced_lunar_generator", "A compact advanced generator that directly absorbs the moon's rays with little loss to produce energy.");
+        add("description.evolvedmekanism.lunar_neutron_activator", "A machine that uses moonlight to activate gases, converting them into other gases.");
+        add("description.mekanism.lunar_neutron_activator", "A machine that uses moonlight to activate gases, converting them into other gases.");
         add("description.evolvedmekanism.advanced_lunar_generator", "An advanced generator that directly absorbs the moon's rays with little loss to produce energy.");
         add("description.evolvedmekanism.advanced_lunar_generator2", "An advanced generator that directly absorbs the moon's rays with little loss to produce energy.");
         add("description.evolvedmekanism.elite_lunar_generator", "An elite generator that directly absorbs the moon's rays with little loss to produce energy.");

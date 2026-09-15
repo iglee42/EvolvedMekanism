@@ -51,6 +51,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
 
 @EmiEntrypoint
 public class EMEmi implements EmiPlugin {
@@ -157,6 +158,10 @@ public class EMEmi implements EmiPlugin {
         EMFluids.FLUIDS.getAllFluids().forEach(ro -> {
             boolean hasMelting = EMRecipeType.MELTING.getRecipes(null).stream().anyMatch(r -> r.getOutputDefinition().stream().anyMatch(s -> s.getFluid().equals(ro.getFluid())));
             boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r -> r.getInputFluid().test(new FluidStack(ro.getFluid(), (int) r.getInputFluid().getNeededAmount(new FluidStack(ro.getFluid(), 1)))));
+            String path = ForgeRegistries.FLUIDS.getKey(ro.getFluid()) == null ? "" : ForgeRegistries.FLUIDS.getKey(ro.getFluid()).getPath();
+            if (!path.contains("molten_")) {
+                return;
+            }
             if (!hasMelting && !hasSolidifying) {
                 toRemove.add(EmiStack.of(ro.getFluid()));
                 toRemove.add(EmiStack.of(ro.getFluid().getBucket()));

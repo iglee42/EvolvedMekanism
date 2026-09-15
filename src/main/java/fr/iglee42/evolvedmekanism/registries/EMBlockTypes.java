@@ -13,6 +13,7 @@ import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
+import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import mekanism.api.Upgrade;
 import mekanism.common.MekanismLang;
 import mekanism.common.block.attribute.*;
@@ -77,6 +78,16 @@ public class EMBlockTypes {
             .withEnergyConfig(MekanismConfig.usage.pressurizedReactionBase, MekanismConfig.storage.pressurizedReactionBase)
             .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
             .withComputerSupport("solidifier")
+            .build();
+
+    public static final Machine<TileEntityLunarNeutronActivator> LUNAR_NEUTRON_ACTIVATOR = MachineBuilder
+            .createMachine(() -> EMTileEntityTypes.LUNAR_NEUTRON_ACTIVATOR, EvolvedMekanismLang.DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR)
+            .withGui(() -> EMContainerTypes.LUNAR_NEUTRON_ACTIVATOR)
+            .without(AttributeParticleFX.class, AttributeUpgradeSupport.class)
+            .withCustomShape(BlockShapes.SOLAR_NEUTRON_ACTIVATOR)
+            .withBounding((pos, state, builder) -> builder.add(pos.above()))
+            .withComputerSupport("lunarNeutronActivator")
+            .replace(Attributes.ACTIVE)
             .build();
 
     // APT Casing

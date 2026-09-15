@@ -33,6 +33,7 @@ public final class EMDataGenerator {
         generator.addProvider(server, new EMItemTags(output, lookup, blockTags.contentsGetter(), existing));
         generator.addProvider(server, new EMFluidTags(output, lookup, existing));
         generator.addProvider(server, new EMInfuseTags(output, lookup, existing));
+        generator.addProvider(server, new EMGasTags(output, lookup, existing));
         generator.addProvider(server, new EMRecipeProvider(output));
         generator.addProvider(server, new LootTableProvider(output, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(EMBlockLoot::new, LootContextParamSets.BLOCK)

@@ -1,0 +1,30 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanismgenerators"
+    }
+  ],
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/infused"
+    },
+    "C": {
+      "tag": "forge:gems/noctis_rozuli"
+    },
+    "P": {
+      "item": "evolvedmekanism:lunar_generator"
+    }
+  },
+  "pattern": [
+    "PAP",
+    "PAP",
+    "CCC"
+  ],
+  "result": {
+    "item": "evolvedmekanism:basic_advanced_lunar_generator"
+  },
+  "show_notification": true
+}

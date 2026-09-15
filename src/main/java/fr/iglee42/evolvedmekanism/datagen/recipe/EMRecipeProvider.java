@@ -7,6 +7,8 @@ import fr.iglee42.emtools.registries.EMToolsItems;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.datagen.EMDatagenTags;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.registries.EMFluids;
+import fr.iglee42.evolvedmekanism.registries.EMGases;
 import fr.iglee42.evolvedmekanism.registries.EMInfuseTypes;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMTags;
@@ -15,6 +17,9 @@ import mekanism.api.datagen.recipe.builder.ItemStackChemicalToItemStackRecipeBui
 import mekanism.api.datagen.recipe.builder.ItemStackToChemicalRecipeBuilder;
 import mekanism.api.datagen.recipe.builder.ItemStackToItemStackRecipeBuilder;
 import mekanism.api.datagen.recipe.builder.NucleosynthesizingRecipeBuilder;
+import mekanism.api.datagen.recipe.builder.PressurizedReactionRecipeBuilder;
+import mekanism.api.datagen.recipe.builder.RotaryRecipeBuilder;
+import mekanism.api.chemical.gas.GasStack;
 import mekanism.api.recipes.ingredients.creator.IngredientCreatorAccess;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismGases;
@@ -79,6 +84,11 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMCrafting.keys('A', EMDatagenTags.forgeItem("storage_blocks/alloys/singular"),
                         'I', EMDatagenTags.forgeItem("ingots/refined_redstone"), 'X', MekanismBlocks.SUPERHEATING_ELEMENT),
                 has(MekanismBlocks.SUPERHEATING_ELEMENT));
+        EMCrafting.shaped(output, "lunar_neutron_activator", EMBlocks.LUNAR_NEUTRON_ACTIVATOR, 1, new String[]{"A#A", "CXC", "III"},
+                EMCrafting.keys('#', MekanismItems.HDPE_SHEET, 'A', MekanismTags.Items.ALLOYS_REINFORCED,
+                        'C', EMDatagenTags.forgeItem("circuits/elite"), 'I', EMTags.Items.GEMS_NOCTIS_ROZULI,
+                        'X', MekanismBlocks.STEEL_CASING),
+                has(MekanismBlocks.STEEL_CASING));
 
         addModule(output, "module_air_affinity_unit", EMItems.AIR_AFFINITY, EMCrafting.item("mekanism:oxygen_bucket"));
         addModule(output, "module_aqua_affinity_unit", EMItems.AQUA_AFFINITY, MekanismItems.SCUBA_MASK);
@@ -135,6 +145,7 @@ public class EMRecipeProvider extends RecipeProvider {
             addCircuit(output, tier);
             addTierInstaller(output, tier);
             addSolarGenerator(mek, tier);
+            addLunarGenerator(mek, tier);
         }
         for (TieredRecipes.TierData tier : TieredRecipes.ALLOYING_VANILLA_TIERS) {
             EMCrafting.shaped(mek, "factory/" + tier.name() + "/alloying",
@@ -292,6 +303,22 @@ public class EMRecipeProvider extends RecipeProvider {
         CombinerRecipeBuilder.combining(IngredientCreatorAccess.item().from(EMTags.Items.DUSTS_NOCTIS_ROZULI, 27),
                 IngredientCreatorAccess.item().from(EMDatagenTags.forgeItem("cobblestone/deepslate")), EMCrafting.stack(EMBlocks.DEEPSLATE_NOCTIS_ROZULI_ORE))
                 .build(output, EvolvedMekanism.rl("processing/noctis_rozuli/to_deepslate_ore"));
+        ItemStackToChemicalRecipeBuilder.oxidizing(IngredientCreatorAccess.item().from(Items.PITCHER_PLANT), new GasStack(EMGases.NITROGEN.get(), 250))
+                .build(output, EvolvedMekanism.rl("processing/noctis_rozuli/nitrogen"));
+        PressurizedReactionRecipeBuilder.reaction(
+                IngredientCreatorAccess.item().from(EMTags.Items.GEMS_NOCTIS_ROZULI),
+                IngredientCreatorAccess.fluid().from(EMDatagenTags.forgeFluid("nitrogen"), 1),
+                IngredientCreatorAccess.gas().from(EMTags.Gases.NITROGEN, 1),
+                60,
+                new GasStack(EMGases.CRYONOCTIS.get(), 1000)
+        ).build(output, EvolvedMekanism.rl("processing/noctis_rozuli/cryonoctis"));
+        PressurizedReactionRecipeBuilder.reaction(
+                IngredientCreatorAccess.item().from(EMTags.Items.STORAGE_BLOCKS_NOCTIS_ROZULI),
+                IngredientCreatorAccess.fluid().from(EMDatagenTags.forgeFluid("nitrogen"), 9),
+                IngredientCreatorAccess.gas().from(EMTags.Gases.NITROGEN, 9),
+                60,
+                new GasStack(EMGases.CRYONOCTIS.get(), 9000)
+        ).build(output, EvolvedMekanism.rl("processing/noctis_rozuli/cryonoctis_from_block"));
 
         addDimOreProcessing(output, "osmium", MekanismItems.PROCESSED_RESOURCES.get(ResourceType.INGOT, PrimaryResource.OSMIUM), EMDatagenTags.forgeItem("raw_materials/osmium"));
         addDimOreProcessing(output, "tin", MekanismItems.PROCESSED_RESOURCES.get(ResourceType.INGOT, PrimaryResource.TIN), EMDatagenTags.forgeItem("raw_materials/tin"));
@@ -499,6 +526,65 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMCrafting.keys('A', MekanismTags.Items.ALLOYS_ATOMIC, 'C', EMDatagenTags.forgeItem("circuits/ultimate"),
                         'I', Tags.Items.GEMS_DIAMOND, 'P', EMGenBlocks.ELITE_SOLAR_GENERATOR),
                 has(EMGenBlocks.ELITE_SOLAR_GENERATOR));
+        RotaryRecipeBuilder.rotary(
+                IngredientCreatorAccess.fluid().from(EMDatagenTags.forgeFluid("nitrogen"), 1),
+                IngredientCreatorAccess.gas().from(EMTags.Gases.NITROGEN, 1),
+                new GasStack(EMGases.NITROGEN.get(), 1),
+                EMFluids.NITROGEN.getFluidStack(1)
+        ).build(output, EvolvedMekanism.rl("rotary/nitrogen"));
+        RotaryRecipeBuilder.rotary(
+                IngredientCreatorAccess.fluid().from(EMDatagenTags.forgeFluid("cryonoctis"), 1),
+                IngredientCreatorAccess.gas().from(EMTags.Gases.CRYONOCTIS, 1),
+                new GasStack(EMGases.CRYONOCTIS.get(), 1),
+                EMFluids.CRYONOCTIS.getFluidStack(1)
+        ).build(output, EvolvedMekanism.rl("rotary/cryonoctis"));
+        EMCrafting.shaped(output, "lunar_panel", EMGenItems.LUNAR_PANEL, 1, new String[]{"GGG", "RAR", "OOO"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_INFUSED, 'G', Tags.Items.GLASS_PANES,
+                        'O', EMTags.Items.GEMS_NOCTIS_ROZULI, 'R', Tags.Items.DUSTS_REDSTONE),
+                has(Tags.Items.DUSTS_REDSTONE), new ModLoadedCondition("mekanismgenerators"));
+        EMCrafting.shaped(output, "upgrade/lunar", EMGenItems.LUNAR_UPGRADE, 1, new String[]{" G ", "A#A", " G "},
+                EMCrafting.keys('#', EMTags.Items.DUSTS_NOCTIS_ROZULI, 'A', EMDatagenTags.item("evolvedmekanism", "alloys/singular"),
+                        'G', EMDatagenTags.forgeItem("glass/silica")),
+                has(EMItems.SINGULAR_ALLOY), new ModLoadedCondition("mekanismgenerators"));
+        EMCrafting.shaped(EMCrafting.mekData(gen), "lunar_generators/generator", EMGenBlocks.LUNAR_GENERATOR, 1, new String[]{"###", "AIA", "OEO"},
+                EMCrafting.keys('#', EMGenItems.LUNAR_PANEL, 'A', MekanismTags.Items.ALLOYS_INFUSED, 'E', MekanismItems.ENERGY_TABLET,
+                        'I', Tags.Items.INGOTS_IRON, 'O', EMDatagenTags.forgeItem("ingots/osmium")),
+                has(EMGenItems.LUNAR_PANEL));
+        EMCrafting.shaped(EMCrafting.mekData(gen), "lunar_generators/basic_advanced_generator", EMGenBlocks.BASIC_ADVANCED_LUNAR_GENERATOR, 1,
+                new String[]{"PAP", "PAP", "CCC"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_INFUSED, 'C', EMTags.Items.GEMS_NOCTIS_ROZULI, 'P', EMGenBlocks.LUNAR_GENERATOR),
+                has(EMGenBlocks.LUNAR_GENERATOR));
+        EMCrafting.shaped(EMCrafting.mekData(gen), "lunar_generators/advanced_generator", EMGenBlocks.ADVANCED_LUNAR_GENERATOR, 1,
+                new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_INFUSED, 'C', EMDatagenTags.forgeItem("circuits/advanced"),
+                        'I', EMDatagenTags.forgeItem("ingots/osmium"), 'P', EMGenBlocks.BASIC_ADVANCED_LUNAR_GENERATOR),
+                has(EMGenBlocks.BASIC_ADVANCED_LUNAR_GENERATOR));
+        EMCrafting.shaped(EMCrafting.mekData(gen), "lunar_generators/elite_generator", EMGenBlocks.ELITE_LUNAR_GENERATOR, 1,
+                new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_REINFORCED, 'C', EMDatagenTags.forgeItem("circuits/elite"),
+                        'I', EMDatagenTags.forgeItem("ingots/gold"), 'P', EMGenBlocks.ADVANCED_LUNAR_GENERATOR),
+                has(EMGenBlocks.ADVANCED_LUNAR_GENERATOR));
+        EMCrafting.shaped(EMCrafting.mekData(gen), "lunar_generators/ultimate_generator", EMGenBlocks.ULTIMATE_LUNAR_GENERATOR, 1,
+                new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_ATOMIC, 'C', EMDatagenTags.forgeItem("circuits/ultimate"),
+                        'I', Tags.Items.GEMS_DIAMOND, 'P', EMGenBlocks.ELITE_LUNAR_GENERATOR),
+                has(EMGenBlocks.ELITE_LUNAR_GENERATOR));
+    }
+
+    private void addLunarGenerator(Consumer<FinishedRecipe> mek, TieredRecipes.TierData tier) {
+        ItemLike prev;
+        switch (tier.name()) {
+            case "overclocked" -> prev = EMGenBlocks.ULTIMATE_LUNAR_GENERATOR;
+            case "quantum" -> prev = EMGenBlocks.OVERCLOCKED_LUNAR_GENERATOR;
+            case "dense" -> prev = EMGenBlocks.QUANTUM_LUNAR_GENERATOR;
+            case "multiversal" -> prev = EMGenBlocks.DENSE_LUNAR_GENERATOR;
+            case "creative" -> prev = EMGenBlocks.MULTIVERSAL_LUNAR_GENERATOR;
+            default -> throw new IllegalArgumentException(tier.name());
+        }
+        EMCrafting.shaped(mek, "lunar_generators/" + tier.name() + "_generator",
+                EMCrafting.item("evolvedmekanism:" + tier.name() + "_lunar_generator"), 1, new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', tier.alloy(), 'C', tier.circuit(), 'I', tier.extra(), 'P', prev),
+                has(prev), new ModLoadedCondition("mekanismgenerators"));
     }
 
     private void addApt(Consumer<FinishedRecipe> output, String path, String itemTag, int gas, String result) {

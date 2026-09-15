@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanismgenerators"
+    }
+  ],
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/infused"
+    },
+    "G": {
+      "tag": "forge:glass_panes"
+    },
+    "O": {
+      "tag": "forge:gems/noctis_rozuli"
+    },
+    "R": {
+      "tag": "forge:dusts/redstone"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "RAR",
+    "OOO"
+  ],
+  "result": {
+    "item": "evolvedmekanism:lunar_panel"
+  },
+  "show_notification": true
+}

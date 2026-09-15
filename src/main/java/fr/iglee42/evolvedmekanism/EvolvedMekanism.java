@@ -100,6 +100,7 @@ public class EvolvedMekanism {
         EMCreativeTabs.CREATIVE_TABS.register(modEventBus);
         EMTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
         EMInfuseTypes.INFUSE_TYPES.register(modEventBus);
+        EMGases.GASES.register(modEventBus);
         EMContainerTypes.CONTAINER_TYPES.register(modEventBus);
         EMLootFunctions.REGISTER.register(modEventBus);
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);

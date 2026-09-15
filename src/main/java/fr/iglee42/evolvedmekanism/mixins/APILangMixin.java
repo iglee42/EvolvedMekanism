@@ -29,6 +29,8 @@ public class APILangMixin {
         EvolvedMekanismLang.UPGRADE_RADIOACTIVE_DESCRIPTION = evolvedmekanism$addVariant("UPGRADE_RADIOACTIVE_DESCRIPTION", "upgrade","radioactive.description");
         EvolvedMekanismLang.UPGRADE_SOLAR = evolvedmekanism$addVariant("UPGRADE_SOLAR", "upgrade","solar");
         EvolvedMekanismLang.UPGRADE_SOLAR_DESCRIPTION = evolvedmekanism$addVariant("UPGRADE_SOLAR_DESCRIPTION", "upgrade","solar.description");
+        EvolvedMekanismLang.UPGRADE_LUNAR = evolvedmekanism$addVariant("UPGRADE_LUNAR", "upgrade","lunar");
+        EvolvedMekanismLang.UPGRADE_LUNAR_DESCRIPTION = evolvedmekanism$addVariant("UPGRADE_LUNAR_DESCRIPTION", "upgrade","lunar.description");
     }
 
     @Unique

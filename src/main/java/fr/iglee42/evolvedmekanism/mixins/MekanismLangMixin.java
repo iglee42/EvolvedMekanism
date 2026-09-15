@@ -29,6 +29,7 @@ public class MekanismLangMixin {
         EvolvedMekanismLang.DESCRIPTION_ALLOYER = evolvedmekanism$addVariant("DESCRIPTION_ALLOYER", "description","alloyer");
         EvolvedMekanismLang.DESCRIPTION_MELTER = evolvedmekanism$addVariant("DESCRIPTION_MELTER", "description","thermalizer");
         EvolvedMekanismLang.DESCRIPTION_SOLIDIFIER = evolvedmekanism$addVariant("DESCRIPTION_SOLIDIFIER", "description","solidification_chamber");
+        EvolvedMekanismLang.DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR = evolvedmekanism$addVariant("DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR", "description","lunar_neutron_activator");
     }
 
     @Unique

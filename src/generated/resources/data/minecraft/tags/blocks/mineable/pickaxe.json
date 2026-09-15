@@ -34,6 +34,7 @@
     "evolvedmekanism:chemixer",
     "evolvedmekanism:thermalizer",
     "evolvedmekanism:solidification_chamber",
+    "evolvedmekanism:lunar_neutron_activator",
     "evolvedmekanism:block_better_gold",
     "evolvedmekanism:block_plaslitherite",
     "evolvedmekanism:block_refined_redstone",
@@ -173,6 +174,16 @@
     "evolvedmekanism:dense_solar_generator",
     "evolvedmekanism:multiversal_solar_generator",
     "evolvedmekanism:creative_solar_generator",
+    "evolvedmekanism:lunar_generator",
+    "evolvedmekanism:basic_advanced_lunar_generator",
+    "evolvedmekanism:advanced_lunar_generator",
+    "evolvedmekanism:elite_lunar_generator",
+    "evolvedmekanism:ultimate_lunar_generator",
+    "evolvedmekanism:overclocked_lunar_generator",
+    "evolvedmekanism:quantum_lunar_generator",
+    "evolvedmekanism:dense_lunar_generator",
+    "evolvedmekanism:multiversal_lunar_generator",
+    "evolvedmekanism:creative_lunar_generator",
     {
       "id": "evolvedmekanism:advanced_solar_generator",
       "required": false
@@ -203,6 +214,46 @@
     },
     {
       "id": "evolvedmekanism:creative_solar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:basic_advanced_lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:advanced_lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:elite_lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:ultimate_lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:overclocked_lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:quantum_lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:dense_lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:multiversal_lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:creative_lunar_generator",
       "required": false
     },
     {

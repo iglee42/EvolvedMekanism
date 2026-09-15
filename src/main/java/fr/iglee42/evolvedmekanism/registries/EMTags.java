@@ -178,8 +178,15 @@ public class EMTags {
         }
 
 
+        public static final TagKey<Gas> NITROGEN = forgeTag("nitrogen");
+        public static final TagKey<Gas> CRYONOCTIS = forgeTag("cryonoctis");
+
         private static TagKey<Gas> tag(String name) {
             return ChemicalTags.GAS.tag(EvolvedMekanism.rl(name));
+        }
+
+        private static TagKey<Gas> forgeTag(String name) {
+            return ChemicalTags.GAS.tag(new ResourceLocation("forge", name));
         }
     }
 

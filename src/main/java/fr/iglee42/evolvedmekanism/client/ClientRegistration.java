@@ -101,6 +101,7 @@ public class ClientRegistration {
             ClientRegistrationUtil.registerScreen(EMContainerTypes.APT, GuiAPT::new);
             ClientRegistrationUtil.registerScreen(EMContainerTypes.MELTER, GuiMelter::new);
             ClientRegistrationUtil.registerScreen(EMContainerTypes.SOLIDIFIER, GuiSolidifier::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.LUNAR_NEUTRON_ACTIVATOR, GuiLunarNeutronActivator::new);
 
         });
     }

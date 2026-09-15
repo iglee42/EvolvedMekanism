@@ -162,6 +162,8 @@ public class EMBlockStateProvider extends BlockStateProvider {
             inductionProvider(block, path, tier);
         } else if (path.endsWith("_solar_generator")) {
             facingHorizontal(block, modLoc("block/solar_generators/" + path), true);
+        } else if (path.equals("lunar_neutron_activator")) {
+            facingHorizontal(block, modLoc("block/lunar_neutron_activator"), true);
         } else if (path.contains("lunar_generator")) {
             ResourceLocation model = modLoc("block/lunar_generators/" + path);
             if (block.getStateDefinition().getProperty("facing") != null) {

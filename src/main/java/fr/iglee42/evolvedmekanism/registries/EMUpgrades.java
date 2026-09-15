@@ -6,5 +6,6 @@ public class EMUpgrades {
 
     public static Upgrade RADIOACTIVE_UPGRADE;
     public static Upgrade SOLAR_UPGRADE;
+    public static Upgrade LUNAR_UPGRADE;
 
 }

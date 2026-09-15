@@ -54,6 +54,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
@@ -191,6 +192,10 @@ public class EMJEI implements IModPlugin {
         EMFluids.FLUIDS.getAllFluids().forEach(ro->{
             boolean hasMelting = EMRecipeType.MELTING.getRecipes(null).stream().anyMatch(r -> r.getOutputDefinition().stream().anyMatch(s -> s.getFluid().equals(ro.getFluid())));
             boolean hasSolidifying = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.getInputFluid().test(new FluidStack(ro.getFluid(), (int) r.getInputFluid().getNeededAmount(new FluidStack(ro.getFluid(),1)))));
+            String path = ForgeRegistries.FLUIDS.getKey(ro.getFluid()) == null ? "" : ForgeRegistries.FLUIDS.getKey(ro.getFluid()).getPath();
+            if (!path.contains("molten_")) {
+                return;
+            }
             if (!hasMelting && !hasSolidifying){
                 fluidsToRemove.add(ro.getFluidStack(1000));
                 itemsToRemove.add(ro.getFluid().getBucket().getDefaultInstance());
@@ -226,6 +231,7 @@ public class EMJEI implements IModPlugin {
         CatalystRegistryHelper.register(registry,APT, EMBlocks.APT_CASING,EMBlocks.APT_PORT,EMBlocks.SUPERCHARGING_ELEMENT);
         CatalystRegistryHelper.register(registry, EMBlocks.MELTER);
         CatalystRegistryHelper.register(registry, EMBlocks.SOLIDIFIER);
+        CatalystRegistryHelper.register(registry, EMBlocks.LUNAR_NEUTRON_ACTIVATOR);
 
     }
 
