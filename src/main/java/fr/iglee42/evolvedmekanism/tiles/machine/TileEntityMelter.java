@@ -135,7 +135,7 @@ public class TileEntityMelter extends TileEntityProgressMachine<MeltingRecipe> i
     @Override
     protected @Nullable IFluidTankHolder getInitialFluidTanks(IContentsListener listener, IContentsListener recipeCacheListener) {
         FluidTankHelper builder = FluidTankHelper.forSideWithConfig(this::getDirection,this::getConfig);
-        builder.addTank( fluidTank = BasicFluidTank.output(MAX_FLUID,listener));
+        builder.addTank( fluidTank = BasicFluidTank.output(MAX_FLUID,recipeCacheListener));
         return builder.build();
     }
 

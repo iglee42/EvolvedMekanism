@@ -126,7 +126,7 @@ public class TileEntityChemixer extends TileEntityProgressMachine<ChemixerRecipe
     @Override
     protected IEnergyContainerHolder getInitialEnergyContainers(IContentsListener listener, IContentsListener recipeCacheListener) {
         EnergyContainerHelper builder = EnergyContainerHelper.forSideWithConfig(this::getDirection, this::getConfig);
-        builder.addContainer(energyContainer = MachineEnergyContainer.input(this, listener));
+        builder.addContainer(energyContainer = MachineEnergyContainer.input(this, recipeCacheListener));
         return builder.build();
     }
 
@@ -140,7 +140,7 @@ public class TileEntityChemixer extends TileEntityProgressMachine<ChemixerRecipe
         builder.addSlot(extraInputSlot = InputInventorySlot.at(item -> containsRecipeBAC(mainInputSlot.getStack(), item,inputGasTank.getStack()), this::containsRecipeB, recipeCacheListener,
                 64, 53)
         ).tracksWarnings(slot -> slot.warning(WarningType.NO_MATCHING_RECIPE, getWarningCheck(RecipeError.NOT_ENOUGH_SECONDARY_INPUT)));
-        builder.addSlot(outputSlot = OutputInventorySlot.at(listener, 116, 35))
+        builder.addSlot(outputSlot = OutputInventorySlot.at(recipeCacheListener, 116, 35))
               .tracksWarnings(slot -> slot.warning(WarningType.NO_SPACE_IN_OUTPUT, getWarningCheck(NOT_ENOUGH_SPACE_ITEM_OUTPUT_ERROR)));
         builder.addSlot(energySlot = EnergyInventorySlot.fillOrConvert(energyContainer, this::getLevel, listener, 141, 35));
         return builder.build();
