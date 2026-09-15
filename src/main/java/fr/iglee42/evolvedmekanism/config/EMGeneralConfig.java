@@ -5,6 +5,7 @@ import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.math.FloatingLong;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.config.BaseMekanismConfig;
+import mekanism.common.config.value.CachedBooleanValue;
 import mekanism.common.config.value.CachedConfigValue;
 import mekanism.common.config.value.CachedEnumValue;
 import mekanism.common.config.value.CachedFloatingLongValue;
@@ -27,6 +28,7 @@ public class EMGeneralConfig extends BaseMekanismConfig {
 
     //OTHER
     public final CachedConfigValue<BaseTier> maxInstallerTier;
+    public final CachedBooleanValue allowAlloyBlocksInOredictionificator;
 
     EMGeneralConfig() {
 
@@ -37,6 +39,7 @@ public class EMGeneralConfig extends BaseMekanismConfig {
         maxInstallerTier = CachedEnumValue.wrap(this,builder.comment("Defines the machine tier up to which the maximum tier installer should go")
                 .defineEnum("maxInstallerTier", EMBaseTier.MULTIVERSAL,
                         BaseTier.BASIC,BaseTier.ADVANCED,BaseTier.ELITE,BaseTier.ULTIMATE,BaseTier.CREATIVE,EMBaseTier.OVERCLOCKED,EMBaseTier.QUANTUM,EMBaseTier.DENSE,EMBaseTier.MULTIVERSAL));
+        allowAlloyBlocksInOredictionificator = CachedBooleanValue.wrap(this, builder.comment("Allow alloy blocks to be changed in the oredictionificator").define("allowAlloyBlocksInOredictionificator", false));
         builder.pop();
         builder.comment("APT Settings").push(APT_CATEGORY);
         aptInputStorage = CachedIntValue.wrap(this, builder.comment("How much gas (in mB) can the input tank hold.")
