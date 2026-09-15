@@ -852,6 +852,11 @@ public class EMLangProvider extends LanguageProvider {
         add("trim_material.evolvedmekanism.better_gold", "Better Gold");
         add("trim_material.evolvedmekanism.plaslitherite", "Plaslitherite");
         add("trim_material.evolvedmekanism.refined_redstone", "Refined Redstone");
+
+        //Enchantments
+        add("block.evolvedmekanism.laser_disenchanter", "Disenchantment Laser");
+        add("container.evolvedmekanism.laser_disenchanter", "Disenchantment Laser");
+        add("description.evolvedmekanism.laser_disenchanter", "Retakes the enchantment from the item in the container it break. (Requires books)");
     }
 
     private void addTags() {

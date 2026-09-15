@@ -1,0 +1,30 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "c:gems/noctis_rozuli"
+    },
+    "2": {
+      "item": "mekanism:laser_tractor_beam"
+    },
+    "3": {
+      "tag": "c:circuits/overclocked"
+    },
+    "4": {
+      "item": "mekanism:laser"
+    },
+    "5": {
+      "tag": "c:ingots/refined_redstone"
+    }
+  },
+  "pattern": [
+    "121",
+    "343",
+    "555"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:laser_disenchanter"
+  }
+}

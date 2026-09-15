@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "evolvedmekanism:block/laser_disenchanter"
+    },
+    "facing=east": {
+      "model": "evolvedmekanism:block/laser_disenchanter",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "evolvedmekanism:block/laser_disenchanter"
+    },
+    "facing=south": {
+      "model": "evolvedmekanism:block/laser_disenchanter",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "evolvedmekanism:block/laser_disenchanter"
+    },
+    "facing=west": {
+      "model": "evolvedmekanism:block/laser_disenchanter",
+      "y": 270
+    }
+  }
+}

@@ -6,10 +6,7 @@ import fr.iglee42.emtools.registries.EMToolsItems;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.datagen.EMDatagenTags;
 import fr.iglee42.evolvedmekanism.datagen.recipe.builders.EMRecipeBuilders;
-import fr.iglee42.evolvedmekanism.registries.EMBlocks;
-import fr.iglee42.evolvedmekanism.registries.EMChemicals;
-import fr.iglee42.evolvedmekanism.registries.EMFluids;
-import fr.iglee42.evolvedmekanism.registries.EMItems;
+import fr.iglee42.evolvedmekanism.registries.*;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.datagen.recipe.builder.ChemicalDissolutionRecipeBuilder;
 import mekanism.api.datagen.recipe.builder.CombinerRecipeBuilder;
@@ -119,6 +116,17 @@ public class EMRecipeProvider extends RecipeProvider {
                         '5', EMItems.OVERCLOCKED_TIER_INSTALLER, '6', EMItems.QUANTUM_TIER_INSTALLER,
                         '7', EMItems.DENSE_TIER_INSTALLER, '8', EMItems.MULTIVERSAL_TIER_INSTALLER),
                 has(EMItems.MULTIVERSAL_TIER_INSTALLER));
+
+        //Enchantment
+        EMCrafting.shaped(EMCrafting.mekData(output), "laser_disenchanter", EMBlocks.LASER_DISENCHANTER,1,
+                new String[]{"121","343","555"},
+                EMCrafting.keys(
+                        '1', EMTags.Items.GEMS_NOCTIS_ROZULI,
+                        '2',MekanismBlocks.LASER_TRACTOR_BEAM,
+                        '3',EMTags.Items.CIRCUITS_OVERCLOCKED,
+                        '4', MekanismBlocks.LASER,
+                        '5', EMTags.Items.INGOTS_REFINED_REDSTONE
+                ), has(EMTags.Items.GEMS_NOCTIS_ROZULI));
     }
 
     private void addModule(RecipeOutput output, String path, ItemLike result, Object center, String... pattern) {

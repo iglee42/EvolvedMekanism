@@ -1,8 +1,10 @@
 package fr.iglee42.evolvedmekanism.client.gui;
 
+import fr.iglee42.evolvedmekanism.client.gui.tab.GuiDisenchanterTab;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import mekanism.client.gui.GuiMekanismTile;
 import mekanism.client.gui.element.bar.GuiChemicalBar;
+import mekanism.client.gui.element.tab.GuiAmplifierTab;
 import mekanism.common.inventory.container.slot.ContainerSlotType;
 import mekanism.common.inventory.container.slot.InventoryContainerSlot;
 import mekanism.common.inventory.container.tile.MekanismTileContainer;
@@ -24,6 +26,7 @@ public class GuiLaserDisenchanter extends GuiMekanismTile<TileEntityLaserDisench
     protected void addGuiElements() {
         super.addGuiElements();
         addRenderableWidget(new GuiChemicalBar(this, GuiChemicalBar.getProvider(tile.getChemicalTank(), tile.getChemicalTanks(null)), 42, 16, 106, 10, true));
+        addRenderableWidget(new GuiDisenchanterTab(this, tile));
     }
 
     @Override
