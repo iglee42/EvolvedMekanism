@@ -61,6 +61,10 @@ public class PersonalTieredStorageContentsLootFunction implements LootItemFuncti
             } else {
                 destInv = TieredPersonalStorageManager.getInventoryFor(itemStack).orElseThrow(()->new IllegalStateException("Inventory not available?!"));
             }
+            // Second loot pass (lag / bounding double-harvest) must not copy the tile into a new inventory again.
+            if (destInv.getInventorySlots(null).stream().anyMatch(slot -> !slot.isEmpty())) {
+                return itemStack;
+            }
             for (int i = 0; i < tileSlots.size(); i++) {
                 IInventorySlot tileSlot = tileSlots.get(i);
                 if (!tileSlot.isEmpty()) {
