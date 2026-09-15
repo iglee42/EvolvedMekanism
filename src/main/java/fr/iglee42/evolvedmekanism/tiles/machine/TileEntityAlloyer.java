@@ -106,7 +106,7 @@ public class TileEntityAlloyer extends TileEntityProgressMachine<AlloyerRecipe> 
     @Override
     protected IEnergyContainerHolder getInitialEnergyContainers(IContentsListener listener, IContentsListener recipeCacheListener,IContentsListener unpause) {
         EnergyContainerHelper builder = EnergyContainerHelper.forSideWithConfig(this);
-        builder.addContainer(energyContainer = MachineEnergyContainer.input(this, listener));
+        builder.addContainer(energyContainer = MachineEnergyContainer.input(this, unpause));
         return builder.build();
     }
 
@@ -123,7 +123,7 @@ public class TileEntityAlloyer extends TileEntityProgressMachine<AlloyerRecipe> 
         builder.addSlot(secondExtraInputSlot = LimitedInputInventorySlot.at(item -> containsRecipeCAB(mainInputSlot.getStack(), extraInputSlot.getStack(),item), this::containsRecipeC, recipeCacheListener,
                 75, 53)
         ).tracksWarnings(slot -> slot.warning(WarningType.NO_MATCHING_RECIPE, getWarningCheck(RecipeError.NOT_ENOUGH_SECONDARY_INPUT)));
-        builder.addSlot(outputSlot = OutputInventorySlot.at(listener, 116, 35))
+        builder.addSlot(outputSlot = OutputInventorySlot.at(unpause, 116, 35))
               .tracksWarnings(slot -> slot.warning(WarningType.NO_SPACE_IN_OUTPUT, getWarningCheck(RecipeError.NOT_ENOUGH_OUTPUT_SPACE)));
         builder.addSlot(energySlot = EnergyInventorySlot.fillOrConvert(energyContainer, this::getLevel, listener, 141, 35));
         extraInputSlot.setSlotType(ContainerSlotType.EXTRA);
