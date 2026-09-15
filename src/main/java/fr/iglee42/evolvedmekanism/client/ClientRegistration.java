@@ -15,10 +15,12 @@ import mekanism.api.text.EnumColor;
 import mekanism.api.tier.BaseTier;
 import mekanism.client.ClientRegistrationUtil;
 import mekanism.client.gui.machine.GuiSolarNeutronActivator;
+import mekanism.client.model.baked.ExtensionBakedModel;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.RenderPropertiesProvider;
 import mekanism.client.render.armor.*;
 import mekanism.client.render.item.TransmitterTypeDecorator;
+import mekanism.client.render.lib.QuadTransformation;
 import mekanism.client.render.item.block.RenderEnergyCubeItem;
 import mekanism.client.render.item.block.RenderFluidTankItem;
 import mekanism.client.render.item.gear.*;
@@ -37,8 +39,10 @@ import mekanism.common.util.WorldUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.TextureAtlas;
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.api.distmarker.Dist;
@@ -61,6 +65,35 @@ public class ClientRegistration {
                 ItemBlockRenderTypes.setRenderLayer(fluid.value(), RenderType.translucent());
             }
         });
+    }
+
+    /**
+     * Tall solar/lunar models are authored with the pole at y=-4. Lift every matching baked entry
+     * (registry id and {@code block/...} path) so the world model lines up with the hitbox.
+     */
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public static void onModelBake(ModelEvent.ModifyBakingResult event) {
+        QuadTransformation lift = QuadTransformation.translate(0, 1, 0);
+        event.getModels().replaceAll((id, model) -> {
+            if (!shouldLiftGeneratorModel(id.id(), model)) {
+                return model;
+            }
+            return new ExtensionBakedModel.TransformedBakedModel<Void>(model, lift);
+        });
+    }
+
+    private static boolean shouldLiftGeneratorModel(ResourceLocation id, BakedModel model) {
+        if (model instanceof ExtensionBakedModel.TransformedBakedModel<?>) {
+            return false;
+        }
+        if (!EvolvedMekanism.MODID.equals(id.getNamespace())) {
+            return false;
+        }
+        String path = id.getPath();
+        if (path.contains("solar_generator")) {
+            return true;
+        }
+        return path.contains("lunar_generator") && !path.equals("lunar_generator") && !path.endsWith("/lunar_generator");
     }
 
     @SubscribeEvent
