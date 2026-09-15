@@ -35,6 +35,8 @@
     "client.ShieldTexturesMixin",
     "client.TransmitterTypeDecoratorMixin",
     "containers.FactoryContainerMixin",
+    "oredictionificator.OredictionificatorFilterMixin",
+    "oredictionificator.TileEntityOredictionificatorMixin",
     "recipes.ItemRecipeDataInvoker",
     "recipes.ItemRecipeDataMixin",
     "recipes.MekanismShapedRecipeMixin",

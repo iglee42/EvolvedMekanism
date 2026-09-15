@@ -36,8 +36,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class TileEntityAPTPort extends TileEntityAPTCasing {
 
-    private final Map<Direction, BlockCapabilityCache<IChemicalHandler, @Nullable Direction>> chemicalCapabilityCaches = new EnumMap<>(Direction.class);
-
     public TileEntityAPTPort(BlockPos pos, BlockState state) {
         super(EMBlocks.APT_PORT, pos, state);
         delaySupplier = NO_DELAY;
@@ -64,19 +62,11 @@ public class TileEntityAPTPort extends TileEntityAPTCasing {
 
     @Override
     public boolean persists(ContainerType<?, ?, ?> type) {
-        if (type == ContainerType.CHEMICAL) {
+        // Item type is not required because it is supported by the default
+        if (type == ContainerType.CHEMICAL || type == ContainerType.ENERGY) {
             return false;
         }
         return super.persists(type);
-    }
-
-    public void addChemicalTargetCapability(List<MultiblockData.CapabilityOutputTarget<IChemicalHandler>> outputTargets, Direction side) {
-        BlockCapabilityCache<IChemicalHandler, @Nullable Direction> cache = chemicalCapabilityCaches.get(side);
-        if (cache == null) {
-            cache = Capabilities.CHEMICAL.createCache((ServerLevel) level, worldPosition.relative(side), side.getOpposite());
-            chemicalCapabilityCaches.put(side, cache);
-        }
-        outputTargets.add(new MultiblockData.CapabilityOutputTarget<>(cache, this::getActive));
     }
 
     @Override
