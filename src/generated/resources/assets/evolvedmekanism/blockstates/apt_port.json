@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "evolvedmekanism:block/apt_port"
+    },
+    "active=true": {
+      "model": "evolvedmekanism:block/apt_port_output"
+    }
+  }
+}

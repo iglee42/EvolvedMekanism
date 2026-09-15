@@ -1,0 +1,9 @@
+{
+  "parent": "mekanism:block/transmitter/large/large",
+  "textures": {
+    "center_down": "evolvedmekanism:block/models/multipart/creative_mechanical_pipe",
+    "center_opaque": "evolvedmekanism:block/models/multipart/opaque/creative_mechanical_pipe",
+    "side": "evolvedmekanism:block/models/multipart/creative_mechanical_pipe_vertical",
+    "side_opaque": "evolvedmekanism:block/models/multipart/opaque/creative_mechanical_pipe_vertical"
+  }
+}

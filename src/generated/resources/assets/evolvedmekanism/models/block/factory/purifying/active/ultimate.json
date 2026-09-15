@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "base": {
+      "parent": "mekanism:block/factory/purifying/base",
+      "textures": {
+        "front": "mekanism:block/factory/purifying/purifying_factory_front_active"
+      }
+    },
+    "front_led": {
+      "parent": "mekanism:block/factory/front_led/active/ultimate"
+    }
+  },
+  "item_render_order": [
+    "base",
+    "front_led"
+  ],
+  "loader": "neoforge:composite",
+  "textures": {
+    "particle": "mekanism:block/factory/purifying/purifying_factory_front"
+  }
+}

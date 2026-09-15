@@ -1,92 +1,32 @@
 {
   "variants": {
-    "active=false,facing=east,fluid_logged=empty": {
+    "active=false,facing=east": {
       "model": "evolvedmekanism:block/factory/enriching/dense",
       "y": 90
     },
-    "active=false,facing=east,fluid_logged=lava": {
-      "model": "evolvedmekanism:block/factory/enriching/dense",
-      "y": 90
-    },
-    "active=false,facing=east,fluid_logged=water": {
-      "model": "evolvedmekanism:block/factory/enriching/dense",
-      "y": 90
-    },
-    "active=false,facing=north,fluid_logged=empty": {
+    "active=false,facing=north": {
       "model": "evolvedmekanism:block/factory/enriching/dense"
     },
-    "active=false,facing=north,fluid_logged=lava": {
-      "model": "evolvedmekanism:block/factory/enriching/dense"
-    },
-    "active=false,facing=north,fluid_logged=water": {
-      "model": "evolvedmekanism:block/factory/enriching/dense"
-    },
-    "active=false,facing=south,fluid_logged=empty": {
+    "active=false,facing=south": {
       "model": "evolvedmekanism:block/factory/enriching/dense",
       "y": 180
     },
-    "active=false,facing=south,fluid_logged=lava": {
-      "model": "evolvedmekanism:block/factory/enriching/dense",
-      "y": 180
-    },
-    "active=false,facing=south,fluid_logged=water": {
-      "model": "evolvedmekanism:block/factory/enriching/dense",
-      "y": 180
-    },
-    "active=false,facing=west,fluid_logged=empty": {
+    "active=false,facing=west": {
       "model": "evolvedmekanism:block/factory/enriching/dense",
       "y": 270
     },
-    "active=false,facing=west,fluid_logged=lava": {
-      "model": "evolvedmekanism:block/factory/enriching/dense",
-      "y": 270
-    },
-    "active=false,facing=west,fluid_logged=water": {
-      "model": "evolvedmekanism:block/factory/enriching/dense",
-      "y": 270
-    },
-    "active=true,facing=east,fluid_logged=empty": {
+    "active=true,facing=east": {
       "model": "evolvedmekanism:block/factory/enriching/active/dense",
       "y": 90
     },
-    "active=true,facing=east,fluid_logged=lava": {
-      "model": "evolvedmekanism:block/factory/enriching/active/dense",
-      "y": 90
-    },
-    "active=true,facing=east,fluid_logged=water": {
-      "model": "evolvedmekanism:block/factory/enriching/active/dense",
-      "y": 90
-    },
-    "active=true,facing=north,fluid_logged=empty": {
+    "active=true,facing=north": {
       "model": "evolvedmekanism:block/factory/enriching/active/dense"
     },
-    "active=true,facing=north,fluid_logged=lava": {
-      "model": "evolvedmekanism:block/factory/enriching/active/dense"
-    },
-    "active=true,facing=north,fluid_logged=water": {
-      "model": "evolvedmekanism:block/factory/enriching/active/dense"
-    },
-    "active=true,facing=south,fluid_logged=empty": {
+    "active=true,facing=south": {
       "model": "evolvedmekanism:block/factory/enriching/active/dense",
       "y": 180
     },
-    "active=true,facing=south,fluid_logged=lava": {
-      "model": "evolvedmekanism:block/factory/enriching/active/dense",
-      "y": 180
-    },
-    "active=true,facing=south,fluid_logged=water": {
-      "model": "evolvedmekanism:block/factory/enriching/active/dense",
-      "y": 180
-    },
-    "active=true,facing=west,fluid_logged=empty": {
-      "model": "evolvedmekanism:block/factory/enriching/active/dense",
-      "y": 270
-    },
-    "active=true,facing=west,fluid_logged=lava": {
-      "model": "evolvedmekanism:block/factory/enriching/active/dense",
-      "y": 270
-    },
-    "active=true,facing=west,fluid_logged=water": {
+    "active=true,facing=west": {
       "model": "evolvedmekanism:block/factory/enriching/active/dense",
       "y": 270
     }
