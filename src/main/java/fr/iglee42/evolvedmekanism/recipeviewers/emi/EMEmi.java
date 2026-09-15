@@ -41,11 +41,10 @@ import mekanism.common.block.attribute.Attribute;
 import mekanism.common.block.attribute.AttributeFactoryType;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.recipe.IMekanismRecipeTypeProvider;
-import mekanism.common.registries.MekanismBlocks;
-import mekanism.common.tier.FactoryTier;
-import mekanism.common.util.EnumUtils;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
@@ -213,8 +212,13 @@ public class EMEmi implements EmiPlugin {
             if (workstation.asItem() instanceof BlockItem blockItem) {
                 AttributeFactoryType factoryType = Attribute.get(blockItem.getBlock(), AttributeFactoryType.class);
                 if (factoryType != null) {
-                    for (FactoryTier tier : EnumUtils.FACTORY_TIERS) {
-                        registry.addWorkstation(category, EmiStack.of(MekanismBlocks.getFactory(tier, factoryType.getFactoryType()).getItemStack()));
+                    String factorySuffix = "_" + factoryType.getFactoryType().getRegistryNameComponent() + "_factory";
+                    for (Block block : ForgeRegistries.BLOCKS) {
+                        ResourceLocation id = ForgeRegistries.BLOCKS.getKey(block);
+                        if (id != null && id.getPath().endsWith(factorySuffix)
+                                && ("mekanism".equals(id.getNamespace()) || EvolvedMekanism.MODID.equals(id.getNamespace()))) {
+                            registry.addWorkstation(category, EmiStack.of(block));
+                        }
                     }
                 }
             }

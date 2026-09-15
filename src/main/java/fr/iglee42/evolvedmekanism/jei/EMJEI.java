@@ -26,6 +26,7 @@ import mekanism.api.math.FloatingLong;
 import mekanism.api.providers.IItemProvider;
 import mekanism.api.recipes.ItemStackGasToItemStackRecipe;
 import mekanism.client.jei.CatalystRegistryHelper;
+import mekanism.client.jei.MekanismJEI;
 import mekanism.client.jei.MekanismJEIRecipeType;
 import mekanism.client.jei.RecipeRegistryHelper;
 import mekanism.common.block.BlockOre;
@@ -44,11 +45,12 @@ import mezz.jei.api.registration.IModIngredientRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeTransferRegistration;
 import mezz.jei.api.registration.ISubtypeRegistration;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
@@ -226,13 +228,23 @@ public class EMJEI implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
-        CatalystRegistryHelper.register(registry, EMBlocks.ALLOYER);
         CatalystRegistryHelper.register(registry, EMBlocks.CHEMIXER);
-        CatalystRegistryHelper.register(registry,APT, EMBlocks.APT_CASING,EMBlocks.APT_PORT,EMBlocks.SUPERCHARGING_ELEMENT);
+        CatalystRegistryHelper.register(registry, APT, EMBlocks.APT_CASING, EMBlocks.APT_PORT, EMBlocks.SUPERCHARGING_ELEMENT);
         CatalystRegistryHelper.register(registry, EMBlocks.MELTER);
         CatalystRegistryHelper.register(registry, EMBlocks.SOLIDIFIER);
-        CatalystRegistryHelper.register(registry, EMBlocks.LUNAR_NEUTRON_ACTIVATOR);
-
+        CatalystRegistryHelper.register(registry, MekanismJEIRecipeType.ACTIVATING, EMBlocks.LUNAR_NEUTRON_ACTIVATOR);
+        RecipeType<?> alloying = MekanismJEI.recipeType(ALLOYING);
+        for (Block block : ForgeRegistries.BLOCKS) {
+            ResourceLocation id = ForgeRegistries.BLOCKS.getKey(block);
+            if (id == null) {
+                continue;
+            }
+            String path = id.getPath();
+            if (("mekanism".equals(id.getNamespace()) || EvolvedMekanism.MODID.equals(id.getNamespace()))
+                    && (path.equals("alloyer") || path.endsWith("_alloying_factory"))) {
+                registry.addRecipeCatalyst(new ItemStack(block), alloying);
+            }
+        }
     }
 
     @Override
