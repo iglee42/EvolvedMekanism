@@ -1,6 +1,0 @@
-{
-    "parent": "evolvedmekanism:block/personal_barrel/quantum",
-    "textures": {
-        "top": "evolvedmekanism:block/personal_barrel/quantum/top_open"
-    }
-}
