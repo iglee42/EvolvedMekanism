@@ -3,6 +3,7 @@ package fr.iglee42.evolvedmekanism.registries;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import fr.iglee42.evolvedmekanism.items.ItemMaxTierInstaller;
+import fr.iglee42.evolvedmekanism.items.ItemPortableHazmatSuit;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.tiers.storage.EMQIODriveTier;
@@ -58,6 +59,8 @@ public class EMItems {
     public static final ItemRegistryObject<Item> PLASLITHERITE_INGOT = registerUnburnableResource(ResourceType.INGOT, EMResources.PLASLITHERITE);
     public static final ItemRegistryObject<Item> REFINED_REDSTONE_INGOT = registerUnburnableResource(ResourceType.INGOT, EMResources.REFINED_REDSTONE);
     public static final ItemRegistryObject<Item> NOCTIS_ROZULI = ITEMS.register("noctis_rozuli");
+    public static final ItemRegistryObject<ItemPortableHazmatSuit> PORTABLE_HAZMAT_SUIT =
+            ITEMS.registerItem("portable_hazmat_suit", ItemPortableHazmatSuit::new);
 
 
     public static final ItemRegistryObject<Item> BETTER_GOLD_NUGGET = registerResource(ResourceType.NUGGET, EMResources.BETTER_GOLD);

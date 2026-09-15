@@ -17,6 +17,7 @@ public class EMLangProvider extends LanguageProvider {
         addTags();
         add("constants.evolvedmekanism.mod_name", "Evolved Mekanism");
         add("alias.evolvedmekanism.alloying", "Alloying");
+        add("alias.evolvedmekanism.hazmat", "Radiation Protection");
         add("advancements.evolvedmekanism.apt.description", "This thing doesn't seem safe at all");
         add("advancements.evolvedmekanism.apt.title", "Antimatter Protomolecular Transmutation?");
         add("block.evolvedmekanism.alloyer", "Alloyer");
@@ -320,6 +321,25 @@ public class EMLangProvider extends LanguageProvider {
         add("item.evolvedmekanism.dense_tier_installer", "Dense Tier Installer");
         add("item.evolvedmekanism.multiversal_tier_installer", "Multiversal Tier Installer");
         add("item.evolvedmekanism.max_tier_installer", "Maximum Tier Installer");
+        add("item.evolvedmekanism.portable_hazmat_suit", "Portable Hazmat Suit");
+        add("tooltip.evolvedmekanism.portable_hazmat_suit", "When equipped in Curios, visually replaces armor and provides full radiation shielding.");
+        add("tooltip.evolvedmekanism.curio_enabled", "Enabled");
+        add("tooltip.evolvedmekanism.curio_disabled", "Disabled");
+        add("key.categories.evolvedmekanism", "Evolved Mekanism");
+        add("key.evolvedmekanism.open_qio_dashboard", "Open Portable QIO Dashboard");
+        add("key.evolvedmekanism.open_portable_teleporter", "Open Portable Teleporter");
+        add("curios.identifier.jetpack", "Jetpack");
+        add("curios.identifier.hdpe_elytra", "HDPE Elytra");
+        add("curios.identifier.scuba_mask", "Scuba Mask");
+        add("curios.identifier.scuba_tank", "Scuba Tank");
+        add("curios.identifier.free_runners", "Free Runners");
+        add("curios.identifier.portable_hazmat_suit", "Portable Hazmat Suit");
+        add("curios.identifier.canteen", "Canteen");
+        add("curios.identifier.energy_tablet", "Energy Tablet");
+        add("curios.identifier.portable_qio_dashboard", "Portable QIO Dashboard");
+        add("curios.identifier.portable_teleporter", "Portable Teleporter");
+        add("curios.identifier.dosimeter", "Dosimeter");
+        add("curios.identifier.geiger_counter", "Geiger Counter");
         add("item.evolvedmekanism.enriched_uranium", "Enriched Uranium");
         add("item.evolvedmekanism.enriched_better_gold", "Enriched Better Gold");
         add("item.evolvedmekanism.enriched_plaslitherite", "Enriched Plaslitherite");
@@ -938,6 +958,19 @@ public class EMLangProvider extends LanguageProvider {
         add(EMDatagenTags.cItem("buckets/molten_better_gold"), "Molten Better Gold Buckets");
         add(EMDatagenTags.cItem("buckets/molten_plaslitherite"), "Molten Plaslitherite Buckets");
         add(EMDatagenTags.cItem("buckets/molten_refined_redstone"), "Molten Refined Redstone Buckets");
+
+        add(EMDatagenTags.item("curios", "jetpack"), "Jetpack");
+        add(EMDatagenTags.item("curios", "hdpe_elytra"), "HDPE Elytra");
+        add(EMDatagenTags.item("curios", "scuba_mask"), "Scuba Mask");
+        add(EMDatagenTags.item("curios", "scuba_tank"), "Scuba Tank");
+        add(EMDatagenTags.item("curios", "free_runners"), "Free Runners");
+        add(EMDatagenTags.item("curios", "portable_hazmat_suit"), "Portable Hazmat Suit");
+        add(EMDatagenTags.item("curios", "canteen"), "Canteen");
+        add(EMDatagenTags.item("curios", "energy_tablet"), "Energy Tablet");
+        add(EMDatagenTags.item("curios", "portable_qio_dashboard"), "Portable QIO Dashboard");
+        add(EMDatagenTags.item("curios", "portable_teleporter"), "Portable Teleporter");
+        add(EMDatagenTags.item("curios", "dosimeter"), "Dosimeter");
+        add(EMDatagenTags.item("curios", "geiger_counter"), "Geiger Counter");
 
         addToolTags();
     }

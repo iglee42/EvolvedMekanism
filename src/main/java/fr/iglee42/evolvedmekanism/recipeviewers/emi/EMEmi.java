@@ -188,6 +188,9 @@ public class EMEmi implements EmiPlugin {
             boolean used = EMRecipeType.SOLIDIFICATION.getRecipes((Level) null).stream().anyMatch(r->r.value().getInputSolid().getRepresentations().stream().anyMatch(s->s.getItem().equals(m.get())));
             if (!used) itemsToRemove.add(m.get());
         });
+        if (!fr.iglee42.evolvedmekanism.utils.ModsCompats.CURIOS.isLoaded()) {
+            itemsToRemove.add(EMItems.PORTABLE_HAZMAT_SUIT);
+        }
 
         fluidsToRemove.stream().map(EmiStack::of).forEach(registry::removeEmiStacks);
         itemsToRemove.stream().map(EmiStack::of).forEach(registry::removeEmiStacks);

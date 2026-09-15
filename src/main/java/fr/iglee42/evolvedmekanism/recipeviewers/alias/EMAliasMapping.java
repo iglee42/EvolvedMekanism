@@ -29,6 +29,7 @@ public final class EMAliasMapping implements IAliasMapping {
         addStorageAliases(rv);
         addTransferAliases(rv);
         addUpgradeAliases(rv);
+        rv.addItemHolderAliases(List.of(EMItems.PORTABLE_HAZMAT_SUIT), () -> Util.makeDescriptionId("alias", EvolvedMekanism.rl("hazmat")));
     }
 
     private static List<FactoryTier> extraFactoryTiers() {

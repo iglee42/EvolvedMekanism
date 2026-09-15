@@ -3,16 +3,20 @@ package fr.iglee42.evolvedmekanism.datagen;
 import fr.iglee42.emtools.registries.EMToolsItems;
 import fr.iglee42.emtools.registries.EMToolsTags;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.curios.CuriosSlots;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMTags;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
+import mekanism.common.registries.MekanismItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -140,6 +144,30 @@ public class EMItemTags extends ItemTagsProvider {
 
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) {
             addToolTags();
+        }
+
+        addCuriosTags();
+    }
+
+    private void addCuriosTags() {
+        curiosSlot(CuriosSlots.JETPACK, MekanismItems.JETPACK, MekanismItems.ARMORED_JETPACK);
+        curiosSlot(CuriosSlots.HDPE_ELYTRA, MekanismItems.HDPE_REINFORCED_ELYTRA);
+        curiosSlot(CuriosSlots.SCUBA_MASK, MekanismItems.SCUBA_MASK);
+        curiosSlot(CuriosSlots.SCUBA_TANK, MekanismItems.SCUBA_TANK);
+        curiosSlot(CuriosSlots.FREE_RUNNERS, MekanismItems.FREE_RUNNERS, MekanismItems.ARMORED_FREE_RUNNERS);
+        curiosSlot(CuriosSlots.PORTABLE_HAZMAT_SUIT, EMItems.PORTABLE_HAZMAT_SUIT);
+        curiosSlot(CuriosSlots.CANTEEN, MekanismItems.CANTEEN);
+        curiosSlot(CuriosSlots.ENERGY_TABLET, MekanismItems.ENERGY_TABLET);
+        curiosSlot(CuriosSlots.PORTABLE_QIO_DASHBOARD, MekanismItems.PORTABLE_QIO_DASHBOARD);
+        curiosSlot(CuriosSlots.PORTABLE_TELEPORTER, MekanismItems.PORTABLE_TELEPORTER);
+        curiosSlot(CuriosSlots.DOSIMETER, MekanismItems.DOSIMETER);
+        curiosSlot(CuriosSlots.GEIGER_COUNTER, MekanismItems.GEIGER_COUNTER);
+    }
+
+    private void curiosSlot(String slot, ItemLike... items) {
+        IntrinsicTagAppender<Item> tag = tag(EMDatagenTags.item("curios", slot));
+        for (ItemLike item : items) {
+            tag.add(item.asItem());
         }
     }
 

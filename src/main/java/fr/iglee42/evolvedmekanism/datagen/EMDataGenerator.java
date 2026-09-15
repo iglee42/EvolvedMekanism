@@ -40,6 +40,7 @@ public final class EMDataGenerator {
         generator.addProvider(server, new EMWorldGenProvider(output, lookup));
         generator.addProvider(server, new EMPlacedFeatureProvider(output));
         generator.addProvider(server, new EMBiomeModifierProvider(output));
+        generator.addProvider(server, new EMCuriosProvider(output));
 
         generator.addProvider(client, new EMBlockStateProvider(output, existing));
         generator.addProvider(client, new EMMekanismAssetProvider(output, existing));

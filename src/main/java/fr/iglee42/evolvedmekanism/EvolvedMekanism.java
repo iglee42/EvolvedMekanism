@@ -86,6 +86,7 @@ public class EvolvedMekanism {
         EMLootFunctions.REGISTER.register(modEventBus);
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         EMModules.MODULES.register(modEventBus);
+        EMDataComponents.DATA_COMPONENTS.register(modEventBus);
         EMFluids.FLUIDS.register(modEventBus);
         EMParticleTypes.PARTICLES.register(modEventBus);
         EMHeightProviderTypes.HEIGHT_PROVIDER_TYPES.register(modEventBus);
@@ -125,6 +126,10 @@ public class EvolvedMekanism {
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) {
             EMToolsItems.register(modEventBus);
             if (FMLEnvironment.dist == Dist.CLIENT) modEventBus.register(new EMToolsClientRegistration());
+        }
+
+        if (ModsCompats.CURIOS.isLoaded()) {
+            fr.iglee42.evolvedmekanism.curios.CuriosCompat.register(modEventBus);
         }
     }
 

@@ -13,7 +13,12 @@ public enum ModsCompats {
     MEKANISMGENERATORS("tiles.TileEntitySolarGeneratorMixin","tiles.TileEntitySolarGeneratorAccessor",
             "tiles.TileEntityAdvancedSolarGeneratorMixin"),
 
-    MEKANISMTOOLS("client.ShieldTexturesMixin","client.ToolsRenderMekanismShieldItemMixin");
+    MEKANISMTOOLS("client.ShieldTexturesMixin","client.ToolsRenderMekanismShieldItemMixin"),
+
+    CURIOS("curios.LivingEntityElytraMixin", "curios.PlayerFallFlyingMixin", "curios.HumanoidArmorLayerMixin",
+            "curios.LocalPlayerFallFlyingMixin", "curios.ElytraLayerMixin", "curios.MekanismItemContainerMixin",
+            "curios.PortableQIODashboardContainerMixin", "curios.PacketPortableTeleporterTeleportMixin",
+            "curios.PacketSetItemFrequencyMixin", "curios.PacketItemGuiInteractMixin");
     private final String[] mixinClasses;
 
     ModsCompats(String... mixinClasses) {

@@ -1,0 +1,9 @@
+{
+  "add_cosmetic": false,
+  "icon": "evolvedmekanism:slot/empty_geiger_counter_slot",
+  "operation": "SET",
+  "order": 51,
+  "render_toggle": true,
+  "size": 1,
+  "use_native_gui": true
+}

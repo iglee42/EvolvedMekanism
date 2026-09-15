@@ -20,7 +20,8 @@ public class EMCreativeTabs {
                   .backgroundTexture(EvolvedMekanism.rl("textures/gui/creative_tab.png"))
                   .withTabsBefore(MekanismCreativeTabs.MEKANISM.getKey())
                 .displayItems((displayParameters, output) -> {
-                    CreativeTabDeferredRegister.addToDisplay(EMItems.ITEMS, output);
+                    CreativeTabDeferredRegister.addToDisplay(output, EMItems.ITEMS.getEntries(),
+                            item -> item.value() == EMItems.PORTABLE_HAZMAT_SUIT.get() && !ModsCompats.CURIOS.isLoaded());
                     if (ModsCompats.MEKANISMGENERATORS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMGenItems.ITEMS, output);
                     if (ModsCompats.MEKANISMTOOLS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMToolsItems.ITEMS, output);
                     CreativeTabDeferredRegister.addToDisplay(EMBlocks.BLOCKS, output);

@@ -69,7 +69,7 @@ neoForge {
             // gameDirectory = project.file('run-data')
             taskBefore(cleanResources)
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing-mod', 'mekanism', '--existing-mod', 'mekanismgenerators', '--existing-mod', 'mekanismtools', '--existing-mod', 'create'
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing-mod', 'mekanism', '--existing-mod', 'mekanismgenerators', '--existing-mod', 'mekanismtools', '--existing-mod', 'create', '--existing-mod', 'curios'
         }
 
 
@@ -113,6 +113,11 @@ repositories {
 
     maven { url 'https://maven.terraformersmc.com/' }
 
+    maven {
+        name = 'Curios'
+        url = 'https://maven.theillusivec4.top/'
+    }
+
 
 }
 
@@ -124,6 +129,9 @@ dependencies {
 
     compileOnly "dev.emi:emi-neoforge:${emi_version}+${minecraft_version}:api"
     //runtimeOnly "dev.emi:emi-neoforge:${emi_version}+${minecraft_version}"
+
+    compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}:api"
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
 
     implementation "fr.iglee42:IgleeLib:${minecraft_version}-${lib_version}"
 

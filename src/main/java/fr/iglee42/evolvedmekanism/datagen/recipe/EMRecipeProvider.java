@@ -102,6 +102,9 @@ public class EMRecipeProvider extends RecipeProvider {
                 has(MekanismItems.MODULE_BASE));
 
         EMCrafting.shapeless(output, EvolvedMekanism.rl("pink_dye"), Items.PINK_DYE, 1, EMItems.NOCTIS_ROZULI, has(EMItems.NOCTIS_ROZULI));
+        EMCrafting.shapeless(output, EvolvedMekanism.rl("portable_hazmat_suit"), EMItems.PORTABLE_HAZMAT_SUIT, 1,
+                new Object[]{MekanismItems.HAZMAT_MASK, MekanismItems.HAZMAT_GOWN, MekanismItems.HAZMAT_PANTS, MekanismItems.HAZMAT_BOOTS},
+                has(MekanismItems.HAZMAT_MASK), new ModLoadedCondition("curios"));
 
         addQio(output, "qio_drive_boosted", EMItems.BOOSTED_QIO_DRIVE, EMCrafting.item("mekanism:qio_drive_supermassive"), EMDatagenTags.cItem("crystals/uranium"));
         addQio(output, "qio_drive_singularity", EMItems.SINGULARITY_QIO_DRIVE, EMItems.BOOSTED_QIO_DRIVE, EMDatagenTags.cItem("pellets/antimatter"));
