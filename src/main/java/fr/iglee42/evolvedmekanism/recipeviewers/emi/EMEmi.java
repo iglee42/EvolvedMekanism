@@ -8,6 +8,7 @@ import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.Comparison;
 import dev.emi.emi.api.stack.EmiRegistryAdapter;
 import dev.emi.emi.api.stack.EmiStack;
+import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.categories.APTEMIRecipeCategory;
@@ -35,9 +36,8 @@ import mekanism.common.block.attribute.Attribute;
 import mekanism.common.block.attribute.AttributeFactoryType;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.recipe.IMekanismRecipeTypeProvider;
-import mekanism.common.tier.FactoryTier;
-import mekanism.common.util.EnumUtils;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -258,9 +258,14 @@ public class EMEmi implements EmiPlugin {
             if (item instanceof BlockItem blockItem) {
                 AttributeFactoryType factoryType = Attribute.get(blockItem.getBlock(), AttributeFactoryType.class);
                 if (factoryType != null) {
-                    for (FactoryTier tier : EnumUtils.FACTORY_TIERS) {
-                        registry.addWorkstation(category, EmiStack.of(EMBlocks.getFactory(tier, factoryType.getFactoryType())));
-                    }
+                    String factorySuffix = "_" + factoryType.getFactoryType().getRegistryNameComponent() + "_factory";
+                    BuiltInRegistries.BLOCK.holders().forEach(holder -> {
+                        ResourceLocation id = holder.getKey().location();
+                        if (id.getPath().endsWith(factorySuffix)
+                                && (EvolvedMekanism.MODID.equals(id.getNamespace()) || "mekanism".equals(id.getNamespace()))) {
+                            registry.addWorkstation(category, EmiStack.of(holder.value()));
+                        }
+                    });
                 }
             }
         }
