@@ -11,10 +11,10 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(value = PortableQIODashboardContainer.class, remap = false)
+@Mixin(PortableQIODashboardContainer.class)
 public class PortableQIODashboardContainerMixin {
 
-    @Shadow
+    @Shadow(remap = false)
     protected ItemStack stack;
 
     @Redirect(method = "stillValid", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;getItemInHand(Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/item/ItemStack;"))

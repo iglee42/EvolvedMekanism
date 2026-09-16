@@ -18,7 +18,7 @@ public enum ModsCompats {
     CURIOS("curios.LivingEntityElytraMixin", "curios.PlayerFallFlyingMixin", "curios.HumanoidArmorLayerMixin",
             "curios.LocalPlayerFallFlyingMixin", "curios.ElytraLayerMixin", "curios.MekanismItemContainerMixin",
             "curios.PortableQIODashboardContainerMixin", "curios.PacketPortableTeleporterTeleportMixin",
-            "curios.PacketGuiSetFrequencyMixin");
+            "curios.PacketGuiSetFrequencyMixin", "curios.PacketGuiButtonPressMixin");
     private final String[] mixinClasses;
 
     ModsCompats(String... mixinClasses) {

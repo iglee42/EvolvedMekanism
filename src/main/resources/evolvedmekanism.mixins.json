@@ -27,6 +27,7 @@
     "curios.PortableQIODashboardContainerMixin",
     "curios.PacketPortableTeleporterTeleportMixin",
     "curios.PacketGuiSetFrequencyMixin",
+    "curios.PacketGuiButtonPressMixin",
     "TripleInputRecipeCacheMixin",
     "UpgradeMixin",
     "UpgradeUtilsMixin",

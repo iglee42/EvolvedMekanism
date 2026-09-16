@@ -78,10 +78,6 @@ public final class CuriosHelper {
     }
 
     public static ItemStack resolveFromHandOrCurio(Player player, InteractionHand hand, Predicate<ItemStack> matcher) {
-        ItemStack held = player.getItemInHand(hand);
-        if (!held.isEmpty() && matcher.test(held)) {
-            return held;
-        }
         AbstractContainerMenu menu = player.containerMenu;
         if (menu instanceof PortableQIODashboardContainer qio && matcher.test(qio.getStack())) {
             return qio.getStack();
@@ -91,6 +87,10 @@ public final class CuriosHelper {
             if (!stack.isEmpty() && matcher.test(stack)) {
                 return stack;
             }
+        }
+        ItemStack held = player.getItemInHand(hand);
+        if (!held.isEmpty() && matcher.test(held)) {
+            return held;
         }
         return findFirst(player, matcher);
     }

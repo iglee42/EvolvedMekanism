@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = Player.class, remap = false)
+@Mixin(Player.class)
 public class PlayerFallFlyingMixin {
 
     @Inject(method = "tryToStartFallFlying", at = @At("RETURN"), cancellable = true)
