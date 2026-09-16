@@ -33,7 +33,6 @@ import mekanism.common.registration.impl.ItemRegistryObject;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.tier.*;
 import mekanism.common.util.MekanismUtils;
-import mekanism.tools.client.ShieldTextures;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
