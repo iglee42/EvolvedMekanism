@@ -43,22 +43,26 @@ public class QIODriveTierMixin implements InitializableEnum {
 
     @Override
     public void evolvedmekanism$initNewValues() {
-        if (EMQIODriveTier.BOOSTED != null)return;
-        EMQIODriveTier.BOOSTED = evolvedmekanism$addVariant("BOOSTED", EMBaseTier.OVERCLOCKED, 32_000_000_000L,16_384);
-        EMQIODriveTier.SINGULARITY = evolvedmekanism$addVariant("SINGULARITY",  EMBaseTier.QUANTUM,64_000_000_000L,32_768);
-        EMQIODriveTier.HYPRA_SOLIDIFIED = evolvedmekanism$addVariant("HYPRA_SOLIDIFIED", EMBaseTier.DENSE,128_000_000_000L,65_536);
-        EMQIODriveTier.BLACK_HOLE = evolvedmekanism$addVariant("BLACK_HOLE", EMBaseTier.MULTIVERSAL,256_000_000_000L,131_072);
-        EMQIODriveTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Long.MAX_VALUE,Integer.MAX_VALUE);
+        evolvedmekanism$registerNewValues();
     }
 
-    @Inject(method = "<clinit>", at =@At("TAIL"))
+    @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
-        if (EMBaseTier.OVERCLOCKED == null) ((InitializableEnum) (Object)BaseTier.BASIC).evolvedmekanism$initNewValues();
-        if (EMQIODriveTier.BOOSTED != null)return;
-        EMQIODriveTier.BOOSTED = evolvedmekanism$addVariant("BOOSTED", EMBaseTier.OVERCLOCKED, 32_000_000_000L,16_384);
-        EMQIODriveTier.SINGULARITY = evolvedmekanism$addVariant("SINGULARITY",  EMBaseTier.QUANTUM,64_000_000_000L,32_768);
-        EMQIODriveTier.HYPRA_SOLIDIFIED = evolvedmekanism$addVariant("HYPRA_SOLIDIFIED", EMBaseTier.DENSE,128_000_000_000L,65_536);
-        EMQIODriveTier.BLACK_HOLE = evolvedmekanism$addVariant("BLACK_HOLE", EMBaseTier.MULTIVERSAL,256_000_000_000L,131_072);
-        EMQIODriveTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE,Long.MAX_VALUE,Integer.MAX_VALUE);
+        evolvedmekanism$registerNewValues();
+    }
+
+    @Unique
+    private static void evolvedmekanism$registerNewValues() {
+        if (EMBaseTier.OVERCLOCKED == null) {
+            ((InitializableEnum) (Object) BaseTier.BASIC).evolvedmekanism$initNewValues();
+        }
+        if (EMQIODriveTier.BOOSTED != null) {
+            return;
+        }
+        EMQIODriveTier.BOOSTED = evolvedmekanism$addVariant("BOOSTED", EMBaseTier.OVERCLOCKED, 32_000_000_000L, 16_384);
+        EMQIODriveTier.SINGULARITY = evolvedmekanism$addVariant("SINGULARITY", EMBaseTier.QUANTUM, 64_000_000_000L, 32_768);
+        EMQIODriveTier.HYPRA_SOLIDIFIED = evolvedmekanism$addVariant("HYPRA_SOLIDIFIED", EMBaseTier.DENSE, 128_000_000_000L, 65_536);
+        EMQIODriveTier.BLACK_HOLE = evolvedmekanism$addVariant("BLACK_HOLE", EMBaseTier.MULTIVERSAL, 256_000_000_000L, 131_072);
+        EMQIODriveTier.CREATIVE = evolvedmekanism$addVariant("CREATIVE", BaseTier.CREATIVE, Long.MAX_VALUE, Integer.MAX_VALUE);
     }
 }
