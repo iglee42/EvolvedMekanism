@@ -44,6 +44,61 @@ public class ItemMaxTierInstaller extends Item {
     public ItemMaxTierInstaller(Properties properties) {
         super(properties);
     }
+
+    private static BlockState nextUpgradeState(AttributeUpgradeable upgradeable, BlockState current, BaseTier targetTier) {
+        try {
+            return upgradeable.upgradeResult(current, targetTier);
+        } catch (NullPointerException e) {
+            return current;
+        }
+    }
+
+    private static int compareInstallerTiers(BaseTier current, BaseTier target) {
+        if (Objects.equals(current, target)) {
+            return 0;
+        }
+        int currentIndex = installerTierIndex(current);
+        int targetIndex = installerTierIndex(target);
+        if (currentIndex < 0 || targetIndex < 0) {
+            return 1;
+        }
+        return Integer.compare(currentIndex, targetIndex);
+    }
+
+    private static int installerTierIndex(BaseTier tier) {
+        if (tier == null) {
+            return -1;
+        }
+        if (tier.equals(BaseTier.BASIC)) {
+            return 0;
+        }
+        if (tier.equals(BaseTier.ADVANCED)) {
+            return 1;
+        }
+        if (tier.equals(BaseTier.ELITE)) {
+            return 2;
+        }
+        if (tier.equals(BaseTier.ULTIMATE)) {
+            return 3;
+        }
+        if (tier.equals(EMBaseTier.OVERCLOCKED)) {
+            return 4;
+        }
+        if (tier.equals(EMBaseTier.QUANTUM)) {
+            return 5;
+        }
+        if (tier.equals(EMBaseTier.DENSE)) {
+            return 6;
+        }
+        if (tier.equals(EMBaseTier.MULTIVERSAL)) {
+            return 7;
+        }
+        if (tier.equals(BaseTier.CREATIVE)) {
+            return 8;
+        }
+        return -1;
+    }
+
     @NotNull
     @Override
     public Component getName(@NotNull ItemStack stack) {
@@ -120,28 +175,33 @@ public class ItemMaxTierInstaller extends Item {
         if (upgradeableBlock != null) {
             BaseTier baseTier = Attribute.getBaseTier(block);
             BaseTier maxTier = EMConfig.general.maxInstallerTier.getOrDefault();
-
-            if (Objects.equals(baseTier, maxTier)) {
-                return InteractionResult.PASS;
-            }
-
             if (baseTier == null) {
                 baseTier = BaseTier.BASIC;
             }
+            if (maxTier == null) {
+                maxTier = BaseTier.CREATIVE;
+            }
+            if (compareInstallerTiers(baseTier, maxTier) >= 0) {
+                return InteractionResult.PASS;
+            }
 
+            BlockState upgradeState = state;
             BaseTier toTier = baseTier;
-            BlockState upgradeState = upgradeableBlock.upgradeResult(state, toTier);
-            while (toTier != maxTier) {
+            while (compareInstallerTiers(toTier, maxTier) < 0) {
                 AttributeUpgradeable nextUpgradeable = Attribute.get(upgradeState.getBlock(), AttributeUpgradeable.class);
                 if (nextUpgradeable == null) {
                     break;
                 }
-                upgradeableBlock = nextUpgradeable;
-                upgradeState = upgradeableBlock.upgradeResult(upgradeState, toTier);
-                toTier = Attribute.getBaseTier(upgradeState.getBlock());
-                if (toTier == null) {
+                BlockState candidate = nextUpgradeState(nextUpgradeable, upgradeState, maxTier);
+                if (candidate == null || candidate == upgradeState) {
                     break;
                 }
+                BaseTier candidateTier = Attribute.getBaseTier(candidate.getBlock());
+                if (candidateTier == null || compareInstallerTiers(candidateTier, maxTier) > 0) {
+                    break;
+                }
+                upgradeState = candidate;
+                toTier = candidateTier;
             }
 
             if (state == upgradeState) {
