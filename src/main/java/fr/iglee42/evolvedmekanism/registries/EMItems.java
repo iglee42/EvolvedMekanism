@@ -26,6 +26,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Locale;
+import java.util.Objects;
+import java.util.function.Supplier;
 
 public class EMItems {
     public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(EvolvedMekanism.MODID);
@@ -49,11 +51,11 @@ public class EMItems {
     public static final ItemRegistryObject<ItemTierInstaller> CREATIVE_TIER_INSTALLER = registerInstaller(EMBaseTier.MULTIVERSAL,BaseTier.CREATIVE);
     public static final ItemRegistryObject<ItemMaxTierInstaller> MAX_TIER_INSTALLER = ITEMS.registerItem("max_tier_installer", ItemMaxTierInstaller::new);
 
-    public static final ItemRegistryObject<ItemQIODrive> BOOSTED_QIO_DRIVE = registerQIODrive(EMQIODriveTier.BOOSTED);
-    public static final ItemRegistryObject<ItemQIODrive> SINGULARITY_QIO_DRIVE = registerQIODrive(EMQIODriveTier.SINGULARITY);
-    public static final ItemRegistryObject<ItemQIODrive> HYPRA_SOLIDIFIED_QIO_DRIVE = registerQIODrive(EMQIODriveTier.HYPRA_SOLIDIFIED);
-    public static final ItemRegistryObject<ItemQIODrive> BLACK_HOLE_QIO_DRIVE = registerQIODrive(EMQIODriveTier.BLACK_HOLE);
-    public static final ItemRegistryObject<ItemQIODrive> CREATIVE_QIO_DRIVE = registerQIODrive(EMQIODriveTier.CREATIVE);
+    public static final ItemRegistryObject<ItemQIODrive> BOOSTED_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.BOOSTED);
+    public static final ItemRegistryObject<ItemQIODrive> SINGULARITY_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.SINGULARITY);
+    public static final ItemRegistryObject<ItemQIODrive> HYPRA_SOLIDIFIED_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.HYPRA_SOLIDIFIED);
+    public static final ItemRegistryObject<ItemQIODrive> BLACK_HOLE_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.BLACK_HOLE);
+    public static final ItemRegistryObject<ItemQIODrive> CREATIVE_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.CREATIVE);
 
     public static final ItemRegistryObject<Item> BETTER_GOLD_INGOT = registerResource(ResourceType.INGOT, EMResources.BETTER_GOLD);
     public static final ItemRegistryObject<Item> PLASLITHERITE_INGOT = registerUnburnableResource(ResourceType.INGOT, EMResources.PLASLITHERITE);
@@ -128,9 +130,14 @@ public class EMItems {
         return ITEMS.registerUnburnable(type.getRegistryPrefix() + "_" + resource.getRegistrySuffix());
     }
 
-    private static ItemRegistryObject<ItemQIODrive> registerQIODrive(QIODriveTier tier) {
-        if (tier == null) ((InitializableEnum) (Object)QIODriveTier.BASE ).evolvedmekanism$initNewValues();
-        return ITEMS.registerItem("qio_drive_" + tier.name().toLowerCase(Locale.ROOT), properties -> new ItemQIODrive(tier, properties));
+    private static ItemRegistryObject<ItemQIODrive> registerQIODrive(Supplier<QIODriveTier> tierSupplier) {
+        QIODriveTier tier = tierSupplier.get();
+        if (tier == null) {
+            ((InitializableEnum) (Object) QIODriveTier.BASE).evolvedmekanism$initNewValues();
+            tier = tierSupplier.get();
+        }
+        QIODriveTier resolved = Objects.requireNonNull(tier, "QIO drive tier was not initialized");
+        return ITEMS.registerItem("qio_drive_" + resolved.name().toLowerCase(Locale.ROOT), properties -> new ItemQIODrive(resolved, properties));
     }
 
     private static ItemRegistryObject<ItemUpgrade> registerUpgrade(Upgrade type) {
