@@ -12,9 +12,6 @@ import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import mekanism.api.text.EnumColor;
 import mekanism.common.tags.MekanismTags;
-import mekanism.tools.client.ShieldTextures;
-import mekanism.tools.common.MekanismTools;
-import mekanism.tools.common.MobEquipmentHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -135,7 +132,6 @@ public class EvolvedMekanism {
             EMToolsItems.register(modEventBus);
             if (FMLEnvironment.dist == Dist.CLIENT) {
                 modEventBus.register(new EMToolsClientRegistration());
-                ((InitializableEnum) (Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
             }
         }
     }

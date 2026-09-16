@@ -3,8 +3,6 @@ package fr.iglee42.evolvedmekanism.mixins.client;
 
 import fr.iglee42.emtools.client.EMShieldTextures;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
-import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
-import mekanism.api.tier.BaseTier;
 import mekanism.tools.client.ShieldTextures;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
