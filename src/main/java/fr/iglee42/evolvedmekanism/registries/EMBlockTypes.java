@@ -133,7 +133,7 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.LASER_DISENCHANTER)
             .withEnergyConfig(MekanismConfig.storage.laserTractorBeam)
             .with(new AttributeStateFacing(BlockStateProperties.FACING, AttributeStateFacing.FacePlacementType.SELECTED_FACE), new Attributes.AttributeRedstoneEmitter<>((tile, side) -> tile.getRedstoneLevel()), Attributes.REDSTONE, Attributes.COMPARATOR, Attributes.SECURITY, Attributes.INVENTORY)
-            .withCustomShape(BlockShapes.LASER_AMPLIFIER)
+            .withCustomShape(BlockShapes.LASER)
             .withComputerSupport("laserDisenchanter")
             .build();
 

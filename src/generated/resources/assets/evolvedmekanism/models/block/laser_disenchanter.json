@@ -1,0 +1,6 @@
+{
+  "parent": "mekanism:block/laser",
+  "textures": {
+    "all": "evolvedmekanism:block/models/laser_disenchanter"
+  }
+}

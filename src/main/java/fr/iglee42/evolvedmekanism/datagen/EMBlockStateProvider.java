@@ -182,6 +182,8 @@ public class EMBlockStateProvider extends BlockStateProvider {
             activeOnly(block, modLoc("block/apt_port"), modLoc("block/apt_port_output"), true);
         } else if (path.equals("supercharging_element")) {
             activeOnly(block, modLoc("block/supercharging_element"), modLoc("block/supercharging_element_active"), true);
+        } else if (path.equals("laser_disenchanter")) {
+            laserDisenchanter(block);
         } else if (MACHINES.contains(path)) {
             facingActive(block, "block/" + path, "block/" + path + "_active");
             simpleBlockItem(block, models().getExistingFile(modLoc("block/" + path)));
@@ -199,6 +201,26 @@ public class EMBlockStateProvider extends BlockStateProvider {
         } else if (modelExists("block/" + path)) {
             simpleExisting(block, modLoc("block/" + path), true);
         }
+    }
+
+    private void laserDisenchanter(Block block) {
+        models().withExistingParent("laser_disenchanter", ResourceLocation.fromNamespaceAndPath("mekanism", "block/laser"))
+                .texture("all", modLoc("block/models/laser_disenchanter"));
+        DirectionProperty facing = BlockStateProperties.FACING;
+        ModelFile model = models().getExistingFile(modLoc("block/laser_disenchanter"));
+        getVariantBuilder(block).forAllStatesExcept(state -> {
+            Direction dir = state.getValue(facing);
+            return switch (dir) {
+                case DOWN -> ConfiguredModel.builder().modelFile(model).rotationX(180).build();
+                case UP -> ConfiguredModel.builder().modelFile(model).build();
+                case NORTH -> ConfiguredModel.builder().modelFile(model).rotationX(90).build();
+                case SOUTH -> ConfiguredModel.builder().modelFile(model).rotationX(90).rotationY(180).build();
+                case WEST -> ConfiguredModel.builder().modelFile(model).rotationX(90).rotationY(270).build();
+                case EAST -> ConfiguredModel.builder().modelFile(model).rotationX(90).rotationY(90).build();
+            };
+        }, ignored(block, facing));
+        simpleBlockItem(block, model);
+        generated.add(block);
     }
 
     private void machineModel(String name) {
