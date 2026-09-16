@@ -24,6 +24,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Locale;
+import java.util.Objects;
+import java.util.function.Supplier;
 
 public class EMItems {
     public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(EvolvedMekanism.MODID);
@@ -43,11 +45,11 @@ public class EMItems {
     public static final ItemRegistryObject<Item> MULTIVERSAL_CONTROL_CIRCUIT = registerCircuit(EMBaseTier.MULTIVERSAL);
     public static final ItemRegistryObject<Item> CREATIVE_CONTROL_CIRCUIT = registerCircuit(BaseTier.CREATIVE);
 
-    public static final ItemRegistryObject<ItemQIODrive> BOOSTED_QIO_DRIVE = registerQIODrive(EMQIODriveTier.BOOSTED);
-    public static final ItemRegistryObject<ItemQIODrive> SINGULARITY_QIO_DRIVE = registerQIODrive(EMQIODriveTier.SINGULARITY);
-    public static final ItemRegistryObject<ItemQIODrive> HYPRA_SOLIDIFIED_QIO_DRIVE = registerQIODrive(EMQIODriveTier.HYPRA_SOLIDIFIED);
-    public static final ItemRegistryObject<ItemQIODrive> BLACK_HOLE_QIO_DRIVE = registerQIODrive(EMQIODriveTier.BLACK_HOLE);
-    public static final ItemRegistryObject<ItemQIODrive> CREATIVE_QIO_DRIVE = registerQIODrive(EMQIODriveTier.CREATIVE);
+    public static final ItemRegistryObject<ItemQIODrive> BOOSTED_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.BOOSTED);
+    public static final ItemRegistryObject<ItemQIODrive> SINGULARITY_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.SINGULARITY);
+    public static final ItemRegistryObject<ItemQIODrive> HYPRA_SOLIDIFIED_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.HYPRA_SOLIDIFIED);
+    public static final ItemRegistryObject<ItemQIODrive> BLACK_HOLE_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.BLACK_HOLE);
+    public static final ItemRegistryObject<ItemQIODrive> CREATIVE_QIO_DRIVE = registerQIODrive(() -> EMQIODriveTier.CREATIVE);
 
     public static final ItemRegistryObject<ItemTierInstaller> OVERCLOCKED_TIER_INSTALLER = registerInstaller(BaseTier.ULTIMATE, EMBaseTier.OVERCLOCKED);
     public static final ItemRegistryObject<ItemTierInstaller> QUANTUM_TIER_INSTALLER = registerInstaller(EMBaseTier.OVERCLOCKED, EMBaseTier.QUANTUM);
@@ -129,9 +131,14 @@ public class EMItems {
         return ITEMS.registerUnburnable(type.getRegistryPrefix() + "_" + resource.getRegistrySuffix());
     }
 
-    private static ItemRegistryObject<ItemQIODrive> registerQIODrive(QIODriveTier tier) {
-        if (tier == null) ((InitializableEnum) (Object)QIODriveTier.BASE ).evolvedmekanism$initNewValues();
-        return ITEMS.register("qio_drive_" + tier.name().toLowerCase(Locale.ROOT), properties -> new ItemQIODrive(tier, properties));
+    private static ItemRegistryObject<ItemQIODrive> registerQIODrive(Supplier<QIODriveTier> tierSupplier) {
+        QIODriveTier tier = tierSupplier.get();
+        if (tier == null) {
+            ((InitializableEnum) (Object) QIODriveTier.BASE).evolvedmekanism$initNewValues();
+            tier = tierSupplier.get();
+        }
+        QIODriveTier resolved = Objects.requireNonNull(tier, "QIO drive tier was not initialized");
+        return ITEMS.register("qio_drive_" + resolved.name().toLowerCase(Locale.ROOT), properties -> new ItemQIODrive(resolved, properties));
     }
 
     private static ItemRegistryObject<ItemUpgrade> registerUpgrade(Upgrade type) {
