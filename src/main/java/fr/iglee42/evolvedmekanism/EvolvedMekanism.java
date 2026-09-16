@@ -101,7 +101,6 @@ public class EvolvedMekanism {
         modEventBus.addListener(EMConfig::onConfigLoad);
         if (ModsCompats.MEKANISMTOOLS.isLoaded())modEventBus.addListener(EvolvedMekanismToolsConfig::onConfigLoad);
 
-
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) NeoForge.EVENT_BUS.addListener(EMMobEquipmentHelper::onLivingSpecialSpawn);
 
         versionNumber = new Version(container);
