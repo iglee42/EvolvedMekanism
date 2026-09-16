@@ -5,13 +5,13 @@ import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMFactoryType;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
+import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
 import mekanism.api.annotations.NothingNullByDefault;
 import mekanism.client.recipe_viewer.alias.IAliasMapping;
 import mekanism.client.recipe_viewer.alias.MekanismAliases;
 import mekanism.client.recipe_viewer.alias.RVAliasHelper;
 import mekanism.common.content.blocktype.FactoryType;
 import mekanism.common.tier.FactoryTier;
-import mekanism.common.util.EnumUtils;
 import net.minecraft.Util;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -44,13 +44,13 @@ public final class EMAliasMapping implements IAliasMapping {
 
     private <ITEM, FLUID, CHEMICAL> void addFactoryAliases(RVAliasHelper<ITEM, FLUID, CHEMICAL> rv) {
         List<FactoryTier> extraTiers = extraFactoryTiers();
-        for (FactoryType factoryType : EnumUtils.FACTORY_TYPES) {
+        for (FactoryType factoryType : EMVanillaMekanism.FACTORY_TYPES) {
             List<ItemLike> extraFactories = factories(extraTiers, factoryType);
             if (!extraFactories.isEmpty()) {
                 rv.addAliases(extraFactories, factoryType.getBaseBlock());
             }
         }
-        List<FactoryTier> alloyingTiers = new ArrayList<>(List.of(EnumUtils.FACTORY_TIERS));
+        List<FactoryTier> alloyingTiers = new ArrayList<>(List.of(EMVanillaMekanism.FACTORY_TIERS));
         alloyingTiers.addAll(extraTiers);
         List<ItemLike> alloyingFactories = factories(alloyingTiers, EMFactoryType.ALLOYING);
         if (!alloyingFactories.isEmpty()) {

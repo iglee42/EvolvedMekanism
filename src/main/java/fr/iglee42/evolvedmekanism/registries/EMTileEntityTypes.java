@@ -44,7 +44,7 @@ import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.transmitter.*;
-import mekanism.common.util.EnumUtils;
+import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.Block;
@@ -76,7 +76,7 @@ public class EMTileEntityTypes {
             registerFactory(tier, FactoryType.SMELTING, TileEntityItemStackToItemStackFactory::new);
         }
         List<FactoryTier> allTiers = new ArrayList<>();
-        allTiers.addAll(Arrays.stream(EnumUtils.FACTORY_TIERS).toList());
+        allTiers.addAll(Arrays.asList(EMVanillaMekanism.FACTORY_TIERS));
         allTiers.addAll( Arrays.asList(EMFactoryTier.OVERCLOCKED,EMFactoryTier.QUANTUM,EMFactoryTier.DENSE,EMFactoryTier.MULTIVERSAL,EMFactoryTier.CREATIVE));
         for (FactoryTier tier : allTiers){
             registerFactory(tier,EMFactoryType.ALLOYING, TileEntityAlloyingFactory::new);

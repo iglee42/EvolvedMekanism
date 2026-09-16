@@ -42,7 +42,7 @@ import mekanism.common.tile.*;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.transmitter.*;
-import mekanism.common.util.EnumUtils;
+import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.*;
@@ -228,12 +228,12 @@ public class EMBlockTypes {
 
     static {
         for (FactoryTier tier :  Arrays.asList(EMFactoryTier.OVERCLOCKED,EMFactoryTier.QUANTUM,EMFactoryTier.DENSE,EMFactoryTier.MULTIVERSAL,EMFactoryTier.CREATIVE)) {
-            for (FactoryType type : EnumUtils.FACTORY_TYPES) {
+            for (FactoryType type : EMVanillaMekanism.FACTORY_TYPES) {
                 FACTORIES.put(tier, type, Factory.FactoryBuilder.createFactory(() -> EMTileEntityTypes.getFactoryTile(tier, type), type, tier).build());
             }
         }
         List<FactoryTier> allTiers = new ArrayList<>();
-        allTiers.addAll(Arrays.stream(EnumUtils.FACTORY_TIERS).toList());
+        allTiers.addAll(Arrays.asList(EMVanillaMekanism.FACTORY_TIERS));
         allTiers.addAll( Arrays.asList(EMFactoryTier.OVERCLOCKED,EMFactoryTier.QUANTUM,EMFactoryTier.DENSE,EMFactoryTier.MULTIVERSAL,EMFactoryTier.CREATIVE));
         for (FactoryTier tier : allTiers) {
             FACTORIES.put(tier, EMFactoryType.ALLOYING, EMFactoryBuilder.createFactory(() -> EMTileEntityTypes.getFactoryTile(tier, EMFactoryType.ALLOYING), EMFactoryType.ALLOYING, tier).build());

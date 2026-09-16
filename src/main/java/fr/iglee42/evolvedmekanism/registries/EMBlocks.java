@@ -24,6 +24,7 @@ import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import fr.iglee42.evolvedmekanism.utils.EMAttachedSideConfig;
 import fr.iglee42.evolvedmekanism.utils.EMOreBlockType;
+import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.attachments.component.AttachedEjector;
@@ -76,7 +77,6 @@ import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.prefab.TileEntityAdvancedElectricMachine;
 import mekanism.common.tile.transmitter.*;
-import mekanism.common.util.EnumUtils;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -108,17 +108,17 @@ public class EMBlocks {
     static {
         // factories
         for (FactoryTier tier :  Arrays.asList(EMFactoryTier.OVERCLOCKED,EMFactoryTier.QUANTUM,EMFactoryTier.DENSE,EMFactoryTier.MULTIVERSAL,EMFactoryTier.CREATIVE)) {
-            for (FactoryType type : EnumUtils.FACTORY_TYPES) {
+            for (FactoryType type : EMVanillaMekanism.FACTORY_TYPES) {
                 FACTORIES.put(tier, type, registerFactory(EMBlockTypes.getFactory(tier, type)));
             }
         }
         List<FactoryTier> allTiers = new ArrayList<>();
-        allTiers.addAll(Arrays.stream(EnumUtils.FACTORY_TIERS).toList());
+        allTiers.addAll(Arrays.asList(EMVanillaMekanism.FACTORY_TIERS));
         allTiers.addAll( Arrays.asList(EMFactoryTier.OVERCLOCKED,EMFactoryTier.QUANTUM,EMFactoryTier.DENSE,EMFactoryTier.MULTIVERSAL,EMFactoryTier.CREATIVE));
         for (FactoryTier tier :  allTiers) {
             FACTORIES.put(tier, EMFactoryType.ALLOYING, registerFactory(EMBlockTypes.getFactory(tier, EMFactoryType.ALLOYING)));
         }
-        for (OreType ore : EnumUtils.ORE_TYPES) {
+        for (OreType ore : EMVanillaMekanism.ORE_TYPES) {
             registerOre(ore);
         }
 

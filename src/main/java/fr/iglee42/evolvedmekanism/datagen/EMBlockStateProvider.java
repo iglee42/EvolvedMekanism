@@ -3,10 +3,10 @@ package fr.iglee42.evolvedmekanism.datagen;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMFactoryType;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
+import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
 import mekanism.common.content.blocktype.FactoryType;
 import mekanism.common.resource.ore.OreType;
 import mekanism.common.tier.FactoryTier;
-import mekanism.common.util.EnumUtils;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -71,7 +71,7 @@ public class EMBlockStateProvider extends BlockStateProvider {
                 continue;
             }
             boolean alloyingDone = false;
-            for (FactoryType type : EnumUtils.FACTORY_TYPES) {
+            for (FactoryType type : EMVanillaMekanism.FACTORY_TYPES) {
                 boolean custom = type == EMFactoryType.ALLOYING || customFactory(type.getRegistryNameComponent());
                 factory(tier, type, custom);
                 alloyingDone |= type == EMFactoryType.ALLOYING;
@@ -88,7 +88,7 @@ public class EMBlockStateProvider extends BlockStateProvider {
             }
         }
 
-        for (OreType ore : EnumUtils.ORE_TYPES) {
+        for (OreType ore : EMVanillaMekanism.ORE_TYPES) {
             String suffix = ore.getResource().getRegistrySuffix() + "_ore";
             for (String prefix : ORE_PREFIXES) {
                 String model = "block/ores/" + prefix + "_" + suffix;
@@ -525,7 +525,7 @@ public class EMBlockStateProvider extends BlockStateProvider {
     }
 
     private static List<FactoryTier> allFactoryTiers() {
-        List<FactoryTier> tiers = new ArrayList<>(List.of(EnumUtils.FACTORY_TIERS));
+        List<FactoryTier> tiers = new ArrayList<>(List.of(EMVanillaMekanism.FACTORY_TIERS));
         tiers.add(EMFactoryTier.OVERCLOCKED);
         tiers.add(EMFactoryTier.QUANTUM);
         tiers.add(EMFactoryTier.DENSE);
