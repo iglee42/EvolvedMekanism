@@ -9,6 +9,7 @@
     "APILangMixin",
     "BlockShapesMixin",
     "EnergyNetworkMixin",
+    "TransporterUtilsMixin",
     "BlockTypeBuilderMixin",
     "FactoryContainerMixin",
     "FactoryMixin",
