@@ -188,7 +188,7 @@ public class ItemMaxTierInstaller extends Item {
         AttributeUpgradeable upgradeableBlock = Attribute.get(block, AttributeUpgradeable.class);
         if (upgradeableBlock != null) {
             BaseTier baseTier = Attribute.getBaseTier(block);
-            BaseTier maxTier = EMConfig.general.maxInstallerTier.getOrDefault();
+            BaseTier maxTier = EMConfig.general.getMaxInstallerTier();
             if (baseTier == null) {
                 baseTier = BaseTier.BASIC;
             }
@@ -296,7 +296,7 @@ public class ItemMaxTierInstaller extends Item {
     public void appendHoverText(ItemStack p_41421_, TooltipContext p_339594_, List<Component> tooltip, TooltipFlag p_41424_) {
         super.appendHoverText(p_41421_, p_339594_, tooltip, p_41424_);
         if (MekKeyHandler.isKeyPressed(MekanismKeyHandler.descriptionKey))
-            tooltip.add(EvolvedMekanismLang.DESCRIPTION_MAX_TIER_INSTALLER.translate(EMConfig.general.maxInstallerTier.getOrDefault().getSerializedName()));
+            tooltip.add(EvolvedMekanismLang.DESCRIPTION_MAX_TIER_INSTALLER.translate(EMConfig.general.getMaxInstallerTier().getSerializedName()));
         else
             tooltip.add(MekanismLang.HOLD_FOR_DESCRIPTION.translateColored(EnumColor.GRAY, EnumColor.AQUA, MekanismKeyHandler.descriptionKey.getTranslatedKeyMessage()));
 

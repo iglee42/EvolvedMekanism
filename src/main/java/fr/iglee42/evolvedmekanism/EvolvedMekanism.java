@@ -69,10 +69,9 @@ public class EvolvedMekanism {
     public EvolvedMekanism(IEventBus modEventBus, ModContainer container) {
         logger.info("Evolved Mekanism Launched");
         instance = this;
+        initEnums();
         EMConfig.registerConfigs(container);
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) EvolvedMekanismToolsConfig.registerConfigs(container);
-
-        initEnums();
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
 

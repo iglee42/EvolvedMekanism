@@ -1,10 +1,11 @@
 package fr.iglee42.evolvedmekanism.config;
 
-import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
-import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.config.BaseMekanismConfig;
-import mekanism.common.config.value.*;
+import mekanism.common.config.value.CachedBooleanValue;
+import mekanism.common.config.value.CachedConfigValue;
+import mekanism.common.config.value.CachedIntValue;
+import mekanism.common.config.value.CachedLongValue;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
@@ -22,16 +23,15 @@ public class EMGeneralConfig extends BaseMekanismConfig {
     public final CachedLongValue aptEnergyConsumption;
 
     //OTHER
-    public final CachedConfigValue<BaseTier> maxInstallerTier;
+    public final CachedConfigValue<MaxInstallerTier> maxInstallerTier;
     public final CachedBooleanValue allowAlloyBlocksInOredictionificator;
 
     EMGeneralConfig() {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
         builder.comment("General Config. This config is synced from server to client.").push("general");
         builder.comment("Items Settings").push(ITEMS_CATEGORY);
-        maxInstallerTier = CachedEnumValue.wrap(this,builder.comment("Defines the machine tier up to which the maximum tier installer should go")
-                .defineEnum("maxInstallerTier", EMBaseTier.MULTIVERSAL,
-                        BaseTier.BASIC,BaseTier.ADVANCED,BaseTier.ELITE,BaseTier.ULTIMATE,BaseTier.CREATIVE,EMBaseTier.OVERCLOCKED,EMBaseTier.QUANTUM,EMBaseTier.DENSE,EMBaseTier.MULTIVERSAL));
+        maxInstallerTier = CachedConfigValue.wrap(this, builder.comment("Defines the machine tier up to which the maximum tier installer should go")
+                .defineEnum("maxInstallerTier", MaxInstallerTier.MULTIVERSAL));
         allowAlloyBlocksInOredictionificator = CachedBooleanValue.wrap(this, builder.comment("Allow alloy blocks to be changed in the oredictionificator").define("allowAlloyBlocksInOredictionificator", false));
         builder.pop();
         builder.comment("APT Settings").push(APT_CATEGORY);
@@ -67,5 +67,11 @@ public class EMGeneralConfig extends BaseMekanismConfig {
     @Override
     public ModConfig.Type getConfigType() {
         return ModConfig.Type.SERVER;
+    }
+
+    public BaseTier getMaxInstallerTier() {
+        MaxInstallerTier configured = maxInstallerTier.getOrDefault();
+        BaseTier tier = configured == null ? null : configured.toBaseTier();
+        return tier != null ? tier : BaseTier.CREATIVE;
     }
 }
