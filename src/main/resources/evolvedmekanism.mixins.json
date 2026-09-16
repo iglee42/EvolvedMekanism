@@ -8,6 +8,7 @@
   "mixins": [
     "APILangMixin",
     "BlockShapesMixin",
+    "EnergyNetworkMixin",
     "BlockTypeBuilderMixin",
     "FactoryContainerMixin",
     "FactoryMixin",
