@@ -86,13 +86,12 @@ public class EvolvedMekanism {
         instance = this;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        initEnums();
         EMConfig.registerConfigs(FMLJavaModLoadingContext.get());
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) EMToolsConfig.registerConfigs(FMLJavaModLoadingContext.get());
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
-
-        initEnums();
 
         EMBlocks.BLOCKS.register(modEventBus);
         EMBlocks.BLOCKS_NO_ITEMS.register(modEventBus);
