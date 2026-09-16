@@ -59,7 +59,7 @@ import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.multiblock.TileEntitySuperheatingElement;
-import mekanism.common.util.EnumUtils;
+import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -84,7 +84,7 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockFactoryMachine<TileEntityAlloyer, Machine.FactoryMachine<TileEntityAlloyer>>, ItemBlockMachine> ALLOYER = BLOCKS.register("alloyer", () -> new BlockFactoryMachine<>(EMBlockTypes.ALLOYER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
 
     static {
-        for (OreType ore : EnumUtils.ORE_TYPES) {
+            for (OreType ore : EMVanillaMekanism.ORE_TYPES) {
             registerOre(ore);
         }
     }
