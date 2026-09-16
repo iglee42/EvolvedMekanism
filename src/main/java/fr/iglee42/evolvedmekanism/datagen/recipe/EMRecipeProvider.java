@@ -461,6 +461,10 @@ public class EMRecipeProvider extends RecipeProvider {
         addMold(output, EMItems.MOLD_COIN, EMDatagenTags.forgeItem("coins"), "coin");
         addMold(output, EMItems.MOLD_GEM, EMDatagenTags.forgeItem("gems"), "gem");
 
+        EMCrafting.shapeless(output, EvolvedMekanism.rl("portable_hazmat_suit"), EMItems.PORTABLE_HAZMAT_SUIT, 1,
+                new Object[]{MekanismItems.HAZMAT_MASK, MekanismItems.HAZMAT_GOWN, MekanismItems.HAZMAT_PANTS, MekanismItems.HAZMAT_BOOTS},
+                has(MekanismItems.HAZMAT_MASK), new ModLoadedCondition("curios"));
+
         ItemStackChemicalToItemStackRecipeBuilder.metallurgicInfusing(
                 IngredientCreatorAccess.item().from(MekanismTags.Items.ALLOYS_ATOMIC),
                 IngredientCreatorAccess.infusion().from(EMTags.InfuseTypes.URANIUM, 20),

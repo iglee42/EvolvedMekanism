@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "curios"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "mekanism:hazmat_mask"
+    },
+    {
+      "item": "mekanism:hazmat_gown"
+    },
+    {
+      "item": "mekanism:hazmat_pants"
+    },
+    {
+      "item": "mekanism:hazmat_boots"
+    }
+  ],
+  "result": {
+    "item": "evolvedmekanism:portable_hazmat_suit"
+  }
+}

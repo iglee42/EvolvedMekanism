@@ -41,7 +41,10 @@ public enum EvolvedMekanismLang implements ILangEntry {
     APT_PORT_MODE("apt", "port_mode"),
     APT_INVALID_SUPERCHARGING("apt", "invalid_supercharging"),
 
-    TOOLTIP_NO_CONSUMED("tooltip","not_consumed")
+    TOOLTIP_NO_CONSUMED("tooltip","not_consumed"),
+    PORTABLE_HAZMAT_SUIT_TOOLTIP("tooltip", "portable_hazmat_suit"),
+    CURIO_ENABLED("tooltip", "curio_enabled"),
+    CURIO_DISABLED("tooltip", "curio_disabled")
 
     ;
 

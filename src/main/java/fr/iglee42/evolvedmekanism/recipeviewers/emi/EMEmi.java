@@ -29,6 +29,7 @@ import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
+import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.chemical.IChemicalHandler;
 import mekanism.api.energy.IStrictEnergyHandler;
@@ -181,6 +182,9 @@ public class EMEmi implements EmiPlugin {
                 toRemove.add(EmiStack.of(m.asItem()));
             }
         });
+        if (!ModsCompats.CURIOS.isLoaded()) {
+            toRemove.add(EmiStack.of(EMItems.PORTABLE_HAZMAT_SUIT));
+        }
         toRemove.forEach(registry::removeEmiStacks);
     }
 

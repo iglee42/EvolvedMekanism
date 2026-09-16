@@ -19,6 +19,7 @@ import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMFluids;
 import fr.iglee42.evolvedmekanism.registries.EMItems;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
+import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.chemical.IChemicalHandler;
 import mekanism.api.energy.IStrictEnergyHandler;
@@ -216,6 +217,9 @@ public class EMJEI implements IModPlugin {
             boolean used = EMRecipeType.SOLIDIFICATION.getRecipes(null).stream().anyMatch(r->r.getInputSolid().getRepresentations().stream().anyMatch(s->s.getItem().equals(m.asItem())));
             if (!used) itemsToRemove.add(new ItemStack(m.asItem()));
         });
+        if (!ModsCompats.CURIOS.isLoaded()) {
+            itemsToRemove.add(new ItemStack(EMItems.PORTABLE_HAZMAT_SUIT.get()));
+        }
         registry.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK,fluidsToRemove);
         registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK,itemsToRemove);
         RecipeRegistryHelper.register(registry, ALLOYING, EMRecipeType.ALLOYING);

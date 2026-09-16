@@ -341,6 +341,25 @@ public class EMLangProvider extends LanguageProvider {
         add("item.evolvedmekanism.dense_tier_installer", "Dense Tier Installer");
         add("item.evolvedmekanism.multiversal_tier_installer", "Multiversal Tier Installer");
         add("item.evolvedmekanism.max_tier_installer", "Maximum Tier Installer");
+        add("item.evolvedmekanism.portable_hazmat_suit", "Portable Hazmat Suit");
+        add("tooltip.evolvedmekanism.portable_hazmat_suit", "When equipped in Curios, visually replaces armor and provides full radiation shielding.");
+        add("tooltip.evolvedmekanism.curio_enabled", "Enabled");
+        add("tooltip.evolvedmekanism.curio_disabled", "Disabled");
+        add("key.categories.evolvedmekanism", "Evolved Mekanism");
+        add("key.evolvedmekanism.open_qio_dashboard", "Open Portable QIO Dashboard");
+        add("key.evolvedmekanism.open_portable_teleporter", "Open Portable Teleporter");
+        add("curios.identifier.jetpack", "Jetpack");
+        add("curios.identifier.hdpe_elytra", "HDPE Elytra");
+        add("curios.identifier.scuba_mask", "Scuba Mask");
+        add("curios.identifier.scuba_tank", "Scuba Tank");
+        add("curios.identifier.free_runners", "Free Runners");
+        add("curios.identifier.portable_hazmat_suit", "Portable Hazmat Suit");
+        add("curios.identifier.canteen", "Canteen");
+        add("curios.identifier.energy_tablet", "Energy Tablet");
+        add("curios.identifier.portable_qio_dashboard", "Portable QIO Dashboard");
+        add("curios.identifier.portable_teleporter", "Portable Teleporter");
+        add("curios.identifier.dosimeter", "Dosimeter");
+        add("curios.identifier.geiger_counter", "Geiger Counter");
         add("item.evolvedmekanism.enriched_uranium", "Enriched Uranium");
         add("item.evolvedmekanism.enriched_better_gold", "Enriched Better Gold");
         add("item.evolvedmekanism.enriched_plaslitherite", "Enriched Plaslitherite");
@@ -841,5 +860,17 @@ public class EMLangProvider extends LanguageProvider {
         add("item.evolvedmekanism.noctis_rozuli_shovel", "Noctis Rozuli Shovel");
         add("item.evolvedmekanism.noctis_rozuli_sword", "Noctis Rozuli Sword");
         add("apt.evolvedmekanism.invalid_supercharging", "Couldn't form, invalid Supercharging Element arrangement.");
+        add("tag.item.curios.jetpack", "Jetpack");
+        add("tag.item.curios.hdpe_elytra", "HDPE Elytra");
+        add("tag.item.curios.scuba_mask", "Scuba Mask");
+        add("tag.item.curios.scuba_tank", "Scuba Tank");
+        add("tag.item.curios.free_runners", "Free Runners");
+        add("tag.item.curios.portable_hazmat_suit", "Portable Hazmat Suit");
+        add("tag.item.curios.canteen", "Canteen");
+        add("tag.item.curios.energy_tablet", "Energy Tablet");
+        add("tag.item.curios.portable_qio_dashboard", "Portable QIO Dashboard");
+        add("tag.item.curios.portable_teleporter", "Portable Teleporter");
+        add("tag.item.curios.dosimeter", "Dosimeter");
+        add("tag.item.curios.geiger_counter", "Geiger Counter");
     }
 }

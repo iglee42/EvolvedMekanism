@@ -114,7 +114,7 @@ minecraft {
 
         data {
             workingDirectory project.file('run-data')
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'mekanism', '--existing-mod', 'mekanismgenerators', '--existing-mod', 'mekanismtools'
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'mekanism', '--existing-mod', 'mekanismgenerators', '--existing-mod', 'mekanismtools', '--existing-mod', 'curios'
         }
     }
 }
@@ -146,6 +146,10 @@ repositories {
 
     maven { url "https://cursemaven.com" }
     maven { url "https://maven.terraformersmc.com/" }
+    maven {
+        name = 'Curios'
+        url = 'https://maven.theillusivec4.top/'
+    }
 }
 
 dependencies {
@@ -163,6 +167,9 @@ dependencies {
     implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}:api")
+
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

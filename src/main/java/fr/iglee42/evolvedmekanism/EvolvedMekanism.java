@@ -134,6 +134,10 @@ public class EvolvedMekanism {
                 modEventBus.register(new EMToolsClientRegistration());
             }
         }
+
+        if (ModsCompats.CURIOS.isLoaded()) {
+            fr.iglee42.evolvedmekanism.curios.CuriosCompat.register(modEventBus);
+        }
     }
 
     private void serverStopped(ServerStoppedEvent event) {

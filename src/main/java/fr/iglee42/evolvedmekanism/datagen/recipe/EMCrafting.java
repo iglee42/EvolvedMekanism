@@ -69,8 +69,15 @@ public final class EMCrafting {
 
     public static void shapeless(Consumer<FinishedRecipe> output, ResourceLocation id, ItemLike result, int count, Object ingredient,
                                  InventoryChangeTrigger.TriggerInstance criterion, ICondition... conditions) {
+        shapeless(output, id, result, count, new Object[]{ingredient}, criterion, conditions);
+    }
+
+    public static void shapeless(Consumer<FinishedRecipe> output, ResourceLocation id, ItemLike result, int count, Object[] ingredients,
+                                 InventoryChangeTrigger.TriggerInstance criterion, ICondition... conditions) {
         ShapelessRecipeBuilder builder = ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, count);
-        addIngredient(builder, ingredient);
+        for (Object ingredient : ingredients) {
+            addIngredient(builder, ingredient);
+        }
         builder.unlockedBy("has_item", criterion);
         builder.save(withConditions(output, conditions), id);
     }

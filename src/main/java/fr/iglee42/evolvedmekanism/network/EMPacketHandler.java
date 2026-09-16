@@ -15,9 +15,6 @@ public class EMPacketHandler extends BasePacketHandler {
 
     @Override
     public void initialize() {
-        //Client to server messages
-
-        //Server to client messages
-
+        registerClientToServer(PacketCurioAction.class, PacketCurioAction::decode);
     }
 }
