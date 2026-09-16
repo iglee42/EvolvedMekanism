@@ -566,7 +566,7 @@ public class EMBlocks {
         });
     }
     public static BlockRegistryObject<BlockFactory<?>, ItemBlockFactory> getFactory(@NotNull FactoryTier tier, @NotNull FactoryType type) {
-        BlockRegistryObject<BlockFactory<?>, ItemBlockFactory> factory = FACTORIES.get(tier, type);
+        BlockRegistryObject<BlockFactory<?>, ItemBlockFactory> factory = getRegisteredFactory(tier, type);
         if (factory == null) {
             factory = MekanismBlocks.getFactory(tier, type);
         }
@@ -574,6 +574,10 @@ public class EMBlocks {
             EvolvedMekanism.logger.error("Failed to find factory block for tier {} and type {}, returning null", tier, type);
         }
         return factory;
+    }
+
+    public static BlockRegistryObject<BlockFactory<?>, ItemBlockFactory> getRegisteredFactory(@NotNull FactoryTier tier, @NotNull FactoryType type) {
+        return FACTORIES.get(tier, type);
     }
 
 }
