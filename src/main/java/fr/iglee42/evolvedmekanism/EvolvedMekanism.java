@@ -97,7 +97,6 @@ public class EvolvedMekanism {
 
         registerCompats(modEventBus);
 
-
         //NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.addListener(this::serverStopped);
 
