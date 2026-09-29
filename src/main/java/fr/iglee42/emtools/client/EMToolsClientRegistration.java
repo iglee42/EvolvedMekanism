@@ -1,7 +1,7 @@
 package fr.iglee42.emtools.client;
 
-import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
 import fr.iglee42.emtools.registries.EMToolsItems;
+import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
 import mekanism.api.providers.IItemProvider;
 import mekanism.client.ClientRegistration;
 import mekanism.client.ClientRegistrationUtil;
@@ -9,6 +9,7 @@ import mekanism.client.model.baked.ExtensionBakedModel;
 import mekanism.client.render.lib.QuadTransformation;
 import mekanism.common.inventory.container.tile.MekanismTileContainer;
 import mekanism.generators.client.gui.GuiSolarGenerator;
+import mekanism.tools.client.ShieldTextures;
 import mekanism.tools.common.MekanismTools;
 import mekanism.tools.common.registries.ToolsItems;
 import net.minecraft.client.renderer.item.ItemPropertyFunction;
@@ -28,9 +29,12 @@ public class EMToolsClientRegistration {
 
     @SubscribeEvent
     public void init(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> addShieldPropertyOverrides(MekanismTools.rl("blocking"),
+        event.enqueueWork(() -> {
+            ((InitializableEnum) (Object) ShieldTextures.BRONZE).evolvedmekanism$initNewValues();
+            addShieldPropertyOverrides(MekanismTools.rl("blocking"),
                 (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F,
-                EMToolsItems.BETTER_GOLD_SHIELD,EMToolsItems.REFINED_REDSTONE_SHIELD, EMToolsItems.PLASLITHERITE_SHIELD, EMToolsItems.NOCTIS_ROZULI_SHIELD));
+                EMToolsItems.BETTER_GOLD_SHIELD,EMToolsItems.REFINED_REDSTONE_SHIELD, EMToolsItems.PLASLITHERITE_SHIELD, EMToolsItems.NOCTIS_ROZULI_SHIELD);
+        });
 
     }
 

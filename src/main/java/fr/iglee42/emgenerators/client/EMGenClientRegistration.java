@@ -1,11 +1,12 @@
 package fr.iglee42.emgenerators.client;
 
-import fr.iglee42.emgenerators.client.GuiLunarGenerator;
 import fr.iglee42.emgenerators.registries.EMGenBlocks;
 import fr.iglee42.emgenerators.registries.EMGenContainerTypes;
+import fr.iglee42.emgenerators.registries.EMGenTileEntityTypes;
 import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredWindGenerator;
 import mekanism.api.gear.IModuleHelper;
 import mekanism.client.ClientRegistration;
 import mekanism.client.ClientRegistrationUtil;
@@ -68,6 +69,15 @@ public class EMGenClientRegistration {
 
     @SubscribeEvent
     public void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        ClientRegistrationUtil.bindTileEntityRenderer(event, RenderTieredWindGenerator::new,
+                EMGenTileEntityTypes.ADVANCED_WIND_GENERATOR,
+                EMGenTileEntityTypes.ELITE_WIND_GENERATOR,
+                EMGenTileEntityTypes.ULTIMATE_WIND_GENERATOR,
+                EMGenTileEntityTypes.OVERCLOCKED_WIND_GENERATOR,
+                EMGenTileEntityTypes.QUANTUM_WIND_GENERATOR,
+                EMGenTileEntityTypes.DENSE_WIND_GENERATOR,
+                EMGenTileEntityTypes.MULTIVERSAL_WIND_GENERATOR,
+                EMGenTileEntityTypes.CREATIVE_WIND_GENERATOR);
     }
 
     @SubscribeEvent
@@ -76,6 +86,7 @@ public class EMGenClientRegistration {
 
     @SubscribeEvent
     public void registerClientReloadListeners(RegisterClientReloadListenersEvent event) {
+        event.registerReloadListener(RenderTieredWindGeneratorItem.RENDERER);
     }
 
     @SuppressWarnings("Convert2MethodRef")
@@ -85,6 +96,7 @@ public class EMGenClientRegistration {
             ClientRegistrationUtil.registerScreen(EMGenContainerTypes.TIERED_ADVANCED_SOLAR_GENERATOR, (MekanismTileContainer<TileEntityTieredAdvancedSolarGenerator> container, Inventory inv, Component title) -> new GuiSolarGenerator<>(container, inv, title));
             ClientRegistrationUtil.registerScreen(EMGenContainerTypes.LUNAR_GENERATOR, (MekanismTileContainer<TileEntityLunarGenerator> container, Inventory inv, Component title) -> new GuiLunarGenerator<>(container, inv, title));
             ClientRegistrationUtil.registerScreen(EMGenContainerTypes.TIERED_ADVANCED_LUNAR_GENERATOR, (MekanismTileContainer<TileEntityTieredAdvancedLunarGenerator> container, Inventory inv, Component title) -> new GuiLunarGenerator<>(container, inv, title));
+            ClientRegistrationUtil.registerScreen(EMGenContainerTypes.TIERED_WIND_GENERATOR, (MekanismTileContainer<TileEntityTieredWindGenerator> container, Inventory inv, Component title) -> new GuiTieredWindGenerator(container, inv, title));
 
         });
     }

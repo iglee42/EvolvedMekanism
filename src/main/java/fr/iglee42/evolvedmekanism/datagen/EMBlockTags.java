@@ -88,7 +88,7 @@ public class EMBlockTags extends BlockTagsProvider {
         if (ModsCompats.MEKANISMGENERATORS.isLoaded()) {
             for (Block block : ForgeRegistries.BLOCKS) {
                 ResourceLocation id = ForgeRegistries.BLOCKS.getKey(block);
-                if (id != null && EvolvedMekanism.MODID.equals(id.getNamespace()) && (id.getPath().contains("solar_generator") || id.getPath().contains("lunar_generator"))) {
+                if (id != null && EvolvedMekanism.MODID.equals(id.getNamespace()) && (id.getPath().contains("solar_generator") || id.getPath().contains("lunar_generator") || id.getPath().contains("wind_generator"))) {
                     mineable.addOptional(id);
                 }
             }

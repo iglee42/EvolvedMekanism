@@ -122,7 +122,7 @@ public class EMBlockLoot extends BlockLootSubProvider {
                     .setRolls(ConstantValue.exactly(1))
                     .add(LootItem.lootTableItem(block).apply(CopyNbtFunction.copyData(ContextNbtProvider.BLOCK_ENTITY)
                             .copy("EnergyContainers", "mekData.EnergyContainers"))))));
-        } else if (path.contains("solar_generator") || path.contains("lunar_generator")) {
+        } else if (path.contains("solar_generator") || path.contains("lunar_generator") || path.contains("wind_generator")) {
             addCopy(block, true, nbt -> nbt
                     .copy("componentSecurity.owner", "mekData.owner")
                     .copy("componentSecurity.securityMode", "mekData.securityMode")

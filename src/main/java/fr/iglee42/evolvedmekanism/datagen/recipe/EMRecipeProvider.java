@@ -146,6 +146,7 @@ public class EMRecipeProvider extends RecipeProvider {
             addTierInstaller(output, tier);
             addSolarGenerator(mek, tier);
             addLunarGenerator(mek, tier);
+            addWindGenerator(mek, tier);
         }
         for (TieredRecipes.TierData tier : TieredRecipes.ALLOYING_VANILLA_TIERS) {
             EMCrafting.shaped(mek, "factory/" + tier.name() + "/alloying",
@@ -271,6 +272,22 @@ public class EMRecipeProvider extends RecipeProvider {
         }
         EMCrafting.shaped(mek, "solar_generators/" + tier.name() + "_generator",
                 EMCrafting.item("evolvedmekanism:" + tier.name() + "_solar_generator"), 1, new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', tier.alloy(), 'C', tier.circuit(), 'I', tier.extra(), 'P', prev),
+                has(prev), new ModLoadedCondition("mekanismgenerators"));
+    }
+
+    private void addWindGenerator(Consumer<FinishedRecipe> mek, TieredRecipes.TierData tier) {
+        ItemLike prev;
+        switch (tier.name()) {
+            case "overclocked" -> prev = EMGenBlocks.ULTIMATE_WIND_GENERATOR;
+            case "quantum" -> prev = EMGenBlocks.OVERCLOCKED_WIND_GENERATOR;
+            case "dense" -> prev = EMGenBlocks.QUANTUM_WIND_GENERATOR;
+            case "multiversal" -> prev = EMGenBlocks.DENSE_WIND_GENERATOR;
+            case "creative" -> prev = EMGenBlocks.MULTIVERSAL_WIND_GENERATOR;
+            default -> throw new IllegalArgumentException(tier.name());
+        }
+        EMCrafting.shaped(mek, "wind_generators/" + tier.name() + "_generator",
+                EMCrafting.item("evolvedmekanism:" + tier.name() + "_wind_generator"), 1, new String[]{"ACA", "IPI", "ACA"},
                 EMCrafting.keys('A', tier.alloy(), 'C', tier.circuit(), 'I', tier.extra(), 'P', prev),
                 has(prev), new ModLoadedCondition("mekanismgenerators"));
     }
@@ -530,6 +547,21 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMCrafting.keys('A', MekanismTags.Items.ALLOYS_ATOMIC, 'C', EMDatagenTags.forgeItem("circuits/ultimate"),
                         'I', Tags.Items.GEMS_DIAMOND, 'P', EMGenBlocks.ELITE_SOLAR_GENERATOR),
                 has(EMGenBlocks.ELITE_SOLAR_GENERATOR));
+        EMCrafting.shaped(gen, "wind_generators/advanced_generator", EMGenBlocks.ADVANCED_WIND_GENERATOR, 1,
+                new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_INFUSED, 'C', EMDatagenTags.forgeItem("circuits/advanced"),
+                        'I', EMDatagenTags.forgeItem("ingots/osmium"), 'P', EMCrafting.item("mekanismgenerators:wind_generator")),
+                has(EMDatagenTags.forgeItem("circuits/advanced")));
+        EMCrafting.shaped(gen, "wind_generators/elite_generator", EMGenBlocks.ELITE_WIND_GENERATOR, 1,
+                new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_REINFORCED, 'C', EMDatagenTags.forgeItem("circuits/elite"),
+                        'I', EMDatagenTags.forgeItem("ingots/gold"), 'P', EMGenBlocks.ADVANCED_WIND_GENERATOR),
+                has(EMGenBlocks.ADVANCED_WIND_GENERATOR));
+        EMCrafting.shaped(gen, "wind_generators/ultimate_generator", EMGenBlocks.ULTIMATE_WIND_GENERATOR, 1,
+                new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_ATOMIC, 'C', EMDatagenTags.forgeItem("circuits/ultimate"),
+                        'I', Tags.Items.GEMS_DIAMOND, 'P', EMGenBlocks.ELITE_WIND_GENERATOR),
+                has(EMGenBlocks.ELITE_WIND_GENERATOR));
         RotaryRecipeBuilder.rotary(
                 IngredientCreatorAccess.fluid().from(EMDatagenTags.forgeFluid("nitrogen"), 1),
                 IngredientCreatorAccess.gas().from(EMTags.Gases.NITROGEN, 1),

@@ -184,6 +184,14 @@
     "evolvedmekanism:dense_lunar_generator",
     "evolvedmekanism:multiversal_lunar_generator",
     "evolvedmekanism:creative_lunar_generator",
+    "evolvedmekanism:advanced_wind_generator",
+    "evolvedmekanism:elite_wind_generator",
+    "evolvedmekanism:ultimate_wind_generator",
+    "evolvedmekanism:overclocked_wind_generator",
+    "evolvedmekanism:quantum_wind_generator",
+    "evolvedmekanism:dense_wind_generator",
+    "evolvedmekanism:multiversal_wind_generator",
+    "evolvedmekanism:creative_wind_generator",
     {
       "id": "evolvedmekanism:advanced_solar_generator",
       "required": false
@@ -254,6 +262,38 @@
     },
     {
       "id": "evolvedmekanism:creative_lunar_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:advanced_wind_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:elite_wind_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:ultimate_wind_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:overclocked_wind_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:quantum_wind_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:dense_wind_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:multiversal_wind_generator",
+      "required": false
+    },
+    {
+      "id": "evolvedmekanism:creative_wind_generator",
       "required": false
     },
     {

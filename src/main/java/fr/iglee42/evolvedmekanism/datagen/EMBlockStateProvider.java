@@ -12,6 +12,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -160,6 +161,8 @@ public class EMBlockStateProvider extends BlockStateProvider {
             inductionCell(block, path, tier);
         } else if (path.endsWith("_induction_provider")) {
             inductionProvider(block, path, tier);
+        } else if (path.endsWith("_wind_generator")) {
+            windGenerator(block, path);
         } else if (path.endsWith("_solar_generator")) {
             facingHorizontal(block, modLoc("block/solar_generators/" + path), true);
         } else if (path.equals("lunar_neutron_activator")) {
@@ -421,6 +424,28 @@ public class EMBlockStateProvider extends BlockStateProvider {
                     .rotationY(horizontalY(dir))
                     .build();
         }, ignored(block, facing, activeProp));
+    }
+
+    private void windGenerator(Block block, String path) {
+        ModelFile file = new ModelFile.UncheckedModelFile(new ResourceLocation("mekanism", "block/nothing"));
+        DirectionProperty facing = (DirectionProperty) block.getStateDefinition().getProperty("facing");
+        getVariantBuilder(block).forAllStatesExcept(state -> ConfiguredModel.builder()
+                .modelFile(file)
+                .rotationY(horizontalY(state.getValue(facing)))
+                .build(), ignored(block, facing));
+        itemModels().getBuilder(path)
+                .parent(new ModelFile.UncheckedModelFile(new ResourceLocation("minecraft", "builtin/entity")))
+                .transforms()
+                .transform(ItemDisplayContext.GUI).rotation(30, 225, 0).translation(0, -3.5F, 0).scale(0.16F).end()
+                .transform(ItemDisplayContext.GROUND).translation(0, 3, 0).scale(0.128F).end()
+                .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND).rotation(25, 45, 0).translation(0, 2.5F, 0).scale(0.192F).end()
+                .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND).rotation(0, 45, 0).translation(0, -2.5F, 0).scale(0.1024F).end()
+                .transform(ItemDisplayContext.THIRD_PERSON_LEFT_HAND).rotation(25, 45, 0).translation(0, 2.5F, 0).scale(0.192F).end()
+                .transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND).rotation(0, 45, 0).translation(0, -2.5F, 0).scale(0.1024F).end()
+                .transform(ItemDisplayContext.HEAD).scale(0.256F).end()
+                .transform(ItemDisplayContext.FIXED).translation(0, -3.5F, 0).scale(0.256F).end()
+                .end();
+        generated.add(block);
     }
 
     private void facingHorizontal(Block block, ResourceLocation model, boolean item) {

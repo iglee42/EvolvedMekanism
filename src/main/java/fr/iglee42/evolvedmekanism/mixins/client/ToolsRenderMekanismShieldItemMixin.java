@@ -51,7 +51,13 @@ public class ToolsRenderMekanismShieldItemMixin {
             } else {
                 return;
             }
+            if (textures == null) {
+                return;
+            }
             Material material = textures.getBase();
+            if (material.sprite() == null) {
+                return;
+            }
             matrix.pushPose();
             matrix.scale(1, -1, -1);
             VertexConsumer buffer = material.sprite().wrap(ItemRenderer.getFoilBufferDirect(renderer, shieldModel.renderType(material.atlasLocation()), true, stack.hasFoil()));

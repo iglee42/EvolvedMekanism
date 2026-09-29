@@ -11,7 +11,8 @@ public enum ModsCompats {
 
     MEKANISMGENERATORS("tiles.TileEntitySolarGeneratorMixin",
             "tiles.TileEntitySolarGeneratorAccessor",
-            "tiles.TileEntityAdvancedSolarGeneratorMixin","items.GenItemTierInstallerMixin"),
+            "tiles.TileEntityAdvancedSolarGeneratorMixin","items.GenItemTierInstallerMixin",
+            "tiles.TileEntityWindGeneratorMixin", "client.ModelWindGeneratorMixin"),
 
     MEKANISMTOOLS("client.ShieldTexturesMixin","client.ToolsRenderMekanismShieldItemMixin"),
 
