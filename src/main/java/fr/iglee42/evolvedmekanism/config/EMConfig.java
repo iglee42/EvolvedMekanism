@@ -9,9 +9,11 @@ public class EMConfig {
     }
 
     public static final EMGeneralConfig general = new EMGeneralConfig();
+    public static final EMGeneratorsConfig generators = new EMGeneratorsConfig();
 
     public static void registerConfigs(ModLoadingContext modLoadingContext) {
         ModContainer modContainer = modLoadingContext.getActiveContainer();
         EMConfigHelper.registerConfig(modContainer, general);
+        EMConfigHelper.registerConfig(modContainer, generators);
     }
 }
