@@ -1,0 +1,27 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "item": "appflux:printed_energy_processor"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "ae2:printed_silicon"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:dusts/redstone"
+        }
+    },
+    "output": {
+        "item": "appflux:energy_processor"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "appflux"
+        }
+    ]
+}

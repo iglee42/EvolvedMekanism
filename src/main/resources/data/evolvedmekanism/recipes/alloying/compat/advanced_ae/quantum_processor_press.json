@@ -1,0 +1,27 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "item": "ae2:engineering_processor_press"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "ae2:logic_processor_press"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "item": "advanced_ae:shattered_singularity"
+        }
+    },
+    "output": {
+        "item": "advanced_ae:quantum_processor_press"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "advanced_ae"
+        }
+    ]
+}
