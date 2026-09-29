@@ -1,0 +1,6 @@
+{
+  "type": "evolvedmekanism:fluid_combining",
+  "mainInput": { "amount": 180, "tag": "forge:molten_iron" },
+  "extraInput": { "amount": 90, "tag": "forge:molten_nickel" },
+  "output": { "amount": 270, "tag": "forge:molten_invar" }
+}

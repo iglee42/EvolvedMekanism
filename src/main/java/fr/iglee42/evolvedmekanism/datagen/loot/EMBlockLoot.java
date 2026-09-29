@@ -130,6 +130,17 @@ public class EMBlockLoot extends BlockLootSubProvider {
                     .copy("controlType", "mekData.controlType")
                     .copy("EnergyContainers", "mekData.EnergyContainers")
                     .copy("Items", "mekData.Items"));
+        } else if (path.equals("fluid_combiner") || path.equals("fluid_alloyer")) {
+            addCopy(block, true, nbt -> nbt
+                    .copy("componentSecurity.owner", "mekData.owner")
+                    .copy("componentSecurity.securityMode", "mekData.securityMode")
+                    .copy("componentUpgrade", "mekData.componentUpgrade")
+                    .copy("componentConfig", "mekData.componentConfig")
+                    .copy("componentEjector", "mekData.componentEjector")
+                    .copy("controlType", "mekData.controlType")
+                    .copy("EnergyContainers", "mekData.EnergyContainers")
+                    .copy("FluidTanks", "mekData.FluidTanks")
+                    .copy("Items", "mekData.Items"));
         } else if (path.endsWith("_chemical_tank")) {
             addCopy(block, true, nbt -> nbt
                     .copy("componentSecurity.owner", "mekData.owner")

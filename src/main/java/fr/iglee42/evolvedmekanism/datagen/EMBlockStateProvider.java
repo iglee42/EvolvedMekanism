@@ -46,7 +46,7 @@ public class EMBlockStateProvider extends BlockStateProvider {
             "creative", 4
     );
     private static final List<String> CUSTOM_FACTORIES = List.of("alloying", "thermalizing", "solidifying");
-    private static final List<String> MACHINES = List.of("alloyer", "chemixer", "thermalizer", "solidification_chamber");
+    private static final List<String> MACHINES = List.of("alloyer", "chemixer", "thermalizer", "solidification_chamber", "fluid_combiner", "fluid_alloyer");
     private static final List<String> SMALL_TRANSMITTERS = List.of("universal_cable", "pressurized_tube", "thermodynamic_conductor");
     private static final List<String> STORAGE = List.of("better_gold", "plaslitherite", "refined_redstone", "noctis_rozuli");
     private static final List<String> ALLOYS = List.of("infused", "reinforced", "atomic", "hypercharged", "subatomic", "singular", "exoversal", "creative");
@@ -207,6 +207,19 @@ public class EMBlockStateProvider extends BlockStateProvider {
     }
 
     private void machineModel(String name) {
+        if (name.equals("fluid_combiner")) {
+            models().withExistingParent(name, new ResourceLocation("mekanism", "block/machine"))
+                    .texture("sides", modLoc("block/fluid_combiner/right"))
+                    .texture("front", modLoc("block/fluid_combiner/front"))
+                    .texture("west", modLoc("block/fluid_combiner/right"))
+                    .texture("east", modLoc("block/fluid_combiner/left"))
+                    .texture("south", modLoc("block/fluid_combiner/back"))
+                    .texture("up", modLoc("block/fluid_combiner/top"))
+                    .texture("down", modLoc("block/fluid_combiner/bottom"));
+            models().withExistingParent(name + "_active", modLoc("block/" + name))
+                    .texture("front", modLoc("block/fluid_combiner/front_active"));
+            return;
+        }
         BlockModelBuilder idle = models().withExistingParent(name, new ResourceLocation("mekanism", "block/machine"));
         if (name.equals("solidification_chamber")) {
             idle.texture("sides", modLoc("block/" + name + "/right"))

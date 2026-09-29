@@ -23,6 +23,8 @@ import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.APTEmiRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.AlloyerEmiRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.ChemixerEmiRecipe;
+import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.FluidAlloyingEmiRecipe;
+import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.FluidCombiningEmiRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.MeltingEmiRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.SolidificationEmiRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
@@ -60,6 +62,8 @@ public class EMEmi implements EmiPlugin {
     public static final EMEmiRecipeCategory CHEMIXING = category("chemixing", EMBlocks.CHEMIXER, -28, -13, 144, 60);
     public static final EMEmiRecipeCategory MELTING = category("melting", EMBlocks.MELTER, -20, -12, 132, 62);
     public static final EMEmiRecipeCategory SOLIDIFICATION = category("solidification", EMBlocks.SOLIDIFIER, -3, -10, 170, 60);
+    public static final EMEmiRecipeCategory FLUID_COMBINING = category("fluid_combining", EMBlocks.FLUID_COMBINER, -5, -8, 164, 78);
+    public static final EMEmiRecipeCategory FLUID_ALLOYING = category("fluid_alloying", EMBlocks.FLUID_ALLOYER, -5, -8, 164, 78);
     public static final EMEmiRecipeCategory APT = new EMEmiRecipeCategory(EvolvedMekanism.rl("apt"), EmiStack.of(EMItems.BETTER_GOLD_INGOT.getItemStack()), EvolvedMekanismLang.APT.translate(), -3, -12, 168, 74);
 
     private static final Comparison MEKANISM_COMPARISON = Comparison.compareData(emiStack -> {
@@ -144,6 +148,8 @@ public class EMEmi implements EmiPlugin {
         addCategoryAndRecipes(registry, CHEMIXING, EMRecipeType.CHEMIXING, ChemixerEmiRecipe::new, EMBlocks.CHEMIXER);
         addCategoryAndRecipes(registry, MELTING, EMRecipeType.MELTING, MeltingEmiRecipe::new, EMBlocks.MELTER);
         addCategoryAndRecipes(registry, SOLIDIFICATION, EMRecipeType.SOLIDIFICATION, SolidificationEmiRecipe::new, EMBlocks.SOLIDIFIER);
+        addCategoryAndRecipes(registry, FLUID_COMBINING, EMRecipeType.FLUID_COMBINING, FluidCombiningEmiRecipe::new, EMBlocks.FLUID_COMBINER);
+        addCategoryAndRecipes(registry, FLUID_ALLOYING, EMRecipeType.FLUID_ALLOYING, FluidAlloyingEmiRecipe::new, EMBlocks.FLUID_ALLOYER);
 
         registry.addCategory(APT);
         addWorkstations(registry, APT, EMItems.BETTER_GOLD_INGOT, EMBlocks.APT_CASING, EMBlocks.APT_PORT, EMBlocks.SUPERCHARGING_ELEMENT);

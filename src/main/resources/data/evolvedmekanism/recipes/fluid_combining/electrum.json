@@ -1,0 +1,6 @@
+{
+  "type": "evolvedmekanism:fluid_combining",
+  "mainInput": { "amount": 90, "tag": "forge:molten_gold" },
+  "extraInput": { "amount": 90, "tag": "forge:molten_silver" },
+  "output": { "amount": 180, "tag": "forge:molten_electrum" }
+}

@@ -11,6 +11,8 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidCombiner;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
@@ -49,7 +51,7 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.ALLOYER)
             .withSound(MekanismSounds.COMBINER)
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
-            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR))
             //.withComputerSupport("alloyer")
             .build();
 
@@ -58,7 +60,7 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.CHEMIXER)
             .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
-            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING,EMUpgrades.RADIOACTIVE_UPGRADE))
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.RADIOACTIVE_UPGRADE))
             .withComputerSupport("chemixer")
             .build();
 
@@ -67,7 +69,7 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.MELTER)
             .withSound(MekanismSounds.CHEMICAL_OXIDIZER)
             .withEnergyConfig(MekanismConfig.usage.oxidationChamber, MekanismConfig.storage.oxidationChamber)
-            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR))
             .withComputerSupport("melter")
             .build();
 
@@ -76,8 +78,26 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.SOLIDIFIER)
             .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
             .withEnergyConfig(MekanismConfig.usage.pressurizedReactionBase, MekanismConfig.storage.pressurizedReactionBase)
-            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING))
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR))
             .withComputerSupport("solidifier")
+            .build();
+
+    public static final Machine<TileEntityFluidCombiner> FLUID_COMBINER = MachineBuilder
+            .createMachine(() -> EMTileEntityTypes.FLUID_COMBINER, EvolvedMekanismLang.DESCRIPTION_FLUID_COMBINER)
+            .withGui(() -> EMContainerTypes.FLUID_COMBINER)
+            .withSound(MekanismSounds.COMBINER)
+            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR))
+            .withComputerSupport("fluidCombiner")
+            .build();
+
+    public static final Machine<TileEntityFluidAlloyer> FLUID_ALLOYER = MachineBuilder
+            .createMachine(() -> EMTileEntityTypes.FLUID_ALLOYER, EvolvedMekanismLang.DESCRIPTION_FLUID_ALLOYER)
+            .withGui(() -> EMContainerTypes.FLUID_ALLOYER)
+            .withSound(MekanismSounds.COMBINER)
+            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withSupportedUpgrades(EnumSet.of(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR))
+            .withComputerSupport("fluidAlloyer")
             .build();
 
     public static final Machine<TileEntityLunarNeutronActivator> LUNAR_NEUTRON_ACTIVATOR = MachineBuilder

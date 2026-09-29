@@ -57,7 +57,7 @@ public class EMGenBlockTypes {
             .withEnergyConfig(MekanismGeneratorsConfig.storageConfig.solarGenerator)
             .withCustomShape(BlockShapes.SOLAR_GENERATOR)
             .withSound(GeneratorsSounds.SOLAR_GENERATOR)
-            .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, EMUpgrades.LUNAR_UPGRADE))
+            .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.LUNAR_UPGRADE))
             .withComputerSupport("lunarGenerator")
             .replace(Attributes.ACTIVE)
             .build();
@@ -110,7 +110,7 @@ public class EMGenBlockTypes {
                 .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.advancedSolarGenerator.get().multiply(tier.getMultiplier()))
                 .withCustomShape(BlockShapes.ADVANCED_SOLAR_GENERATOR)
                 .withSound(GeneratorsSounds.SOLAR_GENERATOR)
-                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, EMUpgrades.SOLAR_UPGRADE))
+                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.SOLAR_UPGRADE))
                 .withBounding((pos, state, builder) -> {
                     builder.add(pos.above());
                     for (int x = -1; x <= 1; x++) {
@@ -137,7 +137,7 @@ public class EMGenBlockTypes {
                 .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.advancedSolarGenerator.get().multiply(tier.getMultiplier()))
                 .withCustomShape(BlockShapes.ADVANCED_SOLAR_GENERATOR)
                 .withSound(GeneratorsSounds.SOLAR_GENERATOR)
-                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, EMUpgrades.LUNAR_UPGRADE))
+                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.LUNAR_UPGRADE))
                 .withBounding((pos, state, builder) -> {
                     builder.add(pos.above());
                     for (int x = -1; x <= 1; x++) {
@@ -165,7 +165,7 @@ public class EMGenBlockTypes {
                 .withCustomShape(BlockShapes.WIND_GENERATOR)
                 .with(AttributeCustomSelectionBox.JAVA)
                 .withSound(GeneratorsSounds.WIND_GENERATOR)
-                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING))
+                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, Upgrade.ANCHOR))
                 .withBounding((pos, state, builder) -> {
                     for (int i = 1; i <= 4; i++) {
                         builder.add(pos.above(i));

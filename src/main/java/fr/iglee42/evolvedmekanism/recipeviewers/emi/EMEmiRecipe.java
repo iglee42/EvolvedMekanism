@@ -70,6 +70,10 @@ public abstract class EMEmiRecipe<RECIPE extends MekanismRecipe> extends Abstrac
         inputs.add(EMEmiIngredients.fluids(ingredient));
     }
 
+    protected void addFluidInputDefinition(List<FluidStack> stacks) {
+        inputs.add(EMEmiIngredients.fluids(stacks));
+    }
+
     protected void addInputDefinition(GasStackIngredient ingredient) {
         inputs.add(EMEmiIngredients.gases(ingredient));
     }

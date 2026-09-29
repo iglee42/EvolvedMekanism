@@ -1,0 +1,7 @@
+{
+  "type": "evolvedmekanism:fluid_alloying",
+  "mainInput": { "amount": 90, "tag": "forge:molten_iron" },
+  "extraInput": { "amount": 90, "tag": "forge:molten_coal" },
+  "secondExtraInput": { "amount": 810, "tag": "forge:molten_obsidian" },
+  "output": { "amount": 180, "tag": "forge:molten_dark_steel" }
+}

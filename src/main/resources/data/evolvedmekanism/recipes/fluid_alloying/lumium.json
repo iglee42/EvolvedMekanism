@@ -1,0 +1,7 @@
+{
+  "type": "evolvedmekanism:fluid_alloying",
+  "mainInput": { "amount": 270, "tag": "forge:molten_tin" },
+  "extraInput": { "amount": 90, "tag": "forge:molten_silver" },
+  "secondExtraInput": { "amount": 180, "tag": "forge:molten_glowstone" },
+  "output": { "amount": 360, "tag": "forge:molten_lumium" }
+}

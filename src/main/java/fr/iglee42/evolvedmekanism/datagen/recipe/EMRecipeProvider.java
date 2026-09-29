@@ -69,6 +69,14 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMCrafting.keys('A', EMDatagenTags.item("evolvedmekanism", "alloys/singular"), 'C', EMDatagenTags.forgeItem("circuits/dense"),
                         'O', EMDatagenTags.forgeItem("ingots/osmium"), 'P', EMBlocks.ALLOYER),
                 has(EMBlocks.ALLOYER));
+        EMCrafting.shaped(output, "fluid_combiner", EMBlocks.FLUID_COMBINER, 1, new String[]{"ACA", "TXT", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_BASIC, 'C', EMDatagenTags.forgeItem("circuits/basic"),
+                        'T', MekanismBlocks.BASIC_FLUID_TANK, 'X', MekanismBlocks.COMBINER),
+                has(MekanismBlocks.COMBINER));
+        EMCrafting.shaped(output, "fluid_alloyer", EMBlocks.FLUID_ALLOYER, 1, new String[]{"ACA", "BXB", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_REINFORCED, 'C', EMDatagenTags.forgeItem("circuits/advanced"),
+                        'B', EMBlocks.FLUID_COMBINER, 'X', MekanismBlocks.STEEL_CASING),
+                has(EMBlocks.FLUID_COMBINER));
         EMCrafting.shaped(output, "thermalizer", EMBlocks.MELTER, 1, new String[]{"ACA", "SXS", "ACA"},
                 EMCrafting.keys('A', MekanismTags.Items.ALLOYS_INFUSED, 'C', Items.LAVA_BUCKET,
                         'S', MekanismBlocks.RESISTIVE_HEATER, 'X', MekanismBlocks.STEEL_CASING),

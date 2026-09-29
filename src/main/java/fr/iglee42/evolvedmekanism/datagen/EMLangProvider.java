@@ -17,6 +17,8 @@ public class EMLangProvider extends LanguageProvider {
         add("advancements.evolvedmekanism.apt.title", "Antimatter Protomolecular Transmutation?");
         add("block.evolvedmekanism.alloyer", "Alloyer");
         add("block.evolvedmekanism.chemixer", "Chemixer");
+        add("block.evolvedmekanism.fluid_combiner", "Fluid Combiner");
+        add("block.evolvedmekanism.fluid_alloyer", "Fluid Alloyer");
         add("block.evolvedmekanism.thermalizer", "Thermalizer");
         add("block.evolvedmekanism.solidification_chamber", "Solidification Chamber");
         add("block.mekanism.basic_alloying_factory", "Basic Alloying Factory");
@@ -223,6 +225,8 @@ public class EMLangProvider extends LanguageProvider {
         add("block.evolvedmekanism.block_refined_redstone", "Refined Redstone");
         add("container.evolvedmekanism.alloyer", "Alloyer");
         add("container.evolvedmekanism.chemixer", "Chemixer");
+        add("container.evolvedmekanism.fluid_combiner", "Fluid Combiner");
+        add("container.evolvedmekanism.fluid_alloyer", "Fluid Alloyer");
         add("container.evolvedmekanism.thermalizer", "Thermalizer");
         add("container.evolvedmekanism.solidification_chamber", "Solidification Chamber");
         add("container.mekanism.basic_alloying_factory", "Basic Alloying Factory");
@@ -445,6 +449,8 @@ public class EMLangProvider extends LanguageProvider {
         add("description.mekanism.alloyer", "A machine used to alloy items together.");
         add("factory.mekanism.chemixing", "Chemixing");
         add("description.mekanism.chemixer", "A machine used to alloy items and gases together.");
+        add("description.mekanism.fluid_combiner", "Combines two molten fluids into one alloy.");
+        add("description.mekanism.fluid_alloyer", "Alloys three molten fluids into one.");
         add("description.mekanism.thermalizer", "A machine used to melt items into their fluid version.");
         add("description.mekanism.solidification_chamber", "A machine used to solidify fluids into their item version.");
         add("description.evolvedmekanism.apt_casing", "Reinforced antimattered casing capable of resisting intense chemical and thermal effects from transmutating reactions.");

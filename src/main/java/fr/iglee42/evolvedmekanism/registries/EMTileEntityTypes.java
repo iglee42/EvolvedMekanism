@@ -10,6 +10,8 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidCombiner;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
@@ -123,6 +125,8 @@ public class EMTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityChemixer> CHEMIXER = TILE_ENTITY_TYPES.register(EMBlocks.CHEMIXER, TileEntityChemixer::new);
     public static final TileEntityTypeRegistryObject<TileEntityMelter> MELTER = TILE_ENTITY_TYPES.register(EMBlocks.MELTER, TileEntityMelter::new);
     public static final TileEntityTypeRegistryObject<TileEntitySolidifier> SOLIDIFIER = TILE_ENTITY_TYPES.register(EMBlocks.SOLIDIFIER, TileEntitySolidifier::new);
+    public static final TileEntityTypeRegistryObject<TileEntityFluidCombiner> FLUID_COMBINER = TILE_ENTITY_TYPES.register(EMBlocks.FLUID_COMBINER, TileEntityFluidCombiner::new);
+    public static final TileEntityTypeRegistryObject<TileEntityFluidAlloyer> FLUID_ALLOYER = TILE_ENTITY_TYPES.register(EMBlocks.FLUID_ALLOYER, TileEntityFluidAlloyer::new);
     public static final TileEntityTypeRegistryObject<TileEntityLunarNeutronActivator> LUNAR_NEUTRON_ACTIVATOR = TILE_ENTITY_TYPES.register(EMBlocks.LUNAR_NEUTRON_ACTIVATOR, TileEntityLunarNeutronActivator::new);
 
 

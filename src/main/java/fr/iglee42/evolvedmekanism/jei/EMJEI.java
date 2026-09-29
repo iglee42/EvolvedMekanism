@@ -9,10 +9,14 @@ import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.jei.categories.APTRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.AlloyerRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.ChemixerRecipeCategory;
+import fr.iglee42.evolvedmekanism.jei.categories.FluidAlloyingRecipeCategory;
+import fr.iglee42.evolvedmekanism.jei.categories.FluidCombiningRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.MeltingRecipeCategory;
 import fr.iglee42.evolvedmekanism.jei.categories.SolidificationRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.FluidAlloyingRecipe;
+import fr.iglee42.evolvedmekanism.recipes.FluidCombiningRecipe;
 import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
@@ -68,6 +72,8 @@ public class EMJEI implements IModPlugin {
     public static final MekanismJEIRecipeType<ItemStackGasToItemStackRecipe> APT = new MekanismJEIRecipeType<>(EMItems.BETTER_GOLD_INGOT, ItemStackGasToItemStackRecipe.class);
     public static final MekanismJEIRecipeType<MeltingRecipe> MELTING = new MekanismJEIRecipeType<>(EMBlocks.MELTER, MeltingRecipe.class);
     public static final MekanismJEIRecipeType<SolidificationRecipe> SOLIDIFICATION = new MekanismJEIRecipeType<>(EMBlocks.SOLIDIFIER, SolidificationRecipe.class);
+    public static final MekanismJEIRecipeType<FluidCombiningRecipe> FLUID_COMBINING = new MekanismJEIRecipeType<>(EMBlocks.FLUID_COMBINER, FluidCombiningRecipe.class);
+    public static final MekanismJEIRecipeType<FluidAlloyingRecipe> FLUID_ALLOYING = new MekanismJEIRecipeType<>(EMBlocks.FLUID_ALLOYER, FluidAlloyingRecipe.class);
 
 
     private static final IIngredientSubtypeInterpreter<ItemStack> MEKANISM_NBT_INTERPRETER = (stack, context) -> {
@@ -180,6 +186,8 @@ public class EMJEI implements IModPlugin {
         registry.addRecipeCategories(new APTRecipeCategory(guiHelper, APT));
         registry.addRecipeCategories(new MeltingRecipeCategory(guiHelper, MELTING));
         registry.addRecipeCategories(new SolidificationRecipeCategory(guiHelper, SOLIDIFICATION));
+        registry.addRecipeCategories(new FluidCombiningRecipeCategory(guiHelper, FLUID_COMBINING));
+        registry.addRecipeCategories(new FluidAlloyingRecipeCategory(guiHelper, FLUID_ALLOYING));
 
     }
 
@@ -227,6 +235,8 @@ public class EMJEI implements IModPlugin {
         RecipeRegistryHelper.register(registry, APT, EMRecipeType.APT);
         RecipeRegistryHelper.register(registry, MELTING, EMRecipeType.MELTING);
         RecipeRegistryHelper.register(registry, SOLIDIFICATION, EMRecipeType.SOLIDIFICATION);
+        RecipeRegistryHelper.register(registry, FLUID_COMBINING, EMRecipeType.FLUID_COMBINING);
+        RecipeRegistryHelper.register(registry, FLUID_ALLOYING, EMRecipeType.FLUID_ALLOYING);
 
     }
 
@@ -236,6 +246,8 @@ public class EMJEI implements IModPlugin {
         CatalystRegistryHelper.register(registry, APT, EMBlocks.APT_CASING, EMBlocks.APT_PORT, EMBlocks.SUPERCHARGING_ELEMENT);
         CatalystRegistryHelper.register(registry, EMBlocks.MELTER);
         CatalystRegistryHelper.register(registry, EMBlocks.SOLIDIFIER);
+        CatalystRegistryHelper.register(registry, EMBlocks.FLUID_COMBINER);
+        CatalystRegistryHelper.register(registry, EMBlocks.FLUID_ALLOYER);
         CatalystRegistryHelper.register(registry, MekanismJEIRecipeType.ACTIVATING, EMBlocks.LUNAR_NEUTRON_ACTIVATOR);
         RecipeType<?> alloying = MekanismJEI.recipeType(ALLOYING);
         for (Block block : ForgeRegistries.BLOCKS) {

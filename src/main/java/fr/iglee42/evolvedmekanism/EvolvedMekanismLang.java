@@ -61,6 +61,8 @@ public enum EvolvedMekanismLang implements ILangEntry {
     public static MekanismLang DESCRIPTION_ALLOYER; // type : description | path : alloyer
     public static MekanismLang DESCRIPTION_MELTER; // type : description | path : thermalizer
     public static MekanismLang DESCRIPTION_SOLIDIFIER; // type : description | path : solidification_chamber
+    public static MekanismLang DESCRIPTION_FLUID_COMBINER;
+    public static MekanismLang DESCRIPTION_FLUID_ALLOYER;
     public static MekanismLang DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR;
     public static APILang UPGRADE_RADIOACTIVE; // type : upgrade | path : radioactive
     public static APILang UPGRADE_SOLAR; // type : upgrade | path : solar
