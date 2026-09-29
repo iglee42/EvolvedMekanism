@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "item": "advanced_ae:printed_quantum_processor"
+  },
+  "second_extra_input": {
+    "item": "ae2:printed_silicon"
+  },
+  "main_input": {
+    "tag": "c:dusts/redstone"
+  },
+  "output": {
+    "id": "advanced_ae:quantum_processor"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "advanced_ae"
+    }
+  ]
+}

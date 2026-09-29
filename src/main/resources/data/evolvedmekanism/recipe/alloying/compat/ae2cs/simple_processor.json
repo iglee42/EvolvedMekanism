@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "item": "ae2cs:simple_circuit_print"
+  },
+  "second_extra_input": {
+    "item": "ae2:printed_silicon"
+  },
+  "main_input": {
+    "tag": "c:dusts/redstone"
+  },
+  "output": {
+    "id": "ae2cs:simple_processor"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ae2cs"
+    }
+  ]
+}
