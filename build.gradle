@@ -98,6 +98,8 @@ minecraft {
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
+            // JDK 17 C2 can ACCESS_VIOLATION while compiling vanilla AO (hs_err: C2 CompilerThread).
+            jvmArg '-XX:CompileCommand=exclude,net.minecraft.client.renderer.block.ModelBlockRenderer$AmbientOcclusionFace::calculate'
         }
 
         server {
