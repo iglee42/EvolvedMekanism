@@ -78,8 +78,12 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
     }
 
 
-    private boolean hasRecipeForInputs(ItemStack stack,ChemicalStack gas){
-        return hasRecipeWith(stack) && getLevel().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().anyMatch(r-> r.value().getChemicalInput().testType(gas));
+    private boolean hasRecipeForInputs(ItemStack stack, ChemicalStack gas) {
+        if (gas.isEmpty()) {
+            return hasRecipeWith(stack);
+        }
+        return getLevel().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream()
+                .anyMatch(r -> r.value().getItemInput().testType(stack) && r.value().getChemicalInput().testType(gas));
     }
 
     @Override
