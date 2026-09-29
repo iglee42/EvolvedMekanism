@@ -45,7 +45,7 @@ public class EMBlockStateProvider extends BlockStateProvider {
             "creative", 4
     );
     private static final List<String> CUSTOM_FACTORIES = List.of("alloying", "thermalizing", "solidifying");
-    private static final List<String> MACHINES = List.of("alloyer", "chemixer", "thermalizer", "solidification_chamber");
+    private static final List<String> MACHINES = List.of("alloyer", "chemixer", "thermalizer", "solidification_chamber", "fluid_alloyer", "fluid_combiner");
     private static final List<String> SMALL_TRANSMITTERS = List.of("universal_cable", "pressurized_tube", "thermodynamic_conductor");
     private static final List<String> STORAGE = List.of("better_gold", "plaslitherite", "refined_redstone", "noctis_rozuli");
     private static final List<String> ALLOYS = List.of("infused", "reinforced", "atomic", "hypercharged", "subatomic", "singular", "exoversal", "creative");
@@ -228,6 +228,18 @@ public class EMBlockStateProvider extends BlockStateProvider {
 
     private void machineModel(String name) {
         BlockModelBuilder idle = models().withExistingParent(name, ResourceLocation.fromNamespaceAndPath("mekanism", "block/machine"));
+        if (name.equals("fluid_combiner")) {
+            idle.texture("sides", modLoc("block/" + name + "/right"))
+                    .texture("front", modLoc("block/" + name + "/front"))
+                    .texture("west", modLoc("block/" + name + "/right"))
+                    .texture("east", modLoc("block/" + name + "/left"))
+                    .texture("south", modLoc("block/" + name + "/back"))
+                    .texture("up", modLoc("block/" + name + "/top"))
+                    .texture("down", modLoc("block/" + name + "/bottom"));
+            models().withExistingParent(name + "_active", modLoc("block/" + name))
+                    .texture("front", modLoc("block/" + name + "/front_active"));
+            return;
+        }
         if (name.equals("solidification_chamber")) {
             idle.texture("sides", modLoc("block/" + name + "/right"))
                     .texture("front", modLoc("block/" + name + "/front"))

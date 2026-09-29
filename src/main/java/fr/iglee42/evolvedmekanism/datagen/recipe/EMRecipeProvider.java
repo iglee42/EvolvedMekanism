@@ -38,6 +38,7 @@ import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.conditions.NotCondition;
 import net.neoforged.neoforge.common.conditions.TagEmptyCondition;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class EMRecipeProvider extends RecipeProvider {
@@ -61,6 +62,14 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMCrafting.keys('A', MekanismTags.Items.ALLOYS_BASIC, 'C', EMDatagenTags.cItem("circuits/advanced"),
                         'S', MekanismBlocks.ENERGIZED_SMELTER, 'T', MekanismBlocks.COMBINER, 'X', MekanismBlocks.STEEL_CASING),
                 has(MekanismBlocks.STEEL_CASING));
+        EMCrafting.shaped(output, "fluid_combiner", EMBlocks.FLUID_COMBINER, 1, new String[]{"ACA", "TXT", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_BASIC, 'C', EMDatagenTags.cItem("circuits/basic"),
+                        'T', MekanismBlocks.BASIC_FLUID_TANK, 'X', MekanismBlocks.COMBINER),
+                has(MekanismBlocks.COMBINER));
+        EMCrafting.shaped(output, "fluid_alloyer", EMBlocks.FLUID_ALLOYER, 1, new String[]{"ACA", "BXB", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_REINFORCED, 'C', EMDatagenTags.cItem("circuits/advanced"),
+                        'B', EMBlocks.FLUID_COMBINER, 'X', MekanismBlocks.STEEL_CASING),
+                has(EMBlocks.FLUID_COMBINER));
         EMCrafting.shaped(EMCrafting.mekData(output), "chemixer", EMBlocks.CHEMIXER, 1, new String[]{"ACA", "OPO", "ACA"},
                 EMCrafting.keys('A', EMDatagenTags.item("evolvedmekanism", "alloys/singular"), 'C', EMDatagenTags.cItem("circuits/dense"),
                         'O', EMDatagenTags.cItem("ingots/osmium"), 'P', EMBlocks.ALLOYER),
@@ -165,11 +174,13 @@ public class EMRecipeProvider extends RecipeProvider {
             addWindGenerator(mek, tier);
         }
         for (TieredRecipes.TierData tier : TieredRecipes.ALLOYING_VANILLA_TIERS) {
-            EMCrafting.shaped(mek, "factory/" + tier.name() + "/alloying",
-                    TieredRecipes.factoryResult(tier.name(), "alloying"), 1, new String[]{"ACA", "IPI", "ACA"},
-                    EMCrafting.keys('A', tier.alloy(), 'C', tier.circuit(), 'I', tier.extra(),
-                            'P', TieredRecipes.previousFactory(tier, "alloying")),
-                    has(tier.circuit()));
+            for (String type : List.of("alloying")) {
+                EMCrafting.shaped(mek, "factory/" + tier.name() + "/" + type,
+                        TieredRecipes.factoryResult(tier.name(), type), 1, new String[]{"ACA", "IPI", "ACA"},
+                        EMCrafting.keys('A', tier.alloy(), 'C', tier.circuit(), 'I', tier.extra(),
+                                'P', TieredRecipes.previousFactory(tier, type)),
+                        has(tier.circuit()));
+            }
         }
         addPersonalStorageChain(mek);
     }

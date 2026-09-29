@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": { "tag": "mekanism:alloys/reinforced" },
+    "C": { "tag": "c:circuits/advanced" },
+    "B": { "item": "evolvedmekanism:fluid_combiner" },
+    "X": { "item": "mekanism:steel_casing" }
+  },
+  "pattern": [
+    "ACA",
+    "BXB",
+    "ACA"
+  ],
+  "result": { "count": 1, "id": "evolvedmekanism:fluid_alloyer" }
+}

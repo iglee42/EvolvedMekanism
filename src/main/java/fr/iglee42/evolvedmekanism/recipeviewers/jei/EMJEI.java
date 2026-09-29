@@ -5,6 +5,8 @@ import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.recipeviewers.alias.EMAliasMapping;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.AlloyerJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.ChemixerJEIRecipeCategory;
+import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.FluidAlloyingJEIRecipeCategory;
+import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.FluidCombiningJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.MeltingJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.SolidificationJEIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.jei.categories.multiblock.APTJEIRecipeCategory;
@@ -74,6 +76,8 @@ public class EMJEI implements IModPlugin {
         IGuiHelper guiHelper = registry.getJeiHelpers().getGuiHelper();
         if (shouldLoad()) {
             registry.addRecipeCategories(new AlloyerJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.ALLOYING));
+            registry.addRecipeCategories(new FluidCombiningJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.FLUID_COMBINING));
+            registry.addRecipeCategories(new FluidAlloyingJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.FLUID_ALLOYING));
             registry.addRecipeCategories(new ChemixerJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.CHEMIXING));
             registry.addRecipeCategories(new APTJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.APT));
             registry.addRecipeCategories(new MeltingJEIRecipeCategory(guiHelper, EMRecipeViewersTypes.MELTING, false));
@@ -135,6 +139,8 @@ public class EMJEI implements IModPlugin {
         registry.getIngredientManager().removeIngredientsAtRuntime(NeoForgeTypes.FLUID_STACK,fluidsToRemove);
         registry.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK,itemsToRemove);
         RecipeRegistryHelper.register(registry, EMRecipeViewersTypes.ALLOYING, EMRecipeType.ALLOYING);
+        RecipeRegistryHelper.register(registry, EMRecipeViewersTypes.FLUID_COMBINING, EMRecipeType.FLUID_COMBINING);
+        RecipeRegistryHelper.register(registry, EMRecipeViewersTypes.FLUID_ALLOYING, EMRecipeType.FLUID_ALLOYING);
         RecipeRegistryHelper.register(registry, EMRecipeViewersTypes.CHEMIXING, EMRecipeType.CHEMIXING);
         RecipeRegistryHelper.register(registry, EMRecipeViewersTypes.APT, EMRecipeType.APT);
         RecipeRegistryHelper.register(registry, EMRecipeViewersTypes.MELTING, EMRecipeType.MELTING);
@@ -150,8 +156,10 @@ public class EMJEI implements IModPlugin {
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(EMRecipeViewersTypes.APT),Arrays.asList(EMBlocks.APT_CASING,EMBlocks.APT_PORT,EMBlocks.SUPERCHARGING_ELEMENT));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(EMRecipeViewersTypes.MELTING),Arrays.asList(EMBlocks.MELTER));
         CatalystRegistryHelper.register(registry,MekanismJEI.genericRecipeType(EMRecipeViewersTypes.SOLIDIFICATION),Arrays.asList(EMBlocks.SOLIDIFIER));
-        List<ItemLike> alloying = BuiltInRegistries.BLOCK.holders().filter(h->h.getKey().location().getNamespace().equals(EvolvedMekanism.MODID) && (h.getKey().location().getPath().contains("alloyer") || h.getKey().location().getPath().contains("alloying"))).map(Holder.Reference::value).map(ItemLike.class::cast).toList();
+        List<ItemLike> alloying = BuiltInRegistries.BLOCK.holders().filter(h->h.getKey().location().getNamespace().equals(EvolvedMekanism.MODID) && (h.getKey().location().getPath().equals("alloyer") || (h.getKey().location().getPath().endsWith("_alloying_factory") && !h.getKey().location().getPath().contains("fluid")))).map(Holder.Reference::value).map(ItemLike.class::cast).toList();
         alloying.forEach(i->registry.addRecipeCatalyst(i,MekanismJEI.genericRecipeType(EMRecipeViewersTypes.ALLOYING)));
+        registry.addRecipeCatalyst(EMBlocks.FLUID_COMBINER, MekanismJEI.genericRecipeType(EMRecipeViewersTypes.FLUID_COMBINING));
+        registry.addRecipeCatalyst(EMBlocks.FLUID_ALLOYER, MekanismJEI.genericRecipeType(EMRecipeViewersTypes.FLUID_ALLOYING));
     }
 
     @Override

@@ -48,7 +48,8 @@ public final class TieredRecipes {
             return EMBlocks.ALLOYER;
         }
         String name = tier.previousPrefix() + "_" + type + "_factory";
-        if (tier.previousMekanism() && !"alloying".equals(type)) {
+        boolean evolved = "alloying".equals(type);
+        if (tier.previousMekanism() && !evolved) {
             return EMCrafting.item("mekanism:" + name);
         }
         return EMCrafting.item("evolvedmekanism:" + name);

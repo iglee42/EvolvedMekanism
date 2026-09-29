@@ -56,8 +56,12 @@ public enum EvolvedMekanismLang implements ILangEntry {
     CURIO_DISABLED("tooltip", "curio_disabled"),
 
     ALLOYING("factory","alloying"),
+    FLUID_ALLOYING("factory","fluid_alloying"),
+    FLUID_COMBINING("factory","fluid_combining"),
 
     DESCRIPTION_ALLOYER("description","alloyer"),
+    DESCRIPTION_FLUID_ALLOYER("description","fluid_alloyer"),
+    DESCRIPTION_FLUID_COMBINER("description","fluid_combiner"),
     DESCRIPTION_MELTER("description","thermalizer"),
     DESCRIPTION_SOLIDIFIER("description","solidification_chamber"),
 

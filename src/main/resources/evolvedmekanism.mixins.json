@@ -71,13 +71,15 @@
     "tiles.cables.TileEntityPressurizedTubeMixin",
     "tiles.cables.TileEntityThermodynamicConductorMixin",
     "tiles.cables.TileEntityUniversalCableMixin",
-    "tiles.factories.TileEntityCombiningFactoryMixin"
+    "tiles.factories.TileEntityCombiningFactoryMixin",
+    "tiles.EMAnchorMixin"
   ],
   "client": [
     "curios.HumanoidArmorLayerMixin",
     "curios.LocalPlayerFallFlyingMixin",
     "curios.ElytraLayerMixin",
     "client.GuiFactoryMixin",
+    "client.GuiGaugeMixin",
     "client.ShieldTexturesMixin",
     "client.ModelWindGeneratorMixin",
     "client.ToolsRenderMekanismShieldItemMixin",

@@ -209,6 +209,8 @@ public class EMEmi implements EmiPlugin {
 
     private void addCategories(EmiRegistry registry) {
         addCategoryAndRecipes(registry, EMRecipeViewersTypes.ALLOYING, AlloyerEMIRecipe::new);
+        addCategoryAndRecipes(registry, EMRecipeViewersTypes.FLUID_COMBINING, FluidCombiningEmiRecipe::new);
+        addCategoryAndRecipes(registry, EMRecipeViewersTypes.FLUID_ALLOYING, FluidAlloyingEmiRecipe::new);
         addCategoryAndRecipes(registry, EMRecipeViewersTypes.CHEMIXING, ChemixerEMIRecipe::new);
         addCategoryAndRecipes(registry, EMRecipeViewersTypes.SOLIDIFICATION, SolidificationEMIRecipe::new);
 

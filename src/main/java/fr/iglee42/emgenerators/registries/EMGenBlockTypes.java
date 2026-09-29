@@ -65,7 +65,7 @@ public class EMGenBlockTypes {
             .withEnergyConfig(MekanismGeneratorsConfig.storageConfig.solarGenerator)
             .withCustomShape(BlockShapes.SOLAR_GENERATOR)
             .withSound(GeneratorsSounds.SOLAR_GENERATOR)
-            .withSupportedUpgrades(Upgrade.MUFFLING,EMUpgrades.LUNAR_UPGRADE)
+            .withSupportedUpgrades(Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.LUNAR_UPGRADE)
             .withComputerSupport("lunarGenerator")
             .replace(Attributes.ACTIVE)
             .build();
@@ -132,7 +132,7 @@ public class EMGenBlockTypes {
                 .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.advancedSolarGenerator.get() * tier.getMultiplier())
                 .withCustomShape(BlockShapes.ADVANCED_SOLAR_GENERATOR)
                 .withSound(GeneratorsSounds.SOLAR_GENERATOR)
-                .withSupportedUpgrades(Upgrade.MUFFLING, EMUpgrades.SOLAR_UPGRADE)
+                .withSupportedUpgrades(Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.SOLAR_UPGRADE)
                 .withBounding(new AttributeHasBounding.HandleBoundingBlock() {
                     @Override
                     public <DATA> boolean handle(Level level, BlockPos pos, BlockState state, DATA data, AttributeHasBounding.TriBooleanFunction<Level, BlockPos, DATA> consumer) {
@@ -170,7 +170,7 @@ public class EMGenBlockTypes {
                 .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.advancedSolarGenerator.get() * tier.getMultiplier())
                 .withCustomShape(BlockShapes.ADVANCED_SOLAR_GENERATOR)
                 .withSound(GeneratorsSounds.SOLAR_GENERATOR)
-                .withSupportedUpgrades(Upgrade.MUFFLING, EMUpgrades.LUNAR_UPGRADE)
+                .withSupportedUpgrades(Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.LUNAR_UPGRADE)
                 .withBounding(new AttributeHasBounding.HandleBoundingBlock() {
                     @Override
                     public <DATA> boolean handle(Level level, BlockPos pos, BlockState state, DATA data, AttributeHasBounding.TriBooleanFunction<Level, BlockPos, DATA> consumer) {
@@ -209,7 +209,7 @@ public class EMGenBlockTypes {
                 .withCustomShape(BlockShapes.WIND_GENERATOR)
                 .with(AttributeCustomSelectionBox.JAVA)
                 .withSound(GeneratorsSounds.WIND_GENERATOR)
-                .with(AttributeUpgradeSupport.MUFFLING_ONLY)
+                .withSupportedUpgrades(Upgrade.MUFFLING, Upgrade.ANCHOR)
                 .withBounding(new AttributeHasBounding.HandleBoundingBlock() {
                     @Override
                     public <DATA> boolean handle(Level level, BlockPos pos, BlockState state, DATA data, AttributeHasBounding.TriBooleanFunction<Level, BlockPos, DATA> consumer) {

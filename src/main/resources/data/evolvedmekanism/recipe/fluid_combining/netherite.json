@@ -1,0 +1,6 @@
+{
+  "type": "evolvedmekanism:fluid_combining",
+  "main_input": { "amount": 360, "tag": "c:molten_debris" },
+  "extra_input": { "amount": 360, "tag": "c:molten_gold" },
+  "output": { "amount": 90, "tag": "c:molten_netherite" }
+}

@@ -21,6 +21,14 @@ public class EMLangProvider extends LanguageProvider {
         add("advancements.evolvedmekanism.apt.description", "This thing doesn't seem safe at all");
         add("advancements.evolvedmekanism.apt.title", "Antimatter Protomolecular Transmutation?");
         add("block.evolvedmekanism.alloyer", "Alloyer");
+        add("block.evolvedmekanism.fluid_combiner", "Fluid Combiner");
+        add("block.evolvedmekanism.fluid_alloyer", "Fluid Alloyer");
+        add("container.evolvedmekanism.fluid_combiner", "Fluid Combiner");
+        add("container.evolvedmekanism.fluid_alloyer", "Fluid Alloyer");
+        add("description.evolvedmekanism.fluid_combiner", "Combines two molten fluids into an alloy.");
+        add("description.evolvedmekanism.fluid_alloyer", "Alloys three molten fluids into one.");
+        add("factory.evolvedmekanism.fluid_combining", "Fluid Combining");
+        add("factory.evolvedmekanism.fluid_alloying", "Fluid Alloying");
         add("block.evolvedmekanism.chemixer", "Chemixer");
         add("block.evolvedmekanism.thermalizer", "Thermalizer");
         add("block.evolvedmekanism.solidification_chamber", "Solidification Chamber");

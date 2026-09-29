@@ -3,8 +3,12 @@ package fr.iglee42.evolvedmekanism.registries;
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.FluidAlloyingRecipe;
+import fr.iglee42.evolvedmekanism.recipes.FluidCombiningRecipe;
 import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
+import fr.iglee42.evolvedmekanism.recipes.vanilla_input.BiFluidRecipeInput;
+import fr.iglee42.evolvedmekanism.recipes.vanilla_input.TriFluidRecipeInput;
 import fr.iglee42.evolvedmekanism.recipes.vanilla_input.BiItemChemicalRecipeInput;
 import fr.iglee42.evolvedmekanism.recipes.vanilla_input.SingleItemBiFluidRecipeInput;
 import fr.iglee42.evolvedmekanism.recipes.vanilla_input.TriItemRecipeInput;
@@ -23,4 +27,6 @@ public class EMRecipeType{
     public static RecipeTypeRegistryObject<SingleItemChemicalRecipeInput,ItemStackChemicalToItemStackRecipe, InputRecipeCache.ItemChemical<ItemStackChemicalToItemStackRecipe>> APT;
     public static RecipeTypeRegistryObject<SingleRecipeInput, MeltingRecipe, InputRecipeCache.SingleItem<MeltingRecipe>> MELTING;
     public static RecipeTypeRegistryObject<SingleItemBiFluidRecipeInput,SolidificationRecipe, EMInputRecipeCache.ItemFluidFluid<SolidificationRecipe>> SOLIDIFICATION;
+    public static RecipeTypeRegistryObject<BiFluidRecipeInput, FluidCombiningRecipe, EMInputRecipeCache.DoubleFluid<FluidCombiningRecipe>> FLUID_COMBINING;
+    public static RecipeTypeRegistryObject<TriFluidRecipeInput, FluidAlloyingRecipe, EMInputRecipeCache.TripleFluid<FluidAlloyingRecipe>> FLUID_ALLOYING;
 }

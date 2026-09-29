@@ -24,6 +24,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import com.mojang.datafixers.util.Function3;
 
 public class EMRecipeSerializers {
 
@@ -36,6 +37,8 @@ public class EMRecipeSerializers {
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<BasicAPTRecipe>> APT = RECIPE_SERIALIZERS.register("apt", ()->MekanismRecipeSerializer.itemChemicalToItem(BasicAPTRecipe::new));
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<BasicMelterRecipe>> MELTER = RECIPE_SERIALIZERS.register("melting", () ->itemToFluid(BasicMelterRecipe::new));
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<BasicSolidificationRecipe>> SOLIDIFICATION = RECIPE_SERIALIZERS.register("solidifying", () ->solidifier(BasicSolidificationRecipe::new));
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<BasicFluidCombiningRecipe>> FLUID_COMBINING = RECIPE_SERIALIZERS.register("fluid_combining", () -> fluidCombining(BasicFluidCombiningRecipe::new));
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<BasicFluidAlloyingRecipe>> FLUID_ALLOYING = RECIPE_SERIALIZERS.register("fluid_alloying", () -> fluidAlloying(BasicFluidAlloyingRecipe::new));
 
 
     public static <RECIPE extends BasicAlloyerRecipe> MekanismRecipeSerializer<RECIPE> alloyer(Function4<ItemStackIngredient, ItemStackIngredient, ItemStackIngredient,ItemStack, RECIPE> factory) {
@@ -53,6 +56,34 @@ public class EMRecipeSerializers {
         ));
     }
 
+
+    public static <RECIPE extends BasicFluidCombiningRecipe> MekanismRecipeSerializer<RECIPE> fluidCombining(Function3<FluidStackIngredient, FluidStackIngredient, FluidStackIngredient, RECIPE> factory) {
+        return new MekanismRecipeSerializer<>(RecordCodecBuilder.mapCodec(instance -> instance.group(
+                FluidStackIngredient.CODEC.fieldOf(SerializationConstants.MAIN_INPUT).forGetter(BasicFluidCombiningRecipe::getMainInput),
+                FluidStackIngredient.CODEC.fieldOf(SerializationConstants.EXTRA_INPUT).forGetter(BasicFluidCombiningRecipe::getExtraInput),
+                FluidStackIngredient.CODEC.fieldOf(SerializationConstants.OUTPUT).forGetter(BasicFluidCombiningRecipe::getOutputRaw)
+        ).apply(instance, factory)), StreamCodec.composite(
+                FluidStackIngredient.STREAM_CODEC, BasicFluidCombiningRecipe::getMainInput,
+                FluidStackIngredient.STREAM_CODEC, BasicFluidCombiningRecipe::getExtraInput,
+                FluidStackIngredient.STREAM_CODEC, BasicFluidCombiningRecipe::getOutputRaw,
+                factory
+        ));
+    }
+
+    public static <RECIPE extends BasicFluidAlloyingRecipe> MekanismRecipeSerializer<RECIPE> fluidAlloying(Function4<FluidStackIngredient, FluidStackIngredient, FluidStackIngredient, FluidStackIngredient, RECIPE> factory) {
+        return new MekanismRecipeSerializer<>(RecordCodecBuilder.mapCodec(instance -> instance.group(
+                FluidStackIngredient.CODEC.fieldOf(SerializationConstants.MAIN_INPUT).forGetter(BasicFluidAlloyingRecipe::getMainInput),
+                FluidStackIngredient.CODEC.fieldOf(SerializationConstants.EXTRA_INPUT).forGetter(BasicFluidAlloyingRecipe::getExtraInput),
+                FluidStackIngredient.CODEC.fieldOf(EMSerializationConstants.SECOND_EXTRA_INPUT).forGetter(BasicFluidAlloyingRecipe::getTertiaryExtraInput),
+                FluidStackIngredient.CODEC.fieldOf(SerializationConstants.OUTPUT).forGetter(BasicFluidAlloyingRecipe::getOutputRaw)
+        ).apply(instance, factory)), StreamCodec.composite(
+                FluidStackIngredient.STREAM_CODEC, BasicFluidAlloyingRecipe::getMainInput,
+                FluidStackIngredient.STREAM_CODEC, BasicFluidAlloyingRecipe::getExtraInput,
+                FluidStackIngredient.STREAM_CODEC, BasicFluidAlloyingRecipe::getTertiaryExtraInput,
+                FluidStackIngredient.STREAM_CODEC, BasicFluidAlloyingRecipe::getOutputRaw,
+                factory
+        ));
+    }
 
     public static <RECIPE extends MeltingRecipe> MekanismRecipeSerializer<RECIPE> itemToFluid(BiFunction<ItemStackIngredient, FluidStackIngredient, RECIPE> factory) {
         return new MekanismRecipeSerializer<>(RecordCodecBuilder.mapCodec(instance -> instance.group(

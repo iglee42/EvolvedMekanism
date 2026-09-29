@@ -152,6 +152,8 @@ public class ClientRegistration {
             ClientRegistrationUtil.registerScreen(event,EMContainerTypes.TIERED_PERSONAL_STORAGE_ITEM, GuiTieredPersonalStorageItem::new);
             ClientRegistrationUtil.registerScreen(event,EMContainerTypes.TIERED_PERSONAL_STORAGE_BLOCK, GuiTieredPersonalStorageTile::new);
             ClientRegistrationUtil.registerScreen(event,EMContainerTypes.ALLOYER, GuiAlloyer::new);
+            ClientRegistrationUtil.registerScreen(event,EMContainerTypes.FLUID_COMBINER, GuiFluidCombiner::new);
+            ClientRegistrationUtil.registerScreen(event,EMContainerTypes.FLUID_ALLOYER, GuiFluidAlloyer::new);
             ClientRegistrationUtil.registerScreen(event,EMContainerTypes.CHEMIXER, GuiChemixer::new);
             ClientRegistrationUtil.registerScreen(event,EMContainerTypes.APT, GuiAPT::new);
             ClientRegistrationUtil.registerScreen(event,EMContainerTypes.MELTER, GuiMelter::new);

@@ -18,6 +18,8 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidCombiner;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import mekanism.api.Upgrade;
@@ -58,9 +60,29 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.ALLOYER)
             .withSound(MekanismSounds.COMBINER)
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
-            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING)
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
             .withComputerSupport("alloyer")
             .withSideConfig(TransmissionType.ITEM, TransmissionType.ENERGY)
+            .build();
+
+    public static final Machine.FactoryMachine<TileEntityFluidCombiner> FLUID_COMBINER = MachineBuilder
+            .createFactoryMachine(() -> EMTileEntityTypes.FLUID_COMBINER, EvolvedMekanismLang.DESCRIPTION_FLUID_COMBINER, EMFactoryType.FLUID_COMBINING)
+            .withGui(() -> EMContainerTypes.FLUID_COMBINER)
+            .withSound(MekanismSounds.COMBINER)
+            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
+            .withComputerSupport("fluidCombiner")
+            .withSideConfig(TransmissionType.ITEM, TransmissionType.FLUID, TransmissionType.ENERGY)
+            .build();
+
+    public static final Machine.FactoryMachine<TileEntityFluidAlloyer> FLUID_ALLOYER = MachineBuilder
+            .createFactoryMachine(() -> EMTileEntityTypes.FLUID_ALLOYER, EvolvedMekanismLang.DESCRIPTION_FLUID_ALLOYER, EMFactoryType.FLUID_ALLOYING)
+            .withGui(() -> EMContainerTypes.FLUID_ALLOYER)
+            .withSound(MekanismSounds.COMBINER)
+            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
+            .withComputerSupport("fluidAlloyer")
+            .withSideConfig(TransmissionType.ITEM, TransmissionType.FLUID, TransmissionType.ENERGY)
             .build();
 
     public static final Machine<TileEntityChemixer> CHEMIXER = MachineBuilder
@@ -68,7 +90,7 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.CHEMIXER)
             .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
             .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
-            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING,EMUpgrades.RADIOACTIVE_UPGRADE)
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.RADIOACTIVE_UPGRADE)
             .withComputerSupport("chemixer")
             .withSideConfig(TransmissionType.ITEM,TransmissionType.ENERGY,TransmissionType.CHEMICAL)
             .build();
@@ -78,7 +100,7 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.MELTER)
             .withSound(MekanismSounds.CHEMICAL_OXIDIZER)
             .withEnergyConfig(MekanismConfig.usage.chemicalOxidizer, MekanismConfig.storage.chemicalOxidizer)
-            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING)
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
             .withComputerSupport("melter")
             .withSideConfig(TransmissionType.ITEM,TransmissionType.FLUID,TransmissionType.HEAT)
             .build();
@@ -88,7 +110,7 @@ public class EMBlockTypes {
             .withGui(() -> EMContainerTypes.SOLIDIFIER)
             .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
             .withEnergyConfig(MekanismConfig.usage.pressurizedReactionBase, MekanismConfig.storage.pressurizedReactionBase)
-            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING)
+            .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
             .withComputerSupport("solidifier")
             .withSideConfig(TransmissionType.FLUID,TransmissionType.ITEM,TransmissionType.ENERGY)
             .build();

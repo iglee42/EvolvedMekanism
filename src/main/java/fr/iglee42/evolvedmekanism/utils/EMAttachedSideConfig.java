@@ -41,6 +41,37 @@ public class EMAttachedSideConfig {
         return new AttachedSideConfig(configInfo);
     });
 
+    private static final AttachedSideConfig.LightConfigInfo FLUID_COMBINER_SIDES = fluidInputSides(Map.of(
+            RelativeSide.TOP, DataType.INPUT_2,
+            RelativeSide.RIGHT, DataType.OUTPUT
+    ));
+
+    private static final AttachedSideConfig.LightConfigInfo FLUID_ALLOYER_SIDES = fluidInputSides(Map.of(
+            RelativeSide.BACK, DataType.EXTRA,
+            RelativeSide.TOP, DataType.INPUT_2,
+            RelativeSide.RIGHT, DataType.OUTPUT
+    ));
+
+    public static final AttachedSideConfig FLUID_COMBINER_MACHINE = fluidMachine(FLUID_COMBINER_SIDES);
+    public static final AttachedSideConfig FLUID_ALLOYER_MACHINE = fluidMachine(FLUID_ALLOYER_SIDES);
+
+    private static AttachedSideConfig.LightConfigInfo fluidInputSides(Map<RelativeSide, DataType> overrides) {
+        Map<RelativeSide, DataType> sideConfig = new EnumMap<>(RelativeSide.class);
+        for (RelativeSide side : RelativeSide.values()) {
+            sideConfig.put(side, DataType.INPUT);
+        }
+        sideConfig.putAll(overrides);
+        return new AttachedSideConfig.LightConfigInfo(sideConfig, true);
+    }
+
+    private static AttachedSideConfig fluidMachine(AttachedSideConfig.LightConfigInfo fluid) {
+        Map<TransmissionType, AttachedSideConfig.LightConfigInfo> configInfo = new EnumMap<>(TransmissionType.class);
+        configInfo.put(TransmissionType.ITEM, AttachedSideConfig.LightConfigInfo.MACHINE);
+        configInfo.put(TransmissionType.FLUID, fluid);
+        configInfo.put(TransmissionType.ENERGY, AttachedSideConfig.LightConfigInfo.INPUT_ONLY);
+        return new AttachedSideConfig(configInfo);
+    }
+
 
 
 }

@@ -11,6 +11,8 @@ import fr.iglee42.evolvedmekanism.tiles.*;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.factory.TileEntityAlloyingFactory;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidCombiner;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
@@ -223,6 +225,16 @@ public class EMTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityTieredPersonalChest> CREATIVE_PERSONAL_CHEST = registerTieredStorage(EMBlocks.CREATIVE_PERSONAL_CHEST, PersonalStorageTier.CREATIVE, TileEntityTieredPersonalChest::new);
 
     public static final TileEntityTypeRegistryObject<TileEntityAlloyer> ALLOYER = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.ALLOYER, TileEntityAlloyer::new)
+            .clientTicker(TileEntityMekanism::tickClient)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.CONFIG_CARD)
+            .build();
+    public static final TileEntityTypeRegistryObject<TileEntityFluidCombiner> FLUID_COMBINER = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.FLUID_COMBINER, TileEntityFluidCombiner::new)
+            .clientTicker(TileEntityMekanism::tickClient)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.CONFIG_CARD)
+            .build();
+    public static final TileEntityTypeRegistryObject<TileEntityFluidAlloyer> FLUID_ALLOYER = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.FLUID_ALLOYER, TileEntityFluidAlloyer::new)
             .clientTicker(TileEntityMekanism::tickClient)
             .serverTicker(TileEntityMekanism::tickServer)
             .withSimple(Capabilities.CONFIG_CARD)

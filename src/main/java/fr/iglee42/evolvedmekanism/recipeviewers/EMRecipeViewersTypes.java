@@ -2,6 +2,8 @@ package fr.iglee42.evolvedmekanism.recipeviewers;
 
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.FluidAlloyingRecipe;
+import fr.iglee42.evolvedmekanism.recipes.FluidCombiningRecipe;
 import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
@@ -19,6 +21,8 @@ public class EMRecipeViewersTypes {
     }
 
     public static final RVRecipeTypeWrapper<?, AlloyerRecipe,?> ALLOYING = new RVRecipeTypeWrapper<>(EMRecipeType.ALLOYING, AlloyerRecipe.class, -28, -16, 144, 54, EMBlocks.ALLOYER);
+    public static final RVRecipeTypeWrapper<?, FluidCombiningRecipe,?> FLUID_COMBINING = new RVRecipeTypeWrapper<>(EMRecipeType.FLUID_COMBINING, FluidCombiningRecipe.class, -5, -8, 164, 78, EMBlocks.FLUID_COMBINER);
+    public static final RVRecipeTypeWrapper<?, FluidAlloyingRecipe,?> FLUID_ALLOYING = new RVRecipeTypeWrapper<>(EMRecipeType.FLUID_ALLOYING, FluidAlloyingRecipe.class, -5, -8, 164, 78, EMBlocks.FLUID_ALLOYER);
     public static final RVRecipeTypeWrapper<?, ItemStackChemicalToItemStackRecipe,?> APT = new RVRecipeTypeWrapper<>(EMRecipeType.APT, ItemStackChemicalToItemStackRecipe.class, -3, -12, 168, 74, EMItems.BETTER_GOLD_INGOT,EMBlocks.APT_CASING,EMBlocks.APT_PORT,EMBlocks.SUPERCHARGING_ELEMENT);
     public static final RVRecipeTypeWrapper<?, ChemixerRecipe,?> CHEMIXING = new RVRecipeTypeWrapper<>(EMRecipeType.CHEMIXING, ChemixerRecipe.class, -28, -13, 144, 60,EMBlocks.CHEMIXER);
     public static final RVRecipeTypeWrapper<?, SolidificationRecipe,?> SOLIDIFICATION = new RVRecipeTypeWrapper<>(EMRecipeType.SOLIDIFICATION, SolidificationRecipe.class,  -3, -10, 170, 60,EMBlocks.SOLIDIFIER);

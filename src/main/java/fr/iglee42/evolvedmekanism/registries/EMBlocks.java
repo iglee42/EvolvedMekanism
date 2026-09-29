@@ -20,6 +20,8 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidCombiner;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import fr.iglee42.evolvedmekanism.utils.EMAttachedSideConfig;
@@ -154,6 +156,46 @@ public class EMBlocks {
             .addEnergy()
             .build()
     ));
+
+    public static final BlockRegistryObject<BlockFactoryMachine<TileEntityFluidCombiner, Machine.FactoryMachine<TileEntityFluidCombiner>>, ItemBlockTooltip<BlockFactoryMachine<TileEntityFluidCombiner, Machine.FactoryMachine<TileEntityFluidCombiner>>>> FLUID_COMBINER = BLOCKS.register("fluid_combiner", () -> new BlockFactoryMachine<>(EMBlockTypes.FLUID_COMBINER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())),
+            (block, properties) -> new ItemBlockTooltip<>(block, true, properties
+                    .component(MekanismDataComponents.EJECTOR, AttachedEjector.DEFAULT)
+                    .component(MekanismDataComponents.SIDE_CONFIG, EMAttachedSideConfig.FLUID_COMBINER_MACHINE)
+            )
+    ).forItemHolder(holder -> holder
+            .addAttachmentOnlyContainers(ContainerType.FLUID, () -> FluidTanksBuilder.builder()
+                    .addBasic(TileEntityFluidCombiner.MAX_FLUID, EMRecipeType.FLUID_COMBINING, EMInputRecipeCache.DoubleFluid::containsInputA)
+                    .addBasic(TileEntityFluidCombiner.MAX_FLUID, EMRecipeType.FLUID_COMBINING, EMInputRecipeCache.DoubleFluid::containsInputB)
+                    .addBasic(TileEntityFluidCombiner.MAX_FLUID)
+                    .build())
+            .addAttachmentOnlyContainers(ContainerType.ITEM, () -> ItemSlotsBuilder.builder()
+                    .addFluidFillSlot(0)
+                    .addFluidFillSlot(1)
+                    .addFluidDrainSlot(2)
+                    .addOutput()
+                    .addEnergy()
+                    .build()));
+
+    public static final BlockRegistryObject<BlockFactoryMachine<TileEntityFluidAlloyer, Machine.FactoryMachine<TileEntityFluidAlloyer>>, ItemBlockTooltip<BlockFactoryMachine<TileEntityFluidAlloyer, Machine.FactoryMachine<TileEntityFluidAlloyer>>>> FLUID_ALLOYER = BLOCKS.register("fluid_alloyer", () -> new BlockFactoryMachine<>(EMBlockTypes.FLUID_ALLOYER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())),
+            (block, properties) -> new ItemBlockTooltip<>(block, true, properties
+                    .component(MekanismDataComponents.EJECTOR, AttachedEjector.DEFAULT)
+                    .component(MekanismDataComponents.SIDE_CONFIG, EMAttachedSideConfig.FLUID_ALLOYER_MACHINE)
+            )
+    ).forItemHolder(holder -> holder
+            .addAttachmentOnlyContainers(ContainerType.FLUID, () -> FluidTanksBuilder.builder()
+                    .addBasic(TileEntityFluidAlloyer.MAX_FLUID, EMRecipeType.FLUID_ALLOYING, EMInputRecipeCache.TripleFluid::containsInputA)
+                    .addBasic(TileEntityFluidAlloyer.MAX_FLUID, EMRecipeType.FLUID_ALLOYING, EMInputRecipeCache.TripleFluid::containsInputB)
+                    .addBasic(TileEntityFluidAlloyer.MAX_FLUID, EMRecipeType.FLUID_ALLOYING, EMInputRecipeCache.TripleFluid::containsInputC)
+                    .addBasic(TileEntityFluidAlloyer.MAX_FLUID)
+                    .build())
+            .addAttachmentOnlyContainers(ContainerType.ITEM, () -> ItemSlotsBuilder.builder()
+                    .addFluidFillSlot(0)
+                    .addFluidFillSlot(1)
+                    .addFluidFillSlot(2)
+                    .addFluidDrainSlot(3)
+                    .addOutput()
+                    .addEnergy()
+                    .build()));
 
     public static final BlockRegistryObject<BlockTileModel<TileEntityChemixer, Machine<TileEntityChemixer>>, ItemBlockTooltip<BlockTileModel<TileEntityChemixer, Machine<TileEntityChemixer>>>> CHEMIXER =
             BLOCKS.register("chemixer", () -> new BlockTileModel<>(EMBlockTypes.CHEMIXER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())),

@@ -1,0 +1,6 @@
+{
+  "type": "evolvedmekanism:fluid_combining",
+  "main_input": { "amount": 270, "tag": "c:molten_tin" },
+  "extra_input": { "amount": 90, "tag": "c:molten_lead" },
+  "output": { "amount": 360, "tag": "c:molten_pewter" }
+}
