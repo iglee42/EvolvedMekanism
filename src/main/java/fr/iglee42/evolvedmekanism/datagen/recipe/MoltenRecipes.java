@@ -76,7 +76,7 @@ public final class MoltenRecipes {
     }
 
     private static int formAmount(MaterialForm form, String material) {
-        if ("from_block".equals(form.recipeName()) && (material.equals("amethyst") || material.equals("glowstone") || material.equals("quartz"))) {
+        if ("from_block".equals(form.recipeName()) && (material.equals("amethyst") || material.equals("glowstone") || material.equals("quartz") || material.equals("certus_quartz") || material.equals("fluix"))) {
             return 360;
         }
         return form.amount();
