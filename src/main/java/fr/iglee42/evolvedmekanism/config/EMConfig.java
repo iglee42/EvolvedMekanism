@@ -23,10 +23,12 @@ public class EMConfig {
     private static final Map<IConfigSpec, IMekanismConfig> KNOWN_CONFIGS = new HashMap<>();
     public static final EMGeneralConfig general = new EMGeneralConfig();
     public static final EMWorldConfig world = new EMWorldConfig();
+    public static final EMGeneratorsConfig generators = new EMGeneratorsConfig();
 
     public static void registerConfigs(ModContainer container) {
         EMConfigHelper.registerConfig(KNOWN_CONFIGS,container, general);
         EMConfigHelper.registerConfig(KNOWN_CONFIGS,container, world);
+        EMConfigHelper.registerConfig(KNOWN_CONFIGS,container, generators);
     }
 
 
