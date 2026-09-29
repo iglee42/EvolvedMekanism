@@ -116,7 +116,7 @@ public class EMBlockLoot extends BlockLootSubProvider {
                     .setRolls(ConstantValue.exactly(1))
                     .add(LootItem.lootTableItem(block).apply(CopyComponentsFunction.copyComponents(CopyComponentsFunction.Source.BLOCK_ENTITY)
                             .include(MekanismDataComponents.ATTACHED_ENERGY.get()))))));
-        } else if (path.contains("solar_generator") || path.contains("lunar_generator")) {
+        } else if (path.contains("solar_generator") || path.contains("lunar_generator") || path.contains("wind_generator")) {
             addCopy(block, true,
                     MekanismDataComponents.OWNER.get(), MekanismDataComponents.REDSTONE_CONTROL.get(), MekanismDataComponents.SECURITY.get(),
                     MekanismDataComponents.UPGRADES.get(), MekanismDataComponents.ATTACHED_ENERGY.get(), MekanismDataComponents.ATTACHED_ITEMS.get());

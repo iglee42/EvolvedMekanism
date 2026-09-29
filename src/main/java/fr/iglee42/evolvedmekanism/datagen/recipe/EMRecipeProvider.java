@@ -162,6 +162,7 @@ public class EMRecipeProvider extends RecipeProvider {
             addTierInstaller(output, tier);
             addSolarGenerator(mek, tier);
             addLunarGenerator(mek, tier);
+            addWindGenerator(mek, tier);
         }
         for (TieredRecipes.TierData tier : TieredRecipes.ALLOYING_VANILLA_TIERS) {
             EMCrafting.shaped(mek, "factory/" + tier.name() + "/alloying",
@@ -285,6 +286,21 @@ public class EMRecipeProvider extends RecipeProvider {
         };
         EMCrafting.shaped(mek, "solar_generators/" + tier.name() + "_generator",
                 EMCrafting.item("evolvedmekanism:" + tier.name() + "_solar_generator"), 1, new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', tier.alloy(), 'C', tier.circuit(), 'I', tier.extra(), 'P', prev),
+                has(prev), new ModLoadedCondition("mekanismgenerators"));
+    }
+
+    private void addWindGenerator(RecipeOutput mek, TieredRecipes.TierData tier) {
+        ItemLike prev = switch (tier.name()) {
+            case "overclocked" -> EMGenBlocks.ULTIMATE_WIND_GENERATOR;
+            case "quantum" -> EMGenBlocks.OVERCLOCKED_WIND_GENERATOR;
+            case "dense" -> EMGenBlocks.QUANTUM_WIND_GENERATOR;
+            case "multiversal" -> EMGenBlocks.DENSE_WIND_GENERATOR;
+            case "creative" -> EMGenBlocks.MULTIVERSAL_WIND_GENERATOR;
+            default -> throw new IllegalArgumentException(tier.name());
+        };
+        EMCrafting.shaped(mek, "wind_generators/" + tier.name() + "_generator",
+                EMCrafting.item("evolvedmekanism:" + tier.name() + "_wind_generator"), 1, new String[]{"ACA", "IPI", "ACA"},
                 EMCrafting.keys('A', tier.alloy(), 'C', tier.circuit(), 'I', tier.extra(), 'P', prev),
                 has(prev), new ModLoadedCondition("mekanismgenerators"));
     }
@@ -587,6 +603,21 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMCrafting.keys('A', MekanismTags.Items.ALLOYS_INFUSED, 'C', EMDatagenTags.cItem("circuits/advanced"),
                         'I', EMDatagenTags.cItem("ingots/osmium"), 'P', EMGenBlocks.BASIC_ADVANCED_LUNAR_GENERATOR),
                 has(EMGenBlocks.BASIC_ADVANCED_LUNAR_GENERATOR), new ModLoadedCondition("mekanismgenerators"));
+        EMCrafting.shaped(EMCrafting.mekData(gen), "wind_generators/advanced_generator", EMGenBlocks.ADVANCED_WIND_GENERATOR, 1,
+                new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_INFUSED, 'C', EMDatagenTags.cItem("circuits/advanced"),
+                        'I', EMDatagenTags.cItem("ingots/osmium"), 'P', EMCrafting.item("mekanismgenerators:wind_generator")),
+                has(EMDatagenTags.cItem("circuits/advanced")), new ModLoadedCondition("mekanismgenerators"));
+        EMCrafting.shaped(EMCrafting.mekData(gen), "wind_generators/elite_generator", EMGenBlocks.ELITE_WIND_GENERATOR, 1,
+                new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_REINFORCED, 'C', EMDatagenTags.cItem("circuits/elite"),
+                        'I', EMDatagenTags.cItem("ingots/gold"), 'P', EMGenBlocks.ADVANCED_WIND_GENERATOR),
+                has(EMGenBlocks.ADVANCED_WIND_GENERATOR), new ModLoadedCondition("mekanismgenerators"));
+        EMCrafting.shaped(EMCrafting.mekData(gen), "wind_generators/ultimate_generator", EMGenBlocks.ULTIMATE_WIND_GENERATOR, 1,
+                new String[]{"ACA", "IPI", "ACA"},
+                EMCrafting.keys('A', MekanismTags.Items.ALLOYS_ATOMIC, 'C', EMDatagenTags.cItem("circuits/ultimate"),
+                        'I', Tags.Items.GEMS_DIAMOND, 'P', EMGenBlocks.ELITE_WIND_GENERATOR),
+                has(EMGenBlocks.ELITE_WIND_GENERATOR), new ModLoadedCondition("mekanismgenerators"));
         EMCrafting.shaped(EMCrafting.mekData(gen), "solar_generators/advanced_generator", EMGenBlocks.ADVANCED_SOLAR_GENERATOR, 1,
                 new String[]{"ACA", "IPI", "ACA"},
                 EMCrafting.keys('A', MekanismTags.Items.ALLOYS_INFUSED, 'C', EMDatagenTags.cItem("circuits/advanced"),
