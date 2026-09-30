@@ -208,6 +208,11 @@ public class EvolvedMekanism {
         MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY);
         MekanismIMC.addMekaSuitPantsModules(EMModules.LUCK);
         MekanismIMC.addMekaToolModules(EMModules.CAPTURING);
+        if (ModsCompats.MEKAWEAPONS.isLoaded()) {
+            MekanismIMC.sendModuleIMC("add_meka_tana_modules", EMModules.CAPTURING);
+            MekanismIMC.sendModuleIMC("add_meka_bow_modules", EMModules.CAPTURING);
+            MekanismIMC.sendModuleIMC("add_meka_gun_modules", EMModules.CAPTURING);
+        }
     }
 
     public static Component logFormat(Object message) {

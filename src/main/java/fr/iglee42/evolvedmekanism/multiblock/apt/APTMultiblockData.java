@@ -154,7 +154,7 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
         NBTUtils.setFloatIfPresent(tag, SerializationConstants.SCALE, scale -> prevGasScale = scale);
         NBTUtils.setIntIfPresent(tag,SerializationConstants.PROGRESS, pg -> progress = pg);
         NBTUtils.setIntIfPresent(tag,"defaultRecipeProgress", pg -> defaultRecipeProgress = pg);
-        NBTUtils.setChemicalStackIfPresent(provider,tag, SerializationConstants.CHEMICAL, value -> inputTank.setStack(value));
+        NBTUtils.setChemicalStackIfPresent(provider, tag, SerializationConstants.CHEMICAL, inputTank::setStackUnchecked);
     }
 
     @Override

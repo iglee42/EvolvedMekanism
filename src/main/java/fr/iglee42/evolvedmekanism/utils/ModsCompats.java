@@ -15,6 +15,8 @@ public enum ModsCompats {
 
     MEKANISMTOOLS("client.ShieldTexturesMixin","client.ToolsRenderMekanismShieldItemMixin"),
 
+    MEKAWEAPONS,
+
     CURIOS("curios.LivingEntityElytraMixin", "curios.PlayerFallFlyingMixin", "curios.HumanoidArmorLayerMixin",
             "curios.LocalPlayerFallFlyingMixin", "curios.ElytraLayerMixin", "curios.MekanismItemContainerMixin",
             "curios.PortableQIODashboardContainerMixin", "curios.PacketPortableTeleporterTeleportMixin",
