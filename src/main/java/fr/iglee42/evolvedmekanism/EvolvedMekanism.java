@@ -29,6 +29,7 @@ import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.api.MekanismIMC;
+import mekanism.api.providers.IModuleDataProvider;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.MekanismLang;
@@ -57,6 +58,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStoppedEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -223,6 +225,15 @@ public class EvolvedMekanism {
         MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY);
         MekanismIMC.addMekaSuitPantsModules(EMModules.LUCK);
         MekanismIMC.addMekaToolModules(EMModules.CAPTURING);
+        if (ModsCompats.MEKAWEAPONS.isLoaded()) {
+            sendMekaWeaponModules("add_mekatana_modules");
+            sendMekaWeaponModules("add_mekabow_modules");
+            sendMekaWeaponModules("add_mekagun_modules");
+        }
+    }
+
+    private static void sendMekaWeaponModules(String method) {
+        InterModComms.sendTo("mekanism", method, () -> new IModuleDataProvider<?>[]{EMModules.CAPTURING});
     }
 
     public static Component logFormat(Object message) {
