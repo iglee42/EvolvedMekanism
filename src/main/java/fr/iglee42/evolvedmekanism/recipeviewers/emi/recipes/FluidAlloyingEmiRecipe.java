@@ -2,15 +2,20 @@ package fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes;
 
 import dev.emi.emi.api.widget.WidgetHolder;
 import fr.iglee42.evolvedmekanism.recipes.FluidAlloyingRecipe;
+import mekanism.client.gui.element.bar.GuiVerticalPowerBar;
 import mekanism.client.gui.element.gauge.GaugeInfo;
 import mekanism.client.gui.element.gauge.GaugeOverlay;
 import mekanism.client.gui.element.gauge.GaugeType;
 import mekanism.client.gui.element.gauge.GuiFluidGauge;
 import mekanism.client.gui.element.progress.ProgressType;
+import mekanism.client.gui.element.slot.SlotType;
 import mekanism.client.recipe_viewer.emi.MekanismEmiRecipeCategory;
 import mekanism.client.recipe_viewer.emi.recipe.MekanismEmiHolderRecipe;
+import mekanism.common.inventory.container.slot.SlotOverlay;
 import mekanism.common.tile.component.config.DataType;
 import net.minecraft.world.item.crafting.RecipeHolder;
+
+import static mekanism.client.recipe_viewer.RecipeViewerUtils.FULL_BAR;
 
 public class FluidAlloyingEmiRecipe extends MekanismEmiHolderRecipe<FluidAlloyingRecipe> {
 
@@ -29,5 +34,10 @@ public class FluidAlloyingEmiRecipe extends MekanismEmiHolderRecipe<FluidAlloyin
         initTank(widgetHolder, GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT_2), this, 62, 13), FluidCombiningEmiRecipe.still(recipe.getTertiaryExtraInput()));
         initTank(widgetHolder, GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.OUTPUT), this, 140, 13), output(0)).recipeContext(this);
         addSimpleProgress(widgetHolder, ProgressType.LARGE_RIGHT, 86, 40, 100);
+        addSlot(widgetHolder, SlotType.INPUT, 19,76).with(SlotOverlay.MINUS);
+        addSlot(widgetHolder, SlotType.EXTRA, 41,76).with(SlotOverlay.MINUS);
+        addSlot(widgetHolder, SlotType.INPUT_2, 63,76).with(SlotOverlay.MINUS);
+        addSlot(widgetHolder, SlotType.OUTPUT, 141,76).with(SlotOverlay.PLUS);
+        addElement(widgetHolder,new GuiVerticalPowerBar(this,FULL_BAR,164,15));
     }
 }
