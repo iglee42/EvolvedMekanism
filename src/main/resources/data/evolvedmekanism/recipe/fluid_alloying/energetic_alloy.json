@@ -1,0 +1,13 @@
+{
+  "type": "evolvedmekanism:fluid_alloying",
+  "main_input": { "amount": 90, "tag": "c:molten_redstone" },
+  "extra_input": { "amount": 90, "tag": "c:molten_conductive_alloy" },
+  "second_extra_input": { "amount": 90, "tag": "c:molten_gold" },
+  "output": { "amount": 180, "tag": "c:molten_energetic_alloy" },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio"
+    }
+  ]
+}

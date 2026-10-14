@@ -1,0 +1,23 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "item": "enderio_evolution:melodic_alloy_ingot"
+  },
+  "second_extra_input": {
+    "count": 4,
+    "item": "minecraft:clay_ball"
+  },
+  "main_input": {
+    "item": "minecraft:nether_star"
+  },
+  "output": {
+    "count": 2,
+    "id": "enderio_evolution:stellar_alloy_ingot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio_evolution"
+    }
+  ]
+}

@@ -146,6 +146,10 @@ dependencies {
 
     runtimeOnly "curse.maven:ctm-267602:5587515"
 
+    runtimeOnly "curse.maven:ender-io-64578:8832691"
+    runtimeOnly "curse.maven:enderio-evolution-1453074:8808232"
+    runtimeOnly "curse.maven:ender-io-conduit-optimizer-1575307:8877336"
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
