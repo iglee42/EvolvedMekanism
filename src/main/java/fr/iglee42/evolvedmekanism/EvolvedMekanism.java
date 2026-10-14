@@ -27,6 +27,7 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTValidator;
 import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
+import fr.iglee42.evolvedmekanism.utils.MoltenAvailability;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.api.MekanismIMC;
 import mekanism.api.providers.IModuleDataProvider;
@@ -57,6 +58,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStoppedEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -104,6 +106,7 @@ public class EvolvedMekanism {
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         EMModules.MODULES.register(modEventBus);
         EMFluids.FLUIDS.register(modEventBus);
+        modEventBus.addListener(EventPriority.LOWEST, MoltenAvailability::hideFromCreativeTab);
         EMParticleTypes.PARTICLES.register(modEventBus);
 
         registerCompats();
