@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "mainInput": {
+        "ingredient": {
+            "item": "enderio:pulsating_powder"
+        }
+    },
+    "extraInput": {
+        "ingredient": {
+            "item": "enderio:pulsating_alloy_ingot"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "enderio:vibrant_alloy_ingot"
+        }
+    },
+    "output": {
+        "item": "enderio_evolution:crystalline_alloy_ingot",
+        "count": 2
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "enderio_evolution"
+        }
+    ]
+}

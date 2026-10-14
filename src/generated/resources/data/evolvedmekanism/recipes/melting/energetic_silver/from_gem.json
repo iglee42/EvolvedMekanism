@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gems/energetic_silver"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gems/energetic_silver"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_energetic_silver"
+  }
+}

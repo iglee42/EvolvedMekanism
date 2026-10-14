@@ -1,0 +1,13 @@
+{
+  "type": "evolvedmekanism:fluid_alloying",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enderio"
+    }
+  ],
+  "mainInput": { "amount": 90, "tag": "forge:molten_copper_alloy" },
+  "extraInput": { "amount": 90, "tag": "forge:molten_iron" },
+  "secondExtraInput": { "amount": 90, "tag": "forge:molten_redstone" },
+  "output": { "amount": 90, "tag": "forge:molten_conductive_alloy" }
+}

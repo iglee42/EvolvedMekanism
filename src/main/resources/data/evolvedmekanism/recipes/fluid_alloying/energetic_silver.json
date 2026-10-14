@@ -1,0 +1,20 @@
+{
+  "type": "evolvedmekanism:fluid_alloying",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enderio_evolution"
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/silver"
+      }
+    }
+  ],
+  "mainInput": { "amount": 90, "tag": "forge:molten_redstone" },
+  "extraInput": { "amount": 90, "tag": "forge:molten_silver" },
+  "secondExtraInput": { "amount": 90, "tag": "forge:molten_glowstone" },
+  "output": { "amount": 90, "tag": "forge:molten_energetic_silver" }
+}

@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "mainInput": {
+        "amount": 2,
+        "ingredient": {
+            "item": "minecraft:slime_ball"
+        }
+    },
+    "extraInput": {
+        "ingredient": {
+            "item": "enderio_evolution:crystalline_alloy_ingot"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "minecraft:pink_dye"
+        }
+    },
+    "output": {
+        "item": "enderio_evolution:crystalline_pink_slime_ingot"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "enderio_evolution"
+        }
+    ]
+}

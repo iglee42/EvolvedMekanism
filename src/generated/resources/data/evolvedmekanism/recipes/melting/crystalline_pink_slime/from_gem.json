@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gems/crystalline_pink_slime"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gems/crystalline_pink_slime"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_crystalline_pink_slime"
+  }
+}

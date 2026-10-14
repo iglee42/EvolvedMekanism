@@ -1,0 +1,12 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "ingredient": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_nether_star"
+  }
+}

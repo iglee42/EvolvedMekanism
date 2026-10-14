@@ -1,0 +1,12 @@
+{
+  "type": "evolvedmekanism:fluid_combining",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enderio"
+    }
+  ],
+  "mainInput": { "amount": 90, "tag": "forge:molten_iron" },
+  "extraInput": { "amount": 90, "tag": "forge:molten_ender" },
+  "output": { "amount": 90, "tag": "forge:molten_pulsating_alloy" }
+}

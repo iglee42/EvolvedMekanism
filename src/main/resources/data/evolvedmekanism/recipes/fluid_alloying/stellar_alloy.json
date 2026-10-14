@@ -1,0 +1,13 @@
+{
+  "type": "evolvedmekanism:fluid_alloying",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enderio_evolution"
+    }
+  ],
+  "mainInput": { "amount": 90, "tag": "forge:molten_nether_star" },
+  "extraInput": { "amount": 90, "tag": "forge:molten_melodic_alloy" },
+  "secondExtraInput": { "amount": 360, "tag": "forge:molten_clay" },
+  "output": { "amount": 180, "tag": "forge:molten_stellar_alloy" }
+}

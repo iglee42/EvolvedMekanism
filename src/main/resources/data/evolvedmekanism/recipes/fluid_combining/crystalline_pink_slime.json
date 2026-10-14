@@ -1,0 +1,16 @@
+{
+  "type": "evolvedmekanism:fluid_combining",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "enderio_evolution"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "industrialforegoing"
+    }
+  ],
+  "mainInput": { "amount": 90, "tag": "forge:molten_pink_slime" },
+  "extraInput": { "amount": 90, "tag": "forge:molten_crystalline_alloy" },
+  "output": { "amount": 90, "tag": "forge:molten_crystalline_pink_slime" }
+}
