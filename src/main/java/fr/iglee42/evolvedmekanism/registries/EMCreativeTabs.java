@@ -6,6 +6,7 @@ import fr.iglee42.emtools.registries.EMToolsItems;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
+import fr.iglee42.evolvedmekanism.utils.MoltenAvailability;
 import mekanism.common.registration.MekanismDeferredHolder;
 import mekanism.common.registration.impl.CreativeTabDeferredRegister;
 import mekanism.common.registries.MekanismCreativeTabs;
@@ -26,7 +27,8 @@ public class EMCreativeTabs {
                     if (ModsCompats.MEKANISMTOOLS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMToolsItems.ITEMS, output);
                     CreativeTabDeferredRegister.addToDisplay(EMBlocks.BLOCKS, output);
                     if (ModsCompats.MEKANISMGENERATORS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMGenBlocks.BLOCKS, output);
-                    CreativeTabDeferredRegister.addToDisplay(EMFluids.FLUIDS, output);
+                    CreativeTabDeferredRegister.addToDisplay(output, EMFluids.FLUIDS.getBucketEntries(),
+                            bucket -> !MoltenAvailability.bucketObtainable(bucket, displayParameters.holders()));
                     //addFilledTanks(output, true);
                 })
     );

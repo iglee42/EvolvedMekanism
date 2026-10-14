@@ -20,6 +20,7 @@ import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
 import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
+import fr.iglee42.evolvedmekanism.utils.MoltenAvailability;
 import mekanism.api.MekanismIMC;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.AlloyTier;
@@ -35,9 +36,16 @@ import mekanism.common.tier.*;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.common.registries.MekanismBlocks;
+import mekanism.common.util.StorageUtils;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
@@ -73,6 +81,7 @@ public class EvolvedMekanism {
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) EvolvedMekanismToolsConfig.registerConfigs(container);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
+        modEventBus.addListener(EventPriority.LOWEST, this::hideUnavailableMoltenTanks);
 
         EMBlocks.BLOCKS.register(modEventBus);
         EMBlocks.BLOCKS_NO_ITEMS.register(modEventBus);
@@ -157,6 +166,31 @@ public class EvolvedMekanism {
         ((InitializableEnum)(Object)EnergyCubeTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)ChemicalTankTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)FluidTankTier.BASIC).evolvedmekanism$initNewValues();
+    }
+
+    private void hideUnavailableMoltenTanks(BuildCreativeModeTabContentsEvent event) {
+        java.util.ArrayList<ItemStack> hidden = new java.util.ArrayList<>();
+        for (ItemStack stack : event.getParentEntries()) {
+            if (unavailableMoltenTank(stack, event)) {
+                hidden.add(stack);
+            }
+        }
+        for (ItemStack stack : event.getSearchEntries()) {
+            if (unavailableMoltenTank(stack, event)) {
+                hidden.add(stack);
+            }
+        }
+        for (ItemStack stack : hidden) {
+            event.remove(stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
+    }
+
+    private static boolean unavailableMoltenTank(ItemStack stack, BuildCreativeModeTabContentsEvent event) {
+        if (!stack.is(MekanismBlocks.CREATIVE_FLUID_TANK.getItemHolder())) {
+            return false;
+        }
+        FluidStack stored = StorageUtils.getFirstFluidFromAttachment(stack);
+        return !stored.isEmpty() && !MoltenAvailability.isObtainable(event.getParameters().holders(), stored.getFluid());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
