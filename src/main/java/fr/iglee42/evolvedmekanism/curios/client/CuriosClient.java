@@ -1,5 +1,6 @@
 package fr.iglee42.evolvedmekanism.curios.client;
 
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.curios.CuriosHelper;
@@ -14,7 +15,6 @@ import mekanism.api.text.EnumColor;
 import mekanism.client.render.MekanismCurioRenderer;
 import mekanism.client.render.armor.ISpecialGear;
 import mekanism.common.MekanismLang;
-import mekanism.common.config.MekanismConfig;
 import mekanism.common.lib.radiation.ClientRadiation;
 import mekanism.common.lib.radiation.RadiationUtil;
 import mekanism.common.registries.MekanismAttachmentTypes;
@@ -187,7 +187,7 @@ public final class CuriosClient {
     private static IHUDElement dosimeterElement(Player player) {
         double radiation = IRadiationManager.INSTANCE.isRadiationEnabled() ? player.getData(MekanismAttachmentTypes.RADIATION) : 0;
         Component text = UnitDisplayUtils.getDisplayShort(radiation, RadiationUnit.SV, 2);
-        if (MekanismConfig.common.enableDecayTimers.get() && radiation > IRadiationManager.INSTANCE.minRadiationMagnitude()) {
+        if (EMConfig.general.enableDecayTimers.get() && radiation > IRadiationManager.INSTANCE.minRadiationMagnitude()) {
             text = MekanismLang.GENERIC_WITH_PARENTHESIS.translate(text, TextUtils.getHoursMinutes(player.level(), RadiationUtil.getDecayTime(radiation, false)));
         }
         HUDColor color = radiation < IRadiationManager.INSTANCE.minRadiationMagnitude() ? HUDColor.REGULAR : radiation < 0.1 ? HUDColor.WARNING : HUDColor.DANGER;
@@ -197,7 +197,7 @@ public final class CuriosClient {
     private static IHUDElement geigerElement(Player player) {
         double magnitude = ClientRadiation.getClientEnvironmentalRadiation();
         Component text = UnitDisplayUtils.getDisplayShort(magnitude, RadiationUnit.SV, 2);
-        if (MekanismConfig.common.enableDecayTimers.get() && magnitude > IRadiationManager.INSTANCE.baselineRadiation()) {
+        if (EMConfig.general.enableDecayTimers.get() && magnitude > IRadiationManager.INSTANCE.baselineRadiation()) {
             text = MekanismLang.GENERIC_WITH_PARENTHESIS.translate(text, TextUtils.getHoursMinutes(player.level(),
                     RadiationUtil.getDecayTime(ClientRadiation.getClientMaxMagnitude(), true)));
         }

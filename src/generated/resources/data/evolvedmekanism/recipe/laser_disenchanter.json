@@ -16,12 +16,15 @@
     },
     "5": {
       "tag": "c:ingots/refined_redstone"
+    },
+    "6": {
+      "item": "mekanism:basic_chemical_tank"
     }
   },
   "pattern": [
     "121",
     "343",
-    "555"
+    "565"
   ],
   "result": {
     "count": 1,

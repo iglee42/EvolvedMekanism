@@ -7,6 +7,7 @@ import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalStorage;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
@@ -22,6 +23,7 @@ import mekanism.common.item.block.ItemBlockPersonalStorage;
 import mekanism.common.registration.impl.ContainerTypeDeferredRegister;
 import mekanism.common.registration.impl.ContainerTypeRegistryObject;
 import mekanism.common.registries.MekanismBlocks;
+import mekanism.common.tile.TileEntityModificationStation;
 import mekanism.common.tile.TileEntityPersonalStorage;
 import mekanism.common.tile.laser.TileEntityLaserTractorBeam;
 import mekanism.common.tile.machine.TileEntityEnrichmentChamber;
@@ -43,6 +45,7 @@ public class EMContainerTypes {
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntitySolidifier>> SOLIDIFIER = CONTAINER_TYPES.register(EMBlocks.SOLIDIFIER, TileEntitySolidifier.class);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityLunarNeutronActivator>> LUNAR_NEUTRON_ACTIVATOR = CONTAINER_TYPES.register(EMBlocks.LUNAR_NEUTRON_ACTIVATOR, TileEntityLunarNeutronActivator.class);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityLaserDisenchanter>> LASER_DISENCHANTER = CONTAINER_TYPES.register(EMBlocks.LASER_DISENCHANTER, TileEntityLaserDisenchanter.class);
+    public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityEnchantingStation>> ENCHANTING_STATION = CONTAINER_TYPES.custom(EMBlocks.ENCHANTING_STATION, TileEntityEnchantingStation.class).offset(0, 64).armorSideBar(8, 8, 8).build();
 
 
 }

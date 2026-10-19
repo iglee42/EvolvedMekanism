@@ -2,15 +2,26 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": { "tag": "mekanism:alloys/basic" },
-    "C": { "tag": "c:circuits/basic" },
-    "T": { "item": "mekanism:basic_fluid_tank" },
-    "X": { "item": "mekanism:combiner" }
+    "A": {
+      "tag": "mekanism:alloys/basic"
+    },
+    "C": {
+      "tag": "c:circuits/basic"
+    },
+    "T": {
+      "item": "mekanism:basic_fluid_tank"
+    },
+    "X": {
+      "item": "mekanism:combiner"
+    }
   },
   "pattern": [
     "ACA",
     "TXT",
     "ACA"
   ],
-  "result": { "count": 1, "id": "evolvedmekanism:fluid_combiner" }
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:fluid_combiner"
+  }
 }

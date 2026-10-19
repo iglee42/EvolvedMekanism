@@ -1,5 +1,6 @@
 package fr.iglee42.evolvedmekanism.tiles.machine;
 
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
@@ -29,7 +30,6 @@ import mekanism.common.capabilities.holder.heat.HeatCapacitorHelper;
 import mekanism.common.capabilities.holder.heat.IHeatCapacitorHolder;
 import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;
 import mekanism.common.capabilities.holder.slot.InventorySlotHelper;
-import mekanism.common.config.MekanismConfig;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerChemicalTankWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerIInventorySlotWrapper;
@@ -197,7 +197,7 @@ public class TileEntityMelter extends TileEntityProgressMachine<MeltingRecipe> i
         if (Math.abs(currentTemperature - biomeAmbientTemp) < 0.001) {
             heatCapacitor.handleHeat(biomeAmbientTemp * heatCapacity - heatCapacitor.getHeat());
         } else {
-            double incr = MekanismConfig.general.evaporationHeatDissipation.get() * Math.sqrt(Math.abs(currentTemperature - biomeAmbientTemp));
+            double incr = EMConfig.general.melterHeatDissipation.get() * Math.sqrt(Math.abs(currentTemperature - biomeAmbientTemp));
             if (currentTemperature > biomeAmbientTemp) {
                 incr = -incr;
             }

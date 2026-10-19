@@ -3,6 +3,7 @@ package fr.iglee42.evolvedmekanism.tiles;
 import java.util.List;
 
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import mekanism.api.IContentsListener;
 import mekanism.api.RelativeSide;
 import mekanism.api.chemical.BasicChemicalTank;
@@ -26,7 +27,6 @@ import mekanism.common.capabilities.holder.chemical.ChemicalTankHelper;
 import mekanism.common.capabilities.holder.chemical.IChemicalTankHolder;
 import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;
 import mekanism.common.capabilities.holder.slot.InventorySlotHelper;
-import mekanism.common.config.MekanismConfig;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerChemicalTankWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerIInventorySlotWrapper;
 import mekanism.common.integration.computer.annotation.ComputerMethod;
@@ -142,7 +142,7 @@ public class TileEntityLunarNeutronActivator extends TileEntityRecipeMachine<Che
         // on the scaling factor. Also note that we only use rainfall as a proxy if it CAN rain; some dimensions
         // (like the End) have rainfall set, but can't actually support rain.
         float humidityEff = needsRainCheck ? -0.3F * b.getModifiedClimateSettings().downfall() : 0.0F;
-        peakProductionRate = MekanismConfig.general.maxSolarNeutronActivatorRate.get() * (1.0F + tempEff + humidityEff);
+        peakProductionRate = EMConfig.general.lunarNeutronActivatorProduction.get() * (1.0F + tempEff + humidityEff);
         settingsChecked = true;
     }
 

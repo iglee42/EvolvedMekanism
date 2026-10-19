@@ -905,6 +905,9 @@ public class EMLangProvider extends LanguageProvider {
         add("block.evolvedmekanism.laser_disenchanter", "Disenchantment Laser");
         add("container.evolvedmekanism.laser_disenchanter", "Disenchantment Laser");
         add("description.evolvedmekanism.laser_disenchanter", "Retakes the enchantment from the item in the container it break. (Requires books)");
+        add("block.evolvedmekanism.enchanting_station", "Enchanting Station");
+        add("container.evolvedmekanism.enchanting_station", "Enchanting Station");
+        add("description.evolvedmekanism.enchanting_station", "Precisely applies enchantments to items, using cryonoctis and energy.");
     }
 
     private void addTags() {

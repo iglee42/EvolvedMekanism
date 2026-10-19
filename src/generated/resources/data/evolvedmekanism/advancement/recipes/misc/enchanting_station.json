@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "mekanism:ultimate_bin"
-            ]
+            "items": "#c:gems/noctis_rozuli"
           }
         ]
       },
@@ -15,21 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "evolvedmekanism:bin/overclocked"
+        "recipe": "evolvedmekanism:enchanting_station"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_item",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_item"
     ]
   ],
   "rewards": {
     "recipes": [
-      "evolvedmekanism:bin/overclocked"
+      "evolvedmekanism:enchanting_station"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

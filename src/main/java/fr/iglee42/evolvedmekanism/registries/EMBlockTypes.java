@@ -5,6 +5,7 @@ import com.google.common.collect.Table;
 import fr.iglee42.evolvedmekanism.EMFactoryBuilder;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.blocks.BlockTieredPersonalStorage;
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
@@ -15,6 +16,7 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
@@ -29,7 +31,6 @@ import mekanism.common.MekanismLang;
 import mekanism.common.block.attribute.*;
 import mekanism.common.block.attribute.Attributes.AttributeRedstone;
 import mekanism.common.block.attribute.Attributes.AttributeSecurity;
-import mekanism.common.config.MekanismConfig;
 import mekanism.common.content.blocktype.*;
 import mekanism.common.content.blocktype.BlockTypeTile.BlockTileBuilder;
 import mekanism.common.content.blocktype.Machine.MachineBuilder;
@@ -45,6 +46,11 @@ import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.transmitter.*;
 import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
+import mekanism.common.util.MekanismUtils;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.*;
@@ -59,7 +65,7 @@ public class EMBlockTypes {
             .createFactoryMachine(() -> EMTileEntityTypes.ALLOYER, EvolvedMekanismLang.DESCRIPTION_ALLOYER, EMFactoryType.ALLOYING)
             .withGui(() -> EMContainerTypes.ALLOYER)
             .withSound(MekanismSounds.COMBINER)
-            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withEnergyConfig(EMConfig.general.alloyerEnergyUsage, EMConfig.general.alloyerEnergyStorage)
             .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
             .withComputerSupport("alloyer")
             .withSideConfig(TransmissionType.ITEM, TransmissionType.ENERGY)
@@ -69,7 +75,7 @@ public class EMBlockTypes {
             .createFactoryMachine(() -> EMTileEntityTypes.FLUID_COMBINER, EvolvedMekanismLang.DESCRIPTION_FLUID_COMBINER, EMFactoryType.FLUID_COMBINING)
             .withGui(() -> EMContainerTypes.FLUID_COMBINER)
             .withSound(MekanismSounds.COMBINER)
-            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withEnergyConfig(EMConfig.general.fluidCombinerEnergyUsage, EMConfig.general.fluidCombinerEnergyStorage)
             .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
             .withComputerSupport("fluidCombiner")
             .withSideConfig(TransmissionType.ITEM, TransmissionType.FLUID, TransmissionType.ENERGY)
@@ -79,7 +85,7 @@ public class EMBlockTypes {
             .createFactoryMachine(() -> EMTileEntityTypes.FLUID_ALLOYER, EvolvedMekanismLang.DESCRIPTION_FLUID_ALLOYER, EMFactoryType.FLUID_ALLOYING)
             .withGui(() -> EMContainerTypes.FLUID_ALLOYER)
             .withSound(MekanismSounds.COMBINER)
-            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withEnergyConfig(EMConfig.general.fluidAlloyerEnergyUsage, EMConfig.general.fluidAlloyerEnergyStorage)
             .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
             .withComputerSupport("fluidAlloyer")
             .withSideConfig(TransmissionType.ITEM, TransmissionType.FLUID, TransmissionType.ENERGY)
@@ -89,7 +95,7 @@ public class EMBlockTypes {
             .createMachine(() -> EMTileEntityTypes.CHEMIXER, MekanismLang.DESCRIPTION_PRESSURIZED_REACTION_CHAMBER)
             .withGui(() -> EMContainerTypes.CHEMIXER)
             .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
-            .withEnergyConfig(MekanismConfig.usage.combiner, MekanismConfig.storage.combiner)
+            .withEnergyConfig(EMConfig.general.chemixerEnergyUsage, EMConfig.general.chemixerEnergyStorage)
             .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.RADIOACTIVE_UPGRADE)
             .withComputerSupport("chemixer")
             .withSideConfig(TransmissionType.ITEM,TransmissionType.ENERGY,TransmissionType.CHEMICAL)
@@ -99,7 +105,7 @@ public class EMBlockTypes {
             .createMachine(() -> EMTileEntityTypes.MELTER, EvolvedMekanismLang.DESCRIPTION_MELTER)
             .withGui(() -> EMContainerTypes.MELTER)
             .withSound(MekanismSounds.CHEMICAL_OXIDIZER)
-            .withEnergyConfig(MekanismConfig.usage.chemicalOxidizer, MekanismConfig.storage.chemicalOxidizer)
+            .withEnergyConfig(EMConfig.general.melterEnergyUsage, EMConfig.general.melterEnergyStorage)
             .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
             .withComputerSupport("melter")
             .withSideConfig(TransmissionType.ITEM,TransmissionType.FLUID,TransmissionType.HEAT)
@@ -109,7 +115,7 @@ public class EMBlockTypes {
             .createMachine(() -> EMTileEntityTypes.SOLIDIFIER, EvolvedMekanismLang.DESCRIPTION_SOLIDIFIER)
             .withGui(() -> EMContainerTypes.SOLIDIFIER)
             .withSound(MekanismSounds.PRESSURIZED_REACTION_CHAMBER)
-            .withEnergyConfig(MekanismConfig.usage.pressurizedReactionBase, MekanismConfig.storage.pressurizedReactionBase)
+            .withEnergyConfig(EMConfig.general.solidifierEnergyUsage, EMConfig.general.solidifierEnergyStorage)
             .withSupportedUpgrades(Upgrade.SPEED, Upgrade.ENERGY, Upgrade.MUFFLING, Upgrade.ANCHOR)
             .withComputerSupport("solidifier")
             .withSideConfig(TransmissionType.FLUID,TransmissionType.ITEM,TransmissionType.ENERGY)
@@ -153,10 +159,35 @@ public class EMBlockTypes {
     public static final BlockTypeTile<TileEntityLaserDisenchanter> LASER_DISENCHANTER = BlockTileBuilder
             .createBlock(() -> EMTileEntityTypes.LASER_DISENCHANTER, EvolvedMekanismLang.DESCRIPTION_LASER_DISENCHANTER)
             .withGui(() -> EMContainerTypes.LASER_DISENCHANTER)
-            .withEnergyConfig(MekanismConfig.storage.laserTractorBeam)
+            .withEnergyConfig(EMConfig.general.laserDisenchanterEnergyStorage)
             .with(new AttributeStateFacing(BlockStateProperties.FACING, AttributeStateFacing.FacePlacementType.SELECTED_FACE), new Attributes.AttributeRedstoneEmitter<>((tile, side) -> tile.getRedstoneLevel()), Attributes.REDSTONE, Attributes.COMPARATOR, Attributes.SECURITY, Attributes.INVENTORY)
             .withCustomShape(BlockShapes.LASER)
             .withComputerSupport("laserDisenchanter")
+            .build();
+
+    // Enchanting Station
+    public static final BlockTypeTile<TileEntityEnchantingStation> ENCHANTING_STATION = BlockTileBuilder
+            .createBlock(() -> EMTileEntityTypes.ENCHANTING_STATION, EvolvedMekanismLang.DESCRIPTION_ENCHANTING_STATION)
+            .withGui(() -> EMContainerTypes.ENCHANTING_STATION)
+            .withEnergyConfig(EMConfig.general.enchantingStationEnergyUsage, EMConfig.general.enchantingStationEnergyStorage)
+            .with(Attributes.INVENTORY, new AttributeStateFacing(false), Attributes.REDSTONE, Attributes.SECURITY)
+            .withCustomShape(BlockShapes.MODIFICATION_STATION)
+            .with(AttributeCustomSelectionBox.JSON)
+            .withBounding(new AttributeHasBounding.HandleBoundingBlock() {
+                @Override
+                public <DATA> boolean handle(Level level, BlockPos pos, BlockState state, DATA data, AttributeHasBounding.TriBooleanFunction<Level, BlockPos, DATA> consumer) {
+                    BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
+                    if (!consumer.accept(level, mutable.setWithOffset(pos, Direction.UP), data)) {
+                        return false;
+                    }
+                    mutable.setWithOffset(pos, MekanismUtils.getRight(Attribute.getFacing(state)));
+                    if (!consumer.accept(level, mutable, data)) {
+                        return false;
+                    }
+                    return consumer.accept(level, mutable.move(Direction.UP), data);
+                }
+            })
+            .withComputerSupport("enchantingStation")
             .build();
 
     // Induction Cells

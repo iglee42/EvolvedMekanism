@@ -98,6 +98,7 @@ public class EMBlockTags extends BlockTagsProvider {
             tag(EMToolsTags.Blocks.INCORRECT_FOR_REFINED_REDSTONE_TOOL).addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL);
         }
         tag(EMDatagenTags.block(EvolvedMekanism.MODID, "needs_noctis_rozuli_tool"));
+        relocation.add(EMBlocks.ENCHANTING_STATION.get());
     }
 
     private void classifyOre(Block block, String path) {

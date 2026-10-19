@@ -187,6 +187,8 @@ public class EMBlockStateProvider extends BlockStateProvider {
             activeOnly(block, modLoc("block/supercharging_element"), modLoc("block/supercharging_element_active"), true);
         } else if (path.equals("laser_disenchanter")) {
             laserDisenchanter(block);
+        } else if (path.equals("enchanting_station")){
+            facingHorizontal(block, modLoc("block/enchanting_station"), true);
         } else if (MACHINES.contains(path)) {
             facingActive(block, "block/" + path, "block/" + path + "_active");
             simpleBlockItem(block, models().getExistingFile(modLoc("block/" + path)));

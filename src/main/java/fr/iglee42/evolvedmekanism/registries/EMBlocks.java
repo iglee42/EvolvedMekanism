@@ -17,6 +17,7 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
@@ -27,6 +28,7 @@ import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import fr.iglee42.evolvedmekanism.utils.EMAttachedSideConfig;
 import fr.iglee42.evolvedmekanism.utils.EMOreBlockType;
 import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
+import mekanism.api.gear.IModuleHelper;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.attachments.component.AttachedEjector;
@@ -52,6 +54,7 @@ import mekanism.common.block.prefab.BlockTile;
 import mekanism.common.block.prefab.BlockTile.BlockTileModel;
 import mekanism.common.block.transmitter.*;
 import mekanism.common.content.blocktype.*;
+import mekanism.common.content.gear.IModuleItem;
 import mekanism.common.item.block.*;
 import mekanism.common.item.block.machine.ItemBlockFactory;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
@@ -67,10 +70,7 @@ import mekanism.common.registries.MekanismDataComponents;
 import mekanism.common.resource.BlockResourceInfo;
 import mekanism.common.resource.ore.OreType;
 import mekanism.common.tier.*;
-import mekanism.common.tile.TileEntityBin;
-import mekanism.common.tile.TileEntityChemicalTank;
-import mekanism.common.tile.TileEntityEnergyCube;
-import mekanism.common.tile.TileEntityFluidTank;
+import mekanism.common.tile.*;
 import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.laser.TileEntityLaserTractorBeam;
 import mekanism.common.tile.machine.TileEntityMetallurgicInfuser;
@@ -281,6 +281,20 @@ public class EMBlocks {
                     ChemicalTanksBuilder.builder()
                             .addBasic(TileEntityLaserDisenchanter.MAX_GAS,stack->stack.is(EMChemicals.CRYONOCTIS))
                             .build()));
+
+    public static final BlockRegistryObject<BlockTileModel<TileEntityEnchantingStation, BlockTypeTile<TileEntityEnchantingStation>>, ItemBlockTooltip<BlockTileModel<TileEntityEnchantingStation, BlockTypeTile<TileEntityEnchantingStation>>>> ENCHANTING_STATION =
+            BLOCKS.registerDetails("enchanting_station", () -> new BlockTileModel<>(EMBlockTypes.ENCHANTING_STATION, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())))
+                    .forItemHolder(holder ->
+                            holder.addAttachmentOnlyContainers(ContainerType.ITEM,
+                                    () -> ItemSlotsBuilder.builder()
+                            .addInput(stack -> stack.getItem().isEnchantable(stack))
+                                            .addChemicalFillSlot(0)
+                                            .addEnergy()
+                            .build()
+                    ).addAttachmentOnlyContainers(ContainerType.CHEMICAL,
+                                    ()-> ChemicalTanksBuilder.builder()
+                                            .addBasic(TileEntityEnchantingStation.MAX_GAS, stack -> stack.is(EMChemicals.CRYONOCTIS))
+                                            .build()));
 
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> PLASLITHERITE_BLOCK = registerResourceBlock(EMBlockResourceInfo.PLASLITHERITE);

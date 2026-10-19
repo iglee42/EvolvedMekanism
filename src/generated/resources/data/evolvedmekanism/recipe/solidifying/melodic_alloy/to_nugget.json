@@ -9,7 +9,7 @@
     }
   ],
   "type": "evolvedmekanism:solidifying",
-  "duration": 7,
+  "duration": 6,
   "extra_input": {
     "amount": 10,
     "fluid": "mekanism:oxygen"

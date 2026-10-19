@@ -9,7 +9,6 @@ import java.util.function.BooleanSupplier;
 import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.registries.EMPlacementModifiers;
 import mekanism.api.SerializationConstants;
-import mekanism.common.config.MekanismConfig;
 import mekanism.common.registries.MekanismPlacementModifiers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -48,7 +47,7 @@ public class EMDisableableFeaturePlacement extends PlacementFilter {
     protected boolean shouldPlace(@NotNull PlacementContext context, @NotNull RandomSource random, @NotNull BlockPos pos) {
         if (enabledSupplier.getAsBoolean()) {
             //If we are enabled, and we are either not a retrogen feature or retrogen is enabled, generate
-            return !retroGen || MekanismConfig.world.enableRegeneration.get();
+            return !retroGen || EMConfig.world.enableRegeneration.get();
         }
         return false;
     }

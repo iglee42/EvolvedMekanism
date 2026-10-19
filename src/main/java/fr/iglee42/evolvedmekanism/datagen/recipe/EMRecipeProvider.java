@@ -128,13 +128,25 @@ public class EMRecipeProvider extends RecipeProvider {
 
         //Enchantment
         EMCrafting.shaped(EMCrafting.mekData(output), "laser_disenchanter", EMBlocks.LASER_DISENCHANTER,1,
-                new String[]{"121","343","555"},
+                new String[]{"121","343","565"},
                 EMCrafting.keys(
                         '1', EMTags.Items.GEMS_NOCTIS_ROZULI,
                         '2',MekanismBlocks.LASER_TRACTOR_BEAM,
                         '3',EMTags.Items.CIRCUITS_OVERCLOCKED,
                         '4', MekanismBlocks.LASER,
-                        '5', EMTags.Items.INGOTS_REFINED_REDSTONE
+                        '5', EMTags.Items.INGOTS_REFINED_REDSTONE,
+                        '6', MekanismBlocks.BASIC_CHEMICAL_TANK
+                ), has(EMTags.Items.GEMS_NOCTIS_ROZULI));
+
+        EMCrafting.shaped(EMCrafting.mekData(output), "enchanting_station", EMBlocks.ENCHANTING_STATION,1,
+                new String[]{"121","343","656"},
+                EMCrafting.keys(
+                        '1', EMTags.Items.GEMS_NOCTIS_ROZULI,
+                        '2',Items.ENCHANTING_TABLE,
+                        '3',EMTags.Items.CIRCUITS_OVERCLOCKED,
+                        '4', MekanismBlocks.MODIFICATION_STATION,
+                        '5', MekanismBlocks.BASIC_CHEMICAL_TANK,
+                        '6', EMTags.Items.INGOTS_REFINED_REDSTONE
                 ), has(EMTags.Items.GEMS_NOCTIS_ROZULI));
     }
 
