@@ -1,6 +1,4 @@
 {
-	"format_version": "1.9.0",
-	"credit": "Made with Blockbench",
 	"parent": "block/cube_all",
 	"render_type": "minecraft:cutout",
 	"textures": {
@@ -13,8 +11,9 @@
 	"elements": [
 		{
 			"name": "desk_top",
-			"from": [-16, 13, 0],
-			"to": [16, 16, 16],
+			"from": [-15.999, 13, 0],
+			"to": [16.001, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.001, 0, 0]},
 			"faces": {
 				"north": {"uv": [0, 4.25, 8, 5], "texture": "#2"},
 				"east": {"uv": [12, 4.25, 16, 5], "texture": "#2"},
@@ -316,9 +315,9 @@
 		},
 		{
 			"name": "modifier_probe_left",
-			"from": [-16.001, 12, 4],
-			"to": [-16.001, 16, 12],
-			"rotation": {"angle": 0, "axis": "y", "origin": [-16.002, 14, 8]},
+			"from": [-16, 12, 4],
+			"to": [-16, 16, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-15.999, 14, 8]},
 			"faces": {
 				"east": {"uv": [2.75, 10.75, 4.75, 12], "texture": "#2"},
 				"west": {"uv": [2.75, 10.75, 4.75, 12], "texture": "#2"}
@@ -413,6 +412,28 @@
 			"faces": {
 				"south": {"uv": [8, 8, 16, 16], "texture": "#4", "cullface": "south"}
 			}
+		},
+		{
+			"name": "gas_port",
+			"from": [15.005, 4, 4],
+			"to": [16.005, 12, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15.755, 8, 8]},
+			"faces": {
+				"north": {"uv": [7, 0, 8, 8], "texture": "#0"},
+				"east": {"uv": [0, 0, 8, 8], "texture": "#0", "cullface": "south"},
+				"south": {"uv": [0, 0, 1, 8], "texture": "#0"},
+				"up": {"uv": [0, 0, 8, 1], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 7, 8, 8], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"name": "gas_port_led",
+			"from": [16.005, 4, 4],
+			"to": [16.005, 12, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15.755, 8, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 8, 8], "texture": "#4", "cullface": "south"}
+			}
 		}
 	],
 	"display": {
@@ -449,6 +470,8 @@
 			"children": [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
 		},
 		33,
-		34
+		34,
+		35,
+		36
 	]
 }
