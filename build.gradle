@@ -141,7 +141,7 @@ dependencies {
     implementation "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:generators"// Mekanism: Generators
     implementation "mekanism:Mekanism:${minecraft_version}-${mekanism_version}:tools"// Mekanism: Tools
 
-    runtimeOnly "curse.maven:projecte-226410:6611984"
+    //runtimeOnly "curse.maven:projecte-226410:6611984"
 
     runtimeOnly "curse.maven:ctm-267602:5587515"
 
