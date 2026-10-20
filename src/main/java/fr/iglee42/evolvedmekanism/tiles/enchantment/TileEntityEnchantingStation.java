@@ -108,7 +108,7 @@ public class TileEntityEnchantingStation extends TileEntityMekanism implements I
     @Override
     public @Nullable IChemicalTankHolder getInitialChemicalTanks(IContentsListener listener) {
         ChemicalTankHelper builder = ChemicalTankHelper.forSide(facingSupplier);
-        builder.addTank(chemicalTank = BasicChemicalTank.createModern(MAX_GAS, stack->stack.is(EMChemicals.CRYONOCTIS), listener));
+        builder.addTank(chemicalTank = BasicChemicalTank.createModern(MAX_GAS, stack->stack.is(EMChemicals.CRYONOCTIS), listener), RelativeSide.LEFT);
         return builder.build();
     }
 
