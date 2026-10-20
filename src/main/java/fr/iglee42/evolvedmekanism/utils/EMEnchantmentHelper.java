@@ -1,9 +1,9 @@
 package fr.iglee42.evolvedmekanism.utils;
 
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
@@ -18,6 +18,10 @@ import java.util.stream.Collectors;
 public final class EMEnchantmentHelper {
 
     private EMEnchantmentHelper() {
+    }
+
+    public static boolean isCurse(Holder<Enchantment> enchantment) {
+        return enchantment.is(EnchantmentTags.CURSE);
     }
 
     public static Map<Holder<Enchantment>, Integer> getEnchantmentsForItem(RegistryAccess access, ItemStack stack) {

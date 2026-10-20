@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.tiles.enchantment;
 
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMChemicals;
+import fr.iglee42.evolvedmekanism.utils.EMEnchantmentHelper;
 import mekanism.api.Action;
 import mekanism.api.AutomationType;
 import mekanism.api.IContentsListener;
@@ -40,6 +41,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -126,6 +129,7 @@ public class TileEntityEnchantingStation extends TileEntityMekanism implements I
                     if (operatingTicks >= ticksRequired) {
                         chemicalTank.extract(pendingChemical, Action.EXECUTE, AutomationType.INTERNAL);
                         writeEnchantments(pendingResult);
+                        level.playSound(null, getBlockPos(), SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1.0F, level.random.nextFloat() * 0.1F + 0.9F);
                         cancelOperation();
                     }
                 } else {
@@ -209,6 +213,9 @@ public class TileEntityEnchantingStation extends TileEntityMekanism implements I
             if (newLevel < 0 || newLevel > enchantment.value().getMaxLevel()) {
                 return;
             }
+            if (EMEnchantmentHelper.isCurse(enchantment) && newLevel < oldLevel) {
+                return;
+            }
             if (newLevel > oldLevel) {
                 if (!stack.supportsEnchantment(enchantment)) {
                     return;
@@ -231,7 +238,6 @@ public class TileEntityEnchantingStation extends TileEntityMekanism implements I
             }
         }
         if (added == 0) {
-            //Only removals/no change, free and instant
             if (!result.equals(current.entrySet().stream().collect(java.util.stream.Collectors.toMap(Map.Entry::getKey, e -> e.getIntValue())))) {
                 writeEnchantments(result);
             }

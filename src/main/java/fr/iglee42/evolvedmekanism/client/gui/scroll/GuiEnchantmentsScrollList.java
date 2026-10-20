@@ -120,19 +120,27 @@ public class GuiEnchantmentsScrollList extends GuiInstallableScrollList<Pair<Hol
         }
         int level = pendingLevels.getOrDefault(selectedEnchantment, 0);
         int newLevel = level + delta;
-        if (newLevel < 0 || newLevel > selectedEnchantment.value().getMaxLevel()) {
+        if (newLevel < minimumLevel(selectedEnchantment) || newLevel > selectedEnchantment.value().getMaxLevel()) {
             return false;
         }
         return delta <= 0 || level > 0 || !isBlocked(selectedEnchantment);
     }
 
-    /** Moves one level in the given direction, or straight to the max/min level when ull is set. */
+    /** Curses already on the item cannot be lowered. A curse added in this edit can still be cancelled. */
+    private int minimumLevel(Holder<Enchantment> enchantment) {
+        if (EMEnchantmentHelper.isCurse(enchantment)) {
+            return originalLevels.getOrDefault(enchantment, 0);
+        }
+        return 0;
+    }
+
+    /** Moves one level in the given direction, or straight to the max or minimum level when full is set. */
     public void stepSelected(int direction, boolean full) {
         if (selectedEnchantment == null) {
             return;
         }
         int level = pendingLevels.getOrDefault(selectedEnchantment, 0);
-        int delta = full ? (direction > 0 ? selectedEnchantment.value().getMaxLevel() - level : -level) : direction;
+        int delta = full ? (direction > 0 ? selectedEnchantment.value().getMaxLevel() - level : minimumLevel(selectedEnchantment) - level) : direction;
         if (delta != 0) {
             changeSelected(delta);
         }
@@ -160,7 +168,8 @@ public class GuiEnchantmentsScrollList extends GuiInstallableScrollList<Pair<Hol
     protected void drawName(GuiGraphics guiGraphics, Pair<Holder<Enchantment>, Integer> enchantment, int y) {
         boolean enabled = enchantment.getSecond() > 0;
         boolean blocked = isBlocked(enchantment.getFirst());
-        int color = blocked ? 0x5E1D1D : (enabled ? titleTextColor() : 0x7F7F7F);
+        boolean curse = EMEnchantmentHelper.isCurse(enchantment.getFirst());
+        int color = curse ? (enabled ? 0xFF5555 : 0xAA4444) : (blocked ? 0x5E1D1D : (enabled ? titleTextColor() : 0x7F7F7F));
         Component name = enabled ? Enchantment.getFullname(enchantment.getFirst(), enchantment.getSecond()).copy().withStyle(ChatFormatting.RESET)
                 : enchantment.getFirst().value().description().copy().withStyle(ChatFormatting.RESET);
         drawNameText(guiGraphics, y, name, color, 0.7F);
