@@ -1,4 +1,5 @@
 {
+	"format_version": "1.9.0",
 	"parent": "block/cube_all",
 	"render_type": "minecraft:cutout",
 	"textures": {
@@ -12,7 +13,7 @@
 		{
 			"name": "desk_top",
 			"from": [-15.999, 13, 0],
-			"to": [16.001, 16, 16],
+			"to": [16, 16, 16],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0.001, 0, 0]},
 			"faces": {
 				"north": {"uv": [0, 4.25, 8, 5], "texture": "#2"},
