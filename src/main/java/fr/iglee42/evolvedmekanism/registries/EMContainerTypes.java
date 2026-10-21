@@ -8,6 +8,7 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantmentSorter;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
@@ -46,6 +47,7 @@ public class EMContainerTypes {
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityLunarNeutronActivator>> LUNAR_NEUTRON_ACTIVATOR = CONTAINER_TYPES.register(EMBlocks.LUNAR_NEUTRON_ACTIVATOR, TileEntityLunarNeutronActivator.class);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityLaserDisenchanter>> LASER_DISENCHANTER = CONTAINER_TYPES.register(EMBlocks.LASER_DISENCHANTER, TileEntityLaserDisenchanter.class);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityEnchantingStation>> ENCHANTING_STATION = CONTAINER_TYPES.custom(EMBlocks.ENCHANTING_STATION, TileEntityEnchantingStation.class).offset(0, 64).armorSideBar(8, 8, 8).build();
+    public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityEnchantmentSorter>> SORTIFICHANTOR = CONTAINER_TYPES.register(EMBlocks.SORTIFICHANTOR, TileEntityEnchantmentSorter.class);
 
 
 }

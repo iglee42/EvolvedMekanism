@@ -161,6 +161,7 @@ public class ClientRegistration {
             ClientRegistrationUtil.registerScreen(event, EMContainerTypes.LUNAR_NEUTRON_ACTIVATOR, GuiLunarNeutronActivator::new);
             ClientRegistrationUtil.registerScreen(event, EMContainerTypes.LASER_DISENCHANTER, GuiLaserDisenchanter::new);
             ClientRegistrationUtil.registerScreen(event, EMContainerTypes.ENCHANTING_STATION, GuiEnchantingStation::new);
+            ClientRegistrationUtil.registerScreen(event, EMContainerTypes.SORTIFICHANTOR, GuiEnchantmentSorter::new);
 
     }
 

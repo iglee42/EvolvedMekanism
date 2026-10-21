@@ -73,7 +73,7 @@ public class GuiEnchantingStation extends GuiMekanismTile<TileEntityEnchantingSt
             ((GuiEnchantingStation) element.gui()).enchantmentList.stepSelected(-1, hasShiftDown());
             return true;
         }));
-        addRenderableWidget(new GuiChemicalBar(this, GuiChemicalBar.getProvider(tile.getChemicalTank(0, Direction.UP), tile.getChemicalTanks(null)), 35,117 ,16,16, false));
+        addRenderableWidget(new GuiChemicalBar(this, GuiChemicalBar.getProvider(tile.getChemicalTank(), tile.getChemicalTanks(null)), 35,117 ,16,16, false));
     }
 
 

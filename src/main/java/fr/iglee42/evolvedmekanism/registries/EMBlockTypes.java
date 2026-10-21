@@ -17,6 +17,7 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantmentSorter;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
@@ -42,6 +43,7 @@ import mekanism.common.registries.MekanismSounds;
 import mekanism.common.registries.MekanismTileEntityTypes;
 import mekanism.common.tier.*;
 import mekanism.common.tile.*;
+import mekanism.common.tile.machine.TileEntityOredictionificator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.transmitter.*;
@@ -188,6 +190,15 @@ public class EMBlockTypes {
                 }
             })
             .withComputerSupport("enchantingStation")
+            .build();
+
+    // Sortifichantor
+    public static final BlockTypeTile<TileEntityEnchantmentSorter> SORTIFICHANTOR = BlockTileBuilder
+            .createBlock(() -> EMTileEntityTypes.SORTIFICHANTOR, EvolvedMekanismLang.DESCRIPTION_SORTIFICHANTOR)
+            .withGui(() -> EMContainerTypes.SORTIFICHANTOR)
+            .with(Attributes.SECURITY, Attributes.INVENTORY, Attributes.ACTIVE, new AttributeStateFacing(), Attributes.REDSTONE)
+            .withSideConfig(TransmissionType.ITEM)
+            .withComputerSupport("sortifichantor")
             .build();
 
     // Induction Cells

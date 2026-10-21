@@ -9,6 +9,7 @@ import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiles.*;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantmentSorter;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.factory.TileEntityAlloyingFactory;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
@@ -40,6 +41,7 @@ import mekanism.common.tile.base.CapabilityTileEntity;
 import mekanism.common.tile.base.TileEntityMekanism;
 import mekanism.common.tile.factory.*;
 import mekanism.common.tile.laser.TileEntityLaserTractorBeam;
+import mekanism.common.tile.machine.TileEntityOredictionificator;
 import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
@@ -265,6 +267,11 @@ public class EMTileEntityTypes {
             .build();
 
     public static final TileEntityTypeRegistryObject<TileEntityEnchantingStation> ENCHANTING_STATION = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.ENCHANTING_STATION, TileEntityEnchantingStation::new)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.CONFIG_CARD)
+            .build();
+
+    public static final TileEntityTypeRegistryObject<TileEntityEnchantmentSorter> SORTIFICHANTOR = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.SORTIFICHANTOR, TileEntityEnchantmentSorter::new)
             .serverTicker(TileEntityMekanism::tickServer)
             .withSimple(Capabilities.CONFIG_CARD)
             .build();

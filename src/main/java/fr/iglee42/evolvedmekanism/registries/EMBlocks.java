@@ -18,6 +18,7 @@ import fr.iglee42.evolvedmekanism.tiles.TileEntitySuperchargingElement;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalBarrel;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantmentSorter;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
@@ -31,6 +32,7 @@ import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
 import mekanism.api.gear.IModuleHelper;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.ITier;
+import mekanism.common.attachments.FilterAware;
 import mekanism.common.attachments.component.AttachedEjector;
 import mekanism.common.attachments.component.AttachedSideConfig;
 import mekanism.common.attachments.containers.ContainerType;
@@ -60,6 +62,7 @@ import mekanism.common.item.block.machine.ItemBlockFactory;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
 import mekanism.common.item.block.machine.ItemBlockLaserTractorBeam;
 import mekanism.common.item.block.transmitter.*;
+import mekanism.common.lib.transmitter.TransmissionType;
 import mekanism.common.recipe.MekanismRecipeType;
 import mekanism.common.recipe.lookup.cache.InputRecipeCache;
 import mekanism.common.registration.impl.BlockDeferredRegister;
@@ -74,6 +77,7 @@ import mekanism.common.tile.*;
 import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.laser.TileEntityLaserTractorBeam;
 import mekanism.common.tile.machine.TileEntityMetallurgicInfuser;
+import mekanism.common.tile.machine.TileEntityOredictionificator;
 import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
@@ -295,6 +299,19 @@ public class EMBlocks {
                                     ()-> ChemicalTanksBuilder.builder()
                                             .addBasic(TileEntityEnchantingStation.MAX_GAS, stack -> stack.is(EMChemicals.CRYONOCTIS))
                                             .build()));
+
+    public static final BlockRegistryObject<BlockTile<TileEntityEnchantmentSorter, BlockTypeTile<TileEntityEnchantmentSorter>>, ItemBlockTooltip<BlockTile<TileEntityEnchantmentSorter, BlockTypeTile<TileEntityEnchantmentSorter>>>> SORTIFICHANTOR =
+            BLOCKS.register("sortifichantor", () -> new BlockTile<>(EMBlockTypes.SORTIFICHANTOR, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())),
+                    (block, properties) -> new ItemBlockTooltip<>(block, true, properties
+                            .component(MekanismDataComponents.FILTER_AWARE, FilterAware.EMPTY)
+                            .component(MekanismDataComponents.EJECTOR, AttachedEjector.DEFAULT)
+                            .component(MekanismDataComponents.SIDE_CONFIG, new AttachedSideConfig(Map.of(TransmissionType.ITEM, EMAttachedSideConfig.SORTER_MACHINE)))
+                    )
+            ).forItemHolder(holder -> holder.addAttachmentOnlyContainers(ContainerType.ITEM, () -> ItemSlotsBuilder.builder()
+                    .addInput(1)
+                    .addOutput(2)
+                    .build()
+            ));
 
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> PLASLITHERITE_BLOCK = registerResourceBlock(EMBlockResourceInfo.PLASLITHERITE);

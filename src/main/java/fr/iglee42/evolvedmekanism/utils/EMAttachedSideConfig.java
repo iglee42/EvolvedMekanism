@@ -41,6 +41,15 @@ public class EMAttachedSideConfig {
         return new AttachedSideConfig(configInfo);
     });
 
+    public static final AttachedSideConfig.LightConfigInfo SORTER_MACHINE = Util.make(() -> {
+        Map<RelativeSide, DataType> sideConfig = new EnumMap<>(RelativeSide.class);
+        sideConfig.put(RelativeSide.FRONT, DataType.INPUT);
+        sideConfig.put(RelativeSide.LEFT, DataType.OUTPUT_1);
+        sideConfig.put(RelativeSide.RIGHT, DataType.OUTPUT_2);
+        return new AttachedSideConfig.LightConfigInfo(sideConfig, false);
+    });
+
+
     private static final AttachedSideConfig.LightConfigInfo FLUID_COMBINER_SIDES = fluidInputSides(Map.of(
             RelativeSide.TOP, DataType.INPUT_2,
             RelativeSide.RIGHT, DataType.OUTPUT

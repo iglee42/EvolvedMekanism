@@ -908,6 +908,9 @@ public class EMLangProvider extends LanguageProvider {
         add("block.evolvedmekanism.enchanting_station", "Enchanting Station");
         add("container.evolvedmekanism.enchanting_station", "Enchanting Station");
         add("description.evolvedmekanism.enchanting_station", "Precisely applies enchantments to items, using cryonoctis and energy.");
+        add("block.evolvedmekanism.sortifichantor", "Sortifichantor");
+        add("container.evolvedmekanism.sortifichantor", "Sortifichantor");
+        add("description.evolvedmekanism.sortifichantor", "Sorts enchanted and unenchanted items into their respective containers.");
     }
 
     private void addTags() {

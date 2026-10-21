@@ -279,4 +279,8 @@ public class TileEntityEnchantingStation extends TileEntityMekanism implements I
         container.track(SyncableInt.create(() -> ticksRequired, value -> ticksRequired = value));
         container.track(SyncableBoolean.create(this::usedEnergy, value -> usedEnergy = value));
     }
+
+    public IChemicalTank getChemicalTank() {
+        return chemicalTank;
+    }
 }
