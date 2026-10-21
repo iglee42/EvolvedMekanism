@@ -148,6 +148,15 @@ public class EMRecipeProvider extends RecipeProvider {
                         '5', MekanismBlocks.BASIC_CHEMICAL_TANK,
                         '6', EMTags.Items.INGOTS_REFINED_REDSTONE
                 ), has(EMTags.Items.GEMS_NOCTIS_ROZULI));
+        EMCrafting.shaped(EMCrafting.mekData(output), "sortifichantor", EMBlocks.SORTIFICHANTOR,1,
+                new String[]{"121","343","151"},
+                EMCrafting.keys(
+                        '1', MekanismTags.Items.INGOTS_STEEL,
+                        '2',Tags.Items.GLASS_PANES,
+                        '3',EMTags.Items.CIRCUITS_OVERCLOCKED,
+                        '4', EMTags.Items.GEMS_NOCTIS_ROZULI,
+                        '5', Tags.Items.CHESTS_WOODEN
+                ), has(EMTags.Items.GEMS_NOCTIS_ROZULI));
     }
 
     private void addModule(RecipeOutput output, String path, ItemLike result, Object center, String... pattern) {
