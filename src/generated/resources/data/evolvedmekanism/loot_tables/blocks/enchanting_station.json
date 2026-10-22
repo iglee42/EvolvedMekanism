@@ -1,4 +1,4 @@
-﻿{
+{
   "type": "minecraft:block",
   "pools": [
     {
@@ -44,11 +44,6 @@
                   "op": "replace",
                   "source": "EnergyContainers",
                   "target": "mekData.EnergyContainers"
-                },
-                {
-                  "op": "replace",
-                  "source": "GasTanks",
-                  "target": "mekData.GasTanks"
                 },
                 {
                   "op": "replace",

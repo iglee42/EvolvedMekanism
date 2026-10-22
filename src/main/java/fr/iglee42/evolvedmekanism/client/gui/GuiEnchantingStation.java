@@ -49,7 +49,7 @@ public class GuiEnchantingStation extends GuiMekanismTile<TileEntityEnchantingSt
               });
         addRenderableWidget(new GuiEnergyTab(this, tile.getEnergyContainer(), tile::usedEnergy));
         addRenderableWidget(new GuiProgress(tile::getScaledProgress, ProgressType.LARGE_RIGHT, this, 65, 123));
-        enchantmentList = addRenderableWidget(new GuiEnchantmentsScrollList(this, 28, 20, 74, () -> tile.containerSlot.getStack().copy()));
+        enchantmentList = addRenderableWidget(new GuiEnchantmentsScrollList(this, 34, 20, 108, 74, () -> tile.containerSlot.getStack().copy()));
         setButton = addRenderableWidget(new TranslationButton(this, 28, 96, 86, 17, MekanismLang.BUTTON_SET, () -> {
             if (enchantmentList.hasChanges()) {
                 EvolvedMekanism.packetHandler().sendToServer(new PacketApplyEnchantments(tile.getBlockPos(), new HashMap<>(enchantmentList.getPendingLevels())));
@@ -65,7 +65,7 @@ public class GuiEnchantingStation extends GuiMekanismTile<TileEntityEnchantingSt
         setButton.active = enchantmentList.hasChanges() && tile.operatingTicks == 0;
         plusButton.active = enchantmentList.canChangeSelected(1);
         minusButton.active = enchantmentList.canChangeSelected(-1);
-        drawTextScaledBound(guiGraphics, title, 24, titleLabelY, titleTextColor(), imageWidth - 32);
+        renderTitleText(guiGraphics);
         drawString(guiGraphics, playerInventoryTitle, inventoryLabelX, inventoryLabelY, titleTextColor());
         super.drawForegroundText(guiGraphics, mouseX, mouseY);
     }

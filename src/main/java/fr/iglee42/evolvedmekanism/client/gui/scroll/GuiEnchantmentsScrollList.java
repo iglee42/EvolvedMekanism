@@ -33,8 +33,8 @@ public class GuiEnchantmentsScrollList extends GuiScrollList {
     private final List<Enchantment> currentList = new ArrayList<>();
     private int selected = -1;
 
-    public GuiEnchantmentsScrollList(IGuiWrapper gui, int x, int y, int height, Supplier<ItemStack> itemSupplier) {
-        super(gui, x, y, 112, height, 12, GuiElementHolder.HOLDER, GuiElementHolder.HOLDER_SIZE);
+    public GuiEnchantmentsScrollList(IGuiWrapper gui, int x, int y, int width, int height, Supplier<ItemStack> itemSupplier) {
+        super(gui, x, y, width, height, 12, GuiElementHolder.HOLDER, GuiElementHolder.HOLDER_SIZE);
         this.itemSupplier = itemSupplier;
         updateItemAndList(itemSupplier.get());
     }

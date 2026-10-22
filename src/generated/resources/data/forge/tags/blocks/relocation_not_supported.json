@@ -1,5 +1,6 @@
 {
   "values": [
+    "evolvedmekanism:enchanting_station",
     "evolvedmekanism:overclocked_universal_cable",
     "evolvedmekanism:quantum_universal_cable",
     "evolvedmekanism:dense_universal_cable",
@@ -14,7 +15,6 @@
     "evolvedmekanism:quantum_pressurized_tube",
     "evolvedmekanism:dense_pressurized_tube",
     "evolvedmekanism:multiversal_pressurized_tube",
-    "evolvedmekanism:creative_pressurized_tube",
-    "evolvedmekanism:enchanting_station"
+    "evolvedmekanism:creative_pressurized_tube"
   ]
 }
