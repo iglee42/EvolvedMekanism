@@ -10,6 +10,7 @@
     "tag": "c:obsidians"
   },
   "output": {
+    "count": 2,
     "id": "enderio:dark_steel_ingot"
   },
   "neoforge:conditions": [

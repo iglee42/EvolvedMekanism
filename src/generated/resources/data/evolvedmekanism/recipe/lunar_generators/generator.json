@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismgenerators"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismgenerators"
+    }
+  ],
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "evolvedmekanism:lunar_panel"
+    },
+    "A": {
+      "tag": "mekanism:alloys/infused"
+    },
+    "E": {
+      "item": "mekanism:energy_tablet"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    },
+    "O": {
+      "tag": "c:ingots/osmium"
+    }
+  },
+  "pattern": [
+    "###",
+    "AIA",
+    "OEO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:lunar_generator"
+  }
+}

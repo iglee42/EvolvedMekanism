@@ -78,8 +78,12 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
     }
 
 
-    private boolean hasRecipeForInputs(ItemStack stack,ChemicalStack gas){
-        return hasRecipeWith(stack) && getLevel().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream().anyMatch(r-> r.value().getChemicalInput().testType(gas));
+    private boolean hasRecipeForInputs(ItemStack stack, ChemicalStack gas) {
+        if (gas.isEmpty()) {
+            return hasRecipeWith(stack);
+        }
+        return getLevel().getRecipeManager().getAllRecipesFor(EMRecipeType.APT.getRecipeType()).stream()
+                .anyMatch(r -> r.value().getItemInput().testType(stack) && r.value().getChemicalInput().testType(gas));
     }
 
     @Override
@@ -150,7 +154,7 @@ public class APTMultiblockData extends MultiblockData implements IValveHandler{
         NBTUtils.setFloatIfPresent(tag, SerializationConstants.SCALE, scale -> prevGasScale = scale);
         NBTUtils.setIntIfPresent(tag,SerializationConstants.PROGRESS, pg -> progress = pg);
         NBTUtils.setIntIfPresent(tag,"defaultRecipeProgress", pg -> defaultRecipeProgress = pg);
-        NBTUtils.setChemicalStackIfPresent(provider,tag, SerializationConstants.CHEMICAL, value -> inputTank.setStack(value));
+        NBTUtils.setChemicalStackIfPresent(provider, tag, SerializationConstants.CHEMICAL, inputTank::setStackUnchecked);
     }
 
     @Override

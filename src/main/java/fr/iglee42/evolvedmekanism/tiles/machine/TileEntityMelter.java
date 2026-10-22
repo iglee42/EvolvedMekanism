@@ -1,7 +1,9 @@
 package fr.iglee42.evolvedmekanism.tiles.machine;
 
-import fr.iglee42.evolvedmekanism.jei.JEIRecipeTypes;
-import fr.iglee42.evolvedmekanism.recipes.vanilla_input.TriItemRecipeInput;
+import fr.iglee42.evolvedmekanism.config.EMConfig;
+import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
+import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
+import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.IContentsListener;
@@ -28,7 +30,6 @@ import mekanism.common.capabilities.holder.heat.HeatCapacitorHelper;
 import mekanism.common.capabilities.holder.heat.IHeatCapacitorHolder;
 import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;
 import mekanism.common.capabilities.holder.slot.InventorySlotHelper;
-import mekanism.common.config.MekanismConfig;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerChemicalTankWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerIInventorySlotWrapper;
@@ -49,7 +50,6 @@ import mekanism.common.tile.component.config.ConfigInfo;
 import mekanism.common.tile.component.config.DataType;
 import mekanism.common.tile.component.config.slot.InventorySlotInfo;
 import mekanism.common.tile.prefab.TileEntityProgressMachine;
-import mekanism.common.util.MekanismUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -62,7 +62,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluidRecipe> implements ItemRecipeLookupHandler<ItemStackToFluidRecipe> {
+public class TileEntityMelter extends TileEntityProgressMachine<MeltingRecipe> implements ItemRecipeLookupHandler<MeltingRecipe> {
 
     private static final List<RecipeError> TRACKED_ERROR_TYPES = List.of(
           RecipeError.NOT_ENOUGH_INPUT,
@@ -120,7 +120,7 @@ public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluid
     @Override
     protected @Nullable IFluidTankHolder getInitialFluidTanks(IContentsListener listener, IContentsListener recipeCacheListener,IContentsListener unpause) {
         FluidTankHelper builder = FluidTankHelper.forSideWithConfig(this);
-        builder.addTank( fluidTank = BasicFluidTank.output(MAX_FLUID,listener));
+        builder.addTank( fluidTank = BasicFluidTank.output(MAX_FLUID,unpause));
         return builder.build();
     }
 
@@ -160,20 +160,20 @@ public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluid
 
     @NotNull
     @Override
-    public IMekanismRecipeTypeProvider<SingleRecipeInput,ItemStackToFluidRecipe, SingleItem<ItemStackToFluidRecipe>> getRecipeType() {
+    public IMekanismRecipeTypeProvider<SingleRecipeInput, MeltingRecipe, SingleItem<MeltingRecipe>> getRecipeType() {
         return EMRecipeType.MELTING;
     }
 
     @Nullable
     @Override
-    public ItemStackToFluidRecipe getRecipe(int cacheIndex) {
+    public MeltingRecipe getRecipe(int cacheIndex) {
         return findFirstRecipe(inputHandler);
     }
 
     @NotNull
     @Override
-    public CachedRecipe<ItemStackToFluidRecipe> createNewCachedRecipe(@NotNull ItemStackToFluidRecipe recipe, int cacheIndex) {
-        return OneInputCachedRecipe.itemToFluid(recipe, recheckAllRecipeErrors, inputHandler, outputHandler)
+    public CachedRecipe<MeltingRecipe> createNewCachedRecipe(@NotNull MeltingRecipe recipe, int cacheIndex) {
+        return EMInputRecipeCache.itemToFluid(recipe, recheckAllRecipeErrors, inputHandler, outputHandler)
               .setErrorsChanged(this::onErrorsChanged)
               .setCanHolderFunction(() -> this.canFunction() && hasMachineEnoughHeat())
               .setActive(this::setActive)
@@ -197,7 +197,7 @@ public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluid
         if (Math.abs(currentTemperature - biomeAmbientTemp) < 0.001) {
             heatCapacitor.handleHeat(biomeAmbientTemp * heatCapacity - heatCapacitor.getHeat());
         } else {
-            double incr = MekanismConfig.general.evaporationHeatDissipation.get() * Math.sqrt(Math.abs(currentTemperature - biomeAmbientTemp));
+            double incr = EMConfig.general.melterHeatDissipation.get() * Math.sqrt(Math.abs(currentTemperature - biomeAmbientTemp));
             if (currentTemperature > biomeAmbientTemp) {
                 incr = -incr;
             }
@@ -210,7 +210,7 @@ public class TileEntityMelter extends TileEntityProgressMachine<ItemStackToFluid
     }
 
     @Override
-    public @Nullable IRecipeViewerRecipeType<ItemStackToFluidRecipe> recipeViewerType() {
-        return JEIRecipeTypes.MELTING;
+    public @Nullable IRecipeViewerRecipeType<MeltingRecipe> recipeViewerType() {
+        return EMRecipeViewersTypes.MELTING;
     }
 }

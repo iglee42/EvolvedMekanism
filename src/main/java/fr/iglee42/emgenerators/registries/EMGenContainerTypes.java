@@ -3,6 +3,7 @@ package fr.iglee42.emgenerators.registries;
 import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredWindGenerator;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
 import mekanism.common.inventory.container.tile.MekanismTileContainer;
@@ -21,6 +22,9 @@ public class EMGenContainerTypes {
             .custom("tiered_advanced_lunar_generator", TileEntityTieredAdvancedLunarGenerator.class).armorSideBar(-20, 11, 0).build();
 
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityLunarGenerator>> LUNAR_GENERATOR = CONTAINER_TYPES.custom("lunar_generator", TileEntityLunarGenerator.class).armorSideBar(-20, 11, 0).build();
+
+    public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityTieredWindGenerator>> TIERED_WIND_GENERATOR = CONTAINER_TYPES
+            .custom("tiered_wind_generator", TileEntityTieredWindGenerator.class).armorSideBar(-20, 11, 0).build();
 
     public static void register(IEventBus bus) {
         CONTAINER_TYPES.register(bus);

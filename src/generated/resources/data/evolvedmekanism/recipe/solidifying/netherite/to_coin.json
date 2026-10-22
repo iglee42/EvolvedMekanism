@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:coins/netherite"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:solidifying",
+  "duration": 20,
+  "extra_input": {
+    "amount": 30,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluid_input": {
+    "amount": 30,
+    "tag": "c:molten_netherite"
+  },
+  "item_input": {
+    "count": 1,
+    "item": "evolvedmekanism:mold_coin"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:coins/netherite"
+  }
+}

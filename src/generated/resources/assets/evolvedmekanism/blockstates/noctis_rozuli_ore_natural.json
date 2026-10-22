@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "uncovered=false": {
+      "model": "minecraft:block/lapis_ore"
+    },
+    "uncovered=true": {
+      "model": "evolvedmekanism:block/ores/noctis_rozuli_ore"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": { "count": 1, "item": "industrialforegoing:pink_slime" },
+  "output": { "amount": 90, "tag": "c:molten_pink_slime" },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "industrialforegoing"
+    }
+  ]
+}

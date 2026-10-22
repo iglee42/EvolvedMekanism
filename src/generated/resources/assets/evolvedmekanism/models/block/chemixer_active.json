@@ -1,0 +1,7 @@
+{
+  "parent": "evolvedmekanism:block/chemixer",
+  "textures": {
+    "down": "evolvedmekanism:block/chemixer/bottom_active",
+    "front": "evolvedmekanism:block/chemixer/front_active"
+  }
+}

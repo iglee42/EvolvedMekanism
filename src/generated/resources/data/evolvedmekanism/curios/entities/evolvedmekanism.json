@@ -1,0 +1,19 @@
+{
+  "entities": [
+    "minecraft:player"
+  ],
+  "slots": [
+    "jetpack",
+    "hdpe_elytra",
+    "scuba_mask",
+    "scuba_tank",
+    "free_runners",
+    "portable_hazmat_suit",
+    "canteen",
+    "energy_tablet",
+    "portable_qio_dashboard",
+    "portable_teleporter",
+    "dosimeter",
+    "geiger_counter"
+  ]
+}

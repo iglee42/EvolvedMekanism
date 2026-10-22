@@ -1,0 +1,22 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "item": "minecraft:clay_ball"
+  },
+  "second_extra_input": {
+    "tag": "c:cobblestones"
+  },
+  "main_input": {
+    "tag": "c:ingots/iron"
+  },
+  "output": {
+    "count": 1,
+    "id": "enderio_evolution:crude_steel_ingot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio_evolution"
+    }
+  ]
+}

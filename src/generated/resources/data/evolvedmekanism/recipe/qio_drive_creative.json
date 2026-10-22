@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:alloys/creative"
+    },
+    "I": {
+      "tag": "c:ingots/lead"
+    },
+    "P": {
+      "item": "evolvedmekanism:qio_drive_black_hole"
+    }
+  },
+  "pattern": [
+    "IPI",
+    "P#P",
+    "IPI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:qio_drive_creative"
+  }
+}

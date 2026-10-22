@@ -7,8 +7,13 @@ import fr.iglee42.evolvedmekanism.items.ItemBlockTieredPersonalStorage;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityTieredPersonalStorage;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantmentSorter;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidCombiner;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import mekanism.common.Mekanism;
@@ -19,7 +24,9 @@ import mekanism.common.item.block.ItemBlockPersonalStorage;
 import mekanism.common.registration.impl.ContainerTypeDeferredRegister;
 import mekanism.common.registration.impl.ContainerTypeRegistryObject;
 import mekanism.common.registries.MekanismBlocks;
+import mekanism.common.tile.TileEntityModificationStation;
 import mekanism.common.tile.TileEntityPersonalStorage;
+import mekanism.common.tile.laser.TileEntityLaserTractorBeam;
 import mekanism.common.tile.machine.TileEntityEnrichmentChamber;
 import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntitySPSCasing;
@@ -31,10 +38,16 @@ public class EMContainerTypes {
     public static final ContainerTypeRegistryObject<TieredPersonalStorageItemContainer> TIERED_PERSONAL_STORAGE_ITEM = CONTAINER_TYPES.registerMenu("tiered_personal_storage_item", () -> MekanismItemContainerType.item(ItemBlockTieredPersonalStorage.class, TieredPersonalStorageItemContainer::new));
     public static final ContainerTypeRegistryObject<TieredPersonalStorageContainer> TIERED_PERSONAL_STORAGE_BLOCK = CONTAINER_TYPES.register("tiered_personal_storage_block", TileEntityTieredPersonalStorage.class,TieredPersonalStorageContainer::new);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityAlloyer>> ALLOYER = CONTAINER_TYPES.register(EMBlocks.ALLOYER, TileEntityAlloyer.class);
+    public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityFluidCombiner>> FLUID_COMBINER = CONTAINER_TYPES.custom(EMBlocks.FLUID_COMBINER, TileEntityFluidCombiner.class).offset(0, 32).build();
+    public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityFluidAlloyer>> FLUID_ALLOYER = CONTAINER_TYPES.custom(EMBlocks.FLUID_ALLOYER, TileEntityFluidAlloyer.class).offset(0, 32).build();
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityChemixer>> CHEMIXER = CONTAINER_TYPES.register(EMBlocks.CHEMIXER, TileEntityChemixer.class);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityAPTCasing>> APT = CONTAINER_TYPES.custom(EMBlocks.APT_CASING, TileEntityAPTCasing.class).offset(0, 16).build();
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityMelter>> MELTER = CONTAINER_TYPES.register(EMBlocks.MELTER, TileEntityMelter.class);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntitySolidifier>> SOLIDIFIER = CONTAINER_TYPES.register(EMBlocks.SOLIDIFIER, TileEntitySolidifier.class);
     public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityLunarNeutronActivator>> LUNAR_NEUTRON_ACTIVATOR = CONTAINER_TYPES.register(EMBlocks.LUNAR_NEUTRON_ACTIVATOR, TileEntityLunarNeutronActivator.class);
+    public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityLaserDisenchanter>> LASER_DISENCHANTER = CONTAINER_TYPES.register(EMBlocks.LASER_DISENCHANTER, TileEntityLaserDisenchanter.class);
+    public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityEnchantingStation>> ENCHANTING_STATION = CONTAINER_TYPES.custom(EMBlocks.ENCHANTING_STATION, TileEntityEnchantingStation.class).offset(0, 64).armorSideBar(8, 8, 8).build();
+    public static final ContainerTypeRegistryObject<MekanismTileContainer<TileEntityEnchantmentSorter>> SORTIFICHANTOR = CONTAINER_TYPES.register(EMBlocks.SORTIFICHANTOR, TileEntityEnchantmentSorter.class);
+
 
 }

@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/certus_quartz"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "count": 1,
+    "tag": "c:wires/certus_quartz"
+  },
+  "output": {
+    "amount": 45,
+    "tag": "c:molten_certus_quartz"
+  }
+}

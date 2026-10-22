@@ -1,0 +1,7 @@
+{
+  "parent": "evolvedmekanism:block/fluid_alloyer",
+  "textures": {
+    "down": "evolvedmekanism:block/fluid_alloyer/bottom_active",
+    "front": "evolvedmekanism:block/fluid_alloyer/front_active"
+  }
+}

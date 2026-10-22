@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/elementium"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "count": 1,
+    "tag": "c:ingots/elementium"
+  },
+  "output": {
+    "amount": 90,
+    "tag": "c:molten_elementium"
+  }
+}

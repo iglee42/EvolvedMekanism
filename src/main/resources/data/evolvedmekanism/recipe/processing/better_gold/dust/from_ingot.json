@@ -1,9 +1,0 @@
-{
-  "type": "mekanism:crushing",
-  "input": {
-    "tag": "c:ingots/better_gold"
-  },
-  "output": {
-    "id": "evolvedmekanism:dust_better_gold"
-  }
-}

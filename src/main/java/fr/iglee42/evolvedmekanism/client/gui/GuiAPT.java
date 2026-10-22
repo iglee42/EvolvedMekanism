@@ -2,10 +2,9 @@ package fr.iglee42.evolvedmekanism.client.gui;
 
 import fr.iglee42.evolvedmekanism.client.bars.GuiCustomDynamicHorizontalRateBar;
 import fr.iglee42.evolvedmekanism.config.EMConfig;
-import fr.iglee42.evolvedmekanism.jei.EMJEI;
-import fr.iglee42.evolvedmekanism.jei.JEIRecipeTypes;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTCasing;
+import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import mekanism.client.gui.GuiMekanismTile;
 import mekanism.client.gui.element.GuiInnerScreen;
 import mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler;
@@ -64,7 +63,7 @@ public class GuiAPT extends GuiMekanismTile<TileEntityAPTCasing, MekanismTileCon
                 list.add(MekanismLang.USING.translate(EnergyDisplay.of(EMConfig.general.aptEnergyConsumption.getOrDefault())));
             }
             return list;
-        }).recipeViewerCategories(JEIRecipeTypes.APT));
+        }).recipeViewerCategories(EMRecipeViewersTypes.APT));
 
     }
 

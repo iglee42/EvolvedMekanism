@@ -1,0 +1,8 @@
+{
+  "parent": "mekanism:block/induction/cell/basic",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "evolvedmekanism:block/overclocked_induction_cell",
+    "particle": "evolvedmekanism:block/overclocked_induction_cell"
+  }
+}

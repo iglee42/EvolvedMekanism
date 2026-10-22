@@ -18,7 +18,6 @@ public class ItemBlockFactoryMixin {
     private static void em$addOthers(BlockFactoryMachine.BlockFactory<?> block, CallbackInfoReturnable<AttachedSideConfig> cir){
         if (Attribute.getOrThrow(block.builtInRegistryHolder(), AttributeFactoryType.class).getFactoryType().equals(EMFactoryType.ALLOYING)){
             cir.setReturnValue(AttachedSideConfig.EXTRA_MACHINE);
-            return;
         }
     }
 }

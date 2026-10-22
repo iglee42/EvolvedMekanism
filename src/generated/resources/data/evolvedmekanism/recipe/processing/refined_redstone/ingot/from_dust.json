@@ -1,0 +1,16 @@
+{
+  "type": "mekanism:compressing",
+  "chemical_input": {
+    "amount": 1,
+    "chemical": "mekanism:osmium"
+  },
+  "item_input": {
+    "count": 1,
+    "tag": "c:dusts/redstone"
+  },
+  "output": {
+    "count": 1,
+    "id": "evolvedmekanism:ingot_refined_redstone"
+  },
+  "per_tick_usage": true
+}

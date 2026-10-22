@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "evolvedmekanism:molten_plutonium",
+  "loader": "neoforge:fluid_container"
+}

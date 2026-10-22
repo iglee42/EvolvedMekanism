@@ -1,0 +1,16 @@
+{
+  "type": "evolvedmekanism:apt",
+  "chemical_input": {
+    "amount": 100,
+    "chemical": "mekanism:spent_nuclear_waste"
+  },
+  "item_input": {
+    "count": 1,
+    "tag": "c:ingots/gold"
+  },
+  "output": {
+    "count": 1,
+    "id": "evolvedmekanism:ingot_better_gold"
+  },
+  "per_tick_usage": true
+}

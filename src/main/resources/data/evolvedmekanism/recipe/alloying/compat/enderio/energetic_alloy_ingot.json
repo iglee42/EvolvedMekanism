@@ -1,7 +1,7 @@
 {
   "type": "evolvedmekanism:alloying",
   "extra_input": {
-    "tag": "c:dusts/glowstone"
+    "tag": "c:ingots/conductive_alloy"
   },
   "second_extra_input": {
     "tag": "c:ingots/gold"
@@ -10,6 +10,7 @@
     "tag": "c:dusts/redstone"
   },
   "output": {
+    "count": 2,
     "id": "enderio:energetic_alloy_ingot"
   },
   "neoforge:conditions": [

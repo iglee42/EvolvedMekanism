@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/hypercharged"
+    },
+    "O": {
+      "tag": "c:ingots/osmium"
+    },
+    "P": {
+      "item": "mekanism:ultimate_chemical_tank"
+    }
+  },
+  "pattern": [
+    "AOA",
+    "OPO",
+    "AOA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:overclocked_chemical_tank"
+  }
+}

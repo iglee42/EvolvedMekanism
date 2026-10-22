@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ],
+  "type": "mekanismtools:paxel",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "evolvedmekanism:refined_redstone_axe"
+    },
+    "P": {
+      "item": "evolvedmekanism:refined_redstone_pickaxe"
+    },
+    "R": {
+      "tag": "c:rods/wooden"
+    },
+    "S": {
+      "item": "evolvedmekanism:refined_redstone_shovel"
+    }
+  },
+  "pattern": [
+    "APS",
+    " R ",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:refined_redstone_paxel"
+  }
+}

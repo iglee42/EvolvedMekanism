@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "count": 1,
+    "tag": "c:dusts/better_gold"
+  },
+  "output": {
+    "count": 1,
+    "id": "evolvedmekanism:enriched_better_gold"
+  }
+}

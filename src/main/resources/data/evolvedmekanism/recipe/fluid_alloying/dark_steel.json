@@ -1,0 +1,7 @@
+{
+  "type": "evolvedmekanism:fluid_alloying",
+  "main_input": { "amount": 90, "tag": "c:molten_iron" },
+  "extra_input": { "amount": 90, "tag": "c:molten_coal" },
+  "second_extra_input": { "amount": 810, "tag": "c:molten_obsidian" },
+  "output": { "amount": 180, "tag": "c:molten_dark_steel" }
+}

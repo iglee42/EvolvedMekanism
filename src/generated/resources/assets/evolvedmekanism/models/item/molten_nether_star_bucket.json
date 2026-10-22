@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "evolvedmekanism:molten_nether_star",
+  "loader": "neoforge:fluid_container"
+}

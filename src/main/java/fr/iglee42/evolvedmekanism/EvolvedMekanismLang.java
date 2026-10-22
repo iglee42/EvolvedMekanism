@@ -8,7 +8,6 @@ import net.minecraft.Util;
 public enum EvolvedMekanismLang implements ILangEntry {
 
     // <type>.evolvedmekanism.<path>
-
     MEKANISM_EVOLVED("constants","mod_name"),
     TIERED_STORAGE_CAPACITY("tiered_storage","capacity"),
     DESCRIPTION_APT_CASING("description", "apt_casing"),
@@ -22,6 +21,14 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_DENSE_SOLAR_GENERATOR("description", "dense_solar_generator"),
     DESCRIPTION_MULTIVERSAL_SOLAR_GENERATOR("description", "multiversal_solar_generator"),
     DESCRIPTION_CREATIVE_SOLAR_GENERATOR("description", "creative_solar_generator"),
+    DESCRIPTION_ADVANCED_WIND_GENERATOR("description", "advanced_wind_generator"),
+    DESCRIPTION_ELITE_WIND_GENERATOR("description", "elite_wind_generator"),
+    DESCRIPTION_ULTIMATE_WIND_GENERATOR("description", "ultimate_wind_generator"),
+    DESCRIPTION_OVERCLOCKED_WIND_GENERATOR("description", "overclocked_wind_generator"),
+    DESCRIPTION_QUANTUM_WIND_GENERATOR("description", "quantum_wind_generator"),
+    DESCRIPTION_DENSE_WIND_GENERATOR("description", "dense_wind_generator"),
+    DESCRIPTION_MULTIVERSAL_WIND_GENERATOR("description", "multiversal_wind_generator"),
+    DESCRIPTION_CREATIVE_WIND_GENERATOR("description", "creative_wind_generator"),
     DESCRIPTION_SUPERCHARGING_ELEMENT("description", "supercharging_element"),
     DESCRIPTION_LUNAR_NEUTRON_ACTIVATOR("description", "lunar_neutron_activator"),
     DESCRIPTION_BASIC_ADVANCED_LUNAR_GENERATOR("description", "basic_advanced_lunar_generator"),
@@ -35,6 +42,9 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_CREATIVE_LUNAR_GENERATOR("description", "creative_lunar_generator"),
 
     DESCRIPTION_LUNAR_GENERATOR("description", "lunar_generator"),
+    DESCRIPTION_LASER_DISENCHANTER("description", "laser_disenchanter"),
+    DESCRIPTION_ENCHANTING_STATION("description", "enchanting_station"),
+    DESCRIPTION_SORTIFICHANTOR("description", "sortifichantor"),
 
     DESCRIPTION_MAX_TIER_INSTALLER("description", "max_tier_installer"),
 
@@ -43,10 +53,17 @@ public enum EvolvedMekanismLang implements ILangEntry {
     APT_INVALID_SUPERCHARGING("apt", "invalid_supercharging"),
 
     TOOLTIP_NO_CONSUMED("tooltip","not_consumed"),
+    PORTABLE_HAZMAT_SUIT_TOOLTIP("tooltip", "portable_hazmat_suit"),
+    CURIO_ENABLED("tooltip", "curio_enabled"),
+    CURIO_DISABLED("tooltip", "curio_disabled"),
 
     ALLOYING("factory","alloying"),
+    FLUID_ALLOYING("factory","fluid_alloying"),
+    FLUID_COMBINING("factory","fluid_combining"),
 
     DESCRIPTION_ALLOYER("description","alloyer"),
+    DESCRIPTION_FLUID_ALLOYER("description","fluid_alloyer"),
+    DESCRIPTION_FLUID_COMBINER("description","fluid_combiner"),
     DESCRIPTION_MELTER("description","thermalizer"),
     DESCRIPTION_SOLIDIFIER("description","solidification_chamber"),
 

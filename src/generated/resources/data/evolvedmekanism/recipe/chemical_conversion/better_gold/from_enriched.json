@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:chemical_conversion",
+  "input": {
+    "count": 1,
+    "tag": "evolvedmekanism:enriched/better_gold"
+  },
+  "output": {
+    "amount": 80,
+    "id": "evolvedmekanism:better_gold"
+  }
+}

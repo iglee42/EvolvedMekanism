@@ -8,7 +8,6 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import mekanism.api.SerializationConstants;
 import mekanism.common.Mekanism;
-import mekanism.common.config.MekanismConfig;
 import mekanism.common.world.height.ConfigurableHeightRange;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "evolvedmekanism:block_alloy_hypercharged"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "evolvedmekanism:alloy_hypercharged"
+  }
+}

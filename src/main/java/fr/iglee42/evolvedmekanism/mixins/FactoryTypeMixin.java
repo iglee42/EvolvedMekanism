@@ -49,5 +49,7 @@ public class FactoryTypeMixin implements InitializableEnum {
         System.out.println("Init Factory");
         if (EMFactoryType.ALLOYING != null) return;
         EMFactoryType.ALLOYING = evolvedmekanism$addVariant("ALLOYING", "alloying", EvolvedMekanismLang.ALLOYING,()-> EMBlockTypes.ALLOYER,()-> EMBlocks.ALLOYER);
+        EMFactoryType.FLUID_ALLOYING = evolvedmekanism$addVariant("FLUID_ALLOYING", "fluid_alloying", EvolvedMekanismLang.FLUID_ALLOYING, () -> EMBlockTypes.FLUID_ALLOYER, () -> EMBlocks.FLUID_ALLOYER);
+        EMFactoryType.FLUID_COMBINING = evolvedmekanism$addVariant("FLUID_COMBINING", "fluid_combining", EvolvedMekanismLang.FLUID_COMBINING, () -> EMBlockTypes.FLUID_COMBINER, () -> EMBlocks.FLUID_COMBINER);
     }
 }

@@ -8,8 +8,13 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.TileEntityAPTPort;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
 import fr.iglee42.evolvedmekanism.tiers.PersonalStorageTier;
 import fr.iglee42.evolvedmekanism.tiles.*;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantmentSorter;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import fr.iglee42.evolvedmekanism.tiles.factory.TileEntityAlloyingFactory;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidAlloyer;
+import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidCombiner;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityChemixer;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
@@ -31,18 +36,17 @@ import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.registries.MekanismBlocks;
 import mekanism.common.registries.MekanismTileEntityTypes;
 import mekanism.common.tier.FactoryTier;
-import mekanism.common.tile.TileEntityBin;
-import mekanism.common.tile.TileEntityChemicalTank;
-import mekanism.common.tile.TileEntityEnergyCube;
-import mekanism.common.tile.TileEntityFluidTank;
+import mekanism.common.tile.*;
 import mekanism.common.tile.base.CapabilityTileEntity;
 import mekanism.common.tile.base.TileEntityMekanism;
 import mekanism.common.tile.factory.*;
+import mekanism.common.tile.laser.TileEntityLaserTractorBeam;
+import mekanism.common.tile.machine.TileEntityOredictionificator;
 import mekanism.common.tile.machine.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.multiblock.TileEntityInductionCell;
 import mekanism.common.tile.multiblock.TileEntityInductionProvider;
 import mekanism.common.tile.transmitter.*;
-import mekanism.common.util.EnumUtils;
+import fr.iglee42.evolvedmekanism.utils.EMVanillaMekanism;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.Block;
@@ -74,7 +78,7 @@ public class EMTileEntityTypes {
             registerFactory(tier, FactoryType.SMELTING, TileEntityItemStackToItemStackFactory::new);
         }
         List<FactoryTier> allTiers = new ArrayList<>();
-        allTiers.addAll(Arrays.stream(EnumUtils.FACTORY_TIERS).toList());
+        allTiers.addAll(Arrays.asList(EMVanillaMekanism.FACTORY_TIERS));
         allTiers.addAll( Arrays.asList(EMFactoryTier.OVERCLOCKED,EMFactoryTier.QUANTUM,EMFactoryTier.DENSE,EMFactoryTier.MULTIVERSAL,EMFactoryTier.CREATIVE));
         for (FactoryTier tier : allTiers){
             registerFactory(tier,EMFactoryType.ALLOYING, TileEntityAlloyingFactory::new);
@@ -225,6 +229,16 @@ public class EMTileEntityTypes {
             .serverTicker(TileEntityMekanism::tickServer)
             .withSimple(Capabilities.CONFIG_CARD)
             .build();
+    public static final TileEntityTypeRegistryObject<TileEntityFluidCombiner> FLUID_COMBINER = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.FLUID_COMBINER, TileEntityFluidCombiner::new)
+            .clientTicker(TileEntityMekanism::tickClient)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.CONFIG_CARD)
+            .build();
+    public static final TileEntityTypeRegistryObject<TileEntityFluidAlloyer> FLUID_ALLOYER = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.FLUID_ALLOYER, TileEntityFluidAlloyer::new)
+            .clientTicker(TileEntityMekanism::tickClient)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.CONFIG_CARD)
+            .build();
     public static final TileEntityTypeRegistryObject<TileEntityChemixer> CHEMIXER = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.CHEMIXER, TileEntityChemixer::new)
             .clientTicker(TileEntityMekanism::tickClient)
             .serverTicker(TileEntityMekanism::tickServer)
@@ -242,6 +256,22 @@ public class EMTileEntityTypes {
             .build();
 
     public static final TileEntityTypeRegistryObject<TileEntityLunarNeutronActivator> LUNAR_NEUTRON_ACTIVATOR = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.LUNAR_NEUTRON_ACTIVATOR, TileEntityLunarNeutronActivator::new)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.CONFIG_CARD)
+            .build();
+
+    public static final TileEntityTypeRegistryObject<TileEntityLaserDisenchanter> LASER_DISENCHANTER = TILE_ENTITY_TYPES
+            .mekBuilder(EMBlocks.LASER_DISENCHANTER, TileEntityLaserDisenchanter::new)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.LASER_RECEPTOR)
+            .build();
+
+    public static final TileEntityTypeRegistryObject<TileEntityEnchantingStation> ENCHANTING_STATION = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.ENCHANTING_STATION, TileEntityEnchantingStation::new)
+            .serverTicker(TileEntityMekanism::tickServer)
+            .withSimple(Capabilities.CONFIG_CARD)
+            .build();
+
+    public static final TileEntityTypeRegistryObject<TileEntityEnchantmentSorter> SORTIFICHANTOR = TILE_ENTITY_TYPES.mekBuilder(EMBlocks.SORTIFICHANTOR, TileEntityEnchantmentSorter::new)
             .serverTicker(TileEntityMekanism::tickServer)
             .withSimple(Capabilities.CONFIG_CARD)
             .build();

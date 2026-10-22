@@ -1,13 +1,22 @@
 package fr.iglee42.evolvedmekanism.utils;
 
+import mekanism.api.RelativeSide;
 import mekanism.common.attachments.component.AttachedSideConfig;
 import mekanism.common.lib.transmitter.TransmissionType;
+import mekanism.common.tile.component.config.DataType;
 import net.minecraft.Util;
 
 import java.util.EnumMap;
 import java.util.Map;
 
 public class EMAttachedSideConfig {
+
+    private static final AttachedSideConfig.LightConfigInfo TWO_INPUT = Util.make(() -> {
+        Map<RelativeSide, DataType> sideConfig = new EnumMap<>(RelativeSide.class);
+        sideConfig.put(RelativeSide.LEFT, DataType.INPUT_1);
+        sideConfig.put(RelativeSide.RIGHT, DataType.INPUT_2);
+        return new AttachedSideConfig.LightConfigInfo(sideConfig, false);
+    });
     public static final AttachedSideConfig CHEMIXER_MACHINE = Util.make(() -> {
         Map<TransmissionType, AttachedSideConfig.LightConfigInfo> configInfo = new EnumMap<>(TransmissionType.class);
         configInfo.put(TransmissionType.ITEM, AttachedSideConfig.LightConfigInfo.EXTRA_MACHINE);
@@ -19,10 +28,59 @@ public class EMAttachedSideConfig {
     public static final AttachedSideConfig MELTER_MACHINE = Util.make(() -> {
         Map<TransmissionType, AttachedSideConfig.LightConfigInfo> configInfo = new EnumMap<>(TransmissionType.class);
         configInfo.put(TransmissionType.ITEM, AttachedSideConfig.LightConfigInfo.MACHINE);
-        configInfo.put(TransmissionType.FLUID,AttachedSideConfig.LightConfigInfo.OUT_EJECT);
+        configInfo.put(TransmissionType.FLUID, AttachedSideConfig.LightConfigInfo.RIGHT_OUTPUT);
         configInfo.put(TransmissionType.HEAT,AttachedSideConfig.LightConfigInfo.INPUT_ONLY);
+        return new AttachedSideConfig(configInfo);
+    });
+
+    public static final AttachedSideConfig SOLIDIFICATION_MACHINE = Util.make(() -> {
+        Map<TransmissionType, AttachedSideConfig.LightConfigInfo> configInfo = new EnumMap<>(TransmissionType.class);
+        configInfo.put(TransmissionType.ITEM, AttachedSideConfig.LightConfigInfo.MACHINE);
+        configInfo.put(TransmissionType.FLUID, TWO_INPUT);
         configInfo.put(TransmissionType.ENERGY, AttachedSideConfig.LightConfigInfo.INPUT_ONLY);
         return new AttachedSideConfig(configInfo);
     });
+
+    public static final AttachedSideConfig.LightConfigInfo SORTER_MACHINE = Util.make(() -> {
+        Map<RelativeSide, DataType> sideConfig = new EnumMap<>(RelativeSide.class);
+        sideConfig.put(RelativeSide.FRONT, DataType.INPUT);
+        sideConfig.put(RelativeSide.LEFT, DataType.OUTPUT_1);
+        sideConfig.put(RelativeSide.RIGHT, DataType.OUTPUT_2);
+        return new AttachedSideConfig.LightConfigInfo(sideConfig, false);
+    });
+
+
+    private static final AttachedSideConfig.LightConfigInfo FLUID_COMBINER_SIDES = fluidInputSides(Map.of(
+            RelativeSide.TOP, DataType.INPUT_2,
+            RelativeSide.RIGHT, DataType.OUTPUT
+    ));
+
+    private static final AttachedSideConfig.LightConfigInfo FLUID_ALLOYER_SIDES = fluidInputSides(Map.of(
+            RelativeSide.BACK, DataType.EXTRA,
+            RelativeSide.TOP, DataType.INPUT_2,
+            RelativeSide.RIGHT, DataType.OUTPUT
+    ));
+
+    public static final AttachedSideConfig FLUID_COMBINER_MACHINE = fluidMachine(FLUID_COMBINER_SIDES);
+    public static final AttachedSideConfig FLUID_ALLOYER_MACHINE = fluidMachine(FLUID_ALLOYER_SIDES);
+
+    private static AttachedSideConfig.LightConfigInfo fluidInputSides(Map<RelativeSide, DataType> overrides) {
+        Map<RelativeSide, DataType> sideConfig = new EnumMap<>(RelativeSide.class);
+        for (RelativeSide side : RelativeSide.values()) {
+            sideConfig.put(side, DataType.INPUT);
+        }
+        sideConfig.putAll(overrides);
+        return new AttachedSideConfig.LightConfigInfo(sideConfig, true);
+    }
+
+    private static AttachedSideConfig fluidMachine(AttachedSideConfig.LightConfigInfo fluid) {
+        Map<TransmissionType, AttachedSideConfig.LightConfigInfo> configInfo = new EnumMap<>(TransmissionType.class);
+        configInfo.put(TransmissionType.ITEM, AttachedSideConfig.LightConfigInfo.MACHINE);
+        configInfo.put(TransmissionType.FLUID, fluid);
+        configInfo.put(TransmissionType.ENERGY, AttachedSideConfig.LightConfigInfo.INPUT_ONLY);
+        return new AttachedSideConfig(configInfo);
+    }
+
+
 
 }

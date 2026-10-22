@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "evolvedmekanism:dense_energy_cube"
+    },
+    "C": {
+      "tag": "c:circuits/dense"
+    },
+    "P": {
+      "item": "evolvedmekanism:quantum_induction_provider"
+    }
+  },
+  "pattern": [
+    "CPC",
+    "P#P",
+    "CPC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:dense_induction_provider"
+  }
+}

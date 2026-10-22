@@ -1,0 +1,9 @@
+# Integration with Issue Tracker
+#
+# Shared by Git clients such as Fork: #123 in commit messages
+# becomes a clickable link to the GitHub issue or pull request.
+# (note that '\' need to be escaped).
+
+[issuetracker "GitHub"]
+  regex = "#(\\d+)"
+  url = "https://github.com/iglee42/EvolvedMekanism/issues/$1"

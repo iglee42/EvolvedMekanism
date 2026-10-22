@@ -1,0 +1,5 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": { "count": 1, "item": "minecraft:slime_ball" },
+  "output": { "amount": 90, "tag": "c:molten_slime" }
+}

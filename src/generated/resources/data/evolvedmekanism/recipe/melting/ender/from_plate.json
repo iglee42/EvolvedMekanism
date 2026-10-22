@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:plates/ender"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "count": 1,
+    "tag": "c:plates/ender"
+  },
+  "output": {
+    "amount": 90,
+    "tag": "c:molten_ender"
+  }
+}

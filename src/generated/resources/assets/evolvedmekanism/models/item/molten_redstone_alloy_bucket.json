@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "evolvedmekanism:molten_redstone_alloy",
+  "loader": "neoforge:fluid_container"
+}

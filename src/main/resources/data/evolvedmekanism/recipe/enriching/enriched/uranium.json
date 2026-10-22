@@ -1,9 +1,0 @@
-{
-  "type": "mekanism:enriching",
-  "input": {
-    "tag": "c:dusts/uranium"
-  },
-  "output": {
-    "id": "evolvedmekanism:enriched_uranium"
-  }
-}

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "tag": "c:ingots/better_gold"
+  },
+  "output": {
+    "count": 1,
+    "id": "evolvedmekanism:dust_better_gold"
+  }
+}

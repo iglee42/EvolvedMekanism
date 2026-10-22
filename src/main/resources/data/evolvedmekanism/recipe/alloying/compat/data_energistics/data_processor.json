@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "item": "data_energistics:data_circuit_board"
+  },
+  "second_extra_input": {
+    "item": "ae2:printed_silicon"
+  },
+  "main_input": {
+    "item": "ae2:quantum_entangled_singularity"
+  },
+  "output": {
+    "id": "data_energistics:data_processor"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "data_energistics"
+    }
+  ]
+}

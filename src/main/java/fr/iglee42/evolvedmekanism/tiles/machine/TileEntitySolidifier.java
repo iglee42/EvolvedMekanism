@@ -2,13 +2,12 @@ package fr.iglee42.evolvedmekanism.tiles.machine;
 
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.interfaces.SolidificationCachedRecipe;
-import fr.iglee42.evolvedmekanism.jei.JEIRecipeTypes;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.recipes.vanilla_input.SingleItemBiFluidRecipeInput;
+import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import mekanism.api.IContentsListener;
-import mekanism.api.RelativeSide;
 import mekanism.api.Upgrade;
 import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.api.recipes.cache.CachedRecipe.OperationTracker.RecipeError;
@@ -55,15 +54,12 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
     public static final RecipeError NOT_ENOUGH_ITEM_INPUT_ERROR = RecipeError.create();
     public static final RecipeError NOT_ENOUGH_FLUID_INPUT_ERROR = RecipeError.create();
     public static final RecipeError NOT_ENOUGH_EXTRA_FLUID_INPUT_ERROR = RecipeError.create();
-    public static final RecipeError NOT_ENOUGH_SPACE_ITEM_OUTPUT_ERROR = RecipeError.create();
-    public static final RecipeError NOT_ENOUGH_SPACE_GAS_OUTPUT_ERROR = RecipeError.create();
     private static final List<RecipeError> TRACKED_ERROR_TYPES = List.of(
           RecipeError.NOT_ENOUGH_ENERGY,
           NOT_ENOUGH_ITEM_INPUT_ERROR,
           NOT_ENOUGH_FLUID_INPUT_ERROR,
             NOT_ENOUGH_EXTRA_FLUID_INPUT_ERROR,
-          NOT_ENOUGH_SPACE_ITEM_OUTPUT_ERROR,
-          NOT_ENOUGH_SPACE_GAS_OUTPUT_ERROR,
+          RecipeError.NOT_ENOUGH_OUTPUT_SPACE,
           RecipeError.INPUT_DOESNT_PRODUCE_OUTPUT
     );
     private static final int BASE_DURATION = 100;
@@ -96,8 +92,6 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
         if (fluidConfig != null) {
             fluidConfig.addSlotInfo(DataType.INPUT_1, new FluidSlotInfo(true, false, inputFluidExtraTank));
             fluidConfig.addSlotInfo(DataType.INPUT_2, new FluidSlotInfo(true, false, inputFluidTank));
-            fluidConfig.setDataType(DataType.INPUT_1, RelativeSide.LEFT);
-            fluidConfig.setDataType(DataType.INPUT_2, RelativeSide.RIGHT);
             fluidConfig.setCanEject(false);
         }
         configComponent.setupInputConfig(TransmissionType.ENERGY, energyContainer);
@@ -108,7 +102,7 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
         itemInputHandler = InputHelper.getInputHandler(inputSlot, NOT_ENOUGH_ITEM_INPUT_ERROR);
         fluidInputHandler = InputHelper.getInputHandler(inputFluidTank, NOT_ENOUGH_FLUID_INPUT_ERROR);
         fluidExtraInputHandler = InputHelper.getInputHandler(inputFluidExtraTank, NOT_ENOUGH_EXTRA_FLUID_INPUT_ERROR);
-        outputHandler = OutputHelper.getOutputHandler(outputSlot, NOT_ENOUGH_SPACE_ITEM_OUTPUT_ERROR);
+        outputHandler = OutputHelper.getOutputHandler(outputSlot, RecipeError.NOT_ENOUGH_OUTPUT_SPACE);
     }
 
     @NotNull
@@ -127,7 +121,7 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
     @Override
     protected IEnergyContainerHolder getInitialEnergyContainers(IContentsListener listener, IContentsListener recipeCacheListener, IContentsListener recipeCacheUnpauseListener) {
         EnergyContainerHelper builder = EnergyContainerHelper.forSideWithConfig(this);
-        builder.addContainer(energyContainer = SolidifierEnergyContainer.input(this, listener));
+        builder.addContainer(energyContainer = SolidifierEnergyContainer.input(this, recipeCacheUnpauseListener));
         return builder.build();
     }
 
@@ -138,8 +132,8 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
         builder.addSlot(inputSlot = InputInventorySlot.at(item -> containsRecipeABC(item, inputFluidTank.getFluid(), inputFluidExtraTank.getFluid()), this::containsRecipeA,
                     recipeCacheListener, 54, 35))
               .tracksWarnings(slot -> slot.warning(WarningType.NO_MATCHING_RECIPE, getWarningCheck(NOT_ENOUGH_ITEM_INPUT_ERROR)));
-        builder.addSlot(outputSlot = OutputInventorySlot.at(listener, 116, 35))
-              .tracksWarnings(slot -> slot.warning(WarningType.NO_SPACE_IN_OUTPUT, getWarningCheck(NOT_ENOUGH_SPACE_ITEM_OUTPUT_ERROR)));
+        builder.addSlot(outputSlot = OutputInventorySlot.at(recipeCacheUnpauseListener, 116, 35))
+              .tracksWarnings(slot -> slot.warning(WarningType.NO_SPACE_IN_OUTPUT, getWarningCheck(RecipeError.NOT_ENOUGH_OUTPUT_SPACE)));
         builder.addSlot(energySlot = EnergyInventorySlot.fillOrConvert(energyContainer, this::getLevel, listener, 141, 35));
         return builder.build();
     }
@@ -216,6 +210,6 @@ public class TileEntitySolidifier extends TileEntityProgressMachine<Solidificati
 
     @Override
     public @Nullable IRecipeViewerRecipeType<SolidificationRecipe> recipeViewerType() {
-        return JEIRecipeTypes.SOLIDIFICATION;
+        return EMRecipeViewersTypes.SOLIDIFICATION;
     }
 }

@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:storage_blocks/elementium"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:solidifying",
+  "duration": 540,
+  "extra_input": {
+    "amount": 810,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluid_input": {
+    "amount": 810,
+    "tag": "c:molten_elementium"
+  },
+  "item_input": {
+    "count": 1,
+    "item": "evolvedmekanism:mold_storage_block"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:storage_blocks/elementium"
+  }
+}

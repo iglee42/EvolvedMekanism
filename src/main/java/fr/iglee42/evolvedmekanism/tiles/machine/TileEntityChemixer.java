@@ -2,9 +2,9 @@ package fr.iglee42.evolvedmekanism.tiles.machine;
 
 import fr.iglee42.evolvedmekanism.interfaces.ChemixerCachedRecipe;
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
-import fr.iglee42.evolvedmekanism.jei.JEIRecipeTypes;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.vanilla_input.BiItemChemicalRecipeInput;
+import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMRecipeType;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
@@ -122,7 +122,7 @@ public class TileEntityChemixer extends TileEntityProgressMachine<ChemixerRecipe
     @Override
     protected IEnergyContainerHolder getInitialEnergyContainers(IContentsListener listener, IContentsListener recipeCacheListener,IContentsListener unpause) {
         EnergyContainerHelper builder = EnergyContainerHelper.forSideWithConfig(this);
-        builder.addContainer(energyContainer = MachineEnergyContainer.input(this, listener));
+        builder.addContainer(energyContainer = MachineEnergyContainer.input(this, unpause));
         return builder.build();
     }
 
@@ -136,7 +136,7 @@ public class TileEntityChemixer extends TileEntityProgressMachine<ChemixerRecipe
         builder.addSlot(extraInputSlot = InputInventorySlot.at(item -> containsRecipeBAC(mainInputSlot.getStack(), item,inputChemicalTank.getStack()), this::containsRecipeB, recipeCacheListener,
                 64, 53)
         ).tracksWarnings(slot -> slot.warning(WarningType.NO_MATCHING_RECIPE, getWarningCheck(RecipeError.NOT_ENOUGH_SECONDARY_INPUT)));
-        builder.addSlot(outputSlot = OutputInventorySlot.at(listener, 116, 35))
+        builder.addSlot(outputSlot = OutputInventorySlot.at(unpause, 116, 35))
               .tracksWarnings(slot -> slot.warning(WarningType.NO_SPACE_IN_OUTPUT, getWarningCheck(NOT_ENOUGH_SPACE_ITEM_OUTPUT_ERROR)));
         builder.addSlot(energySlot = EnergyInventorySlot.fillOrConvert(energyContainer, this::getLevel, listener, 141, 35));
         return builder.build();
@@ -190,6 +190,6 @@ public class TileEntityChemixer extends TileEntityProgressMachine<ChemixerRecipe
 
     @Override
     public @Nullable IRecipeViewerRecipeType<ChemixerRecipe> recipeViewerType() {
-        return JEIRecipeTypes.CHEMIXING;
+        return EMRecipeViewersTypes.CHEMIXING;
     }
 }

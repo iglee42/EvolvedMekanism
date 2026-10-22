@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gears/redstone_ingot"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:solidifying",
+  "duration": 240,
+  "extra_input": {
+    "amount": 360,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluid_input": {
+    "amount": 360,
+    "tag": "c:molten_redstone_ingot"
+  },
+  "item_input": {
+    "count": 1,
+    "item": "evolvedmekanism:mold_gear"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:gears/redstone_ingot"
+  }
+}

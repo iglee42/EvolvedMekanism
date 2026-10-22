@@ -2,7 +2,6 @@ package fr.iglee42.evolvedmekanism.mixins.client;
 
 import fr.iglee42.evolvedmekanism.client.buttons.GuiSmallerDumpButton;
 import fr.iglee42.evolvedmekanism.tiers.EMFactoryTier;
-import mekanism.api.recipes.cache.CachedRecipe;
 import mekanism.client.gui.element.GuiElement;
 import mekanism.client.gui.element.bar.GuiChemicalBar;
 import mekanism.client.gui.element.bar.GuiVerticalPowerBar;
@@ -10,6 +9,7 @@ import mekanism.client.gui.element.progress.GuiProgress;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.tab.GuiEnergyTab;
 import mekanism.client.gui.element.tab.GuiSortingTab;
+import mekanism.api.recipes.cache.CachedRecipe.OperationTracker.RecipeError;
 import mekanism.client.gui.machine.GuiFactory;
 import mekanism.common.inventory.container.slot.ContainerSlotType;
 import mekanism.common.inventory.container.tile.MekanismTileContainer;
@@ -58,14 +58,16 @@ public abstract class GuiFactoryMixin {
 
     @Inject(method = "addGuiElements", at = @At(value = "INVOKE", target = "Lmekanism/client/gui/GuiConfigurableTile;addGuiElements()V",shift = At.Shift.AFTER), cancellable = true)
     private void evolvedmekanism$changeElementPoses(CallbackInfo ci) {
-        if (evolvedMekanism$be.tier.ordinal() >= EMFactoryTier.OVERCLOCKED.ordinal()){
-            Object obj = this;
-            GuiFactory gui = (GuiFactory) obj;
-            AtomicInteger energySlotX = new AtomicInteger();
+        if (evolvedMekanism$be.tier.ordinal() < EMFactoryTier.OVERCLOCKED.ordinal()) {
+            return;
+        }
+        Object obj = this;
+        GuiFactory gui = (GuiFactory) obj;
+        AtomicInteger energySlotX = new AtomicInteger();
             gui.getMenu().getInventoryContainerSlots().stream().filter(slot->slot.getSlotType().equals(ContainerSlotType.POWER)).findFirst().ifPresent(s-> energySlotX.set(s.x));
             int energyBarOffset = 5;
             evolvedMekanism$addElement(gui,new GuiVerticalPowerBar(gui, evolvedMekanism$be.getEnergyContainer(), energySlotX.get() + energyBarOffset, gui.inventoryLabelY + 9, 52))
-                    .warning(WarningTracker.WarningType.NOT_ENOUGH_ENERGY, evolvedMekanism$be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.NOT_ENOUGH_ENERGY, 0));
+                    .warning(WarningTracker.WarningType.NOT_ENOUGH_ENERGY, evolvedMekanism$be.getWarningCheck(RecipeError.NOT_ENOUGH_ENERGY, 0));
             evolvedMekanism$addElement(gui,new GuiSortingTab(gui, evolvedMekanism$be));
             evolvedMekanism$addElement(gui,new GuiEnergyTab(gui, evolvedMekanism$be.getEnergyContainer(), evolvedMekanism$be::getLastUsage));
             if (evolvedMekanism$be.hasSecondaryResourceBar()) {
@@ -82,24 +84,23 @@ public abstract class GuiFactoryMixin {
                     evolvedMekanism$addElement(gui,new GuiSmallerDumpButton<>(gui, factory, extraSlotX.get() - 2, gui.inventoryLabelY));
                 }
                 if (secondaryBar != null) {
-                    secondaryBar.warning(WarningTracker.WarningType.NO_MATCHING_RECIPE, evolvedMekanism$be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.NOT_ENOUGH_SECONDARY_INPUT, 0));
+                    secondaryBar.warning(WarningTracker.WarningType.NO_MATCHING_RECIPE, evolvedMekanism$be.getWarningCheck(RecipeError.NOT_ENOUGH_SECONDARY_INPUT, 0));
                 }
             }
 
-
-            int baseX = 9;
-            int baseXMult = 19;
-            for (int i = 0; i < evolvedMekanism$be.tier.processes; i++) {
-                int cacheIndex = i;
-                evolvedMekanism$addElement(gui,new GuiProgress(() -> evolvedMekanism$be.getScaledProgress(1, cacheIndex), ProgressType.DOWN, gui, 4 + baseX + (i * baseXMult), 33))
-                        .recipeViewerCategory(evolvedMekanism$be)
-                        //Only can happen if recipes change because inputs are sanitized in the factory based on the output
-                        .warning(WarningTracker.WarningType.INPUT_DOESNT_PRODUCE_OUTPUT, evolvedMekanism$be.getWarningCheck(CachedRecipe.OperationTracker.RecipeError.INPUT_DOESNT_PRODUCE_OUTPUT, cacheIndex));
-            }
-            ci.cancel();
-        }
+        evolvedmekanism$addFactoryArrows(gui, 9, 19);
+        ci.cancel();
     }
 
+    @Unique
+    private void evolvedmekanism$addFactoryArrows(GuiFactory gui, int baseX, int baseXMult) {
+        for (int i = 0; i < evolvedMekanism$be.tier.processes; i++) {
+            int cacheIndex = i;
+            evolvedMekanism$addElement(gui, new GuiProgress(() -> evolvedMekanism$be.getScaledProgress(1, cacheIndex), ProgressType.DOWN, gui, 4 + baseX + (i * baseXMult), 33))
+                    .recipeViewerCategory(evolvedMekanism$be)
+                    .warning(WarningTracker.WarningType.INPUT_DOESNT_PRODUCE_OUTPUT, evolvedMekanism$be.getWarningCheck(RecipeError.INPUT_DOESNT_PRODUCE_OUTPUT, cacheIndex));
+        }
+    }
 
     @Unique
     private static <T extends GuiElement> T evolvedMekanism$addElement(GuiFactory factory, T element) {

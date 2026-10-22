@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/creative"
+    },
+    "P": {
+      "item": "evolvedmekanism:multiversal_thermodynamic_conductor"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "PAP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "evolvedmekanism:creative_thermodynamic_conductor"
+  }
+}
