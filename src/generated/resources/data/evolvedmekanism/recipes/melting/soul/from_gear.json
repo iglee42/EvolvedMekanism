@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/soul"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gears/soul"
+    }
+  },
+  "output": {
+    "amount": 360,
+    "tag": "forge:molten_soul"
+  }
+}

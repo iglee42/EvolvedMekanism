@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gems/insanium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gems/insanium"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_insanium"
+  }
+}

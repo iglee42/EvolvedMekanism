@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/exoversal"
+    },
+    "O": {
+      "tag": "forge:ingots/osmium"
+    },
+    "P": {
+      "item": "evolvedmekanism:dense_chemical_tank"
+    }
+  },
+  "pattern": [
+    "AOA",
+    "OPO",
+    "AOA"
+  ],
+  "result": {
+    "item": "evolvedmekanism:multiversal_chemical_tank"
+  },
+  "show_notification": true
+}

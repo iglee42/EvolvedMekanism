@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "evolvedmekanism:item/module_advanced_vision_enhancement_unit"
+  }
+}

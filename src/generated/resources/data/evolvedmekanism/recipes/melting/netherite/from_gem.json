@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gems/netherite"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gems/netherite"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_netherite"
+  }
+}

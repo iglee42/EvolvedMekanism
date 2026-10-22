@@ -1,0 +1,27 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "item": "megacells:printed_accumulation_processor"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "ae2:printed_silicon"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "tag": "forge:dusts/fluix"
+        }
+    },
+    "output": {
+        "item": "megacells:accumulation_processor"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "megacells"
+        }
+    ]
+}

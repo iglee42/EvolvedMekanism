@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/infused"
+    },
+    "C": {
+      "item": "minecraft:lava_bucket"
+    },
+    "S": {
+      "item": "mekanism:resistive_heater"
+    },
+    "X": {
+      "item": "mekanism:steel_casing"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "SXS",
+    "ACA"
+  ],
+  "result": {
+    "item": "evolvedmekanism:thermalizer"
+  },
+  "show_notification": true
+}

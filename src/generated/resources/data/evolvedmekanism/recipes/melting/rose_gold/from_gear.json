@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/rose_gold"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gears/rose_gold"
+    }
+  },
+  "output": {
+    "amount": 360,
+    "tag": "forge:molten_rose_gold"
+  }
+}

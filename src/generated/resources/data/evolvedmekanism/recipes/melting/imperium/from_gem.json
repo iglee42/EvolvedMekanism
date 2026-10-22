@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gems/imperium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gems/imperium"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_imperium"
+  }
+}

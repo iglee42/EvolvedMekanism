@@ -1,0 +1,6 @@
+{
+  "parent": "mekanism:block/factory/smelting/base",
+  "textures": {
+    "front": "mekanism:block/factory/smelting/smelting_factory_front_active"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "evolvedmekanism:block_alloy_subatomic"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "evolvedmekanism:alloy_subatomic"
+  }
+}

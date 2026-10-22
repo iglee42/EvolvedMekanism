@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "base": {
+      "parent": "mekanism:block/factory/injecting/base"
+    },
+    "front_led": {
+      "parent": "evolvedmekanism:block/factory/front_led/creative"
+    }
+  },
+  "item_render_order": [
+    "base",
+    "front_led"
+  ],
+  "loader": "forge:composite",
+  "textures": {
+    "particle": "mekanism:block/factory/injecting/injecting_factory_front"
+  }
+}

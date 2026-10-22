@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "mekanism:alloys/infused"
+    },
+    "C": {
+      "item": "minecraft:blue_ice"
+    },
+    "S": {
+      "item": "minecraft:bucket"
+    },
+    "X": {
+      "item": "mekanism:steel_casing"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "SXS",
+    "ACA"
+  ],
+  "result": {
+    "item": "evolvedmekanism:solidification_chamber"
+  },
+  "show_notification": true
+}

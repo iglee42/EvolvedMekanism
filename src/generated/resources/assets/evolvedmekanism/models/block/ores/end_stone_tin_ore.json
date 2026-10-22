@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "evolvedmekanism:block/ores/end_stone_tin_ore"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "add_cosmetic": false,
+  "icon": "evolvedmekanism:slot/empty_canteen_slot",
+  "operation": "SET",
+  "order": 46,
+  "render_toggle": true,
+  "size": 1,
+  "use_native_gui": true
+}

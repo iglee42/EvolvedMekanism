@@ -1,0 +1,27 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "forge:circuits/multiversal"
+    },
+    "C": {
+      "tag": "forge:glass/silica"
+    },
+    "P": {
+      "item": "evolvedmekanism:dense_personal_barrel"
+    },
+    "_": {
+      "tag": "forge:ingots/steel"
+    }
+  },
+  "pattern": [
+    "_C_",
+    "APA",
+    "___"
+  ],
+  "result": {
+    "item": "evolvedmekanism:multiversal_personal_barrel"
+  },
+  "show_notification": true
+}

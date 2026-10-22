@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/stellarium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:wires/stellarium"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_stellarium"
+  }
+}

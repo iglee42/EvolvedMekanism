@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/enhanced_redstone_ingot"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gears/enhanced_redstone_ingot"
+    }
+  },
+  "output": {
+    "amount": 360,
+    "tag": "forge:molten_enhanced_redstone_ingot"
+  }
+}

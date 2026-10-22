@@ -1,0 +1,29 @@
+{
+  "type": "evolvedmekanism:solidifying",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/clay"
+      }
+    }
+  ],
+  "duration": 240,
+  "extraInput": {
+    "amount": 360,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluidInput": {
+    "amount": 360,
+    "tag": "forge:molten_clay"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_gear"
+    }
+  },
+  "output": {
+    "tag": "forge:gears/clay"
+  }
+}

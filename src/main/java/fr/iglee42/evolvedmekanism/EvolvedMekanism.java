@@ -12,9 +12,6 @@ import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMAlloyTier;
 import mekanism.api.text.EnumColor;
 import mekanism.common.tags.MekanismTags;
-import mekanism.tools.client.ShieldTextures;
-import mekanism.tools.common.MekanismTools;
-import mekanism.tools.common.MobEquipmentHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -30,8 +27,10 @@ import fr.iglee42.evolvedmekanism.multiblock.apt.APTMultiblockData;
 import fr.iglee42.evolvedmekanism.multiblock.apt.APTValidator;
 import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
+import fr.iglee42.evolvedmekanism.utils.MoltenAvailability;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.api.MekanismIMC;
+import mekanism.api.providers.IModuleDataProvider;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.BaseTier;
 import mekanism.common.MekanismLang;
@@ -59,7 +58,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStoppedEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -86,27 +87,32 @@ public class EvolvedMekanism {
         instance = this;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        initEnums();
         EMConfig.registerConfigs(FMLJavaModLoadingContext.get());
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) EMToolsConfig.registerConfigs(FMLJavaModLoadingContext.get());
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
 
-        initEnums();
-
         EMBlocks.BLOCKS.register(modEventBus);
+        EMBlocks.BLOCKS_NO_ITEMS.register(modEventBus);
         EMItems.ITEMS.register(modEventBus);
         EMCreativeTabs.CREATIVE_TABS.register(modEventBus);
         EMTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
         EMInfuseTypes.INFUSE_TYPES.register(modEventBus);
+        EMGases.GASES.register(modEventBus);
         EMContainerTypes.CONTAINER_TYPES.register(modEventBus);
         EMLootFunctions.REGISTER.register(modEventBus);
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         EMModules.MODULES.register(modEventBus);
         EMFluids.FLUIDS.register(modEventBus);
+        modEventBus.addListener(EventPriority.LOWEST, MoltenAvailability::hideFromCreativeTab);
         EMParticleTypes.PARTICLES.register(modEventBus);
+        EMPlacementModifiers.PLACEMENT_MODIFIERS.register(modEventBus);
 
         registerCompats();
+
+        modEventBus.addListener(fr.iglee42.evolvedmekanism.datagen.EMDataGenerator::gatherData);
 
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(this::serverStopped);
@@ -132,8 +138,11 @@ public class EvolvedMekanism {
             EMToolsItems.register(modEventBus);
             if (FMLEnvironment.dist == Dist.CLIENT) {
                 modEventBus.register(new EMToolsClientRegistration());
-                ((InitializableEnum) (Object) ShieldTextures.OSMIUM).evolvedmekanism$initNewValues();
             }
+        }
+
+        if (ModsCompats.CURIOS.isLoaded()) {
+            fr.iglee42.evolvedmekanism.curios.CuriosCompat.register(modEventBus);
         }
     }
 
@@ -181,7 +190,7 @@ public class EvolvedMekanism {
     }
 
     public static ResourceLocation rl(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MODID, path);
+        return new ResourceLocation(MODID, path);
     }
 
     public static ResourceLocation getResource(MekanismUtils.ResourceType type, String name) {
@@ -217,9 +226,18 @@ public class EvolvedMekanism {
 
     private void enqueueIMC(InterModEnqueueEvent event) {
         MekanismIMC.addMekaSuitBootsModules(EMModules.AIR_AFFINITY);
-        MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY);
+        MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY, EMModules.ADVANCED_VISION_ENHANCEMENT);
         MekanismIMC.addMekaSuitPantsModules(EMModules.LUCK);
         MekanismIMC.addMekaToolModules(EMModules.CAPTURING);
+        if (ModsCompats.MEKAWEAPONS.isLoaded()) {
+            sendMekaWeaponModules("add_mekatana_modules");
+            sendMekaWeaponModules("add_mekabow_modules");
+            sendMekaWeaponModules("add_mekagun_modules");
+        }
+    }
+
+    private static void sendMekaWeaponModules(String method) {
+        InterModComms.sendTo("mekanism", method, () -> new IModuleDataProvider<?>[]{EMModules.CAPTURING});
     }
 
     public static Component logFormat(Object message) {

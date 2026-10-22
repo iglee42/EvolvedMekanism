@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.6,
+  "ingredient": [
+    {
+      "item": "evolvedmekanism:netherrack_uranium_ore"
+    },
+    {
+      "item": "evolvedmekanism:end_stone_uranium_ore"
+    },
+    {
+      "item": "evolvedmekanism:depthrock_uranium_ore"
+    },
+    {
+      "item": "evolvedmekanism:shiverstone_uranium_ore"
+    },
+    {
+      "item": "evolvedmekanism:holystone_uranium_ore"
+    }
+  ],
+  "result": "mekanism:ingot_uranium"
+}

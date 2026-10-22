@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:plates/pink_slime"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:plates/pink_slime"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_pink_slime"
+  }
+}

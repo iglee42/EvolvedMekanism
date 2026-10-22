@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "evolvedmekanism:block_alloy_exoversal"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "evolvedmekanism:alloy_exoversal"
+  }
+}

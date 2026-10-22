@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:dusts/constantan"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:dusts/constantan"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_constantan"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gems/stratus"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gems/stratus"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_stratus"
+  }
+}

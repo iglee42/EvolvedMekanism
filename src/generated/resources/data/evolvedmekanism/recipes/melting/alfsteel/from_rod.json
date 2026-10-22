@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/alfsteel"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:rods/alfsteel"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_alfsteel"
+  }
+}

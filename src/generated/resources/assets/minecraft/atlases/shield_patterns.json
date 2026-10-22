@@ -1,0 +1,20 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "evolvedmekanism:entity/shield/better_gold"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "evolvedmekanism:entity/shield/plaslitherite"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "evolvedmekanism:entity/shield/refined_redstone"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "evolvedmekanism:entity/shield/noctis_rozuli"
+    }
+  ]
+}

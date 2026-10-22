@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:nuggets/coal"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:nuggets/coal"
+    }
+  },
+  "output": {
+    "amount": 10,
+    "tag": "forge:molten_coal"
+  }
+}

@@ -3,17 +3,21 @@ package fr.iglee42.emgenerators.registries;
 import java.util.EnumSet;
 import java.util.function.Supplier;
 
+import fr.iglee42.emgenerators.tiers.AdvancedLunarPanelTier;
 import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
+import fr.iglee42.emgenerators.tiers.AdvancedWindGeneratorTier;
+import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredWindGenerator;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.api.Upgrade;
 import mekanism.api.text.ILangEntry;
+import mekanism.common.block.attribute.AttributeCustomSelectionBox;
 import mekanism.common.block.attribute.AttributeTier;
 import mekanism.common.block.attribute.AttributeUpgradeable;
 import mekanism.common.block.attribute.Attributes;
-import mekanism.common.block.prefab.BlockBase;
-import mekanism.common.content.blocktype.BlockTypeTile;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.generators.common.config.MekanismGeneratorsConfig;
@@ -47,6 +51,52 @@ public class EMGenBlockTypes {
     public static final Generator<TileEntityTieredAdvancedSolarGenerator> CREATIVE_SOLAR_GENERATOR =
             createTieredSolarGenerator(AdvancedSolarPanelTier.CREATIVE, () -> EMGenTileEntityTypes.CREATIVE_SOLAR_PANEL, EvolvedMekanismLang.DESCRIPTION_CREATIVE_SOLAR_GENERATOR, ()->null);
 
+    public static final Generator<TileEntityLunarGenerator> LUNAR_GENERATOR = GeneratorBuilder
+            .createGenerator(() -> EMGenTileEntityTypes.LUNAR_GENERATOR, EvolvedMekanismLang.DESCRIPTION_LUNAR_GENERATOR)
+            .withGui(() -> EMGenContainerTypes.LUNAR_GENERATOR)
+            .withEnergyConfig(MekanismGeneratorsConfig.storageConfig.solarGenerator)
+            .withCustomShape(BlockShapes.SOLAR_GENERATOR)
+            .withSound(GeneratorsSounds.SOLAR_GENERATOR)
+            .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.LUNAR_UPGRADE))
+            .withComputerSupport("lunarGenerator")
+            .replace(Attributes.ACTIVE)
+            .build();
+
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> BASIC_ADVANCED_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.BASIC, () -> EMGenTileEntityTypes.BASIC_ADVANCED_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_BASIC_ADVANCED_LUNAR_GENERATOR, () -> EMGenBlocks.ADVANCED_LUNAR_GENERATOR);
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> ADVANCED_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.ADVANCED, () -> EMGenTileEntityTypes.ADVANCED_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_ADVANCED_LUNAR_GENERATOR, () -> EMGenBlocks.ELITE_LUNAR_GENERATOR);
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> ELITE_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.ELITE, () -> EMGenTileEntityTypes.ELITE_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_ELITE_LUNAR_GENERATOR, () -> EMGenBlocks.ULTIMATE_LUNAR_GENERATOR);
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> ULTIMATE_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.ULTIMATE, () -> EMGenTileEntityTypes.ULTIMATE_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_ULTIMATE_LUNAR_GENERATOR, () -> EMGenBlocks.OVERCLOCKED_LUNAR_GENERATOR);
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> OVERCLOCKED_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.OVERCLOCKED, () -> EMGenTileEntityTypes.OVERCLOCKED_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_OVERCLOCKED_LUNAR_GENERATOR, () -> EMGenBlocks.QUANTUM_LUNAR_GENERATOR);
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> QUANTUM_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.QUANTUM, () -> EMGenTileEntityTypes.QUANTUM_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_QUANTUM_LUNAR_GENERATOR, () -> EMGenBlocks.DENSE_LUNAR_GENERATOR);
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> DENSE_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.DENSE, () -> EMGenTileEntityTypes.DENSE_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_DENSE_LUNAR_GENERATOR, () -> EMGenBlocks.MULTIVERSAL_LUNAR_GENERATOR);
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> MULTIVERSAL_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.MULTIVERSAL, () -> EMGenTileEntityTypes.MULTIVERSAL_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_MULTIVERSAL_LUNAR_GENERATOR, ()->null);
+    public static final Generator<TileEntityTieredAdvancedLunarGenerator> CREATIVE_LUNAR_GENERATOR =
+            createTieredLunarGenerator(AdvancedLunarPanelTier.CREATIVE, () -> EMGenTileEntityTypes.CREATIVE_LUNAR_PANEL, EvolvedMekanismLang.DESCRIPTION_CREATIVE_LUNAR_GENERATOR, ()->null);
+
+    public static final Generator<TileEntityTieredWindGenerator> ADVANCED_WIND_GENERATOR =
+            createTieredWindGenerator(AdvancedWindGeneratorTier.ADVANCED, () -> EMGenTileEntityTypes.ADVANCED_WIND_GENERATOR, EvolvedMekanismLang.DESCRIPTION_ADVANCED_WIND_GENERATOR, () -> EMGenBlocks.ELITE_WIND_GENERATOR);
+    public static final Generator<TileEntityTieredWindGenerator> ELITE_WIND_GENERATOR =
+            createTieredWindGenerator(AdvancedWindGeneratorTier.ELITE, () -> EMGenTileEntityTypes.ELITE_WIND_GENERATOR, EvolvedMekanismLang.DESCRIPTION_ELITE_WIND_GENERATOR, () -> EMGenBlocks.ULTIMATE_WIND_GENERATOR);
+    public static final Generator<TileEntityTieredWindGenerator> ULTIMATE_WIND_GENERATOR =
+            createTieredWindGenerator(AdvancedWindGeneratorTier.ULTIMATE, () -> EMGenTileEntityTypes.ULTIMATE_WIND_GENERATOR, EvolvedMekanismLang.DESCRIPTION_ULTIMATE_WIND_GENERATOR, () -> EMGenBlocks.OVERCLOCKED_WIND_GENERATOR);
+    public static final Generator<TileEntityTieredWindGenerator> OVERCLOCKED_WIND_GENERATOR =
+            createTieredWindGenerator(AdvancedWindGeneratorTier.OVERCLOCKED, () -> EMGenTileEntityTypes.OVERCLOCKED_WIND_GENERATOR, EvolvedMekanismLang.DESCRIPTION_OVERCLOCKED_WIND_GENERATOR, () -> EMGenBlocks.QUANTUM_WIND_GENERATOR);
+    public static final Generator<TileEntityTieredWindGenerator> QUANTUM_WIND_GENERATOR =
+            createTieredWindGenerator(AdvancedWindGeneratorTier.QUANTUM, () -> EMGenTileEntityTypes.QUANTUM_WIND_GENERATOR, EvolvedMekanismLang.DESCRIPTION_QUANTUM_WIND_GENERATOR, () -> EMGenBlocks.DENSE_WIND_GENERATOR);
+    public static final Generator<TileEntityTieredWindGenerator> DENSE_WIND_GENERATOR =
+            createTieredWindGenerator(AdvancedWindGeneratorTier.DENSE, () -> EMGenTileEntityTypes.DENSE_WIND_GENERATOR, EvolvedMekanismLang.DESCRIPTION_DENSE_WIND_GENERATOR, () -> EMGenBlocks.MULTIVERSAL_WIND_GENERATOR);
+    public static final Generator<TileEntityTieredWindGenerator> MULTIVERSAL_WIND_GENERATOR =
+            createTieredWindGenerator(AdvancedWindGeneratorTier.MULTIVERSAL, () -> EMGenTileEntityTypes.MULTIVERSAL_WIND_GENERATOR, EvolvedMekanismLang.DESCRIPTION_MULTIVERSAL_WIND_GENERATOR, () -> null);
+    public static final Generator<TileEntityTieredWindGenerator> CREATIVE_WIND_GENERATOR =
+            createTieredWindGenerator(AdvancedWindGeneratorTier.CREATIVE, () -> EMGenTileEntityTypes.CREATIVE_WIND_GENERATOR, EvolvedMekanismLang.DESCRIPTION_CREATIVE_WIND_GENERATOR, () -> null);
 
     public static Generator<TileEntityTieredAdvancedSolarGenerator> createTieredSolarGenerator(
             AdvancedSolarPanelTier tier,
@@ -60,7 +110,7 @@ public class EMGenBlockTypes {
                 .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.advancedSolarGenerator.get().multiply(tier.getMultiplier()))
                 .withCustomShape(BlockShapes.ADVANCED_SOLAR_GENERATOR)
                 .withSound(GeneratorsSounds.SOLAR_GENERATOR)
-                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, EMUpgrades.SOLAR_UPGRADE))
+                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.SOLAR_UPGRADE))
                 .withBounding((pos, state, builder) -> {
                     builder.add(pos.above());
                     for (int x = -1; x <= 1; x++) {
@@ -75,6 +125,56 @@ public class EMGenBlockTypes {
                 .build();
     }
 
+    public static Generator<TileEntityTieredAdvancedLunarGenerator> createTieredLunarGenerator(
+            AdvancedLunarPanelTier tier,
+            Supplier<TileEntityTypeRegistryObject<TileEntityTieredAdvancedLunarGenerator>> tileEntityRegistrar,
+            ILangEntry description,
+            Supplier<BlockRegistryObject<?,?>> upgradeBlock
+    ) {
+        return GeneratorBuilder
+                .createGenerator(tileEntityRegistrar, description)
+                .withGui(() -> EMGenContainerTypes.TIERED_ADVANCED_LUNAR_GENERATOR)
+                .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.advancedSolarGenerator.get().multiply(tier.getMultiplier()))
+                .withCustomShape(BlockShapes.ADVANCED_SOLAR_GENERATOR)
+                .withSound(GeneratorsSounds.SOLAR_GENERATOR)
+                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, Upgrade.ANCHOR, EMUpgrades.LUNAR_UPGRADE))
+                .withBounding((pos, state, builder) -> {
+                    builder.add(pos.above());
+                    for (int x = -1; x <= 1; x++) {
+                        for (int z = -1; z <= 1; z++) {
+                            builder.add(pos.offset(x, 2, z));
+                        }
+                    }
+                })
+                .withComputerSupport("advancedLunarGenerator")
+                .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
+                .replace(Attributes.ACTIVE)
+                .build();
+    }
+
+    public static Generator<TileEntityTieredWindGenerator> createTieredWindGenerator(
+            AdvancedWindGeneratorTier tier,
+            Supplier<TileEntityTypeRegistryObject<TileEntityTieredWindGenerator>> tileEntityRegistrar,
+            ILangEntry description,
+            Supplier<BlockRegistryObject<?, ?>> upgradeBlock
+    ) {
+        return GeneratorBuilder
+                .createGenerator(tileEntityRegistrar, description)
+                .withGui(() -> EMGenContainerTypes.TIERED_WIND_GENERATOR)
+                .withEnergyConfig(() -> MekanismGeneratorsConfig.storageConfig.windGenerator.get().multiply(tier.getMultiplier()))
+                .withCustomShape(BlockShapes.WIND_GENERATOR)
+                .with(AttributeCustomSelectionBox.JAVA)
+                .withSound(GeneratorsSounds.WIND_GENERATOR)
+                .withSupportedUpgrades(EnumSet.of(Upgrade.MUFFLING, Upgrade.ANCHOR))
+                .withBounding((pos, state, builder) -> {
+                    for (int i = 1; i <= 4; i++) {
+                        builder.add(pos.above(i));
+                    }
+                })
+                .withComputerSupport("windGenerator")
+                .with(new AttributeTier<>(tier), new AttributeUpgradeable(upgradeBlock))
+                .build();
+    }
 
     public static void register() {
     }

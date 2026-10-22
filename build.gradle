@@ -1,3 +1,4 @@
+import dev.ithundxr.silk.ChangelogText
 buildscript {
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
@@ -14,9 +15,14 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+    id 'dev.ithundxr.silk' version '0.11.15'
+    id 'me.modmuss50.mod-publish-plugin' version '1.1.0'
 }
 
 apply plugin: 'org.spongepowered.mixin'
+
+String gitHash = calculateGitHash()
+String changelogText = ChangelogText.getChangelogText(project).toString()
 
 group = mod_group_id
 version = minecraft_version + "-" + mod_version
@@ -98,6 +104,8 @@ minecraft {
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
+            // JDK 17 C2 can ACCESS_VIOLATION while compiling vanilla AO (hs_err: C2 CompilerThread).
+            jvmArg '-XX:CompileCommand=exclude,net.minecraft.client.renderer.block.ModelBlockRenderer$AmbientOcclusionFace::calculate'
         }
 
         server {
@@ -113,11 +121,8 @@ minecraft {
         }
 
         data {
-            // example of overriding the workingDirectory set in configureEach above
             workingDirectory project.file('run-data')
-
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'mekanism', '--existing-mod', 'mekanismgenerators', '--existing-mod', 'mekanismtools', '--existing-mod', 'curios'
         }
     }
 }
@@ -148,6 +153,11 @@ repositories {
     maven { url = "https://maven.blamejared.com/"}
 
     maven { url "https://cursemaven.com" }
+    maven { url "https://maven.terraformersmc.com/" }
+    maven {
+        name = 'Curios'
+        url = 'https://maven.theillusivec4.top/'
+    }
 }
 
 dependencies {
@@ -163,6 +173,11 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
     implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+
+    compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}:api")
+
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
@@ -183,6 +198,9 @@ dependencies {
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")// Mekanism: Tools
 
     runtimeOnly fg.deobf("curse.maven:ctm-267602:5983309")
+    runtimeOnly fg.deobf("curse.maven:ender-io-64578:7726916")
+    runtimeOnly fg.deobf("curse.maven:enderio-evolution-1453074:9100689")
+    runtimeOnly fg.deobf("curse.maven:ender-io-conduit-optimizer-1575307:9100680")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
@@ -206,6 +224,7 @@ tasks.named('processResources', ProcessResources).configure {
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
         expand replaceProperties + [project: project]
     }
+    duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.INCLUDE
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
@@ -224,23 +243,114 @@ tasks.named('jar', Jar).configure {
     finalizedBy 'reobfJar'
 }
 
-publishing {
-    publications {
-        register('mavenJava', MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            url = 'https://maven.iglee.fr/releases'
-            credentials {
-                username = System.getenv().get("MAVEN_REPO_USERNAME")
-                password = System.getenv().get("MAVEN_REPO_PASSWORD")
-            }
-        }
+tasks.register('cleanOldGeneratedResources', Delete) {
+    delete "$projectDir/src/generated/resources"
+}
+
+tasks.configureEach { task ->
+    if (task.name == 'runData') {
+        task.dependsOn 'cleanOldGeneratedResources'
     }
 }
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+publishMods {
+    file = tasks.jar.archiveFile
+    displayName = "$mod_name $mod_version for mc$minecraft_version"
+    version = project.version
+    changelog = changelogText
+    type = STABLE
+    modLoaders.add("forge")
+    dryRun = providers.environmentVariable("DRY_RUN").map { it == "true" }.orElse(false).get()
+
+    def modrinthProjectId = providers.gradleProperty("publish_modrinth_project_id").orNull
+    if (modrinthProjectId) {
+        modrinth {
+            accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+            projectId = modrinthProjectId
+            minecraftVersions.add(minecraft_version)
+        }
+    }
+
+    def curseforgeProjectId = providers.gradleProperty("publish_curseforge_project_id").orNull
+    if (curseforgeProjectId) {
+        curseforge {
+            accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+            projectId = curseforgeProjectId
+            projectSlug = providers.gradleProperty("publish_curseforge_project_slug").orNull
+            minecraftVersions.add(minecraft_version)
+            changelogType = "markdown"
+            clientRequired = true
+            serverRequired = true
+        }
+    }
+
+    def githubRepository = providers.gradleProperty("publish_github_repository").orNull
+    if (githubRepository) {
+        github {
+            accessToken = providers.environmentVariable("GITHUB_TOKEN")
+            repository = githubRepository
+            commitish = gitHash
+            tagName = "$mod_version-$minecraft_version"
+            file.unset()
+            file.unsetConvention()
+            allowEmptyFiles = true
+        }
+    }
+
+    def discordContent = changelogText.length() > 4000 ? "Changelog is too long, check it on Modrinth." : changelogText
+
+    discord {
+        webhookUrl = providers.environmentVariable("DISCORD_WEBHOOK")
+        dryRunWebhookUrl = providers.environmentVariable("DISCORD_WEBHOOK_DRY_RUN")
+        content = """
+                # $mod_name | $mod_version
+
+                $discordContent
+            """.stripIndent()
+
+        style {
+            link = "BUTTON"
+            look = "MODERN"
+            thumbnailUrl = "https://cdn.modrinth.com/data/BLOykUqo/550ff67c0a618ba0f176f49b42ebefccd2a7d1d2.png"
+            color = "curseforge"
+
+        }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from(components.java)
+        }
+    }
+    repositories {
+        maven {
+            name = 'igleeRepo'
+            url = providers.gradleProperty("publish_maven_repository_url").orNull
+            credentials {
+                username = providers.environmentVariable("MAVEN_USERNAME").orNull
+                password = providers.environmentVariable("MAVEN_PASSWORD").orNull
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+
+
+String calculateGitHash() {
+    try {
+        ExecOutput output = providers.exec {
+            commandLine("git", "rev-parse", "HEAD")
+        }
+        return output.standardOutput.asText.get().trim()
+    } catch (Throwable ignored) {
+        return "unknown"
+    }
 }

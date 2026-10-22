@@ -1,0 +1,12 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "ingredient": {
+      "tag": "minecraft:soul_fire_base_blocks"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_soul"
+  }
+}

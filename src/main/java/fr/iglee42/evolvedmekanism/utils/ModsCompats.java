@@ -10,9 +10,18 @@ import net.minecraftforge.fml.loading.LoadingModList;
 public enum ModsCompats {
 
     MEKANISMGENERATORS("tiles.TileEntitySolarGeneratorMixin",
-            "tiles.TileEntityAdvancedSolarGeneratorMixin","items.GenItemTierInstallerMixin"),
+            "tiles.TileEntitySolarGeneratorAccessor",
+            "tiles.TileEntityAdvancedSolarGeneratorMixin","items.GenItemTierInstallerMixin",
+            "tiles.TileEntityWindGeneratorMixin", "client.ModelWindGeneratorMixin"),
 
-    MEKANISMTOOLS("client.ShieldTexturesMixin","client.ToolsRenderMekanismShieldItemMixin");
+    MEKANISMTOOLS("client.ShieldTexturesMixin","client.ToolsRenderMekanismShieldItemMixin"),
+
+    MEKAWEAPONS,
+
+    CURIOS("curios.LivingEntityElytraMixin", "curios.PlayerFallFlyingMixin", "curios.HumanoidArmorLayerMixin",
+            "curios.LocalPlayerFallFlyingMixin", "curios.ElytraLayerMixin", "curios.MekanismItemContainerMixin",
+            "curios.PortableQIODashboardContainerMixin", "curios.PacketPortableTeleporterTeleportMixin",
+            "curios.PacketGuiSetFrequencyMixin", "curios.PacketGuiButtonPressMixin");
     private final String[] mixinClasses;
 
     ModsCompats(String... mixinClasses) {

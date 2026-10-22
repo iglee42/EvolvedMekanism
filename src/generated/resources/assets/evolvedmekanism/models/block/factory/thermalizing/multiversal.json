@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "base": {
+      "parent": "evolvedmekanism:block/factory/thermalizing/base"
+    },
+    "front_led": {
+      "parent": "evolvedmekanism:block/factory/front_led/multiversal"
+    }
+  },
+  "item_render_order": [
+    "base",
+    "front_led"
+  ],
+  "loader": "forge:composite",
+  "textures": {
+    "particle": "evolvedmekanism:block/factory/thermalizing/thermalizing_factory_front"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:ingots/obsidian"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:ingots/obsidian"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_obsidian"
+  }
+}

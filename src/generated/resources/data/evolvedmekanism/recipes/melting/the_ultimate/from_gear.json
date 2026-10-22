@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/the_ultimate"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gears/the_ultimate"
+    }
+  },
+  "output": {
+    "amount": 360,
+    "tag": "forge:molten_the_ultimate"
+  }
+}

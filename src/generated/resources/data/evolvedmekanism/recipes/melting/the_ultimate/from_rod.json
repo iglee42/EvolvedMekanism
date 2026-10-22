@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/the_ultimate"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:rods/the_ultimate"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_the_ultimate"
+  }
+}

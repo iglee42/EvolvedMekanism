@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "base": {
+      "parent": "evolvedmekanism:block/factory/solidifying/base"
+    },
+    "front_led": {
+      "parent": "evolvedmekanism:block/factory/front_led/overclocked"
+    }
+  },
+  "item_render_order": [
+    "base",
+    "front_led"
+  ],
+  "loader": "forge:composite",
+  "textures": {
+    "particle": "evolvedmekanism:block/factory/solidifying/solidifying_factory_front"
+  }
+}

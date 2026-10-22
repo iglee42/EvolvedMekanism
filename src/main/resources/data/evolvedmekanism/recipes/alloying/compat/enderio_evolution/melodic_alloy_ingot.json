@@ -1,0 +1,28 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "mainInput": {
+        "ingredient": {
+            "item": "enderio_evolution:crystalline_pink_slime_ingot"
+        }
+    },
+    "extraInput": {
+        "ingredient": {
+            "item": "minecraft:popped_chorus_fruit"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "enderio:end_steel_ingot"
+        }
+    },
+    "output": {
+        "item": "enderio_evolution:melodic_alloy_ingot",
+        "count": 2
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "enderio_evolution"
+        }
+    ]
+}

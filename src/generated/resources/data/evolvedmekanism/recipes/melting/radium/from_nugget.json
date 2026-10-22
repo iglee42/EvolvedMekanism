@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:nuggets/radium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:nuggets/radium"
+    }
+  },
+  "output": {
+    "amount": 10,
+    "tag": "forge:molten_radium"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/infused_iron"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:wires/infused_iron"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_infused_iron"
+  }
+}

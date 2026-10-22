@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:plates/tungsten"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:plates/tungsten"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_tungsten"
+  }
+}

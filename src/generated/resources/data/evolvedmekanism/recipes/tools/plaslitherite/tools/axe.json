@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:ingots/plaslitherite"
+    },
+    "R": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    "II",
+    "IR",
+    " R"
+  ],
+  "result": {
+    "item": "evolvedmekanism:plaslitherite_axe"
+  },
+  "show_notification": true
+}

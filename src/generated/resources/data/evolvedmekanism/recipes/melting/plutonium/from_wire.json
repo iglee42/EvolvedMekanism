@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/plutonium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:wires/plutonium"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_plutonium"
+  }
+}

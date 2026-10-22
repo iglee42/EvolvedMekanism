@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:plates/construction_alloy"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:plates/construction_alloy"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_construction_alloy"
+  }
+}

@@ -21,6 +21,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.util.TriPredicate;
 import net.minecraftforge.fluids.FluidStack;
+
+import java.util.function.BiPredicate;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Function;
@@ -66,6 +68,28 @@ public class EMInputRecipeCache {
                                 Function<RECIPE, ItemStackIngredient> inputBExtractor, Function<RECIPE, ChemicalStackIngredient<CHEMICAL, STACK>> inputCExtractor) {
             super(recipeType, inputAExtractor, new ItemInputCache<>(), inputBExtractor, new ItemInputCache<>(), inputCExtractor, new ChemicalInputCache<>());
         }
+    }
+
+    public static class DoubleFluid<RECIPE extends MekanismRecipe & BiPredicate<FluidStack, FluidStack>>
+            extends DoubleInputRecipeCache.DoubleSameInputRecipeCache<FluidStack, FluidStackIngredient, RECIPE, FluidInputCache<RECIPE>> {
+
+        public DoubleFluid(MekanismRecipeType<RECIPE, ?> recipeType, Function<RECIPE, FluidStackIngredient> inputAExtractor,
+                           Function<RECIPE, FluidStackIngredient> inputBExtractor) {
+            super(recipeType, inputAExtractor, inputBExtractor, FluidInputCache::new);
+        }
+    }
+
+    public static class TripleFluid<RECIPE extends MekanismRecipe & TriPredicate<FluidStack, FluidStack, FluidStack>>
+            extends TripleSameInputRecipeCache<FluidStack, FluidStackIngredient, RECIPE, FluidInputCache<RECIPE>> {
+
+        public TripleFluid(MekanismRecipeType<RECIPE, ?> recipeType, Function<RECIPE, FluidStackIngredient> inputAExtractor,
+                           Function<RECIPE, FluidStackIngredient> inputBExtractor, Function<RECIPE, FluidStackIngredient> inputCExtractor) {
+            super(recipeType, inputAExtractor, inputBExtractor, inputCExtractor, FluidInputCache::new);
+        }
+    }
+
+    public interface TripleFluidRecipeLookupHandler<RECIPE extends MekanismRecipe & TriPredicate<FluidStack, FluidStack, FluidStack>>
+            extends ITripleRecipeLookupHandler<FluidStack, FluidStack, FluidStack, RECIPE, TripleFluid<RECIPE>> {
     }
 
     public static class ItemFluidFluid<RECIPE extends MekanismRecipe &

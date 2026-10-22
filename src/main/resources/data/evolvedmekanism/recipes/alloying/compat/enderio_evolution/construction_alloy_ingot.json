@@ -1,0 +1,27 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "mainInput": {
+        "ingredient": {
+            "item": "minecraft:copper_ingot"
+        }
+    },
+    "extraInput": {
+        "ingredient": {
+            "item": "enderio_evolution:crude_steel_ingot"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "minecraft:gravel"
+        }
+    },
+    "output": {
+        "item": "enderio_evolution:construction_alloy_ingot"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "enderio_evolution"
+        }
+    ]
+}

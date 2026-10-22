@@ -1,0 +1,34 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "mainInput": {
+        "ingredient": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "extraInput": {
+        "ingredient": {
+            "tag": "forge:ingots/silver"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "minecraft:glowstone_dust"
+        }
+    },
+    "output": {
+        "item": "enderio_evolution:energetic_silver_ingot"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "enderio_evolution"
+        },
+        {
+            "type": "forge:not",
+            "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:ingots/silver"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/elementium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:coins/elementium"
+    }
+  },
+  "output": {
+    "amount": 30,
+    "tag": "forge:molten_elementium"
+  }
+}

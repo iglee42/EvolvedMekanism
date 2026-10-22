@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/iridium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:rods/iridium"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_iridium"
+  }
+}

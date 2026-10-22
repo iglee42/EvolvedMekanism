@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:dusts/juperium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:dusts/juperium"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_juperium"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:storage_blocks/glowstone"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:storage_blocks/glowstone"
+    }
+  },
+  "output": {
+    "amount": 360,
+    "tag": "forge:molten_glowstone"
+  }
+}

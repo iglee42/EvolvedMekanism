@@ -1,0 +1,29 @@
+{
+  "type": "evolvedmekanism:solidifying",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/infinity"
+      }
+    }
+  ],
+  "duration": 30,
+  "extraInput": {
+    "amount": 45,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluidInput": {
+    "amount": 45,
+    "tag": "forge:molten_infinity"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_wire"
+    }
+  },
+  "output": {
+    "tag": "forge:wires/infinity"
+  }
+}

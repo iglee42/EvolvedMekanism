@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanismtools"
+    }
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:ingots/plaslitherite"
+    }
+  },
+  "pattern": [
+    "III",
+    "I I"
+  ],
+  "result": {
+    "item": "evolvedmekanism:plaslitherite_helmet"
+  },
+  "show_notification": true
+}

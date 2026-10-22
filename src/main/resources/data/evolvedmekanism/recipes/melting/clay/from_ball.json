@@ -1,0 +1,12 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "ingredient": {
+      "item": "minecraft:clay_ball"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_clay"
+  }
+}

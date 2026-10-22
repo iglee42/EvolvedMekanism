@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:nuggets/ender_ingot"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:nuggets/ender_ingot"
+    }
+  },
+  "output": {
+    "amount": 10,
+    "tag": "forge:molten_ender_ingot"
+  }
+}

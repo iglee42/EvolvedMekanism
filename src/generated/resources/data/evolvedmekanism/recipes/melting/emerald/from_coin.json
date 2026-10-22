@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/emerald"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:coins/emerald"
+    }
+  },
+  "output": {
+    "amount": 30,
+    "tag": "forge:molten_emerald"
+  }
+}

@@ -64,7 +64,8 @@ public class TileEntityAPTPort extends TileEntityAPTCasing implements IMultibloc
 
     @Override
     public boolean persists(SubstanceType type) {
-        if (type == SubstanceType.GAS) {
+        // Item type is not required because it is supported by the default
+        if (type == SubstanceType.GAS || type == SubstanceType.ENERGY) {
             return false;
         }
         return super.persists(type);

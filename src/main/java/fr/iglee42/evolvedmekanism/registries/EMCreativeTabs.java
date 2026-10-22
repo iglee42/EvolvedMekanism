@@ -7,7 +7,6 @@ import fr.iglee42.emtools.registries.EMToolsItems;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
-import mekanism.api.MekanismAPI;
 import mekanism.api.chemical.Chemical;
 import mekanism.api.providers.IBlockProvider;
 import mekanism.api.providers.IItemProvider;
@@ -50,7 +49,12 @@ public class EMCreativeTabs {
                   .withBackgroundLocation(EvolvedMekanism.rl("textures/gui/creative_tab.png"))
                   .withTabsBefore(MekanismCreativeTabs.MEKANISM.key())
                 .displayItems((displayParameters, output) -> {
-                    CreativeTabDeferredRegister.addToDisplay(EMItems.ITEMS, output);
+                    for (IItemProvider item : EMItems.ITEMS.getAllItems()) {
+                        if (item.asItem() == EMItems.PORTABLE_HAZMAT_SUIT.get() && !ModsCompats.CURIOS.isLoaded()) {
+                            continue;
+                        }
+                        CreativeTabDeferredRegister.addToDisplay(output, item);
+                    }
                     if (ModsCompats.MEKANISMGENERATORS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMGenItems.ITEMS, output);
                     if (ModsCompats.MEKANISMTOOLS.isLoaded())CreativeTabDeferredRegister.addToDisplay(EMToolsItems.ITEMS, output);
                     CreativeTabDeferredRegister.addToDisplay(EMBlocks.BLOCKS, output);

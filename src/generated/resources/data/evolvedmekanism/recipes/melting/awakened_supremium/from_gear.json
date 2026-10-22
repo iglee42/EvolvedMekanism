@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/awakened_supremium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gears/awakened_supremium"
+    }
+  },
+  "output": {
+    "amount": 360,
+    "tag": "forge:molten_awakened_supremium"
+  }
+}

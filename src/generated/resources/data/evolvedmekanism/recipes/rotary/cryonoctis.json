@@ -1,0 +1,19 @@
+{
+  "type": "mekanism:rotary",
+  "fluidInput": {
+    "amount": 1,
+    "tag": "forge:cryonoctis"
+  },
+  "fluidOutput": {
+    "amount": 1,
+    "fluid": "evolvedmekanism:cryonoctis"
+  },
+  "gasInput": {
+    "amount": 1,
+    "tag": "forge:cryonoctis"
+  },
+  "gasOutput": {
+    "amount": 1,
+    "gas": "evolvedmekanism:cryonoctis"
+  }
+}

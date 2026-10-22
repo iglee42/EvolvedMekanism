@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:wires/tornium"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:wires/tornium"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_tornium"
+  }
+}

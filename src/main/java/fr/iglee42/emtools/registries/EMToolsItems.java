@@ -73,6 +73,18 @@ public class EMToolsItems {
     public static final ItemRegistryObject<ItemMekanismArmor> REFINED_REDSTONE_BOOTS = registerArmor(EMToolsConfig.tools.refinedRedstone, ArmorItem.Type.BOOTS);
     public static final ItemRegistryObject<ItemMekanismShield> REFINED_REDSTONE_SHIELD = registerShield(EMToolsConfig.tools.refinedRedstone);
 
+    public static final ItemRegistryObject<ItemMekanismPickaxe> NOCTIS_ROZULI_PICKAXE = registerPickaxe(EMToolsConfig.tools.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismAxe> NOCTIS_ROZULI_AXE = registerAxe(EMToolsConfig.tools.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismShovel> NOCTIS_ROZULI_SHOVEL = registerShovel(EMToolsConfig.tools.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismHoe> NOCTIS_ROZULI_HOE = registerHoe(EMToolsConfig.tools.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismSword> NOCTIS_ROZULI_SWORD = registerSword(EMToolsConfig.tools.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismPaxel> NOCTIS_ROZULI_PAXEL = registerPaxel(EMToolsConfig.tools.noctisRozuli);
+    public static final ItemRegistryObject<ItemMekanismArmor> NOCTIS_ROZULI_HELMET = registerArmor(EMToolsConfig.tools.noctisRozuli, ArmorItem.Type.HELMET);
+    public static final ItemRegistryObject<ItemMekanismArmor> NOCTIS_ROZULI_CHESTPLATE = registerArmor(EMToolsConfig.tools.noctisRozuli, ArmorItem.Type.CHESTPLATE);
+    public static final ItemRegistryObject<ItemMekanismArmor> NOCTIS_ROZULI_LEGGINGS = registerArmor(EMToolsConfig.tools.noctisRozuli, ArmorItem.Type.LEGGINGS);
+    public static final ItemRegistryObject<ItemMekanismArmor> NOCTIS_ROZULI_BOOTS = registerArmor(EMToolsConfig.tools.noctisRozuli, ArmorItem.Type.BOOTS);
+    public static final ItemRegistryObject<ItemMekanismShield> NOCTIS_ROZULI_SHIELD = registerShield(EMToolsConfig.tools.noctisRozuli);
+
 
     private static ItemRegistryObject<ItemMekanismShield> registerShield(MaterialCreator material) {
         return register(ItemMekanismShield::new, "_shield", material);

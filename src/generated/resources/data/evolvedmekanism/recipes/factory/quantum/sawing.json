@@ -1,0 +1,27 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/subatomic"
+    },
+    "C": {
+      "tag": "forge:circuits/quantum"
+    },
+    "I": {
+      "tag": "forge:ingots/tin"
+    },
+    "P": {
+      "item": "evolvedmekanism:overclocked_sawing_factory"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "IPI",
+    "ACA"
+  ],
+  "result": {
+    "item": "evolvedmekanism:quantum_sawing_factory"
+  },
+  "show_notification": true
+}

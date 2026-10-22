@@ -1,0 +1,27 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "extraInput": {
+        "ingredient": {
+            "item": "ae2cs:resonating_circuit_print"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "item": "ae2:printed_silicon"
+        }
+    },
+    "mainInput": {
+        "ingredient": {
+            "item": "ae2:sky_dust"
+        }
+    },
+    "output": {
+        "item": "ae2cs:resonating_processor"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "ae2cs"
+        }
+    ]
+}

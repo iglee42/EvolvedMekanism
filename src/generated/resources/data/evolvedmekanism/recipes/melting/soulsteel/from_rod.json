@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/soulsteel"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:rods/soulsteel"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_soulsteel"
+  }
+}

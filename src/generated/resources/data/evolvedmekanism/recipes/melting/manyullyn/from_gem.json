@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gems/manyullyn"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:gems/manyullyn"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_manyullyn"
+  }
+}

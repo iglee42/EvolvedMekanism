@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:combining",
+  "extraInput": {
+    "ingredient": {
+      "item": "minecraft:end_stone"
+    }
+  },
+  "mainInput": {
+    "amount": 8,
+    "ingredient": {
+      "tag": "forge:raw_materials/lead"
+    }
+  },
+  "output": {
+    "item": "evolvedmekanism:end_stone_lead_ore"
+  }
+}

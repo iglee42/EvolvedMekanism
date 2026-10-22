@@ -1,0 +1,18 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "industrialforegoing"
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "item": "industrialforegoing:pink_slime"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_pink_slime"
+  }
+}

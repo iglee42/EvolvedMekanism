@@ -36,7 +36,8 @@ public class ToolsRenderMekanismShieldItemMixin {
 
     @Inject(method = "renderByItem", at = @At("HEAD"),cancellable = true)
     private void em$changeForEmShields(ItemStack stack, ItemDisplayContext displayContext, PoseStack matrix, MultiBufferSource renderer, int light, int overlayLight, CallbackInfo ci){
-        if (stack.is(EMToolsItems.PLASLITHERITE_SHIELD.asItem()) || stack.is(EMToolsItems.BETTER_GOLD_SHIELD.asItem())|| stack.is(EMToolsItems.REFINED_REDSTONE_SHIELD.asItem())){
+        if (stack.is(EMToolsItems.PLASLITHERITE_SHIELD.asItem()) || stack.is(EMToolsItems.BETTER_GOLD_SHIELD.asItem())
+                || stack.is(EMToolsItems.REFINED_REDSTONE_SHIELD.asItem()) || stack.is(EMToolsItems.NOCTIS_ROZULI_SHIELD.asItem())){
             Item item = stack.getItem();
             ShieldTextures textures;
             if (item == EMToolsItems.PLASLITHERITE_SHIELD.asItem()) {
@@ -45,10 +46,18 @@ public class ToolsRenderMekanismShieldItemMixin {
                 textures = EMShieldTextures.BETTER_GOLD;
             } else if (item == EMToolsItems.REFINED_REDSTONE_SHIELD.asItem()) {
                 textures = EMShieldTextures.REFINED_REDSTONE;
+            } else if (item == EMToolsItems.NOCTIS_ROZULI_SHIELD.asItem()) {
+                textures = EMShieldTextures.NOCTIS_ROZULI;
             } else {
                 return;
             }
+            if (textures == null) {
+                return;
+            }
             Material material = textures.getBase();
+            if (material.sprite() == null) {
+                return;
+            }
             matrix.pushPose();
             matrix.scale(1, -1, -1);
             VertexConsumer buffer = material.sprite().wrap(ItemRenderer.getFoilBufferDirect(renderer, shieldModel.renderType(material.atlasLocation()), true, stack.hasFoil()));

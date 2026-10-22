@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:dusts/debris"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:dusts/debris"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_debris"
+  }
+}

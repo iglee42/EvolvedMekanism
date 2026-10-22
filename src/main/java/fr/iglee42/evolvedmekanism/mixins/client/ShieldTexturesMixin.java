@@ -3,11 +3,12 @@ package fr.iglee42.evolvedmekanism.mixins.client;
 
 import fr.iglee42.emtools.client.EMShieldTextures;
 import fr.iglee42.evolvedmekanism.interfaces.InitializableEnum;
-import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
-import mekanism.api.tier.BaseTier;
 import mekanism.tools.client.ShieldTextures;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.gen.Invoker;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,11 +36,23 @@ public class ShieldTexturesMixin implements InitializableEnum {
         return casing;
     }
 
+    @Inject(method = "<clinit>", at = @At("TAIL"))
+    private static void evolvedmekanism$initNewValues(CallbackInfo ci) {
+        if (EMShieldTextures.BETTER_GOLD != null) {
+            return;
+        }
+        EMShieldTextures.BETTER_GOLD = evolvedmekanism$addVariant("BETTER_GOLD");
+        EMShieldTextures.PLASLITHERITE = evolvedmekanism$addVariant("PLASLITHERITE");
+        EMShieldTextures.REFINED_REDSTONE = evolvedmekanism$addVariant("REFINED_REDSTONE");
+        EMShieldTextures.NOCTIS_ROZULI = evolvedmekanism$addVariant("NOCTIS_ROZULI");
+    }
+
     @Override
     public void evolvedmekanism$initNewValues() {
         if (EMShieldTextures.BETTER_GOLD != null) return;
         EMShieldTextures.BETTER_GOLD = evolvedmekanism$addVariant("BETTER_GOLD");
         EMShieldTextures.PLASLITHERITE = evolvedmekanism$addVariant("PLASLITHERITE");
         EMShieldTextures.REFINED_REDSTONE = evolvedmekanism$addVariant("REFINED_REDSTONE");
+        EMShieldTextures.NOCTIS_ROZULI = evolvedmekanism$addVariant("NOCTIS_ROZULI");
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:coins/silicon_bronze"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:coins/silicon_bronze"
+    }
+  },
+  "output": {
+    "amount": 30,
+    "tag": "forge:molten_silicon_bronze"
+  }
+}

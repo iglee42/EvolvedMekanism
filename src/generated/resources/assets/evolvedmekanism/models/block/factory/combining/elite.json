@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "base": {
+      "parent": "mekanism:block/factory/combining/base"
+    },
+    "front_led": {
+      "parent": "mekanism:block/factory/front_led/elite"
+    }
+  },
+  "item_render_order": [
+    "base",
+    "front_led"
+  ],
+  "loader": "forge:composite",
+  "textures": {
+    "particle": "mekanism:block/factory/combining/combining_factory_front"
+  }
+}

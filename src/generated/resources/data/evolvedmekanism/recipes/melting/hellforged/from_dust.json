@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:dusts/hellforged"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:dusts/hellforged"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_hellforged"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "ingredient": {
+      "tag": "forge:ender_pearls"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_ender"
+  }
+}

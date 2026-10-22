@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:nuggets/rose_gold"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:nuggets/rose_gold"
+    }
+  },
+  "output": {
+    "amount": 10,
+    "tag": "forge:molten_rose_gold"
+  }
+}

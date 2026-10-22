@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:nuggets/plaslitherite"
+    },
+    "I": {
+      "tag": "forge:ingots/lead"
+    },
+    "P": {
+      "item": "evolvedmekanism:qio_drive_hypra_solidified"
+    }
+  },
+  "pattern": [
+    "IPI",
+    "P#P",
+    "IPI"
+  ],
+  "result": {
+    "item": "evolvedmekanism:qio_drive_black_hole"
+  },
+  "show_notification": true
+}

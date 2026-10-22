@@ -1,0 +1,27 @@
+{
+    "type": "evolvedmekanism:alloying",
+    "mainInput": {
+        "ingredient": {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+    "extraInput": {
+        "ingredient": {
+            "item": "minecraft:clay_ball"
+        }
+    },
+    "secondExtraInput": {
+        "ingredient": {
+            "tag": "forge:cobblestone"
+        }
+    },
+    "output": {
+        "item": "enderio_evolution:crude_steel_ingot"
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "enderio_evolution"
+        }
+    ]
+}

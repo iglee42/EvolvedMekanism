@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:rods/crude_steel"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:rods/crude_steel"
+    }
+  },
+  "output": {
+    "amount": 45,
+    "tag": "forge:molten_crude_steel"
+  }
+}

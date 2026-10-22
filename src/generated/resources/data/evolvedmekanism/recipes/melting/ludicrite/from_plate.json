@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:melting",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:plates/ludicrite"
+      }
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "tag": "forge:plates/ludicrite"
+    }
+  },
+  "output": {
+    "amount": 90,
+    "tag": "forge:molten_ludicrite"
+  }
+}

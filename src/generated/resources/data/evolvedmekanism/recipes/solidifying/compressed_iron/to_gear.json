@@ -1,0 +1,29 @@
+{
+  "type": "evolvedmekanism:solidifying",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:gears/compressed_iron"
+      }
+    }
+  ],
+  "duration": 240,
+  "extraInput": {
+    "amount": 360,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluidInput": {
+    "amount": 360,
+    "tag": "forge:molten_compressed_iron"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "evolvedmekanism:mold_gear"
+    }
+  },
+  "output": {
+    "tag": "forge:gears/compressed_iron"
+  }
+}
