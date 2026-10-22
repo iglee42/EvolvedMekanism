@@ -10,6 +10,8 @@ import mekanism.common.block.attribute.Attribute;
 import mekanism.common.block.prefab.BlockTile;
 import mekanism.common.item.block.ItemBlockTooltip;
 import mekanism.generators.common.content.blocktype.Generator;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,6 +27,7 @@ public class ItemBlockTieredWindGenerator extends ItemBlockTooltip<BlockTile.Blo
         return Attribute.getTier(getBlock(), AdvancedWindGeneratorTier.class);
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void initializeClient(@NotNull Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new MekRenderProperties(RenderTieredWindGeneratorItem.RENDERER));
