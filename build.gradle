@@ -1,3 +1,4 @@
+import dev.ithundxr.silk.ChangelogText
 buildscript {
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
@@ -14,9 +15,14 @@ plugins {
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+    id 'dev.ithundxr.silk' version '0.11.15'
+    id 'me.modmuss50.mod-publish-plugin' version '1.1.0'
 }
 
 apply plugin: 'org.spongepowered.mixin'
+
+String gitHash = calculateGitHash()
+String changelogText = ChangelogText.getChangelogText(project).toString()
 
 group = mod_group_id
 version = minecraft_version + "-" + mod_version
@@ -237,23 +243,6 @@ tasks.named('jar', Jar).configure {
     finalizedBy 'reobfJar'
 }
 
-publishing {
-    publications {
-        register('mavenJava', MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            url = 'https://maven.iglee.fr/releases'
-            credentials {
-                username = System.getenv().get("MAVEN_REPO_USERNAME")
-                password = System.getenv().get("MAVEN_REPO_PASSWORD")
-            }
-        }
-    }
-}
-
 tasks.register('cleanOldGeneratedResources', Delete) {
     delete "$projectDir/src/generated/resources"
 }
@@ -266,4 +255,102 @@ tasks.configureEach { task ->
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+publishMods {
+    file = tasks.jar.archiveFile
+    displayName = "$mod_name $mod_version for mc$minecraft_version"
+    version = project.version
+    changelog = changelogText
+    type = STABLE
+    modLoaders.add("forge")
+    dryRun = providers.environmentVariable("DRY_RUN").map { it == "true" }.orElse(false).get()
+
+    def modrinthProjectId = providers.gradleProperty("publish_modrinth_project_id").orNull
+    if (modrinthProjectId) {
+        modrinth {
+            accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+            projectId = modrinthProjectId
+            minecraftVersions.add(minecraft_version)
+        }
+    }
+
+    def curseforgeProjectId = providers.gradleProperty("publish_curseforge_project_id").orNull
+    if (curseforgeProjectId) {
+        curseforge {
+            accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+            projectId = curseforgeProjectId
+            projectSlug = providers.gradleProperty("publish_curseforge_project_slug").orNull
+            minecraftVersions.add(minecraft_version)
+            changelogType = "markdown"
+            clientRequired = true
+            serverRequired = true
+        }
+    }
+
+    def githubRepository = providers.gradleProperty("publish_github_repository").orNull
+    if (githubRepository) {
+        github {
+            accessToken = providers.environmentVariable("GITHUB_TOKEN")
+            repository = githubRepository
+            commitish = gitHash
+            tagName = "$mod_version-$minecraft_version"
+            file.unset()
+            file.unsetConvention()
+            allowEmptyFiles = true
+        }
+    }
+
+    def discordContent = changelogText.length() > 4000 ? "Changelog is too long, check it on Modrinth." : changelogText
+
+    discord {
+        webhookUrl = providers.environmentVariable("DISCORD_WEBHOOK")
+        dryRunWebhookUrl = providers.environmentVariable("DISCORD_WEBHOOK_DRY_RUN")
+        content = """
+                # $mod_name | $mod_version
+
+                $discordContent
+            """.stripIndent()
+
+        style {
+            link = "BUTTON"
+            look = "MODERN"
+            thumbnailUrl = "https://cdn.modrinth.com/data/BLOykUqo/550ff67c0a618ba0f176f49b42ebefccd2a7d1d2.png"
+            color = "curseforge"
+
+        }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from(components.java)
+        }
+    }
+    repositories {
+        maven {
+            name = 'igleeRepo'
+            url = providers.gradleProperty("publish_maven_repository_url").orNull
+            credentials {
+                username = providers.environmentVariable("MAVEN_USERNAME").orNull
+                password = providers.environmentVariable("MAVEN_PASSWORD").orNull
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+
+
+String calculateGitHash() {
+    try {
+        ExecOutput output = providers.exec {
+            commandLine("git", "rev-parse", "HEAD")
+        }
+        return output.standardOutput.asText.get().trim()
+    } catch (Throwable ignored) {
+        return "unknown"
+    }
 }
