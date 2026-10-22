@@ -426,6 +426,8 @@ public class EMLangProvider extends LanguageProvider {
         add("description.evolvedmekanism.luck_unit", "Increases the chance of getting better loots.");
         add("module.evolvedmekanism.thermal_shielding_unit", "Thermal Shielding Unit");
         add("description.evolvedmekanism.thermal_shielding_unit", "Provides thick, thermal-proof metal plating to any MekaSuit armor piece.");
+        add("module.evolvedmekanism.advanced_vision_enhancement_unit", "Advanced Vision Enhancement Unit");
+        add("description.evolvedmekanism.advanced_vision_enhancement_unit", "Brightens the surrounding environment, allowing the user to see through darkness with ease. Allows the user to customize the color of the night vision effect.");
         add("description.evolvedmekanism.advanced_solar_generator", "An advanced generator that directly absorbs the sun's rays with little loss to produce energy.");
         add("description.evolvedmekanism.elite_solar_generator", "An elite generator that directly absorbs the sun's rays with little loss to produce energy.");
         add("description.evolvedmekanism.ultimate_solar_generator", "An ultimate generator that directly absorbs the sun's rays with little loss to produce energy.");
@@ -926,7 +928,7 @@ public class EMLangProvider extends LanguageProvider {
         add(EMTags.Items.ENRICHED_PLASLITHERITE, "Enriched Plaslitherite");
         add(EMTags.Items.ENRICHED_URANIUM, "Enriched Uranium");
 
-        add(EMDatagenTags.item(EvolvedMekanism.MODID, "unit"), "Meka Units");
+        add(EMDatagenTags.item(EvolvedMekanism.MODID, "unit"), "Evolved Meka Units");
 
         add(EMTags.Gases.BETTER_GOLD, "Better Gold");
         add(EMTags.Gases.PLASLITHERITE, "Plaslitherite");

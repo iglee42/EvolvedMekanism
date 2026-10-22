@@ -4,10 +4,7 @@ import fr.iglee42.emtools.registries.EMToolsItems;
 import fr.iglee42.emtools.registries.EMToolsTags;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.curios.CuriosSlots;
-import fr.iglee42.evolvedmekanism.registries.EMBlocks;
-import fr.iglee42.evolvedmekanism.registries.EMFluids;
-import fr.iglee42.evolvedmekanism.registries.EMItems;
-import fr.iglee42.evolvedmekanism.registries.EMTags;
+import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
 import mekanism.common.registries.MekanismItems;
 import net.minecraft.core.HolderLookup;
@@ -95,7 +92,9 @@ public class EMItemTags extends ItemTagsProvider {
         tag(EMTags.Items.ENRICHED).addTags(EMTags.Items.ENRICHED_BETTER_GOLD, EMTags.Items.ENRICHED_PLASLITHERITE, EMTags.Items.ENRICHED_URANIUM);
 
         tag(EMDatagenTags.item(EvolvedMekanism.MODID, "unit")).add(
-                EMItems.AIR_AFFINITY.asItem(), EMItems.AQUA_AFFINITY.asItem(), EMItems.CAPTURING.asItem(), EMItems.LUCK.asItem());
+                EMItems.AIR_AFFINITY.asItem(), EMItems.AQUA_AFFINITY.asItem(), EMItems.CAPTURING.asItem(), EMItems.LUCK.asItem(), EMItems.ADVANCED_VISION_ENHANCEMENT.asItem());
+        tag(EMDatagenTags.mekItem("unit"))
+                .addTag(EMDatagenTags.item(EvolvedMekanism.MODID, "unit"));
 
         copy(EMDatagenTags.cBlock("ores/fluorite"), EMDatagenTags.cItem("ores/fluorite"));
         copy(EMDatagenTags.cBlock("ores/lead"), EMDatagenTags.cItem("ores/lead"));
@@ -109,10 +108,10 @@ public class EMItemTags extends ItemTagsProvider {
         copy(EMDatagenTags.cBlock("ores_in_ground/depthrock"), EMDatagenTags.cItem("ores_in_ground/depthrock"));
         copy(EMDatagenTags.cBlock("ores_in_ground/shiverstone"), EMDatagenTags.cItem("ores_in_ground/shiverstone"));
 
-        tag(EMDatagenTags.cItem("ores/noctis_rozuli")).add(EMBlocks.ORES.get(fr.iglee42.evolvedmekanism.registries.EMOreType.NOCTIS_ROZULI).stone().asItem(),
-                EMBlocks.ORES.get(fr.iglee42.evolvedmekanism.registries.EMOreType.NOCTIS_ROZULI).deepslate().asItem());
-        tag(EMDatagenTags.cItem("ores_in_ground/stone")).add(EMBlocks.ORES.get(fr.iglee42.evolvedmekanism.registries.EMOreType.NOCTIS_ROZULI).stone().asItem());
-        tag(EMDatagenTags.cItem("ores_in_ground/deepslate")).add(EMBlocks.ORES.get(fr.iglee42.evolvedmekanism.registries.EMOreType.NOCTIS_ROZULI).deepslate().asItem());
+        tag(EMDatagenTags.cItem("ores/noctis_rozuli")).add(EMBlocks.ORES.get(EMOreType.NOCTIS_ROZULI).stone().asItem(),
+                EMBlocks.ORES.get(EMOreType.NOCTIS_ROZULI).deepslate().asItem());
+        tag(EMDatagenTags.cItem("ores_in_ground/stone")).add(EMBlocks.ORES.get(EMOreType.NOCTIS_ROZULI).stone().asItem());
+        tag(EMDatagenTags.cItem("ores_in_ground/deepslate")).add(EMBlocks.ORES.get(EMOreType.NOCTIS_ROZULI).deepslate().asItem());
         tag(EMDatagenTags.cItem("ore_rates/singular"))
                 .addTag(EMDatagenTags.cItem("ores/tin"))
                 .addTag(EMDatagenTags.cItem("ores/osmium"))

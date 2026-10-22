@@ -239,7 +239,7 @@ public class EvolvedMekanism {
 
     private void enqueueIMC(InterModEnqueueEvent event) {
         MekanismIMC.addMekaSuitBootsModules(EMModules.AIR_AFFINITY);
-        MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY);
+        MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY, EMModules.ADVANCED_VISION_ENHANCEMENT);
         MekanismIMC.addMekaSuitPantsModules(EMModules.LUCK);
         MekanismIMC.addMekaToolModules(EMModules.CAPTURING);
         if (ModsCompats.MEKAWEAPONS.isLoaded()) {

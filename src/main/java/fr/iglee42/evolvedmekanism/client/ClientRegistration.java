@@ -14,6 +14,7 @@ import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.BaseTier;
 import mekanism.client.ClientRegistrationUtil;
+import mekanism.client.ClientTickHandler;
 import mekanism.client.gui.machine.GuiSolarNeutronActivator;
 import mekanism.client.model.baked.ExtensionBakedModel;
 import mekanism.client.render.MekanismRenderer;
@@ -52,6 +53,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
 @EventBusSubscriber(modid = EvolvedMekanism.MODID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
@@ -59,6 +61,7 @@ public class ClientRegistration {
 
     @SubscribeEvent
     public static void init(FMLClientSetupEvent event) {
+        NeoForge.EVENT_BUS.register(new EMClientTickHandler());
         event.enqueueWork(() -> {
             //Set fluids to a translucent render layer
             for (Holder<Fluid> fluid : MekanismFluids.FLUIDS.getFluidEntries()) {

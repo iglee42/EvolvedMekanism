@@ -14,6 +14,7 @@ import mekanism.api.tier.BaseTier;
 import mekanism.common.item.*;
 import mekanism.common.registration.impl.ItemDeferredRegister;
 import mekanism.common.registration.impl.ItemRegistryObject;
+import mekanism.common.registries.MekanismModules;
 import mekanism.common.resource.IResource;
 import mekanism.common.resource.PrimaryResource;
 import mekanism.common.resource.ResourceType;
@@ -87,6 +88,8 @@ public class EMItems {
     public static final ItemRegistryObject<ItemModule> AQUA_AFFINITY = ITEMS.registerModule(EMModules.AQUA_AFFINITY,Rarity.RARE);
     public static final ItemRegistryObject<ItemModule> CAPTURING = ITEMS.registerModule(EMModules.CAPTURING,Rarity.RARE);
     public static final ItemRegistryObject<ItemModule> LUCK = ITEMS.registerModule(EMModules.LUCK,Rarity.RARE);
+    public static final ItemRegistryObject<ItemModule> ADVANCED_VISION_ENHANCEMENT = ITEMS.registerModule(EMModules.ADVANCED_VISION_ENHANCEMENT, Rarity.EPIC);
+
 
     public static final ItemRegistryObject<Item> MOLD_BLOCK = registerMold("storage_block");
     public static final ItemRegistryObject<Item> MOLD_INGOT = registerMold("ingot");

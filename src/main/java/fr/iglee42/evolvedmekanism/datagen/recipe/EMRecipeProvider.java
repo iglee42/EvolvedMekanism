@@ -106,6 +106,10 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMCrafting.keys('#', EMDatagenTags.cItem("storage_blocks/lapis"), 'A', EMDatagenTags.cItem("alloys/elite"),
                         'H', EMDatagenTags.cItem("pellets/polonium"), 'P', MekanismItems.MODULE_BASE),
                 has(MekanismItems.MODULE_BASE));
+        EMCrafting.shaped(output, "module_advanced_vision_enhancement_unit",EMItems.ADVANCED_VISION_ENHANCEMENT,1, new String[]{"A#A", "APA", "HHH"},
+                EMCrafting.keys('#', EMTags.Items.GEMS_NOCTIS_ROZULI, 'A', EMTags.Items.ALLOYS_SUBATOMIC,
+                        'H', EMTags.Items.INGOTS_REFINED_REDSTONE, 'P', MekanismItems.MODULE_VISION_ENHANCEMENT),
+                has(MekanismItems.MODULE_VISION_ENHANCEMENT));
 
         EMCrafting.shapeless(output, EvolvedMekanism.rl("pink_dye"), Items.PINK_DYE, 1, EMItems.NOCTIS_ROZULI, has(EMItems.NOCTIS_ROZULI));
         EMCrafting.shapeless(output, EvolvedMekanism.rl("portable_hazmat_suit"), EMItems.PORTABLE_HAZMAT_SUIT, 1,
