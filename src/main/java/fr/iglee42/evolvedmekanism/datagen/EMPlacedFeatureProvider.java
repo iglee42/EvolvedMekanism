@@ -28,8 +28,10 @@ public class EMPlacedFeatureProvider implements DataProvider {
                 OreType.OreVeinType vein = new OreType.OreVeinType(type, index);
                 for (String dim : List.of("nether", "end", "aether", "undergarden")) {
                     String name = vein.name() + "_" + dim;
-                    tasks.add(DataProvider.saveStable(cache, placedJson(name, type.getResource().getRegistrySuffix(), index),
+                    tasks.add(DataProvider.saveStable(cache, placedJson(name, type.getResource().getRegistrySuffix(), index, false),
                             pathProvider.json(EvolvedMekanism.rl(name))));
+                    tasks.add(DataProvider.saveStable(cache, placedJson(name + "_retrogen", type.getResource().getRegistrySuffix(), index, true),
+                            pathProvider.json(EvolvedMekanism.rl(name + "_retrogen"))));
                 }
             }
         }
@@ -83,15 +85,15 @@ public class EMPlacedFeatureProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject placedJson(String feature, String oreType, int index) {
+    private static JsonObject placedJson(String feature, String oreType, int index, boolean retroGen) {
         JsonObject ore = new JsonObject();
         ore.addProperty("type", oreType);
         ore.addProperty("index", index);
 
         JsonObject disableable = new JsonObject();
-        disableable.addProperty("type", "mekanism:disableable");
+        disableable.addProperty("type", retroGen ? EvolvedMekanism.MODID + ":disableable" : "mekanism:disableable");
         disableable.add("oreVeinType", ore);
-        disableable.addProperty("retroGen", false);
+        disableable.addProperty("retroGen", retroGen);
 
         JsonObject countType = new JsonObject();
         countType.addProperty("type", "mekanism:configurable_constant");

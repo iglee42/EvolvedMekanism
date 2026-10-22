@@ -35,14 +35,18 @@ public abstract class GuiGaugeMixin {
         if (info == GaugeInfo.YELLOW) {
             return true;
         }
-        if (!((Object) this instanceof GuiTankGauge<?, ?> gauge) || !((Object) this instanceof GuiTankGaugeAccessor accessor) || accessor.evolvedmekanism$getInfoHandler() == null) {
+        if (!((Object) this instanceof GuiTankGauge<?, ?> gauge)) {
             return false;
         }
-        Object tank = gauge.getTank();
-        if (tank == null || !(((GuiElement) (Object) this).gui() instanceof GuiMekanismTile<?, ?> gui)) {
+        try {
+            Object tank = gauge.getTank();
+            if (tank == null || !(((GuiElement) (Object) this).gui() instanceof GuiMekanismTile<?, ?> gui)) {
+                return false;
+            }
+            TileEntityMekanism tile = gui.getMenu().getTileEntity();
+            return tile instanceof ISideConfiguration config && config.getActiveDataType(tank) == DataType.EXTRA;
+        } catch (Exception e) {
             return false;
         }
-        TileEntityMekanism tile = gui.getMenu().getTileEntity();
-        return tile instanceof ISideConfiguration config && config.getActiveDataType(tank) == DataType.EXTRA;
     }
 }

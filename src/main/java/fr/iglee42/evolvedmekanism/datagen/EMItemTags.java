@@ -103,7 +103,8 @@ public class EMItemTags extends ItemTagsProvider {
         tag(EMTags.Items.ENRICHED).addTags(EMTags.Items.ENRICHED_BETTER_GOLD, EMTags.Items.ENRICHED_PLASLITHERITE, EMTags.Items.ENRICHED_URANIUM);
 
         tag(EMDatagenTags.item(EvolvedMekanism.MODID, "unit")).add(
-                EMItems.AIR_AFFINITY.get(), EMItems.AQUA_AFFINITY.get(), EMItems.CAPTURING.get(), EMItems.LUCK.get());
+                EMItems.AIR_AFFINITY.get(), EMItems.AQUA_AFFINITY.get(), EMItems.CAPTURING.get(), EMItems.LUCK.get(),
+                EMItems.ADVANCED_VISION_ENHANCEMENT.get());
 
         copy(EMDatagenTags.forgeBlock("ores/fluorite"), EMDatagenTags.forgeItem("ores/fluorite"));
         copy(EMDatagenTags.forgeBlock("ores/lead"), EMDatagenTags.forgeItem("ores/lead"));

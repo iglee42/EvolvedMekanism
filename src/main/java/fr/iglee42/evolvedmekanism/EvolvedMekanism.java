@@ -108,6 +108,7 @@ public class EvolvedMekanism {
         EMFluids.FLUIDS.register(modEventBus);
         modEventBus.addListener(EventPriority.LOWEST, MoltenAvailability::hideFromCreativeTab);
         EMParticleTypes.PARTICLES.register(modEventBus);
+        EMPlacementModifiers.PLACEMENT_MODIFIERS.register(modEventBus);
 
         registerCompats();
 
@@ -225,7 +226,7 @@ public class EvolvedMekanism {
 
     private void enqueueIMC(InterModEnqueueEvent event) {
         MekanismIMC.addMekaSuitBootsModules(EMModules.AIR_AFFINITY);
-        MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY);
+        MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY, EMModules.ADVANCED_VISION_ENHANCEMENT);
         MekanismIMC.addMekaSuitPantsModules(EMModules.LUCK);
         MekanismIMC.addMekaToolModules(EMModules.CAPTURING);
         if (ModsCompats.MEKAWEAPONS.isLoaded()) {

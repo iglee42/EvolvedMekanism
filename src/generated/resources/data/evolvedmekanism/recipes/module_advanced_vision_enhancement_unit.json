@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:gems/noctis_rozuli"
+    },
+    "A": {
+      "tag": "evolvedmekanism:alloys/subatomic"
+    },
+    "H": {
+      "tag": "forge:ingots/refined_redstone"
+    },
+    "P": {
+      "item": "mekanism:module_vision_enhancement_unit"
+    }
+  },
+  "pattern": [
+    "A#A",
+    "APA",
+    "HHH"
+  ],
+  "result": {
+    "item": "evolvedmekanism:module_advanced_vision_enhancement_unit"
+  },
+  "show_notification": true
+}

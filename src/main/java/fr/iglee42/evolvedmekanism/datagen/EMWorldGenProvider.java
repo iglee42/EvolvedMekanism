@@ -66,6 +66,8 @@ public class EMWorldGenProvider extends DatapackBuiltinEntriesProvider {
                                     List<OreConfiguration.TargetBlockState> targets) {
         context.register(configuredKey(name), new ConfiguredFeature<>(MekanismFeatures.ORE.get(),
                 new ResizableOreFeatureConfig(targets, vein, () -> 0, () -> 0F)));
+        context.register(configuredKey(name + "_retrogen"), new ConfiguredFeature<>(MekanismFeatures.ORE_RETROGEN.get(),
+                new ResizableOreFeatureConfig(targets, vein, () -> 0, () -> 0F)));
     }
 
     private static void trims(BootstapContext<TrimMaterial> context) {

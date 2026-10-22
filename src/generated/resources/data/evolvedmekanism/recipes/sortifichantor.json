@@ -1,0 +1,30 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "forge:ingots/steel"
+    },
+    "2": {
+      "tag": "forge:glass_panes"
+    },
+    "3": {
+      "tag": "forge:circuits/overclocked"
+    },
+    "4": {
+      "tag": "forge:gems/noctis_rozuli"
+    },
+    "5": {
+      "tag": "forge:chests/wooden"
+    }
+  },
+  "pattern": [
+    "121",
+    "343",
+    "151"
+  ],
+  "result": {
+    "item": "evolvedmekanism:sortifichantor"
+  },
+  "show_notification": true
+}

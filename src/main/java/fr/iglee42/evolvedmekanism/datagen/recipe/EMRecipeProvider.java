@@ -97,6 +97,21 @@ public class EMRecipeProvider extends RecipeProvider {
                         'C', EMDatagenTags.forgeItem("circuits/elite"), 'I', EMTags.Items.GEMS_NOCTIS_ROZULI,
                         'X', MekanismBlocks.STEEL_CASING),
                 has(MekanismBlocks.STEEL_CASING));
+        EMCrafting.shaped(EMCrafting.mekData(output), "laser_disenchanter", EMBlocks.LASER_DISENCHANTER, 1, new String[]{"121", "343", "565"},
+                EMCrafting.keys('1', EMTags.Items.GEMS_NOCTIS_ROZULI, '2', MekanismBlocks.LASER_TRACTOR_BEAM,
+                        '3', EMTags.Items.CIRCUITS_OVERCLOCKED, '4', MekanismBlocks.LASER,
+                        '5', EMTags.Items.INGOTS_REFINED_REDSTONE, '6', MekanismBlocks.BASIC_CHEMICAL_TANK),
+                has(EMTags.Items.GEMS_NOCTIS_ROZULI));
+        EMCrafting.shaped(EMCrafting.mekData(output), "enchanting_station", EMBlocks.ENCHANTING_STATION, 1, new String[]{"121", "343", "656"},
+                EMCrafting.keys('1', EMTags.Items.GEMS_NOCTIS_ROZULI, '2', Items.ENCHANTING_TABLE,
+                        '3', EMTags.Items.CIRCUITS_OVERCLOCKED, '4', MekanismBlocks.MODIFICATION_STATION,
+                        '5', MekanismBlocks.BASIC_CHEMICAL_TANK, '6', EMTags.Items.INGOTS_REFINED_REDSTONE),
+                has(EMTags.Items.GEMS_NOCTIS_ROZULI));
+        EMCrafting.shaped(EMCrafting.mekData(output), "sortifichantor", EMBlocks.SORTIFICHANTOR, 1, new String[]{"121", "343", "151"},
+                EMCrafting.keys('1', MekanismTags.Items.INGOTS_STEEL, '2', Tags.Items.GLASS_PANES,
+                        '3', EMTags.Items.CIRCUITS_OVERCLOCKED, '4', EMTags.Items.GEMS_NOCTIS_ROZULI,
+                        '5', Tags.Items.CHESTS_WOODEN),
+                has(EMTags.Items.GEMS_NOCTIS_ROZULI));
 
         addModule(output, "module_air_affinity_unit", EMItems.AIR_AFFINITY, EMCrafting.item("mekanism:oxygen_bucket"));
         addModule(output, "module_aqua_affinity_unit", EMItems.AQUA_AFFINITY, MekanismItems.SCUBA_MASK);
@@ -105,6 +120,10 @@ public class EMRecipeProvider extends RecipeProvider {
                 EMCrafting.keys('#', EMDatagenTags.forgeItem("storage_blocks/lapis"), 'A', EMDatagenTags.forgeItem("alloys/elite"),
                         'H', EMDatagenTags.forgeItem("pellets/polonium"), 'P', MekanismItems.MODULE_BASE),
                 has(MekanismItems.MODULE_BASE));
+        EMCrafting.shaped(output, "module_advanced_vision_enhancement_unit", EMItems.ADVANCED_VISION_ENHANCEMENT, 1, new String[]{"A#A", "APA", "HHH"},
+                EMCrafting.keys('#', EMTags.Items.GEMS_NOCTIS_ROZULI, 'A', EMTags.Items.ALLOYS_SUBATOMIC,
+                        'H', EMTags.Items.INGOTS_REFINED_REDSTONE, 'P', MekanismItems.MODULE_VISION_ENHANCEMENT),
+                has(MekanismItems.MODULE_VISION_ENHANCEMENT));
 
         addQio(output, "qio_drive_boosted", EMItems.BOOSTED_QIO_DRIVE, EMCrafting.item("mekanism:qio_drive_supermassive"), EMDatagenTags.mekItem("crystals/uranium"));
         addQio(output, "qio_drive_singularity", EMItems.SINGULARITY_QIO_DRIVE, EMItems.BOOSTED_QIO_DRIVE, EMDatagenTags.forgeItem("pellets/antimatter"));

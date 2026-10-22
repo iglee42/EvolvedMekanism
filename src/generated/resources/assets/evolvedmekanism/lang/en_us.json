@@ -904,5 +904,18 @@
   "upgrade.mekanism.radioactive": "Radioactive",
   "upgrade.mekanism.radioactive.description": "Allow radioactive gas insertion.",
   "upgrade.mekanism.solar": "Solar",
-  "upgrade.mekanism.solar.description": "Increases solar production of generators."
+  "upgrade.mekanism.solar.description": "Increases solar production of generators.",
+  "block.evolvedmekanism.laser_disenchanter": "Disenchantment Laser",
+  "block.evolvedmekanism.enchanting_station": "Enchanting Station",
+  "block.evolvedmekanism.sortifichantor": "Sortifichantor",
+  "container.evolvedmekanism.laser_disenchanter": "Disenchantment Laser",
+  "container.evolvedmekanism.enchanting_station": "Enchanting Station",
+  "container.evolvedmekanism.sortifichantor": "Sortifichantor",
+  "description.evolvedmekanism.laser_disenchanter": "Retakes the enchantment from the item in the container it break. (Requires books)",
+  "description.evolvedmekanism.enchanting_station": "Precisely applies enchantments to items, using cryonoctis and energy.",
+  "description.evolvedmekanism.sortifichantor": "Sorts enchanted and unenchanted items into their respective containers.",
+  "module.evolvedmekanism.advanced_vision_enhancement_unit": "Advanced Vision Enhancement Unit",
+  "description.evolvedmekanism.advanced_vision_enhancement_unit": "Brightens the surrounding environment, allowing the user to see through darkness with ease. Allows the user to customize the color of the night vision effect.",
+  "module.evolvedmekanism.fog": "Fog",
+  "module.evolvedmekanism.fog_color": "Fog Color"
 }

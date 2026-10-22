@@ -82,6 +82,8 @@ public class EMBlockTags extends BlockTagsProvider {
                 piglin.add(block);
             } else if (path.endsWith("_pressurized_tube") || path.endsWith("_mechanical_pipe") || path.endsWith("_universal_cable")) {
                 relocation.add(block);
+            } else if (path.equals("enchanting_station")) {
+                relocation.add(block);
             }
             classifyOre(block, path);
         }

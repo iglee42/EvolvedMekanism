@@ -15,6 +15,9 @@ import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidCombiner;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantmentSorter;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import mekanism.api.providers.IBlockProvider;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
@@ -128,6 +131,9 @@ public class EMTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityFluidCombiner> FLUID_COMBINER = TILE_ENTITY_TYPES.register(EMBlocks.FLUID_COMBINER, TileEntityFluidCombiner::new);
     public static final TileEntityTypeRegistryObject<TileEntityFluidAlloyer> FLUID_ALLOYER = TILE_ENTITY_TYPES.register(EMBlocks.FLUID_ALLOYER, TileEntityFluidAlloyer::new);
     public static final TileEntityTypeRegistryObject<TileEntityLunarNeutronActivator> LUNAR_NEUTRON_ACTIVATOR = TILE_ENTITY_TYPES.register(EMBlocks.LUNAR_NEUTRON_ACTIVATOR, TileEntityLunarNeutronActivator::new);
+    public static final TileEntityTypeRegistryObject<TileEntityLaserDisenchanter> LASER_DISENCHANTER = TILE_ENTITY_TYPES.register(EMBlocks.LASER_DISENCHANTER, TileEntityLaserDisenchanter::new);
+    public static final TileEntityTypeRegistryObject<TileEntityEnchantingStation> ENCHANTING_STATION = TILE_ENTITY_TYPES.register(EMBlocks.ENCHANTING_STATION, TileEntityEnchantingStation::new);
+    public static final TileEntityTypeRegistryObject<TileEntityEnchantmentSorter> SORTIFICHANTOR = TILE_ENTITY_TYPES.register(EMBlocks.SORTIFICHANTOR, TileEntityEnchantmentSorter::new);
 
 
     private static <BE extends TileEntityTransmitter> TileEntityTypeRegistryObject<BE> registerTransmitter(BlockRegistryObject<?, ?> block,

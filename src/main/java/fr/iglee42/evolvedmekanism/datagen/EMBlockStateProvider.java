@@ -167,6 +167,25 @@ public class EMBlockStateProvider extends BlockStateProvider {
             facingHorizontal(block, modLoc("block/solar_generators/" + path), true);
         } else if (path.equals("lunar_neutron_activator")) {
             facingHorizontal(block, modLoc("block/lunar_neutron_activator"), true);
+        } else if (path.equals("laser_disenchanter")) {
+            models().withExistingParent(path, new ResourceLocation("mekanism", "block/laser"))
+                    .texture("all", modLoc("block/models/laser_disenchanter"));
+            facingAll(block, modLoc("block/laser_disenchanter"));
+        } else if (path.equals("enchanting_station")) {
+            facingHorizontal(block, modLoc("block/enchanting_station"), true);
+        } else if (path.equals("sortifichantor")) {
+            models().withExistingParent(path, new ResourceLocation("mekanism", "block/machine"))
+                    .texture("down", modLoc("block/sortifichantor/bottom"))
+                    .texture("east", modLoc("block/sortifichantor/left"))
+                    .texture("front", modLoc("block/sortifichantor/front"))
+                    .texture("sides", modLoc("block/sortifichantor/right"))
+                    .texture("south", modLoc("block/sortifichantor/back"))
+                    .texture("up", modLoc("block/sortifichantor/top"))
+                    .texture("west", modLoc("block/sortifichantor/right"));
+            models().withExistingParent(path + "_active", modLoc("block/sortifichantor"));
+            facingActive(block, "block/sortifichantor", "block/sortifichantor_active");
+            simpleBlockItem(block, models().getExistingFile(modLoc("block/sortifichantor")));
+            generated.add(block);
         } else if (path.contains("lunar_generator")) {
             ResourceLocation model = modLoc("block/lunar_generators/" + path);
             if (block.getStateDefinition().getProperty("facing") != null) {
@@ -458,6 +477,19 @@ public class EMBlockStateProvider extends BlockStateProvider {
                 .transform(ItemDisplayContext.HEAD).scale(0.256F).end()
                 .transform(ItemDisplayContext.FIXED).translation(0, -3.5F, 0).scale(0.256F).end()
                 .end();
+        generated.add(block);
+    }
+
+    private void facingAll(Block block, ResourceLocation model) {
+        DirectionProperty facing = (DirectionProperty) block.getStateDefinition().getProperty("facing");
+        ModelFile file = new ModelFile.UncheckedModelFile(model);
+        getVariantBuilder(block).forAllStatesExcept(state -> {
+            Direction dir = state.getValue(facing);
+            int x = dir == Direction.DOWN ? 180 : dir.getAxis().isHorizontal() ? 90 : 0;
+            int y = dir == Direction.EAST ? 90 : dir == Direction.SOUTH ? 180 : dir == Direction.WEST ? 270 : 0;
+            return ConfiguredModel.builder().modelFile(file).rotationX(x).rotationY(y).build();
+        }, ignored(block, facing));
+        simpleBlockItem(block, file);
         generated.add(block);
     }
 

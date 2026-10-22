@@ -137,6 +137,9 @@ public class ClientRegistration {
             ClientRegistrationUtil.registerScreen(EMContainerTypes.FLUID_COMBINER, GuiFluidCombiner::new);
             ClientRegistrationUtil.registerScreen(EMContainerTypes.FLUID_ALLOYER, GuiFluidAlloyer::new);
             ClientRegistrationUtil.registerScreen(EMContainerTypes.LUNAR_NEUTRON_ACTIVATOR, GuiLunarNeutronActivator::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.LASER_DISENCHANTER, GuiLaserDisenchanter::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.ENCHANTING_STATION, GuiEnchantingStation::new);
+            ClientRegistrationUtil.registerScreen(EMContainerTypes.SORTIFICHANTOR, GuiEnchantmentSorter::new);
 
         });
     }

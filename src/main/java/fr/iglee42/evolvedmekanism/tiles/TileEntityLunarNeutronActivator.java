@@ -23,7 +23,7 @@ import mekanism.common.capabilities.holder.chemical.ChemicalTankHelper;
 import mekanism.common.capabilities.holder.chemical.IChemicalTankHolder;
 import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;
 import mekanism.common.capabilities.holder.slot.InventorySlotHelper;
-import mekanism.common.config.MekanismConfig;
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerChemicalTankWrapper;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper.ComputerIInventorySlotWrapper;
 import mekanism.common.integration.computer.annotation.ComputerMethod;
@@ -134,7 +134,7 @@ public class TileEntityLunarNeutronActivator extends TileEntityRecipeMachine<Gas
         needsRainCheck = b.getPrecipitationAt(pos) != Precipitation.NONE;
         float tempEff = 0.3F * (0.8F - b.getBaseTemperature());
         float humidityEff = needsRainCheck ? -0.3F * b.getModifiedClimateSettings().downfall() : 0.0F;
-        peakProductionRate = MekanismConfig.general.maxSolarNeutronActivatorRate.get() * (1.0F + tempEff + humidityEff);
+        peakProductionRate = EMConfig.general.lunarNeutronActivatorProduction.get() * (1.0F + tempEff + humidityEff);
         settingsChecked = true;
     }
 

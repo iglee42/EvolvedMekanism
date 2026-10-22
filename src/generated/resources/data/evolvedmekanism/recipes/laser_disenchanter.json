@@ -1,0 +1,33 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "forge:gems/noctis_rozuli"
+    },
+    "2": {
+      "item": "mekanism:laser_tractor_beam"
+    },
+    "3": {
+      "tag": "forge:circuits/overclocked"
+    },
+    "4": {
+      "item": "mekanism:laser"
+    },
+    "5": {
+      "tag": "forge:ingots/refined_redstone"
+    },
+    "6": {
+      "item": "mekanism:basic_chemical_tank"
+    }
+  },
+  "pattern": [
+    "121",
+    "343",
+    "565"
+  ],
+  "result": {
+    "item": "evolvedmekanism:laser_disenchanter"
+  },
+  "show_notification": true
+}

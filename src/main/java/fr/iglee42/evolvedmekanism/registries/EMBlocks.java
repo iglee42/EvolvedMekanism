@@ -23,6 +23,9 @@ import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityFluidCombiner;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntityMelter;
 import fr.iglee42.evolvedmekanism.tiles.machine.TileEntitySolidifier;
 import fr.iglee42.evolvedmekanism.tiles.TileEntityLunarNeutronActivator;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantmentSorter;
+import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityLaserDisenchanter;
 import mekanism.api.tier.AlloyTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.block.BlockEnergyCube;
@@ -44,6 +47,7 @@ import mekanism.common.content.blocktype.Machine;
 import mekanism.common.item.block.*;
 import mekanism.common.item.block.machine.ItemBlockFactory;
 import mekanism.common.item.block.machine.ItemBlockFluidTank;
+import mekanism.common.item.block.machine.ItemBlockLaserTractorBeam;
 import mekanism.common.item.block.machine.ItemBlockMachine;
 import mekanism.common.item.block.transmitter.*;
 import mekanism.common.registration.impl.BlockDeferredRegister;
@@ -109,6 +113,9 @@ public class EMBlocks {
     public static final BlockRegistryObject<BlockTileModel<TileEntityFluidCombiner, Machine<TileEntityFluidCombiner>>, ItemBlockMachine> FLUID_COMBINER = BLOCKS.register("fluid_combiner", () -> new BlockTileModel<>(EMBlockTypes.FLUID_COMBINER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
     public static final BlockRegistryObject<BlockTileModel<TileEntityFluidAlloyer, Machine<TileEntityFluidAlloyer>>, ItemBlockMachine> FLUID_ALLOYER = BLOCKS.register("fluid_alloyer", () -> new BlockTileModel<>(EMBlockTypes.FLUID_ALLOYER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
     public static final BlockRegistryObject<BlockTileModel<TileEntityLunarNeutronActivator, Machine<TileEntityLunarNeutronActivator>>, ItemBlockMachine> LUNAR_NEUTRON_ACTIVATOR = BLOCKS.register("lunar_neutron_activator", () -> new BlockTileModel<>(EMBlockTypes.LUNAR_NEUTRON_ACTIVATOR, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
+    public static final BlockRegistryObject<BlockTileModel<TileEntityLaserDisenchanter, BlockTypeTile<TileEntityLaserDisenchanter>>, ItemBlockLaserTractorBeam> LASER_DISENCHANTER = BLOCKS.register("laser_disenchanter", () -> new BlockTileModel<>(EMBlockTypes.LASER_DISENCHANTER, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockLaserTractorBeam::new);
+    public static final BlockRegistryObject<BlockTileModel<TileEntityEnchantingStation, BlockTypeTile<TileEntityEnchantingStation>>, ItemBlockMachine> ENCHANTING_STATION = BLOCKS.register("enchanting_station", () -> new BlockTileModel<>(EMBlockTypes.ENCHANTING_STATION, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
+    public static final BlockRegistryObject<BlockTile<TileEntityEnchantmentSorter, BlockTypeTile<TileEntityEnchantmentSorter>>, ItemBlockMachine> SORTIFICHANTOR = BLOCKS.register("sortifichantor", () -> new BlockTile<>(EMBlockTypes.SORTIFICHANTOR, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor())), ItemBlockMachine::new);
 
 
     public static final BlockRegistryObject<EMBlockResource, EMItemBlockResource> BETTER_GOLD_BLOCK = registerResourceBlock(EMBlockResourceInfo.BETTER_GOLD);

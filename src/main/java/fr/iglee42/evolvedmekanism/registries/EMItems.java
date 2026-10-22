@@ -97,6 +97,7 @@ public class EMItems {
     public static final ItemRegistryObject<ItemModule> AQUA_AFFINITY = ITEMS.registerModule(EMModules.AQUA_AFFINITY);
     public static final ItemRegistryObject<ItemModule> CAPTURING = ITEMS.registerModule(EMModules.CAPTURING);
     public static final ItemRegistryObject<ItemModule> LUCK = ITEMS.registerModule(EMModules.LUCK);
+    public static final ItemRegistryObject<ItemModule> ADVANCED_VISION_ENHANCEMENT = ITEMS.registerModule(EMModules.ADVANCED_VISION_ENHANCEMENT);
 
     public static final ItemRegistryObject<ItemUpgrade> RADIOACTIVE_UPGRADE = registerUpgrade(EMUpgrades.RADIOACTIVE_UPGRADE);
 

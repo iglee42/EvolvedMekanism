@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.registries;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.modules.ModuleAdvancedVisionEnhancementUnit;
 import fr.iglee42.evolvedmekanism.modules.ModuleAirAffinity;
 import fr.iglee42.evolvedmekanism.modules.ModuleCapturing;
 import mekanism.common.registration.impl.ModuleDeferredRegister;
@@ -22,5 +23,9 @@ public class EMModules {
 
     public static final ModuleRegistryObject<?> LUCK = MODULES.registerMarker("luck_unit",
             ()->EMItems.LUCK.asItem(), builder -> builder.rarity(Rarity.RARE).maxStackSize(4));
+
+    public static final ModuleRegistryObject<ModuleAdvancedVisionEnhancementUnit> ADVANCED_VISION_ENHANCEMENT = MODULES.register("advanced_vision_enhancement_unit",
+            ModuleAdvancedVisionEnhancementUnit::new, () -> EMItems.ADVANCED_VISION_ENHANCEMENT.asItem(),
+            builder -> builder.maxStackSize(4).handlesModeChange().rendersHUD().rarity(Rarity.EPIC));
 
 }

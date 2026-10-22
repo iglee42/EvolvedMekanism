@@ -15,7 +15,7 @@ import mekanism.client.render.MekanismCurioRenderer;
 import mekanism.client.render.armor.ISpecialGear;
 import mekanism.common.MekanismLang;
 import mekanism.common.capabilities.Capabilities;
-import mekanism.common.config.MekanismConfig;
+import fr.iglee42.evolvedmekanism.config.EMConfig;
 import mekanism.common.lib.radiation.RadiationManager;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.registries.MekanismModules;
@@ -191,7 +191,7 @@ public final class CuriosClient {
                 ? player.getCapability(Capabilities.RADIATION_ENTITY).map(cap -> cap.getRadiation()).orElse(0D)
                 : 0;
         Component text = UnitDisplayUtils.getDisplayShort(radiation, RadiationUnit.SV, 2);
-        if (MekanismConfig.common.enableDecayTimers.get() && radiation > RadiationManager.MIN_MAGNITUDE) {
+        if (EMConfig.general.enableDecayTimers.get() && radiation > RadiationManager.MIN_MAGNITUDE) {
             text = MekanismLang.GENERIC_WITH_PARENTHESIS.translate(text, TextUtils.getHoursMinutes(RadiationManager.get().getDecayTime(radiation, false)));
         }
         HUDColor color = radiation < RadiationManager.MIN_MAGNITUDE ? HUDColor.REGULAR : radiation < 0.1 ? HUDColor.WARNING : HUDColor.DANGER;
@@ -201,7 +201,7 @@ public final class CuriosClient {
     private static IHUDElement geigerElement(Player player) {
         double magnitude = RadiationManager.get().getClientEnvironmentalRadiation();
         Component text = UnitDisplayUtils.getDisplayShort(magnitude, RadiationUnit.SV, 2);
-        if (MekanismConfig.common.enableDecayTimers.get() && magnitude > RadiationManager.BASELINE) {
+        if (EMConfig.general.enableDecayTimers.get() && magnitude > RadiationManager.BASELINE) {
             text = MekanismLang.GENERIC_WITH_PARENTHESIS.translate(text, TextUtils.getHoursMinutes(RadiationManager.get().getDecayTime(RadiationManager.get().getClientMaxMagnitude(), true)));
         }
         HUDColor color = magnitude <= RadiationManager.BASELINE ? HUDColor.REGULAR : magnitude < 0.1 ? HUDColor.WARNING : HUDColor.DANGER;

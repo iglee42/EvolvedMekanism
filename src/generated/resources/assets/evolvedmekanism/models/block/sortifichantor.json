@@ -1,0 +1,12 @@
+{
+  "parent": "mekanism:block/machine",
+  "textures": {
+    "down": "evolvedmekanism:block/sortifichantor/bottom",
+    "east": "evolvedmekanism:block/sortifichantor/left",
+    "front": "evolvedmekanism:block/sortifichantor/front",
+    "sides": "evolvedmekanism:block/sortifichantor/right",
+    "south": "evolvedmekanism:block/sortifichantor/back",
+    "up": "evolvedmekanism:block/sortifichantor/top",
+    "west": "evolvedmekanism:block/sortifichantor/right"
+  }
+}
