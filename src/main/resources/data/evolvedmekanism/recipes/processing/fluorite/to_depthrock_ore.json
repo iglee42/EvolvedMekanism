@@ -2,7 +2,9 @@
   "type": "mekanism:combining",
   "extraInput": {
     "amount": 1,
-    "item": "undergarden:depthrock"
+    "ingredient": {
+      "item": "undergarden:depthrock"
+    }
   },
   "mainInput": {
     "amount": 14,
@@ -12,9 +14,7 @@
   },
   "output": {
     "count": 1,
-    "ingredient": {
-      "item": "evolvedmekanism:depthrock_fluorite_ore"
-    }
+    "item": "evolvedmekanism:depthrock_fluorite_ore"
   },
   "conditions": [
     {
