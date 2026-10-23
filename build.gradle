@@ -198,9 +198,11 @@ dependencies {
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")// Mekanism: Tools
 
     runtimeOnly fg.deobf("curse.maven:ctm-267602:5983309")
-    runtimeOnly fg.deobf("curse.maven:ender-io-64578:7726916")
-    runtimeOnly fg.deobf("curse.maven:enderio-evolution-1453074:9100689")
-    runtimeOnly fg.deobf("curse.maven:ender-io-conduit-optimizer-1575307:9100680")
+    //runtimeOnly fg.deobf("curse.maven:ender-io-64578:7726916")
+    //runtimeOnly fg.deobf("curse.maven:enderio-evolution-1453074:9100689")
+    //runtimeOnly fg.deobf("curse.maven:ender-io-conduit-optimizer-1575307:9100680")
+
+    runtimeOnly fg.deobf("curse.maven:the-undergarden-379849:5182632")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
