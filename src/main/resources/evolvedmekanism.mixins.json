@@ -71,8 +71,7 @@
     "tiles.cables.TileEntityPressurizedTubeMixin",
     "tiles.cables.TileEntityThermodynamicConductorMixin",
     "tiles.cables.TileEntityUniversalCableMixin",
-    "tiles.factories.TileEntityCombiningFactoryMixin",
-    "tiles.EMAnchorMixin"
+    "tiles.factories.TileEntityCombiningFactoryMixin"
   ],
   "client": [
     "curios.HumanoidArmorLayerMixin",
