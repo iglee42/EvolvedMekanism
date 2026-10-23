@@ -208,6 +208,41 @@ publishMods {
             accessToken = providers.environmentVariable("MODRINTH_TOKEN")
             projectId = modrinthProjectId
             minecraftVersions.add(minecraft_version)
+
+            requires {
+                id = "6n6toXVb"
+                slug = "iglee-library"
+            }
+
+            requires {
+                id = "Ce6I4WUE"
+                slug = "mekanism"
+            }
+
+            optional {
+                id = "OFVYKsAk"
+                slug = "mekanism-generators"
+            }
+
+            optional {
+                id = "tqQpq1lt"
+                slug = "mekanism-tools"
+            }
+
+            optional {
+                id = "u6dRKJwZ"
+                slug = "jei"
+            }
+
+            optional {
+                id = "fRiHVvU7"
+                slug = "emi"
+            }
+
+            optional {
+                id = "vvuO3ImH"
+                slug = "curios"
+            }
         }
     }
 
