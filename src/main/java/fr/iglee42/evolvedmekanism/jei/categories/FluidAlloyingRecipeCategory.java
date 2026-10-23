@@ -28,18 +28,17 @@ public class FluidAlloyingRecipeCategory extends BaseRecipeCategory<FluidAlloyin
     private final GuiGauge<?> output;
 
     public FluidAlloyingRecipeCategory(IGuiHelper helper, MekanismJEIRecipeType<FluidAlloyingRecipe> recipeType) {
-        super(helper, recipeType, EMBlocks.FLUID_ALLOYER, 5, 8, 164, 78);
-        input = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT), this, 7, 16));
-        extra = addElement(GuiFluidGauge.getDummy(GaugeType.get(GaugeInfo.YELLOW, GaugeOverlay.STANDARD), this, 29, 16));
-        tertiary = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT_2), this, 51, 16));
-        output = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.OUTPUT), this, 131, 16));
-        addSlot(SlotType.INPUT, 8, 79).with(SlotOverlay.MINUS);
-        addSlot(SlotType.EXTRA, 30, 79).with(SlotOverlay.MINUS);
-        addSlot(SlotType.INPUT, 52, 79).with(SlotOverlay.MINUS);
-        addSlot(SlotType.OUTPUT, 132, 79).with(SlotOverlay.PLUS);
-        addSlot(SlotType.POWER, 153, 79).with(SlotOverlay.POWER);
+        super(helper, recipeType, EMBlocks.FLUID_ALLOYER, 5, 8, 164, 88);
+        input = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT), this, 18, 13));
+        extra = addElement(GuiFluidGauge.getDummy(GaugeType.get(GaugeInfo.YELLOW, GaugeOverlay.STANDARD), this, 40, 13));
+        tertiary = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT_2), this, 62, 13));
+        output = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.OUTPUT), this, 140, 13));
+        addSlot(SlotType.INPUT,19,76).with(SlotOverlay.MINUS);
+        addSlot(SlotType.EXTRA,41,76).with(SlotOverlay.MINUS);
+        addSlot(SlotType.INPUT_2,63,76).with(SlotOverlay.MINUS);
+        addSlot(SlotType.OUTPUT,141,76).with(SlotOverlay.PLUS);
         addElement(new GuiVerticalPowerBar(this, FULL_BAR, 164, 15));
-        addSimpleProgress(ProgressType.LARGE_RIGHT, 76, 42);
+        addSimpleProgress(ProgressType.LARGE_RIGHT, 86, 40);
     }
 
     @Override

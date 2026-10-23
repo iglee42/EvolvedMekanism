@@ -25,16 +25,15 @@ public class FluidCombiningRecipeCategory extends BaseRecipeCategory<FluidCombin
     private final GuiGauge<?> output;
 
     public FluidCombiningRecipeCategory(IGuiHelper helper, MekanismJEIRecipeType<FluidCombiningRecipe> recipeType) {
-        super(helper, recipeType, EMBlocks.FLUID_COMBINER, 5, 8, 164, 78);
-        input = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT), this, 7, 16));
-        extra = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT_2), this, 29, 16));
-        output = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.OUTPUT), this, 131, 16));
-        addSlot(SlotType.INPUT, 8, 79).with(SlotOverlay.MINUS);
-        addSlot(SlotType.EXTRA, 30, 79).with(SlotOverlay.MINUS);
-        addSlot(SlotType.OUTPUT, 132, 79).with(SlotOverlay.PLUS);
-        addSlot(SlotType.POWER, 153, 79).with(SlotOverlay.POWER);
+        super(helper, recipeType, EMBlocks.FLUID_COMBINER, 5, 8, 164, 88);
+        input = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT), this, 18, 13));
+        extra = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.INPUT_2), this, 40, 13));
+        output = addElement(GuiFluidGauge.getDummy(GaugeType.STANDARD.with(DataType.OUTPUT), this, 140, 13));
+        addSlot(SlotType.INPUT,19,76).with(SlotOverlay.MINUS);
+        addSlot(SlotType.INPUT_2,41,76).with(SlotOverlay.MINUS);
+        addSlot(SlotType.OUTPUT,141,76).with(SlotOverlay.PLUS);
         addElement(new GuiVerticalPowerBar(this, FULL_BAR, 164, 15));
-        addSimpleProgress(ProgressType.LARGE_RIGHT, 65, 42);
+        addSimpleProgress(ProgressType.LARGE_RIGHT, 72, 40);
     }
 
     @Override
