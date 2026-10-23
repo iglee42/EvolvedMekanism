@@ -1,4 +1,15 @@
 ------------------------------------------------------
+Version 1.3.0-fix1
+------------------------------------------------------
+Translations:
+- Updated Chinese (Simplified) translation. (#61 #62) (Thanks to Chiloven)
+
+Removed
+- EM Machines no longer accept anchor upgrades when the Mekanism counterpart don't (#87)
+
+Fixed
+- Fix factory outputs not updating when the slot was clearing
+------------------------------------------------------
 Version 1.3.0
 ------------------------------------------------------
 Added
