@@ -14,6 +14,7 @@ import mekanism.common.inventory.slot.FactoryInputInventorySlot;
 import mekanism.common.inventory.slot.OutputInventorySlot;
 import mekanism.common.inventory.warning.WarningTracker;
 import mekanism.common.recipe.IMekanismRecipeTypeProvider;
+import mekanism.common.recipe.lookup.monitor.FactoryRecipeCacheLookupMonitor;
 import mekanism.common.tile.factory.TileEntityFactory;
 import mekanism.common.tile.factory.TileEntityItemToItemFactory;
 import net.minecraft.core.BlockPos;
@@ -55,9 +56,13 @@ public class TileEntityItemToItemFactoryMixin<RECIPE extends MekanismRecipe<?>> 
             int baseXMult = 19;
             for (int i = 0; i < tier.processes; i++) {
                 int xPos = baseX + (i * baseXMult);
-                OutputInventorySlot outputSlot = OutputInventorySlot.at(updateSortingListener, xPos, 57);
-                //Note: As we are an item factory that has comparator's based on items we can just use the monitor as a listener directly
-                FactoryInputInventorySlot inputSlot = FactoryInputInventorySlot.create(this, i, outputSlot, recipeCacheLookupMonitors[i], xPos, 13);
+                FactoryRecipeCacheLookupMonitor<RECIPE> lookupMonitor = recipeCacheLookupMonitors[i];
+                IContentsListener updateSortingAndUnpause = () -> {
+                    updateSortingListener.onContentsChanged();
+                    lookupMonitor.unpause();
+                };
+                OutputInventorySlot outputSlot = OutputInventorySlot.at(updateSortingAndUnpause, xPos, 57);
+                FactoryInputInventorySlot inputSlot = FactoryInputInventorySlot.create(this, i, outputSlot, lookupMonitor, xPos, 13);
                 int index = i;
                 builder.addSlot(inputSlot).tracksWarnings(slot -> slot.warning(WarningTracker.WarningType.NO_MATCHING_RECIPE, getWarningCheck(CachedRecipe.OperationTracker.RecipeError.NOT_ENOUGH_INPUT, index)));
                 builder.addSlot(outputSlot).tracksWarnings(slot -> slot.warning(WarningTracker.WarningType.NO_SPACE_IN_OUTPUT, getWarningCheck(CachedRecipe.OperationTracker.RecipeError.NOT_ENOUGH_OUTPUT_SPACE, index)));
