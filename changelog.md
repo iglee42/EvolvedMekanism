@@ -11,6 +11,7 @@ Fixed
 - Fix factory outputs not updating when the slot was clearing
 - Fix Fluid alloyer and fluid combiner JEI categories
 - Fix Depthrock fluorite ore recipe (#86)
+- Fix Evolved Bin have no recipes and models
 ------------------------------------------------------
 Version 1.3.0
 ------------------------------------------------------
