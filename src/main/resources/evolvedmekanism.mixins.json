@@ -60,7 +60,6 @@
     "tiers.storage.InductionCellTierMixin",
     "tiers.storage.InductionProviderTierMixin",
     "tiers.storage.QIODriveTierMixin",
-    "tiles.EMAnchorMixin",
     "slots.BasicInventorySlotAccessor",
     "tiles.TileEntityAdvancedSolarGeneratorMixin",
     "tiles.TileEntityFactoryMixin",
