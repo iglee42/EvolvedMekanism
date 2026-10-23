@@ -75,11 +75,20 @@ public class BlockNoctisRozuliOre extends EMBlockOre{
                 origin.offset(15, 15, 15)).forEach(pos -> {
             BlockState state = level.getBlockState(pos);
             if (state.getBlock() instanceof BlockNoctisRozuliOre block) {
-                boolean isNight = level.isNight();
+                boolean isNight = isHarvestNight(level);
                 if (state.getValue(UNCOVERED) != isNight){
                     level.setBlock(pos, state.setValue(UNCOVERED, isNight), Block.UPDATE_ALL);
                 }
             }
         });
+    }
+
+    /** Vanilla night, plus the displayed clock so a fixed-time dimension locked at night still uncovers the ore. */
+    private static boolean isHarvestNight(Level level) {
+        if (level.isNight()) {
+            return true;
+        }
+        long time = Math.floorMod(level.dimensionType().fixedTime().orElse(level.getDayTime()), 24000L);
+        return time >= 13000L && time < 23000L;
     }
 }
