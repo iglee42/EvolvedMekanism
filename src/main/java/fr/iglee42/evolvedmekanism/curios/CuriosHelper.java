@@ -47,10 +47,11 @@ public final class CuriosHelper {
             return ItemStack.EMPTY;
         }
         ICurioStacksHandler stacksHandler = handler.get();
-        if (!isHandlerActive(inventory, identifier, stacksHandler)) {
+        IItemHandler stacks = stacksHandler.getStacks();
+        if (stacks.getSlots() <= 0 || !isHandlerActive(inventory, identifier, stacksHandler)) {
             return ItemStack.EMPTY;
         }
-        return stacksHandler.getStacks().getStackInSlot(0);
+        return stacks.getStackInSlot(0);
     }
 
     public static ItemStack findFirst(LivingEntity entity, Predicate<ItemStack> predicate) {
