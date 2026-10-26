@@ -1,7 +1,5 @@
 package fr.iglee42.evolvedmekanism.registries;
 
-import java.util.function.UnaryOperator;
-
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import mekanism.common.ChemicalConstants;
 import mekanism.common.Mekanism;
@@ -9,9 +7,12 @@ import mekanism.common.item.ItemNutritionalPasteBucket;
 import mekanism.common.registration.impl.FluidDeferredRegister;
 import mekanism.common.registration.impl.FluidDeferredRegister.MekanismFluidType;
 import mekanism.common.registration.impl.FluidRegistryObject;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraftforge.common.SoundActions;
+import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid.Flowing;
 import net.minecraftforge.fluids.ForgeFlowingFluid.Source;
 
@@ -170,7 +171,30 @@ public class EMFluids {
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_DEBRIS = registerMolten("debris",0xFF5C332B);
 
 
-    private static FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> registerMolten(String name,int color){
-        return FLUIDS.register("molten_" + name, properties -> properties.tint(color).texture(EvolvedMekanism.rl("block/molten_still"),EvolvedMekanism.rl("block/molten_flowing")).renderOverlay(EvolvedMekanism.rl("block/molten_still")));
+    private static FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> registerMolten(String name, int color) {
+        return FLUIDS.register("molten_" + name, moltenProperties(), moltenRender(color), BucketItem::new, (properties, render) -> new MoltenFluidType(properties, render, color));
+    }
+
+    private static FluidType.Properties moltenProperties() {
+        return FluidDeferredRegister.getMekBaseBuilder()
+                .canSwim(false)
+                .canDrown(true)
+                .canExtinguish(false)
+                .pathType(BlockPathTypes.LAVA)
+                .adjacentPathType(null)
+                .motionScale(0.0023333333333333335D)
+                .lightLevel(15)
+                .density(3000)
+                .viscosity(6000)
+                .temperature(1300)
+                .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
+                .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA);
+    }
+
+    private static FluidDeferredRegister.FluidTypeRenderProperties moltenRender(int color) {
+        return FluidDeferredRegister.FluidTypeRenderProperties.builder()
+                .tint(color)
+                .texture(EvolvedMekanism.rl("block/molten_still"), EvolvedMekanism.rl("block/molten_flowing"))
+                .renderOverlay(null);
     }
 }

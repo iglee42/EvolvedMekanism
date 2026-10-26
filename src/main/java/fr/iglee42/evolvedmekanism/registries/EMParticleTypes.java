@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.registries;
 
 import com.mojang.serialization.Codec;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.particles.ColoredMoltenOptions;
 import fr.iglee42.evolvedmekanism.particles.ColoredRisingBubbleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.Registries;
@@ -17,6 +18,14 @@ public class EMParticleTypes {
             @Override
             public Codec<ColoredRisingBubbleOptions> codec() {
                 return ColoredRisingBubbleOptions.CODEC;
+            }
+        });
+
+    public static final RegistryObject<ParticleType<ColoredMoltenOptions>> MOLTEN_POP =
+        PARTICLES.register("molten_pop", () -> new ParticleType<>(false, ColoredMoltenOptions.DESERIALIZER) {
+            @Override
+            public Codec<ColoredMoltenOptions> codec() {
+                return ColoredMoltenOptions.CODEC;
             }
         });
 }

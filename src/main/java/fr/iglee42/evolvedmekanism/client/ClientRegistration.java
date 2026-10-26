@@ -5,6 +5,7 @@ import fr.iglee42.evolvedmekanism.client.gui.*;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderAPT;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.MultipleCustomRenderData;
+import fr.iglee42.evolvedmekanism.particles.MoltenPopParticle;
 import fr.iglee42.evolvedmekanism.particles.RisingBubbleParticle;
 import fr.iglee42.evolvedmekanism.registries.*;
 import mekanism.api.text.EnumColor;
@@ -77,6 +78,8 @@ public class ClientRegistration {
     public static void registerParticles(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(EMParticleTypes.RISING_BUBBLE.get(),
                 RisingBubbleParticle.Factory::new);
+        event.registerSpriteSet(EMParticleTypes.MOLTEN_POP.get(),
+                MoltenPopParticle.Factory::new);
     }
 
     @SubscribeEvent

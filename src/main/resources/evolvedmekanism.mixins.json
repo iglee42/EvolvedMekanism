@@ -7,6 +7,9 @@
   "plugin": "fr.iglee42.evolvedmekanism.utils.EMMixinConfig",
   "mixins": [
     "APILangMixin",
+    "ForgeFlowingFluidMixin",
+    "MoltenEntityTickMixin",
+    "MoltenFluidAnimateMixin",
     "BlockShapesMixin",
     "BlockTypeBuilderMixin",
     "EnchantmentHelperMixin",
