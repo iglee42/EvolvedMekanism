@@ -95,6 +95,12 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
     }
 
     @Override
+    public boolean canSeeSun() {
+        // The plant asks the capability directly. The cached flag is only filled later in the generator tick.
+        return checkCanSeeSun();
+    }
+
+    @Override
     public long getProduction() {
         if (level == null || solarCheck == null) {
             // Note: We assume if lunarCheck is null then solarChecks will be filled with

@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.mixins.tiles;
 
 import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
+import mekanism.api.IEvaporationSolar;
 import mekanism.common.tile.base.TileEntityMekanism;
 import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.minecraft.core.BlockPos;
@@ -15,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(value = TileEntitySolarGenerator.class,remap = false)
-public class TileEntitySolarGeneratorMixin extends TileEntityMekanism {
+public abstract class TileEntitySolarGeneratorMixin extends TileEntityMekanism implements IEvaporationSolar {
 
     public TileEntitySolarGeneratorMixin(Holder<Block> blockProvider, BlockPos pos, BlockState state) {
         super(blockProvider, pos, state);

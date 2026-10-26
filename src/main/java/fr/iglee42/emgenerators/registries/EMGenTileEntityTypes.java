@@ -10,14 +10,16 @@ import fr.iglee42.emgenerators.tile.TileEntityTieredWindGenerator;
 import fr.iglee42.emgenerators.tile.WindGeneratorBlockOverride;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
+import mekanism.api.IEvaporationSolar;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.tile.base.TileEntityMekanism;
-import mekanism.generators.common.registries.GeneratorsBlocks;
+import mekanism.generators.common.registries.GeneratorsTileEntityTypes;
 import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 
 public class EMGenTileEntityTypes {
 
@@ -93,5 +95,15 @@ public class EMGenTileEntityTypes {
 
     public static void register(IEventBus bus) {
         TILE_ENTITY_TYPES.register(bus);
+        bus.addListener(EMGenTileEntityTypes::registerSolarEvaporation);
+    }
+
+    /**
+     * Mekanism only exposes the evaporation capability on the advanced solar generator.
+     * A basic panel, including one with the solar upgrade, sits in the same corner the plant checks and was ignored.
+     */
+    private static void registerSolarEvaporation(RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(Capabilities.EVAPORATION_SOLAR, GeneratorsTileEntityTypes.SOLAR_GENERATOR.get(),
+                (solar, context) -> (IEvaporationSolar) solar);
     }
 }

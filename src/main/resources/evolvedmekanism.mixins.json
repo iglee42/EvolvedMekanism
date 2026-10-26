@@ -26,6 +26,7 @@
     "MekanismTileEntityTypesMixin",
     "PlayerMixin",
     "TripleInputRecipeCacheMixin",
+    "EnumUtilsMixin",
     "UpgradeMixin",
     "curios.LivingEntityElytraMixin",
     "curios.PlayerFallFlyingMixin",
