@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.blocks;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.utils.EMNight;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -79,7 +80,7 @@ public class BlockNoctisRozuliOre extends EMBlockOre {
             return;
         }
         BlockPos origin = event.player.blockPosition();
-        boolean night = isHarvestNight(level);
+        boolean night = EMNight.isNight(level);
         BlockPos.betweenClosed(origin.offset(-15, -15, -15), origin.offset(15, 15, 15)).forEach(pos -> {
             BlockState state = level.getBlockState(pos);
             if (state.getBlock() instanceof BlockNoctisRozuliOre && state.getValue(UNCOVERED) != night) {
@@ -88,12 +89,4 @@ public class BlockNoctisRozuliOre extends EMBlockOre {
         });
     }
 
-    /** Vanilla night, plus the displayed clock so a fixed-time dimension locked at night still uncovers the ore. */
-    private static boolean isHarvestNight(Level level) {
-        if (level.isNight()) {
-            return true;
-        }
-        long time = Math.floorMod(level.dimensionType().fixedTime().orElse(level.getDayTime()), 24000L);
-        return time >= 13000L && time < 23000L;
-    }
 }

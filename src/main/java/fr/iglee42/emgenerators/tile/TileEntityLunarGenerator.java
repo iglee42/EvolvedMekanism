@@ -1,6 +1,7 @@
 package fr.iglee42.emgenerators.tile;
 
 import fr.iglee42.evolvedmekanism.mixins.tiles.TileEntitySolarGeneratorAccessor;
+import fr.iglee42.evolvedmekanism.utils.EMNight;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
 import mekanism.api.Action;
 import mekanism.api.AutomationType;
@@ -119,7 +120,7 @@ public class TileEntityLunarGenerator extends TileEntitySolarGenerator {
         }
 
         public void recheckCanSeeMoon() {
-            canSeeMoon = world != null && world.dimensionType().hasSkyLight() && world.canSeeSky(pos.above()) && world.isNight();
+            canSeeMoon = world != null && world.dimensionType().hasSkyLight() && world.canSeeSky(pos.above()) && EMNight.isNight(world);
         }
 
         public boolean canSeeMoon() {

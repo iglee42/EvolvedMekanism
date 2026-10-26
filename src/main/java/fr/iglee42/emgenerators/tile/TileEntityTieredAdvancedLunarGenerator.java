@@ -2,6 +2,7 @@ package fr.iglee42.emgenerators.tile;
 
 import fr.iglee42.emgenerators.tiers.AdvancedLunarPanelTier;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
+import fr.iglee42.evolvedmekanism.utils.EMNight;
 import mekanism.api.IEvaporationSolar;
 import mekanism.api.RelativeSide;
 import mekanism.api.math.FloatingLong;
@@ -108,7 +109,7 @@ public class TileEntityTieredAdvancedLunarGenerator extends TileEntityLunarGener
 
         @Override
         public void recheckCanSeeMoon() {
-            if (!world.dimensionType().hasSkyLight() || !world.isNight()) {
+            if (!world.dimensionType().hasSkyLight() || !EMNight.isNight(world)) {
                 canSeeMoon = false;
                 return;
             }
@@ -118,10 +119,10 @@ public class TileEntityTieredAdvancedLunarGenerator extends TileEntityLunarGener
             }
             lastCheckedMoon = time;
             if (world.getFluidState(pos).isEmpty()) {
-                canSeeMoon = world.canSeeSky(pos.above()) && world.isNight();
+                canSeeMoon = world.canSeeSky(pos.above()) && EMNight.isNight(world);
             } else {
                 BlockPos above = pos.above();
-                if (world.canSeeSky(above) && world.isNight()) {
+                if (world.canSeeSky(above) && EMNight.isNight(world)) {
                     BlockState state = world.getBlockState(above);
                     canSeeMoon = !state.liquid() && state.getLightBlock(world, above) <= 0;
                 } else {

@@ -3,6 +3,7 @@ package fr.iglee42.evolvedmekanism.tiles;
 import java.util.List;
 
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.utils.EMNight;
 import mekanism.api.AutomationType;
 import mekanism.api.IContentsListener;
 import mekanism.api.RelativeSide;
@@ -164,7 +165,7 @@ public class TileEntityLunarNeutronActivator extends TileEntityRecipeMachine<Gas
 
     @ComputerMethod
     boolean canSeeMoon() {
-        return level != null && level.dimensionType().hasSkyLight() && level.canSeeSky(worldPosition.above()) && level.isNight();
+        return level != null && level.dimensionType().hasSkyLight() && level.canSeeSky(worldPosition.above()) && EMNight.isNight(level);
     }
 
     private boolean canOperate() {
