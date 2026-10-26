@@ -5,6 +5,7 @@ import fr.iglee42.evolvedmekanism.client.gui.*;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderAPT;
 import fr.iglee42.evolvedmekanism.client.renderers.RenderTieredPersonalChest;
 import fr.iglee42.evolvedmekanism.client.renderers.datas.MultipleCustomRenderData;
+import fr.iglee42.evolvedmekanism.particles.MoltenPopParticle;
 import fr.iglee42.evolvedmekanism.particles.RisingBubbleParticle;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
@@ -103,6 +104,8 @@ public class ClientRegistration {
     public static void registerParticles(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(EMParticleTypes.RISING_BUBBLE.get(),
                 RisingBubbleParticle.Factory::new);
+        event.registerSpriteSet(EMParticleTypes.MOLTEN_POP.get(),
+                MoltenPopParticle.Factory::new);
     }
 
     @SubscribeEvent
@@ -236,7 +239,7 @@ public class ClientRegistration {
                 EMBlocks.QUANTUM_FLUID_TANK, EMBlocks.DENSE_FLUID_TANK, EMBlocks.MULTIVERSAL_FLUID_TANK);
 
         ClientRegistrationUtil.registerBlockExtensions(event, EMBlocks.BLOCKS);
-        ClientRegistrationUtil.registerFluidExtensions(event, EMFluids.FLUIDS);
+        EMFluidExtensions.register(event);
     }
 
 }

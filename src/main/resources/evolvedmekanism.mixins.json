@@ -7,6 +7,8 @@
   "plugin": "fr.iglee42.evolvedmekanism.utils.EMMixinConfig",
   "mixins": [
     "APILangMixin",
+    "BaseFlowingFluidMixin",
+    "MoltenFluidAnimateMixin",
     "BlockShapesMixin",
     "EnergyNetworkMixin",
     "TransporterUtilsMixin",
