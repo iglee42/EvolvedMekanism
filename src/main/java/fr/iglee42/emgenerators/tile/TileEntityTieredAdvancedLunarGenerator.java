@@ -2,6 +2,7 @@ package fr.iglee42.emgenerators.tile;
 
 import fr.iglee42.emgenerators.tiers.AdvancedLunarPanelTier;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
+import fr.iglee42.evolvedmekanism.utils.EMNight;
 import mekanism.api.IEvaporationSolar;
 import mekanism.api.RelativeSide;
 import mekanism.common.tile.interfaces.IBoundingBlock;
@@ -130,7 +131,7 @@ public class TileEntityTieredAdvancedLunarGenerator extends TileEntityLunarGener
 
         @Override
         public void recheckCanSeeMoon() {
-            if (!world.dimensionType().hasSkyLight() || !world.isNight()) {
+            if (!world.dimensionType().hasSkyLight() || !EMNight.isNight(world)) {
                 // Inline of most of WorldUtils#canSeeSun so that we can exit early if it is not
                 // day or there is no skylight
                 // We start with the basic dimension checks and always run those, as they are
@@ -151,10 +152,10 @@ public class TileEntityTieredAdvancedLunarGenerator extends TileEntityLunarGener
             if (world.getFluidState(pos).isEmpty()) {
                 // If the top isn't fluid logged we can just quickly check if the top can see
                 // the sun
-                canSeeMoon = world.dimensionType().hasSkyLight() && world.canSeeSky(pos.above()) && world.isNight();
+                canSeeMoon = world.dimensionType().hasSkyLight() && world.canSeeSky(pos.above()) && EMNight.isNight(world);
             } else {
                 BlockPos above = pos.above();
-                if ( world.dimensionType().hasSkyLight() && world.canSeeSky(above) && world.isNight()) {
+                if (world.dimensionType().hasSkyLight() && world.canSeeSky(above) && EMNight.isNight(world)) {
                     // If the spot above can see the sun, check to make sure we can see through the
                     // block there
                     BlockState state = world.getBlockState(above);
