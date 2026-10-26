@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -41,6 +42,19 @@ public class UpgradeMixin {
         EMUpgrades.LUNAR_UPGRADE = evolvedmekanism$addVariant("LUNAR", "lunar", EvolvedMekanismLang.UPGRADE_LUNAR,EvolvedMekanismLang.UPGRADE_LUNAR_DESCRIPTION,4, EnumColor.INDIGO);
 
         UPGRADES = $VALUES;
+        evolvedmekanism$refreshUpgradeList();
+    }
+
+    @Unique
+    private static void evolvedmekanism$refreshUpgradeList() {
+        try {
+            Class<?> utils = Class.forName("mekanism.common.util.EnumUtils");
+            Field upgrades = utils.getDeclaredField("UPGRADES");
+            upgrades.setAccessible(true);
+            upgrades.set(null, Arrays.copyOf($VALUES, $VALUES.length));
+        } catch (ReflectiveOperationException e) {
+            throw new ExceptionInInitializerError(e);
+        }
     }
 
     @Unique

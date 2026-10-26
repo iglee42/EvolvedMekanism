@@ -18,11 +18,13 @@ public class UpgradeUtilsMixin {
 
     @Inject(method = "getStack(Lmekanism/api/Upgrade;I)Lnet/minecraft/world/item/ItemStack;",at =@At("HEAD"),cancellable = true)
     private static void em$newUpgrades(Upgrade upgrade, int count, CallbackInfoReturnable<ItemStack> cir){
-        if (upgrade.equals(EMUpgrades.RADIOACTIVE_UPGRADE)) cir.setReturnValue(EMItems.RADIOACTIVE_UPGRADE.getItemStack(count));
-        if (upgrade.equals(EMUpgrades.SOLAR_UPGRADE) && ModsCompats.MEKANISMGENERATORS.isLoaded()) cir.setReturnValue(EMGenItems.SOLAR_UPGRADE.getItemStack(count));
-        else if (upgrade.equals(EMUpgrades.SOLAR_UPGRADE)) cir.setReturnValue(ItemStack.EMPTY);
-        if (upgrade.equals(EMUpgrades.LUNAR_UPGRADE) && ModsCompats.MEKANISMGENERATORS.isLoaded()) cir.setReturnValue(EMGenItems.LUNAR_UPGRADE.getItemStack(count));
-        else if (upgrade.equals(EMUpgrades.LUNAR_UPGRADE)) cir.setReturnValue(ItemStack.EMPTY);
+        if (upgrade == EMUpgrades.RADIOACTIVE_UPGRADE) {
+            cir.setReturnValue(EMItems.RADIOACTIVE_UPGRADE.getItemStack(count));
+        } else if (upgrade == EMUpgrades.SOLAR_UPGRADE) {
+            cir.setReturnValue(ModsCompats.MEKANISMGENERATORS.isLoaded() ? EMGenItems.SOLAR_UPGRADE.getItemStack(count) : ItemStack.EMPTY);
+        } else if (upgrade == EMUpgrades.LUNAR_UPGRADE) {
+            cir.setReturnValue(ModsCompats.MEKANISMGENERATORS.isLoaded() ? EMGenItems.LUNAR_UPGRADE.getItemStack(count) : ItemStack.EMPTY);
+        }
     }
 
 }

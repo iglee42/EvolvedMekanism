@@ -2,8 +2,12 @@ package fr.iglee42.evolvedmekanism.mixins.tiles;
 
 import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.evolvedmekanism.registries.EMUpgrades;
+import mekanism.api.IEvaporationSolar;
 import mekanism.api.math.FloatingLong;
+import mekanism.api.math.FloatingLongSupplier;
 import mekanism.api.providers.IBlockProvider;
+import mekanism.common.capabilities.Capabilities;
+import mekanism.common.capabilities.resolver.BasicCapabilityResolver;
 import mekanism.common.tile.base.TileEntityMekanism;
 import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.minecraft.core.BlockPos;
@@ -15,10 +19,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = TileEntitySolarGenerator.class,remap = false)
-public class TileEntitySolarGeneratorMixin extends TileEntityMekanism {
+public abstract class TileEntitySolarGeneratorMixin extends TileEntityMekanism implements IEvaporationSolar {
 
     public TileEntitySolarGeneratorMixin(IBlockProvider blockProvider, BlockPos pos, BlockState state) {
         super(blockProvider, pos, state);
+    }
+
+    @Inject(method = "<init>(Lmekanism/api/providers/IBlockProvider;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lmekanism/api/math/FloatingLongSupplier;)V", at = @At("RETURN"))
+    private void evolvedmekanism$basicSolarEvaporation(IBlockProvider blockProvider, BlockPos pos, BlockState state, FloatingLongSupplier max, CallbackInfo ci) {
+        if (((Object) this).getClass() == TileEntitySolarGenerator.class) {
+            addCapabilityResolver(BasicCapabilityResolver.constant(Capabilities.EVAPORATION_SOLAR, this));
+        }
     }
 
     @Inject(method = "getConfiguredMax",at = @At("RETURN"),cancellable = true)

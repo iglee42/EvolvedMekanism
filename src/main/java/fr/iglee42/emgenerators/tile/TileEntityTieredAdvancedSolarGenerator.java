@@ -97,6 +97,11 @@ public class TileEntityTieredAdvancedSolarGenerator extends TileEntitySolarGener
     }
 
     @Override
+    public boolean canSeeSun() {
+        return checkCanSeeSun();
+    }
+
+    @Override
     public FloatingLong getProduction() {
         if (level == null || solarCheck == null) {
             // Note: We assume if solarCheck is null then solarChecks will be filled with
