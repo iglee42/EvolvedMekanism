@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.client.gui;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
+import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.client.gui.scroll.GuiEnchantmentsScrollList;
 import fr.iglee42.evolvedmekanism.network.PacketApplyEnchantments;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
@@ -62,7 +63,15 @@ public class GuiEnchantingStation extends GuiMekanismTile<TileEntityEnchantingSt
 
     @Override
     protected void drawForegroundText(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY) {
-        setButton.active = enchantmentList.hasChanges() && tile.operatingTicks == 0;
+        long chemicalCost = tile.calculateChemicalCost(enchantmentList.getPendingLevels());
+        setButton.active = enchantmentList.hasChanges() && tile.operatingTicks == 0 && chemicalCost <= tile.getChemicalTank().getStored();
+        if (setButton.active) {
+            setButton.setMessage(EvolvedMekanismLang.BUTTON_APPLY_ENCHANTMENTS.translate());
+        } else if (enchantmentList.hasChanges() && chemicalCost > tile.getChemicalTank().getStored()) {
+            setButton.setMessage(EvolvedMekanismLang.BUTTON_NOT_ENOUGH_GAS.translate(chemicalCost));
+        } else {
+            setButton.setMessage(EvolvedMekanismLang.BUTTON_NO_CHANGES.translate());
+        }
         plusButton.active = enchantmentList.canChangeSelected(1);
         minusButton.active = enchantmentList.canChangeSelected(-1);
         renderTitleText(guiGraphics);

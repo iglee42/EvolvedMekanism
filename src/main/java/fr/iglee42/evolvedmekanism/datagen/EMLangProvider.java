@@ -931,5 +931,8 @@ public class EMLangProvider extends LanguageProvider {
         add("tag.item.curios.portable_teleporter", "Portable Teleporter");
         add("tag.item.curios.dosimeter", "Dosimeter");
         add("tag.item.curios.geiger_counter", "Geiger Counter");
+        add("button.evolvedmekanism.apply_enchantments", "Apply Enchantments");
+        add("button.evolvedmekanism.not_enough_gas", "Not Enough Gas (Requires %smb)");
+        add("button.evolvedmekanism.no_changes", "No Changes");
     }
 }

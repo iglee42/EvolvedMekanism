@@ -84,7 +84,7 @@ public class EMGeneralConfig extends BaseMekanismConfig {
         solidifierEnergyStorage = energyValue(builder, "solidifierEnergyStorage", MekanismConfig.storage.pressurizedReactionBase.getOrDefault(), "Solidifier energy capacity.");
         laserDisenchanterEnergyStorage = energyValue(builder, "laserDisenchanterEnergyStorage", MekanismConfig.storage.laserTractorBeam.getOrDefault(), "Laser disenchanter energy capacity.");
         enchantingStationEnergyUsage = energyValue(builder, "enchantingStationEnergyUsage", MekanismConfig.usage.modificationStation.getOrDefault(), "Enchanting station energy use per tick.");
-        enchantingStationEnergyStorage = energyValue(builder, "enchantingStationEnergyStorage", MekanismConfig.storage.modificationStation.getOrDefault(), "Enchanting station energy capacity.");
+        enchantingStationEnergyStorage = energyValue(builder, "enchantingStationEnergyStorage", FloatingLong.createConst(500_000), "Enchanting station energy capacity.");
         lunarNeutronActivatorProduction = CachedFloatValue.wrap(this, builder.comment("Lunar neutron activator peak production rate.")
               .defineInRange("lunarNeutronActivatorProduction", (double) MekanismConfig.general.maxSolarNeutronActivatorRate.getOrDefault(), 0, Double.MAX_VALUE));
         melterHeatDissipation = CachedFloatValue.wrap(this, builder.comment("Melter heat dissipation per tick.")

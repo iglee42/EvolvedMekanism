@@ -52,7 +52,7 @@ import java.util.Set;
 public class TileEntityEnchantingStation extends TileEntityMekanism implements IBoundingBlock {
 
     private static final int BASE_TICKS_REQUIRED = 10;
-    public static final long MAX_GAS = 10000;
+    public static final long MAX_GAS = 32000;
     public static final long CHEMICAL_PER_RARITY = 50;
     public static final int TICKS_PER_LEVEL = 10;
 
@@ -162,6 +162,21 @@ public class TileEntityEnchantingStation extends TileEntityMekanism implements I
         return pendingResult != null;
     }
 
+    public long calculateChemicalCost(Map<Enchantment, Integer> requested) {
+        if (containerSlot.isEmpty()) {
+            return 0;
+        }
+        Map<Enchantment, Integer> current = EMEnchantmentHelper.getEnchantments(containerSlot.getStack());
+        long weightedLevels = 0;
+        for (Map.Entry<Enchantment, Integer> entry : requested.entrySet()) {
+            int levelsToAdd = entry.getValue() - current.getOrDefault(entry.getKey(), 0);
+            if (levelsToAdd > 0) {
+                weightedLevels += (long) levelsToAdd * EMEnchantmentHelper.getRarityMultiplier(entry.getKey());
+            }
+        }
+        return CHEMICAL_PER_RARITY * weightedLevels;
+    }
+
     public void applyEnchantments(Map<Enchantment, Integer> requested) {
         if (level == null || containerSlot.isEmpty() || pendingResult != null) {
             return;
@@ -213,7 +228,7 @@ public class TileEntityEnchantingStation extends TileEntityMekanism implements I
             }
             return;
         }
-        long chemicalCost = CHEMICAL_PER_RARITY * weightedLevels;
+        long chemicalCost = calculateChemicalCost(requested);
         if (chemicalTank.getCapacity() < chemicalCost) {
             return;
         }

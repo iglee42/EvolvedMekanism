@@ -57,11 +57,22 @@ public class GuiEnchantmentsScrollList extends GuiScrollList {
     }
 
     private void rebuild() {
+        Enchantment selectedEnchantment = selectedEnchantment();
         currentList.clear();
         pendingLevels.entrySet().stream()
               .sorted(Comparator.<Map.Entry<Enchantment, Integer>>comparingInt(entry -> entry.getValue() > 0 ? 0 : (isBlocked(entry.getKey()) ? 2 : 1))
                     .thenComparing(entry -> Component.translatable(entry.getKey().getDescriptionId()).getString()))
               .forEach(entry -> currentList.add(entry.getKey()));
+        selected = selectedEnchantment == null ? -1 : currentList.indexOf(selectedEnchantment);
+        if (selected >= 0 && needsScrollBars()) {
+            int firstVisible = getCurrentSelection();
+            int focusedElements = getFocusedElements();
+            if (selected < firstVisible || selected >= firstVisible + focusedElements) {
+                int maxFirstVisible = getElements();
+                int newFirstVisible = Math.min(selected < firstVisible ? selected : selected - focusedElements + 1, maxFirstVisible);
+                scroll = newFirstVisible / (maxFirstVisible + 0.5);
+            }
+        }
     }
 
     private void recheckItem() {

@@ -58,8 +58,11 @@ public enum EvolvedMekanismLang implements ILangEntry {
     DESCRIPTION_ENCHANTING_STATION("description", "enchanting_station"),
     DESCRIPTION_SORTIFICHANTOR("description", "sortifichantor"),
     MODULE_FOG("module", "fog"),
-    MODULE_FOG_COLOR("module", "fog_color")
+    MODULE_FOG_COLOR("module", "fog_color"),
 
+    BUTTON_APPLY_ENCHANTMENTS("button","apply_enchantments"),
+    BUTTON_NOT_ENOUGH_GAS("button","not_enough_gas"),
+    BUTTON_NO_CHANGES("button","no_changes")
     ;
 
     // <type>.mekanism.<path>
