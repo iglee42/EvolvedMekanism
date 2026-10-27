@@ -68,9 +68,19 @@ public class GuiEnchantmentsScrollList extends GuiInstallableScrollList<Pair<Hol
                 .forEach(e -> currentList.add(Pair.of(e.getKey(), e.getValue())));
         selectedType = null;
         if (selectedEnchantment != null) {
-            for (Pair<Holder<Enchantment>, Integer> pair : currentList) {
+            for (int i = 0; i < currentList.size(); i++) {
+                Pair<Holder<Enchantment>, Integer> pair = currentList.get(i);
                 if (pair.getFirst().equals(selectedEnchantment)) {
                     selectedType = pair;
+                    if (needsScrollBars()) {
+                        int firstVisible = getCurrentSelection();
+                        int focusedElements = getFocusedElements();
+                        if (i < firstVisible || i >= firstVisible + focusedElements) {
+                            int maxFirstVisible = getElements();
+                            int newFirstVisible = Math.min(i < firstVisible ? i : i - focusedElements + 1, maxFirstVisible);
+                            scroll = newFirstVisible / (maxFirstVisible + 0.5);
+                        }
+                    }
                     break;
                 }
             }

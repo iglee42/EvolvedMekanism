@@ -74,6 +74,9 @@ public enum EvolvedMekanismLang implements ILangEntry {
     UPGRADE_SOLAR_DESCRIPTION("upgrade","solar.description"),
     UPGRADE_LUNAR_DESCRIPTION("upgrade","lunar.description"),
 
+    BUTTON_APPLY_ENCHANTMENTS("button","apply_enchantments"),
+    BUTTON_NOT_ENOUGH_GAS("button","not_enough_gas"),
+    BUTTON_NO_CHANGES("button","no_changes")
     ;
 
 

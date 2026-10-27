@@ -1,9 +1,14 @@
 package fr.iglee42.evolvedmekanism.client.gui;
 
+import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
 import fr.iglee42.evolvedmekanism.client.gui.scroll.GuiEnchantmentsScrollList;
 import fr.iglee42.evolvedmekanism.tiles.enchantment.TileEntityEnchantingStation;
 import fr.iglee42.evolvedmekanism.network.to_server.PacketApplyEnchantments;
 import java.util.HashMap;
+
+import mekanism.api.text.ILangEntry;
+import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.network.chat.CommonComponents;
 import net.neoforged.neoforge.network.PacketDistributor;
 import mekanism.client.gui.GuiMekanismTile;
 import mekanism.client.gui.element.bar.GuiChemicalBar;
@@ -56,7 +61,7 @@ public class GuiEnchantingStation extends GuiMekanismTile<TileEntityEnchantingSt
         addRenderableWidget(new GuiProgress(tile::getScaledProgress, ProgressType.LARGE_RIGHT, this, 65, 123));
         enchantmentList = addRenderableWidget(new GuiEnchantmentsScrollList(this, 28, 20, 74, () -> tile.containerSlot.getStack().copy()));
 
-        setButton = addRenderableWidget(new TranslationButton(this, 28, 96, 86, 17, MekanismLang.BUTTON_SET, (element, mouseX, mouseY) -> {
+        setButton = addRenderableWidget(new TranslationButton(this, 28, 96, 86, 17, EvolvedMekanismLang.BUTTON_APPLY_ENCHANTMENTS, (element, mouseX, mouseY) -> {
             GuiEnchantingStation gui = (GuiEnchantingStation) element.gui();
             if (gui.enchantmentList.hasChanges()) {
                 PacketDistributor.sendToServer(new PacketApplyEnchantments(gui.tile.getBlockPos(), new HashMap<>(gui.enchantmentList.getPendingLevels())));
@@ -79,7 +84,15 @@ public class GuiEnchantingStation extends GuiMekanismTile<TileEntityEnchantingSt
 
     @Override
     protected void drawForegroundText(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY) {
-        setButton.active = enchantmentList.hasChanges() && tile.operatingTicks == 0;
+        long chemicalCost = tile.calculateChemicalCost(enchantmentList.getPendingLevels());
+        setButton.active = enchantmentList.hasChanges() && tile.operatingTicks == 0 && chemicalCost <= tile.getChemicalTank().getStored();
+        if (setButton.active) {
+            setButton.setMessage(EvolvedMekanismLang.BUTTON_APPLY_ENCHANTMENTS.translate());
+        } else if (enchantmentList.hasChanges() && chemicalCost > tile.getChemicalTank().getStored()) {
+            setButton.setMessage(EvolvedMekanismLang.BUTTON_NOT_ENOUGH_GAS.translate(chemicalCost));
+        } else {
+            setButton.setMessage(EvolvedMekanismLang.BUTTON_NO_CHANGES.translate());
+        }
         plusButton.active = enchantmentList.canChangeSelected(1);
         minusButton.active = enchantmentList.canChangeSelected(-1);
         renderTitleTextWithOffset(guiGraphics, 24);

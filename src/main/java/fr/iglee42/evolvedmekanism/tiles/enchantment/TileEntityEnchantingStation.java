@@ -51,6 +51,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
+
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +61,7 @@ import org.jetbrains.annotations.Nullable;
 public class TileEntityEnchantingStation extends TileEntityMekanism implements IBoundingBlock {
 
     private static final int BASE_TICKS_REQUIRED = MekanismUtils.TICKS_PER_HALF_SECOND;
-    public static final long MAX_GAS = 10000;
+    public static final long MAX_GAS = 32000;
 
 
     public int ticksRequired = BASE_TICKS_REQUIRED;
@@ -192,6 +194,22 @@ public class TileEntityEnchantingStation extends TileEntityMekanism implements I
         return pendingResult != null;
     }
 
+    public long calculateChemicalCost(Map<Holder<Enchantment>, Integer> requested) {
+        if (containerSlot.isEmpty()) {
+            return 0;
+        }
+        ItemEnchantments current = containerSlot.getStack().getTagEnchantments();
+        long weightedLevels = 0;
+        for (Map.Entry<Holder<Enchantment>, Integer> entry : requested.entrySet()) {
+            Holder<Enchantment> enchantment = entry.getKey();
+            int levelsToAdd = entry.getValue() - current.getLevel(enchantment);
+            if (levelsToAdd > 0) {
+                weightedLevels += (long) levelsToAdd * getRarityMultiplier(enchantment);
+            }
+        }
+        return CHEMICAL_PER_RARITY * weightedLevels;
+    }
+
     public void applyEnchantments(Map<Holder<Enchantment>, Integer> requested) {
         if (level == null || containerSlot.isEmpty() || pendingResult != null) {
             return;
@@ -238,12 +256,12 @@ public class TileEntityEnchantingStation extends TileEntityMekanism implements I
             }
         }
         if (added == 0) {
-            if (!result.equals(current.entrySet().stream().collect(java.util.stream.Collectors.toMap(Map.Entry::getKey, e -> e.getIntValue())))) {
+            if (!result.equals(current.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, e -> e.getIntValue())))) {
                 writeEnchantments(result);
             }
             return;
         }
-        long chemicalCost = CHEMICAL_PER_RARITY * weightedLevels;
+        long chemicalCost = calculateChemicalCost(requested);
         if (chemicalTank.getCapacity() < chemicalCost) {
             return;
         }

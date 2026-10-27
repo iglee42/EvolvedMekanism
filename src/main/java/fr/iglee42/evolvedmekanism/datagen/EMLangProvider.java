@@ -913,6 +913,9 @@ public class EMLangProvider extends LanguageProvider {
         add("block.evolvedmekanism.sortifichantor", "Sortifichantor");
         add("container.evolvedmekanism.sortifichantor", "Sortifichantor");
         add("description.evolvedmekanism.sortifichantor", "Sorts enchanted and unenchanted items into their respective containers.");
+        add("button.evolvedmekanism.apply_enchantments", "Apply Enchantments");
+        add("button.evolvedmekanism.not_enough_gas", "Not Enough Gas (Requires %smb)");
+        add("button.evolvedmekanism.no_changes", "No Changes");
     }
 
     private void addTags() {
