@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /**
  * Runs after the entity tick, once vanilla has finished updating the fire flag.
  */
-@Mixin(value = Entity.class, remap = false)
+@Mixin(value = Entity.class)
 public class MoltenEntityTickMixin {
 
     @Inject(method = "tick", at = @At("RETURN"))

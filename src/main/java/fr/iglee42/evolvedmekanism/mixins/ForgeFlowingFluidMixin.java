@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /**
  * Mekanism builds flowing fluids with water's tick rate. Lava waits longer and spreads less far.
  */
-@Mixin(value = ForgeFlowingFluid.class, remap = false)
+@Mixin(value = ForgeFlowingFluid.class)
 public class ForgeFlowingFluidMixin {
 
     @Inject(method = "getTickDelay", at = @At("RETURN"), cancellable = true)

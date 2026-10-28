@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /**
  * Same pops and ambient loop as lava, with a flame particle tinted by the molten color.
  */
-@Mixin(value = Fluid.class, remap = false)
+@Mixin(value = Fluid.class)
 public class MoltenFluidAnimateMixin {
 
     @Inject(method = "animateTick", at = @At("HEAD"))
