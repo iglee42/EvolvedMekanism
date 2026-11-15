@@ -2,6 +2,7 @@
 Version 1.3.0-fix3
 ------------------------------------------------------
 Fixed
+- Fix noctis rozuli ore releaving using a lot of resources for no reason (#97)
 - Fix crash when calling getName(ItemStack) on server-side (#96)
 ------------------------------------------------------
 Version 1.3.0-fix2
