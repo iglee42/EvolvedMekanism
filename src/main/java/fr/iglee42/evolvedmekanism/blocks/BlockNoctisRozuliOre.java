@@ -72,16 +72,16 @@ public class BlockNoctisRozuliOre extends EMBlockOre {
 
     @SubscribeEvent
     public static void playerTick(TickEvent.PlayerTickEvent event) {
-        if (event.phase != TickEvent.Phase.END) {
+        if (event.phase != TickEvent.Phase.END)
             return;
-        }
         Level level = event.player.level();
-        if (level.isClientSide) {
+        if (level.isClientSide)
             return;
-        }
+        if (level.getGameTime() % 20 != 0)
+            return;
         BlockPos origin = event.player.blockPosition();
         boolean night = EMNight.isNight(level);
-        BlockPos.betweenClosed(origin.offset(-15, -15, -15), origin.offset(15, 15, 15)).forEach(pos -> {
+        BlockPos.betweenClosedStream(origin.offset(-15, -15, -15), origin.offset(15, 15, 15)).filter(level::isLoaded).forEach(pos -> {
             BlockState state = level.getBlockState(pos);
             if (state.getBlock() instanceof BlockNoctisRozuliOre && state.getValue(UNCOVERED) != night) {
                 level.setBlock(pos.immutable(), state.setValue(UNCOVERED, night), Block.UPDATE_CLIENTS);
