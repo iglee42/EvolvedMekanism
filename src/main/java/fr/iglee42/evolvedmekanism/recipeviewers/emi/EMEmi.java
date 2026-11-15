@@ -8,8 +8,10 @@ import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.Comparison;
 import dev.emi.emi.api.stack.EmiRegistryAdapter;
 import dev.emi.emi.api.stack.EmiStack;
+import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipeviewers.EMRecipeViewersTypes;
+import fr.iglee42.evolvedmekanism.recipeviewers.alias.EMAliasMapping;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.categories.APTEMIRecipeCategory;
 import fr.iglee42.evolvedmekanism.recipeviewers.emi.recipes.*;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
@@ -35,9 +37,8 @@ import mekanism.common.block.attribute.Attribute;
 import mekanism.common.block.attribute.AttributeFactoryType;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.recipe.IMekanismRecipeTypeProvider;
-import mekanism.common.tier.FactoryTier;
-import mekanism.common.util.EnumUtils;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -159,6 +160,7 @@ public class EMEmi implements EmiPlugin {
         registry.addGenericStackProvider(new EmiStackUnderMouseProvider());
         addCategories(registry);
         addWorkstations(registry, MekanismEmiRecipeCategory.create(RecipeViewerRecipeType.ACTIVATING),List.of(EMBlocks.LUNAR_NEUTRON_ACTIVATOR.get()));
+        new EMAliasMapping().addAliases(new EmiAliasHelper(registry));
 
         registerItemSubtypes(registry, EMItems.ITEMS.getEntries());
         registerItemSubtypes(registry, EMBlocks.BLOCKS.getSecondaryEntries());
@@ -186,6 +188,9 @@ public class EMEmi implements EmiPlugin {
             boolean used = EMRecipeType.SOLIDIFICATION.getRecipes((Level) null).stream().anyMatch(r->r.value().getInputSolid().getRepresentations().stream().anyMatch(s->s.getItem().equals(m.get())));
             if (!used) itemsToRemove.add(m.get());
         });
+        if (!fr.iglee42.evolvedmekanism.utils.ModsCompats.CURIOS.isLoaded()) {
+            itemsToRemove.add(EMItems.PORTABLE_HAZMAT_SUIT);
+        }
 
         fluidsToRemove.stream().map(EmiStack::of).forEach(registry::removeEmiStacks);
         itemsToRemove.stream().map(EmiStack::of).forEach(registry::removeEmiStacks);
@@ -204,6 +209,8 @@ public class EMEmi implements EmiPlugin {
 
     private void addCategories(EmiRegistry registry) {
         addCategoryAndRecipes(registry, EMRecipeViewersTypes.ALLOYING, AlloyerEMIRecipe::new);
+        addCategoryAndRecipes(registry, EMRecipeViewersTypes.FLUID_COMBINING, FluidCombiningEmiRecipe::new);
+        addCategoryAndRecipes(registry, EMRecipeViewersTypes.FLUID_ALLOYING, FluidAlloyingEmiRecipe::new);
         addCategoryAndRecipes(registry, EMRecipeViewersTypes.CHEMIXING, ChemixerEMIRecipe::new);
         addCategoryAndRecipes(registry, EMRecipeViewersTypes.SOLIDIFICATION, SolidificationEMIRecipe::new);
 
@@ -258,9 +265,14 @@ public class EMEmi implements EmiPlugin {
             if (item instanceof BlockItem blockItem) {
                 AttributeFactoryType factoryType = Attribute.get(blockItem.getBlock(), AttributeFactoryType.class);
                 if (factoryType != null) {
-                    for (FactoryTier tier : EnumUtils.FACTORY_TIERS) {
-                        registry.addWorkstation(category, EmiStack.of(EMBlocks.getFactory(tier, factoryType.getFactoryType())));
-                    }
+                    String factorySuffix = "_" + factoryType.getFactoryType().getRegistryNameComponent() + "_factory";
+                    BuiltInRegistries.BLOCK.holders().forEach(holder -> {
+                        ResourceLocation id = holder.getKey().location();
+                        if (id.getPath().endsWith(factorySuffix)
+                                && (EvolvedMekanism.MODID.equals(id.getNamespace()) || "mekanism".equals(id.getNamespace()))) {
+                            registry.addWorkstation(category, EmiStack.of(holder.value()));
+                        }
+                    });
                 }
             }
         }

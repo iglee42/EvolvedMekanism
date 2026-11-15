@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "base": {
+      "parent": "mekanism:block/factory/compressing/base",
+      "textures": {
+        "front": "mekanism:block/factory/compressing/compressing_factory_front_active"
+      }
+    },
+    "front_led": {
+      "parent": "evolvedmekanism:block/factory/front_led/active/quantum"
+    }
+  },
+  "item_render_order": [
+    "base",
+    "front_led"
+  ],
+  "loader": "neoforge:composite",
+  "textures": {
+    "particle": "mekanism:block/factory/compressing/compressing_factory_front"
+  }
+}

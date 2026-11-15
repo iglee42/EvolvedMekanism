@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:pellets/antimatter"
+    },
+    "I": {
+      "tag": "c:ingots/lead"
+    },
+    "P": {
+      "item": "evolvedmekanism:qio_drive_boosted"
+    }
+  },
+  "pattern": [
+    "IPI",
+    "P#P",
+    "IPI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:qio_drive_singularity"
+  }
+}

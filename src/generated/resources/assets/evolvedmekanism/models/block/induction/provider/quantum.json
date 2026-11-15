@@ -1,0 +1,10 @@
+{
+  "parent": "mekanism:block/induction/provider/base",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "evolvedmekanism:block/quantum_induction_provider",
+    "glow": "mekanism:block/induction_provider_glow",
+    "led": "evolvedmekanism:block/quantum_induction_provider_led",
+    "particle": "evolvedmekanism:block/quantum_induction_provider"
+  }
+}

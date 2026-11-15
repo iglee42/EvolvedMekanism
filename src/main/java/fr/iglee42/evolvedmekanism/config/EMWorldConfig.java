@@ -5,6 +5,7 @@ import fr.iglee42.evolvedmekanism.registries.EMOreType;
 import mekanism.api.functions.FloatSupplier;
 import mekanism.common.config.BaseMekanismConfig;
 import mekanism.common.config.IMekanismConfig;
+import mekanism.common.config.MekanismConfig;
 import mekanism.common.config.MekanismConfigTranslations;
 import mekanism.common.config.MekanismConfigTranslations.OreConfigTranslations;
 import mekanism.common.config.MekanismConfigTranslations.OreVeinConfigTranslations;
@@ -26,8 +27,11 @@ import java.util.function.IntSupplier;
 public class EMWorldConfig extends BaseMekanismConfig {
     private final ModConfigSpec configSpec;
     private final Map<EMOreType, OreConfig> ores = new EnumMap(EMOreType.class);
+    public final CachedBooleanValue enableRegeneration;
     EMWorldConfig() {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
+        enableRegeneration = CachedBooleanValue.wrap(this, builder.comment("Allow Evolved Mekanism ore features to generate during regeneration.")
+              .define("enableRegeneration", MekanismConfig.world.enableRegeneration.getOrDefault()));
         for(EMOreType ore : EMOreType.values()) {
             this.ores.put(ore, new OreConfig(this, builder, ore));
         }

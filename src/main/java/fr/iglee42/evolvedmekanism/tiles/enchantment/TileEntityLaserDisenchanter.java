@@ -3,15 +3,13 @@ package fr.iglee42.evolvedmekanism.tiles.enchantment;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMChemicals;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import mekanism.api.Action;
-import mekanism.api.AutomationType;
-import mekanism.api.IContentsListener;
-import mekanism.api.RelativeSide;
+import mekanism.api.*;
 import mekanism.api.chemical.BasicChemicalTank;
 import mekanism.api.chemical.IChemicalTank;
 import mekanism.api.functions.ConstantPredicates;
 import mekanism.api.inventory.IInventorySlot;
 import mekanism.common.CommonWorldTickHandler;
+import mekanism.common.attachments.containers.ContainerType;
 import mekanism.common.capabilities.energy.BasicEnergyContainer;
 import mekanism.common.capabilities.energy.LaserEnergyContainer;
 import mekanism.common.capabilities.holder.chemical.ChemicalTankHelper;
@@ -21,22 +19,35 @@ import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;
 import mekanism.common.capabilities.holder.slot.InventorySlotHelper;
 import mekanism.common.config.MekanismConfig;
 import mekanism.common.integration.computer.SpecialComputerMethodWrapper;
+import mekanism.common.integration.computer.annotation.ComputerMethod;
 import mekanism.common.integration.computer.annotation.WrappingComputerMethod;
+import mekanism.common.inventory.container.MekanismContainer;
 import mekanism.common.inventory.container.slot.ContainerSlotType;
 import mekanism.common.inventory.container.slot.SlotOverlay;
+import mekanism.common.inventory.container.sync.SyncableEnum;
+import mekanism.common.inventory.container.sync.SyncableInt;
+import mekanism.common.inventory.container.sync.SyncableLong;
 import mekanism.common.inventory.slot.EnergyInventorySlot;
 import mekanism.common.inventory.slot.FluidInventorySlot;
 import mekanism.common.inventory.slot.OutputInventorySlot;
 import mekanism.common.inventory.slot.chemical.ChemicalInventorySlot;
+import mekanism.common.registries.MekanismDataComponents;
+import mekanism.common.tile.interfaces.IHasMode;
 import mekanism.common.tile.laser.TileEntityBasicLaser;
+import mekanism.common.tile.laser.TileEntityLaserAmplifier;
 import mekanism.common.tile.laser.TileEntityLaserReceptor;
 import mekanism.common.util.InventoryUtils;
+import mekanism.common.util.MekanismUtils;
+import mekanism.common.util.NBTUtils;
 import mekanism.common.util.WorldUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -49,6 +60,8 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.redstone.Redstone;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -56,7 +69,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.BooleanSupplier;
 
-public class TileEntityLaserDisenchanter extends TileEntityLaserReceptor {
+public class TileEntityLaserDisenchanter extends TileEntityLaserReceptor implements IHasMode {
 
     public static final long MAX_GAS = 10000;
 
@@ -69,8 +82,12 @@ public class TileEntityLaserDisenchanter extends TileEntityLaserReceptor {
     @WrappingComputerMethod(wrapper = SpecialComputerMethodWrapper.ComputerIInventorySlotWrapper.class, methodNames = "getGasItemOutput", docPlaceholder = "gas item output slot")
     ChemicalInventorySlot gasOutputSlot;
 
-    public TileEntityLaserDisenchanter(Holder<Block> blockProvider, BlockPos pos, BlockState state) {
-        super(blockProvider, pos, state);
+    private boolean emittingRedstone;
+    private TileEntityLaserAmplifier.RedstoneOutput outputMode = TileEntityLaserAmplifier.RedstoneOutput.OFF;
+
+
+    public TileEntityLaserDisenchanter(BlockPos pos, BlockState state) {
+        super(EMBlocks.LASER_DISENCHANTER, pos, state);
     }
 
     @Override
@@ -158,9 +175,7 @@ public class TileEntityLaserDisenchanter extends TileEntityLaserReceptor {
     protected boolean handleHitItem(ItemEntity entity) {
         ItemStack stack = entity.getItem();
         stack = InventoryUtils.insertItem(getInventorySlots(null), stack, Action.EXECUTE, AutomationType.INTERNAL);
-        if (stack.isEmpty()) {
-            entity.discard();
-        }
+        entity.setItem(stack);
         return true;
     }
 
@@ -169,7 +184,38 @@ public class TileEntityLaserDisenchanter extends TileEntityLaserReceptor {
     protected boolean onUpdateServer() {
         gasInputSlot.drainTank();
         gasOutputSlot.fillTank();
-        return super.onUpdateServer();
+        setEmittingRedstone(false);
+
+        boolean sendUpdatePacket = super.onUpdateServer();
+        if (outputMode != TileEntityLaserAmplifier.RedstoneOutput.ENTITY_DETECTION) {
+            setEmittingRedstone(false);
+        }
+        return sendUpdatePacket;
+    }
+
+    @Override
+    public void setEmittingRedstone(boolean foundEntity) {
+        this.emittingRedstone = foundEntity;
+    }
+
+
+    @Override
+    protected long toFire() {
+        return canFunction() ? Math.min(super.toFire(), Long.MAX_VALUE) : 0L;
+    }
+
+
+    @Override
+    public int getRedstoneLevel() {
+        if (outputMode == TileEntityLaserAmplifier.RedstoneOutput.ENERGY_CONTENTS) {
+            return MekanismUtils.redstoneLevelFromContents(energyContainer.getEnergy(), energyContainer.getMaxEnergy());
+        }
+        return emittingRedstone ? Redstone.SIGNAL_MAX : Redstone.SIGNAL_NONE;
+    }
+
+    @Override
+    protected boolean makesComparatorDirty(ContainerType<?, ?, ?> type) {
+        return type == ContainerType.ENERGY;
     }
 
     private int getEnchantmentXp(Object2IntMap.Entry<Holder<Enchantment>> enchant) {
@@ -181,4 +227,59 @@ public class TileEntityLaserDisenchanter extends TileEntityLaserReceptor {
     public IChemicalTank getChemicalTank() {
         return chemicalTank;
     }
+
+    @Override
+    public void nextMode() {
+        outputMode = outputMode.getNext();
+        setChanged();
+    }
+
+    @Override
+    public void previousMode() {
+        outputMode = outputMode.getPrevious();
+        setChanged();
+    }
+
+    @Override
+    public void readSustainedData(HolderLookup.Provider provider, CompoundTag data) {
+        super.readSustainedData(provider, data);
+        NBTUtils.setEnumIfPresent(data, SerializationConstants.OUTPUT_MODE, TileEntityLaserAmplifier.RedstoneOutput.BY_ID, mode -> outputMode = mode);
+    }
+
+    @Override
+    public void writeSustainedData(HolderLookup.Provider provider, CompoundTag data) {
+        super.writeSustainedData(provider, data);
+        NBTUtils.writeEnum(data, SerializationConstants.OUTPUT_MODE, outputMode);
+    }
+
+    @Override
+    protected void applyImplicitComponents(@NotNull DataComponentInput input) {
+        super.applyImplicitComponents(input);
+        outputMode = input.getOrDefault(MekanismDataComponents.REDSTONE_OUTPUT, outputMode);
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.@NotNull Builder builder) {
+        super.collectImplicitComponents(builder);
+        builder.set(MekanismDataComponents.REDSTONE_OUTPUT, outputMode);
+    }
+
+    @Override
+    public boolean supportsMode(RedstoneControl mode) {
+        return true;
+    }
+
+    @ComputerMethod(nameOverride = "getRedstoneOutputMode")
+    public TileEntityLaserAmplifier.RedstoneOutput getOutputMode() {
+        return outputMode;
+    }
+
+
+    @Override
+    public void addContainerTrackers(MekanismContainer container) {
+        super.addContainerTrackers(container);
+        container.track(SyncableEnum.create(TileEntityLaserAmplifier.RedstoneOutput.BY_ID, TileEntityLaserAmplifier.RedstoneOutput.OFF, this::getOutputMode, value -> outputMode = value));
+    }
+
+
 }

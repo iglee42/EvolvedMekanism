@@ -39,6 +39,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 import java.util.function.*;
+import java.util.function.BiPredicate;
 
 public class EMInputRecipeCache {
     public static class TripleItem<RECIPE extends MekanismRecipe<?> & TriPredicate<ItemStack,ItemStack, ItemStack>>
@@ -77,6 +78,20 @@ public class EMInputRecipeCache {
         public ItemItemChemical(MekanismRecipeType<?,RECIPE, ?> recipeType, Function<RECIPE, ItemStackIngredient> inputAExtractor,
                                 Function<RECIPE, ItemStackIngredient> inputBExtractor, Function<RECIPE, ChemicalStackIngredient> inputCExtractor) {
             super(recipeType, inputAExtractor, new ItemInputCache<>(), inputBExtractor, new ItemInputCache<>(), inputCExtractor, new ChemicalInputCache<>());
+        }
+    }
+
+    public static class DoubleFluid<RECIPE extends MekanismRecipe<?> & BiPredicate<FluidStack, FluidStack>> extends DoubleInputRecipeCache<FluidStack, FluidStackIngredient, FluidStack, FluidStackIngredient, RECIPE, FluidInputCache<RECIPE>, FluidInputCache<RECIPE>> {
+
+        public DoubleFluid(MekanismRecipeType<?, RECIPE, ?> recipeType, Function<RECIPE, FluidStackIngredient> inputAExtractor, Function<RECIPE, FluidStackIngredient> inputBExtractor) {
+            super(recipeType, inputAExtractor, new FluidInputCache<>(), inputBExtractor, new FluidInputCache<>());
+        }
+    }
+
+    public static class TripleFluid<RECIPE extends MekanismRecipe<?> & TriPredicate<FluidStack, FluidStack, FluidStack>> extends TripleSameInputRecipeCache<FluidStack, FluidStackIngredient, RECIPE, FluidInputCache<RECIPE>> {
+
+        public TripleFluid(MekanismRecipeType<?, RECIPE, ?> recipeType, Function<RECIPE, FluidStackIngredient> inputAExtractor, Function<RECIPE, FluidStackIngredient> inputBExtractor, Function<RECIPE, FluidStackIngredient> inputCExtractor) {
+            super(recipeType, inputAExtractor, inputBExtractor, inputCExtractor, FluidInputCache::new);
         }
     }
 

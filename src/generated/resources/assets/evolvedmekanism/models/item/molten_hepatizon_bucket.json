@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "evolvedmekanism:molten_hepatizon",
+  "loader": "neoforge:fluid_container"
+}

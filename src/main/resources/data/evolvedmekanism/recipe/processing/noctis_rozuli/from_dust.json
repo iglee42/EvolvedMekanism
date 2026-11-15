@@ -1,9 +1,0 @@
-{
-  "type": "mekanism:enriching",
-  "input": {
-    "tag": "c:dusts/noctis_rozuli"
-  },
-  "output": {
-    "id": "evolvedmekanism:noctis_rozuli"
-  }
-}

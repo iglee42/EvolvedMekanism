@@ -1,7 +1,5 @@
 package fr.iglee42.evolvedmekanism.registries;
 
-import java.util.function.UnaryOperator;
-
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import mekanism.common.ChemicalConstants;
 import mekanism.common.Mekanism;
@@ -9,11 +7,14 @@ import mekanism.common.item.ItemNutritionalPasteBucket;
 import mekanism.common.registration.impl.FluidDeferredRegister;
 import mekanism.common.registration.impl.FluidDeferredRegister.MekanismFluidType;
 import mekanism.common.registration.impl.FluidRegistryObject;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.level.block.LiquidBlock;
-import net.neoforged.neoforge.fluids.BaseFlowingFluid.Source;
+import net.minecraft.world.level.pathfinder.PathType;
+import net.neoforged.neoforge.common.SoundActions;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid.Flowing;
+import net.neoforged.neoforge.fluids.BaseFlowingFluid.Source;
+import net.neoforged.neoforge.fluids.FluidType;
 
 public class EMFluids {
 
@@ -96,13 +97,21 @@ public class EMFluids {
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_GAIASTEEL = registerMolten("gaiasteel",0xFFE56166);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_COPPER_ALLOY = registerMolten("copper_alloy",0xFFC89A3F);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_ENERGETIC_ALLOY = registerMolten("energetic_alloy",0xFFFACE6A);
-    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_VIBRANT_ALLOY = registerMolten("vibrant_alloy",0xFFE9FE77);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_VIBRANT_ALLOY = registerMolten("vibrant_alloy",0xFFA4E84A);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_REDSTONE_ALLOY = registerMolten("redstone_alloy",0xFFF95C5C);
-    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_CONDUCTIVE_ALLOY = registerMolten("conductive_alloy",0xFFE56166);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_CONDUCTIVE_ALLOY = registerMolten("conductive_alloy",0xFFFF8A8E);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_PULSATING_ALLOY = registerMolten("pulsating_alloy",0xFF9CEEAF);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_DARK_STEEL = registerMolten("dark_steel",0xFF888888);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_SOULARIUM = registerMolten("soularium",0xFF6D5B35);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_END_STEEL = registerMolten("end_steel",0xFFCFC97D);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_CRUDE_STEEL = registerMolten("crude_steel",0xFF6E6258);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_CONSTRUCTION_ALLOY = registerMolten("construction_alloy",0xFF454645);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_ENERGETIC_SILVER = registerMolten("energetic_silver",0xFF8FD4FF);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_VIVID_ALLOY = registerMolten("vivid_alloy",0xFF3AA8D4);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_CRYSTALLINE_ALLOY = registerMolten("crystalline_alloy",0xFF7EE8FF);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_CRYSTALLINE_PINK_SLIME = registerMolten("crystalline_pink_slime",0xFFFF8AD4);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_MELODIC_ALLOY = registerMolten("melodic_alloy",0xFFE058C8);
+    public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_STELLAR_ALLOY = registerMolten("stellar_alloy",0xFFFFF4C8);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_PINK_SLIME = registerMolten("pink_slime",0xFFE7CAE2);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_BETTER_GOLD = registerMolten("better_gold",0xFFFCF046);
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> MOLTEN_PLASLITHERITE = registerMolten("plaslitherite",0xFF626869);
@@ -162,7 +171,30 @@ public class EMFluids {
     public static final FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> CRYONOCTIS = FLUIDS.registerLiquidChemical(EMChemicalConstants.CRYONOCTIS);
 
 
-    private static FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> registerMolten(String name,int color){
-        return FLUIDS.register("molten_" + name, properties -> properties.tint(color).texture(EvolvedMekanism.rl("block/molten_still"),EvolvedMekanism.rl("block/molten_flowing")).renderOverlay(EvolvedMekanism.rl("block/molten_still")));
+    private static FluidRegistryObject<MekanismFluidType, Source, Flowing, LiquidBlock, BucketItem> registerMolten(String name, int color) {
+        return FLUIDS.register("molten_" + name, moltenProperties(), moltenRender(color), BucketItem::new, MoltenFluidType::new);
+    }
+
+    private static FluidType.Properties moltenProperties() {
+        return FluidDeferredRegister.getMekBaseBuilder()
+                .canSwim(false)
+                .canDrown(true)
+                .canExtinguish(false)
+                .pathType(PathType.LAVA)
+                .adjacentPathType(null)
+                .motionScale(0.0023333333333333335D)
+                .lightLevel(15)
+                .density(3000)
+                .viscosity(6000)
+                .temperature(1300)
+                .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
+                .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA);
+    }
+
+    private static FluidDeferredRegister.FluidTypeRenderProperties moltenRender(int color) {
+        return FluidDeferredRegister.FluidTypeRenderProperties.builder()
+                .tint(color)
+                .texture(EvolvedMekanism.rl("block/molten_still"), EvolvedMekanism.rl("block/molten_flowing"))
+                .renderOverlay(null);
     }
 }

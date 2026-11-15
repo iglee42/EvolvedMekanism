@@ -1,0 +1,12 @@
+{
+  "parent": "mekanism:block/machine",
+  "textures": {
+    "down": "evolvedmekanism:block/fluid_combiner/bottom",
+    "east": "evolvedmekanism:block/fluid_combiner/left",
+    "front": "evolvedmekanism:block/fluid_combiner/front",
+    "sides": "evolvedmekanism:block/fluid_combiner/right",
+    "south": "evolvedmekanism:block/fluid_combiner/back",
+    "up": "evolvedmekanism:block/fluid_combiner/top",
+    "west": "evolvedmekanism:block/fluid_combiner/right"
+  }
+}

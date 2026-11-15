@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "evolvedmekanism:molten_better_gold",
+  "loader": "neoforge:fluid_container"
+}

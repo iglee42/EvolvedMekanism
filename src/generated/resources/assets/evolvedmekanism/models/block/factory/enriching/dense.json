@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "base": {
+      "parent": "mekanism:block/factory/enriching/base"
+    },
+    "front_led": {
+      "parent": "evolvedmekanism:block/factory/front_led/dense"
+    }
+  },
+  "item_render_order": [
+    "base",
+    "front_led"
+  ],
+  "loader": "neoforge:composite",
+  "textures": {
+    "particle": "mekanism:block/factory/enriching/enriching_factory_front"
+  }
+}

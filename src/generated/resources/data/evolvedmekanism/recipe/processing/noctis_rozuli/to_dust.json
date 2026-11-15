@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "count": 1,
+    "tag": "c:gems/noctis_rozuli"
+  },
+  "output": {
+    "count": 1,
+    "id": "evolvedmekanism:dust_noctis_rozuli"
+  }
+}

@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism;
 
 import mekanism.common.block.attribute.AttributeParticleFX;
 import mekanism.common.block.attribute.AttributeSideConfig;
+import mekanism.common.lib.transmitter.TransmissionType;
 import mekanism.common.content.blocktype.*;
 import mekanism.common.lib.math.Pos3D;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
@@ -29,7 +30,9 @@ public class EMFactoryBuilder <FACTORY extends Factory<TILE>, TILE extends TileE
             // assign the value here, and then return the builder itself as it is the same object
             builder.withComputerSupport(tier, type.getRegistryNameComponentCapitalized() + "Factory");
             builder.withCustomShape(BlockShapes.getShape(tier, type));
-            if (!type.getTranslationKey().contains("evolvedmekanism"))
+            if (type.getRegistryNameComponent().startsWith("fluid_")) {
+                builder.with(AttributeSideConfig.create(TransmissionType.ITEM, TransmissionType.FLUID, TransmissionType.ENERGY));
+            } else if (!type.getTranslationKey().contains("evolvedmekanism"))
                 builder.with(switch (type) {
                 case SMELTING, ENRICHING, CRUSHING, COMBINING, SAWING -> AttributeSideConfig.ELECTRIC_MACHINE;
                 case COMPRESSING, INJECTING, PURIFYING, INFUSING -> AttributeSideConfig.ADVANCED_ELECTRIC_MACHINE;

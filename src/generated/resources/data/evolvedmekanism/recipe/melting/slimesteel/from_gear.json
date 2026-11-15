@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gears/slimesteel"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "count": 1,
+    "tag": "c:gears/slimesteel"
+  },
+  "output": {
+    "amount": 360,
+    "tag": "c:molten_slimesteel"
+  }
+}

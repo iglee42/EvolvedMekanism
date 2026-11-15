@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.items;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanismLang;
+import fr.iglee42.evolvedmekanism.client.ClientNameAnimation;
 import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import mekanism.api.MekanismAPITags;
@@ -22,13 +23,9 @@ import mekanism.common.tile.interfaces.ITierUpgradable;
 import mekanism.common.tile.interfaces.ITileDirectional;
 import mekanism.common.upgrade.IUpgradeData;
 import mekanism.common.util.WorldUtils;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextColor;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -40,6 +37,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.fml.loading.FMLEnvironment;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -53,58 +51,65 @@ public class ItemMaxTierInstaller extends Item {
         super(properties);
     }
 
-    /** Interpolation linéaire entre deux couleurs RGB */
-    private static int lerpRGB(int a, int b, float t) {
-        int rA = (a >> 16) & 0xFF;
-        int gA = (a >> 8) & 0xFF;
-        int bA = a & 0xFF;
-        int rB = (b >> 16) & 0xFF;
-        int gB = (b >> 8) & 0xFF;
-        int bB = b & 0xFF;
-
-        int r = (int) (rA + (rB - rA) * t);
-        int g = (int) (gA + (gB - gA) * t);
-        int bC = (int) (bA + (bB - bA) * t);
-
-        return (r << 16) | (g << 8) | bC;
+    private static BlockState nextUpgradeState(AttributeUpgradeable upgradeable, BlockState current, BaseTier targetTier) {
+        try {
+            return upgradeable.upgradeResult(current, targetTier);
+        } catch (NullPointerException e) {
+            return current;
+        }
     }
+
+    private static int compareInstallerTiers(BaseTier current, BaseTier target) {
+        if (Objects.equals(current, target)) {
+            return 0;
+        }
+        int currentIndex = installerTierIndex(current);
+        int targetIndex = installerTierIndex(target);
+        if (currentIndex < 0 || targetIndex < 0) {
+            return 1;
+        }
+        return Integer.compare(currentIndex, targetIndex);
+    }
+
+    private static int installerTierIndex(BaseTier tier) {
+        if (tier == null) {
+            return -1;
+        }
+        if (tier.equals(BaseTier.BASIC)) {
+            return 0;
+        }
+        if (tier.equals(BaseTier.ADVANCED)) {
+            return 1;
+        }
+        if (tier.equals(BaseTier.ELITE)) {
+            return 2;
+        }
+        if (tier.equals(BaseTier.ULTIMATE)) {
+            return 3;
+        }
+        if (tier.equals(EMBaseTier.OVERCLOCKED)) {
+            return 4;
+        }
+        if (tier.equals(EMBaseTier.QUANTUM)) {
+            return 5;
+        }
+        if (tier.equals(EMBaseTier.DENSE)) {
+            return 6;
+        }
+        if (tier.equals(EMBaseTier.MULTIVERSAL)) {
+            return 7;
+        }
+        if (tier.equals(BaseTier.CREATIVE)) {
+            return 8;
+        }
+        return -1;
+    }
+
 
     @NotNull
     @Override
     public Component getName(@NotNull ItemStack stack) {
-        String baseName = super.getName(stack).getString();
-
-        // Exemple : tes couleurs de tiers (à adapter)
-        int[] tierColors = new int[]{BaseTier.BASIC.getColor().getValue(), BaseTier.ADVANCED.getColor().getValue(), BaseTier.ELITE.getColor().getValue(), BaseTier.ULTIMATE.getColor().getValue(), EMBaseTier.OVERCLOCKED.getColor().getValue(), EMBaseTier.QUANTUM.getColor().getValue(), EMBaseTier.DENSE.getColor().getValue(), EMBaseTier.MULTIVERSAL.getColor().getValue()};
-
-        // Temps du jeu (pour animation)
-        long time = Minecraft.getInstance().level != null ? Minecraft.getInstance().level.getGameTime() : System.currentTimeMillis() / 50;
-
-        MutableComponent animatedName = Component.literal("");
-
-        // Vitesse et échelle de l’effet
-        float speed = 6.0F;
-        float shift = (time / speed) % tierColors.length;
-
-        // Boucle sur chaque caractère du nom
-        for (int i = 0; i < baseName.length(); i++) {
-            // Décalage pour que chaque lettre soit légèrement déphasée
-            float colorIndex = (shift + i * 0.3F) % tierColors.length;
-            int indexA = (int) Math.floor(colorIndex);
-            int indexB = (indexA + 1) % tierColors.length;
-
-            float blend = colorIndex - indexA;
-
-            // Interpolation douce entre deux couleurs (fade)
-            int rgbA = tierColors[indexA];
-            int rgbB = tierColors[indexB];
-            int blended = lerpRGB(rgbA, rgbB, blend);
-
-            // Ajoute la lettre colorée
-            animatedName.append(Component.literal(String.valueOf(baseName.charAt(i))).withStyle(Style.EMPTY.withColor(TextColor.fromRgb(blended))));
-        }
-
-        return animatedName;
+        return FMLEnvironment.dist.isClient() ? ClientNameAnimation.animateTierInstaller(stack, super.getName(stack)) : super.getName(stack);
     }
 
     @NotNull
@@ -134,29 +139,34 @@ public class ItemMaxTierInstaller extends Item {
         AttributeUpgradeable upgradeableBlock = Attribute.get(block, AttributeUpgradeable.class);
         if (upgradeableBlock != null) {
             BaseTier baseTier = Attribute.getBaseTier(block);
-            BaseTier maxTier = EMConfig.general.maxInstallerTier.getOrDefault();
-
-            if (Objects.equals(baseTier, maxTier)) {
-                return InteractionResult.PASS;
-            }
-
+            BaseTier maxTier = EMConfig.general.getMaxInstallerTier();
             if (baseTier == null) {
                 baseTier = BaseTier.BASIC;
             }
+            if (maxTier == null) {
+                maxTier = BaseTier.CREATIVE;
+            }
+            if (compareInstallerTiers(baseTier, maxTier) >= 0) {
+                return InteractionResult.PASS;
+            }
 
+            BlockState upgradeState = state;
             BaseTier toTier = baseTier;
-            BlockState upgradeState = upgradeableBlock.upgradeResult(state, toTier);
-            while (toTier != maxTier) {
+            while (compareInstallerTiers(toTier, maxTier) < 0) {
                 AttributeUpgradeable nextUpgradeable = Attribute.get(upgradeState.getBlockHolder(), AttributeUpgradeable.class);
                 if (nextUpgradeable == null) {
                     break;
                 }
-                upgradeableBlock = nextUpgradeable;
-                upgradeState = upgradeableBlock.upgradeResult(upgradeState, toTier);
-                toTier = Attribute.getBaseTier(upgradeState.getBlockHolder());
-                if (toTier == null) {
+                BlockState candidate = nextUpgradeState(nextUpgradeable, upgradeState, maxTier);
+                if (candidate == null || candidate == upgradeState) {
                     break;
                 }
+                BaseTier candidateTier = Attribute.getBaseTier(candidate.getBlockHolder());
+                if (candidateTier == null || compareInstallerTiers(candidateTier, maxTier) > 0) {
+                    break;
+                }
+                upgradeState = candidate;
+                toTier = candidateTier;
             }
 
             if (state == upgradeState) {
@@ -236,8 +246,9 @@ public class ItemMaxTierInstaller extends Item {
     @Override
     public void appendHoverText(ItemStack p_41421_, TooltipContext p_339594_, List<Component> tooltip, TooltipFlag p_41424_) {
         super.appendHoverText(p_41421_, p_339594_, tooltip, p_41424_);
+        if (!FMLEnvironment.dist.isClient()) return;
         if (MekKeyHandler.isKeyPressed(MekanismKeyHandler.descriptionKey))
-            tooltip.add(EvolvedMekanismLang.DESCRIPTION_MAX_TIER_INSTALLER.translate(EMConfig.general.maxInstallerTier.getOrDefault().getSerializedName()));
+            tooltip.add(EvolvedMekanismLang.DESCRIPTION_MAX_TIER_INSTALLER.translate(EMConfig.general.getMaxInstallerTier().getSerializedName()));
         else
             tooltip.add(MekanismLang.HOLD_FOR_DESCRIPTION.translateColored(EnumColor.GRAY, EnumColor.AQUA, MekanismKeyHandler.descriptionKey.getTranslatedKeyMessage()));
 

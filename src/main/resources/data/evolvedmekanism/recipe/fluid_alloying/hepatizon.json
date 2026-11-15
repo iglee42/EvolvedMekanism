@@ -1,0 +1,7 @@
+{
+  "type": "evolvedmekanism:fluid_alloying",
+  "main_input": { "amount": 180, "tag": "c:molten_copper" },
+  "extra_input": { "amount": 90, "tag": "c:molten_cobalt" },
+  "second_extra_input": { "amount": 90, "tag": "c:molten_quartz" },
+  "output": { "amount": 180, "tag": "c:molten_hepatizon" }
+}

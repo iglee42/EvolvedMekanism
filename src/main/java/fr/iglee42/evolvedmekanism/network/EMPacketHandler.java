@@ -1,7 +1,7 @@
 package fr.iglee42.evolvedmekanism.network;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
-import mekanism.common.lib.Version;
+import fr.iglee42.evolvedmekanism.network.to_server.PacketApplyEnchantments;
 import mekanism.common.network.BasePacketHandler;
 import net.neoforged.bus.api.IEventBus;
 
@@ -14,6 +14,7 @@ public class EMPacketHandler extends BasePacketHandler {
 
     @Override
     protected void registerClientToServer(PacketRegistrar registrar) {
+        registrar.play(PacketApplyEnchantments.TYPE, PacketApplyEnchantments.STREAM_CODEC);
 
     }
 

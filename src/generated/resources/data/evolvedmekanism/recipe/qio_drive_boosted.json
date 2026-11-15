@@ -1,0 +1,24 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:crystals/uranium"
+    },
+    "I": {
+      "tag": "c:ingots/lead"
+    },
+    "P": {
+      "item": "mekanism:qio_drive_supermassive"
+    }
+  },
+  "pattern": [
+    "IPI",
+    "P#P",
+    "IPI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:qio_drive_boosted"
+  }
+}

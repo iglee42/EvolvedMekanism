@@ -1,0 +1,22 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "tag": "c:ender_pearls"
+  },
+  "second_extra_input": {
+    "tag": "c:dusts/glowstone"
+  },
+  "main_input": {
+    "tag": "c:ingots/energetic_alloy"
+  },
+  "output": {
+    "count": 2,
+    "id": "enderio:vibrant_alloy_ingot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio"
+    }
+  ]
+}

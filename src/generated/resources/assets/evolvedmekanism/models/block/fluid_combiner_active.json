@@ -1,0 +1,6 @@
+{
+  "parent": "evolvedmekanism:block/fluid_combiner",
+  "textures": {
+    "front": "evolvedmekanism:block/fluid_combiner/front_active"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "type": "evolvedmekanism:melting",
+  "input": { "count": 1, "tag": "c:ender_pearls" },
+  "output": { "amount": 90, "tag": "c:molten_ender" }
+}

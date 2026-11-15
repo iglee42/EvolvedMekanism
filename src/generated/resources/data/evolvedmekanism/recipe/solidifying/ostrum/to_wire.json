@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:wires/ostrum"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:solidifying",
+  "duration": 30,
+  "extra_input": {
+    "amount": 45,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluid_input": {
+    "amount": 45,
+    "tag": "c:molten_ostrum"
+  },
+  "item_input": {
+    "count": 1,
+    "item": "evolvedmekanism:mold_wire"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:wires/ostrum"
+  }
+}

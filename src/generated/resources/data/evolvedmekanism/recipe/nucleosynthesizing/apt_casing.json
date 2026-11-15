@@ -1,0 +1,17 @@
+{
+  "type": "mekanism:nucleosynthesizing",
+  "chemical_input": {
+    "amount": 50,
+    "chemical": "mekanism:antimatter"
+  },
+  "duration": 1000,
+  "item_input": {
+    "count": 1,
+    "item": "mekanism:sps_casing"
+  },
+  "output": {
+    "count": 1,
+    "id": "evolvedmekanism:apt_casing"
+  },
+  "per_tick_usage": false
+}

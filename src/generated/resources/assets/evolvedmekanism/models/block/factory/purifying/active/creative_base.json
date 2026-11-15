@@ -1,0 +1,6 @@
+{
+  "parent": "mekanism:block/factory/purifying/base",
+  "textures": {
+    "front": "mekanism:block/factory/purifying/purifying_factory_front_active"
+  }
+}

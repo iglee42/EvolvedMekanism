@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/energetic_alloy"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:melting",
+  "input": {
+    "count": 1,
+    "tag": "c:dusts/energetic_alloy"
+  },
+  "output": {
+    "amount": 90,
+    "tag": "c:molten_energetic_alloy"
+  }
+}

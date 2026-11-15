@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "evolvedmekanism:molten_compressed_iron",
+  "loader": "neoforge:fluid_container"
+}

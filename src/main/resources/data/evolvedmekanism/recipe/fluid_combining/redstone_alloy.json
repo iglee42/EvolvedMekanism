@@ -1,0 +1,12 @@
+{
+  "type": "evolvedmekanism:fluid_combining",
+  "main_input": { "amount": 90, "tag": "c:molten_redstone" },
+  "extra_input": { "amount": 90, "tag": "c:molten_copper" },
+  "output": { "amount": 90, "tag": "c:molten_redstone_alloy" },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio"
+    }
+  ]
+}

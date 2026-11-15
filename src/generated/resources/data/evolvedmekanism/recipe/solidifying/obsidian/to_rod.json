@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:rods/obsidian"
+      }
+    }
+  ],
+  "type": "evolvedmekanism:solidifying",
+  "duration": 30,
+  "extra_input": {
+    "amount": 45,
+    "fluid": "mekanism:oxygen"
+  },
+  "fluid_input": {
+    "amount": 45,
+    "tag": "c:molten_obsidian"
+  },
+  "item_input": {
+    "count": 1,
+    "item": "evolvedmekanism:mold_rod"
+  },
+  "output": {
+    "count": 1,
+    "tag": "c:rods/obsidian"
+  }
+}

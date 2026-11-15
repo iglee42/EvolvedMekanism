@@ -1,0 +1,5 @@
+{
+  "parent": "neoforge:item/bucket",
+  "fluid": "evolvedmekanism:molten_glowstone",
+  "loader": "neoforge:fluid_container"
+}

@@ -20,6 +20,7 @@ import fr.iglee42.evolvedmekanism.network.EMPacketHandler;
 import fr.iglee42.evolvedmekanism.registries.*;
 import fr.iglee42.evolvedmekanism.tiers.EMBaseTier;
 import fr.iglee42.evolvedmekanism.utils.ModsCompats;
+import fr.iglee42.evolvedmekanism.utils.MoltenAvailability;
 import mekanism.api.MekanismIMC;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.AlloyTier;
@@ -33,12 +34,18 @@ import mekanism.common.registration.impl.ItemRegistryObject;
 import mekanism.common.registries.MekanismItems;
 import mekanism.common.tier.*;
 import mekanism.common.util.MekanismUtils;
-import mekanism.tools.client.ShieldTextures;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.common.registries.MekanismBlocks;
+import mekanism.common.util.StorageUtils;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
@@ -69,12 +76,12 @@ public class EvolvedMekanism {
     public EvolvedMekanism(IEventBus modEventBus, ModContainer container) {
         logger.info("Evolved Mekanism Launched");
         instance = this;
+        initEnums();
         EMConfig.registerConfigs(container);
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) EvolvedMekanismToolsConfig.registerConfigs(container);
-
-        initEnums();
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::enqueueIMC);
+        modEventBus.addListener(EventPriority.LOWEST, this::hideUnavailableMoltenTanks);
 
         EMBlocks.BLOCKS.register(modEventBus);
         EMBlocks.BLOCKS_NO_ITEMS.register(modEventBus);
@@ -86,6 +93,7 @@ public class EvolvedMekanism {
         EMLootFunctions.REGISTER.register(modEventBus);
         EMRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         EMModules.MODULES.register(modEventBus);
+        EMDataComponents.DATA_COMPONENTS.register(modEventBus);
         EMFluids.FLUIDS.register(modEventBus);
         EMParticleTypes.PARTICLES.register(modEventBus);
         EMHeightProviderTypes.HEIGHT_PROVIDER_TYPES.register(modEventBus);
@@ -96,18 +104,17 @@ public class EvolvedMekanism {
 
         registerCompats(modEventBus);
 
-
         //NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.addListener(this::serverStopped);
 
         modEventBus.addListener(EMConfig::onConfigLoad);
         if (ModsCompats.MEKANISMTOOLS.isLoaded())modEventBus.addListener(EvolvedMekanismToolsConfig::onConfigLoad);
 
-
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) NeoForge.EVENT_BUS.addListener(EMMobEquipmentHelper::onLivingSpecialSpawn);
 
         versionNumber = new Version(container);
         packetHandler = new EMPacketHandler(modEventBus);
+        modEventBus.addListener(fr.iglee42.evolvedmekanism.datagen.EMDataGenerator::gatherData);
     }
 
     private void registerCompats(IEventBus modEventBus) {
@@ -124,6 +131,10 @@ public class EvolvedMekanism {
         if (ModsCompats.MEKANISMTOOLS.isLoaded()) {
             EMToolsItems.register(modEventBus);
             if (FMLEnvironment.dist == Dist.CLIENT) modEventBus.register(new EMToolsClientRegistration());
+        }
+
+        if (ModsCompats.CURIOS.isLoaded()) {
+            fr.iglee42.evolvedmekanism.curios.CuriosCompat.register(modEventBus);
         }
     }
 
@@ -155,6 +166,31 @@ public class EvolvedMekanism {
         ((InitializableEnum)(Object)EnergyCubeTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)ChemicalTankTier.BASIC).evolvedmekanism$initNewValues();
         ((InitializableEnum)(Object)FluidTankTier.BASIC).evolvedmekanism$initNewValues();
+    }
+
+    private void hideUnavailableMoltenTanks(BuildCreativeModeTabContentsEvent event) {
+        java.util.ArrayList<ItemStack> hidden = new java.util.ArrayList<>();
+        for (ItemStack stack : event.getParentEntries()) {
+            if (unavailableMoltenTank(stack, event)) {
+                hidden.add(stack);
+            }
+        }
+        for (ItemStack stack : event.getSearchEntries()) {
+            if (unavailableMoltenTank(stack, event)) {
+                hidden.add(stack);
+            }
+        }
+        for (ItemStack stack : hidden) {
+            event.remove(stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
+    }
+
+    private static boolean unavailableMoltenTank(ItemStack stack, BuildCreativeModeTabContentsEvent event) {
+        if (!stack.is(MekanismBlocks.CREATIVE_FLUID_TANK.getItemHolder())) {
+            return false;
+        }
+        FluidStack stored = StorageUtils.getFirstFluidFromAttachment(stack);
+        return !stored.isEmpty() && !MoltenAvailability.isObtainable(event.getParameters().holders(), stored.getFluid());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -203,9 +239,14 @@ public class EvolvedMekanism {
 
     private void enqueueIMC(InterModEnqueueEvent event) {
         MekanismIMC.addMekaSuitBootsModules(EMModules.AIR_AFFINITY);
-        MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY);
+        MekanismIMC.addMekaSuitHelmetModules(EMModules.AQUA_AFFINITY, EMModules.ADVANCED_VISION_ENHANCEMENT);
         MekanismIMC.addMekaSuitPantsModules(EMModules.LUCK);
         MekanismIMC.addMekaToolModules(EMModules.CAPTURING);
+        if (ModsCompats.MEKAWEAPONS.isLoaded()) {
+            MekanismIMC.sendModuleIMC("add_meka_tana_modules", EMModules.CAPTURING);
+            MekanismIMC.sendModuleIMC("add_meka_bow_modules", EMModules.CAPTURING);
+            MekanismIMC.sendModuleIMC("add_meka_gun_modules", EMModules.CAPTURING);
+        }
     }
 
     public static Component logFormat(Object message) {

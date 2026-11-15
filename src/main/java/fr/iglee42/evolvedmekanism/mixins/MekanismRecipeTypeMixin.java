@@ -3,6 +3,8 @@ package fr.iglee42.evolvedmekanism.mixins;
 import fr.iglee42.evolvedmekanism.interfaces.EMInputRecipeCache;
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
 import fr.iglee42.evolvedmekanism.recipes.ChemixerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.FluidAlloyingRecipe;
+import fr.iglee42.evolvedmekanism.recipes.FluidCombiningRecipe;
 import fr.iglee42.evolvedmekanism.recipes.MeltingRecipe;
 import fr.iglee42.evolvedmekanism.recipes.SolidificationRecipe;
 import fr.iglee42.evolvedmekanism.recipes.vanilla_input.TriItemRecipeInput;
@@ -46,6 +48,8 @@ public abstract class MekanismRecipeTypeMixin {
         EMRecipeType.MELTING = register(Mekanism.rl("melting"), recipeType -> new InputRecipeCache.SingleItem<>(recipeType, MeltingRecipe::getInput));
         EMRecipeType.SOLIDIFICATION =register(Mekanism.rl("solidification"), recipeType -> new EMInputRecipeCache.ItemFluidFluid<>(recipeType, SolidificationRecipe::getInputSolid,
                 SolidificationRecipe::getInputFluid, SolidificationRecipe::getFluidInputExtra));
+        EMRecipeType.FLUID_COMBINING = register(Mekanism.rl("fluid_combining"), recipeType -> new EMInputRecipeCache.DoubleFluid<>(recipeType, FluidCombiningRecipe::getMainInput, FluidCombiningRecipe::getExtraInput));
+        EMRecipeType.FLUID_ALLOYING = register(Mekanism.rl("fluid_alloying"), recipeType -> new EMInputRecipeCache.TripleFluid<>(recipeType, FluidAlloyingRecipe::getMainInput, FluidAlloyingRecipe::getExtraInput, FluidAlloyingRecipe::getTertiaryExtraInput));
     }
 
 

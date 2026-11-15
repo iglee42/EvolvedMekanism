@@ -1,0 +1,33 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "1": {
+      "tag": "c:gems/noctis_rozuli"
+    },
+    "2": {
+      "item": "minecraft:enchanting_table"
+    },
+    "3": {
+      "tag": "c:circuits/overclocked"
+    },
+    "4": {
+      "item": "mekanism:modification_station"
+    },
+    "5": {
+      "item": "mekanism:basic_chemical_tank"
+    },
+    "6": {
+      "tag": "c:ingots/refined_redstone"
+    }
+  },
+  "pattern": [
+    "121",
+    "343",
+    "656"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:enchanting_station"
+  }
+}

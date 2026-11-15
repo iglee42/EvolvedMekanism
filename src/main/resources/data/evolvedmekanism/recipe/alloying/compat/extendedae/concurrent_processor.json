@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "item": "extendedae:concurrent_processor_print"
+  },
+  "second_extra_input": {
+    "item": "ae2:printed_silicon"
+  },
+  "main_input": {
+    "tag": "c:dusts/redstone"
+  },
+  "output": {
+    "id": "extendedae:concurrent_processor"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "extendedae"
+    }
+  ]
+}

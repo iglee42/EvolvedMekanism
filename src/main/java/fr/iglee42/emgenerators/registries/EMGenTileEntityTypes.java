@@ -2,19 +2,24 @@ package fr.iglee42.emgenerators.registries;
 
 import fr.iglee42.emgenerators.tiers.AdvancedLunarPanelTier;
 import fr.iglee42.emgenerators.tiers.AdvancedSolarPanelTier;
+import fr.iglee42.emgenerators.tiers.AdvancedWindGeneratorTier;
 import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredWindGenerator;
+import fr.iglee42.emgenerators.tile.WindGeneratorBlockOverride;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMTileEntityTypes;
+import mekanism.api.IEvaporationSolar;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.registration.impl.BlockRegistryObject;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.tile.base.TileEntityMekanism;
-import mekanism.generators.common.registries.GeneratorsBlocks;
+import mekanism.generators.common.registries.GeneratorsTileEntityTypes;
 import mekanism.generators.common.tile.TileEntitySolarGenerator;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 
 public class EMGenTileEntityTypes {
 
@@ -45,12 +50,36 @@ public class EMGenTileEntityTypes {
     public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedLunarGenerator> MULTIVERSAL_LUNAR_PANEL = registerTieredLunarPanel(EMGenBlocks.MULTIVERSAL_LUNAR_GENERATOR, AdvancedLunarPanelTier.MULTIVERSAL);
     public static final TileEntityTypeRegistryObject<TileEntityTieredAdvancedLunarGenerator> CREATIVE_LUNAR_PANEL = registerTieredLunarPanel(EMGenBlocks.CREATIVE_LUNAR_GENERATOR, AdvancedLunarPanelTier.CREATIVE);
 
+    public static final TileEntityTypeRegistryObject<TileEntityTieredWindGenerator> ADVANCED_WIND_GENERATOR = registerTieredWindGenerator(EMGenBlocks.ADVANCED_WIND_GENERATOR, AdvancedWindGeneratorTier.ADVANCED);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredWindGenerator> ELITE_WIND_GENERATOR = registerTieredWindGenerator(EMGenBlocks.ELITE_WIND_GENERATOR, AdvancedWindGeneratorTier.ELITE);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredWindGenerator> ULTIMATE_WIND_GENERATOR = registerTieredWindGenerator(EMGenBlocks.ULTIMATE_WIND_GENERATOR, AdvancedWindGeneratorTier.ULTIMATE);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredWindGenerator> OVERCLOCKED_WIND_GENERATOR = registerTieredWindGenerator(EMGenBlocks.OVERCLOCKED_WIND_GENERATOR, AdvancedWindGeneratorTier.OVERCLOCKED);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredWindGenerator> QUANTUM_WIND_GENERATOR = registerTieredWindGenerator(EMGenBlocks.QUANTUM_WIND_GENERATOR, AdvancedWindGeneratorTier.QUANTUM);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredWindGenerator> DENSE_WIND_GENERATOR = registerTieredWindGenerator(EMGenBlocks.DENSE_WIND_GENERATOR, AdvancedWindGeneratorTier.DENSE);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredWindGenerator> MULTIVERSAL_WIND_GENERATOR = registerTieredWindGenerator(EMGenBlocks.MULTIVERSAL_WIND_GENERATOR, AdvancedWindGeneratorTier.MULTIVERSAL);
+    public static final TileEntityTypeRegistryObject<TileEntityTieredWindGenerator> CREATIVE_WIND_GENERATOR = registerTieredWindGenerator(EMGenBlocks.CREATIVE_WIND_GENERATOR, AdvancedWindGeneratorTier.CREATIVE);
+
     public static TileEntityTypeRegistryObject<TileEntityTieredAdvancedSolarGenerator> registerTieredSolarPanel(BlockRegistryObject<?,?> block, AdvancedSolarPanelTier tier) {
         return TILE_ENTITY_TYPES.mekBuilder(block, (pos,state)->new TileEntityTieredAdvancedSolarGenerator(block,pos, state, tier))
                 .clientTicker(TileEntityMekanism::tickClient)
                 .serverTicker(TileEntityMekanism::tickServer)
                 .withSimple(Capabilities.CONFIG_CARD)
                 .withSimple(Capabilities.EVAPORATION_SOLAR)
+                .build();
+    }
+
+    public static TileEntityTypeRegistryObject<TileEntityTieredWindGenerator> registerTieredWindGenerator(BlockRegistryObject<?, ?> block, AdvancedWindGeneratorTier tier) {
+        return TILE_ENTITY_TYPES.mekBuilder(block, (pos, state) -> {
+                    WindGeneratorBlockOverride.push(block);
+                    try {
+                        return new TileEntityTieredWindGenerator(pos, state, tier);
+                    } finally {
+                        WindGeneratorBlockOverride.pop();
+                    }
+                })
+                .clientTicker(TileEntityMekanism::tickClient)
+                .serverTicker(TileEntityMekanism::tickServer)
+                .withSimple(Capabilities.CONFIG_CARD)
                 .build();
     }
 
@@ -66,5 +95,15 @@ public class EMGenTileEntityTypes {
 
     public static void register(IEventBus bus) {
         TILE_ENTITY_TYPES.register(bus);
+        bus.addListener(EMGenTileEntityTypes::registerSolarEvaporation);
+    }
+
+    /**
+     * Mekanism only exposes the evaporation capability on the advanced solar generator.
+     * A basic panel, including one with the solar upgrade, sits in the same corner the plant checks and was ignored.
+     */
+    private static void registerSolarEvaporation(RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(Capabilities.EVAPORATION_SOLAR, GeneratorsTileEntityTypes.SOLAR_GENERATOR.get(),
+                (solar, context) -> (IEvaporationSolar) solar);
     }
 }

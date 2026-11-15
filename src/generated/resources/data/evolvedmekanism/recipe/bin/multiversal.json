@@ -1,0 +1,27 @@
+{
+  "type": "mekanism:mek_data",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/exoversal"
+    },
+    "C": {
+      "tag": "c:circuits/multiversal"
+    },
+    "P": {
+      "item": "evolvedmekanism:dense_bin"
+    },
+    "_": {
+      "tag": "mekanism:stone_crafting_materials"
+    }
+  },
+  "pattern": [
+    "_C_",
+    "APA",
+    "___"
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:multiversal_bin"
+  }
+}

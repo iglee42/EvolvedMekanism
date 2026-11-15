@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "evolvedmekanism:alloys/subatomic"
+    },
+    "C": {
+      "tag": "c:circuits/overclocked"
+    }
+  },
+  "pattern": [
+    " A ",
+    "ACA",
+    " A "
+  ],
+  "result": {
+    "count": 1,
+    "id": "evolvedmekanism:quantum_control_circuit"
+  }
+}

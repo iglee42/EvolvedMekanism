@@ -2,9 +2,11 @@ package fr.iglee42.emgenerators.registries;
 
 import fr.iglee42.emgenerators.items.ItemBlockTieredLunarGenerator;
 import fr.iglee42.emgenerators.items.ItemBlockTieredSolarGenerator;
+import fr.iglee42.emgenerators.items.ItemBlockTieredWindGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedLunarGenerator;
 import fr.iglee42.emgenerators.tile.TileEntityTieredAdvancedSolarGenerator;
+import fr.iglee42.emgenerators.tile.TileEntityTieredWindGenerator;
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
 import fr.iglee42.evolvedmekanism.registries.EMContainerTypes;
@@ -52,8 +54,18 @@ public class EMGenBlocks {
             QUANTUM_LUNAR_GENERATOR = registerTieredLunarGenerator("quantum_lunar_generator", EMGenBlockTypes.QUANTUM_LUNAR_GENERATOR),
             DENSE_LUNAR_GENERATOR = registerTieredLunarGenerator("dense_lunar_generator", EMGenBlockTypes.DENSE_LUNAR_GENERATOR),
             MULTIVERSAL_LUNAR_GENERATOR = registerTieredLunarGenerator("multiversal_lunar_generator", EMGenBlockTypes.MULTIVERSAL_LUNAR_GENERATOR),
-            CREATIVE_LUNAR_GENERATOR = registerTieredLunarGenerator("creative_lunar_generator", EMGenBlockTypes.CREATIVE_LUNAR_GENERATOR);    
-    
+            CREATIVE_LUNAR_GENERATOR = registerTieredLunarGenerator("creative_lunar_generator", EMGenBlockTypes.CREATIVE_LUNAR_GENERATOR);
+
+    public static final BlockRegistryObject<BlockTileModel<TileEntityTieredWindGenerator, Generator<TileEntityTieredWindGenerator>>, ItemBlockTieredWindGenerator>
+            ADVANCED_WIND_GENERATOR = registerTieredWindGenerator("advanced_wind_generator", EMGenBlockTypes.ADVANCED_WIND_GENERATOR),
+            ELITE_WIND_GENERATOR = registerTieredWindGenerator("elite_wind_generator", EMGenBlockTypes.ELITE_WIND_GENERATOR),
+            ULTIMATE_WIND_GENERATOR = registerTieredWindGenerator("ultimate_wind_generator", EMGenBlockTypes.ULTIMATE_WIND_GENERATOR),
+            OVERCLOCKED_WIND_GENERATOR = registerTieredWindGenerator("overclocked_wind_generator", EMGenBlockTypes.OVERCLOCKED_WIND_GENERATOR),
+            QUANTUM_WIND_GENERATOR = registerTieredWindGenerator("quantum_wind_generator", EMGenBlockTypes.QUANTUM_WIND_GENERATOR),
+            DENSE_WIND_GENERATOR = registerTieredWindGenerator("dense_wind_generator", EMGenBlockTypes.DENSE_WIND_GENERATOR),
+            MULTIVERSAL_WIND_GENERATOR = registerTieredWindGenerator("multiversal_wind_generator", EMGenBlockTypes.MULTIVERSAL_WIND_GENERATOR),
+            CREATIVE_WIND_GENERATOR = registerTieredWindGenerator("creative_wind_generator", EMGenBlockTypes.CREATIVE_WIND_GENERATOR);
+
     private static BlockRegistryObject<BlockTileModel<TileEntityTieredAdvancedSolarGenerator, Generator<TileEntityTieredAdvancedSolarGenerator>>, ItemBlockTieredSolarGenerator> registerTieredSolarGenerator(String name, Generator<TileEntityTieredAdvancedSolarGenerator> type) {
         return BLOCKS.register(name,
                 () -> new BlockTileModel<>(type, props -> props.mapColor(MapColor.COLOR_BLUE)),
@@ -65,6 +77,13 @@ public class EMGenBlocks {
         return BLOCKS.register(name,
                 () -> new BlockTileModel<>(type, props -> props.mapColor(MapColor.COLOR_PINK)),
                 ItemBlockTieredLunarGenerator::new
+        );
+    }
+
+    private static BlockRegistryObject<BlockTileModel<TileEntityTieredWindGenerator, Generator<TileEntityTieredWindGenerator>>, ItemBlockTieredWindGenerator> registerTieredWindGenerator(String name, Generator<TileEntityTieredWindGenerator> type) {
+        return BLOCKS.register(name,
+                () -> new BlockTileModel<>(type, props -> props.mapColor(MapColor.QUARTZ)),
+                ItemBlockTieredWindGenerator::new
         );
     }
 

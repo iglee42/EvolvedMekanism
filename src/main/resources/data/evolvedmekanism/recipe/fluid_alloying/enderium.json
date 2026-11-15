@@ -1,0 +1,7 @@
+{
+  "type": "evolvedmekanism:fluid_alloying",
+  "main_input": { "amount": 270, "tag": "c:molten_lead" },
+  "extra_input": { "amount": 180, "tag": "c:molten_ender" },
+  "second_extra_input": { "amount": 90, "tag": "c:molten_diamond" },
+  "output": { "amount": 180, "tag": "c:molten_enderium" }
+}

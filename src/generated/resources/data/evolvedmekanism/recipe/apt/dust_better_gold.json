@@ -1,0 +1,16 @@
+{
+  "type": "evolvedmekanism:apt",
+  "chemical_input": {
+    "amount": 100,
+    "chemical": "mekanism:spent_nuclear_waste"
+  },
+  "item_input": {
+    "count": 1,
+    "tag": "c:dusts/gold"
+  },
+  "output": {
+    "count": 1,
+    "id": "evolvedmekanism:dust_better_gold"
+  },
+  "per_tick_usage": true
+}

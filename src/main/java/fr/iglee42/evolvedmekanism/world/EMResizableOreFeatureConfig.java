@@ -8,7 +8,6 @@ import java.util.function.IntSupplier;
 import fr.iglee42.evolvedmekanism.config.EMConfig;
 import mekanism.api.SerializationConstants;
 import mekanism.api.functions.FloatSupplier;
-import mekanism.common.config.MekanismConfig;
 
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;

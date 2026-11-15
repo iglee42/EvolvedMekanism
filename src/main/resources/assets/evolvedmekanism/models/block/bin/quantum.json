@@ -1,8 +1,0 @@
-{
-    "parent": "mekanism:block/bin/basic",
-    "textures": {
-        "led": "evolvedmekanism:block/bin/quantum_led",
-        "side": "evolvedmekanism:block/bin/quantum_side",
-        "back": "evolvedmekanism:block/bin/quantum_back"
-    }
-}

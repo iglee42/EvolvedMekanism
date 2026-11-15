@@ -1,6 +1,7 @@
 package fr.iglee42.evolvedmekanism.interfaces;
 
 import fr.iglee42.evolvedmekanism.recipes.AlloyerRecipe;
+import fr.iglee42.evolvedmekanism.recipes.FluidAlloyingRecipe;
 import fr.iglee42.evolvedmekanism.recipes.EMCachedRecipeHelper;
 import mekanism.api.annotations.NothingNullByDefault;
 import mekanism.api.recipes.MekanismRecipe;
@@ -9,6 +10,7 @@ import mekanism.api.recipes.ingredients.InputIngredient;
 import mekanism.api.recipes.inputs.IInputHandler;
 import mekanism.api.recipes.outputs.IOutputHandler;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.common.util.TriPredicate;
 import org.apache.commons.lang3.function.TriFunction;
 import org.jetbrains.annotations.NotNull;
@@ -141,5 +143,12 @@ public class ThreeInputCachedRecipe<INPUT_A, INPUT_B, INPUT_C, OUTPUT, RECIPE ex
                                                                                                                              IOutputHandler<@NotNull ItemStack> outputHandler) {
         return new ThreeInputCachedRecipe<>(recipe, recheckAllErrors, inputHandler, extraInputHandler, secondExtraInputHandler, outputHandler, recipe::getMainInput, recipe::getExtraInput, recipe::getTertiaryExtraInput,
               recipe::getOutput, ItemStack::isEmpty, ItemStack::isEmpty, ItemStack::isEmpty, ItemStack::isEmpty);
+    }
+
+    public static ThreeInputCachedRecipe<@NotNull FluidStack, @NotNull FluidStack, @NotNull FluidStack, @NotNull FluidStack, FluidAlloyingRecipe> fluidAlloyer(FluidAlloyingRecipe recipe,
+                                                                                                                                                              BooleanSupplier recheckAllErrors, IInputHandler<@NotNull FluidStack> inputHandler, IInputHandler<@NotNull FluidStack> extraInputHandler, IInputHandler<@NotNull FluidStack> secondExtraInputHandler,
+                                                                                                                                                              IOutputHandler<@NotNull FluidStack> outputHandler) {
+        return new ThreeInputCachedRecipe<>(recipe, recheckAllErrors, inputHandler, extraInputHandler, secondExtraInputHandler, outputHandler, recipe::getMainInput, recipe::getExtraInput, recipe::getTertiaryExtraInput,
+                recipe::getOutput, FluidStack::isEmpty, FluidStack::isEmpty, FluidStack::isEmpty, FluidStack::isEmpty);
     }
 }

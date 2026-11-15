@@ -1,0 +1,22 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "item": "enderio:pulsating_alloy_ingot"
+  },
+  "second_extra_input": {
+    "item": "enderio:vibrant_alloy_ingot"
+  },
+  "main_input": {
+    "item": "enderio:pulsating_powder"
+  },
+  "output": {
+    "count": 2,
+    "id": "enderio_evolution:crystalline_alloy_ingot"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enderio_evolution"
+    }
+  ]
+}

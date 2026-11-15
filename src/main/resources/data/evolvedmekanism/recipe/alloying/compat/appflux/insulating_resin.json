@@ -1,0 +1,21 @@
+{
+  "type": "evolvedmekanism:alloying",
+  "extra_input": {
+    "tag": "c:silicon"
+  },
+  "second_extra_input": {
+    "tag": "c:slime_balls"
+  },
+  "main_input": {
+    "tag": "c:crops/cactus"
+  },
+  "output": {
+    "id": "appflux:insulating_resin"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "appflux"
+    }
+  ]
+}

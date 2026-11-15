@@ -1,9 +1,0 @@
-{
-  "type": "mekanism:enriching",
-  "input": {
-    "tag": "c:dusts/better_gold"
-  },
-  "output": {
-    "id": "evolvedmekanism:enriched_better_gold"
-  }
-}

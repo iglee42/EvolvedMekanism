@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "active=false,facing=east": {
+      "model": "evolvedmekanism:block/factory/injecting/overclocked",
+      "y": 90
+    },
+    "active=false,facing=north": {
+      "model": "evolvedmekanism:block/factory/injecting/overclocked"
+    },
+    "active=false,facing=south": {
+      "model": "evolvedmekanism:block/factory/injecting/overclocked",
+      "y": 180
+    },
+    "active=false,facing=west": {
+      "model": "evolvedmekanism:block/factory/injecting/overclocked",
+      "y": 270
+    },
+    "active=true,facing=east": {
+      "model": "evolvedmekanism:block/factory/injecting/active/overclocked",
+      "y": 90
+    },
+    "active=true,facing=north": {
+      "model": "evolvedmekanism:block/factory/injecting/active/overclocked"
+    },
+    "active=true,facing=south": {
+      "model": "evolvedmekanism:block/factory/injecting/active/overclocked",
+      "y": 180
+    },
+    "active=true,facing=west": {
+      "model": "evolvedmekanism:block/factory/injecting/active/overclocked",
+      "y": 270
+    }
+  }
+}

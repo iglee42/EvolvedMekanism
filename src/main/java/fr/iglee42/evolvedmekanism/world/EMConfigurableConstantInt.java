@@ -7,7 +7,6 @@ import java.util.Optional;
 import fr.iglee42.evolvedmekanism.config.EMConfig;
 import fr.iglee42.evolvedmekanism.registries.EMIntProviderTypes;
 import mekanism.api.SerializationConstants;
-import mekanism.common.config.MekanismConfig;
 import mekanism.common.config.value.CachedIntValue;
 import mekanism.common.registries.MekanismIntProviderTypes;
 import net.minecraft.util.RandomSource;

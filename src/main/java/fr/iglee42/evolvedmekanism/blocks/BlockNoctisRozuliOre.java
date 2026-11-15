@@ -2,6 +2,7 @@ package fr.iglee42.evolvedmekanism.blocks;
 
 import fr.iglee42.evolvedmekanism.EvolvedMekanism;
 import fr.iglee42.evolvedmekanism.registries.EMBlocks;
+import fr.iglee42.evolvedmekanism.utils.EMNight;
 import fr.iglee42.evolvedmekanism.registries.EMOreType;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -70,16 +71,18 @@ public class BlockNoctisRozuliOre extends EMBlockOre{
     public static void playerTick(PlayerTickEvent.Post event){
         Level level = event.getEntity().level();
         if (level.isClientSide) return;
+        if (level.getGameTime() % 20 != 0) return;
         BlockPos origin = event.getEntity().blockPosition();
-        BlockPos.betweenClosed(origin.offset(-15, -15, -15),
-                origin.offset(15, 15, 15)).forEach(pos -> {
+        BlockPos.betweenClosedStream(origin.offset(-15, -15, -15),
+                origin.offset(15, 15, 15)).filter(level::isLoaded).forEach(pos -> {
             BlockState state = level.getBlockState(pos);
             if (state.getBlock() instanceof BlockNoctisRozuliOre block) {
-                boolean isNight = level.isNight();
+                boolean isNight = EMNight.isNight(level);
                 if (state.getValue(UNCOVERED) != isNight){
                     level.setBlock(pos, state.setValue(UNCOVERED, isNight), Block.UPDATE_ALL);
                 }
             }
         });
     }
+
 }
