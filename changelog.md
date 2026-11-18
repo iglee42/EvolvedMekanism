@@ -9,6 +9,7 @@ Version 1.3.0-fix2
 ------------------------------------------------------
 Fixed
 - Noctis Rozuli ore now works with fixed time and doDaylightCycle gamerule set to false.
+- Deadlock during mod loading between Upgrade and EnumUtils (#95)
 - Fix crash when disabling some curios slots (#88)
 - Moltens now react like lava (burn in it) and use the proper overlay texture (#89 & #93)
 - Lunar Generators and Lunar Neutron Activator now work with fixed time and doDaylightCycle gamerule set to false (#92)

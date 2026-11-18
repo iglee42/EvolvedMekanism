@@ -19,7 +19,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.function.Function;
@@ -69,19 +68,6 @@ public class UpgradeMixin {
         CODEC = new StringRepresentable.EnumCodec<>($VALUES, remapper);
         BY_ID = ByIdMap.continuous(Upgrade::ordinal, $VALUES, ByIdMap.OutOfBoundsStrategy.WRAP);
         STREAM_CODEC = ByteBufCodecs.idMapper(BY_ID, Upgrade::ordinal);
-        evolvedmekanism$refreshUpgradeList();
-    }
-
-    @Unique
-    private static void evolvedmekanism$refreshUpgradeList() {
-        try {
-            Class<?> utils = Class.forName("mekanism.common.util.EnumUtils");
-            Field upgrades = utils.getDeclaredField("UPGRADES");
-            upgrades.setAccessible(true);
-            upgrades.set(null, Arrays.copyOf($VALUES, $VALUES.length));
-        } catch (ReflectiveOperationException e) {
-            throw new ExceptionInInitializerError(e);
-        }
     }
 
     @Unique
